@@ -1,0 +1,990 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jorge Eduardo Eielson</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jorge Eduardo Eielson. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jorge_Edua<rdo_Eielson,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body link="#85A6BC" vlink="#85A6BC" alink="#85A6BC" background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app17.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/eielson.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/eielson.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164825" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./eielson.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:48:25 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./eielson.htm" title="0:08:01 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:48:25 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./eielson.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="27 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:48:25 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./eielson.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>45 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">9 Mar 07 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:001001010100_2008:-1:021212610001_2009:-1:101000100000_2010:-1:100000001110_2011:-1:000000001120_2012:-1:201112001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./EIELSON.jpg" width="528" height="52">&nbsp;&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><em style="font-style: normal">
+<font face="Arial" size="2" color="#84B0D6">
+&quot;...Y no soy yo que sufre sino el otro<br>
+El mismo mono milenario<br>
+Que se refleja en el espejo y llora...&quot;</font></em></p>
+<p align="center"><font color="#84B0D6"><img border="0" src="./EIELSON1.jpg" width="250" height="250"><br>
+<br>
+</font>
+<em>
+<font face="Arial" size="2" color="#84B0D6">
+&quot;Pesca milagrosa&quot; 1984</font></em></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#84B0D6">Jorge Eduardo Eielson</font></em><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="4" color="#84B0D6">
+			Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta, 
+		ensayista y dramaturgo peruano nacido en Lima en 1924.<br>
+		Es una de las voces m&aacute;s representativas de la poes&iacute;a hispanoamericana.<br>
+		Su estilo literario muestra una influencia marcada de Eguren, Westphalen 
+		y Vallejo entre los nacionales, <br>
+		y de Breton, Pr&eacute;vert&nbsp; y Ezra Pound entre los vanguardistas 
+		extranjeros.<br>
+		A finales de los a&ntilde;os cuarenta viaj&oacute; a Par&iacute;s y disfrut&oacute; del 
+		extraordinario ambiente creativo franc&eacute;s. De all&iacute; viaj&oacute; <br>
+		becado a Suiza para dedicarse a la escritura, y a inicios de los a&ntilde;os 
+		cincuenta se radic&oacute; para siempre en Italia, <br>
+		donde brill&oacute; no s&oacute;lo por su labor literaria sino tambi&eacute;n por su 
+		desarrollo como artista pl&aacute;stico que lo llev&oacute; a obtener <br>
+		prestigiosos reconocimientos internacionales, participando en grandes 
+		muestras en museos como el MOMA <br>
+		o en el &aacute;mbito de la colecci&oacute;n Rockefeller de Nueva York.
+		<br>
+		Su obra po&eacute;tica est&aacute; contenida en las siguientes publicaciones: <i>
+		&quot;Canci&oacute;n y muerte de Rolando&quot;</i> 
+		en 1943, <i>&quot;Reinos&quot;</i> en 1945, <i>&quot;Habitaci&oacute;n en Roma&quot;</i> en 1951,
+		<i>&quot;Mutatis mutandis&quot;</i> en 1967, <i>&quot;El cuerpo de Giulia-no&quot;</i> en 
+		1971, <i>&quot;Poes&iacute;a escrita&quot;</i> en 1976, <i>
+		<br>
+		&quot;Noche oscura del cuerpo&quot;</i> 
+		en 1983, <i>&quot;Primera muerte de Mar&iacute;a&quot;</i> en 1988, <i>&quot;Antolog&iacute;a&quot;</i> en 
+		1996, 
+		<i>&quot;Sin t&iacute;tulo&quot;</i> en 2001, y <i><br>
+		&quot;Ceremonias&quot;</i> en 2001.<br>
+		Falleci&oacute; en Mil&aacute;n en Marzo de 2006. &copy;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#85A6BC">&nbsp;<br>
+&nbsp;</font></p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></p>
+	<blockquote>
+		<p align="center"><br>
+		<br>
+		</p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#CEREMONIA SOLITARIA BAJO LA LUZ DE LA LUNA">Ceremonia 
+		solitaria bajo la luz de la luna</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#CEREMONIA SOLITARIA EN COMPA&Ntilde;&Iacute;A DE M&Iacute; MISMO">Ceremonia 
+		solitaria en compa&ntilde;&iacute;a de mi mismo</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#CEREMONIA SOLITARIA EN COMPA&Ntilde;&Iacute;A DE TU CUERPO">Ceremonia 
+		solitaria en compa&ntilde;&iacute;a de tu cuerpo</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#COLUMNA AL OTO&Ntilde;O">Columna al oto&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#CUERPO ENAMORADO">Cuerpo enamorado</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#DOBLE DIAMANTE">Doble diamante</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#EN EL CORAZ&Oacute;N DEL OTO&Ntilde;O">En el coraz&oacute;n del oto&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eielson.htm#ESCRIBO ALGO">
+		Escribo algo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#ESPOSA M&Iacute;A SEPULTADA">Esposa m&iacute;a sepultada</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#GENITALES BAJO EL VINO">Genitales bajo el vino</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#IMPROMTU">Impromptu</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#NOCTURNO TERRENAL">Nocturno terrenal</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#ODA AL INVIERNO">Oda al invierno</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#PERDIDO A TUS PIES">Perdido a tus pies</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#RETRATO">Retrato</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#SMOKING CAR">Smoking car</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./eielson.htm#SOLO DE SOL">Solo el sol</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2"><br>
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br>
+	</font><img border="0" src="./SENSUBARRA.jpg" width="72" height="7"><br>
+&nbsp;</p>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#85A6BC"><br>
+		<br>
+		<a name="CEREMONIA SOLITARIA BAJO LA LUZ DE LA LUNA"></a></font>
+		<font face="Georgia" color="#84B0D6">Ceremonia solitaria bajo la luz de 
+		la luna</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		La masturbaci&oacute;n es un caballo blanco<br>
+		Galopando entre el jard&iacute;n<br>
+		Y el ba&ntilde;o de mi casa<br>
+		La masturbaci&oacute;n se aprende<br>
+		Mirando y mirando la luna<br>
+		Abriendo y cerrando puertas<br>
+		Sin darse cuenta que la entrada y la salida<br>
+		Nunca han existido<br>
+		Jugando con la desesperaci&oacute;n<br>
+		Y el terciopelo negro<br>
+		Mordiendo y ara&ntilde;ando el firmamento<br>
+		Levantando torres de palabras<br>
+		O dirigiendo el peque&ntilde;o pene oscuro<br>
+		Posiblemente hacia el alba<br>
+		O hacia una esfera de m&aacute;rmol tibio y mojado<br>
+		O en el peor de los casos<br>
+		Hacia una hoja de papel como &eacute;sta<br>
+		Pero escribiendo tan s&oacute;lo la palabra<br>
+		Luna<br>
+		En una esquina<br>
+		Pero sobre todo<br>
+		Haciendo espuma de la noche a la ma&ntilde;ana<br>
+		Incluidos s&aacute;bado y domingo.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Ceremonia solitaria&quot;&nbsp; Roma, 1964</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;<a name="CEREMONIA SOLITARIA EN COMPA&Ntilde;&Iacute;A DE M&Iacute; MISMO"></a></font><font face="Georgia" color="#84B0D6">Ceremonia 
+		solitaria en compa&ntilde;&iacute;a de m&iacute; mismo</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Si entre esferas me acuesto<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Si entre esferas me despierto<br>
+		Es porque tu sexo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Es porque mi sexo <br>
+		Se parece tanto al m&iacute;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Se parece tanto al tuyo <br>
+		Que no conozco nada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Que no conozco nada<br>
+		M&aacute;s oscuro ni m&aacute;s tibio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		M&aacute;s oscuro ni m&aacute;s tibio<br>
+		M&aacute;s redondo ni m&aacute;s puro<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		M&aacute;s redondo ni m&aacute;s puro<br>
+		Un obelisco de dulzura<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Un abismo de ternura<br>
+		Un animal escamoso en la ma&ntilde;ana<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Otro suav&iacute;simo en la noche<br>
+		Un coraz&oacute;n en cambio<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Un coraz&oacute;n<br>
+		Significa s&oacute;lo fuego<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Significa s&oacute;lo fuego<br>
+		Una pared de ceniza<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Entre tu cuerpo y el m&iacute;o<br>
+		Un fragmento de mejilla<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La redondez de tu ombligo<br>
+		Una calavera que me espera<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Una calavera que te espera<br>
+		Y yo que te pienso diverso<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Yo que te pienso diverso<br>
+		Cada d&iacute;a me parezco m&aacute;s a ti<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Cada d&iacute;a me parezco m&aacute;s a ti<br>
+		Que no te pareces a m&iacute;.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Ceremonia solitaria&quot;&nbsp; Roma, 1964</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="CEREMONIA SOLITARIA EN COMPA&Ntilde;&Iacute;A DE TU CUERPO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Ceremonia solitaria en compa&ntilde;&iacute;a de tu cuerpo </font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		<br>
+		Penetro tu cuerpo tu cuerpo<br>
+		De carne penetro me hundo<br>
+		Entre tu lengua y tu mirada pura<br>
+		Primero con mis ojos<br>
+		Con mi coraz&oacute;n con mis labios<br>
+		Luego con mi soledad<br>
+		Con mis huesos con mi glande<br>
+		Entro y salgo de tu cuerpo<br>
+		Como si fuera un espejo<br>
+		Atravieso pelos y quejidos<br>
+		No s&eacute; cu&aacute;l es tu piel y cu&aacute;l la m&iacute;a<br>
+		Cu&aacute;l mi esqueleto y cu&aacute;l el tuyo<br>
+		Tu sangre brilla en mis arterias<br>
+		Semejante a un lucero<br>
+		Mis brazos y tus brazos son los brazos<br>
+		De una estrella que se multiplica<br>
+		Y que nos llena de ternura<br>
+		Somos un animal que se enamora<br>
+		Mitad ceniza mitad latido<br>
+		Un pu&ntilde;ado de tierra que respira<br>
+		De incandescentes materias<br>
+		Que jadean y que gozan<br>
+		Y que jam&aacute;s reposan</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Ceremonia solitaria&quot;&nbsp; Roma, 1964</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="COLUMNA AL OTO&Ntilde;O"></a> </font>
+		<font face="Georgia" color="#84B0D6">
+		Columna al oto&ntilde;o</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Se pierde el tiempo, las sedosas sombras<br>
+		Que ruedan entre esferas de esmeralda<br>
+		Hacia la muerte. Frente al oto&ntilde;o<br>
+		Respiro como un &aacute;ngel, escucho el silbido<br>
+		De las flores vivas, veo grandes cielos,<br>
+		Y corrientes fr&iacute;as de olvidados rostros<br>
+		Pasan por mi frente. Yo s&eacute; bien,<br>
+		Coraz&oacute;n m&iacute;o, gorgona p&uacute;rpura y girante,<br>
+		C&oacute;mo es de oscura tu sonrisa y c&oacute;mo se agita<br>
+		Tu corona de gusanos en la sombra. Rey vulnerado<br>
+		Por las detonaciones lilas del oto&ntilde;o,<br>
+		Heme aqu&iacute;, transido ante los fuegos estelares,<br>
+		Mirando c&oacute;mo arden en una azul columna,<br>
+		Agreste y solitaria, mi coraz&oacute;n, los &aacute;rboles y el viento. </font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Doble diamante&quot; Lima, 1942</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="CUERPO ENAMORADO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Cuerpo enamorado</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Miro mi sexo con ternura<br>
+		Toco la punta de mi cuerpo enamorado<br>
+		Y no soy yo que veo sino el otro<br>
+		El mismo mono milenario<br>
+		Que se refleja en el remanso y r&iacute;e<br>
+		Amo el espejo en que contemplo<br>
+		Mi espesa barba y mi tristeza<br>
+		Mis pantalones grises y la lluvia<br>
+		Miro mi sexo con ternura<br>
+		Mi glande puro y mis test&iacute;culos<br>
+		Repletos de amargura<br>
+		Y no soy yo que sufre sino el otro<br>
+		El mismo mono milenario<br>
+		Que se refleja en el espejo y llora</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Noche oscura del cuerpo&quot;&nbsp; Roma, 1955</font></i></p>
+		<p align="left"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="DOBLE DIAMANTE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Doble diamante</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		&iquest;Conoces tu cuerpo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		esfera de la noche<br>
+		esfera de la noche<br>
+		Hurac&aacute;n solar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conoces tu 
+		cuerpo<br>
+		Conoces tu cuerpo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; conoces<br>
+		Tu admirable cabeza tus piernas moviendo<br>
+		El centro miserable<br>
+		De mis ojos de oro<br>
+		Mis ojos de oro de mirarte<br>
+		De oro de so&ntilde;arte<br>
+		De llorarte?<br>
+		<br>
+		&iquest;Conoces tu cuerpo<br>
+		Fuerza de los a&ntilde;os<br>
+		Calor de los planetas?<br>
+		<br>
+		&iexcl;Ah criatura! Tu desnudez me ahoga<br>
+		Tus zapatos me queman<br>
+		D&iacute;as imantados son mis noches<br>
+		Vac&iacute;o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colmo encontrado&nbsp;&nbsp;&nbsp;&nbsp; 
+		asilo fr&iacute;o. Contigo<br>
+		Los astros me aburren<br>
+		Las especies lloran<br>
+		Muero&nbsp;&nbsp;&nbsp;&nbsp; me levanto&nbsp;&nbsp;&nbsp;&nbsp; clamo&nbsp;&nbsp;&nbsp;&nbsp; 
+		vuelvo a morir<br>
+		Clamando grito&nbsp;&nbsp;&nbsp; entre ramas orino y fumo&nbsp;&nbsp;&nbsp;&nbsp; 
+		caigo<br>
+		Como un rayo f&aacute;cilmente en tu garganta. Contigo<br>
+		S&oacute;lo silencio&nbsp;&nbsp;&nbsp;&nbsp; placa de horrores&nbsp;&nbsp;&nbsp; 
+		sedimentos<br>
+		Cascada inm&oacute;vil&nbsp;&nbsp;&nbsp; piedra cerrada<br>
+		Abismos de oro nos persiguen<br>
+		Rabiosos amigos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">A trav&eacute;s 
+		de rayos&nbsp;&nbsp;&nbsp; cantos&nbsp;&nbsp;&nbsp; blasfemias<br>
+		Soles y serpientes mundos de vidrio<br>
+		Pomos perdidos<br>
+		Amaneceres con lluvia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lluvia de 
+		sangre<br>
+		Temperatura y tristeza.<br>
+		<br>
+		&iexcl;Ah misteriosa! Odio tu cabeza pura<br>
+		Imb&eacute;cil terciopelo tigre de las alturas<br>
+		Odio el c&iacute;rculo salado<br>
+		En que te pienso oculta<br>
+		Odio el peso de los d&iacute;as<br>
+		Los pulpos que me beben gota a gota<br>
+		Bebi&eacute;ndote a la vez &iexcl;somos roc&iacute;o!<br>
+		Los pulpos luminosos que gobiernas<br>
+		Los cedros empapados por tu aliento<br>
+		Los siglos de hermosura en que agonizo<br>
+		La luna y mis deseos de matar<br>
+		La imagen de tus labios frescos&nbsp;&nbsp;&nbsp;&nbsp; los r&iacute;os y los 
+		montes<br>
+		Los pasos encantados de mi mano<br>
+		En tu garganta.<br>
+		&iexcl;Ah mis 30 000 flores vivas<br>
+		Suave ej&eacute;rcito vespertino batall&oacute;n perfumado!<br>
+		<br>
+		Rotaci&oacute;n de mi cuerpo<br>
+		Hazme volver a mi cuerpo<br>
+		Destr&uacute;yeme los ojos en el acto<br>
+		Las u&ntilde;as y los dientes sobre el fruto<br>
+		Convi&eacute;rteme en silencio.<br>
+		<br>
+		Deja rodar mis l&aacute;grimas en cambio<br>
+		Sobre el espejo que adoro<br>
+		Sobre la viva&nbsp; atroz&nbsp; remota&nbsp; clara<br>
+		Desnudez que me disuelve<br>
+		Sobre el diamante igual que me aniquila<br>
+		sobre tant&iacute;simo cielo y tanta perfecci&oacute;n enemiga<br>
+		Sobre tanta in&uacute;til hermosura<br>
+		Tanto fuego planetario<br>
+		Tanto deseo m&iacute;o.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Doble diamante&quot; Lima, 1942</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		<a name="EN EL CORAZÓN DEL OTO&Ntilde;O"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		En el coraz&oacute;n del oto&ntilde;o</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Este taller dorado, se&ntilde;ora,<br>
+		Si usted suelta sus cabellos,<br>
+		Su cors&eacute;, sus abundantes senos,<br>
+		Arder&aacute;. La Muerte vestida,<br>
+		Calavera de viejo sombrero,<br>
+		Con plumas de pato en la nuca,<br>
+		Vendr&aacute;, si usted llora, se&ntilde;ora,<br>
+		Desnuda en el bosque, si llora.<br>
+		Hermosa se&ntilde;ora, qu&eacute; viento,<br>
+		Qu&eacute; viejo ya el d&iacute;a, las flores,<br>
+		La cera y el vino, sus ojos, se&ntilde;ora.<br>
+		Este taller dorado, se&ntilde;ora, es el oto&ntilde;o.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Doble diamante&quot;&nbsp;&nbsp;&nbsp; Lima, 1947</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ESCRIBO ALGO"></a></font><font face="Georgia" color="#84B0D6">
+		Escribo algo...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Escribo algo<br>
+		algo todav&iacute;a<br>
+		algo m&aacute;s a&uacute;n<br>
+		a&ntilde;ado palabras p&aacute;jaros<br>
+		hojas secas viento<br>
+		borro palabras nuevamente<br>
+		borro p&aacute;jaros hojas secas viento<br>
+		escribo algo todav&iacute;a<br>
+		palabras</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><i>De 
+		&quot;Mutatis mutandis&quot; 1967</i> </font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ESPOSA M&Iacute;A SEPULTADA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Esposa m&iacute;a sepultada</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Encerrado en tu sombra, en tu santa sombra,<br>
+		Con el agua en las rodillas, te pregunto<br>
+		&iquest;Es el peso del manzano, claveteado de estrellas,<br>
+		Sobre mi coraz&oacute;n oscuro, o eres t&uacute;, cabeza<br>
+		Fugitiva de las horas, novia m&iacute;a enterrada,<br>
+		La que arrastras tu cabellera incesante<br>
+		Como una botella rota, por entre mi sangre?<br>
+		Yo no s&eacute;, se&ntilde;ora m&iacute;a, luto de mi amor,<br>
+		Si eres t&uacute; la que reinas sobre tanta ceniza,<br>
+		O si es s&oacute;lo tu sombra, tu velo de novia en el aire,<br>
+		-Poblado de perlas, naves y calaveras-<br>
+		El que inunda mi alcoba, igual que un oc&eacute;ano.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Reinos&quot;&nbsp; Lima, 1945</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="GENITALES BAJO EL VINO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Genitales bajo el vino</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Óyeme 
+		tierra, as&iacute;, escribiendo as&iacute;,<br>
+		En la espesura de p&aacute;mpanos dormido:<br>
+		Mi pecho fr&iacute;o junto a mis intestinos<br>
+		Se ha cuajado. Mis dedos alhajados<br>
+		Buscan el &Aacute;rbol de la Noche, clavan<br>
+		Sus u&ntilde;as de imprenta en los racimos<br>
+		De la Vida y de la Muerte. Óyeme tierra<br>
+		De grandes frutos &aacute;ureos y serpientes,<br>
+		Luci&eacute;rnaga entre muros de papiro,<br>
+		Negro universo del quinqu&eacute; y el sexo,<br>
+		Justicia del gusano, mal Para&iacute;so.<br>
+		M&iacute;rame tierra, as&iacute; escribiendo, as&iacute;<br>
+		Desnudo, Ad&aacute;n poeta, quieto y triste,<br>
+		En esqueleto, sierpe y uva convertido.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Reinos&quot;&nbsp;&nbsp;&nbsp; Lima, 1945</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="IMPROMTU"></a></font><font face="Georgia" color="#84B0D6">
+		Impromptu</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		&eacute;ste es tu cuerpo o nada<br>
+		una nube o una rueda<br>
+		un caballo o cinco dedos<br>
+		qu&eacute; alegr&iacute;a estoy vivo<br>
+		o la lluvia<br>
+		un ruido de tijeras<br>
+		cuatro pasos un silbido<br>
+		un grito&nbsp;&nbsp;&nbsp; una habitaci&oacute;n<br>
+		otro grito<br>
+		un cometa en el cielo<br>
+		un cuchillo en la boca<br>
+		dos ojos abiertos una esfera<br>
+		dos ojos m&aacute;s<br>
+		siete brazos&nbsp;&nbsp;&nbsp; una mano<br>
+		tres o cuatro tigres<br>
+		una cabeza rubia<br>
+		un beso de mam&aacute;<br>
+		cuarenta espejos rotos<br>
+		cuarenta t&iacute;os carlos<br>
+		un tel&eacute;fono sonando<br>
+		un cad&aacute;ver en el suelo<br>
+		un se&ntilde;or aburrido<br>
+		una historia cualquiera<br>
+		un tel&eacute;fono sonando<br>
+		tres o cuatro tigres<br>
+		qu&eacute; tarde me acuesto<br>
+		estoy solo<br>
+		una palabra u otra<br>
+		no importa qu&eacute; cosa<br>
+		un tel&eacute;fono sonando<br>
+		un cad&aacute;ver en el suelo<br>
+		una raza de perro<br>
+		un perfume de francia<br>
+		etc&eacute;tera&nbsp;&nbsp;&nbsp; etc&eacute;tera</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Tema y variaciones&quot; Ginebra, 1950</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">&nbsp;</font><font color="#84B0D6"><img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NOCTURNO TERRENAL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Nocturno terrenal</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Te he buscado, Tesoro,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		he cavado en las noches profundas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Rainer Maria Rilke</i><br>
+		<br>
+		Amo cierta sombra y cierta luz que muy juntas, creo yo, azulan<br>
+		Las casas profundas de los muertos, amo la llama<br>
+		Y el cabo de la sangre, porque juntas son el mundo<br>
+		Y hacen de m&iacute; un muro que separa la noche del d&iacute;a.<br>
+		<br>
+		He visto los rojos campos labrados por el cielo azul,<br>
+		La antigua naturaleza desflecada y h&uacute;meda<br>
+		De vino, de roc&iacute;o, mortalmente hecha con racimos<br>
+		De amor, tal un lecho donde ardiera lo deseado,<br>
+		Pero debajo de todo, siempre despierta, un agua pura<br>
+		Pensando por nosotros contra un &aacute;rbol de dolor.<br>
+		<br>
+		Y las cosas cuya &uacute;ltima luci&eacute;rnaga ha volado<br>
+		Con nuestro &uacute;ltimo sue&ntilde;o, que tienen todav&iacute;a, como un templo<br>
+		Majestuoso, el gran consuelo de su polvo donde nada<br>
+		Ni nadie ha osado penetrar sino los muertos.<br>
+		Amo todav&iacute;a aquello que habla lejos, como los astros<br>
+		De terciopelo, al o&iacute;do del viento, aun las rosas y la luz<br>
+		Y todo lo que igual a una plaga, inextinguible pero real<br>
+		Transcurre entre los hombres y agita su plumaje.<br>
+		Fosforescencia, d&iacute;a esmeralda de las tumbas,<br>
+		S&oacute;lo tus ojos adivino adorados por lagartos y ra&iacute;ces,<br>
+		Y tras de ellos casas y crep&uacute;sculos, altas monta&ntilde;as<br>
+		Destronadas contra cielos de nieve en un soplo;<br>
+		Todo bajo el musgo de sus ojos, blanco Amante,<br>
+		De cuyo seno mana una leche antigua a cada fruto.<br>
+		Yo amo por ello este hundido bosque, de brillantes hojas<br>
+		Donde reposa, inmemorial, el Gran Sol de los Tiempos.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Reinos&quot;&nbsp;&nbsp;&nbsp; Lima, 1945</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ODA AL INVIERNO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Oda al invierno</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		El invierno es todo frutas y linternas<br>
+		Olvidadas y esqueletos santos de palomas<br>
+		En el bosque. El invierno besa, enamorado,<br>
+		Los labios gloriosos de la vid con sus labios<br>
+		De granizo, y se duerme sobre ella.<br>
+		El invierno puede venir un d&iacute;a, blandamente,<br>
+		Por el valle y, cual un f&oacute;sforo en la mano,<br>
+		Llevarse una vida a su ciudad como un ladr&oacute;n.<br>
+		El invierno enjoya al hombre tristemente,<br>
+		El invierno lava tumbas de monarcas<br>
+		Y mendigos, y corona el &aacute;ureo y viejo oto&ntilde;o<br>
+		Con un rayo de ceniza en la cabeza. Respetad<br>
+		Al invierno, la antig&uuml;edad de sus plantas,<br>
+		Su cetro de roc&iacute;o en la espesura; respetad<br>
+		Los rostros eternos de los &aacute;rboles y el viento<br>
+		En su dominio, cuando cesa todo en torno<br>
+		Y &eacute;l se inclina, carcomido y sonoro, como un piano<br>
+		En un estanque o como un muerto en una tumba.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Reinos&quot;&nbsp;&nbsp;&nbsp; Lima, 1945</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PERDIDO A TUS PIES"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Perdido a tus pies</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Maldita noche, el fuego de la luna,<br>
+		El tiempo que se esconde entre las hojas,<br>
+		Los p&aacute;jaros, el sol que sucede<br>
+		A tu garganta oscura. &iquest;Es tambi&eacute;n<br>
+		Tu mano temblorosa la que cruza<br>
+		Sobre esta p&aacute;gina estrellada?<br>
+		&iquest;Es tu cuerpo mortal en la floresta<br>
+		El que reposa humeando, fatigado,<br>
+		Como un arma que dispara terciopelo?<br>
+		Enamorado, inerte, como una pluma<br>
+		Pronta a caer en el vac&iacute;o, escucho<br>
+		Los silenciosos pasos de la luna<br>
+		Entre el boscaje, lejanas y altas<br>
+		Velocidades, ruidos que adivino,<br>
+		Diamantes en marcha y lineales<br>
+		Vientos en perpetua rotaci&oacute;n.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Doble diamante&quot; Lima, 1947</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="RETRATO"></a></font><font face="Georgia" color="#84B0D6">
+		Retrato</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Cuanto 
+		puede el aire es<br>
+		Mostrarnos su semblante<br>
+		De planeta vencido,<br>
+		Quiz&aacute;s servirte de espejo<br>
+		Cuando te desnudas<br>
+		O tomar, sombr&iacute;amente,<br>
+		Tu lugar cuando respiro.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Doble diamante&quot;&nbsp; Lima, 1947</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<a name="SMOKING CAR"></a>Smoking car<br>
+		<br>
+		un cigarrillo y tus dos ojos<br>
+		y los d&iacute;as y las noches sin cesar<br>
+		fumando el mismo cigarrillo<br>
+		igual a cualquier otro<br>
+		o al mismo de ayer<br>
+		con el que quisiste morir un d&iacute;a<br>
+		esperando vivir otra vez<br>
+		sin saber que un cigarrillo<br>
+		igual a otro cigarrillo<br>
+		no es bastante<br>
+		ni millares y millares<br>
+		de cerillas son bastantes<br>
+		ni tus ojos ni mis ojos<br>
+		ni las noches ni los d&iacute;as<br>
+		ni millares y millares<br>
+		de los mismos cigarrillos<br>
+		son bastante<br>
+		para vivir un d&iacute;a</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#84B0D6">De 
+		&quot;Tema y variaciones&quot; 1950</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="SOLO DE SOL"></a></font><font face="Georgia" color="#84B0D6">
+		Solo de sol</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">s&oacute;lo el 
+		sol<br>
+		el sol solamente<br>
+		solo en el cielo<br>
+		y yo tan solo<br>
+		a solas con el sol<br>
+		sonr&iacute;o simplemente</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><i>De 
+		&quot;Tema y variaciones&quot;&nbsp;&nbsp; Ginebra, 1950</i></font><font face="Georgia" size="2" color="#85A6BC"><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRA.jpg" width="72" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:48:25 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:17:45 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

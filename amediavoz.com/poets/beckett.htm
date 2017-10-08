@@ -1,0 +1,1112 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Samuel Beckett</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Samuel Beckett."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Samuel Beckett. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Samuel_Beckett,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body link="#D2D2D2" vlink="#D2D2D2" alink="#D2D2D2" background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/beckett.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/beckett.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815181409" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./beckett.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="3 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:14:09 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./beckett.htm" title="0:04:15 May 3, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:14:09 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./beckett.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:14:09 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./beckett.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>65 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Jun 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000002000214_2007:-1:512113020100_2008:-1:100121330001_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000002120_2012:-1:421111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BECKETT.jpg" width="344" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BECKETT1.jpg" width="209" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="730" height="335">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="722">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="304" width="265" valign="top">
+			<p align="left">
+			<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+			<img border="0" src="./BECKETT2.jpg" width="206" height="305"></td>
+			<td width="453" valign="top" height="304">
+			<p align="left"><font face="Georgia" color="#C4CAD4"><u>Rese&ntilde;a 
+			biogr&aacute;fica</u></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta, novelista y cr&iacute;tico irland&eacute;s nacido en Foxrock en 1906.<br>
+			Estudi&oacute; los primeros a&ntilde;os en el condado de Fermanagh y luego la 
+			carrera universitaria en Trinity College de&nbsp; Dublin,&nbsp; 
+			donde obtuvo el &laquo;Bachelor of Arts&raquo; en 1927.<br>
+			Aprovechando su estancia en Paris como profesor de ingl&eacute;s, estudi&oacute; 
+			profundamente a Descartes y Dante, trab&oacute; amistad con James Joyce y 
+			escribi&oacute; los primeros estudios cr&iacute;ticos publicados en Paris en 1929.<br>
+			De regreso a Dublin empez&oacute; a luchar contra una profunda depresi&oacute;n 
+			producto de su car&aacute;cter solitario y sombr&iacute;o. Renunci&oacute; al trabajo y 
+			empez&oacute; a viajar por diferentes pa&iacute;ses europeos, dictando 
+			conferencias y dedicando gran parte del tiempo a la literatura. 
+			Durante la guerra se uni&oacute; a la resistencia, y una vez terminada se 
+			radic&oacute; en Paris donde inici&oacute; la etapa m&aacute;s prol&iacute;fica de su carrera. 
+			En 1949 public&oacute; <i>&quot;Eleutheria&quot;</i> y en 1953 <i>&quot;Esperando a Godot&quot;</i>, 
+			obras seguidas por <i>&quot;Final</i> <i>de juego&quot;</i> en 1958 y &quot;<i>D&iacute;as 
+			felices</i>&quot; en 1961. Ese mismo a&ntilde;o recibi&oacute; el&nbsp; premio <i>Prix 
+			Formentor</i> y en 1969&nbsp; el <i>Premio</i> <i>Nobel de 
+			Literatura</i>.<br>
+			Despu&eacute;s de una prolongada enfermedad, falleci&oacute; en Paris en 1989. &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Samuel Beckett:</font></p>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><a href="./beckett.htm#DE POEMAS EN INGL&Eacute;S:">De 
+		&quot;Poemas en ingl&eacute;s&quot;:</a></font><br>
+		<br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#ALBA">Alba</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#CASCANDO&sup1;">Cascando¹</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#DA TAGTE ES&sup1;">Da Tagte Es¹</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#GNOMO">Gnomo</a><br>
+		<a href="./beckett.htm#LOS HUESOS DE ECO">Los huesos de eco</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#MALACODA">Malacoda</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#POR AH&Iacute;">Por ah&iacute;</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#SERENA III">Serena III</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#WHOROSCOPE">Whoroscope</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia">
+		<a href="./beckett.htm#DE: POEMAS EN FRANC&Eacute;S">De &quot;Poemas en Franc&eacute;s&quot; 1937-1939</a></font><br>
+		<br>
+		<font face="Georgia" size="2" color="#FFFFFF"><a href="./beckett.htm#1. VIENEN...">1. 
+		Vienen...</a></font><br>
+		<font face="Georgia" size="2">
+		<a href="./beckett.htm#2. PARA ELLA EL ACTO SOSEGADO...">2. Para ella el acto 
+		sosegado...</a></font><br>
+		<font face="Georgia"><font size="2">
+		<a href="./beckett.htm#3. ESTAR AH&Iacute; SIN DIENTES NI MAND&Iacute;BULAS...">3. Estar ah&iacute; sin 
+		dientes ni mand&iacute;bulas...</a></font><br>
+		<font size="2"><a href="./beckett.htm#4. ASCENSI&Oacute;N">4. Ascensi&oacute;n</a></font><br>
+		<font size="2"><a href="./beckett.htm#5. LA MOSCA">5. La mosca</a></font><br>
+		<font size="2"><a href="./beckett.htm#6. M&Uacute;SICA DE LA INDIFERENCIA...">6. M&uacute;sica de 
+		la indiferencia...</a></font><br>
+		<a href="./beckett.htm#7. BEBE SOLO..."><font size="2">7. Bebe solo...</font></a><font color="#FFFFFF" size="2"><br>
+		</font><font color="#FFFFFF"><br>
+		&nbsp;</font></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./beckett.htm#DE: POEMAS EN FRANC&Eacute;S 1947-1949">De &quot;Poemas en franc&eacute;s&quot; 
+		1947-1949</a></font><br>
+		<br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#MUERTE DE A. D.">Muerte de A. D.</a></font><br>
+		<font face="Georgia" size="2">
+		<a href="./beckett.htm#SOY UN DISCURRIR DE ARENA QUE RESBALA...">Soy un discurrir de 
+		arena que resbala...</a></font><br>
+		<font face="Georgia" size="2">
+		<a href="./beckett.htm#QUISIERA QUE MI AMOR MURIESE...">Quisiera que mi amor 
+		muriese...</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./beckett.htm#DE: LETAN&Iacute;AS 1976-1978">De &quot;Letan&iacute;as&quot; 1976-1978</a></font><br>
+		<br>
+		<font color="#FFFFFF" size="2" face="Georgia">
+		<a href="./beckett.htm#al llegar la noche en que el alma">al llegar la noche en que 
+		el alma</a>...<br>
+		<a href="./beckett.htm#esc&uacute;chalas">esc&uacute;chalas</a>...<br>
+		<a href="./beckett.htm#imagina si esto">imagina si esto</a>...<br>
+		<a href="./beckett.htm#las ganas cada d&iacute;a">las ganas cada d&iacute;a</a>...<br>
+		<a href="./beckett.htm#noche que tanto haces">noche que tanto haces</a>...<br>
+		<a href="./beckett.htm#s&aacute;bado un respiro">s&aacute;bado un respiro</a>...<br>
+		<a href="./beckett.htm#silencio como el que existi&oacute;">silencio como el que existi&oacute;</a>...<br>
+		<a href="./beckett.htm#viejo ir">viejo ir</a>...<br>
+		<br>
+		</font><br>
+		<font color="#FFFFFF" face="Georgia">
+		<a href="./beckett.htm#DE: ADAPTACIONES DE CHAMFORT">De &quot;Adaptaciones de Chamfort</a>&quot;:</font><font color="#FFFFFF" size="2" face="Georgia"><br>
+		<br>
+		<a href="./beckett.htm#canci&oacute;n">canci&oacute;n</a><br>
+		<a href="./beckett.htm#coraz&oacute;n, qu&eacute; oquedad...">coraz&oacute;n, qu&eacute; oquedad...</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#dormir hasta la muerte...">
+		dormir hasta la muerte...</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#La esperanza...">La esperanza...</a></font><br>
+		<font face="Georgia" size="2"><a href="./beckett.htm#Pide al todo-lo-cura...">Pide al 
+		todo-lo-cura...</a></font><br>
+		<font color="#FFFFFF"><br></font>
+		<font face="Georgia" size="2" color="#FFFFFF">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#FFFFFF">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: 
+		<br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4" size="2">
+		<a name="DE POEMAS EN INGL&Eacute;S:"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		De &quot;Poemas en ingl&eacute;s&quot;:</font></p>
+		<p align="left"><font face="Georgia"><font color="#C4CAD4"><br></font>
+		<font size="2" color="#C4CAD4">
+		<a name="ALBA"></a></font>
+		<font color="#C4CAD4">
+		Alba</font></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">antes de 
+		que amanezca aqu&iacute; estar&aacute;s<br>y Dante y el Logos y todos los estratos y 
+		misterios<br>y la luna marcada<br>allende el blanco plano de la m&uacute;sica<br>
+		que establezcas aqu&iacute; antes del alba¹<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; solemne suave 
+		seda cantarina<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		incl&iacute;nate hacia el negro firmamento de areca³<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		lluvia sobre bamb&uacute;es flor de humo callejuela de sauces<br><br>quienes 
+		aunque te inclines con dedos compasivos<br>para abonar el polvo<br>en 
+		nada aumentar&aacute;n tu generosidad<br>cuya belleza ante m&iacute; ser&aacute; como un 
+		sudario²<br>informe de s&iacute; misma que se extiende sobre la tempestad de 
+		los emblemas<br>de modo que no hay sol ni hay revelaciones<br>ni 
+		v&iacute;ctima&#61446; tampoco<br>yo solamente y el sudario luego<br>y un bulto muerto 
+		ya<br>
+		<br><i>Versi&oacute;n de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>
+		Escrita como los dos Enueg (I y II) en la &eacute;poca en que Beckett ense&ntilde;aba 
+		en el Trinity College <br>
+		y, como ellos, basado en un modelo provenzal. Alba es el amanecer que 
+		aterroriza a los amantes 
+		<br>
+		porque su llegada conlleva separaci&oacute;n. Apareci&oacute; por primera vez en 
+		Dublin <br>
+		Magazine, vol. VI (octubre-diciembre de 1931).<br>¹&nbsp; alba:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-en italiano en el original.<br>²&nbsp; sudario:&nbsp; -sheet, vocablo 
+		de una cierta ambig&uuml;edad por su variedad de significados que<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Beckett no parece dispuesto a restringir. Aqu&iacute; en castellano, se utiliza 
+		como <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sudario, expl&iacute;citamente, y como hoja, impreso impl&iacute;citamente, al hablar 
+		en el<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		verso siguiente de una declaraci&oacute;n o informe.<br>³ &nbsp;areca:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-palma india.<br>&#61446;&nbsp; v&iacute;ctima:&nbsp;&nbsp; -caso id&eacute;ntico al 
+		(sudario) anterior. Host: v&iacute;ctima, hostia, hu&eacute;sped, hueste.</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CASCANDO¹"></a></font><font face="Georgia" color="#C4CAD4">
+		Cascando¹</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>1<br>
+		por qu&eacute; no simplemente no esperar<br>a ser ocasi&oacute;n de<br>un vertedero de 
+		palabras<br>
+		<br>&iquest;no es mejor abortar que ser est&eacute;ril?<br><br>despu&eacute;s de tu partida 
+		las horas son tan tristes<br>siempre empiezan a rastras demasiado pronto<br>
+		los garfios desgarrando con ceguedad el lecho de miseria<br>rescatando 
+		los huesos los amores antiguos<br>cuencas una vez llenas con ojos como 
+		tuyos<br>&iquest;es mejor siempre demasiado pronto que jam&aacute;s?<br>negra 
+		necesidad salpicando los rostros<br>diciendo una vez m&aacute;s nunca flot&oacute; lo 
+		amado nueve d&iacute;as<br>ni nueve meses<br>ni nueve vidas</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">2<br>
+		diciendo una vez m&aacute;s<br>si no me ense&ntilde;as t&uacute; no aprender&eacute;<br>diciendo una 
+		vez m&aacute;s existe un &uacute;ltimo<br>atardecer de &uacute;ltimas veces<br>&uacute;ltimas veces 
+		de mendigar<br>&uacute;ltimas veces de amar<br>de saber no saber simular<br>un 
+		&uacute;ltimo atardecer de &uacute;ltimas veces de decir<br>sino me amas nunca ser&eacute; 
+		amado<br>si no te amo ya no amar&eacute; nunca<br>
+		<br>un batir de palabras gastadas una vez m&aacute;s en el coraz&oacute;n<br>amor amor 
+		amor golpe de un &eacute;mbolo antiqu&iacute;simo<br>moliendo el suero inalterable<br>
+		de las palabras<br>
+		<br>una vez m&aacute;s aterrado<br>de no amar<br>de amar pero no a ti<br>de ser 
+		amado y no por ti<br>de saber no saber simular<br>simular<br>
+		<br>yo y todos los otros que te amen<br>si te aman<br><br>3<br>a menos 
+		que te amen<i><br>
+		<br>Versi&oacute;n de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>
+		Publicada por primera vez en Dublin Magazine , vol. XI ( octubre- 
+		diciembre de 1936). <br>
+		El verso 4, que abr&iacute;a el poema en esa ocasi&oacute;n, dec&iacute;a as&iacute;: is it better 
+		to abort than be barren? <br>La inclusi&oacute;n de la part&iacute;cula de negaci&oacute;n 
+		(not) y los tres versos anteriores que aqu&iacute; se<br>incluyen son de una 
+		versi&oacute;n posterior. <br>¹cascando:&nbsp; -da idea de ca&iacute;da. Este t&iacute;tulo 
+		lo volvi&oacute; a utilizar Beckett 27 a&ntilde;os despu&eacute;s para una<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		obra radiof&oacute;nica, escrita en franc&eacute;s y estrenada el 13 de octubre de 
+		1963 bajo la<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		direcci&oacute;n de Roger Blin.<br>nueve d&iacute;as:&nbsp; -alusi&oacute;n a la creencia 
+		popular de que el ahogado volv&iacute;a a la superficie al cabo de<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		nueve d&iacute;as.</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="DA TAGTE ES¹"></a></font><font face="Georgia" color="#C4CAD4">
+		Da tagte es¹</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">redime lo 
+		que reemplaza a los adioses<br>la s&aacute;bana de agua que navega en tu mano<br>
+		a quienes nada tienen ya para la tierra<br>y el espejo sin niebla encima 
+		de tus ojos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>Escrito tambi&eacute;n 
+		a ra&iacute;z de la muerte de su padre. <br>¹da tagte es:&nbsp;&nbsp; -entonces 
+		(o all&iacute;, en sentido temporal) amaneci&oacute;. En alem&aacute;n en el original.</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="GNOMO"></a></font><font face="Georgia" color="#C4CAD4">
+		Gnomo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Pasa tus 
+		a&ntilde;os de aprendiz derrochando<br>Valor por tantos a&ntilde;os de ir vagando<br>A 
+		trav&eacute;s de un mundo que con cortes&iacute;a<br>De la torpeza de aprender se 
+		libra</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>Inspirado por el 
+		Xenien de Goethe, se public&oacute; por primera vez en el Dublin Magazin, <br>
+		vol.IX (julio-septiembre de 1934)</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="LOS HUESOS DE ECO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Los huesos de eco</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">asilo bajo 
+		mis huellas todo este d&iacute;a<br>sus sordas francachelas mientras la carne 
+		cae<br>hendiendo sin temor ni&nbsp; viento favorable<br>guant&iacute;lopes del 
+		sentido y el absurdo transcurren<br>tomados por los gusanos por lo que 
+		en verdad son</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="MALACODA"></a></font><font face="Georgia" color="#C4CAD4">
+		Malacoda</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		tres veces vino<br>el hombre de las pompas f&uacute;nebres<br>impasible bajo el 
+		bomb&iacute;n de piel<br>para medir<br>&iquest;no est&aacute; acaso pagado para medir?<br>a 
+		este incorruptible en el vest&iacute;bulo<br>a este malebranca¹ que los lirios 
+		cubren hasta las rodillas<br>Malacoda con lirios hasta las rodillas<br>
+		Malacoda² no obstante el experto terror<br>que felpa su perineo extingue 
+		su se&ntilde;al<br>suspirando hacia arriba por el aire pesado<br>&iquest;debe ser as&iacute;? 
+		debe ser debe ser<br>encuentra los crespones c&oacute;gelos del jard&iacute;n<br>
+		escuchar puede ver pero no es necesario<br>
+		<br>sepultar en el f&eacute;retro<br>con unos ayudantes ungulata³<br>encuentra 
+		los yerbajos reclama su atenci&oacute;n<br>escuchar debe ver pero no es 
+		necesario<br>
+		<br>cubrir<br>estar seguro de cubrir cubrirlo todo por encima<br>tu 
+		escudo d&eacute;jame coge tu azufre<br>vidrio canicular divino hermoseado<br>
+		espera Scarmilion² espera espera<br>coloca este Huysum&#61447; en la caja<br>y 
+		observa bien la imago eso es &eacute;l<br>escuchar debe ver ella debe<br>todos 
+		a bordo todos l0s esp&iacute;ritus<br>a media asta s&iacute; s&iacute;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">no</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>¹ malebranca: 
+		-alusi&oacute;n posible a dos fuentes distintas: 1&#730; nombre de los demonios <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de la 5&ordf; bolgia del Inferno dantesco, y 2&#730; nombre del fil&oacute;sofo del s. 
+		XVII, 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Malebranche, sacerdote del Oratorio, formulador de una filosof&iacute;a 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		racionalista, uni&oacute;n del pensamiento de S. Agust&iacute;n y del cartesianismo. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Aunque por ambos lados&nbsp; -Dante y Descartes-&nbsp; se puede 
+		establecer <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		una relaci&oacute;n con Beckett, nos inclinamos por la 1&ordf; soluci&oacute;n, por razones <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		f&aacute;cilmente explicables con la nota siguiente.<br>² Malacoda y 
+		Scarmilion:&nbsp; -diablos dantescos, citados en Inf. XXI, 76, y 105, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		respectivamente.<br>³ ungulata: &nbsp;-ungulados. En lat&iacute;n en el original.<br>
+		&#61446; imago: &nbsp;-imagen. En lat&iacute;n en el original.<br>&#61447; Huysum:&nbsp; -Juan Van 
+		Huysum. Pintor holand&eacute;s (1682-1749).</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="POR AH&Iacute;"></a></font><font face="Georgia" color="#C4CAD4">
+		Por ah&iacute;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">por ah&iacute;<br>
+		un grito lejano<br>para alguien<br>tan peque&ntilde;o<br>bellos narcisos<br>
+		luego marzo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">luego ah&iacute;<br>
+		luego ah&iacute;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">entonces 
+		desde ah&iacute;<br>narcisos<br>otra vez<br>luego marzo<br>otra vez<br>para 
+		alguien<br>tan peque&ntilde;o</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Escrito en 
+		1976</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SERENA III"></a></font><font face="Georgia" color="#C4CAD4">
+		Serena III</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		fija estos garabatos de hermosura en la paleta<br>nunca se sabe si esto 
+		puede ser el final<br>
+		<br>o d&eacute;jala ella es para&iacute;so y m&aacute;s tarde en el globo<br>de tus ojos 
+		h&iacute;menes de felpa<br>
+		<br>o sobre Puente Butt Sonroja de verg&uuml;enza<br>el mixto declinar de 
+		esas ubres<br>alza tu luna tuya y solamente tuya<br>arriba arriba arriba 
+		hacia la estrella del atardecer<br>desvanecido encima de un clavel todo 
+		nuevo<br>en el arco-gas&oacute;metro que hay en Misery Hill¹<br>desvanecido en 
+		la p&uacute;rpura y peque&ntilde;a<br>casa de la oraci&oacute;n<br>coraz&oacute;n de Mar&iacute;a alguna 
+		cosa<br>Bull y Pool² Suplicante que no se encontrar&aacute;n<br>en este mundo 
+		al menos<br>
+		<br>mientras que partes lejos en medio de los fustes que caracolean<br>
+		corre desesperadamente sobre el Puente Victoria &eacute;sa es la idea<br>
+		aminora la marcha anda furtivamente Ringsend Road abajo<br>Irishtown 
+		Sandymount³ titubea halla el Fuego del Infierno<br>Apartamentos Merrion 
+		se&ntilde;alados por un trill&oacute;n de sigmas<br>El Dedo de Jesucristo Hijo de Dios 
+		el Salvador<br>muchachas sorprendidas mientras se desnudaban &eacute;sa es la 
+		idea<br>sobre el rompevientos y olas en el Bootersgrad<br>el p&aacute;nico que 
+		provoca la marea en las pardas gaviotas<br>las arenas se mueven en tu 
+		coraz&oacute;n c&aacute;lido<br>oc&uacute;ltate t&uacute; mismo pero en la Roca&#61446; no no te detengas<br>
+		no te detengas<br>
+		<br><i>Versi&oacute;n de Jenaro Talens </i><br><br><i>NOTAS DEL TRADUCTOR:<br>
+		La serie se basa, de nuevo, en modelos provenzales, en este caso, los 
+		poemas <br>
+		nocturnos de los trovadores.<br>¹Misery Hill:&nbsp; barrio de Dubl&iacute;n<br>
+		²Bull y Pull:&nbsp;&nbsp;&nbsp; los dos muelles que hay en la 
+		desembocadura del Liffey. <br>³Irishtown y Sandymount:&nbsp; barrios de 
+		Dubl&iacute;n<br>&#61446;Roca:&nbsp; alusi&oacute;n a la ciudad al sur de Dubl&iacute;n y a la &quot;Roca 
+		Eterna&quot; del himno protestante.</i></font></p>
+		<p align="left"><i><font color="#C4CAD4"><br>&nbsp;</font></i></p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="WHOROSCOPE"></a>Whoroscope</font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">(Hor&oacute;sco&ntilde;o) ¹</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&iquest;Qu&eacute; es esto?<br>&iquest;Un huevo?<br>Por los hermanos Boot, apesta a fresco.<br>
+		D&aacute;selo a Gillot.<br>
+		<br>C&oacute;mo est&aacute;s, Galileo,<br>&iexcl;y sus terceras sucesivas!²<br>&iexcl;Asqueroso 
+		viejo nivelador³ copernicano hijo de vivandera!<br>Nos movemos, dijo, al 
+		fin nos marchamos-&iexcl;Porca Madonna!<br>como un contramaestre o un 
+		Pretendiente saco-de-patatas&#61446; cargando<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		contra el enemigo.<br>Esto no es moverse, sino con<i>moverse</i>.&#61447;<br>
+		<br>Qu&eacute; es esto ?<br>&iquest;Una tortilla acerba o una que ha florecido?<br>
+		&iexcl;Dos ovarios revueltos con prosticiutto?*<br>&iquest;Cu&aacute;nto tiempo lo invagin&oacute;, 
+		la emplumada?<br>Tres d&iacute;as y cuatro noches?<br>D&aacute;selo a Gillot.<br>
+		<br>Faulhaber, Beeckman y Pedro el Rojo<br>venid ahora en un alud de 
+		nubarrones o en la cristalina nube de<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Gassendi&#61448;, roja como el sol,<br>y os limar&eacute; todas vuestras 
+		gallinas-y-medio<br>o limar&eacute; una lente bajo el edred&oacute;n en la mitad del 
+		d&iacute;a.<br>
+		<br>Pensar que era &eacute;l, mi propio hermano, Pedro el Bravuc&oacute;n<br>y que no 
+		usaba de silogismo alguno<br>como si Papi a&uacute;n estuviera con vida.<br>
+		&iexcl;Ea!, p&aacute;same esa calderilla,<br>&iexcl;dulce sudor molido de mi h&iacute;gado 
+		ardiente!<br>&iexcl;Qu&eacute; d&iacute;as aqu&eacute;llos, sentado al lado de la estufa&#61449;, 
+		arrojando jesuitas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		por el tragaluz!<br><br>&iquest;Y &eacute;se, qui&eacute;n es? &iquest;Hals?<br>Que espere.<br><br>
+		&iexcl;Mi adorable bizquita!<br>Yo me escond&iacute;a y me buscabas**.<br>Y Francine, 
+		precioso fruto m&iacute;o de un feto casa-y-gabinete!<br>&iexcl;Vaya una exfoliaci&oacute;n!<br>
+		&iexcl;Su peque&ntilde;a epidermis gris&aacute;cea y desollada, y rojas las am&iacute;gdalas!<br>
+		Hija &uacute;nica m&iacute;a<br>Azotada por la fiebre hasta en el turbio resta&ntilde;ar de 
+		su sangre...<br>&iexcl;sangre!<br>&iexcl;Oh, Harvey de mi coraz&oacute;n!<br>&iquest;qu&eacute; har&aacute;n los 
+		rojos y los blancos, los muchos en los pocos<br>(querido Harvey 
+		sangre-girador¹&ordm;)<br>para arremolinarse por este batidor resquebrajado?<br>
+		Y el cuarto Enrique lleg&oacute; a la cripta de la flecha.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iquest;Qu&eacute; es 
+		esto?<br>&iquest;Desde cuando?<br>Inc&uacute;balo¹¹.<br><br>Un viento de maldad 
+		empujaba la desesperaci&oacute;n de mi sosiego<br>contra las escarpadas cimas 
+		de la se&ntilde;ora<br>&uacute;nica:<br>no una vez ni dos, sino...<br>(&iexcl;Burdel de 
+		Cristo, emp&oacute;llalo!)<br>en una sola anegaci&oacute;n de sol.<br>(Jesuitastros, 
+		copien, por favor.)</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Por lo 
+		tanto adelante con las medias de seda sobre el traje de punto<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y la piel m&oacute;rbida...<br>qu&eacute; estoy diciendo, la suave tela...<br>y 
+		v&aacute;monos a Ancona, sobre el brillante Adri&aacute;tico,<br>y adi&oacute;s unos 
+		instantes a la amarilla llave de los Rosacruces.<br>Ellos no saben qu&eacute; 
+		es lo que hizo el due&ntilde;o de todos los que hacen,<br>que a la nariz le 
+		toca el beso del aire todo f&eacute;tido y fragante<br>y a los t&iacute;mpanos, y al 
+		trono del orificio fecal<br>y a los ojos su zigzag.<br>De esta manera Le 
+		bebemos y Le comemos<br>y el Beaune aguado y los duros cubitos de pan 
+		Bimbo¹²<br>porque &Eacute;l puede danzar<br>igual cerca que lejos de Su Esencia 
+		Danzante<br>y tan triste o tan vivo como requiere el c&aacute;liz, la bandeja.<br>
+		&iquest;Qu&eacute; te parece, Antonio?<br>
+		<br>&iexcl;En el nombre de Bacon, me empollar&eacute;is el huevo!<br>&iquest;O deber&eacute; 
+		trag&aacute;rme fantasmas de caverna?<br>
+		<br>&iexcl;Anna Mar&iacute;a!<br>Ella lee a Mois&eacute;s y dice que su amor est&aacute; 
+		crucificado.<br>&iexcl;Leider!&nbsp; &iexcl;Leider!¹³ Florec&iacute;a pero se marchit&oacute;,<br>
+		p&aacute;lido y abusivo periquito en el escaparate de una calle mayor.<br>No, 
+		si creo desde el Principio a la &uacute;ltima palabra, te lo juro.<br>&iexcl;Fallor, 
+		ergo sum!¹&#61446;<br>viejo frôleur¹&#61447; esquivo<br>Toll-&oacute; y legg-&oacute;¹*<br>y se 
+		abroch&oacute; el chaleco de redentorista.<br>No importa, pas&eacute;moslo por alto.<br>
+		Soy un ni&ntilde;o atrevido, ya lo s&eacute;,<br>luego no soy mi hijo<br>(aunque fuese 
+		portero)<br>ni el de Joaqu&iacute;n mi padre,<br>sino astilla de un palo 
+		perfecto que no es viejo ni nuevo<br>p&eacute;talo solitario de una gran rosa, 
+		alta y resplandeciente.<br>
+		<br>&iquest;Est&aacute;s maduro al fin<br>p&aacute;lido y esbelto tordo m&iacute;o, de seno 
+		desdoblado?<br>&iexcl;Qu&eacute; ricamente huele<br>este aborto de volant&oacute;n!<br>Lo 
+		comer&eacute; con tenedor para pescado.<br>Clara y plumas y yema.<br>Me alzar&eacute; 
+		luego y empezar&eacute; a moverme<br>hacia Raab de las nieves,<br>la matinal 
+		amazona asesina confesada por el papa,<br>Cristina la destripadora.<br>
+		<br>Oh Weulles, no derrames la sangre de un franco<br>que ha subido los 
+		pelda&ntilde;os amargos<br>(Ren&eacute; du Perron...)<br>y ot&oacute;rgame mi hora<br>segunda 
+		inescrutable sin estrellas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>NOTAS 
+		DEL TRADUCTOR:<br>&quot;Escrito en el verano de 1930 para participar en un 
+		concurso de poes&iacute;a sobre <br>
+		el tema del Tiempo, organizado por Nancy Cunard, con un premio de 10 
+		libras, <br>
+		que gan&oacute;. El jurado estaba compuesto&nbsp; por la misma Nancy Cunard y 
+		por Richard 
+		<br>
+		Aldington, quien sugiri&oacute; al autor que a&ntilde;adiese las notas&nbsp; para la 
+		publicaci&oacute;n.&nbsp; <br>
+		Basado en la biograf&iacute;a de Descartes escrita a finales del siglo XVII por 
+		Adrien Baillet, <br>
+		se someti&oacute; a una de las normas del concurso: que el poemano tuviese mas 
+		de <br>
+		100 versos y fue publicado en una edici&oacute;n de 300 ejemplares, 100 de 
+		ellos <br>
+		firmados por el autor, por cuenta de la Hours Press de Nancy Cunard.&quot;<br>
+		&nbsp;¹&nbsp;&nbsp; Hor&oacute;sco&ntilde;o:&nbsp; Contracci&oacute;n de Whore y Horoscope. El 
+		juego fon&eacute;tico del original es<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		intraducible.<br>&nbsp;²&nbsp;&nbsp; y sus terceras sucesivas: El cambio de 
+		persona verbal ( del esperable yours al <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inesperado his) es lo que marca la confusi&oacute;n que 
+		el propio Beckett se&ntilde;ala entre <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Galileo Galilei y su padre Vincenzo Galilei, 
+		autor del Di&aacute;logo della musica antica <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e della moderna (Firenze, 1581). De ah&iacute; el 
+		calificativo saco-de-patatas.<br>&nbsp;³&nbsp;&nbsp; Viejo nivelador: old 
+		Copernican lead-swinging en el original. Alusi&oacute;n al p&eacute;ndulo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de la torre de Pisa, hecho por Galileo.<br>
+		&nbsp;&#61446;&nbsp;&nbsp; Pretendiente saco-de-patatas: Pretendiente al trono del 
+		movimiento, trono <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inm&oacute;vil sobre un cuerpo m&oacute;vil -la Tierra-, de ah&iacute; 
+		el calificativo de saco-de-patatas.<br>&nbsp;&#61447;&nbsp;&nbsp; no es moverse sino 
+		con moverse: En el original that 's not moving, that 's moving. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Al igual que las dos citas anteriores hace 
+		referencia a los dos tipos de movimiento: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el del hombre sobre la Tierra fija -seg&uacute;n la 
+		doctrina geoc&eacute;ntrica- y el del planeta <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dentro del sistema solar, seg&uacute;n el heliocentrismo 
+		propuesto por Cop&eacute;rnico. 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En la primera versi&oacute;n traduje &quot;esto no es moverse 
+		sino ser movido&quot;. En la medida 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en que &quot;conmover&quot; (el otro significado de to 
+		move)&nbsp; incluye la lectura de &quot;mover 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con&quot; he preferido corregir aqu&iacute; la primitiva 
+		versi&oacute;n para mantener el doble sentido <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; del original.<br>&nbsp;*&nbsp;&nbsp; dos ovarios 
+		revueltos, fritos con prosticiutto: Juego de palabras sobre la semejanza <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; huevo-ovario y la identidad de ra&iacute;z de pr&oacute;stata y 
+		prosciutto, jam&oacute;n, en italiano.<br>&nbsp;&#61448;&nbsp;&nbsp; Gassendi: Pierre 
+		Gassendi, sacerdote y can&oacute;nigo de Dijon, (1592 - 1655). Fil&oacute;sofo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		materialista, opuesto a las ideas de Descartes. Perteneciente al grupo 
+		de renacentistas <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rezagados, no 
+		aceptaba la afirmaci&oacute;n de Dios y del alma como verdades primeras y <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opon&iacute;a su idea del conocimiento a trav&eacute;s de 
+		los sentidos al innatismo y espiritualismo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; propios del pensamiento cartesiano.<br>&nbsp;&#61449;&nbsp;&nbsp; 
+		sentado al lado de la estufa: Se refiere a la estufa de que habla 
+		Descartes en la segunda<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parte de 
+		su Discurso del m&eacute;todo: &quot;Me hallaba entonces en Alemania ( ...) no 
+		teniendo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; afortunadamente 
+		preocupaciones ni pasiones que me turbaran, permanec&iacute;a todo el d&iacute;a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		encerrado solo al lado de la estufa, donde ten&iacute;a todo para entretener 
+		mis pensamientos&quot;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Trad. J. 
+		Rovira Armengol, Losada, 1959, p&aacute;g. 19).<br>**&nbsp;&nbsp; yo me 
+		escondo, b&uacute;scame: El juego infantil del escondite.<br>¹&ordm;&nbsp;&nbsp; 
+		Sangre-girador: bloodswirling da idea exactamente de remolinador de la 
+		sangre,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sustitu&iacute;do por la 
+		palabra compuesta anterior con el prop&oacute;sito de mantener en el verso<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		castellano la construcci&oacute;n original inglesa.<br>¹¹&nbsp;&nbsp; &Iacute;nc&uacute;balo:&nbsp; 
+		Sit on it, si&eacute;ntate en &eacute;l, textualmente.<br>¹²&nbsp;&nbsp; pan Bimbo: 
+		Cubes of Hovis, en el original Hovis, marca de pan de molde conocida. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hovis y Beaune, pan y vino, las dos 
+		formas del cuerpo eucar&iacute;stico.<br>¹³&nbsp;&nbsp; Leider:&nbsp; 
+		desgraciadamente. En alem&aacute;n en el original.<br>¹&#61446;&nbsp;&nbsp; Fallor, 
+		ergo sum: me enga&ntilde;o, luego existo. Parodia del cogito, ergo sum 
+		cartesiano.<br>¹&#61447;&nbsp;&nbsp; frôleur: que roza ligeramente. En franc&eacute;s 
+		en el original.<br>¹*&nbsp;&nbsp; En oll- 'o y legg-&oacute;:&nbsp; En el 
+		original tolle-d and legge-d, gramaticalizaci&oacute;n inglesa de los<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		imperativos latinos como pret&eacute;ritos. Tolle, lege, las palabras que 
+		escuch&oacute; San Agust&iacute;n <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en el matorral antes de su 
+		conversi&oacute;n.<br>¹&#61448;&nbsp;&nbsp; Raab: meretriz de Jeric&oacute;.<br>¹&#61449;&nbsp;&nbsp; 
+		pelda&ntilde;os amargos:&nbsp; reminiscencia dantesca. Della Scala -Purgat. c. 
+		XVIII, v. 121- y <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Du Perron, t&iacute;tulo de Descartes y escalinata 
+		en franc&eacute;s.<br>&nbsp;</i></font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">NOTAS 
+		DEL AUTOR:<br><br>A Ren&eacute; Descartes, Se&ntilde;or de Perron, le gustaba su 
+		tortilla hecha con huevos incubados <br>
+		de ocho a diez d&iacute;as; el resultado, est&eacute; m&aacute;s o menos tiempo bajo la 
+		gallina, dice &eacute;l, es desagradable.<br>Manten&iacute;a oculta su fecha de 
+		nacimiento, por lo que ning&uacute;n astr&oacute;logo pudo hacer su hor&oacute;scopo.<br>El 
+		ir y venir del huevo madur&aacute;ndose le serv&iacute;a de entretenimiento.<br>v.3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-En 1640 los hermanos Boot refutaron a Arist&oacute;teles en Dubl&iacute;n.<br>v.4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Descartes pasaba a su criado Gillot los problemas m&aacute;s f&aacute;ciles de 
+		geometr&iacute;a <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		anal&iacute;tica.<br>v.v. 5-10.&nbsp;&nbsp;&nbsp; -Se refiere a su desprecio 
+		hacia Galileo hijo (a quien confunde con el m&aacute;s <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		musical Galileo padre) y a su sof&iacute;stico escrito acerca del movimiento de 
+		la 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tierra.
+		<br>v. 17.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Resolvi&oacute; problemas planteados por estos tres matem&aacute;ticos.
+		<br>v.v. 21-26.&nbsp;&nbsp; -El intento de estafa por parte de su 
+		hermano mayor Pierre de la Bretailli&egrave;re.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		- El dinero que gan&oacute; como soldado.
+		<br>v. 27.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-FranzHals.<br>v.v. 29-30.&nbsp; -De ni&ntilde;o jugaba con una muchachita 
+		bizca.
+		<br>v.v. 31-35.&nbsp;&nbsp; -Su hija muri&oacute; de escarlatina a los seis 
+		a&ntilde;os.<br>v.v. 37-40.&nbsp; -Alab&oacute; a Harvey por su descubrimiento de la 
+		circulaci&oacute;n de la sangre, pero <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		no admit&iacute;a que hubiera explicado el movimiento del coraz&oacute;n. <br>v. 41.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-El coraz&oacute;n de Enrique IV fue recibido en el colegio jesu&iacute;ta de La 
+		Fl&egrave;che <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		mientras Descartes a&uacute;n estudiaba en &eacute;l.<br>vv. 45-53.&nbsp;&nbsp;&nbsp; 
+		-Sus visiones y peregrinaci&oacute;n a Loreto.<br>vv. 56-65.&nbsp;&nbsp;&nbsp; 
+		-Sus argumentos eucar&iacute;sticos, en respuesta al jansenista Antonio Arnauld <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que le hab&iacute;a desafiado a reconciliar la doctrina de la materia con la 
+		doctrina 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de la transubstanciaci&oacute;n.<br>v. 68.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Schurmann, la holandesa medias-azules, una piadosa disc&iacute;pula de Voet, 
+		el<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		adversario de Descartes.<br>vv. 73-76.&nbsp;&nbsp;&nbsp; -San Agust&iacute;n 
+		tuvo una revelaci&oacute;n en un matorral y ley&oacute; a San Pablo.<br>vv. 77-83.&nbsp;&nbsp;&nbsp; 
+		-Prob&oacute; la existencia de Dios por exhaustividad.<br>vv. 91-93.&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Cristina, reina de Suecia. En Estocolmo, en noviembre llam&oacute; a 
+		Descartes, que<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		durante toda su vida hab&iacute;a permanecido en cama hasta mediod&iacute;a, para que 
+		le<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		hiciera compa&ntilde;&iacute;a las cinco de la madrugada.<br>v. 94.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Weulles, m&eacute;dico peripat&eacute;tico holand&eacute;s en la corte sueca, y enemigo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de Descartes.</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		&nbsp;</font></p>
+		<p align="left"><font color="#C4CAD4"><br></font>
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="DE: POEMAS EN FRANC&Eacute;S"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		De: Poemas en franc&eacute;s 1937 -1939</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="1. VIENEN..."></a></font><font face="Georgia" color="#C4CAD4">
+		1. Vienen...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		vienen<br>diferente e iguales<br>con cada una es diferente y es igual<br>
+		con cada una la ausencia de amor es diferente<br>con cada una la 
+		ausencia de amor es igual<br>
+		<br>vienen<br>diferentes e id&eacute;nticas<br>con cada una es diferente y es 
+		lo mismo<br>con cada una la ausencia de amor es diferente<br>con cada 
+		una la ausencia de amor es la misma</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="2. PARA ELLA EL ACTO SOSEGADO..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		2. Para ella el acto sosegado...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">para ella 
+		el acto sosegado<br>los poros sabios el sexo inocent&oacute;n<br>la espera no 
+		muy lenta los lamentos no demasiado largos la ausencia 
+		<br>al servicio de la presencia<br>los pocos jirones de azul en la 
+		cabeza las punzadas al fin muertas del coraz&oacute;n<br>toda la gracia tard&iacute;a 
+		de una lluvia que cesa<br>con la ca&iacute;da de una noche<br>de agosto</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">para ella 
+		vac&iacute;a<br>&eacute;l puro<br>de amor</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="3. ESTAR AH&Iacute; SIN DIENTES NI MAND&Iacute;BULAS..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		3. Estar ah&iacute; sin dientes y mand&iacute;bulas...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		estar ah&iacute; sin dientes ni mand&iacute;bulas<br>ad&oacute;nde se va el gozo de perder<br>
+		con el apenas inferior<br>de ganar<br>y Roscelin y esperamos<br>adverbio 
+		oh regalito<br>vac&iacute;o vac&iacute;o salvo jirones de canci&oacute;n<br>
+		<i>padre me dio un marido</i><br>o al arreglar las flores<br>que moje 
+		cuanto quiera<br>hasta la eleg&iacute;a<br>de los zuecos herrados a&uacute;n lejos de 
+		Les Halles<br>o el agua de la canalla apestando por las tuber&iacute;as<br>o 
+		nada m&aacute;s que moje<br>porque es as&iacute;<br>que pula lo superfluo<br>y venga<br>
+		con la boca idiota y la mano hormigueante<br>a la cavidad hundida alojo 
+		que escucha<br>lejanos tijeretazos argentinos</font></p>
+		<p align="left"><font color="#C4CAD4"><br></font>
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="4. ASCENSIÓN"></a></font>
+		<font face="Georgia" color="#C4CAD4">4. Ascensi&oacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		a trav&eacute;s del estrecho tabique<br>ese d&iacute;a en que un hijo<br>pr&oacute;digo a su 
+		manera<br>volvi&oacute; con su familia<br>oigo la voz<br>conmovida comenta<br>
+		la copa del mundo de f&uacute;tbol<br>
+		<br>siempre demasiado joven<br><br>al mismo tiempo por la ventana 
+		abierta<br>por los aires a secas<br>sordamente<br>la marejada de los 
+		fieles<br>
+		<br>su sangre salpic&oacute; en abundancia <br>sobre las s&aacute;banas sobre los 
+		olorosos guisantes y sobre su amigo 
+		<br>con dedos asquerosos cerr&oacute; &eacute;l las pupilas<br>sobre sus grandes ojos 
+		verdes sorprendidos<br>
+		<br>ella gira ligera<br>sobre mi tumba de aire</font></p>
+		<p align="left"><font color="#C4CAD4"><br></font>
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="5. LA MOSCA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		5. La mosca</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">entre la 
+		escena y yo<br>el cristal<br>vac&iacute;o salvo ella<br><br>vientre a tierra<br>
+		ce&ntilde;ida por sus negras tripas<br>antenas enloquecidas alas atadas<br>
+		patas ganchudas boca sorbiendo en el vac&iacute;o<br>sableando el azul 
+		aplast&aacute;ndose contra lo invisible<br>impotente bajo mi pulgar hace que 
+		zozobren<br>el mar y el cielo sereno</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font><font face="Georgia" color="#C4CAD4">
+		<a name="6. MÚSICA DE LA INDIFERENCIA..."></a>6. M&uacute;sica de la 
+		indiferencia...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">m&uacute;sica de 
+		la indiferencia<br>coraz&oacute;n tiempo aire fuego arena<br>del silencio 
+		desmoronamiento de amores<br>cubre sus voces y que<br>no me oiga ya<br>
+		callarme</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="7. BEBE SOLO..."></a></font>
+		<font face="Georgia" color="#C4CAD4">7. Bebe solo...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">bebe solo<br>
+		come quema fornica revienta solo como antes<br>los ausentes ya muertos 
+		los presentes apestan<br>saca tus ojos vu&eacute;lvelos sobre las ca&ntilde;as<br>
+		discuten quiz&aacute;s ellos y los ays<br>no importa existe el viento<br>y el 
+		estado de vela</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font color="#C4CAD4"><br><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;<a name="DE: POEMAS EN FRANC&Eacute;S 1947-1949"></a></font><font face="Georgia" color="#C4CAD4">De: 
+		Poemas en franc&eacute;s 1947-1949</font><font face="Georgia" size="2" color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="MUERTE DE A. D."></a>Muerte de&nbsp; A. D.</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		y ah&iacute; estar ah&iacute; a&uacute;n ah&iacute;<br>apretado a mi vieja tabla picada en negro 
+		como de viruela<br>durante d&iacute;as y noches molidos ciegamente<br>de estar 
+		ah&iacute; de no huir y huir y estar ah&iacute;<br>inclinado a confesar un tiempo que 
+		agoniza<br>haber sido lo que fue hecho lo que hizo<br>de m&iacute; de mi amigo 
+		muerto en el d&iacute;a de ayer con el ojo brillante<br>con los dientes largos 
+		jadeando en su barba<br>devorando la vida de los santos una vida por d&iacute;a 
+		de vida<br>reviviendo de noche sus negros pecados<br>muerto ayer 
+		mientras que yo viv&iacute;a<br>y estar all&iacute; bebiendo por encima de la tormenta<br>
+		la culpa del tiempo irremisible<br>aferrado a la vieja madera testigo de 
+		partidas<br>testigo de regresos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="SOY UN DISCURRIR DE ARENA QUE RESBALA..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Soy un discurrir de arena que 
+		resbala...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">soy un 
+		discurrir de arena que resbala<br>entre la duna y los guijarros<br>la 
+		lluvia del verano llueve sobre mi vida<br>sobre m&iacute; vida m&iacute;a que me 
+		persigue y huye<br>y tendr&aacute; fin el d&iacute;a del comienzo<br>
+		<br>caro instante te veo<br>en el retroceder de este tel&oacute;n de bruma<br>
+		donde ya no deber&eacute; pisar estos largos umbrales movedizos<br>y vivir&eacute; lo 
+		mismo que una puerta<br>que se abre y se vuelve a cerrar</font></p>
+		<p align="left"><font color="#C4CAD4"><br></font>
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="QUISIERA QUE MI AMOR MURIESE..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Quisiera que mi amor muriese...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">quisiera 
+		que mi amor muriese<br>y que lloviera sobre el cementerio<br>y las 
+		callejas por las que camino<br>llorando a aquella que crey&oacute; que amaba</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens <br>
+&nbsp;</i></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4" size="2">
+		<a name="DE: LETAN&Iacute;AS 1976-1978"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		De: Letan&iacute;as 1976-1978</font></p>
+		<p align="left">
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="al llegar la noche en que el alma"></a>al llegar la noche en 
+		que el alma<br>iba a serle reclamada<br>he aqu&iacute; que al no aguantarse<br>
+		la entreg&oacute; una hora antes</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="esc&uacute;chalas"></a>esc&uacute;chalas<br>sumarse<br>las palabras<br>a las 
+		palabras<br>sin palabra<br>los pasos<br>a los pasos<br>uno a<br>uno</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="imagina si esto"></a>imagina si esto<br>si un d&iacute;a esto<br>un 
+		d&iacute;a feliz<br>imagina<br>si un d&iacute;a<br>un d&iacute;a feliz esto<br>se acabara<br>
+		imagina</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="las ganas cada d&iacute;a"></a>las ganas cada d&iacute;a<br>de estar vivo un 
+		d&iacute;a m&aacute;s<br>claro que no sin el pesar<br>de haber nacido un d&iacute;a</font></p>
+		<p align="left">
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="noche que tanto haces"></a>noche que tanto haces<br>que 
+		imploremos el alba<br>por favor noche<br>cae</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="s&aacute;bado un respiro"></a>s&aacute;bado un respiro<br>no re&iacute;r m&aacute;s<br>
+		desde la medianoche<br>hasta la medianoche<br>no llorar</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="silencio como el que existi&oacute;"></a>silencio como el que existi&oacute;<br>
+		antes ya nunca m&aacute;s existir&aacute;<br>por el murmullo desgarrado<br>de una 
+		palabra sin pasado<br>por haber dicho demasiado no pudiendo m&aacute;s<br>
+		jurando no volver a callar<br>
+		<br><a name="viejo ir"></a>viejo ir<br>viejas paradas<br>
+		ir<br>ausente<br>ausente<br>detenerse</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens </i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4" size="2"><br><br><a name="DE: ADAPTACIONES DE CHAMFORT"></a></font>
+		<font face="Georgia" color="#C4CAD4">De: &quot;Adaptaciones de Chamfort&quot;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="canci&oacute;n"></a>canci&oacute;n<br>
+			<br>
+			Vejez es cuando a un hombre<br>
+			arrimado al fuego de la chimenea<br>
+			temblando a causa de las brujas<br>
+			para poner el cazo sobre el lecho<br>
+			y traerle su ponche<br>
+			viene ella en las cenizas<br>
+			quien amada no pudo ser vencida<br>
+			o vencida no amada<br>
+			o alguna otra aflicci&oacute;n<br>
+			viene con las cenizas<br>
+			como en esa luz vieja<br>
+			el rostro en las cenizas<br>
+			aquella vieja luz de las estrellas<br>
+			en la tierra otra vez.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="coraz&oacute;n, qu&eacute; oquedad..."></a>coraz&oacute;n, qu&eacute; oquedad,<br>y dentro 
+		cu&aacute;nta suciedad</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="dormir hasta la muerte..."></a>dormir hasta la muerte<br>nos 
+		cura siempre<br>ven a aliviar<br>esta vida este mal</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="La esperanza..."></a>&iquest;La esperanza?, un brib&oacute;n, el m&aacute;s grande 
+		embustero,<br>hasta que la perd&iacute;, no supe de la felicidad.<br>Copiar&eacute; 
+		del infierno en la puerta del cielo:<br>
+		<i>dejad toda esperanza los que entr&aacute;is.</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="Pide al todo-lo-cura..."></a>Pide al todo-lo-cura, al 
+		todo-lo-consuela pensamiento<br>solaz y salvaci&oacute;n para el dolor que os 
+		don&oacute; con esfuerzo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Jenaro Talens
+		</i><br><br>&nbsp;</font></p>
+	</blockquote>
+	<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:14:09 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:31 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,702 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Paul Verlaine</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Paul Verlaine."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Paul Verlaine. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Paul_Verlaine,poesias,poetas,poemas,traducciones,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#626262">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/verlaine.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/verlaine.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815160918" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./verlaine.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:09:18 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./verlaine.htm" title="17:11:17 May 29, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:09:18 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./verlaine.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:09:18 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./verlaine.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>153 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">25 Dec 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000001_2003:-1:000101000000_2004:-1:000101001001_2005:-1:011100000010_2006:-1:300041000215_2007:-1:643431461600_2008:-1:212522efb001_2009:-1:010000110000_2010:-1:100000001110_2011:-1:000000001111_2012:-1:000110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./VERLAINE.jpg" width="288" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./VERLAINE1.jpg" width="211" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="755" height="314">
+  <tr>
+    <td valign="bottom" colspan="3" width="747" height="1"></td>
+  </tr>
+  <tr>
+    <td width="275" height="3"></td>
+    <td width="15" height="3"></td>
+    <td width="449" height="3"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="275" height="294"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./VERLAINE2.jpg" width="212" height="300"></p>
+    </td>
+    <td width="15" height="294"></td>
+    <td valign="top" width="449" height="294"><p align="left">
+	<u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+	<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">Poeta franc&eacute;s nacido en Metz 
+	en en 1844.<br>
+	Curs&oacute; estudios en el Liceo Bonaparte de Paris, y muy pronto, atra&iacute;do por la 
+	lectura de Baudelaire, trab&oacute; amistad con los poetas del grupo parnasiano 
+	liderado por Leconte de Lisle. Con los primeros libros de poemas, <i>&quot;Poemas 
+	saturnianos&quot;&nbsp; </i>1866, <i>&quot;Fiestas galantes&quot;</i> 1869, y <i>&quot;La buena 
+	canci&oacute;n&quot;</i> 1870, se dio a conocer como poeta y empez&oacute; a ejercer gran 
+	influencia en los c&iacute;rculos literarios. Sin embargo, la vida licenciosa, el 
+	licor y una tormentosa relaci&oacute;n amorosa con Rimbaud, lo llevaron a la c&aacute;rcel 
+	donde m&aacute;s tarde se convirti&oacute; al catolicismo. En 1881, ya en libertad, y 
+	despu&eacute;s de un largo silencio, public&oacute; <i>&quot;Sabidur&iacute;a&quot;</i>, una colecci&oacute;n de 
+	poemas religiosos de gran originalidad y belleza. De &eacute;sta d&eacute;cada data gran 
+	parte de su obra po&eacute;tica, que abarca t&iacute;tulos como<i> &quot;Aventura amorosa&quot;</i> 
+	1888; <i>&quot;Paralelamente&quot;</i> 1889,&nbsp; <i>&quot;Felicidad&quot;</i> 1891, <i>
+	&quot;Eleg&iacute;as&quot;</i> y <i>&quot;Odas en su honor&quot;</i> 1893. En 1894 fue elegido en Paris 
+	&quot;Pr&iacute;ncipe de los poetas&quot;. <br>
+	Agobiado por el vicio y la enfermedad, falleci&oacute; en Paris en 1896.&nbsp;&nbsp; 
+	&copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font color="#FFFFFF"><br>
+<br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4" face="Georgia">Poemas de Paul Verlaine:</font><font size="2" color="#FFFFFF" face="Georgia"><br>
+&nbsp;</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="3" color="#FFFFFF" face="Georgia"><br>
+		</font><font color="#FFFFFF" face="Georgia">
+		<a href="./verlaine.htm#ARIA DE ANTA&Ntilde;O">Aria de anta&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#CANCI&Oacute;N DE OTO&Ntilde;O">Canci&oacute;n de oto&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#EL HOGAR Y LA L&Aacute;MPARA DE RESPLANDOR PEQUE&Ntilde;O">El hogar y la 
+		l&aacute;mpara de resplandor peque&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#GREEN">Green</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./verlaine.htm#LAS CONCHAS">Las conchas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./verlaine.htm#LASITUD">Lasitud</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#MI SUE&Ntilde;O">Mi sue&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#MUJER Y GATA">Mujer y gata</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./verlaine.htm#SERENATA">Serenata</a><font color="#DBDBDB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><font color="#FFFFFF" face="Georgia">&nbsp; </font> 
+		</font>
+		</p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./verlaine.htm#SO&Ntilde;&Eacute; CONTIGO ESTA NOCHE">So&ntilde;&eacute; contigo esta noche...</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./verlaine.htm#T&Uacute; CREES EN EL RON DEL CAF&Eacute;, EN LOS PRESAGIOS">T&uacute; crees en el 
+		ron del caf&eacute;, en los presagios...</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ARIA DE ANTA&Ntilde;O"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Aria de anta&ntilde;o</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&quot;Son joyeux, importum, d'un clavecin sonore&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Petrus Borel</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Lucen 
+		vagamente las teclas del piano<br>a la luz del suave crep&uacute;sculo rosa,<br>
+		y bajo los finos dedos de su mano</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">un aire de 
+		anta&ntilde;o canta y se querella<br>en la diminuta c&aacute;mara suntuosa<br>en donde 
+		palpitan los perfumes de Ella.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Un pl&aacute;cido 
+		ensue&ntilde;o mi esp&iacute;ritu mece<br>mientras que el teclado sus notas desgrana;<br>
+		&iquest;por qu&eacute; me acaricia, por qu&eacute; me enternece</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">esa 
+		canci&oacute;n dulce, llorosa e incierta<br>que apaciblemente muere en la 
+		ventana<br>a las tibias auras del jard&iacute;n abierta...?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Eduardo Castillo</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CANCIÓN DE OTO&Ntilde;O"></a>
+		</font><font face="Georgia" color="#C4CAD4">
+		Canci&oacute;n de oto&ntilde;o</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Los sollozos m&aacute;s hondos<br>del viol&iacute;n del oto&ntilde;o<br>son igual<br>que una 
+		herida en el alma<br>de congojas extra&ntilde;as<br>sin final.<br>
+		<br>Tembloroso recuerdo<br>esta huida del tiempo<br>que se fue.<br>
+		Evocando el pasado<br>y los d&iacute;as lejanos<br>llorar&eacute;.<br>
+		<br>Este viento se lleva<br>el ayer de tiniebla<br>que pas&oacute;,<br>una mala 
+		borrasca<br>que levanta hojarasca<br>como yo.<br>
+		</font><font size="3" color="#C4CAD4" face="Georgia"><br></font><em>
+		<font size="2" color="#C4CAD4" face="Georgia">Versi&oacute;n de Carlos Fujol<br>
+		</font><font size="3" color="#C4CAD4" face="Georgia"><br>
+		</font>
+		</em></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="EL HOGAR Y LA L&Aacute;MPARA DE RESPLANDOR PEQUE&Ntilde;O"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El hogar y la l&aacute;mpara de resplandor peque&ntilde;o...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		El hogar y la l&aacute;mpara de resplandor peque&ntilde;o;<br>la frente entre las 
+		manos en busca del ensue&ntilde;o;<br>y los ojos perdidos en los ojos amados;<br>
+		la hora del t&eacute; humeante y los libros cerrados;<br>el dulzor de sentir 
+		fenecer la velada,<br>la adorable fatiga y la espera adorada<br>de la 
+		sombra nupcial y el ensue&ntilde;o amoroso.<br>&iexcl;Oh! &iexcl;Todo esto, mi ensue&ntilde;o lo 
+		ha perseguido ansioso,<br>sin descanso, a trav&eacute;s de mil demoras vanas,<br>
+		impaciente de meses, furioso de semanas!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Luis Garnier</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="GREEN"></a></font><font face="Georgia" color="#C4CAD4">
+		Green</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Te ofrezco 
+		entre racimos, verdes gajos y rosas,<br>mi coraz&oacute;n ingenuo que a tu 
+		bondad se humilla;<br>no quieran destrozarlo tus manos cari&ntilde;osas,<br>tus 
+		ojos regocije mi d&aacute;diva sencilla.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">en el 
+		jard&iacute;n umbroso mi cuerpo fatigado<br>las auras matinales cubrieron de 
+		roc&iacute;o;<br>como en la paz de un sue&ntilde;o se deslice a tu lado<br>el fugitivo 
+		instante que reposar ans&iacute;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Cuando en 
+		mis sienes calme la divina tormenta,<br>reclinar&eacute;, jugando con tus 
+		bucles espesos,<br>sobre tu n&uacute;bil seno mi frente so&ntilde;olienta,<br>sonora 
+		con el ritmo de tus &uacute;ltimos besos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de V&iacute;ctor M. Londo&ntilde;o</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" color="#C4CAD4"><a name="LAS CONCHAS"></a>
+		Las conchas</font></em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4">Cada concha incrustada<br>
+		En la gruta donde nos amamos,<br>
+		Tiene su particularidad. <br>
+		<br>
+		Una tiene la p&uacute;rpura de nuestras almas,<br>
+		Hurtada a la sangre de nuestros corazones,<br>
+		Cuando yo ardo y t&uacute; te inflamas; <br>
+		<br>
+		Esa otra simula tus languideces<br>
+		Y tu palidez cuando, cansada,<br>
+		Me reprochas mis ojos burlones; <br>
+		<br>
+		Esa de ah&iacute; imita la gracia<br>
+		De tu oreja, y aquella otra<br>
+		Tu rosada nuca, corta y gruesa; <br>
+		<br>
+		Pero una, entre todas, es la que me turba. </font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left">
+	<font size="2" color="#C4CAD4" face="Georgia"><a name="LASITUD"></a></font>
+	<font color="#C4CAD4" face="Georgia">Lasitud</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Encantadora 
+	m&iacute;a, ten dulzura, dulzura...<br>
+    calma un poco, oh fogosa, tu fiebre pasional;<br>
+    la amante, a veces, debe tener una hora pura<br>
+    y amarnos con un suave cari&ntilde;o fraternal.</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">S&eacute; l&aacute;nguida, 
+	acaricia con tu mano mimosa;<br>
+    yo prefiero al espasmo de la hora violenta<br>
+    el suspiro y la ingenua mirada luminosa<br>
+    y una boca que me sepa besar aunque me mienta.</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Dices que se 
+	desborda tu loco coraz&oacute;n<br>
+    y que grita en tu sangre la m&aacute;s loca pasi&oacute;n;<br>
+    deja que clarinee la fiera voluptuosa.<br>
+    <br>
+    En mi pecho reclina tu cabeza galana;<br>
+    j&uacute;rame dulces cosas que olvidar&aacute;s ma&ntilde;ana<br>
+    Y hasta el alba lloremos, mi peque&ntilde;a fogosa.</font></p>
+    <p align="left"><em><font size="2" color="#C4CAD4" face="Georgia">Versi&oacute;n de 
+	Emilio Carrere</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="3" color="#C4CAD4" face="Georgia">
+		<a name="MI SUE&Ntilde;O"></a></font>
+		<font
+      face="Georgia" color="#C4CAD4">Mi sue&ntilde;o</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Sue&ntilde;o a 
+		menudo el sue&ntilde;o sencillo y penetrante<br>de una mujer ignota que adoro y 
+		que me adora,<br>que, siendo igual, es siempre distinta a cada hora<br>y 
+		que las huellas sigue de mi existencia errante.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Se vuelve 
+		transparente mi coraz&oacute;n sangrante<br>para ella, que comprende lo que mi 
+		mente a&ntilde;ora;<br>ella me enjuga el llanto del alma cuando llora<br>y lo 
+		perdona todo con su sonrisa amante.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iquest;Es morena 
+		ardorosa? &iquest;Fr&aacute;gil rubia? Lo ignoro.<br>&iquest;Su nombre? Lo imagino por lo 
+		blando y sonoro,<br>el de virgen de aquellas que adorando murieron.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Como el de 
+		las estatuas es su mirar de suave<br>y tienen los acordes de su voz, 
+		lenta y grave,<br>un eco de las voces queridas que se fueron...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Nicol&aacute;s Bayona Posada</em></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="MUJER Y GATA"></a></font><font face="Georgia" color="#C4CAD4">
+		Mujer y gata</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		La sorprend&iacute; jugando con su gata,<br>y contemplar caus&oacute;me maravilla<br>
+		la mano blanca con la blanca pata, 
+		<br>de la tarde a la luz que apenas brilla. <br><br>&iexcl;Como supo esconder 
+		la mojigata,<br>del mit&oacute;n tras la negra redecilla,<br>la punta de marfil 
+		que juega y mata, 
+		<br>con acerados tintes de cuchilla! <br><br>Melindrosa a la par por su 
+		compa&ntilde;era<br>ocultaba tambi&eacute;n la garra fiera; 
+		<br>y al rodar (abrazadas) por la alfombra, <br><br>un sonoro re&iacute;r cruz&oacute; 
+		el ambiente 
+		<br>del sal&oacute;n... y brillaron de repente <br>&iexcl;cuatro puntos de f&oacute;sforo en 
+		la sombra!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Guillermo Valencia</em></font></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center">
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="SERENATA"></a></font><font color="#C4CAD4" face="Georgia">
+		Serenata </font><font size="2" color="#C4CAD4" face="Georgia">
+		<br><br>Como la voz de un muerto que cantara 
+		<br>desde el fondo de su fosa, <br>amante, escucha subir hasta tu retiro 
+		<br>mi voz agria y falsa. <br><br>Abre tu alma y tu o&iacute;do al son <br>de 
+		mi mandolina:
+		<br>para ti he hecho, para ti, esta canci&oacute;n <br>cruel y zalamera. <br>
+		<br>Cantar&eacute; tus ojos de oro y de onix <br>puros de toda sombra, <br>
+		cantar&eacute; el Leteo de tu seno, luego el 
+		<br>de tus cabellos oscuros. <br><br>Como la voz de un muerto que 
+		cantara 
+		<br>desde el fondo de su fosa, <br>amante, escucha subir hasta tu retiro 
+		<br>mi voz agria y falsa. <br><br>Despu&eacute;s loare mucho, como conviene, 
+		<br>A esta carne bendita <br>Cuyo perfume opulento evoco <br>Las noches 
+		de insomnio. 
+		<br><br>Y para acabar cantar&eacute; el beso <br>de tu labio rojo <br>y tu 
+		dulzura al martirizarme, 
+		<br>&iexcl;Mi &aacute;ngel, mi gubia! <br><br>Abre tu alma y tu o&iacute;do al son <br>de mi 
+		mandolina:
+		<br>para ti he hecho, para ti, esta canci&oacute;n <br>cruel y zalamera. <br>
+		<br></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SO&Ntilde;&Eacute; CONTIGO ESTA NOCHE"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		So&ntilde;&eacute; contigo esta noche...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">So&ntilde;&eacute; contigo esta 
+		noche:<br>Te desfallec&iacute;as de mil maneras<br>Y murmurabas tantas cosas...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Y yo, as&iacute; como se 
+		saborea una fruta<br>Te besaba con toda la boca<br>Un poco por todas 
+		partes, monte, valle, llanura.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Era de una elasticidad,<br>
+		De un resorte verdaderamente admirable:<br>Dios... &iexcl;Qu&eacute; aliento y qu&eacute; 
+		cintura!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Y t&uacute;, querida, por tu 
+		parte,<br>Qu&eacute; cintura, qu&eacute; aliento y<br>Qu&eacute; elasticidad de gacela...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Al despertar fue, en 
+		tus brazos,<br>Pero m&aacute;s aguda y m&aacute;s perfecta,<br>&iexcl;Exactamente la misma 
+		fiesta!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de V&iacute;ctor M. Londo&ntilde;o</em></font></p>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+			<p align="center">
+			<font color="#C4CAD4">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		</blockquote>
+		<p align="left"><font color="#C4CAD4"><br>
+		</font>
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="TÚ CREES EN EL RON DEL CAF&Eacute;, EN LOS PRESAGIOS"></a></font>
+		<font face="Georgia" color="#C4CAD4">T&uacute; crees en el ron del caf&eacute;, en los 
+		presagios...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		T&uacute; crees en el ron del caf&eacute;, en los presagios,<br>y crees en el juego;<br>
+		yo no creo m&aacute;s que en tus ojos azulados.<br>T&uacute; crees en los cuentos de 
+		hadas, en los d&iacute;as<br>nefastos y en los sue&ntilde;os;<br>yo creo solamente en 
+		tus bellas mentiras.<br>T&uacute; crees en un vago y quim&eacute;rico Dios,<br>o en un 
+		santo especial,<br>y, para curar males, en alguna oraci&oacute;n.<br>Mas yo 
+		creo en las horas azules y rosadas<br>que t&uacute; a m&iacute; me procuras<br>y en 
+		voluptuosidades de hermosas noches blancas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Y tan 
+		profunda es mi fe<br>y tanto eres para m&iacute;,<br>que en todo lo que yo creo<br>
+		s&oacute;lo vivo para ti.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Luis Garnier</em></font></p>
+		<p align="left">&nbsp;</p>
+		<blockquote>
+			<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+			<blockquote><font face="Georgia" size="2" color="#8FABC2">
+				<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+				<font color="#AAC0D5">
+				<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+				<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+				</p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:09:18 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:49 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

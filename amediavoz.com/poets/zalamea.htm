@@ -1,0 +1,808 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Luis Zalamea Borda</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Luis Zalamea Borda. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Luis_Zalamea_Borda,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app14.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/zalamea.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/zalamea.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162839" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zalamea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:28:39 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./zalamea.htm" title="20:21:55 May 29, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:28:39 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zalamea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:28:39 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./zalamea.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>58 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">5 Dec 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000001_2004:-1:010101110101_2005:-1:011100010004_2006:-1:010011000200_2007:-1:010024230100_2008:-1:001111001000_2009:-1:001000110000_2010:-1:100000001110_2011:-1:000000011101_2012:-1:000010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+<br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ZALAMEA.jpg" width="464" height="41">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+&nbsp;</p>
+
+<p align="center"><em style="font-style: normal"><font face="Times New Roman" size="3" color="#A6BCCE"><br>
+</font><font face="Arial" size="2" color="#84B0D6">
+<strong>&quot;...Oh antigua capitana de mi bajel vagante<br>
+d&eacute;jame que te conduzca a la escondida rada...&quot;</strong></font></em></p>
+
+<p align="center"><font color="#84B0D6"><img border="0" src="./ZALAMEA1.jpg" width="295" height="224"></font></p>
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<span style="font-style: italic; font-weight:400">&quot;Dama escocesa arribando en 
+barco a Nueva York&quot;</span></font></p>
+<p align="center"><span style="font-weight: 400; font-style: italic">
+<font face="Arial" size="2" color="#84B0D6">Henry Bacon</font></span><font color="#84B0D6"><i><br>
+</i>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+biogr&aacute;fica</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta, 
+		traductor y novelista colombiano nacido en&nbsp;Bogot&aacute; en 1921.<br>
+		Perteneciente a una familia de gran abolengo, recibi&oacute; una esmerada 
+		educaci&oacute;n, convirti&eacute;ndose en un gran <br>
+		exponente&nbsp; de la literatura colombiana de la vieja guardia.<br>Es 
+		autor de varias novelas, ensayos y traducciones que le han merecido el 
+		reconocimiento internacional.<br>&laquo;Requiem Neoyorquino y otros poemas&raquo;, 
+		&laquo;Voces en el desierto&raquo; y &laquo;El c&iacute;rculo del alacr&aacute;n&raquo;, hacen parte <br>
+		de su exitosa obra.&nbsp; &copy;</font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><br><br>
+		<font face="Georgia" color="#8FABC2">
+		<a href="./zalamea.htm#A UNA DESPOSADA">A una desposada</a><br><br><a href="./zalamea.htm#A UNA MUJER COSMOPOLITA">
+		A una mujer cosmopolita</a><br>
+		<br><a href="./zalamea.htm#AMOR SALVAJE">Amor salvaje</a><br><br>
+		<a href="./zalamea.htm#COMO EN LOS DIAS DE JULIO">Como en los d&iacute;as de julio</a><br>
+		<br><a href="./zalamea.htm#DESPEDIDA">Despedida</a><br><br><a href="./zalamea.htm#EN EL COMIENZO">
+		En el comienzo</a><br>
+		<br><a href="./zalamea.htm#GERMINACI&Oacute;N DEL ALBA">Germinaci&oacute;n del alba</a><br><br>
+		<a href="./zalamea.htm#&Iacute;NSULA">&Iacute;nsula</a><br><br>
+		<a href="./zalamea.htm#PARA MAGGIE EN UNA TARDE DE VENTARR&Oacute;N DE MIAMI">Para Maggie en 
+		una tarde de ventarr&oacute;n en Miami</a><br><br><a href="./zalamea.htm#PARTIDA DE LA MUJER ROSADA">
+		Partida de la mujer rosada</a><br>
+		<br><a href="./zalamea.htm#REGRESO">Regreso</a><br><br>
+		<a href="./zalamea.htm#TESTAMENTO DEL HOMBRE">Testamento del hombre</a><br><br>
+		<a href="./zalamea.htm#VIAJERA">Viajera</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><br>
+	<font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice 
+		L-Z</a></font><br>
+	<font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center">
+	<font size="3" color="#A6BCCE" face="Saintgermain Sans Italic"><br></font>
+	<img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+	<blockquote>
+		<p><br>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#85A6BC">
+		<a name="A UNA DESPOSADA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		A una desposada</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&quot;T&uacute; ser&aacute;s del que te ame, del que corte<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en tu huerto lo que he sembrado yo&quot;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pablo Neruda</em><br><br>Blancas. Blancas ser&aacute;n tus bodas.<br>Las 
+		nuestras ya lo fueron de musgo, sangre, tierra,<br>inexhausto ritual, 
+		surgido desde el templo del mar.<br>La tribu. Concurrir&aacute; la tribu en 
+		filisteo corrillo.<br>Nuestros testigos fueron el bosque y el silencio,<br>
+		la savia del est&iacute;o, los duendes, el roc&iacute;o.<br>Azahares. Disimular&aacute;n tu 
+		compra los azahares.<br>No llevar&aacute;s entonces la dulce soledad del 
+		jaramago,<br>ni trepar&aacute; a las ramas el grito de tu dicha.<br>S&aacute;banas. 
+		Desesperadamente blancas ser&aacute;n tus<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		s&aacute;banas nupciales.<br>Verde y coral, se hundi&oacute; la hierba bajo tu peso 
+		ansioso.<br>Manos. Cuando la torpe mano lime, hosca, tu piel, 
+		<br>buscar&aacute;s la ternura de los d&iacute;as ya fundidos. <br>Muerta. Muerta 
+		estar&aacute; en ti la ternura que mi semilla dio.<br>Y t&uacute;. T&uacute; tambi&eacute;n habr&aacute;s 
+		muerto en el d&iacute;a de tu boda.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#84B0D6"><a name="A UNA MUJER COSMOPOLITA"></a></font>
+		<font face="Georgia" color="#84B0D6">A una mujer cosmopolita</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Nueva, impoluta, pura,<br>compa&ntilde;era de ma&ntilde;aneras risas,<br>lejana 
+		madre-ni&ntilde;a, fuente de la ternura,<br>ancla de nuestras l&aacute;grimas y mutuo 
+		desvar&iacute;o.<br>As&iacute; quisiera verte.<br>Mitad ardilla en medio de los 
+		sue&ntilde;os,<br>hembra fundamental, valerosa argonauta,<br>&iquest;cu&aacute;ntas veces 
+		llevaste la tristeza a calles 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cenicientas<br>fundi&eacute;ndote en la noche con la ciudad de llanto?<br>
+		Volver, volver a ti, quisiera.<br>Encendida matriz de rebeldes 
+		destellos,<br>cuajada soledad que ni los gritos rompen,<br>pir&aacute;mide 
+		aislada, taciturna y urbana.<br>Ante tu recia rosa se estrella la 
+		nostalgia.<br>Mas as&iacute; no te quiero.<br>Quisiera verte nueva, lavada por 
+		el alba.<br>Limpia tu alma de holl&iacute;n cosmopolita,<br>como en la ma&ntilde;ana 
+		verde que se pierde en 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el tr&oacute;pico,<br>donde el amor ya juega y la ternura nace.<br>As&iacute;, as&iacute; 
+		quisiera verte.<br>Oh antigua capitana de mi bajel vagante<br>d&eacute;jame que 
+		te conduzca a la escondida rada.<br>Oh ni&ntilde;a ardilla que una vez fuiste 
+		m&iacute;a:<br>d&eacute;jame que cure tus heridas noct&aacute;mbulas.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Y entonces, quiz&aacute;s, una 
+		vez m&aacute;s te vea<br>-tus antiguas formas vuelvan poco a poco a mis 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		manos-<br>nueva, impoluta, pura... colmada de esperanza.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="AMOR SALVAJE">
+		</a>Amor salvaje</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		&iexcl;Ah, qu&eacute; nidada de caricias salvajes descubr&iacute;!<br>Guardadas en tu 
+		bosque, desde el alba del mundo,<br>esperaban la mano que llegara a 
+		arrancarlas,<br>la mirada que las volcara sobre tus venas todas,<br>el 
+		temblor que iniciara tu espasmo y tu locura.<br>
+		<br>Vaiv&eacute;n en tus pupilas despertadas,<br>ojos que danzan al ritmo de 
+		los hombros,<br>larga piel en su ra&iacute;z estremecida,<br>la ansiosa 
+		estalactita del deseo,<br>caracol que se incrusta en las orejas;<br>tus 
+		ojos s&uacute;bitos, terribles. &iexcl;Ah tus ojos!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y locura, embeleso y m&aacute;s locura.<br><br>Pantera que se escapa, 
+		cervatilla rendida,<br>la sierpe envolvente de tus brazos,<br>abrazo de 
+		mil lianas zapadoras,<br>largo c&eacute;sped donde los senos nacen,<br>ensenada 
+		candente de los muslos,<br>playa con la blanca tersura de tu vientre.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y locura, ternura y m&aacute;s locura.<br><br>Cadencia resonante de m&uacute;sicas 
+		selv&aacute;ticas,<br>tambor noctambulario suena sobre tu espalda,<br>la flauta 
+		imperceptible del suspiro,<br>largos gemidos de destrozados labios,<br>y 
+		el grito sempiterno, tan guardado,<br>al fin la noche rompe en agudos 
+		pedazos.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y locura, cadencia y m&aacute;s locura.<br><br>Cavernas, grutas, lagos, musgos 
+		leves;<br>hongos colgantes, zarzas en tu boca;<br>frutos ignotos, zumos 
+		descubiertos;<br>mieses en la alborada, sed que ya se apaga;<br>venas 
+		que se rebelan, sangre libertada;<br>yegua ululante, jinete que espolea.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y locura, locura y m&aacute;s locura.<br><br>&iexcl;Ah qu&eacute; nidada de caricias 
+		salvajes descubr&iacute;!<br>&iexcl;Y qu&eacute; voces intactas en tus pr&iacute;stinos fondos!<br>
+		&iexcl;Y qu&eacute; flores que se abren al tacto de mis manosl<br>Salvaje m&iacute;a: &iexcl;&aacute;mame 
+		as&iacute;, envu&eacute;lveme en tu brumal<br>&iexcl;Y bebamos del manantial de esta locura 
+		primitiva!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="COMO EN LOS DIAS DE JULIO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Como en los d&iacute;as de julio</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&quot;Siempre es el mar donde mejor se quiere&quot;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Andr&eacute;s Eloy Blanco</em><br><br>No quiero o&iacute;r tu voz,<br>ni adivinar tu 
+		angustia<br>desde el destierro,<br>ni revivir en momentos de celo o de 
+		locura<br>aquella nuestra entrecortada despedida.<br>(Las voces de la 
+		noche eran nuevas, sutiles;<br>tus amplios pechos se encogieron, 
+		tremendos en su lucha,<br>buscando encarcelarse en la tiniebla tibia. )<br>
+		<br>Ella, la despedida, no era marina como en lejano d&iacute;a,<br>sino 
+		terrestre, final, definitiva;<br>molde de soledad, herida, grieta, tajo 
+		de nuestras vidas.<br>Y as&iacute; quiero que sea.<br>
+		<br>(Tu imagen est&aacute; ya condenada al limbo de las horas perdidas<br>en la 
+		inmensidad de un mar que se despierta, at&oacute;nito,<br>de un sue&ntilde;o de 
+		ondinas, madr&eacute;poras en flor y barcos asesinos.)<br>No quiero reflejar mi 
+		triste mirada en tu recuerdo.<br>Quiero olvidarte toda, poro a poro,<br>
+		ex&aacute;nime, jadeante, casi muerta sobre la tierra plena<br>que conjuga el 
+		amor &iacute;gneo de la euforia volc&aacute;nica.<br>
+		<br>(En la lejan&iacute;a mueren en coro, de tedio,<br>con dignidad crust&aacute;cea, 
+		los p&aacute;lidos cangrejos,<br>y la tarde se disfraza de buzo.)<br>
+		<br>En mi memoria ser&aacute;s desde hoy,<br>como en los d&iacute;as de julio,<br>un 
+		sudor hecho hembra<br>al final del camino.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="DESPEDIDA">
+		</a></font><font face="Georgia" color="#84B0D6">Despedida</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&quot;...es tan corto el amor<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y es tan largo el olvido... &quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pablo Neruda</em><br><br>Te fuiste.<br>Como se va la primavera.<br>Como 
+		se van todas las cosas.<br>Como se pierden en el mar las velas.<br>Y yo 
+		me qued&eacute; solo,<br>con las u&ntilde;as clavadas en la arena,<br>viendo como se 
+		alejan las mareas.<br>
+		<br>Te fuiste.<br>Ni tu nombre recuerdo,<br>ni el color de tus ojos.<br>
+		S&oacute;lo que por las tardes le&iacute;amos a Neruda;<br>a&uacute;n me llega el timbre de 
+		tu voz profunda,<br>y el alarido de tu dicha, suelto,<br>huyendo a 
+		medianoche por la playa.<br>
+		<br>Te fuiste.<br>Irremediablemente huiste de mi vida.<br>Fue el oc&eacute;ano 
+		tu c&oacute;mplice fortuito:<br>zarpaste al borde de un balandro cualquiera<br>
+		una tarde cualquiera.<br>Yo me qued&eacute; sobre la playa dilatada,<br>
+		salpicado de ocaso, solitario en la arena.<br>Te fuiste.<br>Nos hab&iacute;amos 
+		amado con la furia de los 25 a&ntilde;os.<br>Todo fue cerca al mar:<br>besos de 
+		sal y yodo,<br>mordiscos de medusa enloquecida,<br>saltos de delfines en 
+		celo,<br>abrazos hasta brotar la sangre marinera.<br>
+		<br>Te fuiste.<br>Como se fueron tambi&eacute;n la rada familiar,<br>las velas 
+		madrugadoras de los camaroneros,<br>el lecho duro de nuestros combates 
+		clandestinos.<br>Hasta el mar cambi&oacute; de rostro y de fragancia;<br>la 
+		codicia del hombre corrompi&oacute; las aguas.<br>El aire mismo se llen&oacute; de 
+		venenos y de miasmas.<br>
+		<br>Te fuiste.<br>Como se van todas las cosas.<br>Y yo me qued&eacute; solo,<br>
+		con las u&ntilde;as clavadas en la arena,<br>viendo como se alejaban las 
+		mareas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="EN EL COMIENZO"></a>En el comienzo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Eres el comienzo, la luz y la esperanza.<br>Antes de ti era la nada y no 
+		hab&iacute;an nacido las palomas.<br>Qu&eacute; angustioso vac&iacute;o el vivir sin saberte,<br>
+		aunque mis ojos adivinaran tu mirada l&aacute;nguida<br>y fueran construyendo 
+		mis manos tu presencia,<br>inventando mis sue&ntilde;os piel, risa y esencia de 
+		tus besos.<br>
+		<br>Sin ti andaba yo al garete, en un mar de borrasca,<br>cu&aacute;n alejado 
+		de todo puerto conocido.<br>Y el mar tambi&eacute;n era la nada.<br>Tendr&iacute;as 
+		que llegar a darle un d&iacute;a<br>el verdor de tus ojos, la sal de tus 
+		pupilas,<br>un hontanar de l&aacute;grimas,<br>y la suave madr&eacute;pora que crece 
+		entre tus labios.<br>
+		<br>Sin ti mi voz no ten&iacute;a forma y su eco faltaba,<br>era el lloro de un 
+		ni&ntilde;o que se pierde.<br>T&uacute; le entregaste acento y le fijaste rumbo.<br>Y 
+		entonces pude cantarte toda, con la voz que me diste.<br>
+		<br>Antes de ti, la nada, la pegajosa angustia, la voz muda.<br>Mas hoy 
+		comienza a respirar mi mundo,<br>nutrido con tu luz, fincado en la 
+		esperanza.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="GERMINACIÓN DEL ALBA"></a>Germinaci&oacute;n del alba</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Due&ntilde;a de los crep&uacute;sculos,<br>t&uacute; en m&iacute; todo lo sabes y me has visto 
+		llorar.<br>conoces mi congoja cuando la tarde llega<br>meciendo entre su 
+		eclipse mi diaria solitud.<br>Es el instante de la partida, la fuga del 
+		poniente<br>que t&uacute; ya has compartido<br>en mi zozobra viva, en mi sed de 
+		vagar.<br>
+		<br>Ah ni&ntilde;a que sollozas entre mis brazos tr&eacute;mulos,<br>tu miras a la 
+		tarde como se mira el hijo,<br>como se mira el pan.<br>Y me miras a m&iacute; 
+		desde tu inmediata lejan&iacute;a<br>como se mira el fuego, como se mira el 
+		mar.<br>(Mirada incierta, en espera,<br>como trigo sin pilar ante el 
+		molino.)<br>
+		<br>Se&ntilde;ora del ocaso,<br>vuelve hacia m&iacute; tus ojos<br>a la hora tremenda 
+		del cipr&eacute;s,<br>en que la luz se alarga, en que todo se va.<br>Dime con 
+		tu mirada que t&uacute; ya no me dejas,<br>que est&aacute;s siempre conmigo<br>cuando 
+		los potros de la noche o&iacute;mos cabalgar.<br>
+		<br>Y t&uacute; estar&aacute;s aqu&iacute;.<br>No vivir&eacute; en cada atardecer mi escape<br>ni 
+		ahogar&aacute; entonces las sombras mi cantar.<br>Est&aacute;s aqu&iacute;, realidad y mujer,<br>
+		y eres en la penumbra<br>el sosiego anhelado,<br>el faro vislumbrado,<br>
+		el ancla suspensa entre la luz.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;</font></p>
+	</blockquote>
+	<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" color="#84B0D6"><a name="&Iacute;NSULA"></a>&Iacute;nsula</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ay, many flowering isles lie<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		in the waters of wide agony<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Shelley</em><br><br>Mujer m&iacute;a:<br>quiero que t&uacute; y yo limitemos<br>a una 
+		isla,<br>unidas, nuestras dos vidas<br>para descubrir las razones<br>de 
+		Dios<br>dentro de sus confines,<br>para cantar nuestra pasi&oacute;n<br>en cada 
+		cresta<br>del limpio oleaje matutino<br>y dejar en cada promontorio<br>
+		la huella de una caricia apresurada.<br>Para que nuestro amor<br>tenga 
+		en el mar una muralla<br>contra los hombres,<br>contra todos sus odios,<br>
+		y su envidia.<br>
+		<br>Quiero que conozcas<br>y llegues a hacer tuyas<br>las cosas b&aacute;sicas,<br>
+		de todo adorno limpias<br>y de toda doblez ya cercenadas:<br>el mar, la 
+		tierra, el hambre,<br>el sexo, la muerte y el dolor.<br>Yo s&eacute; que 
+		siempre has vivido<br>en la penumbra de las grandes ciudades,<br>pero 
+		tienes el coraz&oacute;n lleno de espigas<br>y colmadas tus venas<br>de una 
+		ansiedad buc&oacute;lica.<br>Quiero que te ense&ntilde;en<br>su canto los alisios<br>y 
+		que te enamores del mar.<br>Quiero que dejes a un lado las sandalias,<br>
+		que tus pies desnudos a toda hora sientan<br>el roce de la tierra,<br>el 
+		latigazo de los guijarros ocultos en la playa,<br>la caricia empalagosa 
+		de las algas<br>escapadas del mar a las arenas.<br>
+		<br>Te har&eacute; conocer todo lo que es el agua:<br>el agua masculina del 
+		mar,<br>violando escollos.<br>El agua que deforma el litoral<br>con su 
+		tenaz abrazo.<br>Agua feraz flotante,<br>salpicada de flora, de 
+		residuos.<br>Agua toda mar, toda sal, toda crust&aacute;ceo.<br>Tambi&eacute;n 
+		conocer&aacute;s, como tu &uacute;nica doncella,<br>el agua hembra de los arroyuelos<br>
+		y en su mirada contemplar&aacute;s tu rostro,<br>junto a su fondo mismo,<br>y 
+		sentir&aacute;s su confidencia de silencio.<br>Tambi&eacute;n hay agua que brotar&aacute;<br>
+		del manantial de tus ojos,<br>bajo la leve insurrecci&oacute;n de tus pesta&ntilde;as,<br>
+		cuando sientas que los l&iacute;mites de tu cuerpo<br>no pueden sujetar ya todo 
+		tu amor<br>y quieras explotar como una fuente,<br>de agua tambi&eacute;n,<br>y 
+		de agua arrolladora.<br>En la soledad; al acercarse mi presencia,<br>
+		percibir&aacute;s el terciopelo del agua miel<br>que dilata tus p&eacute;talos 
+		completos.<br>Y, despu&eacute;s, la catarata de las aguas madres 
+		<br>al romper tus contornos la huida de mi hijo.<br><br>Aprenderemos la 
+		lengua vegetal<br>para olvidar la zozobra del idioma de los hombres.<br>
+		<br>Lanzaremos voces a los manglares<br>para hablar con las lianas en su 
+		fuga,<br>enterneci&eacute;ndonos ante el senil ronquido<br>de los ancianos de 
+		la selva,<br>zapados por el abrazo de orqu&iacute;deas concubinas.<br>No 
+		tendr&aacute;n entonces, en el alba,<br>secreto alguno el tamboril discurso<br>
+		de hongos parlanchines,<br>ni nos ser&aacute; extra&ntilde;o el quejido angustioso<br>
+		del &aacute;rbol de la cera al fustigarlo el vendaval.<br>
+		<br>Nos alimentaremos de las cosas del mar,<br>de los frutos moluscos 
+		que hierven en la arena,<br>y exprimiremos el jugo de las palmas<br>para 
+		acosar la sed y endulzar las veladas.<br>De luz y mar embriagaremos 
+		nuestros d&iacute;as,<br>en duales festivales dionis&iacute;acos,<br>respirando 
+		esencial libertad,<br>libertad libre de toda angustia,<br>de la 
+		civilizaci&oacute;n ya para siempre separada.<br>&quot;&Eacute;ste es el universo&quot;, te dir&eacute;<br>
+		mostr&aacute;ndote un grano de arena.<br>En sus contornos de lechosa perla<br>
+		ver&aacute;s el reflejo de movimientos c&oacute;smicos,<br>conocer&aacute;s las nebulosas que 
+		en voluta se escapan<br>y aprisionar&aacute;s en tu mirada<br>el lento paso de 
+		las constelaciones.<br>&quot;&Eacute;sta es la vida plena&quot;, te dir&eacute;<br>ense&ntilde;&aacute;ndote 
+		una hoja de higuera.<br>En los capilares donde corre la savia, 
+		juguetona,<br>mezcl&aacute;ndose con el obsequio del sol,<br>observar&aacute;s la 
+		maravilla de lo eterno<br>y en sus distintos verdes fondear&aacute;s en la 
+		laguna<br>de la vida,<br>anclada al recio atol&oacute;n<br>de Dios.<br>
+		<br>En esa isla quiero que t&uacute; y yo,<br>en esencial conjugaci&oacute;n,<br>
+		asistamos al paso imperceptible de los d&iacute;as,<br>en mezcla de azul, miel, 
+		cielo, agua y arena,<br>hasta que surja, tambi&eacute;n del mar,<br>la muerte,<br>
+		que habr&aacute; de ser un c&oacute;mplice en la huida.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="PARA MAGGIE EN UNA TARDE DE VENTARRÓN DE MIAMI"></a>Para Maggie 
+		en una tarde de ventarr&oacute;n de Miami </font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<br><br>Desflorada por la tormenta<br>entregada a un viento<br>de 
+		rafaguillas verdes<br>y s&uacute;bitos berridos<br>planea una paloma<br>y yo 
+		sin ser son&aacute;mbulo<br>floto en medio<br>de azulinas ondas<br>que destilan 
+		cloro<br>pedaleando<br>timoneando<br>mi ahogada bicicleta<br>a la deriva<br>
+		en la inerme marea<br>del desencanto<br>mi voz sellada<br>en espera<br>
+		de lo inevitable.<br>Me invade la tibieza<br>las venas se me encienden<br>
+		las aves regresan al nido<br>las lagartijas huyen<br>y t&uacute; tambi&eacute;n<br>
+		corres hacia el ocaso<br>que igual a la alborada<br>a los dos escatima<br>
+		una respuesta.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PARTIDA DE LA MUJER ROSADA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Partida de la mujer rosada</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Guillermo Pay&aacute;n Archer</em></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Te acuerdas, acaso, de 
+		los barcos cargueros,<br>que arrimaban sus lomos andrajosos al muelle,<br>
+		para escuchar m&aacute;s cerca el quejido terrestre,<br>en noches en que 
+		herv&iacute;an estrellas sobre la soledad?<br>
+		<br>&iquest;De esos barcos cansados, h&iacute;spidos de m&aacute;stiles,<br>sus cuadernas 
+		plagadas de lapas sempiternas,<br>su fondo un sol de &oacute;xido, alarido del 
+		hierro,<br>y en el puente un coraz&oacute;n hastiado para marcar el rumbo?<br>
+		<br>&iquest;Recuerdas, tambi&eacute;n acaso, c&oacute;mo en noches de juerga,<br>hu&iacute;amos de 
+		la c&aacute;lida &oacute;rbita, a una hora imprecisa,<br>so&ntilde;ando zarpar en esos fondos 
+		de alma calafateada,<br>para dejarlo todo en la indecisa estela de las 
+		quebradas h&eacute;lices?<br>
+		<br>Nunca huimos de veras.<br>Mientras ve&iacute;amos la estela de nuestro 
+		barco naufragar,<br>c&oacute;mo odiamos las cadenas que a tierra nos ataban,<br>
+		e invocamos una vez m&aacute;s la libertad del mar.<br>
+		<br>Mas hoy zarp&eacute;. S&iacute;, Guillermo. Zarp&eacute;.<br>No me fui con el loco 
+		capit&aacute;n de un barco matr&iacute;cula de Dubl&iacute;n<br>Ni me contrat&oacute; el tuerto 
+		contramaestre del tanquero Amar&uacute;<br>Ni quise viajar de poliz&oacute;n, rumbo a 
+		nuestro amado Dar-el-Salaam<br>
+		<br>La mitad m&iacute;a se desprendi&oacute; de golpe,<br>y zarp&oacute;, muy ce&ntilde;ida, a una 
+		mujer rosada<br>de ojos claros de isle&ntilde;a sobre su rosa piel.<br>Y ambos 
+		vimos desde la popa la estela en su tremenda desnudez<br><br>Toda rosada 
+		ella, vikinga de tez color bermejo,<br>de olor a nuezmoscada, cabellos 
+		en cascada,<br>de senos amaranto con cr&aacute;teres de aloque.<br>Su carne 
+		torn&aacute;base granate y su temblor reinaba.<br>
+		<br>Esta fue, pues Guillermo, la partida de mi mitad marina.<br>Se fue 
+		anidando, suave, en su rosado fondo y su rosada miel.<br>Atr&aacute;s ya no 
+		hab&iacute;a nada: quiz&aacute;s mi ser terrestre.<br>Adelante, el mar era rosado y mi 
+		canto tambi&eacute;n.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="REGRESO"></a></font>
+		<font face="Georgia" color="#84B0D6">Regreso</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Acabas de llegar.<br>Cruzaste, en solitaria caravana, un desierto de 
+		s&aacute;banas,<br>las venas en sus m&uacute;ltiples ramas abrazando.<br>Atr&aacute;s est&aacute;n 
+		quedando los montes calcinados;<br>la saeta que rompe la ventana del 
+		yodo;<br>la larga enredadera de los nervios;<br>el muelle negro donde 
+		los sue&ntilde;os de la noche zarpan.<br>y ya no escuchas las voces del mundo 
+		de fantasmas.<br>
+		<br>Est&aacute;s radiante, nueva, completa, y hasta un poco celeste,<br>al 
+		emerger del reino prohibido de las sombras.<br>Est&aacute;s triunfante, 
+		di&aacute;fana, infantil y hasta un poco felina. 
+		<br>Lo fosco de la noche en ti fue derriti&eacute;ndose,<br>olvidada la pena 
+		aguda de tu entra&ntilde;a.<br>
+		<br>Surge la &uacute;nica voz, con la esperanza;<br>la cortina incitante que 
+		descorre el ma&ntilde;ana,<br>el fruto nuevo del dolor, tan bienamado,<br>y la 
+		centella poderosa de tu grito,<br>
+		<br>no ya de soledad ni de pavor ni hielo:<br>de entera dicha sin bald&oacute;n 
+		ni fr&iacute;o.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Hasta encontrarte 
+		inc&oacute;lume,<br>esp&eacute;rame, triunfante, a la otra orilla del dolor.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="TESTAMENTO DEL HOMBRE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Testamento del hombre</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Os&iacute;as Plotnicoff</em><br>
+		<br>Oh Dios: me colmaste de tu &aacute;rbol derribado,<br>llevaste hasta mi 
+		barro la fruta de la risa,<br>y me soltaste, raudo y feliz, por tu 
+		campi&ntilde;a<br>con la lanza del canto y mi locura plena.<br>Y hoy vengo a 
+		darte cuenta con mi voz encendida,<br>cabizbajo quiz&aacute;s, pero alegre, &iexcl;oh 
+		alegre!<br>Sin que nada postrer brote de mis palabras<br>porque en la 
+		poes&iacute;a no hay tr&aacute;nsito ni l&iacute;mite.<br>
+		<br>Desde la sed al tedio he recorrido:<br>oh sed de la ni&ntilde;ez, 
+		inaplazable y ronca<br>que calmaban las aguas con sabores a helecho,<br>
+		venidas de los p&aacute;ramos poblados de leyenda.<br>Y la pulpa del tedio que 
+		a veces acarician<br>las yemas de los dedos indecisos<br>al son de las 
+		hamacas y las cavilaciones<br>bajo el signo brumoso del Tr&oacute;pico de 
+		C&aacute;ncer.<br>El hambre y la mujer tambi&eacute;n me adjudicaste.<br>Ecuaciones 
+		exactas, mas la clave ignor&eacute;.<br>Mapas de hueso y carne, con fronteras 
+		de sangre,<br>explor&eacute; sus meandros en ansiosa piragua,<br>levantadas muy 
+		altas las velas del deseo.<br>
+		<br>Evoco la mujer y conozco tu mano.<br>He all&iacute; tu comarca inigualada,<br>
+		oh suave sortilegio del que quise<br>embriagarme hasta agotar mi piel y 
+		mis est&iacute;os.<br>De ellas, un d&iacute;a olvidado present&iacute;<br>el doble secreto de 
+		la vida:<br>cuando ya de pasi&oacute;n estaba exhausto,<br>me legaron con su 
+		entrega la ternura y el alba.<br>Pero m&aacute;s que las caricias conocidas,<br>
+		am&eacute; sobre ellas todas y hoy recuerdo, 
+		<br>cualquier desconocida que al cruzarse conmigo,<br>pareciera llevar 
+		el peso milenario de su sexo en las ojeras.<br>
+		<br>Oh Dios, creador de la mujer y de todas las cosas:<br>esta ma&ntilde;ana me 
+		mir&eacute; en el espacio capturado -<br>el viejo espejo tra&iacute;do de las islas -<br>
+		y nada en mi rostro era lo mismo.<br>Estaba liberado, suelto, rota la 
+		reja de los p&aacute;rpados.<br>Invadida mi piel por eleg&iacute;as,<br>el rosa de los 
+		soles difuso entre la barba.<br>Y sent&iacute; una premonici&oacute;n ya conocida:<br>
+		preludio del m&aacute;s grande y azul de los crep&uacute;sculos.<br>No era mi propio 
+		ser,<br>sino el rey de las corrientes y los vientos,<br>gran visir de 
+		los m&eacute;danos y arenas,<br>aqu&iacute; en mi soberana soledad,<br>el &uacute;nico legado 
+		material de mi existencia:<br>un pedazo de playa sempiterna,<br>la 
+		sombra amiga de cuatro cocoteros<br>y un almendro sembrado por los 
+		p&aacute;jaros.<br>Oh reino m&iacute;o, acuosa l&iacute;nea vaga<br>con sus ej&eacute;rcitos de olas<br>
+		y su frontera de delfines.<br>All&iacute; cabe la gloria entera en un pu&ntilde;o 
+		cerrado.<br>Estoy listo para partir cuando t&uacute; quieras.<br>He legado mis 
+		ansias y mi sed.<br>Tambi&eacute;n mi hambre y mi piel.<br>He hecho testamento 
+		de recuerdos,<br>archivo de caricias,<br>registro de miradas,<br>
+		inventario de celos y de olvido,<br>y en cada p&aacute;gina invisible<br>est&aacute; 
+		dormida una mujer<br>y reina el sue&ntilde;o.<br>Hecha mi paz con ellas y con 
+		todos,<br>al acudir en la tarde a tu llamada quedo,<br>me pregunto si el 
+		&uacute;nico pecado 
+		<br>que no perdona Dios es la ternura.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="VIAJERA"></a></font>
+		<font face="Georgia" color="#84B0D6">Viajera</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Duendecilla encantada, surgida de los bosques y el ayer:<br>me 
+		invitas a la fuga. Tenemos que viajar. No importa a d&oacute;nde sea.<br>En el 
+		vagar hay ansiedad, a veces miel... y siempre espera.<br>Tuya la miel y 
+		la ansiedad. Y yo la espera y el temblor.<br>
+		<br>D&eacute;jame que sue&ntilde;e, duendecilla: llegar&iacute;as de inc&oacute;gnita viajera<br>
+		como surgida de alg&uacute;n rinc&oacute;n de ala transparente<br>con tu pasaporte 
+		sellado de carm&iacute;n, huellas de soledad... y ojeras.<br>Y tu equipaje de 
+		pesadumbre y caricias in&eacute;ditas.<br>
+		<br>Si pudieras viajar hasta m&iacute; de poliz&oacute;n entre los vientos,<br>te 
+		esperar&iacute;a, siempre te esperar&iacute;a con las venas alzadas,<br>al final de 
+		alg&uacute;n banco prohibido de ostras celestiales<br>como hu&eacute;rfano hurac&aacute;n en 
+		busca de su v&eacute;rtice y su aya.<br>Llegar&iacute;as vestida con el salobre raso 
+		de tus poros,<br>a proa el agresivo andamio de tus senos&nbsp; (&iexcl;Ah 
+		suave territoriol)<br>mientras que del andar de tus caderas somnolientas<br>
+		desearan los querubes imitar sones, h&eacute;lices y piruetas.<br>
+		<br>Viajera eterna. Inconforme quelonia. Luci&eacute;rnaga andariega.<br>Te 
+		esperar&eacute;, siempre te esperar&eacute; con el ancla levada.<br>All&iacute;, en la bah&iacute;a 
+		escondida de nuestro firmamento.<br>No me dejes tan solo ni tardes en tu 
+		viaje. Ven a nuestra nube parcelada.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<blockquote>
+			<blockquote><font face="Georgia" size="2" color="#8FABC2">
+				<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+				<font color="#AAC0D5">
+				<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+				<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+				</p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:28:39 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:27:21 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

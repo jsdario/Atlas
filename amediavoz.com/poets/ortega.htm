@@ -1,0 +1,829 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Esperanza Ortega</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Esperanza Ortega. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Esperanza_Ortega,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#A0BAB5" vlink="#A0BAB5" alink="#A0BAB5">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app19.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/ortega.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/ortega.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815170311" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ortega.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:03:11 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./ortega.htm" title="3:59:46 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:03:11 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ortega.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:03:11 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./ortega.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>33 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">7 Jun 07 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000002010100_2008:-1:200101021000_2009:-1:001000100000_2010:-1:100000001110_2011:-1:000000100130_2012:-1:101010011000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ORTEGA.jpg" width="403" height="51">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;</em>Todo espera, menos aquel perfume de las 
+rosas<br>
+rendidas a la sombra de tu mano<em style="font-style: normal">...&quot;</em></font></p>
+<p align="center"><font color="#9BC9BB"><img border="0" src="./ORTEGA1.jpg" width="300" height="236"></font></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#9BC9BB">&quot;The Artist's Sister Emilie&quot;</font></em></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#9BC9BB">Adolph von Menzel</font></em></p>
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#9BC9BB"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+		ensayista y editora espa&ntilde;ola nacida en Palencia en 1953.<br>Es 
+		licenciada en Filolog&iacute;a Rom&aacute;nica. Reside desde muy joven en Valladolid 
+		donde desarrolla una intensa 
+		<br>
+		actividad literaria y period&iacute;stica.<br>
+		Como poeta ha publicado <i>Alg&uacute;n d&iacute;a</i> en 1988, <i>Mudanza</i> en 
+		1994, <i>Hilo solo</i>, &quot;Premio Gil de Biedma&quot; en 1995, <i>
+		<br>
+		Lo que va a ser de ti</i> en 1999,&nbsp; y <i>Como si fuera una palabra</i> 
+		en 2002.<br>
+		Es autora tambi&eacute;n de numerosos trabajos, ediciones cr&iacute;ticas y antolog&iacute;as 
+		de car&aacute;cter pedag&oacute;gico, entre los que <br>
+		se encuentran: <i>El ba&uacute;l volador</i>, premio &quot;Giner de los R&iacute;os&quot; en 
+		1986, <i>Antolog&iacute;a de la generaci&oacute;n del 27</i> 
+		en 1987, <i><br>
+		El due&ntilde;o de la casa</i>, &quot;Premio Jauja de Cuentos&quot; en 1994,&nbsp;
+		<i>Verso y prosa de Juan Ram&oacute;n Jim&eacute;nez</i> en 1991,&nbsp;&nbsp; <br>
+		<i>El Romancero gitano de Garc&iacute;a Lorca</i> en 1997, <i>Siempre y nunca</i> 
+		en 2003, antolog&iacute;a de la obra de Francisco Pino, <br>
+		y en el a&ntilde;o 2003 una biograf&iacute;a<i>
+		</i>novelada<i>&nbsp; sobre Garcilaso de la Vega</i>. &copy;</font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center">
+<img src="./PERDUBARRA.jpg" width="77" height="9"
+  alt="PERDUBARRA.jpg (1765 bytes)"></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#A0BAB5">
+		<a
+      href="./ortega.htm#A UN LADO EST&Aacute; LA SELVA DE LOS TIGRES...">A un lado est&aacute; la selva 
+		de los tigres...</a></font><font face="Georgia" color="#9BC9BB"><br><br></font>
+		<font face="Georgia" color="#A0BAB5">
+		<a href="./ortega.htm#AHORA S&Oacute;LO TIENES UNA VIDA...">Ahora s&oacute;lo tienes una vida...</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font>
+		<a href="./ortega.htm#A&Uacute;N NO HAB&Iacute;A CAMINO...">A&uacute;n no hab&iacute;a camino...</a> 
+		<font face="Georgia" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></font>
+		<font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<font face="Georgia" color="#A0BAB5">
+		<a href="./ortega.htm#BAILAR...">Bailar...</a><br>
+		<br>
+		<a href="./ortega.htm#COMO UNA L&Aacute;GRIMA...">Como una l&aacute;grima...</a><font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<a href="./ortega.htm#CON EL AGUA HASTA EL CUELLO...">Con el agua hasta el cuello...</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#CON LOS OJOS CERRADOS...">Con los ojos cerrados...</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#CU&Aacute;NTO SUFRE EL AMOR...">Cu&aacute;nto sufre el amor...</a></font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a href="./ortega.htm#EN LA HORA DESNUDA">En la hora desnuda</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</font>
+		<font face="Georgia" color="#A0BAB5">
+		<a href="./ortega.htm#EN UN &Aacute;RBOL ESCRITO">En un &aacute;rbol escrito</a><font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<a href="./ortega.htm#ES DE LOS QUE LA PIERDEN...">Es de los que la pierden...</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#LABOR ATENTA DE HILO SOLO...">Labor atenta de hilo 
+		solo...</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#ME PREGUNTO...">Me pregunto...</a><font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<a href="./ortega.htm#NADIE HA VERTIDO...">Nadie ha vertido...</a><font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<a href="./ortega.htm#PERFUME">Perfume</a><font face="Georgia" color="#9BC9BB"><br><br></font><a href="./ortega.htm#PRIMERAS LUCES">
+		Primeras luces</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#UN SEGUNDO DE LUZ Y PARA&Iacute;SO">Un segundo de luz y 
+		para&iacute;so</a><font face="Georgia" color="#9BC9BB"><br>
+		<br></font><a href="./ortega.htm#VEO PASAR LOS HOMBRES LOS MUCHACHOS ALGUNOS...">Veo 
+		pasar los hombres los muchachos algunos...</a><font face="Georgia" color="#9BC9BB"><br><br></font><a href="./ortega.htm#VOCES...">
+		Voces...</a><font face="Georgia" color="#9BC9BB"><br><br>
+		</font>
+		<a href="./ortega.htm#Y C&Oacute;MO AMARNOS YA...">Y c&oacute;mo amarnos ya...</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#A0BAB5"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script></font><font face="Georgia" size="3" color="#A0BAB5"></font>
+		<font
+      face="Georgia" size="3" color="#89ABA2"><a HREF="javascript:mailpage()">
+		Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;&nbsp;&nbsp;</font><font face="Georgia" size="3"
+      color="#A0BAB5"> </font><font face="Georgia" size="2" color="#A0BAB5"><br>
+		<br></font></p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="2" color="#A0BAB5"><br>
+	<img src="./PERDUBARRA.jpg" width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#95B3AA">
+		<a
+      name="A UN LADO EST&Aacute; LA SELVA DE LOS TIGRES..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		A un lado est&aacute; la selva de los tigres...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		A un lado est&aacute; la selva de los tigres<br>al otro<br>las langostas<br>
+		<br>debajo te estremece<br>el foso m&aacute;s cruel<br>el de los cocodrilos<br>
+		un mont&iacute;culo triste de palabras<br>nacidas a deshora<br>por encima te 
+		espera<br>
+		<br>y en el centro est&aacute;s t&uacute;<br>-as&oacute;mate<br>&eacute;sa eres-<br>detenida en la 
+		c&aacute;mara implacable<br>
+		<br>la inm&oacute;vil<br>la que busca<br>-qui&eacute;n sabe si no en vano--<br>un 
+		manantial que brote entre sus muros<br>
+		<br><em>De &quot;Hilo solo&quot; 1995</em><br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="AHORA SÓLO TIENES UNA VIDA..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Ahora s&oacute;lo tienes una vida...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ahora s&oacute;lo tienes una vida<br><br>bajas las escaleras<br>agitas tu 
+		pregunta como un pa&ntilde;uelo blanco<br>quedan sobre el tablero<br>peones 
+		poco &aacute;giles y fichas sin valor<br>
+		<br>has desmigado el pan<br>has dejado que el agua te escurra entre los 
+		dedos<br>&iquest;te das cuenta?<br>ahora s&oacute;lo tienes una vida<br>
+		<br>vuelves a o&iacute;r la voz del visitante<br>no la dejes morir<br>abre la 
+		puertecilla de su jaula<br>permite que acompa&ntilde;e a la bandada de los 
+		estorninos<br>la belleza<br>asoma en las rendijas de este gesto 
+		imposible<br>su rastro es tortuoso y su fulgor<br>alumbra hasta el 
+		abismo sin l&aacute;mpara ni estrella<br>
+		<br>pero toda ella cabe<br>en el cielo min&uacute;sculo<br>de tus manos vac&iacute;as</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Mudanza&quot; 1994</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a name="AÚN NO HAB&Iacute;A CAMINO..."></a>A&uacute;n no hab&iacute;a camino...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		A&uacute;n no hab&iacute;a camino<br>
+		<br>ni la emoci&oacute;n del hombre no evocado<br>por lenguas familiares<br>
+		<br>pero t&uacute; reclamabas una forma<br>un pliegue duradero<br>tan quieta<br>
+		debajo del templete<br>
+		<br>el hilo solo<br>sin aguja<br><br>y un retal en tus manos</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Hilo solo&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		<a name="BAILAR..."></a></font><font face="Georgia" color="#9BC9BB">
+		Bailar...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Bailar<br>sobre el resquicio<br>te sostiene entre hilos y armon&iacute;a<br>
+		<br>cantas<br>lo dice la otra voz<br><br>hasta que alguno<br>-el m&aacute;s 
+		indelicado-<br>corta tu cuerda y te derramas<br>sobre la sima<br>sin 
+		ra&iacute;z<br>como una marioneta<br>
+		<br>no alcanzabas al odio<br>porque est&aacute;s<br>m&aacute;s abajo</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Hilo solo&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="COMO UNA L&Aacute;GRIMA..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Como una l&aacute;grima... </font>
+		<font face="Georgia" size="2" color="#9BC9BB"> <br>
+		<br>
+		Como una l&aacute;grima <br>
+		oscura <br>
+		la noche sobre el d&iacute;a <br>
+		rodar&aacute; entre la hierba <br>
+		tu dolor. <br>
+		<br>
+		Como dos frutos tiernos <br>
+		ca&iacute;dos de sus ramas <br>
+		as&iacute; lloran tus ojos</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CON EL AGUA HASTA EL CUELLO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Con el agua hasta el cuello...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Con el agua hasta el cuello<br>levantarse<br>en el agua flotaban los 
+		restos de la cena<br>
+		<br>contener un minuto<br>el aliento<br>bajar hasta el caj&oacute;n<br><br>all&iacute; 
+		duermen las tazas<br>un sue&ntilde;o blanco y c&oacute;ncavo<br>
+		<br>saborear despacio el desayuno<br><br>lo ha conseguido<br>&iexcl;qu&eacute; 
+		importa si no tienen compasi&oacute;n las palomas<br>que picotean sobre el 
+		plato!<br>
+		<br>y por eso sonr&iacute;e -ella sabe por qu&eacute;-<br>en la calle que asciende 
+		hacia el cielo de junio<br>
+		<em><br>De &quot;Lo que va a ser de ti&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="CON LOS OJOS CERRADOS..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Con los ojos cerrados...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Con los ojos cerrados,<br>he abierto una ventana<br>
+		<br>la leche que ya humea en la cazuela<br>el vac&iacute;o caliente que dejas 
+		en las s&aacute;banas<br>una mujer que cruza a tientas<br>y sin reconocerte te 
+		acaricia<br>
+		<br>ignoran<br>que marchan a tu lado<br><br>no saben<br>que existe una 
+		ventana<br>ni que vuelves<br>del camino a tu sue&ntilde;o</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Mudanza&quot; 1994</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="CU&Aacute;NTO SUFRE EL AMOR..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Cu&aacute;nto sufre el amor...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		&iexcl;Cu&aacute;nto sufre el amor<br>en los rincones!<br>hay d&iacute;as que se oculta<br>
+		igual que un perro enfermo<br>
+		<br>duerme como<br>un reptil<br>sobre el mosaico<br><br>aquel murmullo<br>
+		que nos guiaba cierto<br>entre la bruma<br>
+		<br>el mismo amor que se acurruca ahora<br>desorientado<br>sobre este 
+		desali&ntilde;o de hojas secas<br>
+		<br>al que acaricias<br>su p&aacute;lido pelaje<br>para eso<br>para que no se 
+		muera<br>as&iacute; de solo<br>
+		<br><em>De &quot;Lo que va a ser de ti&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p>&nbsp;</p>
+		<p><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#9BC9BB">
+		<a name="EN LA HORA DESNUDA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		En la hora desnuda...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		En la hora desnuda<br>
+		s&oacute;lo eso<br>
+		un segundo de luz y para&iacute;so<br>
+		<br>
+		de aquellos que la amaron<br>
+		sabe los rostros mudos y su temblor de ala<br>
+		todos<br>
+		juntos<br>
+		abran el cofre y vea ella<br>
+		esos diamantes escondidos<br>
+		<br>
+		libres<br>
+		al fin del cepo las palabras<br>
+		que mansamente caigan esos copos<br>
+		de nieve<br>
+		<br>
+		sin red<br>
+		en un segundo blanco<br>
+		sobre el regazo de su mirada cobijados<br>
+		<br>
+		de par en par<br>
+		las dos puertas abiertas<br>
+		<br>
+		s&oacute;lo<br>
+		un paso<br>
+		decir adi&oacute;s as&iacute;<br>
+		<br>
+		que el saco no se cierre<br>
+		sin librarle a la voz de sus cadenas<br>
+		<br>
+		tacto<br>
+		y aire<br>
+		<br>
+		encuentre all&iacute; esa voz<br>
+		sus zapatos perdidos<br>
+		<br>
+		al fin cerrado el c&iacute;rculo del mundo<br>
+		<br>
+		en la hora desnuda<br>
+		s&oacute;lo<br>
+		eso<br>
+		un segundo de luz<br>
+		y para&iacute;so</font></em><font face="Georgia" size="2" color="#9BC9BB"><br><br></font>
+		</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		<a name="EN UN &Aacute;RBOL ESCRITO"></a></font>
+		<font face="Georgia" color="#9BC9BB">En un &aacute;rbol escrito</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Nunca nada de ellos te hab&iacute;a conmovido,<br>ni siquiera sus nombres.<br>
+		Recog&iacute;as del suelo<br>a veces una hoja desprendida a tu paso,<br>la 
+		mirabas ausente<br>con tosca indiferencia,<br>segura de su verdor, que 
+		iba a responder<br>con el silencio suyo a tus preguntas, &iquest;cu&aacute;ndo?<br>
+		<br>Debajo de sus copas pas&oacute; el amor contigo<br>y aspiraste el perfume<br>
+		de su hospitalidad ensombrecida,<br>mas no le&iacute;ste nunca<br>su caduca 
+		escritura,<br>los trazos del reflejo inestable del sol<br>en la sombra 
+		que era de tus sue&ntilde;os cobijo.<br>
+		<br>Ahora no responde, ahora te interroga:<br>&iquest;desde d&oacute;nde ha ca&iacute;do esta 
+		hoja amarilla<br>sobre el papel en el que escribes?<br>
+		<br>Y mientras se deshace<br>en tus manos su escu&aacute;lido esqueleto,<br>le 
+		contestas que has visto esta ma&ntilde;ana<br>al mirar a tu hijo<br>-que de 
+		repente es alto, tan alto como ellos-<br>la esbeltez de sus troncos,<br>
+		que en su vello incipiente hay restos de resina<br>e intuyes en sus 
+		labios un sabor de ra&iacute;ces.<br>
+		<br>&iquest;Lo recuerdas ahora? &Eacute;se era el mensaje<br>perenne, de aquella 
+		escritura:<br>en ti hab&iacute;a un &aacute;rbol,<br>de su copa ha ca&iacute;do esta hoja 
+		amarilla.<br>El &aacute;rbol que ha brotado de la alfombra invisible<br>de las 
+		horas de espera,<br>aqu&eacute;l en el que a&ntilde;oras llegar a cobijarte,<br>bajo 
+		la sombra tuya,<br>junto al tronco so&ntilde;ado<br>en cuyo cerne estaba 
+		escrito este poema.<br>
+		<br><em>De &quot;Lo que va a ser de ti&quot; 1995</em><br><br></font>
+		</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="ES DE LOS QUE LA PIERDEN..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Es de los que la pierden...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Es de los que la pierden<br>la inocencia<br>sin saber<br>sin audacia<br>
+		<br>huecos<br>como refugios<br>de p&aacute;jaros errantes<br>as&iacute; quedan<br>
+		petrificados por la mirada altiva<br>
+		<br>no atiende<br>la caricia sombr&iacute;a al abrazo ignorado<br>del inocente<br>
+		<br>sin fecha sin memoria<br><br>sordo el golpe rotundo<br>del p&aacute;jaro 
+		ca&iacute;do</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Mudanza&quot; 1994</em><br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LABOR ATENTA DE HILO SOLO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Labor atenta de hilo solo...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Labor atenta de hilo solo<br>-sigues tejiendo tu tapiz ind&oacute;cil-<br>
+		<br>&eacute;se que no se ve<br>ni enga&ntilde;a su hermosura<br>a los reyes sedientos<br>
+		<br>una puntada aqu&iacute;<br>en el quicio oscilante<br>donde ayer escond&iacute;as 
+		los m&aacute;s frescos racimos<br>
+		<br>&iquest;qu&eacute; ser&aacute; de tus manos<br>que palpan los tesoros<br>en sus pliegues?<br>
+		<br>-acaba ya<br>esa labor de sombras-<br><br>reconoce<br>vencida<br>que 
+		&uacute;nicamente ofreces hilo solo</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">y que tu desnudez ha 
+		naufragado<br>sobre un oc&eacute;ano<br>sin l&iacute;mite</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">pero esta voz<br>-&iquest;de 
+		d&oacute;nde?-<br>vuelve cada ma&ntilde;ana<br>con su rama de olivo<br>
+		<br><em>De &quot;Hilo solo&quot; 1995<br>
+		<br>
+&nbsp;</em></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="ME PREGUNTO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Me pregunto...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Me pregunto<br>por qu&eacute; 
+		ya no destapa<br>su perfume<br>las palabras dichosas<br>por qu&eacute; ya no 
+		las dice<br>
+		<br>o por qu&eacute; no despierta de su sue&ntilde;o sin nombres<br>a la hora en que 
+		acuden los recuerdos<br>
+		<br>por qu&eacute; elige la sombra<br>agazapada<br>como una pordiosera en el 
+		&uacute;ltimo piso<br>
+		<br>la alegr&iacute;a<br>por qu&eacute; ya no se asoma al mirador<br><br>camina 
+		lentamente<br>con esos pies<br>tan sucios</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Hilo solo&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="NADIE HA VERTIDO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Nadie ha vertido...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Nadie ha vertido<br>sobre su alfombra<br>las tinajas<br>ni golpea en su 
+		noche<br>los barrotes del sue&ntilde;o<br>
+		<br>-ella intenta alcanzarlos-<br><br>pero nadie<br>nadie es el que 
+		corre las opacas cortinas<br>el que esconde las cartas<br>
+		<br>el que no ve<br>a esa mujer que cruza<br><br>nadie es el que r&iacute;e<br>
+		mientras hurga en la herida de su &uacute;nico ojo<br>
+		<br>se llama nadie<br>ha plantada sus tiendas<br>a ese lado del r&iacute;o<br>
+		<br>y por nadie responden todas las cosas muertas<br>que vigilan<br><br>
+		<em>De &quot;Lo que va a ser de ti&quot; 1995</em><br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="PERFUME"></a></font>
+		<font face="Georgia" color="#9BC9BB">Perfume</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Perfume<br>demasiado profundo<br>el esplandor<br><br>todas las luces 
+		encendidas<br>
+		<br>apenas roza<br>la penumbra en los labios<br>y desciendes<br><br>vas 
+		contando las huellas<br>que resplandecen a tu espalda<br>te empujan<br>a 
+		la casa vac&iacute;a<br>
+		<br>una voz<br>ilumina la casa sin ventanas<br><br>todo espera<br>menos 
+		aquel perfume de las rosas<br>rendidas a la sombra de tu mano<br>
+		<br>ahora yace en la cumbre<br>como un le&oacute;n vencido<br><br><em>De &quot;Lo 
+		que va a ser de ti&quot; 1995</em><br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		<a name="PRIMERAS LUCES"></a></font>
+		<font face="Georgia" color="#9BC9BB">Primeras luces</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Pero hubo un resplandor 
+		<br>y ella alz&oacute; los ojos por encima <br>de la siesta humeante <br><br>de 
+		improviso 
+		<br>atravesando el tedio <br>afirm&oacute; su certera <br>verdad <br>esa s&uacute;bita 
+		espada 
+		<br><br>!qu&eacute; triste era volver <br>mansamente a la suela <br>del zapato! 
+		<br><br>imitar el esmero <br>con que algunos asearon sus cadenas <br>no 
+		preguntar qui&eacute;n golpeaba los cristales 
+		<br><br>los otros <br>los dormidos <br>ajenos a la aguja que enhebraba 
+		el temor 
+		<br>en el enjambre desdichado<br><br><em>De &quot;Lo que va a ser de ti&quot; 1995</em><br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		<a name="UN SEGUNDO DE LUZ Y PARA&Iacute;SO"></a></font>
+		<font face="Georgia" color="#9BC9BB">Un segundo de luz y para&iacute;so</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>En la hora desnuda <br>s&oacute;lo eso <br>un segundo de luz y para&iacute;so <br>
+		de aquellos que la amaron 
+		<br>sabe los rostros mudos y su temblor de ala <br>todos <br>juntos <br>
+		abran el cofre y vea ella 
+		<br>esos diamantes escondidos <br>libres <br>al fin del cepo las 
+		palabras 
+		<br>que mansamente caigan esos copos <br>de nieve <br>sin red <br>en un 
+		segundo blanco 
+		<br>sobre el regazo de su mirada cobijados <br>de par en par <br>las dos 
+		puertas abiertas 
+		<br>s&oacute;lo <br>un paso <br>decir adi&oacute;s as&iacute; <br>que el saco no se cierre 
+		<br>sin librarle a la voz de sus cadenas <br>tacto <br>y aire <br>
+		encuentre all&iacute; esa voz 
+		<br>sus zapatos perdidos <br>al fin cerrado el c&iacute;rculo del mundo <br>en 
+		la hora desnuda 
+		<br>s&oacute;lo <br>eso <br>un segundo de luz <br>y para&iacute;so <br><br><em>De &quot;Lo 
+		que va a ser de ti&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+		<br></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="VEO PASAR LOS HOMBRES LOS MUCHACHOS ALGUNOS..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Veo pasar los hombres los muchachos algunos...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Veo pasar los hombres los muchachos algunos<br>tan hermosos<br>con sus 
+		sacos de arena<br>
+		<br>pero son de otra especie aquellos que amo yo<br><br>no me importa 
+		que oculten su sombra en el armario<br>ni que olviden mi nombre en el 
+		perchero de un caf&eacute;<br>
+		<br>aqu&eacute;l lleva una caja<br>de muerto sobre los hombros y est&aacute; ausente<br>
+		&eacute;stos escarban en las dunas<br>o sonr&iacute;en cansados<br>como pr&iacute;ncipes<br>
+		<br>ellos s&iacute; se merecen un saludo<br><br>sobre todo el que acude al 
+		final del banquete<br>-nunca hab&iacute;a llegado as&iacute; de bien vestido-<br>como 
+		si viera un gesto que flotaba en el aire<br>sus ojos se extas&iacute;an<br>
+		quisieran ir tras &eacute;l<br>
+		<br>luego se ha desplomado<br>sin revelar una palabra<br>de la herida 
+		que esconde bajo el pecho<br>
+		<br>los hombres<br>cuando mueran del todo<br>asomar&aacute; un reguero de 
+		sangre en sus solapas<br>
+		<br>ese d&iacute;a ser&aacute;n mis semejantes<br><em><br>De &quot;Hilo solo&quot; 1995</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="VOCES..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Voces...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Voces<br>que no dicen su nombre<br><br>el mar<br>absorto<br>casi 
+		moja tus pies<br>
+		<br>nadie recoge la queja de los p&aacute;jaros<br>que mueren en la arena<br>
+		<br>-ahora no eres t&uacute;-<br><br>voces<br>de ni&ntilde;os que no encuentran<br>una 
+		mano perdida<br>
+		<br>les oyes crepitar<br><br>&iexcl;no abras los ojos!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Mudanza&quot; 1994</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img src="./PERDUBARRA.jpg"
+      width="77" height="9" alt="PERDUBARRA.jpg (1765 bytes)"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="Y CÓMO AMARNOS YA..."></a></font>
+		<font face="Georgia" color="#9BC9BB">Y c&oacute;mo amarnos ya... </font>
+		<font face="Georgia" size="2" color="#9BC9BB"> <br><br>&iquest;Y c&oacute;mo amarnos 
+		ya 
+		<br>all&iacute; donde el amor <br>mor&iacute;a tantas veces. <br><br>&iquest;c&oacute;mo resucitar 
+		tu aliento 
+		<br>sepultado?<br><br>oasis <br>imaginas<br><br>&iquest;en el abrazo es eso <br>
+		lo que nos une?<br>
+		<br>saber que estamos solos <br>y que el alba <br>que bebemos los dos en 
+		nuestras bocas 
+		<br>es el fruto del sue&ntilde;o <br>coincidente<br><br>la frescura tenaz de un 
+		espejismo<br>
+		<br><em>De &quot;Hilo solo&quot; 1995</em><br>
+		<br><br></font>
+		</p>
+	</blockquote>
+	<p align="center">
+	<img src="./PERDUBARRA.jpg" width="77" height="9"
+    alt="PERDUBARRA.jpg (1765 bytes)"></p>
+	<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+	<font color="#AAC0D5">
+	<a
+    href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" target="_blank">
+	<img
+    src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0"
+    alt="AddFreeStats.com Free Web Stats in real-time !"></a></font></noscript> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+	</p>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:03:11 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:23:13 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

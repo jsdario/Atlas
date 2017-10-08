@@ -1,0 +1,1509 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Fernando Pessoa</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Fernando Pessoa."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Fernando Pessoa. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Fernando_Pessoa,poesias,poetas,poemas,traducciones,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#FFFFFF" vlink="#DBDBDB" alink="#FFFFFF">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/pessoa.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/pessoa.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815180144" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pessoa.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:01:44 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./pessoa.htm" title="20:41:20 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:01:44 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pessoa.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:01:44 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./pessoa.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>163 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010101010101_2004:-1:000101132302_2005:-1:111220101104_2006:-1:f12222000110_2007:-1:570378684300_2008:-1:622232000001_2009:-1:020000110000_2010:-1:100000001110_2011:-1:000000113211_2012:-1:500111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./PESSOA.jpg" width="384" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./PESSOA1.jpg" width="222" height="23"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center"><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="686" height="74">
+  <tr>
+    <td valign="bottom" colspan="2" height="1" width="678"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="68" width="245" valign="top"><p align="left">
+	&nbsp;<img border="0" src="./PESSOA2.jpg" width="221" height="293">&nbsp;&nbsp;&nbsp; </td>
+    <td width="429" valign="top" height="68"><p align="left">
+	<u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+	<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">Poeta, ensayista y traductor 
+	portugu&eacute;s nacido en Lisboa en 1888. <br>
+	Es la figura m&aacute;s representativa de la poes&iacute;a portuguesa del siglo XX. Sus 
+	primeros a&ntilde;os transcurrieron en Ciudad del Cabo mientras su padrastro 
+	ocupaba el consulado de Portugal en Sud&aacute;frica.&nbsp; A los diecisiete a&ntilde;os 
+	viaj&oacute; a Lisboa, donde despu&eacute;s de interrumpir estudios de Letras altern&oacute; el 
+	trabajo de oficinista&nbsp; con su inter&eacute;s por la actividad literaria.<br>
+	La influencia que en &eacute;l ejercieron autores como Nietzsche, Milton y 
+	Shakespeare, lo llevaron a traducir parte de sus obras y a producir los 
+	primeros poemas en idioma ingl&eacute;s. Dirigi&oacute; varias revistas&nbsp; y pronto se 
+	convirti&oacute; en el propulsor del surrealismo portugu&eacute;s.<br>
+	<i>&quot;Mensaje&quot; </i>fue su primera obra en portugu&eacute;s y &uacute;nica publicada en vida 
+	del poeta. Parte de su obra est&aacute; representada por los numerosos heter&oacute;nimos 
+	creados durante su vida, siendo los m&aacute;s importantes&nbsp; Alvaro de Campos, 
+	Ricardo Reis y Alberto Caeiro.<br>
+	Falleci&oacute; en Lisboa en 1935. &copy;</font></p>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><br>
+<font color="#FFFFFF"><br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Fernando 
+Pessoa:</font></p>
+
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia">&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp; 
+		<br></font><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#ABDICACI&Oacute;N">Abdicaci&oacute;n</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#AH! LA ANGUSTIA">Ah! La angustia, la abyecta rabia, la 
+		desesperaci&oacute;n...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#AMOR ES LO ESPECIAL">Amor es lo esencial...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#AUTOPSICOGRAF&Iacute;A">Autopsicograf&iacute;a</a>*</font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#COMO SI CADA BESO">Como si cada beso...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#COR&Oacute;NAME DE ROSAS">Cor&oacute;name de rosas </a></font></p>
+		<p><font face="Georgia" color="#FFFFFF"><a href="./pessoa.htm#COSECHADORA">
+		Cosechadora</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#CUANDO ELLA PASA">Cuando ella pasa</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#DE: EL PASTOR ENAMORADO">De: El pastor enamorado</a></font></p>
+		<p><font face="Georgia"><a href="./pessoa.htm#EL GUARDADOR DE REBA&Ntilde;OS">El guardador 
+		de reba&ntilde;os</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#EL VIENTO, EL VIENTO ALTO">El viento, el viento alto</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#EN LA GRAN OSCILACI&Oacute;N...">En la gran oscilaci&oacute;n...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF"><a href="./pessoa.htm#ESTO">Esto</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#HE PASADO TODA LA NOCHE SIN DORMIR">He pasado toda la noche 
+		sin dormir, viendo...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#LAS ROSAS DEL JARD&Iacute;N DE ADONIS...">Las rosas del jard&iacute;n de 
+		Adonis...</a>*</font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#LLUEVE EN SILENCIO">Llueve en silencio, que esta lluvia es 
+		muda...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF"><a href="./pessoa.htm#NAVIDAD">
+		Navidad</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#NO QUIERO ROSAS">No quiero rosas, con tal que haya rosas...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#NO LA QUE DAS&nbsp;&nbsp;&nbsp;&nbsp; (*)">No la que das, la 
+		flor que t&uacute; eres quiero...(*)</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#&iexcl;NO, NO DIGAS NADA!">&iexcl;No, no digas nada!</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#NO TENGAS NADA EN LAS MANOS...">No tengas nada en las manos...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#ODA       (*)">Oda&nbsp;&nbsp;&nbsp;&nbsp; (*)</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#PIERROT BORRACHO">Pierrot borracho</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#POEMA XXIX &nbsp;&nbsp;&nbsp;&nbsp; (**)">Poema XXIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(**)</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF"><a href="./pessoa.htm#RENIEGO...">
+		Reniego, l&aacute;piz partido...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#SE&Ntilde;OR, SERENAS">Se&ntilde;or, serenas son...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#SI ALGUIEN TOCA UN D&Iacute;A A TU PUERTA">Si alguien toca un d&iacute;a a 
+		tu puerta...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#SI, DESPU&Eacute;S QUE YO MUERA...">Si, despu&eacute;s que yo muera, se 
+		quisiera escribir mi biograf&iacute;a...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#SI MUERO PRONTO&nbsp;&nbsp;&nbsp;&nbsp; (**)">Si muero pronto&nbsp;&nbsp;&nbsp;&nbsp; 
+		(**)</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#SI YO PUDIERA MORDER LA TIERRA TODA">Si yo pudiera morder la 
+		tierra toda</a></font></p>
+		<p><font face="Georgia">
+		<a href="./pessoa.htm#SUAVE, COMO TENER MADRE Y HERMANAS...">Suave, como tener madre 
+		y hermanas...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#S&Uacute;BITA MANO DE ALG&Uacute;N FANTASMA OCULTO">S&uacute;bita mano de alg&uacute;n 
+		fantasma oculto...</a></font></p>
+		<p><font face="Georgia"><a href="./pessoa.htm#TABAQUER&Iacute;A">Tabaquer&iacute;a</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#TENGO TANTO SENTIMIENTO...">Tengo tanto sentimiento...</a></font></p>
+		<p><font face="Georgia">
+		<a href="./pessoa.htm#TODAS LAS CARTAS DE AMOR SON RID&Iacute;CULAS...**">Todas las cartas 
+		de amor son rid&iacute;culas...**</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#TODO, MENOS EL TEDIO, ME DA TEDIO">Todo, menos el tedio, me da 
+		tedio...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#TU VOZ HABLA AMOROSA">Tu voz habla amorosa...</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#VEN A SENTARTE CONMIGO, LIDIA, A LA ORILLA DEL R&Iacute;O">Ven a 
+		sentarte conmigo, Lidia, a la orilla del r&iacute;o...*</a></font></p>
+		<p><font face="Georgia" color="#FFFFFF">
+		<a href="./pessoa.htm#YO NUNCA GUARD&Eacute; REBA&Ntilde;OS * *">Yo nunca guard&eacute; reba&ntilde;os...* * </a></font><font face="Georgia" size="2" color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF" face="Georgia"><br> 
+		</font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#D3D3CF"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p><font color="#C4CAD4" face="Georgia"><a name="ABDICACIÓN"></a>
+		Abdicaci&oacute;n</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">T&oacute;mame, oh noche 
+		eterna, en tus
+		<br>brazos y ll&aacute;mame hijo.<br><br>Yo soy un rey que <br>voluntariamente 
+		abandon&eacute; mi 
+		<br>trono de ensue&ntilde;os y cansancios. <br><br>Mi espada, pesada en brazos 
+		<br>flojos, a manos viriles <br>y calmas entregu&eacute;;<br>y mi cetro y 
+		corona yo los dej&eacute; 
+		<br>en la antec&aacute;mara, hechos pedazos.<br><br>Mi cota de malla, tan 
+		in&uacute;til, 
+		<br>mis espuelas, de un tintineo tan f&uacute;til, <br>las dej&eacute; por la fr&iacute;a 
+		escalinata.<br>
+		<br>Desvest&iacute; la realeza, cuerpo y alma, <br>y regres&eacute; a la noche antigua 
+		y serena 
+		<br>como el paisaje al morir el d&iacute;a.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de F. 
+		Guti&eacute;rrez</font></em></p>
+		<p align="center"><font color="#C4CAD4" face="Georgia"><br>
+		<br></font><font color="#C4CAD4"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="AH! LA ANGUSTIA"></a>
+		Ah! La angustia, la abyecta rabia, la desesperaci&oacute;n...</font><font
+      face="Georgia" size="2" color="#C4CAD4"><br><br>Ah! La angustia, la 
+		abyecta rabia, la desesperaci&oacute;n<br>De no yacer en m&iacute; mismo desnudo<br>
+		Con &aacute;nimo de gritar, sin que sangre el seco coraz&oacute;n<br>En un &uacute;ltimo, 
+		austero alarido!<br>
+		<br>Hablo -las palabras que digo son nada m&aacute;s un sonido:<br>Sufro -Soy 
+		yo.<br>Ah, extraer de la m&uacute;sica el secreto, el tono<br>De su alarido!<br>
+		<br>Ah, la furia -aflicci&oacute;n que grita en vano<br>Pues los gritos se 
+		tensan<br>Y alcanzan el silencio tra&iacute;do por el aire<br>En la noche, nada 
+		m&aacute;s all&iacute;!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Enero 15 
+		de 1920</font></p>
+		<p align="left"><em><font size="2" color="#C4CAD4" face="Georgia">
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="AMOR ES LO ESPECIAL"></a>
+		Amor es lo esencial...</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Amor es lo 
+		esencial.<br>Sexo, mero accidente.<br>Puede ser igual<br>O diferente.<br>
+		El hombre no es un animal:<br>Es carne inteligente,<br>Aunque algunas 
+		veces enferma.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">(5.4.35)<br>
+		<em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="AUTOPSICOGRAF&Iacute;A"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Autopsicograf&iacute;a</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		El poeta es un fingidor.<br>Finge tan completamente<br>Que hasta finge 
+		que es dolor<br>El dolor que de veras siente.<br>
+		<br>Y quienes leen lo que escribe,<br>Sienten, en el dolor le&iacute;do,<br>No 
+		los dos que el poeta vive<br>Sino aqu&eacute;l que no han tenido.<br>
+		<br>Y as&iacute; va por su camino,<br>Distrayendo a la raz&oacute;n,<br>Ese tren sin 
+		real destino<br>Que se llama coraz&oacute;n.<br>
+		<br><em>Versi&oacute;n de Santiago Kovadloff</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="COMO SI CADA BESO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Como si cada beso...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Como si cada beso<br>
+		Fuera de despedida,<br>Clo&eacute; m&iacute;a, bes&eacute;monos, amando.<br>Tal vez ya nos 
+		toque<br>En el hombro la mano que llama<br>A la barca que no viene sino 
+		vac&iacute;a;<br>Y que en el mismo haz<br>Ata lo que fuimos mutuamente<br>Y la 
+		ajena suma universal de la vida.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de F. 
+		Guti&eacute;rrez</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="CORÓNAME DE ROSAS"></a>
+		Cor&oacute;name de rosas...*</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Cor&oacute;name de rosas,<br>
+		de verdad cor&oacute;name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		De rosas<br>Rosas que al quemar<br>Sobre una frente queman<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Demasiado R&aacute;pido!<br>Cor&oacute;name de rosas<br>Y con el vol&aacute;til follaje,<br>
+		Que as&iacute; sea.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(12.6.14)</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(*)&nbsp; Ricardo Reis</font><font color="#C4CAD4" face="Georgia"><br>
+		</font>
+		<em><font size="2" color="#C4CAD4" face="Georgia">Versi&oacute;n de Rafael D&iacute;az 
+		Borb&oacute;n</font></em></p>
+		<p>&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="COSECHADORA"></a>
+		Cosechadora</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Pero no, 
+		es abstracta, es un p&aacute;jaro<br>De sonidos en el aire del encumbrado aire,<br>
+		Y su alma canta sin molestar<br>Porque el canto es lo que la hace 
+		cantar.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>1932<br>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n<br>
+		<br>
+&nbsp;</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CUANDO ELLA PASA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Cuando ella pasa</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Sentado junto a la ventana,<br>A trav&eacute;s de los cristales, empa&ntilde;ados por 
+		la nieve,<br>Veo su adorable imagen, la de ella, mientras<br>Pasa... 
+		pasa... pasa de largo...<br>
+		<br>Sobre m&iacute;, la aflicci&oacute;n ha arrojado su velo:-<br>Una criatura menos 
+		en este mundo<br>Y un &aacute;ngel m&aacute;s en el cielo.<br>
+		<br>Sentado junto a la Ventana,<br>A trav&eacute;s de los cristales, empa&ntilde;ados 
+		por la nieve,<br>Pienso que Veo su imagen, la de ella,<br>Que no pasa 
+		ahora... que no pasa de largo...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Rafael 
+		D&iacute;az Borb&oacute;n<br>
+		</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="DE: EL PASTOR ENAMORADO"></a>
+		De: el pastor enamorado</font><font size="2" color="#C4CAD4"
+      face="Georgia"><br><br>Alta en el cielo, va la luna de Primavera,<br>
+		Pienso en ti y dentro de m&iacute; est&aacute;s entera.<br>Aqu&iacute; viene, por las grandes 
+		praderas, corriendo hacia m&iacute;, la leve brisa.<br>Pienso en ti, murmuro tu 
+		nombre; y no me siento yo: estoy feliz.<br>Ma&ntilde;ana vendr&aacute;s, ir&aacute;s conmigo 
+		a recoger flores en la pradera.<br>Y yo ir&eacute; contigo por las praderas 
+		para verte recoger las flores.<br>Te ver&eacute; ma&ntilde;ana recolectando flores 
+		conmigo en las praderas,<br>Pues cuando vengas ma&ntilde;ana y caminemos juntos 
+		por la pradera, 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		recogiendo las flores,<br>Se har&aacute; para mi la claridad y la verdad.<br><br>
+		(6.7.14)<br>
+		<em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL GUARDADOR DE REBA&Ntilde;OS"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El guardador de reba&ntilde;os</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		&nbsp;<br>
+		Desde la ventana m&aacute;s alta de mi casa,<br>
+		con un pa&ntilde;uelo blanco digo adi&oacute;s<br>
+		a mis versos, que viajan hacia la humanidad.<br>
+		Y no estoy alegre ni triste.<br>
+		&Eacute;se es el destino de los versos.<br>
+		<br>
+		Los escrib&iacute; y debo ense&ntilde;&aacute;rselos a todos<br>
+		porque no puedo hacer lo contrario,<br>
+		como la flor no puede esconder el color,<br>
+		ni el r&iacute;o ocultar que corre,<br>
+		ni el &aacute;rbol ocultar que da frutos.<br>
+		<br>
+		He aqu&iacute; que ya van lejos, como si fuesen en la diligencia,<br>
+		y yo siento pena sin querer,<br>
+		igual que un dolor en el cuerpo.<br>
+		<br>
+		&iquest;Qui&eacute;n sabe qui&eacute;n los leer&aacute;?<br>
+		&iquest;Qui&eacute;n sabe a qu&eacute; manos ir&aacute;n?<br>
+		<br>
+		Flor, me cogi&oacute; el destino para los ojos.<br>
+		&Aacute;rbol, me arrancaron los frutos para las bocas.<br>
+		R&iacute;o, el destino de mi agua era no quedarse en m&iacute;.<br>
+		Me resigno y me siento casi alegre,<br>
+		casi tan alegre como quien se cansa de estar triste.<br>
+		<br>
+		&iexcl;Idos, idos de m&iacute;!<br>
+		Pasa el &aacute;rbol y se queda disperso por la Naturaleza.<br>
+		Se marchita la flor y su polvo dura siempre.<br>
+		Corre el r&iacute;o y entra en el mar y su agua es siempre la <br>
+		que fue suya.<br>
+		<br>
+		Paso y me quedo, como el Universo.<br>
+		<br>
+		(**) De heter&oacute;nimo Alberto Caeiro</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font color="#C4CAD4" face="Georgia"><br></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="EL VIENTO, EL VIENTO ALTO"></a>
+		El viento, el viento alto</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>El viento, alto en su elemento<br>Me hace m&aacute;s solo 
+		-no me estoy<br>Lamentando, &eacute;l se tiene que lamentar.<br>
+		<br>Es un sonido abstracto, insondable<br>venido del elusivo fin del 
+		mundo.<br>Profundo es su significado.<br>
+		<br>Me habla el todo inexistente en &eacute;l,<br>C&oacute;mo la virtud no es un 
+		escudo, y<br>C&oacute;mo la mejor es estar en silencio.<br>
+		<br>(27.12.33)<br><em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="EN LA GRAN OSCILACIÓN..."></a>
+		En la gran oscilaci&oacute;n...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		En la gran oscilaci&oacute;n<br>Entre creer y no creer,<br>El coraz&oacute;n se 
+		trastorna<br>Lleno de nada saber<br>
+		<br>Y, ajeno a lo que sab&iacute;a<br>Por no saber lo que es,<br>S&oacute;lo un 
+		instante le cabe<br>Que es el conocer la fe-<br>
+		<br>Fe que los astros conocen<br>Porque es la ara&ntilde;a que est&aacute;<br>En la 
+		tela que ellos tejen,<br>Y es vida que hab&iacute;a ya.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="ESTO"></a>Esto</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Dicen que pretendo o miento<br>En cuanto escribo. No hay tal cosa.<br>
+		Simplemente<br>Siento imaginando.<br>No uso las cuerdas del coraz&oacute;n.<br>
+		<br>Todo cuanto sue&ntilde;o o pierdo,<br>Que pronto cae o muere en m&iacute;,<br>Es 
+		como una terraza que mira<br>Hacia otra cosa m&aacute;s all&aacute;.<br>Esa cosa me 
+		arrastra.<br>
+		<br>Y as&iacute; escribo en medio<br>De las cosas no junto a mis pies,<br>Libre 
+		de mi propia confusi&oacute;n,<br>preocupado por cuanto no es.<br>Sentir? 
+		Dejemos al lector sentir!<br>
+		<br>(? 1933)<br><em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a
+      name="HE PASADO TODA LA NOCHE SIN DORMIR"></a>He pasado toda la noche sin 
+		dormir, viendo...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">He pasado toda la noche 
+		sin dormir, viendo, <br>sin espacio tu figura.<br>Y vi&eacute;ndola siempre de 
+		maneras diferentes 
+		<br>de como ella me parece.<br>Hago pensamientos con el recuerdo de lo 
+		que 
+		<br>es ella cuando me habla,<br>y en cada pensamiento cambia ella de 
+		acuerdo<br>con su semejanza.<br>Amar es pensar.<br>Y yo casi me olvido 
+		de sentir s&oacute;lo pensando en ella.<br>No s&eacute; bien lo que quiero, incluso de 
+		ella, y no<br>pienso m&aacute;s que en ella.<br>Tengo una gran distracci&oacute;n 
+		animada.<br>Cuando deseo encontrarla<br>casi prefiero no encontrarla,<br>
+		Para no tener que dejarla luego.<br>No s&eacute; bien lo que quiero, ni quiero 
+		saber lo que<br>quiero. Quiero tan solo<br>Pensar en ella.<br>Nada le 
+		pido a nadie, ni a ella, sino pensar.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Teodoro 
+		Llorente</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em><br></em>
+		<a name="LAS ROSAS DEL JARD&Iacute;N DE ADONIS..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Las rosas del jard&iacute;n de Adonis...*</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Las rosas del jard&iacute;n de Adonis<br>Son las que yo amo, Lydia, esas 
+		ef&iacute;meras rosas<br>&nbsp;&nbsp; Que en el d&iacute;a de su nacimiento,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		En ese mismo d&iacute;a, mueren.<br>
+		<br>La luz es eterna para ellas, pues<br>Nacen con el sol cuando ya ha 
+		salido, y se acaban<br>&nbsp;&nbsp; Antes que Apolo pudiera incluso 
+		iniciar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Su 
+		trayectoria visible.<br>
+		<br>Como ellas, d&eacute;janos hacer de nuestras vidas un d&iacute;a,-<br>
+		Voluntariamente, Lydia, desconociendo<br>&nbsp;&nbsp; Que existe la 
+		noche antes y despu&eacute;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		El poquito que perduramos</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(*)&nbsp; Ricardo Reis<br>
+		<br>(11.7.14)<em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="LLUEVE EN SILENCIO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Llueve en silencio, que esta lluvia es muda...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Llueve en silencio, que esta lluvia es muda<br>y no hace ruido sino con 
+		sosiego.<br>El cielo duerme. Cuando el alma es viuda<br>de algo que 
+		ignora, el sentimiento es ciego.<br>Llueve. De m&iacute; (de este que soy) 
+		reniego...<br>
+		<br>Tan dulce es esta lluvia de escuchar<br>(no parece de nubes) que 
+		parece<br>que no es lluvia, mas s&oacute;lo un susurrar<br>que a s&iacute; mismo se 
+		olvida cuando crece.<br>Llueve. Nada apetece...<br>
+		<br>No pasa el viento, cielo no hay que sienta.<br>Llueve lejana e 
+		indistintamente,<br>como una cosa cierta que nos mienta,<br>como un 
+		deseo grande que nos miente.<br>Llueve. Nada en m&iacute; siente...<br>&nbsp;<br>
+		<em>Versi&oacute;n de &Aacute;ngel Crespo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="NAVIDAD"></a>Navidad</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Un Dios ha nacido. Otros mueren. La realidad<br>Que no ha venido ni 
+		se ha ido: un cambio de Error.<br>Tenemos ahora otra Eternidad,<br>Y 
+		siempre lo pasado fu&eacute; mejor.<br>Ciega, la ciencia trabaja en el in&uacute;til 
+		suelo<br>Loca, la F&eacute; vive el sue&ntilde;o de su culto.<br>Un nuevo Dios es una 
+		palabra -o un nuevo sonido<br>No busques ni tampoco creas: todo est&aacute; 
+		oculto.<br>
+		<br>(? 1922)<br><em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n<br><br>
+&nbsp;</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="NO QUIERO ROSAS"></a>
+		No quiero rosas, con tal que haya rosas...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">No quiero 
+		rosas, con tal que haya rosas. <br>Las quiero s&oacute;lo cuando no las pueda 
+		haber.<br>&iquest;Qu&eacute; voy a hacer con las cosas<br>que cualquier mano puede 
+		coger? 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">No quiero la noche sino 
+		cuando la aurora 
+		<br>la hizo diluirse en oro y azul. <br>Lo que mi alma ignora <br>eso es 
+		lo que quiero poseer.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Para qu&eacute;?... Si lo 
+		supiese, no har&iacute;a 
+		<br>versos para decir que a&uacute;n no lo s&eacute;. <br>Tengo el alma pobre y 
+		fr&iacute;a... 
+		<br>Ah, &iquest;con qu&eacute; limosna la calentar&eacute;?...</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de F. 
+		Guti&eacute;rrez</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="NO LA QUE DAS&nbsp;&nbsp;&nbsp;&nbsp; (*)"></a>
+		No la que das, la flor que t&uacute; eres quiero...(*)</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">No la que das, la flor 
+		que t&uacute; eres quiero.<br>Por qu&eacute; me niegas lo que no te pido.<br>Tiempo 
+		habr&aacute; de que niegues<br>despu&eacute;s de que hayas dado.<br>flor, &iexcl;s&eacute;me flor! 
+		Si te cogiese avara<br>mano de infausta esfinge, t&uacute; perenne<br>sombra 
+		errar&aacute;s absurda<br>tras lo que nunca diste.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(*)&nbsp; Ricardo Reis</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de &Aacute;ngel 
+		Crespo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="&iexcl;NO, NO DIGAS NADA!"></a>&iexcl;No, no digas nada!</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&iexcl;No: no digas nada!<br>Suponer lo que dir&aacute;<br>tu boca velada<br>es o&iacute;rlo 
+		ya.<br>
+		<br>Yo o&iacute; lo mejor<br>de lo que dir&iacute;as.<br>Lo que eres no viene a la 
+		flor<br>de las frases y los d&iacute;as.<br>
+		<br>Es mejor de lo que tu.<br>No digas nada: lo s&eacute;!<br>Gracia del cuerpo 
+		desnudo<br>que invisible se ve.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="NO TENGAS NADA EN LAS MANOS..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		No tengas nada en las manos...&nbsp;&nbsp;&nbsp; (*)</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		No tengas nada en las manos<br>ni una memoria en el alma,<br>
+		<br>que cuando un d&iacute;a en tus manos<br>pongan el &oacute;bolo &uacute;ltimo,<br><br>
+		cuando las manos te abran<br>nada se te caiga de ellas.<br>
+		<br>&iquest;Qu&eacute; trono te quieren dar<br>que Atropos no te lo quite?<br><br>&iquest;Qu&eacute; 
+		laurel que no se mustie<br>en lo arbitrios de Minos?<br>
+		<br>&iquest;Qu&eacute; horas que no te conviertan<br>en la estatura de sombra<br><br>
+		que ser&aacute;s cuando de noche,<br>est&eacute;s al fin del camino?<br>
+		<br>Coge las flores, mas d&eacute;jalas<br>caer, apenas miradas.<br><br>Al sol 
+		si&eacute;ntate. Y abdica<br>para ser rey de ti mismo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(*) Ricardo Reis</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de &Aacute;ngel 
+		Crespo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ODA       (*)"></a></font><font face="Georgia" color="#C4CAD4">
+		Oda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (*)</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Para ser grande, s&eacute; entero: nada<br>Tuyo exageres o excluyas.<br>S&eacute; todo 
+		en cada cosa. Pon cuanto eres<br>En lo m&iacute;nimo que hagas,<br>Por eso la 
+		luna brilla toda<br>En cada lago, porque alta vive.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(*)&nbsp; De heter&oacute;nimo 
+		Ricardo Reis</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="PIERROT BORRACHO"></a>
+		Pierrot borracho</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		En las calles de la feria<br>de la feria desierta<br>s&oacute;lo la luna llena<br>
+		blanquea y clarea<br>las noches de la feria<br>en la noche entreabierta.<br>
+		S&oacute;lo la luna alba<br>blanquea y clarea<br>la tierra calva<br>de abandono 
+		y alba<br>alegr&iacute;a ajena.<br>
+		<br>Ebria blanquea<br>como por la arena<br>en las calles de feria,<br>de 
+		la feria desierta<br>en la noche ya llena<br>de sombra entreabierta.<br>
+		La luna boquea<br>en las calles de feria<br>desierta e incierta.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="POEMA XXIX &nbsp;&nbsp;&nbsp;&nbsp; (**)"></a>
+		Poema XXIX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (**)</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>No soy igual en lo que digo y escribo.<br>Cambio, 
+		pero no cambio mucho.<br>El color de las flores no es el mismo bajo el 
+		sol<br>que cuando una nube pasa<br>o cuando entra la noche<br>y las 
+		flores son color de sombra.<br>Pero quien mira ve bien que son las 
+		mismas flores.<br>Por eso cuando parezco no estar de acuerdo conmigo<br>
+		fijaros bien en m&iacute;:<br>si estaba vuelto para la derecha<br>me volv&iacute; 
+		ahora para la izquierda,<br>pero soy siempre yo, asentado sobre los 
+		mismos pies.<br>El mismo siempre, gracias al cielo y a la tierra<br>y a 
+		mis ojos y o&iacute;dos atentos<br>y a mi clara sencillez de alma.<br>
+		<br>(**) De heter&oacute;nimo Alberto Caeiro</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="RENIEGO..."></a>
+		Reniego, l&aacute;piz partido...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Reniego, l&aacute;piz partido,<br>
+		Todo cuanto dese&eacute;.<br>Y no so&ntilde;&eacute; ser servido<br>De ir a donde nunca ir&eacute;.<br>
+		<br>Paje embutido en harapos<br>Del triunfo que otros tuvieron,<br>Yo 
+		podr&eacute; amar estos trapos<br>Por ser cuanto a m&iacute; me dieron.<br>
+		<br>Sabr&eacute;, pr&iacute;ncipe mendigo,<br>Coger, con la buena gente,<br>Entre el 
+		ondear del trigo<br>La amapola inteligente.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font color="#C4CAD4" face="Georgia"><b><br>
+&nbsp;</b></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="SE&Ntilde;OR, SERENAS"></a></font>
+		<font face="Georgia" color="#C4CAD4">Se&ntilde;or, serenas son...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Se&ntilde;or, serenas son<br>Todas las horas<br>Que derrochamos, si en<br>
+		Malgastarlas,<br>Como en un jarr&oacute;n,<br>Colocamos flores.<br>
+		<br>No hay tristezas<br>Ni alegr&iacute;as tampoco<br>En nuestra vida.<br>Luego 
+		d&eacute;janos aprender,<br>irreflexivamente sabios,<br>A no vivirla.<br>
+		<br>Sino a dejarla flotar,<br>Tranquila, serena,<br>Permitiendo que los 
+		ni&ntilde;os<br>Sean nuestros profesores<br>y que nuestros ojos sean<br>
+		Colmados por la Naturaleza. 
+		<br><br>A la orilla de la corriente, <br>Al borde ,de la carretera,<br>
+		Cae erguida-<br>Siempre en el mismo<br>Respiro de luz<br>De estar vivos.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">El tiempo pasa,<br>No 
+		nos dice nada.<br>Crecemos envejecidos.<br>D&eacute;janos aprender, como si<br>
+		ir&oacute;nicamente,<br>Nos observara partir.<br>
+		<br>Es in&uacute;til mientras<br>Hacemos un gesto.<br>No hay resistencia<br>Al 
+		dios cruel<br>Devorador sempiterno<br>De sus hijos.<br>
+		<br>Perm&iacute;tenos recoger las flores,<br>Perm&iacute;tenos humedecer<br>&Eacute;stas 
+		nuestras manos<br>En los apacibles riachuelos,<br>De los cuales debemos 
+		aprender<br>A ser apacibles como ellos.<br>
+		<br>Los girasoles siempre<br>Est&aacute;n mirando hacia el sol,<br>D&eacute;janos 
+		marchar de la vida<br>Tranquilos, sin abrigar<br>Siquiera el 
+		remordimiento<br>De haber vivido.<br>
+		<br>(12.6.14)<br><em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em><br></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="SI ALGUIEN TOCA UN D&Iacute;A A TU PUERTA"></a> 
+		</font><font face="Georgia" color="#C4CAD4">
+		Si alguien toca un d&iacute;a a tu puerta...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Si alguien toca un d&iacute;a a tu puerta, <br>Diciendo que es un emisario 
+		m&iacute;o 
+		<br>No creas, ni aunque sea yo; <br>Que mi vanidoso orgullo no 
+		intentar&iacute;a 
+		<br>Tocar siquiera la puerta irreal del cielo. <br>Pero si, 
+		naturalmente, y sin o&iacute;r 
+		<br>A alguien tocar, la puerta fueras a abrir <br>Y encontraras alguien 
+		como a la espera 
+		<br>De tocar, medita un poco. <br>Ese era Mi emisario y yo y lo que 
+		intenta 
+		<br>Mi orgullo que desespera <br>&iexcl;Abre a qui&eacute;n no llama a tu puerta! 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="SI, DESPU&Eacute;S QUE YO MUERA..."></a>
+		Si, despu&eacute;s que yo muera, se quisiera escribir mi biograf&iacute;a...</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>Si, despu&eacute;s que yo muera, se quisiera escribir mi 
+		biograf&iacute;a,<br>Nada ser&iacute;a m&aacute;s simple.<br>Exactamente poseo dos fechas -la 
+		de mi nacimiento y<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la de muerte.<br>Entre una y otra todos los d&iacute;as me<br>pertenecen.<br>
+		Soy f&aacute;cil de describir.<br>He vivido como un loco.<br>He amado a las 
+		cosas sin ning&uacute;n sentimentalismo.<br>Nunca tuve un deseo que no pudiera 
+		colmar, pues nunca anduve ciego.<br>Incluso escuchar para m&iacute; fu&eacute; nada 
+		m&aacute;s que un complemento del ver.<br>Comprend&iacute; que las cosas son reales y 
+		totalmente diferentes una de otra:<br>Lo comprend&iacute; con los ojos, jam&aacute;s 
+		con el pensamiento.<br>Comprenderlo con el pensamiento hubiera sido 
+		encontrarlas<br>todas iguales.<br>
+		<br>Un d&iacute;a me sent&iacute; dormido como un ni&ntilde;o.<br>Cerr&eacute; los ojos y dorm&iacute;.<br>
+		Y, a prop&oacute;sito, yo era el &uacute;nico poeta de la Naturaleza.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="SI MUERO PRONTO&nbsp;&nbsp;&nbsp;&nbsp; (**)"></a>
+		Si muero pronto&nbsp;&nbsp;&nbsp;&nbsp; (**)</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>
+		<br>Si muero pronto,<br>Sin poder publicar ning&uacute;n libro,<br>Sin ver la 
+		cara que tienen mis versos en letras de molde,<br>Ruego, si se afligen a 
+		causa de esto,<br>Que no se aflijan.<br>Si ocurre, era lo justo.<br>
+		<br>Aunque nadie imprima mis versos,<br>Si fueron bellos, tendr&aacute;n 
+		hermosura.<br>Y si son bellos, ser&aacute;n publicados:<br>Las ra&iacute;ces viven 
+		soterradas<br>Pero las flores al aire libre y a la vista.<br>As&iacute; tiene 
+		que ser y nadie ha de impedirlo.<br>Si muero pronto, oigan esto:<br>No 
+		fui sino un ni&ntilde;o que jugaba.<br>Fui id&oacute;latra como el sol y el agua,<br>
+		Una religi&oacute;n que s&oacute;lo los hombres ignoran.<br>Fui feliz porque no ped&iacute;a 
+		nada<br>Ni nada busqu&eacute;.<br>Y no encontr&eacute; nada<br>Salvo que la palabra 
+		explicaci&oacute;n no explica nada.<br>
+		<br>Mi deseo fue estar al sol o bajo la lluvia.<br>Al sol cuando hab&iacute;a 
+		sol,<br>Cuando llov&iacute;a bajo la lluvia<br>(Y nunca de otro modo),<br>
+		Sentir calor y fr&iacute;o y viento<br>Y no ir m&aacute;s lejos.<br>
+		<br>Quise una vez, pens&eacute; que me amar&iacute;an.<br>No me quisieron.<br>La &uacute;nica 
+		raz&oacute;n del desamor:<br>As&iacute; ten&iacute;a que ser.<br>
+		<br>Me consol&eacute; en el sol y en la lluvia.<br><br>Me sent&eacute; otra vez a la 
+		puerta de mi casa.<br>El campo, al fin de cuentas, no es tan verde<br>
+		Para los que son amados como para los que no lo son:<br>Sentir es 
+		distraerse.<br>
+		<br>(**) De heter&oacute;nimo Alberto Caeiros</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Octavio 
+		Paz<br>
+		<br>
+		</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="SI YO PUDIERA MORDER LA TIERRA TODA"></a>
+		Si yo pudiera morder la tierra toda...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Si yo pudiera morder la 
+		tierra toda<br>y sentirle el sabor ser&iacute;a m&aacute;s feliz por un momento...<br>
+		Pero no siempre quiero ser feliz<br>es necesario ser de vez en cuando 
+		infeliz para poder ser natural...<br>No todo es d&iacute;as de sol<br>y la 
+		lluvia cuando falta mucho, se pide.<br>Por eso tomo la infelicidad con 
+		la felicidad.<br>Naturalmente como quien no se extra&ntilde;a<br>con que 
+		existan monta&ntilde;as y planicies y que haya rocas y hierbas...<br>Lo que es 
+		necesario es ser natural y calmado en la felicidad o en la 
+		<br>infelicidad.<br>Sentir como quien mira. Pensar como quien anda,<br>y 
+		cuando se ha de morir,<br>Recordar que el d&iacute;a muere y que el poniente<br>
+		es bello y es bella la noche que queda.<br>As&iacute; es y as&iacute; sea.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Teodoro 
+		Llorente</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="SUAVE, COMO TENER MADRE Y HERMANAS..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Suave, como tener madre y hermanas...</font></p>
+		<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">Suave, como tener madre y 
+	hermanas, <br>
+    la tarde rica desciende...<br>
+    No llueve ya, y el vasto cielo <br>
+    es una gran sonrisa imperfecta... <br>
+    Mi conciencia de tener conciencia de ti <br>
+    es una prez, <br>
+    y mi saberte sonriendo <br>
+    es una flor mustia en mi pecho...<br>
+    <br>
+    &iexcl;Ah, si fu&eacute;semos dos figuras <br>
+    en una lejana vidriera!... <br>
+    &iexcl;Ah, si fu&eacute;semos los dos colores <br>
+    de una bandera de gloria!... <br>
+    Estatua ac&eacute;fala retirada a un lado, <br>
+    polvorienta pila bautismal, <br>
+    pend&oacute;n de vencidos que tuviese escrito <br>
+    en el centro este lema: <br>
+    &iexcl;Victoria!&quot;</font></p>
+    <p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de 
+	Rafael D&iacute;az Borb&oacute;n</em></font><p align="left">&nbsp;<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><p align="left">
+		&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="SÚBITA MANO DE ALGÚN FANTASMA OCULTO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		S&uacute;bita mano de alg&uacute;n fantasma oculto...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>S&uacute;bita mano de alg&uacute;n fantasma oculto <br>entre los pliegues de la 
+		noche y de mi sue&ntilde;o 
+		<br>me sacude y yo despierto, y en el abandono <br>de la noche no diviso 
+		gesto ni bulto. 
+		<br><br>Pero un terror antiguo, que insepulto <br>traigo en el coraz&oacute;n, 
+		como de un trono 
+		<br>baja y se afirma mi se&ntilde;or y due&ntilde;o <br>sin orden, sin meneo y sin 
+		insulto. 
+		<br><br>Y yo siento mi vida de repente <br>presa por una cuerda de 
+		Inconsciente 
+		<br>a cualquier mano nocturna que me gu&iacute;a. <br><br>Siento que soy nadie 
+		salvo una sombra 
+		<br>de un bulto que no veo y que me asombra, <br>y en nada existo como 
+		la tiniebla fr&iacute;a.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Teodoro 
+		Llorente</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="TABAQUER&Iacute;A"></a>Tabaquer&iacute;a* </font><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+		<br>
+		No soy nada. <br>
+		Nunca ser&eacute; nada. <br>
+		No puedo querer ser nada. <br>
+		A parte de eso, tengo en m&iacute; todos los sue&ntilde;os del mundo. <br>
+		Ventanas de mi cuarto, <br>
+		De mi cuarto de uno de los millones en el mundo que nadie sabe <br>
+		qui&eacute;n es <br>
+		(Y si supiesen, &iquest;qu&eacute; sabr&iacute;an?), <br>
+		Dais al misterio de una calle cruzada constantemente por gente, <br>
+		A una calle inaccesible a todos los pensamientos, <br>
+		Real, imposiblemente real, cierta, desconocidamente cierta, <br>
+		Con el misterio de las cosas bajo las piedras y los seres, <br>
+		Con la muerte que mancha de humedad las paredes y hace <br>
+		blancos los cabellos de los hombres, <br>
+		Con el Destino que conduce la carroza de todo por el camino de <br>
+		nada. <br>
+		Estoy hoy vencido, como si supiese la verdad. <br>
+		Estoy hoy l&uacute;cido, como si estuviese por morir, <br>
+		Y no tuviese m&aacute;s hermandad con las cosas <br>
+		Que la de una despedida, torn&aacute;ndose esta casa a este lado de la <br>
+		calle <br>
+		La hilera de vagones de un tren, y el silbido de una partida <br>
+		Dentro de mi cabeza, <br>
+		Y una sacudida de mis nervios y un chirriar de huesos al arrancar. <br>
+		Estoy hoy perplejo, como quien pens&oacute; y hall&oacute; y olvid&oacute;. <br>
+		Estoy hoy dividido entre la lealtad que debo <br>
+		A la Tabaquer&iacute;a del otro lado de la calle, como cosa real por fuera, <br>
+		Y a la sensaci&oacute;n de que todo es sue&ntilde;o, como cosa real por dentro. <br>
+		Fall&eacute; en todo. <br>
+		Como no hice ning&uacute;n prop&oacute;sito, tal vez todo fuese nada. <br>
+		El aprendizaje que me dieron, <br>
+		Descend&iacute; por la ventana trasera de la casa. <br>
+		Fui al campo con grandes prop&oacute;sitos. <br>
+		Pero all&iacute; s&oacute;lo encontr&eacute; yerbas y &aacute;rboles, <br>
+		Y cuando hab&iacute;a gente era igual a la otra. <br>
+		Me retiro de la ventana y me siento en una silla. &iquest;En qu&eacute; he de <br>
+		pensar? <br>
+		&iquest;Qu&eacute; s&eacute; yo lo que ser&eacute;, yo, que no s&eacute; lo que soy? <br>
+		&iquest;Ser lo que pienso? &iexcl;Pienso ser tanta cosa! <br>
+		&iexcl;Y hay tantos que piensan ser la misma cosa que no puede haber <br>
+		tantos! <br>
+		&iquest;Genio? En este momento <br>
+		Cien mil cerebros se piensan en sue&ntilde;os genios como yo, <br>
+		Y la historia no se&ntilde;alar&aacute;, &iquest;qui&eacute;n sabe? ni a uno, <br>
+		No habr&aacute; sino un muladar para tantas futuras conquistas. <br>
+		No, no creo en m&iacute;. <br>
+		&iexcl;En todos los manicomios hay tantos locos deschavetados con <br>
+		tantas certezas! <br>
+		Yo, que no tengo ninguna certeza, &iquest;soy m&aacute;s cierto o menos cierto? <br>
+		No, ni en m&iacute;... <br>
+		&iquest;En cu&aacute;ntas buhardillas y no buhardillas del mundo <br>
+		No est&aacute;n en esta hora genios-para-s&iacute;-mismos so&ntilde;ando? <br>
+		&iquest;Cu&aacute;ntas aspiraciones altas y nobles y l&uacute;cidas&#8212; <br>
+		S&iacute;, verdaderamente altas y nobles y l&uacute;cidas&#8212;, <br>
+		Y qui&eacute;n sabe si realizables, <br>
+		&iquest;Nunca ver&aacute;n la luz del sol real ni hallaran o&iacute;dos de nadie? <br>
+		El mundo es de quien nace para conquistarlo <br>
+		Y no para quien sue&ntilde;a que puede conquistarlo, aunque tenga <br>
+		raz&oacute;n. <br>
+		He so&ntilde;ado m&aacute;s que Napole&oacute;n. <br>
+		He abrazado contra el pecho hipot&eacute;tico m&aacute;s humanidades que <br>
+		Cristo. <br>
+		Hice filosof&iacute;as en secreto que ning&uacute;n Kant escribi&oacute;. <br>
+		Pero soy, y tal vez ser&eacute; siempre, el de la buhardilla, <br>
+		Aunque no viva en ella; <br>
+		Ser&eacute; siempre el que no naci&oacute; para esto, <br>
+		Ser&eacute; siempre s&oacute;lo el que ten&iacute;a cualidades; <br>
+		Ser&eacute; siempre el que esper&oacute; que le abriesen la puerta al pie <br>
+		de una pared sin puerta, <br>
+		Y cant&oacute; la cantiga del Infinito en un gallinero, <br>
+		Y escuch&oacute; la voz de Dios en un pozo cegado. <br>
+		&iquest;Creer en m&iacute;? No, ni en nada. <br>
+		Que me derrame la Naturaleza sobre la cabeza ardiente <br>
+		Su sol, su lluvia, el viento que me despeina, <br>
+		Y lo dem&aacute;s que venga si viene o que tenga que venir, o que no <br>
+		venga. <br>
+		Esclavos card&iacute;acos de las estrellas, <br>
+		Conquistamos todo el mundo antes de levantarnos de la cama; <br>
+		Pero nos despertamos y &eacute;l es opaco, <br>
+		Nos levantamos y es ajeno, <br>
+		Salimos de casa y es la tierra entera, <br>
+		M&aacute;s el sistema solar y la V&iacute;a L&aacute;ctea y lo Indefinido. <br>
+		(Come chocolates, ni&ntilde;a; <br>
+		&iexcl;Come chocolates! <br>
+		Mira que no hay m&aacute;s metaf&iacute;sica en el mundo que la de los <br>
+		chocolates. <br>
+		Mira que todas las religiones no ense&ntilde;an m&aacute;s que la confiter&iacute;a. <br>
+		&iexcl;Come, ni&ntilde;a sucia, come! <br>
+		&iexcl;Si pudiera yo comer chocolates con la misma verdad con que t&uacute; <br>
+		los comes! <br>
+		Pero yo pienso y, al quitarles el papel plateado, que es de esta&ntilde;o, <br>
+		Arrojo todo al suelo, como tir&eacute; la vida.) <br>
+		Pero queda al menos de la amargura de lo que nunca ser&eacute; <br>
+		La caligraf&iacute;a r&aacute;pida de estos versos, <br>
+		P&oacute;rtico hendido hacia lo Imposible. <br>
+		Pero al menos dedico a m&iacute; mismo un desprecio sin l&aacute;grimas, <br>
+		Noble al menos por el gesto amplio con que arrojo <br>
+		La ropa sucia que soy, sin motivo, para el decurso de las cosas, <br>
+		Y me quedo en casa sin camisa. <br>
+		(T&uacute; que consuelas, que no existes y por eso consuelas, <br>
+		O diosa griega, concebida como estatua con vida, <br>
+		O patricia romana, imposiblemente noble y nefasta, <br>
+		O princesa de trovadores, gentil&iacute;sima y colorida, <br>
+		O marquesa del siglo dieciocho, escotada y distante, <br>
+		O cocotte c&eacute;lebre del tiempo de nuestros padres, <br>
+		O no s&eacute; qu&eacute; moderno &#8212;no concibo bien qu&eacute;&#8212;, <br>
+		Todo eso, sea lo que fuera, lo que sea, si puede inspirar &iexcl;qu&eacute; <br>
+		inspire! <br>
+		Mi coraz&oacute;n es un balde vac&iacute;o. <br>
+		Como invocan esp&iacute;ritus los que invocan esp&iacute;ritus me invoco <br>
+		Me invoco a m&iacute; mismo y nada encuentro. <br>
+		Me acerco a la ventana y veo la calle con una nitidez absoluta. <br>
+		Veo las tiendas, veo las aceras, veo los coches que pasan. <br>
+		Veo los entes vivos vestidos que se cruzan, <br>
+		Veo los perros que tambi&eacute;n existen, <br>
+		Y todo esto me pesa como un condena al destierro, <br>
+		Y todo esto es extranjero, como todo.) <br>
+		Viv&iacute;, estudi&eacute;, am&eacute; y hasta cre&iacute;, <br>
+		Y hoy no hay mendigo al que no envidie s&oacute;lo por no ser yo. <br>
+		En cada uno miro los andrajos y las llagas y la mentira, <br>
+		Y pienso: tal vez nunca hayas vivido ni estudiado ni amado ni <br>
+		cre&iacute;do <br>
+		(Porque es posible hacer la realidad de todo eso sin hacer <br>
+		nada de eso); <br>
+		Tal vez hayas existido apenas, como un lagarto a quien cortan <br>
+		la cola <br>
+		Y que es cola m&aacute;s ac&aacute; del lagarto que se retuerce. <br>
+		Hice de m&iacute; lo que no supe, <br>
+		Y lo que pude hacer de m&iacute; no lo hice. <br>
+		Vest&iacute; un disfraz equivocado. <br>
+		Me tomaron enseguida por quien no era, y no lo desment&iacute;, y me <br>
+		perd&iacute;. <br>
+		Cuando quise arrancarme la m&aacute;scara, <br>
+		Estaba pegada a la cara. <br>
+		Cuando la arroj&eacute; y me vi en el espejo, <br>
+		Ya hab&iacute;a envejecido. <br>
+		Estaba borracho, y no sab&iacute;a vestir el disfraz que no me hab&iacute;a <br>
+		quitado. <br>
+		Arroj&eacute; la mascara y dorm&iacute; en el vestidor <br>
+		Como un perro tolerado por la gerencia <br>
+		Por ser inofensivo <br>
+		Y voy a escribir esta historia para probar que soy sublime. <br>
+		Esencia musical de mis versos in&uacute;tiles, <br>
+		qui&eacute;n pudiera encontrarte como cosas que yo hice, <br>
+		Y no quedarme siempre enfrente de la Tabaquer&iacute;a de enfrente, <br>
+		Pisoteando la conciencia de estar existiendo, <br>
+		Como un tapete con el que tropieza un borracho <br>
+		O la esterilla que los gitanos roban y no vale nada. <br>
+		Pero el Due&ntilde;o de la Tabaquer&iacute;a se asom&oacute; a la puerta y se qued&oacute; <br>
+		en ella. <br>
+		Lo miro con la incomodidad de la cabeza torcida <br>
+		Y con la incomodidad de una alma que mal entiende. <br>
+		&Eacute;l morir&aacute; y yo morir&eacute;. <br>
+		&Eacute;l dejar&aacute; el letrero, yo dejar&eacute; versos. <br>
+		Y un d&iacute;a morir&aacute; el letrero y tambi&eacute;n mis versos. <br>
+		Despu&eacute;s morir&aacute; la calle donde estuvo el letrero, <br>
+		Y la lengua en que fueron escritos los versos. <br>
+		Morir&aacute; despu&eacute;s el planeta girante en que todo esto sucedi&oacute;. <br>
+		En otros sat&eacute;lites de otros sistemas cualquier cosa como nosotros <br>
+		Continuar&aacute; haciendo cosas como versos y viviendo debajo de las <br>
+		cosas como letreros, <br>
+		Siempre una cosa frente a otra, <br>
+		Siempre una cosa tan in&uacute;til como la otra. <br>
+		Siempre lo imposible tan est&uacute;pido como lo real, <br>
+		Siempre el misterio del fondo tan cierto como el sue&ntilde;o del <br>
+		misterio de la superficie, <br>
+		Siempre &eacute;sta o aquella cosa o ni una ni la otra cosa. <br>
+		Pero un hombre entr&oacute; en la Tabaquer&iacute;a (&iquest;a comprar tabaco?), <br>
+		Y la realidad plausible cae de repente sobre m&iacute;. <br>
+		Me incorporo a medias en&eacute;rgico, convencido, humano, <br>
+		Y voy a intentar escribir estos versos en los que digo lo contrario. <br>
+		Enciendo un cigarro al pensar en escribirlos <br>
+		Y saboreo en el cigarro la liberaci&oacute;n de todos los pensamientos. <br>
+		Sigo el humo como mi camino, <br>
+		Y gozo, en un momento sensitivo y adecuado, <br>
+		La liberaci&oacute;n de todas las especulaciones <br>
+		Y la conciencia de que la metaf&iacute;sica es la consecuencia de una <br>
+		indisposici&oacute;n. <br>
+		Despu&eacute;s me reclino en la silla <br>
+		Y sigo fumando. <br>
+		Seguir&eacute; fumando hasta que el Destino me lo permita. <br>
+		(Si me casase con la hija de mi lavandera <br>
+		Tal vez ser&iacute;a feliz.) <br>
+		Visto esto, me levanto de la silla. Me acerco a la ventana. <br>
+		El hombre sali&oacute; de la Tabaquer&iacute;a (&iquest;guarda el cambio en el bolsillo <br>
+		del pantal&oacute;n?). <br>
+		Ah, lo conozco: es Esteves sin metaf&iacute;sica. <br>
+		(El Due&ntilde;o de la Tabaquer&iacute;a lleg&oacute; a la puerta.) <br>
+		Como por un instinto divino, Esteves se volvi&oacute; y me vio. <br>
+		Hizo una se&ntilde;al de adi&oacute;s, le grit&eacute; &iexcl;Adi&oacute;s, Esteves!, y el universo <br>
+		Se reconstruye en m&iacute; sin ideal ni esperanza, y el Due&ntilde;o de la <br>
+		Tabaquer&iacute;a sonri&oacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">*&Aacute;lvaro de Campos<i><br>
+		Versi&oacute;n de Miguel &Aacute;ngel Flores</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="TENGO TANTO SENTIMIENTO..."></a>
+		Tengo tanto sentimiento...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Tengo tanto sentimiento<br>que es frecuente persuadirme<br>de que soy 
+		sentimental,<br>mas reconozco, al medirme,<br>que todo esto es 
+		pensamiento<br>que yo no sent&iacute; al final.<br>
+		<br>Tenemos, quienes vivimos,<br>una vida que es vivida<br>y otra vida 
+		que es pensada,<br>y la &uacute;nica en que existimos<br>es la que est&aacute; 
+		dividida<br>entre la cierta y la errada.<br>
+		<br>Mas a cu&aacute;l de verdadera<br>o errada el nombre conviene<br>nadie lo 
+		sabr&aacute; explicar;<br>y vivimos de manera<br>que la vida que uno tiene<br>
+		es la que &eacute;l se ha de pensar.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de &Aacute;ngel 
+		Crespo</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TODAS LAS CARTAS DE AMOR SON RID&Iacute;CULAS...**"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Todas las cartas de amor son rid&iacute;culas...*</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Todas las cartas de 
+		amor son<br>
+		rid&iacute;culas.<br>
+		No ser&iacute;an cartas de amor si no fuesen<br>
+		rid&iacute;culas.<br>
+		<br>
+		Tambi&eacute;n escrib&iacute; en mi tiempo cartas de amor,<br>
+		como las dem&aacute;s,<br>
+		rid&iacute;culas. <br>
+		<br>
+		Las cartas de amor, si hay amor,<br>
+		tienen que ser<br>
+		rid&iacute;culas. <br>
+		<br>
+		Pero, al fin y al cabo,<br>
+		s&oacute;lo las criaturas que nunca escribieron cartas de amor<br>
+		s&iacute; que son<br>
+		rid&iacute;culas. <br>
+		<br>
+		Qui&eacute;n me diera el tiempo en que escrib&iacute;a<br>
+		sin darme cuenta<br>
+		cartas de amor<br>
+		rid&iacute;culas. <br>
+		<br>
+		La verdad es que hoy mis recuerdos<br>
+		de esas cartas de amor<br>
+		s&iacute; que son<br>
+		rid&iacute;culos. <br>
+		<br>
+		(Todas las palabras esdr&uacute;julas,<br>
+		como los sentimientos esdr&uacute;julos,<br>
+		son naturalmente<br>
+		rid&iacute;culas).</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">**Heter&oacute;nimo A. Campos<br>
+		<i>Versi&oacute;n de Miguel &Aacute;ngel Flores</i>&nbsp; <br>
+		<em><br>
+&nbsp;</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="TODO, MENOS EL TEDIO, ME DA TEDIO"></a> </font>
+		<font face="Georgia" color="#C4CAD4">
+		Todo menos el tedio me da tedio...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Todo menos el tedio me da tedio. <br>Quiero sin tener sosiego 
+		sosegar. 
+		<br>Tomar la vida todos los d&iacute;as <br>Como un remedio, <br>De esos 
+		remedios que hay para tomar. 
+		<br>Tanto aspir&eacute;, tanto so&ntilde;&eacute; que tanto <br>De tantos tantos me hizo nada 
+		en m&iacute; 
+		<br>Mis manos quedaron fr&iacute;as <br>S&oacute;lo de aguardar el encanto <br>De 
+		aquel amor que las calentara al fin. 
+		<br>Fr&iacute;as, vac&iacute;as, As&iacute;. </font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="TU VOZ HABLA AMOROSA"></a>
+		Tu voz habla amorosa...
+		</font>
+		</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tu voz habla amorosa... 
+		<br>Tan tierna habla que me olvido <br>de que es falsa su blanda prosa.<br>
+		Mi coraz&oacute;n desentristece.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">S&iacute;, as&iacute; como la m&uacute;sica 
+		sugiere 
+		<br>lo que en la m&uacute;sica no est&aacute;, <br>mi coraz&oacute;n nada m&aacute;s quiere <br>que 
+		la melod&iacute;a que en ti hay...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Amarme? &iquest;Qui&eacute;n lo 
+		creer&iacute;a? Habla 
+		<br>con la misma voz que nada dice <br>si eres una m&uacute;sica que arrulla. 
+		<br>Yo oigo, ignoro, y soy feliz.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Ni hay felicidad falsa, 
+		<br>mientras dura es verdadera. <br>&iquest;Qu&eacute; importa lo que la verdad exalta 
+		<br>si soy feliz de esta manera?</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Teodoro 
+		Llorente<br>
+		<br></font></em></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left">
+		<font color="#C4CAD4" face="Georgia">
+		<a name="VEN A SENTARTE CONMIGO, LIDIA, A LA ORILLA DEL R&Iacute;O"></a>
+		Ven a sentarte conmigo, Lidia, a la orilla del r&iacute;o...*</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Ven a sentarte conmigo, 
+		Lidia <br>a la orilla&nbsp; del r&iacute;o.<br>Con sosiego miremos su curso <br>
+		y aprendamos que la vida pasa,
+		<br>y no estamos cogidos de la mano.<br>(Enlacemos las manos.)<br><br>
+		Pensemos despu&eacute;s, ni&ntilde;os adultos,
+		<br>que la vida pasa y no se queda, <br>nada deja y nunca regresa,<br>va 
+		hacia un mar muy lejano,
+		<br>hacia el pie del Hado,<br>m&aacute;s lejos que los dioses.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Desenlacemos las manos,
+		<br>que no vale la pena cansarnos.&nbsp;&nbsp; <br>Ya gocemos, ya no 
+		gocemos,
+		<br>pasamos como el r&iacute;o.<br>M&aacute;s vale que sepamos pasar <br>
+		silenciosamente y sin desasosiegos.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Sin amores, ni odios, 
+		ni pasiones <br>que levanten la voz,<br>
+		ni envidias que hagan a los ojos <br>moverse demasiado,<br>ni cuidados, 
+		porque si los tuviese
+		<br>el r&iacute;o tambi&eacute;n correr&iacute;a,<br>y siempre acabar&iacute;a en el mar.</font></p>
+		<font size="2" color="#C4CAD4" face="Georgia">Am&eacute;monos tranquilamente, <br>
+		pensando que podr&iacute;amos,<br>si quisi&eacute;ramos, <br>cambiar besos y abrazos y 
+		caricias,<br>mas que m&aacute;s vale estar sentados 
+		<br>el uno junto al otro<br>oyendo correr al r&iacute;o y vi&eacute;ndolo.</font><p>
+		<font size="2" color="#C4CAD4" face="Georgia">Cojamos flores, c&oacute;gelas t&uacute; 
+		y d&eacute;jalas<br>en tu regazo, y que su perfume suavice <br>este momento en 
+		que sosegadamente 
+		<br>no creemos en nada,<br>paganos inocentes de la decadencia.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Por lo menos, si yo 
+		fuera sombra antes, 
+		<br>te acordar&aacute;s de m&iacute;<br>sin que mi recuerdo te queme <br>o te hiera o 
+		te mueva,<br>porque nunca enlazamos las manos, 
+		<br>ni nos besamos<br>ni fuimos m&aacute;s que ni&ntilde;os.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Y si antes que yo 
+		llevases el &oacute;bolo 
+		<br>al barquero sombr&iacute;o,<br>no sufrir&eacute; cuando de ti me acuerde,<br>a mi 
+		memoria has de ser suave 
+		<br>record&aacute;ndote as&iacute;, a la orilla del r&iacute;o,<br>pagana triste y con flores 
+		en el regazo.</font><p>
+		<font face="Georgia" size="2" color="#C4CAD4">*Heter&oacute;nimo Ricardo Reiss</font></blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><em><font size="2" color="#C4CAD4" face="Georgia">
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</font></em></p>
+	</blockquote>
+</blockquote>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+    <p><font color="#C4CAD4" face="Georgia"><a name="YO NUNCA GUARD&Eacute; REBA&Ntilde;OS * *"></a>
+	Yo nunca guard&eacute; reba&ntilde;os... * *</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>Yo nunca guard&eacute; reba&ntilde;os,<br>pero es como si los 
+	guardara.<br>Mi alma es como un pastor,<br>conoce el viento y el sol<br>y 
+	anda de la mano de las Estaciones<br>siguiendo y mirando.<br>Toda la paz de 
+	la Naturaleza a solas<br>viene a sentarse a ni lado.<br>Pero permanezco 
+	triste, como un atardecer<br>para nuestra imaginaci&oacute;n,<br>cuando refresca en 
+	el fondo de la planicie<br>y se siente que la noche ha entrado<br>como una 
+	mariposa por la ventana.<br>
+	<br>Pero mi tristeza es sosiego<br>porque es natural y justa<br>y es lo que 
+	debe haber en el alma<br>cuando piensa que ya existe<br>y las manos cogen 
+	flores sin darse cuenta.<br>
+	<br>Con un ruido de cencerros<br>m&aacute;s all&aacute; de la curva del camino<br>mis 
+	pensamientos est&aacute;n contentos.<br>
+	<br>Pensar molesta como andar bajo la lluvia<br>cuando el viento crece y 
+	parece que llueve m&aacute;s.<br>
+	<br>No tengo ambiciones ni deseos.<br>Ser poeta no es una ambici&oacute;n m&iacute;a.<br>
+	Es mi manera de estar solo.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">**Heter&oacute;nimo Alberto Caeiro</font></p>
+	<blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <b><p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+	</b>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:01:44 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:23:53 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

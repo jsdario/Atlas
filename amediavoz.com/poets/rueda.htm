@@ -1,0 +1,758 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Salvador Rueda</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Salvador Rueda. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.  Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Salvador_Rueda,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/rueda.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/rueda.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161640" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./rueda.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:16:40 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./rueda.htm" title="16:15:38 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:16:40 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./rueda.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:16:40 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./rueda.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>69 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010101010101_2004:-1:010101110101_2005:-1:011000000010_2006:-1:010021000200_2007:-1:510105031100_2008:-1:001121000001_2009:-1:020000100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:021110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p>&nbsp;</p>
+
+<p align="center"><br>
+&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./RUEDA.jpg" width="263" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./RUEDA1.jpg" width="201" height="21"></p>
+
+<p align="center"><br>
+&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"><br>
+&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Arial" size="2"><br></font>
+		<strong>
+		<font face="Georgia" size="2" color="#526462"><br>
+		</font>
+		<font face="Georgia" color="#526462">
+		<a href="./rueda.htm#ACERCAD LAS ALMAS, QUE &Eacute;STA ES LA CANDELA">Acercad las almas, 
+		que &eacute;sta es la candela</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./rueda.htm#AFRODITA">Afrodita</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia" color="#526462">
+		<a href="./rueda.htm#Bailadora">Bailadora</a></font></strong><font face="Georgia" color="#526462"><strong><br>
+		<br>
+		<a href="./rueda.htm#CLAVELLINERO">Clavellinero</a><br>
+		<br>
+		<a href="./rueda.htm#DISCURSO DE AFRODITA">Discurso de Afrodita</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./rueda.htm#EL AVE DEL PARA&Iacute;SO">El ave del para&iacute;so</a>&nbsp;&nbsp; 
+		<br><br>
+		<a href="./rueda.htm#EL CISNE">El cisne</a><br>
+		<br><a href="./rueda.htm#EL COPO">El copo</a><br>
+		<br>
+		<a href="./rueda.htm#ESTAMBRES Y PISTILOS">Estambres y pistilos</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<br><a href="./rueda.htm#HORAS DE FUEGO">Hora de fuego</a><br>
+		<br>
+		<a href="./rueda.htm#LA CIGARRA">La cigarra</a></strong></font></p>
+		<p align="left"><strong><font face="Georgia" color="#526462">
+		<a href="./rueda.htm#La copla">La copla</a><br>
+		<br>
+		<a href="./rueda.htm#LA L&Aacute;MPARA DE LA POES&Iacute;A">La l&aacute;mpara de la poes&iacute;a</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><a href="./rueda.htm#LA SAND&Iacute;A">La 
+		sand&iacute;a</a>&nbsp;&nbsp;&nbsp; 
+		<br><br>
+		<a href="./rueda.htm#LAS BODAS DEL MAR">Las bodas del mar</a><br>
+		<br>
+		<a href="./rueda.htm#LEJANO AMOR">Lejano amor</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><a href="./rueda.htm#RAMO DE LIRIOS">Ramo de lirios</a><br>
+		<br>
+		<a href="./rueda.htm#TU CARNE">Tu carne</a></font><font face="Georgia" size="2" color="#526462"><br></font></strong>
+		<font size="2" color="#526462"><strong>
+		<font face="Georgia" size="3" color="#526462"><br></font>
+		<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></strong></font><strong><font face="Georgia" color="#526462">
+		<a
+      href="./" style="color: #43504C; text-decoration: none">
+		A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+		</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></font><font face="Georgia" color="#526462">
+		<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+		Poes&iacute;a de Oro</a><br>
+&nbsp;</p>
+	</blockquote>
+</blockquote></font><font face="Georgia" size="2" color="#526462">
+<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+<p align="center"><font color="#404D48" size="2">Tus comentarios o sugerencias 
+ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+</font><font size="4">
+<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+poesia@amediavoz.com</a></font></p>
+</font></strong>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p><strong>
+		<font face="Georgia" size="2" color="#526462">
+		<a
+      name="ACERCAD LAS ALMAS, QUE &Eacute;STA ES LA CANDELA"></a></font>
+		<font face="Georgia" color="#43504C">Acercad las almas, que &eacute;sta es la 
+		candela...</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Acercad las 
+		almas, que &eacute;sta es la candela; <br>acercad las almas, que &eacute;sta es la 
+		alegr&iacute;a; <br>son versos que cantan llenos de energ&iacute;a, 
+		<br>y alzan una lumbre que, ondulando, vuela. </strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Es un bosque 
+		que ardiendo que el helor deshiela, <br>es Dios hecho lenguas, Dios 
+		hecho poes&iacute;a, <br>este libro es alto temblor de armon&iacute;a, 
+		<br>fuego melodioso, que abriga y consuela. <br><br>El crujiente ritmo 
+		dice:&nbsp; &laquo;&iexcl;All&aacute; van ramas!&raquo;, 
+		<br>y la fantas&iacute;a las convierte en llamas, <br>como promontorio de 
+		dorado velo. 
+		</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Mientras que, 
+		candente, la inexhausta lira <br>lanza en rubios hace versos a la pira, <br>
+		y las lenguas de oro suben hasta el cielo.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#43504C"><strong>
+		<a name="AFRODITA"></a>A</strong></font><strong><font face="Georgia" color="#43504C">frodita</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Venus, la de 
+		los senos adorados<br>que nutren de vigor savias y rosas;<br>la que al 
+		mirar derrama mariposas<br>y al sonre&iacute;r florecen los collados;<br>
+		<br>la que en almas y cuerpos congelados<br>fecunda vierte llamas 
+		generosas,<br>de Eros a las caricias amorosas<br>ostenta sus ropajes 
+		cincelados.<br>
+		<br>Ella es la fuerza viva, el soplo ardiente<br>de cuanto sue&ntilde;a y goza, 
+		piensa y siente;<br>de cuanto canta y r&iacute;e, vibra y ama.<br>
+		<br>En el ni&ntilde;o es candor, eco en la risa;<br>en el agua canci&oacute;n, beso en 
+		la brisa,<br>ascua en coraz&oacute;n, flor en la rama.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="Bailadora"></a></font><font face="Georgia" color="#43504C">
+		Bailadora</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>
+		Con un chambergo puesto como corona<br>
+		y el chal bajando en hebras a sus rodillas,<br>
+		baila una sevillana las seguidillas<br>
+		a los ecos gitanos que un mozo entona.<br>
+		<br>
+		Coro de recias voces canta y pregona<br>
+		de su rostro y sus gracias las maravillas,<br>
+		y ella mueve, inflamadas ambas mejillas,<br>
+		el regio tren de curvas de su persona.<br>
+		<br>
+		Cuando enarca su cuerpo como culebra<br>
+		y en ondas fugitivas gira y se quiebra<br>
+		al brillante reflejo de las ara&ntilde;as,<br>
+		<br>
+		estalla atronadora vocingler&iacute;a,<br>
+		y en un comp&aacute;s amarra la melod&iacute;a<br>
+		palmas, risas, requiebros, cuerdas y ca&ntilde;as.</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="CLAVELLINERO"></a></font><font color="#43504C" face="Georgia">
+		Clavellinero</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Quiero cuando yo muera, Patria m&iacute;a,<br>que formes con mi cr&aacute;neo una 
+		maceta,<br>y de sus ojos por la doble grieta<br>eches la tierra que tus 
+		flores cr&iacute;a.<br>
+		<br>En su interior de luz y de armon&iacute;a<br>deja una mata de clavel 
+		sujeta,<br>y ese clavellinero de poeta<br>te brindar&aacute; corolas como el 
+		d&iacute;a.<br>
+		<br>Por mi boca, mis ojos, mis o&iacute;dos,<br>entreabrir&eacute; capullos encendidos<br>
+		con que de galas quedar&eacute; cubierto.<br>
+		<br>Y, cuando en mayo florecer me veas,<br>a&uacute;n lanzar&eacute; claveles como 
+		ideas<br>para besarte hasta despu&eacute;s de muerto.</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#43504C"><a name="DISCURSO DE AFRODITA"></a>
+		</font><strong>
+		<font size="2" color="#43504C" face="Georgia">D</font><font color="#43504C" face="Georgia">iscurso 
+		de Afrodita</font><font size="2" color="#43504C" face="Georgia"><br>
+		<br>Si Venus Afrodita hablase un d&iacute;a,<br>dijera as&iacute;: &laquo;Sed, pechos 
+		maternales,<br>sagrados y serenos manantiales<br>de paz, de amor, de 
+		leche y de poes&iacute;a.<br>
+		<br>Sed, caderas, que iguala la armon&iacute;a,<br>santo molde de razas 
+		inmortales;<br>sed, labios, arom&aacute;ticos panales<br>donde los besos zumben 
+		de alegr&iacute;a.<br>
+		<br>Sed, manos, como rayos de luz pura,<br>que donde toquen viertan la 
+		hermosura;<br>sed, amplias frentes, llamas generosas.<br>
+		<br>Y sed, ojos de vivos resplandores,<br>r&iacute;os de luz, d-e m&uacute;sicas y 
+		flores,<br>que entero el mundo coron&eacute;is de rosas.</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="EL AVE DEL PARA&Iacute;SO"></a>
+		<strong>E</strong></font><strong><font face="Georgia" color="#43504C">l 
+		ave del para&iacute;so</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Ved el ave 
+		inmortal, es su figura;<br>la antig&uuml;edad un silfo la cre&iacute;a,<br>y la vio 
+		su extasiada fantas&iacute;a<br>cual hada, genio, flor o llama pura.<br>
+		<br>
+		Su plumaje es la luz hecha locura,<br>un brillante hervidero de alegr&iacute;a<br>
+		donde tiembla 1a ardiente sinfon&iacute;a<br>de cuantos tonos casa la 
+		hermosura.<br>
+		<br>
+		Su cola real, colgando en catarata;<br>y dirigida al sol, haz que desata<br>
+		vivo penacho de arcos cimbradores.<br>
+		<br>
+		Curvas suelta la cola sorprende,<br>y al aire lanza cual taz&oacute;n de fuente<br>
+		un surtidor de palmas de colores.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="EL CISNE"></a></font><font face="Georgia" color="#43504C">El 
+		cisne</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Visi&oacute;n 
+		impecable de n&aacute;car riente,<br>ara de alabastro y hostiario viviente,<br>
+		cisne, fr&aacute;gil arco de la idealidad;<br>alma que desfila bajo de tu 
+		cuello<br>digna es del gran triunfo de gozar lo bello<br>y del sol que 
+		alumbra la inmortalidad.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Sagrario que 
+		viertes pulcritus divina,<br>filtro idealizado de luz cristalina,<br>de 
+		las fuentes triste clarificador;<br>tu lecci&oacute;n de blanco, viste de 
+		pureza,<br>viste armon&iacute;a, viste de belleza,<br>y abre castas risas de 
+		bondad y amor.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Tu blancor 
+		teol&oacute;gico lava de pecado,<br>y, oraci&oacute;n de plumas, tu rop&oacute;n nevado<br>
+		habla de una eterna casta religi&oacute;n:<br>la que da a las almas la 
+		naturaleza,<br>la que da alegr&iacute;a, la que da belleza,<br>la que de 
+		blancuras viste la ilusi&oacute;n.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Gracia de los 
+		cielos en tus plumas llueve,<br>en tus plumas hechas de oraci&oacute;n y nieve,<br>
+		que a la boca invitan cual para rezar;<br>hecho tu plumaje de altos 
+		resplandores,<br>no est&aacute; profanado ni por los colores<br>y su luz ni el 
+		iris se atreve a tocar.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="EL COPO"></a>
+		<strong>E</strong></font><strong><font face="Georgia" color="#43504C">l 
+		copo</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>T&iacute;&ntilde;ese el mar 
+		de azul y de escarlata;<br>el sol alumbra su cristal sereno,<br>y 
+		circulan los peces por su seno<br>como ligeras g&oacute;ndolas de plata.<br>
+		<br>
+		La multitud que alegre se desata<br>corre a la playa de las ondas freno,<br>
+		y el musculoso pescador moreno<br>la malla coge que cautiva y mata.<br>
+		<br>
+		En torno de &eacute;l la muchedumbre grita,<br>que alborozada sin cesar se 
+		agita<br>doquier fijando la insegura huella.<br>
+		<br>
+		Y son portento de belleza suma:<br>la red, que sale de la blanca espuma:<br>
+		y el pez, que tiembla prisionero en ella.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="ESTAMBRES Y PISTILOS"></a></font>
+		<font color="#43504C" face="Georgia">Estambres y pistilos</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Bajo el velo del agua transparente<br>impregnada de rayos luminosos,<br>
+		estambres y pistilos pudorosos<br>se citan, para amarse, en el ambiente.<br>
+		<br>Atravesando el l&iacute;quido luciente<br>as&oacute;manse los tallos amorosos,<br>
+		y a los himnos del viento rumorosos<br>los desposa la luz 
+		resplandeciente.<br>
+		<br>A la vez en las frondas escondidos,<br>cu&aacute;ntas dulces escenas 
+		misteriosas<br>entre los bosques formar&aacute;n los nidos.<br>
+		<br>El lento desplegarse de las rosas,<br>el crujir de los granos, los 
+		latidos...<br>&iexcl;Oh concierto invisible de las cosas!</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="HORAS DE FUEGO"></a></font>
+		<font face="Georgia" color="#43504C">Horas de fuego</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Quietud, 
+		pereza, languidez, sosiego...<br>un sol desencajado el suelo dora,<br>y 
+		a su valiente luz deslumbradora<br>que le ha dejado fascinado y ciego.<br>
+		<br>El mar latino, y andaluz, y griego,<br>suspira dejos de cadencia 
+		mora,<br>y la jarra gentil que perlas llora<br>se columpia en la siesta 
+		de oro y fuego.<br>
+		<br>Al rojo blanco la ciudad llamea;<br>ni una brisa los &aacute;rboles 
+		cimbrea,<br>arranc&aacute;ndoles lentas melod&iacute;as.<br>
+		<br>Y sobre el tono de ascuas del ambiente,<br>frescas cubren su carm&iacute;n 
+		r&iuml;ente<br>en sus rasgadas bocas las sand&iacute;as.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="LA CIGARRA"></a>
+		<strong>La cigarra</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Silencio; es la 
+		cigarra, la doctora,<br>la que ense&ntilde;&oacute; a Virgilio la poes&iacute;a<br>y dio a 
+		las vi&ntilde;as griegas su armon&iacute;a<br>cual bord&oacute;n inmortal de luz cantora.<br>
+		<br>
+		Aun pasa con su lira triunfadora<br>ardiendo en entusiasmo y energ&iacute;a;<br>
+		encerrado en sus &eacute;litros va el d&iacute;a,<br>escuchad su canci&oacute;n abrasadora.<br>
+		<br>
+		Ser en la roja siesta enardecido,<br>es un ascua del sol hecha alarido<br>
+		que a su propio calor fundirse quiere.<br>
+		<br>
+		Quema al cantar su real naturaleza,<br>canta por el amor a la belleza,<br>
+		canta a las almas, y cantando muere.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="La copla"></a></font><font face="Georgia" color="#43504C">
+		La copla</font></strong></p>
+		<p><strong><font face="Georgia" size="2" color="#43504C">Tiene la 
+		mariposa cuatro alas;<br>
+		t&uacute; tienes cuatro versos voladores;<br>
+		ella, al girar, resbala por las flores;<br>
+		t&uacute; por los labios, al girar, resbalas.<br>
+		<br>
+		Como luces su t&uacute;nica, t&uacute; exhalas<br>
+		de tu forma divinos resplandores,<br>
+		y fingen ocho vuelos tembladores<br>
+		tus cuatro remos y sus cuatro palas.<br>
+		<br>
+		Ya te enredas del alma en una queja,<br>
+		ya en la azul campanilla de una reja,<br>
+		ya de un mant&oacute;n en el airoso fleco.<br>
+		<br>
+		En el pueblo andaluz, copla, has nacido,<br>
+		y tienes -&iexcl;ave musical! -tu nido<br>
+		de la guitarra en el sonoro hueco.</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#43504C"><a name="LA L&Aacute;MPARA DE LA POES&Iacute;A"></a>
+		</font>
+		<strong>
+		<font color="#43504C" face="Georgia">La l&aacute;mpara de la poes&iacute;a</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Desde la frente, que es l&aacute;mpara l&iacute;rica, desborda su acento<br>como un 
+		aceite de aroma y de gracia la ardiente poes&iacute;a,<br>y a los ensalmos 
+		exhala cantando su fresca armon&iacute;a,<br>vase llenando de luz inefable la 
+		esponja del viento.<br>
+		<br>Rozan los versos como alas ungidas de l&iacute;rico ung&uuml;ento<br>sobre las 
+		frentes, que se abren cual rosas de blanca alegr&iacute;a;<br>y un abanico de 
+		ritmos celestes el aire desl&iacute;a,<br>cual si moviera sus plumas de magia 
+		de Dios el aliento.<br>
+		<br>Vierte en el aire la l&aacute;mpara noble sus sones divinos,<br>que 
+		goteantes de s&iacute;labas puras derraman sus trinos<br>desde el taz&oacute;n del 
+		cerebro de lumbre que canta sonoro.<br>
+		<br>Y revolando las almas acuden de sed abrasadas<br>como palomas que 
+		beben roc&iacute;o y ondulan ba&ntilde;adas<br>en el temblor de la fuente sube del 
+		verso de oro.<br>
+		<br>
+&nbsp;</font></strong></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="LA SAND&Iacute;A"></a>
+		<strong>La sand&iacute;a</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Cual si de 
+		pronto se entreabriera el d&iacute;a<br>despidiendo una intensa llamarada,<br>
+		por el acero f&uacute;lgido rasgada<br>mostr&oacute; su carne roja la sand&iacute;a.<br>
+		<br>Carm&iacute;n incandescente parec&iacute;a<br>la larga y deslumbrante cuchillada,<br>
+		como boca encendida y desatada<br>en frescos borbotones de alegr&iacute;a.<br>
+		<br>Tajada tras tajada, se&ntilde;alando<br>las fue el h&aacute;bil cuchillo 
+		separando,<br>vivas a la ilusi&oacute;n como ningunas.<br>
+		<br>Las separ&oacute; la mano de repente,<br>y de improviso decor&oacute; la fuente<br>
+		un c&iacute;rculo de rojas medias lunas.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="LAS BODAS DEL MAR"></a></font>
+		<font face="Georgia" color="#43504C">Las bodas del mar</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Ya acudes a tu 
+		cita misteriosa<br>con el inquieto mar, luna constante,<br>y asoma las 
+		playas de Levante,<br>hostia de luz, tu cara milagrosa.<br>
+		<br>En la onda azul, cual nacarada rosa,<br>se abre tu seno con pasi&oacute;n 
+		de amante,<br>y dibuja un reguero rutilante<br>tu pie sobre la espuma en 
+		que se posa.<br>
+		<br>El agua, como un t&aacute;lamo amoroso,<br>te ofrece sus cristales 
+		movedizos<br>donde tiendes tu cuerpo luminoso.<br>
+		<br>Y al ostentar desnuda tus hechizos,<br>el mar, con un abrazo 
+		tembloroso,<br>te envuelve en haz de onduladores rizos...</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="LEJANO AMOR"></a></font><font color="#43504C" face="Georgia">
+		Lejano amor</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Mujer de luz, mujer idealizada,<br>que apagaste tu l&aacute;mpara de oro:<br>
+		aun pienso ver la escarcha de tu lloro<br>dentro de tu ata&uacute;d amortajada.<br>
+		<br>Vuelve a surgir de gloria coronada;<br>sal otra vez del m&aacute;rmol 
+		incoloro;<br>yo te amo, yo te vivo, yo te adoro,<br>llena de luz como 
+		una desposada.<br>
+		<br>Tu carne fue de nardos y panales,<br>floreciente entre s&aacute;banas 
+		nupciales;<br>resucita: yo te amo, yo te quiero.<br>
+		<br>Dame tu boca en flor, esposa m&iacute;a,<br>y tu seno que hierve en 
+		armon&iacute;a,<br>lo mismo que un enjambre en un romero.<br>
+		<br>&nbsp;</font></strong></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="RAMO DE LIRIOS"></a>
+		<strong>Ramo de lirios</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Porque de ti se 
+		vieron adorados, 
+		<br>tengo un vaso de lirios juveniles:<br>unos visten pureza de 
+		marfiles;<br>los otros terciopelos afelpados.<br>Flores que sienten, 
+		c&aacute;lices alados<br>que semejan tener sue&ntilde;os sutiles,<br>son los lirios, 
+		ya blancos y gentiles,<br>ya como cardenales coagulados.<br>Cuando la 
+		muerte vuelva un &aacute;mbar de oro<br>tus largas manos de ilusi&oacute;n que adoro,<br>
+		ir&eacute; lirios en ellas a tejerte.<br>Y mezclar&aacute;n sus tallos quebradizos<br>
+		con sus dedos cruzados y pajizos,<br>&iexcl;que fingir&aacute;n los lirios de la 
+		muerte!</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<font size="3" color="#ECEBBB">
+		<p></font><font color="#43504C" face="Georgia"><a name="TU CARNE"></a>
+		<strong>Tu carne</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Est&aacute; tu carne 
+		de &aacute;gata y de rosa<br>donde el sol con la nieve se combina<br>dotada de 
+		una luz casi divina,<br>casi extrahumana y casi milagrosa.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Tiene ideal 
+		traslucidez preciosa<br>que cual racimo de oro te ilumina,<br>y en tu 
+		cutis de leche se adivina<br>sangre de fresas pura y ruborosa.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Tu seno en flor 
+		de redondez de astro,<br>es una clara piedra de alabastro<br>que deja 
+		ver transparentarse el d&iacute;a.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Como a santo 
+		cristal sin mancha alguna<br>a &eacute;l asom&eacute; para mirar la luna,<br>e igual 
+		que tras de un &aacute;mbar la ve&iacute;a.</strong></font><font size="3" color="#ECEBBB"></p>
+		</font>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:16:40 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:12 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

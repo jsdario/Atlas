@@ -1,0 +1,1415 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Al&iacute; Chumacero</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Al&iacute; Chumacero. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Ali_Chumacero,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/chumacero.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "11";
+var displayMonth = "Nov";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/chumacero.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131111123027" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./chumacero.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 12:30:27 Nov 11, 2013">NOV</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Dec
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./chumacero.htm" title="16:56:57 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 12:30:27 Nov 11, 2013">11</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./chumacero.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 12:30:27 Nov 11, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./chumacero.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>83 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">28 Jul 02 - 11 Nov 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110001_2003:-1:010100110101_2004:-1:010101010101_2005:-1:011100000014_2006:-1:010022000100_2007:-1:011155260300_2008:-1:101321100000_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000001111_2012:-1:000021001000_2013:10:101210010010_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  <p align="center"><br>
+  <img border="0" src="./CHUMACERO.jpg" width="329" height="39"> &nbsp;<br>
+  </p>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  <p align="center"><br>
+&nbsp;</p>
+  <p align="center"><font face="Arial" size="2" color="#84B0D6">
+	<em style="font-style: normal">&quot;...Porque el tacto ilumina tu desnudo<br>
+  que a su tr&eacute;mulo encuentro se ha mudado<br>
+  en sal, paloma, vuelo, rosa y llama...&quot;</em></font></p>
+  <p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./CHUMACERO1.jpg" width="260" height="297"></font></p>
+	<p align="center"><font face="Arial" size="2" color="#84B0D6">
+	<em>&quot;La primavera&quot; <br>
+	(detalle)</em></font></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">Sandro Boticelli</font></em><font color="#84B0D6"><br>
+  	</font>
+  </p>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  <p align="center">&nbsp;</p>
+  <blockquote>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+	<p><font face="Georgia" size="2" color="#84B0D6">Poeta mexicano nacido en 
+	Acaponeta, Nayarit en 1918.<br>Estudi&oacute; preparatoria en Guadalajara y muy 
+	joven se traslad&oacute; a&nbsp; la ciudad de M&eacute;xico, donde en 1940, <br>
+	fund&oacute; la revista <em>Tierra nueva</em>.<br>Ha dedicado parte de su vida a la 
+	cr&iacute;tica literaria, pero es en sus versos donde denota una&nbsp;gran sensibilidad <br>
+	y un fino talento l&iacute;rico, que lo se&ntilde;alan como uno de los precursores de la 
+	poes&iacute;a moderna de su pa&iacute;s.<br>Algunas de sus obras m&aacute;s renombradas son: 
+	&laquo;Im&aacute;genes desterradas&raquo; 1948,&nbsp;&nbsp; &laquo;Palabras en reposo&raquo; 1956 <br>
+	y &laquo;P&aacute;ramo de sue&ntilde;os&raquo; 1994.<br>De su trayecto po&eacute;tico merecen destacarse los 
+	siguientes premios:&nbsp; 
+	<em>&quot;Xavier Villaurrutia&quot;, &quot;Alfonso Reyes&quot;, <br>
+	&quot;Nacional de Ling&uuml;&iacute;stica y Literatura&quot;, &quot;Amado Nervo&quot;, &quot;Nayarid&quot; ,
+	</em>y el<em>
+      &quot;Premio Internacional de Poes&iacute;a <br>
+	Jaime Sabines-Gatine Lapointe&quot; en 2003. &copy;</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br><br>
+&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#A TU VOZ">A tu voz</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#A UNA ESTATUA">A una estatua</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#A UNA FLOR INMERSA">A una flor inmersa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#AMOR ES MAR">Amor es mar</a><br>
+	<br>
+	<a href="./chumacero.htm#ANUNCIACI&Oacute;N">Anunciaci&oacute;n</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#DE TIEMPO A ESPACIO">De tiempo a espacio</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#DEBATE DEL CUERPO">Debate del cuerpo</a>&nbsp;&nbsp;&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#DESVELADO AMOR">Desvelado amor</a><br><br><a href="./chumacero.htm#DI&Aacute;LOGO CON UN RETRATO">
+	Di&aacute;logo con un retrato</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#EL HIJO NATURAL">El hijo natural</a>&nbsp;&nbsp; <br><br><a href="./chumacero.htm#EL PENSAMIENTO OLVIDADO">
+	El pensamiento olvidado</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#EL SUE&Ntilde;O DE AD&Aacute;N">El sue&ntilde;o de ad&aacute;n</a><br><br>
+	<a href="./chumacero.htm#ELEG&Iacute;A DEL MARINO">Eleg&iacute;a del marino</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#EN LA ORILLA DEL SILENCIO">En la orilla del silencio</a>&nbsp;&nbsp;&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#ENTRE MIS MANOS">Entre mis manos</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#ESPEJO DE ZOZOBRA">Espejo de zozobra</a>&nbsp;&nbsp;&nbsp; <br><br><a href="./chumacero.htm#ESPEJO Y AGUA">
+	Espejo y agua</a>&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#JARD&Iacute;N DE CENIZA">Jard&iacute;n de ceniza</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#LA FORMA DEL VAC&Iacute;O">La forma del vac&iacute;o</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#MI AMANTE">Mi amate</a><br><br><a href="./chumacero.htm#MON&Oacute;LOGO DEL VIUDO">
+	Mon&oacute;logo del viudo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#MUERTE DEL HOMBRE">Muerte del hombre</a>&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#MUJER DESHABITADA">Mujer deshabitada</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#OLA">Ola</a>&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#POEMA DE ALTA FLOR">Poema de alta flor</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./chumacero.htm#POEMA DE AMOROSA RA&Iacute;Z">Poema de amorosa ra&iacute;z</a> <br><br>
+	<a href="./chumacero.htm#POEMA DONDE AMOR DICE...">Poema donde amor dice...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#REALIDAD Y SUE&Ntilde;O">Realidad y sue&ntilde;o</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./chumacero.htm#Responso del peregrino">Responso del peregrino</a>&nbsp;&nbsp;<br><br><a href="./chumacero.htm#RETORNO">
+	Retorno</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+	Puedes escuchar al poeta en: 
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./poetas.htm" target="_blank">La voz de los 
+	poetas</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+	Volver a:  
+	</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+	Volver a: </font>
+	<font face="Georgia" color="#85A6BC">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+	<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia"
+      size="3" color="#A6BCCE"><br></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#85A6BC"><a name="A TU VOZ"></a></font>
+	<font face="Georgia" color="#84B0D6">A tu voz</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Er&iacute;gese tu voz en mis 
+	sentidos<br>torn&aacute;ndose en mi cuerpo sue&ntilde;o helado,<br>y me miro entre espejos 
+	congelado,<br>y mis labios en sombra doloridos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cuando hablo, mi dolor a ti 
+	se vierte,<br>c&aacute;lida flor de ceniciento aroma,<br>y tu voz a mis labios ya 
+	no asoma<br>sino en duro temor de viva muerte.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Porque tu sue&ntilde;o en m&iacute; su 
+	voz levanta,<br>y enemigo de luz y de sonido<br>destroza la palabra en mi 
+	garganta;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">as&iacute; al fin en tinieblas 
+	alojado,<br>ciego de ti, tal un &aacute;rbol vencido<br>flota mi cuerpo entre tu 
+	voz ahogado.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+	</font><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="A UNA ESTATUA">
+	</a></font><font face="Georgia" color="#84B0D6">A una estatua</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cesa tu voz y muere<br>
+	sobre tus labios mi alegr&iacute;a.<br>No habr&aacute; palabra que en tu piel levante<br>
+	ni un incierto sabor de brisa oscurecida<br>como el recuerdo que en mis ojos 
+	deja<br>el paso de tu aliento,<br>porque vives inmersa en tu silencio,<br>
+	impenetrable a mis sentidos<br>y si mis manos en tu piel se posan<br>
+	inclinas la cabeza,<br>navegas en un tiempo que escucha tu latido,<br>y 
+	entre sus aguas, inund&aacute;ndote<br>bajo la tersa forma de su espejo,<br>est&aacute;s 
+	abandonada,<br>pr&oacute;xima a ser violenta permanencia,<br>enemiga de olvidos,<br>
+	casi perdida en &iacute;ntima zozobra<br>y sin m&aacute;s voluntad<br>que la crueldad 
+	entre tus labios muda.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Toma tu cuerpo ahora, 
+	vuelve el rostro,<br>m&iacute;rate as&iacute;, segura y desplomada<br>hacia un estanque 
+	donde mora el miedo,<br>donde s&oacute;lo hay im&aacute;genes<br>y el cuerpo deja su 
+	cautivo duelo<br>para entrar en la fuente de su origen.<br>Ver&aacute;s nacer el 
+	sue&ntilde;o de tu cuerpo<br>anegando en pureza toda vida,<br>todo impulso negado 
+	en puro movimiento<br>y toda forma sostenida en puro resplandor<br>ya no 
+	ser&aacute; la flor sino su aroma,<br>ya no ser&aacute;s t&uacute; misma.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">No importa entonces que de 
+	pronto mueras<br>y pierdas toda sombra<br>qued&aacute;ndote en escombros defendida,<br>
+	si toda t&uacute; pereces,<br>n&aacute;ufraga de tu propio mar,<br>presa dentro de ti, 
+	vencida<br>como &aacute;ngel que asolado por el fuego<br>lanzara su impotencia,<br>
+	y s&oacute;lo un desenga&ntilde;o<br>entre rocas de olvido y de tinieblas<br>dejan tus 
+	labios mudos<br>y la pureza in&uacute;til de tu cuerpo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Muere, desnuda forma,<br>
+	hielo que mata mi alegr&iacute;a,<br>crueldad vertida en m&aacute;rmol fatigado;<br>muere 
+	ya, y deja que contemple<br>la lucha de tu cuerpo con la sombra,<br>el 
+	debatir in&uacute;til de tus labios<br>contra el vac&iacute;o olvido de tus ruinas,<br>que 
+	en ata&uacute;d o tumbas duermes<br>entre un querer o no de tus sentidos.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font color="#84B0D6"><br>
+	</font>
+	<font face="Georgia" size="2" color="#84B0D6">
+	<a name="A UNA FLOR INMERSA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	A una flor inmersa</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cae la rosa, cae<br>
+	atravesando el agua,<br>lenta por el cristal de sombra<br>en que su tallo 
+	ahoga;<br>desciende imperceptible,<br>clara, ingr&aacute;vida, pura<br>y las olas 
+	la cubren, la desnudan,<br>la vuelven a su aroma,<br>h&aacute;cenla navegante por 
+	la savia<br>que de la tierra nace<br>y asciende temblorosa,<br>desborda la 
+	ternura de su tacto<br>en verde prisionero,<br>y al fin revienta en flor<br>
+	como el esclavo que de noche sue&ntilde;a<br>en una luz que rompa<br>los or&iacute;genes 
+	de su sue&ntilde;o,<br>como el desnudo ciervo, cuando la fuente brota,<br>que moja 
+	con su vaho la corriente<br>destrozando su imagen.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cae m&aacute;s a&uacute;n, cae<br>m&aacute;s 
+	all&aacute; de su savia,<br>sobre la losa del sepulcro,<br>en la mirada de un 
+	canario herido<br>que atreve el &uacute;ltimo aletazo<br>para internarse mudo entre 
+	las sombras.<br>Cae sobre mi mano<br>inclin&aacute;ndose m&aacute;s y m&aacute;s al tacto,<br>
+	cede a su suavidad de s&aacute;bana mortuoria<br>y como un p&aacute;lido recuerdo<br>o 
+	&aacute;ngel desalado<br>pierde una estela de su aroma,<br>deja una huella pie que 
+	no se posa<br>y yeso que se apaga en el silencio.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font color="#84B0D6"><br>
+	</font>
+	<font face="Georgia" size="2" color="#84B0D6"><a name="AMOR ES MAR"></a></font>
+	<font face="Georgia" color="#84B0D6">Amor es mar</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Llegas, amor, cuando la 
+	vida ya nada me ofrec&iacute;a<br>sino un duro sabor de lenta consunci&oacute;n<br>y un 
+	saberse dolor desamparado,<br>casi ceniza de tinieblas;<br>llega tu voz a 
+	destrozar la noche<br>y asciendes por mi cuerpo<br>como el c&aacute;lido pulso 
+	hacia el latir postrero<br>de quien a solas sabe<br>que un abismo de duelo 
+	lo sostiene.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Nada hab&iacute;a sin ti,<br>ni un 
+	sue&ntilde;o transformado en vida,<br>ni la certeza que nos precipita<br>hasta el 
+	total saberse consumido;<br>s&oacute;lo un pavor entre mi noche<br>levantando su 
+	voz de precipicio;<br>era una sombra que se destrozaba,<br>incierta en 
+	h&uacute;medas tinieblas<br>y enga&ntilde;osas palabras destruidas,<br>trocadas en 
+	blasfemias que a los ojos<br>ni luz ni sombra daban:<br>era el temor a ser 
+	s&oacute;lo una l&aacute;grima.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mas el mundo renace al 
+	encontrarte,<br>y la luz es de nuevo<br>ascendiendo hacia el aire<br>la 
+	tersa calidez de sus alientos<br>lentamente erigidos;<br>brotan de fuerza y 
+	c&oacute;lera<br>y de un aroma suave como espuma,<br>tal un leve recuerdo<br>que de 
+	pronto se hiciera un muro de dureza<br>o manantial de sombra.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y en ti mi coraz&oacute;n no tiene 
+	forma<br>ni es un c&iacute;rculo en paz con su tristeza,<br>sino un peque&ntilde;o fuego,<br>
+	el grito que florece en medio de los labios<br>y torna a ser el fin<br>un 
+	sencillo reflejo de tu cuerpo,<br>el cristal que a tu imagen desaf&iacute;a,<br>el 
+	sue&ntilde;o que en tu sombra se aniquila.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Olas de luz tu voz, tu 
+	aliento y tu mirada<br>en la dolida playa de mi cuerpo;<br>olas que en m&iacute; 
+	desn&uacute;danse como alas,<br>hechas rumor de espuma, oscuridad, aroma tierno,<br>
+	cuando al sentirme junto a tu desnudo<br>se ilumina la forma de mi cuerpo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Un mar de sombra eres, y 
+	entre tu sal oscura<br>hay un mundo de luz amanecido.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ANUNCIACIÓN"></a> 
+	</font><font face="Georgia" color="#84B0D6">
+	Anunciaci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Inserto en soledad <br>de palabra vertida 
+	<br>que apenas hiriera el silencio, <br>siento la voz del sue&ntilde;o <br>con su 
+	descenso casi imperceptible 
+	<br>y sus labios de hielo, <br>mas no el letal dolor que de m&iacute; nace, <br>ni 
+	la perenne dicha del misterio aclarado 
+	<br>m&aacute;s all&aacute; de las cosas, <br>del &uacute;ltimo verano de la sangre <br>que en su 
+	final latir 
+	<br>crece tr&eacute;mula y nos inunda <br>de su postrer sollozo, <br>sino el 
+	misterio mismo con su propia presencia, 
+	<br>sus invisibles alas, sus invencibles olas <br>y la marea con que ahoga 
+	<br>la m&aacute;s inundada palabra <br>o aun la propia voz, <br>y llega sobre el 
+	lecho, silencioso, 
+	<br>negando su sonido, <br>a destacar su dura esencia <br>a despertar mi 
+	sue&ntilde;o con su sombra, 
+	<br>a rescatarse en m&iacute; <br>como cristal que guarda el recuerdo del aire, <br>
+	como cuando el silencio 
+	<br>navega en aguas del silencio, <br>y sobre mi cuerpo desnudo, <br>tocando 
+	con su piel la h&uacute;meda frialdad 
+	<br>de mis labios y voz, <br>llegando hasta debajo de mis p&aacute;rpados, <br>me 
+	inunda lentamente, me apresa con sus redes 
+	<br>y en su oc&eacute;ano quedo <br>como &uacute;ltima voz abandonada <br>o el naufragio 
+	de sombra sobre sombra, 
+	<br>y comprendo que sue&ntilde;o y sombra, <br>confusos para siempre, <br>no pueden 
+	exclamar: &quot;&Eacute;sta es mi sangre&quot;. 
+	</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="DE TIEMPO A ESPACIO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	De tiempo a espacio</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Naciste desde el fondo de 
+	la noche,<br>del sue&ntilde;o donde el tiempo comienza a ser ra&iacute;z<br>y la mirada 
+	s&oacute;lo tibio aire,<br>cuando a&uacute;n no era ojo sino apenas un viento suave,<br>un 
+	aroma erigido sin mano que lo toque.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eras la flor ahogada 
+	flotando sobre el cuerpo<br>en nuestro amanecer hacia la luz;<br>destrozabas 
+	la noche con tus ojos,<br>hundida en mi desnudo<br>tal un vivo rumor de 
+	brisa que al o&iacute;do<br>volcara la virtud de su marea,<br>y mi aliento en tu 
+	savia navegaba,<br>y tu voz en mi pulso se mor&iacute;a<br>como sombra de ave 
+	agonizante,<br>transformando mi cuerpo en sue&ntilde;o tuyo,<br>en vivo espejo 
+	abandonado<br>o silencio que cruza los espacios.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="DEBATE DEL CUERPO"></a></font><font face="Georgia" color="#84B0D6">
+	Debate del cuerpo</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Lamento que entre tumbas se 
+	consume&nbsp;<br>como &eacute;poca de sombra en una desatada tempestad,&nbsp;<br>mi coraz&oacute;n 
+	esparce su evidencia,&nbsp;<br>su dura flor de roca desolada&nbsp;<br>y al desbordarse 
+	forma&nbsp;<br>un c&aacute;lido latir sobre la piel;&nbsp;<br>golpean m&aacute;s all&aacute; del cuerpo sus 
+	defendidos l&iacute;mites&nbsp;<br>prolongando su extrema vigilancia&nbsp;<br>contra un mundo 
+	al fin eco de mi sue&ntilde;o.&nbsp; 
+	</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">En ceniza y olvido ha de 
+	morir,&nbsp;<br>mas hoy insiste aqu&iacute; como quien ba&ntilde;a&nbsp;<br>con un lenguaje mudo sus 
+	palabras,&nbsp;<br>surgido de una voz que interminable se repite&nbsp;<br>acaso en 
+	sombra madurando,&nbsp;<br>a trav&eacute;s de su luz dormida sobre los sentidos&nbsp;<br>para 
+	crear un mundo de armon&iacute;a,&nbsp;<br>como un deshecho aliento que retoma a su 
+	origen&nbsp;<br>y vuelve a ser imagen de su fuente.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y soy yo mismo su violento 
+	impulso&nbsp;<br>al anegarme entre mi propia carne,&nbsp;<br>viviendo en ella 
+	defendido,&nbsp;<br>c&oacute;mplice de mi ser que contra el tiempo me levanta&nbsp;<br>con su 
+	voraz sentir la vida dentro,&nbsp;<br>y me abandona a c&oacute;leras y miedos,&nbsp;<br>me 
+	hunde en t&eacute;mpanos de espadas,&nbsp;<br>cuando al mover sus aguas con mis labios,&nbsp;<br>
+	en lucha contra mi recuerdo,&nbsp;<br>frente a formas ajenas a mi imagen,&nbsp;<br>
+	como un abismo ya sin nada cercano al coraz&oacute;n,&nbsp;<br>en ella me refugio, 
+	convencido&nbsp;<br>de que existo en la vida de mi piel,&nbsp;<br>habitando el 
+	sepulcro de mi cuerpo.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Aqu&iacute; me encuentro oscuro e 
+	incorp&oacute;reo,&nbsp;<br>sin un viento que cambie mi identidad continua,&nbsp;<br>y luego 
+	me someto a su olvidado duelo&nbsp;<br>de l&aacute;grimas calladas,<br>como nace un 
+	olvido de otro olvido&nbsp;<br>y una roca es igual a su dureza.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Habito mi probable noche, 
+	mi laurel de adversario&nbsp;<br>sobre la arena tr&eacute;mulo abatido,&nbsp;<br>y viajo por 
+	mi cuerpo&nbsp;<br>en testimonio de que no existe un espejo&nbsp;<br>o simple fuente 
+	contra m&iacute; rebelde,&nbsp;<br>porque soy mi enemigo sentenciado,&nbsp;<br>mi propia 
+	v&iacute;ctima, la orilla&nbsp;<br>saciada entre sus l&iacute;mites, en un constante incesto&nbsp;<br>
+	o presagio de mar que no requiere playa. 
+	</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="DESVELADO AMOR">
+	</a></font><font face="Georgia" color="#84B0D6">Desvelado amor</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cay&oacute; desnuda, virgen, la 
+	palabra;<br>cay&oacute; la virgen desnudada<br>bajo mi cuerpo, tr&eacute;mulo latir<br>que 
+	hoy apenas si me pertenece<br>y me embriaga con c&aacute;lido rumor,<br>rodea mi 
+	epidermis,<br>se introduce letal bajo mi lengua,<br>y mis p&aacute;rpados no lo 
+	miran 
+	<br>pero lo sienten desalado,<br>desolado que busca entre la noche<br>la 
+	amarga conjunci&oacute;n<br>de dos manos eternamente unidas<br>en el estrecho 
+	abrazo de la muerte.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Call&oacute; la voz. Mudos los 
+	labios<br>ci&ntilde;&eacute;ronse a la sombra<br>incendiando el incienso&nbsp; de su ca&iacute;da 
+	flor;<br>tan quietos como el sue&ntilde;o que tambi&eacute;n esperaban<br>con ansiedad de 
+	ciego sobre el tacto;<br>descansando angustiosos como el &aacute;rbol sin fruto<br>
+	bajo la primavera. Y mi cuerpo cay&oacute;<br>a un desesperado cuerpo,<br>y desde 
+	entonces siente<br>c&oacute;mo crecen sus nervios en una dura ruina<br>hecha de 
+	sombra y voz estremecidas<br>por el vivo temor de estrecharse a la noche,<br>
+	como el mar a las aguas que lo nutren<br>o la voz a los labios, fuente muda;<br>
+	y en la quietud nacida<br>de este limpio silencio que por mi cuerpo corre,<br>
+	destrozados los labios, la voz y la palabra,<br>anclado entre m&iacute; mismo,<br>
+	el fuego de mi tacto se adormece<br>en esta soledad bajo la flor del sue&ntilde;o.</font></p>
+	<p><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="DI&Aacute;LOGO CON UN RETRATO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Di&aacute;logo con un retrato</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Surges amarga, pensativa,<br>
+	profunda tal un mar amurallado;<br>reposas como imagen hecha hielo<br>en el 
+	cristal que te aprisiona<br>y te adivino en duelo,<br>sostenida bajo un 
+	mortal cansancio<br>o bajo un sue&ntilde;o en sombra, congelada.<br>En vano te 
+	defiendes<br>cuando tus ojos alzas y me miras<br>a trav&eacute;s de un desierto de 
+	ceniza,<br>porque de ti nada existe que delate<br>si por tu cuerpo corre luz<br>
+	o un efluvio de rosas,<br>sino temor y sombra, la ca&iacute;da<br>de una ola 
+	transformada<br>en un simple roc&iacute;o sobre el cuerpo.<br>Y es verdad: a pesar 
+	de ti desciendes<br>y no existe recuerdo que al mundo te devuelva,<br>ni 
+	quien escuche el l&aacute;nguido sonar de tus latidos.<br>Eres como una imagen sin 
+	espejo<br>flotando prisionera de ti misma,<br>crecida en las tinieblas de 
+	una interminable noche,<br>y te desl&iacute;es en suspiros, en humedad y l&aacute;grimas<br>
+	y en un so&ntilde;ar ternuras y silencio.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">S&oacute;lo mi coraz&oacute;n te 
+	precipita<br>como el viento a la flor o la mirada,<br>reduci&eacute;ndote a voz a&uacute;n 
+	no erigida,<br>disuelta entre la lengua y el deseo.<br>De all&iacute; has de brotar 
+	hecha ceniza,<br>hecha amargura y pensamiento,<br>creada nuevamente de tus 
+	ruinas,<br>de tu temor y espanto.<br>Y desde all&iacute; dir&aacute;s que amor te crea,<br>
+	que crece con terror de ej&eacute;rcitos luchando,<br>como un espejo donde el 
+	tiempo muere<br>convertido en estatua y en vac&iacute;o.<br>Porque &iquest;qui&eacute;n eres t&uacute; 
+	sino la imagen<br>de todo lo que nutre mi silencio,<br>y mi temor de ser 
+	s&oacute;lo una imagen?</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="EL HIJO NATURAL"></a></font><font face="Georgia" color="#84B0D6">
+	El hijo natural</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">A su 
+	pregunta, yo sobre la piel<br>ve&iacute;a los silencios cruzar el transparente<br>
+	origen del pecado.<br>Quiz&aacute; fue por la tarde<br>o cierta madrugada, cuando 
+	el insomnio era<br>esc&aacute;ndalo antes y despu&eacute;s, y al alma<br>en sordo 
+	interrogar de prisionero<br>urd&iacute;a entre la sombra la varonil espera<br>de la 
+	perduraci&oacute;n.</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">De su mirar 
+	volaban<br>retratos, somnolencias, un rostro femenino<br>en lucha contra el 
+	tiempo: ala o peste<br>que deja la ciudad e incendia calles<br>y alcobas sin 
+	historia, propicias luego al s&uacute;bito<br>nacer de la amargura.<br>
+	<br>Noches de perversi&oacute;n<br>derr&aacute;manse en sus ojos, materia luminosa<br>de 
+	una mujer que en ellos perdura.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="EL PENSAMIENTO OLVIDADO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	El pensamiento olvidado</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Pensar en tu mirada y en mi 
+	olvido<br>dejando el pensamiento dilatado<br>a trav&eacute;s de tus ojos, anegado<br>
+	de su mismo vivir con tu sentido;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">despu&eacute;s mirar tu olvido que 
+	en m&iacute; asoma<br>como una rosa que al espacio diera<br>leve prolongaci&oacute;n y 
+	luego fuera<br>la propia luz que toca con su aroma,</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">es entregarme a ti sin m&aacute;s 
+	denuedo<br>que la lucha del cuerpo contra el viento,<br>y contigo so&ntilde;ando 
+	estar tan quedo</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">como n&aacute;ufrago mar o vano 
+	intento:<br>porque ya que pensarte en m&iacute; no puedo,<br>dejo olvidado en ti mi 
+	pensamiento.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="EL SUE&Ntilde;O DE AD&Aacute;N">
+	</a></font><font face="Georgia" color="#84B0D6">El sue&ntilde;o de Ad&aacute;n</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ligera fue tu voz, mas tu 
+	palabra dura<br>con vuelo de paloma sin m&aacute;s peso<br>que su inm&oacute;vil cruzar el 
+	mar del viento;<br>y persistes como un sonido bajo el agua,<br>desde mi piel 
+	al aire levantada,<br>ligera como fuiste, como esa ala<br>que olvidada del 
+	mundo se recrea,<br>convertida en ausencia y en olvido.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Vivo de o&iacute;rme el cuerpo y 
+	de entregarme al tiempo<br>como a un rumbo sin luz la adormecida rosa,<br>
+	como asoma en el sue&ntilde;o y luego muere<br>el cielo que una tarde contemplamos,<br>
+	y oigo la vida en m&iacute;, su aliento te recuerda<br>ingr&aacute;vida, en latidos 
+	desprendida,<br>con un temblor de silenciosas aguas<br>de su propia amargura 
+	renaciendo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">sufres conmigo cuando s&oacute;lo 
+	miro<br>que el amor es un cuerpo de im&aacute;genes poblado,<br>y caricia se llama 
+	al tocar el recuerdo,<br>a sentir las tinieblas en las manos<br>y en un 
+	esfuerzo in&uacute;til oponerse<br>a ese tiempo que arrastra nuestro duelo<br>hasta 
+	inclinar los labios a la nieve<br>y tender en ceniza nuestros cuerpos.<br>Te 
+	siente el coraz&oacute;n como un aroma<br>que en un eco perdiera sus im&aacute;genes,<br>y 
+	me palpo la piel tocando en ella<br>la tersura del agua donde yaces,<br>y 
+	despu&eacute;s quedo solo, enamorado<br>de esta voz que del cuerpo te desprende<br>
+	tornada en pensamiento, y en palabras te crea,<br>nacida nuevamente de mi 
+	sue&ntilde;o.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ELEG&Iacute;A DEL MARINO"></a></font><font face="Georgia" color="#84B0D6">
+	Eleg&iacute;a del marino</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Los cuerpos se recuerdan en el tuyo: 
+	<br>su delicia, su amor o sufrimiento. <br>Si noche fuera amar, ya tu mirada 
+	<br>en incesante oscuridad me anega. <br>Pasan las sombras, voces que a mi 
+	o&iacute;do 
+	<br>dijeron lo que ahora resucitas, <br>y en tus labios los nombres 
+	nuevamente 
+	<br>vuelven a ser memoria de otros nombres. <br>El oto&ntilde;o, la rosa y las 
+	violetas 
+	<br>nacen de ti, movidos por un viento <br>cuyo origen viniera de otros 
+	labios 
+	<br>a&uacute;n entre los m&iacute;os. <br>Un aire triste arrastra las im&aacute;genes <br>que de 
+	tu cuerpo surgen 
+	<br>como h&aacute;lito de una sepultura: <br>m&aacute;rmol y resplandor casi desiertos, 
+	<br>olvidada su danza entre la noche. <br>Mas el tiempo disipa nuestras 
+	sombras, 
+	<br>y habr&eacute; de ser el hombre sin retorno, <br>amante de un cad&aacute;ver en la 
+	memoria vivo. 
+	<br>Entonces te hallar&eacute; de nuevo en otros cuerpos.</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+	&quot;Amor entre ruinas&quot;</em></font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="EN LA ORILLA DEL SILENCIO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	En la orilla del silencio</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ahora que mis manos&nbsp;<br>
+	apenas logran palpar d&uacute;ctilmente,&nbsp;<br>como llegando al mar de lo ignorado,&nbsp;<br>
+	este suave misterio que me nace,&nbsp;<br>t&uacute;nica y aire, c&aacute;lida agon&iacute;a,&nbsp;<br>en la 
+	arista m&aacute;s honda de la piel,&nbsp;<br>junto a m&iacute; mismo, dentro,&nbsp;<br>ah&iacute; donde no 
+	crece ni la noche,&nbsp;<br>donde la voz no alcanza a pronunciar&nbsp;<br>el nombre 
+	del misterio.&nbsp; 
+	</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ahora que a mis dedos&nbsp;<br>
+	se adhiere temblorosa&nbsp;<br>la flor mas pura del silencio,&nbsp;<br>inquebrantable 
+	muerte ya iniciada&nbsp;<br>en absoluto imperio de roca sin apoyo,&nbsp;<br>como un 
+	rel&aacute;mpago del sue&ntilde;o<br>dilat&aacute;ndose, c&aacute;ndido desplome<br>hacia el abismo 
+	un&iacute;sono del miedo.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ahora que en mi piel&nbsp;<br>un 
+	solo y &uacute;nico sollozo&nbsp;<br>germina lentamente, apagado,&nbsp;<br>con un silencio de 
+	cad&aacute;ver insepulto&nbsp;<br>rodeado de l&aacute;grimas ca&iacute;das,&nbsp;<br>de s&aacute;banas heladas y 
+	de negro,&nbsp;<br>que quisiera decir: &quot;A&uacute;n existo&quot;.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Comienzo a descubrir c&oacute;mo 
+	el misterio es uno&nbsp;<br>nadando mutilado&nbsp;<br>en el supremo aliento de mi 
+	sangre,&nbsp;<br>y desnudo se afina, agudiza su sombra&nbsp;<br>para cavar mi propia 
+	tumba&nbsp;<br>y decirme la fiel palabra&nbsp;<br>que s&oacute;lo para m&iacute; conserva&nbsp;<br>
+	escondida, cuidada rosa fresca:&nbsp;<br>&quot;Eres m&aacute;s m&iacute;o que mi sombra,&nbsp;<br>en tus 
+	huesos florezco&nbsp;<br>y nada hay que no me pertenezca&nbsp;<br>cuando a tientas 
+	persigo, destrozando tu piel&nbsp;<br>como el invierno fr&iacute;o de la daga,&nbsp;<br>el 
+	vaho m&aacute;s cernido de tu angustia&nbsp;<br>y el poro m&aacute;s callado de tu postrer 
+	silencio&quot;.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Entonces me saturo de m&iacute; 
+	mismo&nbsp;<br>porque el misterio no navega&nbsp;<br>ni crece desolado,&nbsp;<br>como 
+	germina bajo el aire el p&aacute;jaro&nbsp;<br>que ha perdido el recuerdo del nido all&aacute; 
+	a lo lejos,&nbsp;<br>sino que es piel y sombra,&nbsp;<br>cansancio y sue&ntilde;o madurados,&nbsp;<br>
+	fruta que por mis labios deja&nbsp;<br>el m&aacute;s alto sabor y el supremo silencio 
+	endurecido.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y empiezo a comprender&nbsp;<br>
+	c&oacute;mo el misterio es uno con mi sue&ntilde;o,&nbsp;<br>c&oacute;mo me abrasa en desolado 
+	abrazo,&nbsp;<br>incinerando voz y labios,&nbsp;<br>igual que piedra hundida entre las 
+	aguas&nbsp;<br>rodando incontenible en busca de la muerte,&nbsp;<br>y siento que ya el 
+	sue&ntilde;o navega en el misterio. 
+	</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="ENTRE MIS MANOS"></a></font>
+	<font face="Georgia" color="#84B0D6">Entre mis manos vives...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Entre mis manos vives<br>en 
+	confusi&oacute;n de nacimiento y coraz&oacute;n herido,<br>como desvanecerse o contemplar<br>
+	un alto simulacro de ruinas;<br>sobre mis dedos mueres,<br>materia pensativa 
+	que se abate<br>bajo el murmullo de mi tacto,<br>y eres tristeza en m&iacute;,<br>
+	suave como la forma de la nieve,<br>como cerrar la puerta<br>o mirar la 
+	inocencia de una pluma.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Nacida para mi caricia,<br>
+	con un perd&oacute;n que olvida y un comienzo<br>de &eacute;xtasis y aromas,<br>me acerco 
+	hacia tu aliento,<br>tu o&iacute;do con mis labios toco y digo<br>que nuestro amor 
+	es agon&iacute;a,<br>que escuches mi temor y mi palabra de humo<br>y que yo, como 
+	t&uacute;, de noche oigo<br>c&oacute;mo se pierde el pensamiento,<br>confuso entre mi 
+	carne y tu recuerdo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mas retiro mi rostro de tus 
+	ojos<br>porque ya no podr&eacute; pensar una palabra<br>que no habite tu nombre,<br>
+	y porque surges hasta del silencio<br>como enemiga que desde&ntilde;a el arma<br>y 
+	de improviso nace entre las sombras,<br>cuando sin ti yo no ser&iacute;a<br>sino un 
+	olvido abandonado<br>entre las ruinas de mi pensamiento.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ESPEJO DE ZOZOBRA"></a></font><font face="Georgia" color="#84B0D6">
+	Espejo de zozobra</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Me miro frente a m&iacute;, rendido, 
+	<br>escuchando latir mi propia sangre, <br>con la atenci&oacute;n desnuda <br>del 
+	que espera encontrarse en un espejo 
+	<br>o en el fondo del agua <br>cuando, tendiendo el cuerpo, ve acercarse <br>
+	su sombra, lenta e inclinada, 
+	<br>a la suprema conjunci&oacute;n <br>de dos pulsos perdidos en s&iacute; mismos, <br>
+	como doble sue&ntilde;o o palabra 
+	<br>inserta en eco hasta llegar <br>a la primera orilla del silencio. <br>En 
+	espejo de sue&ntilde;os estoy junto a m&iacute; mismo 
+	<br>y mi imagen se asoma alargando los brazos, <br>buscando asir lo 
+	inasidero,
+	<br>lo que dentro de m&iacute; resuena <br>como sombra apresada en las tinieblas 
+	<br>que quisiera hallar una luz<br>para poder nacer. <br>Estoy junto a la 
+	sombra que proyecta mi sombra, 
+	<br>dentro de m&iacute;, sitiado, <br>intacto, descansando leve <br>sobre mi propia 
+	forma: mi agon&iacute;a, 
+	<br>y en vano quiero ya cerrar los ojos, <br>dejar los brazos a su propio 
+	peso 
+	<br>o que el agua del silencio lave mi cuerpo, <br>pues ya mi sue&ntilde;o frente a 
+	m&iacute; me nombra, 
+	<br>ya destroza el espejo en que se guarda <br>y reclina su voz sobre la 
+	m&iacute;a: 
+	<br>ya estoy frente a la muerte.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="ESPEJO Y AGUA">
+	</a></font><font face="Georgia" color="#84B0D6">Espejo y agua</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Tu alma en m&iacute; dej&oacute; su fr&iacute;a 
+	imagen,<br>s&oacute;lo recuerdo de lo que viv&iacute;as,<br>y si al espejo miro y me 
+	reflejo<br>all&iacute; encuentro tus ojos, tu silencio de cera<br>con un reposo de 
+	apagado aliento,<br>como si descendiendo arenas<br>o un tropel de recuerdos<br>
+	sobre mi piel, con sosegado paso<br>hacia el cristal cayeran.<br>&iquest;No caen 
+	hojas como frases muertas,<br>y mis ojos en ti no fueron rosas<br>ahogadas 
+	en tu aroma?</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Si al agua miras, mira<br>
+	mi coraz&oacute;n ornado de sepulcros<br>bajo las olas que lo mueven,<br>crecido 
+	entre las ruinas de tu nombre,<br>entre perderse en muerte o florecer<br>
+	como una eterna espera o el lamento<br>de un Ad&aacute;n impasible que so&ntilde;aba<br>
+	contigo y tu mentido Para&iacute;so.<br>Porque al mirarte contra el agua, miras<br>
+	mi pensamiento en tu alma suspendido.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6"><a name="JARD&Iacute;N DE CENIZA">
+	</a>Jard&iacute;n de ceniza</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Haber cre&iacute;do alguna vez&nbsp;<br>
+	viendo la noche desplomarse al mundo&nbsp;<br>y una tristeza al coraz&oacute;n volcada,&nbsp;<br>
+	y despu&eacute;s ese cuerpo que oprimen nuestras manos:&nbsp;<br>la mujer que sonr&iacute;e&nbsp;<br>
+	y sobre el lecho se nos vuelve&nbsp;<br>cad&aacute;ver mutilado en el recuerdo,&nbsp;<br>como 
+	mentira &iacute;nfima&nbsp;<br>o rosa desde siglos viviendo en el silencio.&nbsp;<br>Y sin 
+	embargo en ella nos perdemos,&nbsp;<br>muertos contra sus brazos, en su misterio 
+	mudos&nbsp;<br>tal una voz que nadie escucha,&nbsp;<br>frutos ya de cad&aacute;ver de amor, 
+	petrificados;&nbsp;<br>su placer nos sostiene sobre un mentido mundo,&nbsp;<br>ah&iacute; nos 
+	consumimos continuando&nbsp;<br>en la vana tarea interminable,&nbsp;<br>y luego no 
+	creemos nada,&nbsp;<br>somos desolaci&oacute;n o cruel recuerdo,&nbsp;<br>vac&iacute;o que no 
+	encuentra mar ni forma,&nbsp;<br>rumor desvanecido en un duro lamento de ata&uacute;des.</font></p>
+	<p><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="justify"><font face="Georgia" color="#84B0D6"><a name="LA FORMA DEL VAC&Iacute;O"></a>
+	La forma del vac&iacute;o</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Pienso que el sue&ntilde;o existe porque existo; 
+	<br>pero si contra el mundo cruzo rostros <br>y de ligeros vientos alzo 
+	vuelos, 
+	<br>t&uacute;nicas que no han de vestir estatuas, <br>y con palabras que despu&eacute;s 
+	desaparecen, 
+	<br>violadas de improviso, <br>evoco su mirada y sus palabras: &quot;cielo&quot;, 
+	&quot;vida&quot; 
+	<br>que eran como un andar a oscuras, <br>tan tristes como yo y como mi 
+	alma, 
+	<br>como cuando la noche se derrumba <br>y viene hasta mis manos deca&iacute;da, 
+	<br>pienso que existo porque el sue&ntilde;o existe. <br>Puedo encontrar las 
+	huellas que abandono: 
+	<br>la mujer que una vez amaba, <br>sus brazos, sus cansancios, su mirada 
+	<br>y su visible pensamiento, <br>olvidada columna en mi memoria, <br>y todo 
+	lo que puedo enumerar: 
+	<br>la tarde que a su lado hab&iacute;a, <br>la noche de su voz y la desierta <br>
+	despedida de entonces. 
+	<br><br>Pienso tambi&eacute;n: &quot;La tierra es mi enemiga&quot;, <br>mas los seres que 
+	habitan su amargura 
+	<br>defienden mi existencia, <br>luchan con mi tristeza y cada d&iacute;a <br>
+	presiento que he de hallar diversas tierras, 
+	<br>otras miradas, nuevas formas <br>hacia mi sue&ntilde;o transportadas, <br>
+	hechas amor o c&aacute;ndidas caricias 
+	<br>como viajeras que en lo oscuro mueren <br>sin conocer la tierra donde 
+	yacen. 
+	<br><br>Encontrar&eacute; tambi&eacute;n nuevas tristezas, <br>ojos que ya no miran, 
+	cad&aacute;veres vac&iacute;os 
+	<br>y otra vez el recuerdo de sus ojos, <br>el anhelar sediento que 
+	abandonaba en m&iacute;, 
+	<br>su muerta voz, su despedida. <br>Pero jam&aacute;s conocer&eacute; mi propio sue&ntilde;o, 
+	<br>el alma que pretende defenderme, <br>mi coraz&oacute;n vac&iacute;o, ni mi forma. 
+	</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="MI AMANTE"></a></font>
+	<font face="Georgia" color="#84B0D6">Mi amante</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Desnuda, mi funesta amante<br>
+	de piel vencida y casta como deshabitada,<br>sacudes sobre el lecho voces<br>
+	y ternuras contrarias a mis manos,<br>y un crep&uacute;sculo escucho entre tu 
+	cuerpo<br>cuando al caer en ti agonizo<br>en un nacer marchito, sin el duelo<br>
+	comparable al temor de tu agon&iacute;a.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Contigo transparento la 
+	ca&iacute;da<br>de un alud o hurac&aacute;n de rosas:<br>suspiros de manzanas en tumulto<br>
+	dici&eacute;ndome que el hombre est&aacute; vencido,<br>confuso en amarguras y vac&iacute;as 
+	miradas.<br>En ti respondo al mundo, y en tu cuerpo<br>respiro ese sabor de 
+	los sepulcros;<br>una noche no m&aacute;s, y tu mirada<br>persiste, implora y vence 
+	entre mis ojos,<br>decidida a una lucha prolongada<br>donde el recuerdo se 
+	convierte<br>en esa &aacute;rea languidez del pensamiento,<br>como materia de tus 
+	ojos mismos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Lloras a veces arrojando<br>
+	f&uacute;nebres aguas de perfume ciego,<br>como si desprendida de una antigua idea<br>
+	vinieras hasta m&iacute;, tan clara<br>como un &aacute;ngel dormido en el espacio,<br>a 
+	dejar evidencia, luz y vida;<br>y en tus l&aacute;grimas miro surgir tu suave piel<br>
+	como si en ellas prolongaras<br>o hicieras m&aacute;s probable tu existencia,<br>
+	derramando el aroma de tu sue&ntilde;o<br>sobre esta soledad de tu desnudo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="MONÓLOGO DEL VIUDO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Mon&oacute;logo del viudo </font><font face="Georgia" size="2" color="#84B0D6">
+	<br><br>Abro la puerta, vuelvo a la misericordia<br>de mi casa donde el 
+	rumor defiende<br>la penumbra y el hijo que no fue<br>sabe a naufragio, a 
+	ola o fervoroso lienzo<br>que en &aacute;cidos est&iacute;os<br>el rostro desvanece. 
+	Arcaico reposar<br>de dioses muertos llena las estancias,<br>y bajo el aire 
+	aspira la conciencia<br>la r&aacute;faga que ayer mi frente a&uacute;n buscaba<br>en el 
+	descenso turbio. 
+	<br><br>No podr&iacute;a nombrar s&aacute;banas, cirios, humo<br>ni la humildad y 
+	compasi&oacute;n y calma<br>a orillas de la tarde, no podr&iacute;a<br>decir &quot;sus manos&quot;, 
+	&quot;mi tristeza&quot;, &quot;nuestra tierra&quot;<br>porque todo en su nombre<br>de heridas se 
+	ilumina. Como se&ntilde;al de espuma<br>o epitafio, cortinas, lecho, alfombras<br>y 
+	destrucci&oacute;n hacia el desd&eacute;n transcurren<br>mientras vence la cal que a su 
+	desnudo niega<br>la sombra del espacio. 
+	<br><br>Ahora empieza el tiempo, el agrio sonre&iacute;r<br>del hu&eacute;sped que en 
+	insomnio, al desvelar<br>su ira, canta en la ciudad impura<br>el calcinado 
+	s&oacute;n y al labio purifican<br>fuegos de incertidumbre<br>que fluyen sin 
+	respuesta. Astro o delf&iacute;n, all&aacute;<br>bajo la onda el pie desaparece,<br>y 
+	t&uacute;nicas tornadas en emblemas<br>hunden su ardiente procesi&oacute;n y con ceniza<br>
+	la frente me se&ntilde;alan.<br>
+	<br>&nbsp;</font></p>
+	<blockquote>
+      <p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+    </blockquote>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="MUERTE DEL HOMBRE"></a></font><font face="Georgia" color="#84B0D6">
+	Muerte del hombre</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Si acaso el &aacute;ngel desplegara 
+	<br>la s&aacute;bana final de mi agon&iacute;a <br>y levantara el sue&ntilde;o que me diste, oh 
+	vida,
+	<br>un sue&ntilde;o como ave perdida entre la niebla, <br>igual al pez que no 
+	comprende 
+	<br>la ola en que navega <br>o el peligro cercano con las redes; <br>si 
+	acaso el &aacute;ngel frente a mi dijera 
+	<br>la ultima palabra, <br>la decisi&oacute;n mortal de mi destino <br>y plegando 
+	las alas junto a mi cuerpo hablara, 
+	<br>como cuando el roc&iacute;o desciende lento hacia la rosa <br>al dar el primer 
+	paso la ma&ntilde;ana, 
+	<br>ya mirar&iacute;a en mi sangre <br>el negro navegar, la noche incierta, <br>el 
+	p&aacute;jaro que sufre sin sus alas 
+	<br>y la m&aacute;s grave lentitud: la muerte. <br>Aun cerca de la &iacute;ntima agon&iacute;a 
+	<br>est&aacute;s, oh muerte, clara como espejo; <br>m&aacute;s abierta que el mar, <br>m&aacute;s 
+	segura que el aire que entr&oacute; por la ventana, 
+	<br>m&aacute;s m&iacute;a y m&aacute;s ajena <br>por mi sangre y mis brazos <br>en esta soledad. 
+	<br>Est&aacute;s tan f&eacute;rtil como ni&ntilde;o <br>que, angustiado, llora antes de ser, <br>
+	entre la sangre siendo 
+	<br>y por la piel m&aacute;s vivo que la piel; <br>te llevo como &aacute;rbol, tierra y 
+	cauce, 
+	<br>y eres la savia pura, <br>la flor, la espuma y la sonrisa, <br>eres el 
+	ser que por mi sangre es 
+	<br>como la estrella ultima del cielo. <br><br>Si acaso el &aacute;ngel sigiloso 
+	<br>abriera la ventana <br>te mirar&iacute;a salir interminablemente <br>como un 
+	tiempo cansado 
+	<br>hacia su sombra vuelto, <br>como quien frente al mundo se pregunta: <br>
+	&quot;&iquest;En qu&eacute; lugar est&aacute; mi soledad?&quot; 
+	<br><br>Si acaso el &aacute;ngel me mirara, <br>abierta ya la niebla de mi carne, 
+	<br>sin nubes, sin estrellas, <br>sin tiempo en que mecer la luz de mi 
+	agon&iacute;a, 
+	<br>encontrar&iacute;a tan s&oacute;lo a ti, oh muerte, <br>llev&aacute;ndome a tu lado, fiel; 
+	<br>te encontrar&iacute;a tan sola a ti, sin m&iacute;, <br>ya sin cuerpo ni voz, <br>sin 
+	angustia ni sue&ntilde;os, 
+	<br>te hallara entonces pura, oh muerte m&iacute;a.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="MUJER DESHABITADA"></a></font><font face="Georgia" color="#84B0D6">
+	Mujer deshabitada</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">De rosa y canto saturada,<br>
+	contra el origen de tu ser sublevas<br>un recuerdo de labios naufragando<br>
+	y la temida enemistad<br>de presuroso y fugitivo aroma,<br>bajo el silencio 
+	id&eacute;ntico<br>a tu in&uacute;til sosiego de virgen desolada.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mudas fueras al tiempo, 
+	pero sabes<br>dejarte abandonada y te sometes<br>como la flor al mar,<br>
+	igual que entre los labios vuela el canto,<br>e insiste sobre el mundo tu 
+	fatiga,<br>la dura soledad de tus sentidos,<br>suma de amor y l&aacute;grimas que 
+	mi latir inundan<br>de este vano sentirte agonizando.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Opones s&oacute;lo amor y te 
+	conserva<br>la esperanza invencible de mi cuerpo,<br>como si al derrumbarte<br>
+	cuando cierras los ojos y en ti misma<br>soportas la caricia que en inm&oacute;vil 
+	te torna,<br>entonces navegaras a m&iacute; y te defendieras,<br>ya sin saber de 
+	ti,<br>deshabitada flor y canto destrozado,<br>rescatada del mundo<br>y 
+	hecha estatua abatida en un invierno.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="OLA"></a></font>
+	<font face="Georgia" color="#84B0D6">Ola</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Hacia la arena tibia se 
+	desliza<br>la flor de las espumas fugitivas,<br>y en su cristal navega el 
+	aire herido,<br>imperceptible, desplomado, oscuro<br>como paloma que de 
+	pronto niega<br>de su m&aacute;rmol id&eacute;ntico el est&iacute;o<br>o el miedo que en 
+	silencios se apresura<br>y s&oacute;lo huella fuese de un viraje,<br>melanc&oacute;lica 
+	niebla que al o&iacute;do<br>dejara su tranquilo desaliento.<br>mas el aire es 
+	quien fragua, sosegado,<br>la caricia sombr&iacute;a, el beso amargo<br>que al fin 
+	fatigar&aacute; el oculto aroma<br>de la arena doliente, deseosa,<br>&aacute;vida, est&eacute;ril 
+	sombra pensativa,<br>cuerpo anegado en un cansancio oscuro<br>sometido al 
+	murmullo de aquel beso.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Hermosa as&iacute;, desnuda, ya no 
+	es<br>la carne iluminada cual la flecha<br>que en el viento describe 
+	lujuriosa<br>el temblor que despu&eacute;s ha de entregar;<br>ni es la boca 
+	ardiente, enamorada,<br>insaciable al contacto, al beso &aacute;vida<br>como 
+	profundo aroma silencioso;<br>Ni la pasi&oacute;n del fuego hacia el aliento<br>
+	destruyendo lo inm&oacute;vil de la sombra<br>para precipitarla en lo que ha sido,<br>
+	sino que, ya ternura del cautivo<br>que sabe d&oacute;nde amor le est&aacute; esperando,<br>
+	quiebra su forma, pierde su albedr&iacute;o<br>y en un instante de candor o ala<br>
+	ahogada en un anhelo suspendido,<br>como ciega tormenta despe&ntilde;ada<br>
+	aband&oacute;nase al cuerpo que la acosa<br>y a su encuentro es caricia, oscura 
+	imagen<br>de rudo impulso convertido en plumas<br>o tinieblas perdidas para 
+	siempre,<br>y sabe c&oacute;mo al fin la arena es tumba,<br>frontera temblorosa 
+	donde se abren<br>las flores fugitivas de la espuma,<br>resueltas ya en 
+	silencio y lentitud.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="POEMA DE ALTA FLOR"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Poema de alta flor</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Y cuando el viento sea flor marchita,<br>y la noche no viva sino en puro 
+	recuerdo;<br>cuando el silencio reine<br>y descienda implacable sobre lunas 
+	y estrellas.<br>
+	<br>Y cuando s&oacute;lo quede la ceniza<br>de todo aquello que fue luz, monta&ntilde;a y 
+	sombra;<br>al final de los l&iacute;mites vertidos en los seres;<br>m&aacute;s all&aacute; de los 
+	tiempos.<br>
+	<br>Cuando est&eacute; la esperanza destruida<br>y los &aacute;ngeles mudos perdidos para 
+	siempre,<br>y el agua tan exigua que ni Dios beber&aacute;;<br>despu&eacute;s de esto, 
+	despu&eacute;s.<br>
+	<br>Cuando el rosal se halle en plena muerte,<br>perdidas en la nada las 
+	sendas y las flores,<br>y aunque el dolor y el ser no sean m&aacute;s que sue&ntilde;o,<br>
+	seremos todav&iacute;a.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="POEMA DE AMOROSA RA&Iacute;Z"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Poema de amorosa ra&iacute;z</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Antes que el viento fuera 
+	mar volcado,<br>que la noche se unciera su vestido de luto<br>y que 
+	estrellas y luna fincaran sobre el cielo<br>la albura de sus cuerpos</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Antes que luz, que sombra y 
+	que monta&ntilde;a<br>miraran levantarse las almas de sus c&uacute;spides;<br>primero que 
+	algo fuera flotando bajo el aire;<br>tiempo antes que el principio.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cuando a&uacute;n no nac&iacute;a la 
+	esperanza<br>ni vagaban los &aacute;ngeles en su firme blancura;<br>cuando el agua 
+	no estaba ni en la ciencia de Dios;<br>antes, antes, muy antes.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cuando a&uacute;n no hab&iacute;a flores 
+	en las sendas<br>porque las sendas no eran ni las flores estaban;<br>cuando 
+	azul no era el cielo ni rojas las hormigas,<br>ya &eacute;ramos t&uacute; y yo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="POEMA DONDE AMOR DICE..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Poema donde amor dice...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eres el tallo que los ojos 
+	hiere<br>murmurando una luz anochecida;<br>eres aliento encadenado al fuego,<br>
+	paloma navegando en la mirada<br>con inocencia de disuelto aroma.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eres perfume espeso, flor 
+	vencida,<br>caricia de un aroma enamorado;<br>eres espacio donde se origina<br>
+	un oscuro gemido prisionero,<br>como latido de ala en el roc&iacute;o.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eres lenta penumbra que los 
+	labios<br>cruza en silencio; apenas leve huella<br>de un sabor a la sombra 
+	derramado;<br>espuma prisionera en su cristal,<br>hecha sonido, luz, aroma y 
+	pluma.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eres tal un murmullo 
+	transparente<br>en temblorosa vibraci&oacute;n vertido;<br>eres flor de aire que 
+	navega incierta<br>como sonoro viaje hacia el o&iacute;do<br>o aleteo herido de 
+	azucena.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Eres aroma preso entre mis 
+	manos<br>hasta decir caricia fugitiva;<br>una huida paloma sobre el cuerpo,<br>
+	al contacto del m&iacute;o temblorosa,<br>bajo el c&aacute;lido vuelo de mi tacto.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mas cruzas como un sue&ntilde;o 
+	desnudado,<br>fugaz como el correr del agua pura;<br>sue&ntilde;o que se desborda 
+	de su forma,<br>&uacute;ltima espuma que en tu piel murmura<br>la postrera fatiga 
+	del deseo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">S&oacute;lo un aroma erige la 
+	blancura<br>o aurora de tu voz acariciada,<br>as&iacute; de alba es la antigua ola<br>
+	que urdida en sal y caracol asciende<br>y despu&eacute;s en af&aacute;n queda anegada.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">As&iacute; tambi&eacute;n mis labios en 
+	silencio<br>reciben el murmullo de tu piel,<br>al o&iacute;r a las alas de tus 
+	poros<br>convertirse en alientos y gemidos<br>y en un suave sudor de flor 
+	tranquila.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Entonces ya no labios, sino 
+	o&iacute;dos<br>ardientes para asirte y contemplarte,<br>como a estatua ba&ntilde;ada por 
+	la m&uacute;sica<br>de una tristeza o &aacute;ngel deslizado<br>que mordiera tu imagen 
+	silenciosa.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Porque el tacto ilumina tu 
+	desnudo<br>que a su tr&eacute;mulo encuentro se ha mudado<br>en sal, paloma, vuelo, 
+	rosa y llama,<br>y oye c&oacute;mo por tu piel florece<br>y madura la sombra de la 
+	muerte.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="REALIDAD Y SUE&Ntilde;O"></a></font><font face="Georgia" color="#84B0D6">
+	Realidad y sue&ntilde;o</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	N&aacute;ufrago de mi propio sue&ntilde;o, 
+	<br>como si transportara en la flor de los labios <br>el silencio desnudo, 
+	<br>m&aacute;s que la sangre muda de hospital <br>muerta en el abandono; <br>con la 
+	tristeza del que viaja 
+	<br>por un aire sin viaje, <br>reducido al silencio <br>bajo un olor de rosa 
+	no pensada, 
+	<br>cuando el jard&iacute;n no sabe <br>si la flor es un sue&ntilde;o <br>o la esperanza 
+	presentida; 
+	<br>fijo en mis latitudes <br>con el l&iacute;mite sue&ntilde;o entre las manos, <br>en su 
+	cauce la sangre detenida 
+	<br>y el temor de que llegue hasta mi tacto <br>la presi&oacute;n m&aacute;s ef&iacute;mera <br>o 
+	la m&aacute;s fina flor ya derribada; 
+	<br>l&iacute;mite y carne, sue&ntilde;o ilimitado <br>bajo la s&aacute;bana, tan blanca, <br>por 
+	la que corre sangre 
+	<br>como la vena rota <br>en la piel de una virgen; <br>amigo de m&iacute; mismo 
+	<br>igual al hombre que presiente <br>la altura de su sombra <br>a la hora 
+	del &uacute;ltimo camino, 
+	<br>cara al &aacute;ngel que viaja hacia mi encuentro <br>con la blancura &iacute;ntima 
+	del ni&ntilde;o a&uacute;n no nacido, 
+	<br>me recuesto en mis venas <br>doloroso y sediento, sin mis nervios <br>ni 
+	el recuerdo inicial, 
+	<br>aquel primer encuentro con la muerte <br>tan clara, pura y sombra. <br>
+	Siento que un mar lejano, 
+	<br>hundido como puerto bajo niebla, <br>hasta m&iacute; llega, cuando poso mi mano 
+	&aacute;vida 
+	<br>sobre el temor de mi sombr&iacute;a piel, <br>igual que un r&iacute;o inm&oacute;vil camina 
+	por los campos, 
+	<br>y de la sombra de mi aliento, <br>lento y desnudo, fiel a mi destino, 
+	<br>con mi sangre en el hielo, <br>m&aacute;s fr&iacute;a que la estatua bajo el agua, <br>
+	con el fr&iacute;o en las manos 
+	<br>y la desnuda voz enmudecida, <br>hacia mi sombra vuelvo, <br>retorno a 
+	mi naufragio.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"> </font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="justify"><font face="Georgia" color="#84B0D6">
+	<a name="Responso del peregrino"></a>Responso del peregrino</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>
+	I<br>
+	Yo, pecador, a orillas de tus ojos<br>
+	miro nacer la tempestad.<br>
+	<br>
+	Sumiso dardo, voz en la espesura,<br>
+	incr&eacute;dulo desciendo al manantial de gracia;<br>
+	en tu solar olvida el coraz&oacute;n<br>
+	su falso testimonio, la serpiente de luz<br>
+	y aciago fallecer, rel&aacute;mpago vencido<br>
+	en la l&iacute;mpida zona de la&uacute;des<br>
+	que a mi maldad desplega tu ternura.<br>
+	<br>
+	Elegida entre todas las mujeres,<br>
+	al &aacute;ngelus te anuncias pastora de esplendores<br>
+	y la alondra de Her&aacute;clito se agosta<br>
+	cuando a tu piel acerca su denuedo.<br>
+	<br>
+	Oh, c&iacute;tara del alma, arm&oacute;nica al pesar,<br>
+	al luto hermana: a&iacute;slas en tu efigie<br>
+	el v&eacute;rtigo camino de Damasco<br>
+	y sobre el aire dejas la orla del perd&oacute;n,<br>
+	como si ungida de piedad sintieras<br>
+	el aura de mi paso desolado.<br>
+	<br>
+	Mar&iacute;a te designo, paloma que insin&uacute;a<br>
+	p&aacute;ramos amorosos y esperanzas,<br>
+	reina de erguidas arpas y de soberbios nardos;<br>
+	te miro y el silencio at&oacute;nito presiente<br>
+	pudor y languidez, la corona de mirto<br>
+	llevada a la ribera donde mis pies reposan,<br>
+	donde te nombro y en la voz flameas<br>
+	como viento imprevisto que incendiara<br>
+	la melod&iacute;a de tu nombre y fuese,<br>
+	s&iacute;laba a s&iacute;laba, erigiendo en olas<br>
+	el muro de mi salvaci&oacute;n.</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">Hablo y en 
+	la palabra permaneces.<br>
+	No turbo, si te invoco,<br>
+	el tranquilo fluir de tu mirada;<br>
+	bajo la insomne nave tomas el cuerpo emblema<br>
+	del ser incomparable, la obediencia fugaz<br>
+	al eco de tu infancia milagrosa,<br>
+	cuando, juntas las manos sobre el pecho,<br>
+	limpia de infamia y destrucci&oacute;n<br>
+	de ti ascend&iacute;a al mundo la imagen del laurel.<br>
+	<br>
+	Petrificada estrella, temerosa<br>
+	frente a la virgen tempestad.</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">II<br>
+	Aunque a cuchillo caigan nuestros hijos<br>
+	e imp&aacute;vida del rostro airado baje a ellos<br>
+	la furia del escarnio; aunque la ira<br>
+	en signo de expiaci&oacute;n se&ntilde;ale el fiel de la balanza<br>
+	y encima de su voz suspenda<br>
+	el filo de la espada incandescente,<br>
+	prolonga de tu barro mi linaje<br>
+	-contrita descendencia secuestrada<br>
+	en la f&uacute;nebre Pathmos, isla m&iacute;a-<br>
+	mientras mi lengua en su aflicci&oacute;n te nombra<br>
+	la primog&eacute;nita del alma.<br>
+	<br>
+	Ofensa y bienestar ser&aacute;n la compa&ntilde;&iacute;a<br>
+	de nuestro persistir sentados a la mesa,<br>
+	pl&aacute;tica y pl&aacute;tica en los labios ni&ntilde;os.<br>
+	Mas un d&iacute;a el murmullo ceder&aacute;<br>
+	al arc&aacute;ngel que todo inmoviliza;<br>
+	un h&aacute;lito de sue&ntilde;o llenar&aacute; las alcobas<br>
+	y cerca del caf&eacute; la espumeante s&aacute;bana<br>
+	dir&aacute; con su oleaje: &quot;Aqu&iacute; reposa<br>
+	en paz quien bien mor&iacute;a&quot;.<br>
+	<br>
+	(Bajo la inerme noche, nada<br>
+	dominar&aacute; el turbio fragor<br>
+	de las beatas, como acordes:<br>
+	&quot;Ruega por &eacute;l, ruega por &eacute;l...&quot;)<br>
+	<br>
+	En ti mis ojos dejar&aacute;n su mundo,<br>
+	a tu llorar confiados:<br>
+	llamas, ceniza, m&uacute;sica y un mar embravecido<br>
+	al fin recobrar&aacute;n su aureola,<br>
+	y con tu mano arrojar&aacute;s la tierra,<br>
+	<i>polvo eres</i> triunfal sobre el despojo ciego,<br>
+	j&uacute;bilo ni penumbra, mudo frente al amor.<br>
+&nbsp;</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">Óleo en los 
+	labios llevar&aacute;s mi angustia<br>
+	como a Edipo su b&aacute;culo filial lo conduc&iacute;a<br>
+	por la invencible noche;<br>
+	hermosa cruzar&aacute;s mi derrotado himno<br>
+	y no podr&eacute; invocarte, no podr&eacute;<br>
+	ni contemplar el duelo de tu rostro,<br>
+	pur&iacute;sima y transida, arca, paloma, l&aacute;pida y laurel.<br>
+	Regresar&aacute;s a casa, y si alguien te pregunta,<br>
+	nada responder&aacute;s: s&oacute;lo tus ojos<br>
+	reflejar&aacute;n la tempestad.</font></p>
+	<p align="justify"><font face="Georgia" size="2" color="#84B0D6">III<br>
+	Ruega por m&iacute; y mi imp&iacute;a estirpe, ruega<br>
+	a la hora solemne de la hora<br>
+	el d&iacute;a de estupor en Josafat,<br>
+	cuando el juicio de Dios levante su dominio<br>
+	sobre el g&eacute;lido valle y lo ilumine<br>
+	de soledad y m&aacute;rmoles aullantes.<br>
+	<br>
+	Tiempo de recordar las noches y los d&iacute;as,<br>
+	la distensi&oacute;n del alma: todo petrificado<br>
+	en su orfandad, cordero fidel&iacute;simo<br>
+	e inm&oacute;vil en su cima, transcurriendo<br>
+	por un inerte imperio de sollozos,<br>
+	lejos de vanidad de vanidades:<br>
+	<br>
+	Acaso entonces alce la nostalgia<br>
+	horror y olvidos, porque acaso<br>
+	el reino de la dicha s&oacute;lo sea<br>
+	tocar, o&iacute;r, oler, gustar y ver<br>
+	el despe&ntilde;o de la esperanza.<br>
+	<br>
+	Sola comprender&aacute;s mi fe desvanecida,<br>
+	el pavor de mirar siempre el vac&iacute;o<br>
+	y gemir&aacute;s amarga cuando sientas que eres<br>
+	cristiana sepultura de mi desolaci&oacute;n.<br>
+	<br>
+	Fiesta de Pascua, en el desierto inmenso<br>
+	a&ntilde;orar&aacute;s la tempestad.</font></p>
+	<p align="justify">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="justify">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="RETORNO"></a></font>
+	<font face="Georgia" color="#84B0D6">Retorno</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Donde estoy nada queda&nbsp;<br>
+	y existir es vivir en tu recuerdo,&nbsp;<br>ver una luz atravesando&nbsp;<br>el rumor 
+	arrancado de un cad&aacute;ver,&nbsp;<br>escuchar a pesar del miedo&nbsp;<br>la palabra de un 
+	ni&ntilde;o que gem&iacute;a&nbsp;<br>y tener en las manos un h&aacute;lito, un temblor&nbsp;<br>y un 
+	profundo lamento ensombrecido.&nbsp;<br>Pensar en ti no es pensar<br>con alguien 
+	o con algo&nbsp;<br>sino hundirme en m&iacute; mismo y mi principio,&nbsp;<br>como llegando a 
+	un extremo donde fluyen&nbsp;<br>una tranquilidad de coraz&oacute;n ro&iacute;do,&nbsp;<br>una 
+	amargura de rencor oscuro,&nbsp;<br>un retornar al hombre desgarrado,&nbsp;<br>y 
+	recordar que el pensamiento muere&nbsp;<br>a trav&eacute;s de ese tiempo que a ti te 
+	pertenece,&nbsp;<br>sin m&aacute;s impulso que tu desamparo,&nbsp;<br>como una prolongada 
+	enfermedad,&nbsp;<br>como sonido que flotara en un abismo.&nbsp; 
+	</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y todo vive in&uacute;tilmente:&nbsp;<br>
+	adonde miro all&iacute; me encuentro&nbsp;<br>en vano espejo de mi soledad,&nbsp;<br>con 
+	simulado rostro de Narciso&nbsp;<br>o humo que pretende conservarse;&nbsp;<br>hallo 
+	s&oacute;lo tinieblas&nbsp;<br>y empiezo a caminar por dentro de mi cuerpo,&nbsp;<br>y aqu&iacute; 
+	te palpo y me maldigo&nbsp;<br>porque vuelves a ser, pero en recuerdo.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Vivo ahora contigo y nada 
+	turba&nbsp;<br>la posesi&oacute;n del tiempo en que viviste,&nbsp;<br>y nada ha de cambiar mi 
+	pensamiento&nbsp;<br>cuando pensar en ti es contemplar&nbsp;<br>mi propia voz por 
+	sue&ntilde;os invadida&nbsp;<br>y dolerme de haber cre&iacute;do en m&iacute;&nbsp;<br>como en algo que 
+	existe fuera de todo tiempo,&nbsp;<br>de m&iacute; mismo nutrido,<br>seguro de mi voz.&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Amarte hoy ser&iacute;a desertar,&nbsp;<br>
+	huir del odio que por m&iacute; acreciento&nbsp;<br>bajo el latido de mi coraz&oacute;n;&nbsp;<br>
+	fuera negar la luz que al rumor sobrevive,&nbsp;<br>o afirmar que la flor&nbsp;<br>no 
+	crecer&aacute; jam&aacute;s en mis entra&ntilde;as&nbsp;<br>con un sabor de imagen prolongada&nbsp;<br>a 
+	trav&eacute;s de la carne,&nbsp;<br>sobre el silencio h&uacute;medo del t&uacute;mulo&nbsp;<br>de esta mi 
+	soledad que resucita y me regresa&nbsp;<br>al desierto en que siempre hab&iacute;a 
+	cre&iacute;do. 
+	</font></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+  </blockquote>
+</blockquote><font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 12:30:27 Nov 11, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:16:34 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

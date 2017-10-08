@@ -1,0 +1,822 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Eduardo Lizalde</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Eduardo Lizalde. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Eduardo_Lizalde,poesias,poetas,poemas,versos,biografias,estrofas,haikus,audios,audios_de_poesia,poesia_surrealista,poesia_modernista,poesia_clasica,poesia_de_vanguardia,poesia_vanguardista,poesia_contemporanea,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,voz,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,escritores,escritoras,poetas_nuevos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app12.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/lizalde.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/lizalde.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162119" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./lizalde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:21:19 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./lizalde.htm" title="17:15:28 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:21:19 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./lizalde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="22 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:21:19 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./lizalde.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>32 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Aug 07 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000010100_2008:-1:011111000001_2009:-1:001000110000_2010:-1:100000001010_2011:-1:000000102130_2012:-1:101011001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./LIZALDE.jpg" width="376" height="41">&nbsp;<br>
+<strong><font face="Arial" size="2" color="#8FABC2"><em><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+&nbsp;</em></font></strong></p>
+<p align="center"><font face="Arial" size="2" color="#8FABC2"><em>
+<br>
+<br>
+</em></font><em style="font-style: normal">
+<font face="Arial" size="2" color="#84B0D6">&quot;S&oacute;lo somos el muro que retiene el 
+jard&iacute;n...&quot;</font></em><font face="Arial" size="2" color="#84B0D6"><br>
+<br>
+<img border="0" src="./LIZALDE1.jpg" width="270" height="246"></font></p>
+<p align="center"><em><font face="Arial" size="2" color="#84B0D6">&quot;Autorretrato&quot;
+<br>
+En la frontera entre M&eacute;xico y Estados Unidos 1932 <br>
+<br>
+Frida Kahlo</font></em><font face="Arial" size="2" color="#84B0D6"><br>
+</font><font color="#84B0D6"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#84B0D6"><br>
+			</font>
+			<font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		Poeta, narrador y ensayista&nbsp; mexicano nacido en Ciudad de M&eacute;xico en 
+		1929.<br>
+		Estudi&oacute; Filosof&iacute;a y m&uacute;sica en la Universidad Nacional Aut&oacute;noma de 
+		M&eacute;xico. <br>
+		Es uno de los grandes exponentes de la actual poes&iacute;a mexicana. Ha 
+		ocupado diversos cargos en el campo universitario, <br>
+		art&iacute;stico y cultural. Hizo parte del grupo po&eacute;tico fundado en compa&ntilde;&iacute;a 
+		de Enrique Gonz&aacute;lez Rojo y Marco Antonio <br>
+		Montes de Oca. Fue director de la Casa del Lago de la UNAM, director 
+		general de Publicaciones y Medios de la Secretar&iacute;a <br>
+		de Educaci&oacute;n P&uacute;blica, y director de Ópera del Instituto Nacional de 
+		Bellas Artes. Actualmente dirige la Biblioteca <br>
+		Nacional de M&eacute;xico.<br>
+		Su obra po&eacute;tica&nbsp; iniciada con <i>&quot;La mala hora&quot;</i> en 1956, fue 
+		seguida por otras publicaciones entrelas que se destacan, <i><br>
+		&quot;Cada cosa es Babel&quot; </i>en 1966, <i>&quot;El tigre en la casa&quot;</i> en 1970, <i>
+		&quot;La zorra enferma&quot;</i> 
+		en 1974, <i>&quot;Caza mayor&quot; </i>en 1979, <i><br>
+		&quot;Tabernarios y er&oacute;ticos&quot;</i> en 1989, 
+		<i>&quot;Rosas&quot;</i> en 1994&nbsp; y <i>&quot;Otros tigres&quot;</i>&nbsp; en 1995. <br>
+		En 1984 le fue concedida la beca de la Fundaci&oacute;n John Simon Guggenheim.
+		<br>
+		Su obra ha sido distinguida con importantes galardones: el <i>Premio 
+		Xavier Villaurrutia</i>&nbsp; en 1969, el <i>Premio Nacional <br>
+		de Poes&iacute;a Aguascalientes</i> en 1974, el <i>Premio Nacional de 
+		Ling&uuml;&iacute;stica y Literatura</i> en 1988,&nbsp; y el <i>Premio 
+		Iberoamericano <br>
+		de Poes&iacute;a Ram&oacute;n L&oacute;pez Velarde</i> en 2002. &copy;<br>
+		<br>
+		</font><font face="Georgia" size="2" color="#85A6BC">
+		<br>
+&nbsp;</font></p>
+		<blockquote>
+			<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#A6BCCE"><br>
+		</font><font face="Georgia">
+		<a href="./lizalde.htm#DOS VI&Ntilde;ETAS DE UN C&Aacute;NDIDO">Dos vi&ntilde;etas de un c&aacute;ndido</a></font><font face="Georgia" size="2"><br>
+		<a href="./lizalde.htm#1. Bajo el cielo tenebroso...">1. Bajo el cielo tenebroso...</a><br>
+		<a href="./lizalde.htm#2. Buenos d&iacute;as, mundo...">2. Buenos d&iacute;as, mundo...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#EL SEXO EN SIETE LECCIONES">El sexo en siete lecciones</a></font><font face="Georgia" size="2"><br>
+		<a href="./lizalde.htm#1. Gozo y tortura...">1. Gozo y tortura...</a><br>
+		<a href="./lizalde.htm#2. Y por estar a flote...">2. Y por estar a flote...</a><br>
+		<a href="./lizalde.htm#3. El tiempo escaso por costumbre...">3. El tiempo escaso por 
+		costumbre...</a><br>
+		<a href="./lizalde.htm#4. Ni el denodado goce de los cuerpos...">4. Ni el denodado 
+		goce de los cuerpos...</a><br>
+		<a href="./lizalde.htm#5. El cuerpo es siempre virgen para el sexo...">5. El cuerpo 
+		es siempre virgen para el sexo...</a><br>
+		<a href="./lizalde.htm#6. Y nada de que el sexo...">6. Y nada de que el sexo...</a><br>
+		<a href="./lizalde.htm#7 (y &uacute;ltima). El sexo es una cosa...">7 (y &uacute;ltima). El sexo es 
+		una cosa...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./lizalde.htm#AMOR">Amor</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#EL TIGRE REAL, EL AMO, EL SOLO, EL SOL...">El tigre real, el 
+		amo, el solo, el sol...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#ESTO ES FALSO, ESTO ES BUENO...">Esto es falso, esto es 
+		bueno...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#MARTIRIO DE NARCISO">Martirio de Narciso</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#NO PUEDES, ROSA, COINCIDIR CON TU ROSA...">No puedes, rosa, 
+		coincidir con tu rosa...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./lizalde.htm#QUE TANTO Y TANTO AMOR SE PUDRA, OH DIOSES...">Que tanto y 
+		tanto amor se pudra, oh dioses...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./lizalde.htm#VACA Y NI&Ntilde;A">
+		Vaca y ni&ntilde;a</a></font><font size="2"><font face="Georgia"><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp; </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#85A6BC">Puedes 
+		escuchar al poeta en: </font><font face="Georgia" color="#85A6BC">
+		<a href="./poetas.htm">La voz de los poetas</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+		</font></p>
+		<blockquote>
+			<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+			</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+			<br>
+			</p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="3" color="#B0C6C1"><br>
+		</font><font face="Georgia" size="2" color="#85A6BC"><br>
+		<a name="DOS VI&Ntilde;ETAS DE UN C&Aacute;NDIDO"></a></font>
+		<font face="Georgia" color="#84B0D6">Dos vi&ntilde;etas de un c&aacute;ndido</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<a name="1. Bajo el cielo tenebroso..."></a>1. Bajo el cielo tenebroso<br>
+		el rehilete se abre en el jard&iacute;n.<br>
+		La fiesta del gorri&oacute;n que danza, canta <br>
+		-se vuelve flor su trino,<br>
+		fruto su aleteo-,<br>
+		se ba&ntilde;a bajo el l&iacute;quido haz de chispas.<br>
+		Pura felicidad en el peque&ntilde;o prado,<br>
+		el agua limpia -hubiera dicho el santo-,<br>
+		es la sonrisa de Dios.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * *<br>
+		<br>
+		<br>
+		<a name="2. Buenos d&iacute;as, mundo..."></a>2. Buenos d&iacute;as, mundo.<br>
+		Me alegra verte afuera al despertar.<br>
+		Celebro que no hayas<br>
+		-la ocasi&oacute;n la pintan calva-<br>
+		aprovechado el manto de la noche maldita<br>
+		para irte por siempre al inframundo.<br>
+		Tambi&eacute;n me reconforta<br>
+		que a&uacute;n te habiten p&aacute;jaros cantores,<br>
+		<i>meistersinger</i> del bosque en el jard&iacute;n;<br>
+		que el sol severo nos escalde a&uacute;n<br>
+		y nos torture el rudo ozono<br>
+		-como todos los d&iacute;as-.<br>
+		<br>
+		So&ntilde;&eacute; que te hab&iacute;as ido,<br>
+		conmigo hacia el infierno<br>
+		y que se hab&iacute;an quedado aqu&iacute;<br>
+		sin mundo todas las dem&aacute;s criaturas:<br>
+		piedras, grajos, insectos o personas.<br>
+		Te veo tan grande y bello,<br>
+		que me r&iacute;o de los siniestros solipsistas <br>
+		de anta&ntilde;o.<br>
+		No has de esfumarte cuando yo me extinga.<br>
+		Canto tu salud de hierro,<br>
+		tu verde coraz&oacute;n y tu estructura<br>
+		de granito.<br>
+		Buenos d&iacute;as, querido, hermoso mundo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6">
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="EL SEXO EN SIETE LECCIONES"></a></font>
+		<font face="Georgia" color="#84B0D6">El sexo en siete lecciones</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<a name="1. Gozo y tortura..."></a>1. Gozo y tortura <br>
+		que el T&aacute;rtaro yel Cielo <br>
+		-u&ntilde;a de carne- desempe&ntilde;an. <br>
+		<br>
+		Al sexo y su desorden milagroso,<br>
+		a su perfecto matrimonio; ,<br>
+		de beso y abrelatas, sucumbimos.<br>
+		<br>
+		A la gloria del sexo,<br>
+		a su desenfrenado latrocinio,<br>
+		su avaricia impecable,<br>
+		alto, cedemos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * *<br>
+		<br>
+		<a name="2. Y por estar a flote..."></a>2. Y por estar a flote,<br>
+		por ser la superficie de la espuma en la piel,<br>
+		por ser lo m&aacute;s visible y general, <br>
+		por ser el m&aacute;s com&uacute;n lugar del para&iacute;so visitado,<br>
+		el sexo, lo evidente,<br>
+		lo que a todos iguala,<br>
+		lo esencial-sabia era Eva,<br>
+		ingenuo Segismundo-,<br>
+		por ser el sexo algo tan real,<br>
+		lo &uacute;nico real acaso,<br>
+		s&oacute;lo se existe y vive a su merced.<br>
+		<br>
+		No es reducible el sexo a n&uacute;meros ni a ciencia,<br>
+		no es cosa comprensible,<br>
+		no es natural ni humano<br>
+		y la divinidad lo desconoce.<br>
+		<br>
+		Lo real no est&aacute; sujeto a inquisici&oacute;n.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+		<br>
+		<a name="3. El tiempo escaso por costumbre..."></a>3. El tiempo escaso 
+		por costumbre<br>
+		y, por la costumbre, fr&aacute;gil,<br>
+		no basta para el amor<br>
+		y es demasiado para el sexo.<br>
+		<br>
+		Pero si en sexo se midiera el tiempo<br>
+		si el sexo -el gozo, mejor dicho- fuera<br>
+		una unidad de tiempo,<br>
+		ser&iacute;a la m&aacute;s peque&ntilde;a<br>
+		que el reloj pudiera imaginar,<br>
+		la apenas registrable,<br>
+		el &aacute;tomo del tiempo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * *<br>
+		<br>
+		<a name="4. Ni el denodado goce de los cuerpos..."></a>4. Ni el denodado 
+		goce de los cuerpos,<br>
+		ni el carn&iacute;voro roce de las bocas,<br>
+		ni las fieras sensuales de los dedos,<br>
+		ni las mejillas ardorosas,<br>
+		ni el sudor refrescante de los pechos<br>
+		-su rima encantadora-,<br>
+		ni el tacto delicioso de los muslos,<br>
+		ni la plata del pubis,<br>
+		ni las caudas azules y viriles,<br>
+		son suficientes para el sexo.<br>
+		<br>
+		La plena saciedad misma, no basta.<br>
+		Lacios los cuerpos tras el goce, exhaustos,<br>
+		bebidos uno a otro hasta las plantas,<br>
+		sue&ntilde;an, despiertos, con el sexo.<br>
+		S&oacute;lo han probado, s&oacute;lo empiezan a hervir.<br>
+		La saciedad m&aacute;s absoluta<br>
+		es siempre, apenas, el principio.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * *<br>
+		<br>
+		<a name="5. El cuerpo es siempre virgen para el sexo..."></a>5. El 
+		cuerpo es siempre virgen para el sexo.<br>
+		El cuerpo siempre, Paul, recomenzando.<br>
+		Y el cuerpo eterno, el fiero eterno cuerpo<br>
+		muere antes que el sexo. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * *<br>
+		<br>
+		<a name="6. Y nada de que el sexo..."></a>6. Y nada de que el sexo<br>
+		s&oacute;lo con amor es sexo.<br>
+		El sexo es siempre amor,<br>
+		nunca el amor es sexo.<br>
+		El amor no es amor,<br>
+		el sexo es el amor.<br>
+		No hay sexo sin amor<br>
+		pero hay amor sin sexo, y no lo es.<br>
+		Todo amor sin sexo es corruptible.<br>
+		S&oacute;lo una advertencia:<br>
+		es ya desgracia conocida<br>
+		que el sexo y el amor no sean posibles<br>
+		sino con personas,<br>
+		con almas y con cuerpos de cuatro dimensiones,<br>
+		con seres existentes,<br>
+		y nunca con fantasmas o sombras pasajeras,<br>
+		mucho menos con plantas o gallinas.<br>
+		<br>
+		<a name="7 (y &uacute;ltima). El sexo es una cosa..."></a>7 (y &uacute;ltima). El sexo 
+		es una cosa<br>
+		que se embellece cuando se la mira.<br>
+		Y la prostituci&oacute;n es su magn&iacute;fico rev&eacute;s,<br>
+		su negaci&oacute;n perfecta,<br>
+		su ausencia depresiva.<br>
+		El sexo es este Dios moldeado<br>
+		por su m&aacute;s portentosa y vil creatura.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="AMOR"></a></font><font face="Georgia" color="#84B0D6">
+		Amor</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		La regla es &eacute;sta: <br>
+		dar lo absolutamente imprescindible, <br>
+		obtener lo m&aacute;s, <br>
+		nunca bajar la guardia, <br>
+		meter el jab a tiempo, <br>
+		no ceder, <br>
+		y no pelear en corto, <br>
+		no entregarse en ninguna circunstancia <br>
+		ni cambiar golpes con la ceja herida; <br>
+		jam&aacute;s decir &quot;te amo&quot;, en serio, <br>
+		al contrincante. <br>
+		Es el mejor camino <br>
+		para ser eternamente desgraciado <br>
+		y triunfador <br>
+		sin riesgos aparentes. <br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="EL TIGRE REAL, EL AMO, EL SOLO, EL SOL..."></a>El tigre real, 
+		el amo, el solo, el sol...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		El tigre real, el amo, el solo, el sol<br>
+		de los carn&iacute;voros, espera,<br>
+		est&aacute; herido y hambriento,<br>
+		tiene sed de carne,<br>
+		hambre de agua.<br>
+		Acecha fijo, suspenso en su materia,<br>
+		como detenido por el l&aacute;piz<br>
+		que lo est&aacute; dibujando,<br>
+		trastornada su pinta majestuosa<br>
+		por la extrema quietud.<br>
+		Es una roca amarilla:<br>
+		se fragua el aire mismo de su aliento<br>
+		y el fulgor cortante de sus ojos<br>
+		cuaja y cesa al punto de la hulla.<br>
+		Veteado por las sombras,<br>
+		doblemente rayado,<br>
+		doblemente asesino, <br>
+		sue&ntilde;a en su presa improbable,<br>
+		la paladea de lejos, la inventa<br>
+		como el artista que concibe un crimen <br>
+		de pulpas deliciosas. <br>
+		Escucha, huele, palpa y adivina<br>
+		los menores espasmos, los supuestos crujidos,<br>
+		los vientos m&aacute;s delgados.<br>
+		Al fin, la v&iacute;ctima se acerca,<br>
+		estruendosa y sinf&oacute;nica.<br>
+		El tigre se incorpora, otea, apercibe<br>
+		sus veloces navajas y colmillos,<br>
+		desamarra<br>
+		la encordadura recia de sus m&uacute;sculos.<br>
+		Pero la bestia, lo que se avecina<br>
+		es demasiado grande<br>
+		-el tigre de los tigres-.<br>
+		Es la muerte<br>
+		y el gran tigre es la presa.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="ESTO ES FALSO, ESTO ES BUENO..."></a>Esto es falso, esto es 
+		bueno...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Esto es falso, esto es bueno<br>
+		y aquello rubio cobre.<br>
+		<br>
+		Qu&eacute; ciencia, hermanos,<br>
+		c&oacute;mo saben todo eso.<br>
+		<br>
+		&iquest;No hay m&aacute;s azul, ni falso ni magenta<br>
+		que el sol del que los mira?<br>
+		<br>
+		&iquest;No florecemos, no estamos<br>
+		comprendidos<br>
+		entre los seres del reino<br>
+		-oh solipsistas, oh videntes, oh magos-?<br>
+		<br>
+		S&oacute;lo somos el muro que retiene al jard&iacute;n.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="MARTIRIO DE NARCISO"></a>Martirio de Narciso </font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		<br>
+		Al verterse en los charcos la apostura <br>
+		del que delgado est&aacute;, pues disemina<br>
+		sus reflejos, el agua femenina<br>
+		se hiela por guardar cada figura.<br>
+		<br>
+		El rev&eacute;s del cristal nos asegura<br>
+		su espalda contener: all&iacute; camina<br>
+		la sangre que en Narciso se origina<br>
+		cada vez que un espejo se fractura.<br>
+		<br>
+		Pulida tempestad en los cristales<br>
+		impide que navegue su reflejo; <br>
+		le da ceguera un T&aacute;ntalo cercano,<br>
+		<br>
+		quien dice amordazando manantiales:<br>
+		aquel que aprisionar logra un espejo <br>
+		puede apretar el mundo con la mano. <br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NO PUEDES, ROSA, COINCIDIR CON TU ROSA..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		No puedes, rosa, coincidir con tu rosa...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		...alle Rosen sind entweder gelb oder<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		rot...</i><br>
+		<br>
+		No puedes, rosa, coincidir con tu rosa.<br>
+		<br>
+		La rosa es amarilla, o no:<br>
+		la rosa es roja, es blanca, es rosa.<br>
+		&iquest;Son sus hermanas todas amarillas<br>
+		o blancas?<br>
+		&iquest;Rosadas, color vino?<br>
+		<br>
+		Lo verdadero no es un callo<br>
+		de este aparador,<br>
+		ni lo falso una grieta<br>
+		de su espalda de encino.<br>
+		<br>
+		Rosa, no es prenda tuya<br>
+		la verdad<br>
+		de tu amarillo o de tu rojo.<br>
+		No es un p&eacute;talo m&aacute;s esa rojez<br>
+		que es s&oacute;lo sangre de tu realidad<br>
+		y trampa y muerte<br>
+		del ojo que te observa<br>
+		con sus tintas.<br>
+		<br>
+		No, rosa,<br>
+		no eres verdad como rosa<br>
+		de tal o cual textura,<br>
+		no se empatan las voces, al cantar,<br>
+		del crecer y el vivir.<br>
+		En inn&uacute;meras vidas<br>
+		te deshojas al tiempo en que maduras,<br>
+		palideces o alientas,<br>
+		<br>
+		Rosa, no puedes<br>
+		coincidir con tu rosa.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="QUE TANTO Y TANTO AMOR SE PUDRA, OH DIOSES..."></a>Que tanto y 
+		tanto amor se pudra, oh dioses...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Que tanto y tanto amor se pudra, oh dioses;<br>
+		que se pierda<br>
+		tanto incre&iacute;ble amor.<br>
+		Que nada quede, amigos,<br>
+		de esos mares de amor,<br>
+		de estas verduras pobres de las eras<br>
+		que las vacas devoran<br>
+		lamiendo el otro lado del c&eacute;sped,<br>
+		lanzando a nuestros pastos<br>
+		las manadas de hidras y langostas<br>
+		de sus lenguas calientes.<br>
+		<br>
+		Como si el verde pasto celestial,<br>
+		el mismo oc&eacute;ano, salado como arenque,<br>
+		hirvieran.<br>
+		Que tanto y tanto amor<br>
+		y tanto vuelo entre unos cuerpos<br>
+		al abordaje apenas de su lecho se desplome.<br>
+		<br>
+		Que una sola munici&oacute;n de esta&ntilde;o luminoso,<br>
+		una bala peque&ntilde;a,<br>
+		un perdig&oacute;n inocuo para un pato,<br>
+		derrumbe al mismo tiempo todas las bandadas<br>
+		y desgarre el cielo con sus plumas.<br>
+		<br>
+		Que el oro mismo estalle sin motivo.<br>
+		Que un amor capaz de convertir al sapo en rosa<br>
+		se destroce.<br>
+		<br>
+		Que tanto y tanto amor, una vez m&aacute;s, y tanto,<br>
+		tanto imposible amor inexpresable,<br>
+		nos vuelva tontos, monos sin sentido.<br>
+		<br>
+		Que tanto amor queme sus naves<br>
+		antes de llegar a tierra.<br>
+		<br>
+		Es esto, dioses, poderosos amigos, perros,<br>
+		ni&ntilde;os, animales dom&eacute;sticos, se&ntilde;ores,<br>
+		lo que duele.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6"><img src="./SENSUBARRA.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="VACA Y NI&Ntilde;A"></a></font><font face="Georgia" color="#84B0D6">
+		Vaca y ni&ntilde;a</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Los ni&ntilde;os de las ciudades<br>
+		conocen bien el mar,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		mas no la tierra.<br>
+		La ni&ntilde;a que no hab&iacute;a visto,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		nunca, una vaca<br>
+		se la encontr&oacute; en el prado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y le gust&oacute;.<br>
+		La vaca no sonre&iacute;a<br>
+		-est&aacute; contra sus costumbres-.<br>
+		La ni&ntilde;a se le acerc&oacute;, pasos menudos,<br>
+		como a una fuente materna<br>
+		de leche y miel y cebada.<br>
+		La vaca a su vez,<br>
+		rumiando dulce pastura,<br>
+		mir&oacute; a la peque&ntilde;a triste,<br>
+		como a un becerro perdido,<br>
+		y la salud&oacute; contenta:<br>
+		la cola en alta alegr&iacute;a,<br>
+		l&aacute;tigo amable<br>
+		que festejaban las moscas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><i>De &quot;La 
+		zorra enferma&quot; 1974</i><br>
+		<br>
+&nbsp;</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:21:19 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:17 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

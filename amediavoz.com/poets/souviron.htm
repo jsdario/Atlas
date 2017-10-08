@@ -1,0 +1,708 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jos&eacute; Mar&iacute;a Souvir&oacute;n</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jos&eacute; Mar&iacute;a Souvir&oacute;n. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jose_Maria_Souviron,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/souviron.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/souviron.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815175040" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./souviron.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:50:40 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./souviron.htm" title="17:45:00 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:50:40 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./souviron.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:50:40 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./souviron.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>68 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">21 Oct 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000101_2003:-1:000100010100_2004:-1:010101010101_2005:-1:021100010000_2006:-1:100011000410_2007:-1:010103010300_2008:-1:010101830101_2009:-1:001000100100_2010:-1:100000001110_2011:-1:000000101000_2012:-1:100010001010_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./SOUVIRON.jpg" width="453" height="40">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font size="3" color="#C5BEBE" face="Saintgermain Sans Italic"><br>
+</font><font face="Arial" size="2" color="#9BC9BB">&quot;...Otros d&iacute;as se llamaba 
+paloma, y era <br>
+tierna, plumosa, llena de arrullos lentos...&quot;<br>
+<br>
+</font><font color="#9BC9BB"><img src="./SOUVIRON1.jpg" width="270" height="335"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Los amantes&quot;<br>
+<br>
+Pablo Picasso<br>
+</em><br>
+</font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a 
+biogr&aacute;fica</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta 
+		espa&ntilde;ol nacido en M&aacute;laga en 1904.<br>Curs&oacute; su bachillerato con los 
+		Jesuitas en Miraflores del Palo y posteriormente en la Universidad de 
+		Granada <br>
+		obtuvo su Licenciatura en Derecho. Antes de cumplir los veinticinco a&ntilde;os&nbsp; 
+		public&oacute; en M&aacute;laga sus primeros libros <br>
+		de poemas &laquo;G&aacute;rgola&raquo; y &laquo;Conjunto&raquo;. Posteriormente se radic&oacute; en Paris, 
+		luego en Santiago de Chile hasta el a&ntilde;o 
+		<br>
+		de 1953 y finalmente regres&oacute; a Espa&ntilde;a donde se dedic&oacute; a colaborar de 
+		lleno con varias revistas e Institutos <br>
+		de Cultura Hisp&aacute;nica. <br>Adem&aacute;s de los libros mencionados, se destacan 
+		de su obra: &laquo;Plural belleza&raquo; en 1936, &laquo;Olvido apasionado&raquo; en 1941, <br>
+		&laquo;Se&ntilde;al de vida&raquo; en 1948&nbsp; y &laquo;Adorados tormentos&raquo; en 1951.<br>
+		Falleci&oacute; en 1973.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><font face="Georgia" size="3" color="#B0C6C1"><br><br>
+		</font><font face="Georgia" color="#A7BEB9">
+		<a href="./souviron.htm#AMOR, NO S&Eacute;...">Amor, no s&eacute;, ...</a><br><br><a href="./souviron.htm#COMO EL RAYO DE LUNA EN LA PALMERA">
+		Como el rayo de luna en la palmera...</a>
+		<br><br><a href="./souviron.htm#CUANDO LA AURORA...">Cuando la aurora...</a><br><br>
+		<a href="./souviron.htm#EN EL ALTO CASTILLO, LA SERENA">En el alto castillo, la 
+		serena...</a>&nbsp;<br>
+		<br><a href="./souviron.htm#EN MEDIO DE ESTA NOCHE TAN OSCURA">En medio de esta calle 
+		tan oscura...</a><br>
+		<br><a href="./souviron.htm#HE SO&Ntilde;ADO QUE ESTABAS A MI VERA">He so&ntilde;ado que estabas a 
+		mi vera...</a><br>
+		<br><a href="./souviron.htm#HOY LA PRIMERA LLUVIA SILENCIOSA">Hoy la primera lluvia 
+		silenciosa...</a>
+		<br><br><a href="./souviron.htm#LA ALTA NOCHE Y EL MAR">La alta noche y el mar</a>&nbsp;&nbsp; 
+		<br><br><a href="./souviron.htm#LA LLUVIA">La lluvia</a>&nbsp;<br><br>
+		<a href="./souviron.htm#MADRIGAL">Madrigal</a><br><br>
+		<a href="./souviron.htm#MIS OJOS MUY ABIERTOS PARA VERTE">Mis ojos muy abiertos para 
+		verte...</a>
+		<br><br><a href="./souviron.htm#&iquest;POR QU&Eacute; NO HAS SIDO T&Uacute;?">&iquest;Por qu&eacute; no has sido t&uacute;?</a><br>
+		<br><a href="./souviron.htm#R&Aacute;PIDA PLENITUD">R&aacute;pida plenitud...</a><br><br>
+		<a href="./souviron.htm#SI EL CERCO DE MI BRAZO TE CE&Ntilde;&Iacute;A">Si el cerco de mi brazo te 
+		ce&ntilde;&iacute;a...</a><br>
+		<br><a href="./souviron.htm#VARlACIONES">Variaciones</a></font><font face="Georgia" size="2" color="#A7BEB9"><br><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">Volver a:</font><font face="Georgia" size="2" color="#A7BEB9"> </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#95B3AA">
+		<a name="AMOR, NO S&Eacute;..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Amor, no s&eacute; qu&eacute; calidos rumores...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Amor, no s&eacute; qu&eacute; calidos rumores<br>tienen esta ma&ntilde;ana las colmenas.<br>
+		Amor, no s&eacute; qu&eacute; p&aacute;lidos colores<br>hay en las cumbres altas y serenas.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">No s&eacute;, amor, de qu&eacute; 
+		tr&eacute;mulos dulzores<br>est&aacute;n las flores y las frutas llenas,<br>ni por qu&eacute; 
+		son m&aacute;s dulces los olores<br>que vienen al abrir las alacenas.<br>
+		<br>No s&eacute; qu&eacute; tienen, amor, esta ma&ntilde;ana<br>que suenan como un &aacute;ngelus 
+		lejano<br>cuando sale el reba&ntilde;o, las esquilas;<br>
+		<br>y que al abrir de pronto la ventana,<br>alondras al alcance de mi 
+		mano<br>se quedaron mir&aacute;ndome tranquilas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="COMO EL RAYO DE LUNA EN LA PALMERA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Como el rayo de luna en la palmera...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Como el rayo de luna en la palmera,<br>con la voz de la noche clara 
+		y fr&iacute;a,<br>con el olor del mar en la bah&iacute;a,<br>con el rumor del agua en 
+		la pradera.<br>
+		<br>Con la alborada y con su luz primera,<br>con el dorado ardor del 
+		mediod&iacute;a,<br>y con esta pasi&oacute;n de la voz m&iacute;a,<br>te llamo y te reclamo 
+		por doquiera.<br>
+		<br>Te llamo con la calma y con la brisa,<br>con la piedra, la flor, la 
+		lluvia, el trigo,<br>te llamo con el llanto y la sonrisa,<br>
+		<br>como el enamorado y el amigo,<br>con orgullo y piedad, que tengo 
+		prisa,<br>que tengo prisa por estar contigo.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="3" color="#9BC9BB">
+		<a name="CUANDO LA AURORA..."></a></font>
+		<font
+      face="Georgia" color="#9BC9BB">Cuando la aurora ponga en los caminos...</font><font
+      face="Georgia" size="2" color="#9BC9BB"><br><br>Cuando la aurora ponga en 
+		los caminos<br>flores de nieve y t&eacute;mpanos de aromas,<br>cuando el rumor 
+		de un vuelo de palomas<br>en la invernal caricia de los pinos;<br>
+		<br>y cuando los redondos remolinos<br>se lancen por lo alto de las 
+		lomas<br>buscando calentarse en las redomas<br>de los profundos pozos 
+		cristalinos.<br>
+		<br>Cuando el viento est&eacute; solo en el sendero<br>dando saltos de escarcha 
+		y luna fr&iacute;a,<br>o patinando en v&eacute;rtigo campero;<br>
+		<br>cuando la noche luche con el d&iacute;a..., <br>&iexcl;entonces te querr&eacute; como te 
+		quiero,<br>como quiero quererte, vida m&iacute;a!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="EN EL ALTO CASTILLO, LA SERENA"></a></font>
+		<font face="Georgia" color="#9BC9BB">En el alto castillo, la serena...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>En el alto castillo, la serena<br>tarde pon&iacute;a su misterioso brillo<br>
+		y la rosada carne del ladrillo<br>se tornaba de luz sobre la almena.<br>
+		<br>El silencio contigo; la voz plena<br>del suave mar, abajo, y el 
+		sencillo<br>juguetear del claro vientecillo<br>con mi tr&eacute;mula mano en tu 
+		melena.<br>
+		<br>Los &aacute;rboles oscuros al Poniente<br>rumoreaban pl&aacute;cidas canciones.<br>
+		El tiempo se dorm&iacute;a, abandonado.<br>
+		<br>Y bajaba la noche, indiferente,<br>con un prodigio de constelaciones<br>
+		sobre mi coraz&oacute;n enamorado.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a
+      name="EN MEDIO DE ESTA NOCHE TAN OSCURA"></a>En medio de esta noche tan 
+		oscura...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">En medio de esta noche 
+		tan oscura<br>se anuncia el dulce brote de la espiga<br>y arde la flor 
+		que el temporal castiga<br>con una oculta luz, serena y pura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Ya s&eacute; que la luz vive y 
+		que perdura,<br>ahora, qu&eacute; m&aacute;s quieres que te diga?<br>Abierto est&aacute; mi 
+		coraz&oacute;n, amiga,<br>por la herida de olvido y amargura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Mira la sangre que la 
+		herida vierte:<br>c&oacute;mo te dice &quot;adi&oacute;s hasta la muerte&quot;<br>desde la sola 
+		y triste lontananza.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Y c&oacute;mo, en esta 
+		ardiente despedida,<br>guarda lo que quiz&aacute;s para esta vida<br>no puede 
+		mantener a la esperanza.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a
+      name="HE SO&Ntilde;ADO QUE ESTABAS A MI VERA"></a>He so&ntilde;ado que estabas a mi 
+		vera...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">He so&ntilde;ado que estabas a 
+		mi vera<br>y que ten&iacute;as tus manos en las m&iacute;as;<br>ya no recuerdo lo que 
+		me dec&iacute;as,<br>pero era dulce o&iacute;rte, compa&ntilde;era.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Me mirabas de amor, con 
+		la sincera<br>clara mirada de los bellos d&iacute;as<br>y se iban enredando mis 
+		poes&iacute;as<br>en el perfume de tu cabellera.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Era tan dulce o&iacute;rte, y 
+		era tanta<br>la maravilla de tu voz serena,<br>que, al sentir mi so&ntilde;ar 
+		desvanecido,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">me despert&eacute; con llanto 
+		en la garganta,<br>y las carnes doli&eacute;ndome de pena,<br>y el coraz&oacute;n 
+		doli&eacute;ndome de olvido.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a
+      name="HOY LA PRIMERA LLUVIA SILENCIOSA"></a>Hoy la primera lluvia 
+		silenciosa...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Hoy la primera lluvia silenciosa<br>cae sobre el jard&iacute;n serenamente,<br>
+		temprano oto&ntilde;o brota de la fuente<br>y huye la primavera de la rosa.<br>
+		<br>Huele a la tarde aquella deliciosa<br>de no s&eacute; d&oacute;nde -&iquest;en d&oacute;nde 
+		fue?-. Se siente<br>una quietud pasada en el presente<br>y un recuerdo 
+		vibrar en cada cosa.<br>
+		<br>Reclinada en mi hombro tu cabeza,<br>vemos caer la lluvia en los 
+		rosales<br>con un blando rumor y movimiento<br>
+		<br>que da al jard&iacute;n una ideal pureza<br>y hace brotar promesas 
+		inmortales<br>en mi tranquilo y alto pensamiento.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a name="LA ALTA NOCHE Y EL MAR"></a>La alta noche y el mar</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		La alta noche y el mar. Las playas solas.<br>Un vientecillo fresco y 
+		desva&iacute;do.<br>Y en el conf&iacute;n oscuro, el suave ruido<br>de una orquesta de 
+		claras caracolas.<br>
+		<br>Ay, amor: por encima de las olas,<br>desde mi coraz&oacute;n estremecido<br>
+		resbalaba, sin rumbo ni sentido,<br>el son de mis canciones espa&ntilde;olas.<br>
+		<br>La fogata que ard&iacute;a sobre la arena<br>era una estrella m&aacute;s, en la 
+		serena<br>infinitud. Cesaron mis canciones.<br>
+		<br>Las olas en la playa se mor&iacute;an...<br>y de pronto sent&iacute; c&oacute;mo lat&iacute;an<br>
+		al mismo tiempo nuestros corazones.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="LA LLUVIA"></a>La 
+		lluvia</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>Cae 
+		la lluvia suavemente<br>con un susurro tierno y claro,<br>y el coraz&oacute;n 
+		se va durmiendo<br>por el rumor acompa&ntilde;ado.<br>
+		<br>La lluvia trae muchas cosas<br>que ya ten&iacute;amos olvidadas:<br>viejos 
+		jardines a lo lejos<br>desde balcones de la infancia.<br>
+		<br>Antiguas voces que se fueron,<br>m&uacute;sicas lentas y remotas<br>y unos 
+		instantes de amor pleno<br>bajo otra lluvia melanc&oacute;lica.<br>
+		<br>Llueve en ventanas y azoteas,<br>sobre los &aacute;rboles y el campo;<br>
+		llueve tambi&eacute;n sobre mis penas<br>y los recuerdos m&aacute;s lejanos.<br>
+		<br>Es bendici&oacute;n sobre la tierra,<br>amor de Dios en la campi&ntilde;a.<br>La 
+		lluvia es una compa&ntilde;era<br>que da ternuras infinitas.<br>
+		<br>Brillan las hojas, y en el aire<br>hay una p&aacute;lida dulzura.<br>Llueve 
+		en el mundo. Llueve, llueve.<br>Cae la caricia de la lluvia.<br>
+		<br>Se oyen dianas de otros tiempos,<br>pregones c&aacute;lidos de anta&ntilde;o,<br>
+		canciones de mujeres muertas,<br>lento mugir de toros bravos.<br>
+		<br>Acordeones en el puerto,<br>tristes sirenas de nav&iacute;os<br>y 
+		cascabeles en el alba<br>por carreteras con roc&iacute;o.<br>
+		<br>Cae la lluvia suavemente<br>y la memoria se despierta<br>y 
+		largamente se respira<br>el lento efluvio de la tierra.<br>
+		<br>Y hay naranjales en los ojos<br>y un ancho mar junto a las manos<br>
+		y una tranquila soledad<br>en un paisaje ilimitado.<br>
+		<br>Risas amigas acompa&ntilde;an<br>sin ruido al alma que est&aacute; muda.<br>Como 
+		una bella enamorada<br>llega a m&iacute;, tr&eacute;mula, la lluvia.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="MADRIGAL">
+		</a></font><font face="Georgia" color="#9BC9BB">Madrigal</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Si al sol llamo sol, no es a &eacute;l,<br>sino a ti que sol te llamo.<br>
+		<br>Si llamo luna a la luna,<br>es que a ti te estoy llamando.<br><br>Si 
+		llamo a la rosa rosa,<br>es que en la rosa te hallo.<br>
+		<br>Si llamo amor al amor,<br>es s&oacute;lo porque te amo.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MIS OJOS MUY ABIERTOS PARA VERTE"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Mis ojos muy abiertos para verte...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Mis ojos muy abiertos para verte,<br>mis o&iacute;dos atentos para o&iacute;rte,<br>
+		mis &aacute;speras mejillas para herirte,<br>mis brazos para alzarte y 
+		sostenerte.<br>
+		<br>Mis dientes duros, no para morderte,<br>sino para rozarte y 
+		sonre&iacute;rte,<br>mis largas piernas para perseguirte,<br>y mi gran coraz&oacute;n 
+		para quererte.<br>
+		<br>Mi coraz&oacute;n que hace sonar las horas,<br>con un comp&aacute;s que el tuyo ya 
+		conoce,<br>con un latir de luz de sol y luna.<br>
+		<br>Silencio y campanadas vibradoras,<br>desde la una, amor, hasta las 
+		doce,<br>desde las doce, amor, hasta la una.<br>
+		<br>&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="&iquest;POR QU&Eacute; NO HAS SIDO TÚ?"></a>&iquest;Por qu&eacute; no has sido t&uacute;?</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Todo lo que he buscado se halla en ti,<br>y s&eacute; que est&aacute;s dispuesta a 
+		quererme, si yo<br>tiendo un poco mi mano hacia tu mano.<br>
+		<br>Cuando estaba con otras<br>cerca de ti, queri&eacute;ndolas,<br>entrabas 
+		hasta el fondo de mi alma<br>calladamente, pero con dominio,<br>y all&iacute; 
+		te establec&iacute;as, olvidada y presente.<br>
+		<br>Antes, pasaste a veces por mi lado<br>y yo pensaba, aunque no lo 
+		quer&iacute;a,<br>que eras t&uacute; la que yo deb&iacute;a haber amado,<br>la que guardaba 
+		los tesoros<br>que yo, gozoso y torpe, buscaba en otras minas.<br>
+		<br>Ahora sigues presente<br>pero ya no me atrevo. He malgastado tanto<br>
+		tu impaciente silencio, tu ternura encerrada,<br>tu carne, que esperaba 
+		no sabemos qu&eacute; brotes<br>de primavera retrasada y dulce...<br>Si te 
+		dijera que te quiero<br>no te dir&iacute;a bastante,<br>y quiz&aacute; este mundo de 
+		cristal y de luz<br>que has ido edificando sobre mi indiferencia,<br>se 
+		caer&iacute;a de golpe, dej&aacute;ndonos a oscuras.<br>
+		<br>No sabr&iacute;as dec&iacute;rmelo,<br>ni yo a ti. Solamente<br>un prodigio 
+		violento<br>y un nuevo mundo abierto ante tanta esperanza...<br>&iexcl;Oh, qu&eacute; 
+		rabia tard&iacute;a!<br>Por qu&eacute; no has sido t&uacute;?</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="R&Aacute;PIDA PLENITUD"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		R&aacute;pida plenitud</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Tu novedad, tu pura novedad<br>es lo que me concilia con el mundo.<br>
+		<br>Aqu&iacute; est&aacute; mi pasado, en este instante,<br>todo hecho presente y 
+		asumido<br>por esa novedad que t&uacute; me traes.<br>
+		<br>Porque me has hecho nuevo para ti,<br>y todo lo anterior, todo lo 
+		huido<br>se vivifica ahora en tu presencia.<br>
+		<br>&iquest;No es este &aacute;rbol de esta noche el &aacute;rbol<br>hecho con todos los que 
+		vi sin ti?<br>&iquest;No es la brisa que pasa por tu lado<br>la brisa de mi 
+		infancia, que ha seguido<br>corriendo para estar junto a nosotros?<br>
+		<br>Pasan los a&ntilde;os, pero el tiempo queda<br>y ahora estoy contigo en mi 
+		pasado,<br>y ya est&aacute; aqu&iacute; tu vida hecha presente.<br>Un presente fugaz 
+		que se renueva<br>con certidumbre de mantenimiento.<br>
+		<br>Calla. Escucha la noche. Oye los mundos.<br>Mira esas luces. Huele a 
+		primavera.<br>Nada m&aacute;s que este instante prolongado,<br>toda mi vida 
+		aqu&iacute; con tu alegr&iacute;a.<br>O con tu pena, que me da lo mismo.<br>
+		<br>Y ahora, adi&oacute;s, es hora de que partas.<br>Hasta luego, o quiz&aacute; 
+		hasta. ma&ntilde;ana.<br>Ahora el mundo est&aacute; bien. Ya puedes irte.<br>Ya esto 
+		ha sido vivir. Esto es vivir.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="SI EL CERCO DE MI BRAZO TE CE&Ntilde;&Iacute;A"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Si el cerco de mi brazo te ce&ntilde;&iacute;a...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Si el cerco de mi brazo 
+		te ce&ntilde;&iacute;a,<br>era porque el amor me lo mandaba.<br>Si de lejos y quieto 
+		te miraba,<br>era porque el amor me lo ped&iacute;a.<br>
+		<br>Si con un claro beso te quer&iacute;a,<br>era porque el amor me lo 
+		ordenaba;<br>y si yendo a tu lado me apartaba,<br>era porque el amor me 
+		lo exig&iacute;a.<br>
+		<br>As&iacute;, cuando te digo que te quiero,<br>igual que cuando no te diga 
+		nada,<br>hago, mujer, lo que el amor me ordena.<br>
+		<br>Y el d&iacute;a en que te digan que me muero,<br>lo mismo que mi vida 
+		enamorada,<br>ser&aacute; mi muerte enamorada pena.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>
+		&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><a name="VARlACIONES"></a></font>
+		<font face="Georgia" color="#9BC9BB">Variaciones</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ella ten&iacute;a unos nombres extra&ntilde;os, a mi antojo.<br>Unos d&iacute;as se llamaba 
+		cereza; era redonda y suave,<br>peque&ntilde;a y reluciente. No ven&iacute;a en 
+		racimo,<br>sino &uacute;nica y aislada cereza de mi gusto.<br>
+		<br>Otros d&iacute;as se llamaba paloma,<br>y era tierna, plumosa, llena de 
+		arrullos lentos.<br>En libertad volaba sobre los altos pinos<br>para 
+		volver cansada a dormir en mis manos.<br>
+		<br>Otros d&iacute;as se llamaba fuente, y era un prodigio<br>cantar sosegado, 
+		de frescor y de luces.<br>Cuando yo le agitaba las alas, se re&iacute;a<br>con 
+		ondas que tardaban un rato en aquietarse.<br>
+		<br>Otros d&iacute;as se llamaba albahaca, y ol&iacute;a<br>maravillosamente -sobre 
+		todo al crep&uacute;sculo-<br>y era tan delicioso el aire de su aroma<br>que la 
+		ciudad entera parec&iacute;a perfumada.<br>
+		<br>Otros d&iacute;as se llamaba l&aacute;grima, y daba pena<br>verla tan peque&ntilde;ita, 
+		resbalando en tibieza<br>salada, melanc&oacute;lica, sin ganas de jugar<br>y 
+		pensando que s&oacute;lo estaba por los suelos.<br>
+		<br>Otros d&iacute;as se llamaba cristal, y la ve&iacute;a<br>transparente y un poco 
+		avergonzada<br>de que yo la supiera del todo y sin secreto,<br>sin 
+		hablarle siquiera. Y era fr&aacute;gil y pura.<br>
+		<br>A veces se llamaba niebla, y era trist&iacute;simo<br>ver como todo, en 
+		ella y en m&iacute;, se hac&iacute;a invisible.<br>And&aacute;bamos a tientas uno en busca 
+		del otro,<br>pero no nos hall&aacute;bamos y est&aacute;bamos distantes.<br>
+		<br>Otros d&iacute;as se llamaba piedra, y era tan dura<br>que mis manos 
+		sangraban y el amor me dol&iacute;a.<br>Cuando ella se llamaba piedra... ( 
+		Mejor ser&aacute;<br>olvidar esos d&iacute;as minerales y oscuros. )<br>
+		<br>Otros d&iacute;as se llamaba coraz&oacute;n. Daba gusto<br>verla tan incansable, 
+		tan tierna. No pod&iacute;a<br>casi acercarme a ella por miedo de da&ntilde;arla,<br>
+		pero est&aacute;bamos juntos y nos dec&iacute;amos cosas.<br>
+		<br>Otros d&iacute;as se llamaba arc&aacute;ngel. Se perd&iacute;a<br>de mi alcance. De 
+		pronto yo me encontraba, tr&eacute;mulo,<br>a la vera de Dios. Todo brillaba 
+		tanto,<br>que pienso que esos d&iacute;as comenz&oacute; mi locura.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<blockquote>
+			<blockquote>
+				<blockquote><font face="Georgia" size="2" color="#8FABC2">
+					<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+					<font color="#AAC0D5">
+					<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+					<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+					</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:50:40 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:02 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

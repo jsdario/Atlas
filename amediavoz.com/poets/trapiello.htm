@@ -1,0 +1,1303 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Andr&eacute;s Trapiello</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Andr&eacute;s Trapiello. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Andres_Trapiello,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app17.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/trapiello.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/trapiello.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815154252" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./trapiello.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2013"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 15:42:52 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./trapiello.htm" title="18:57:33 Jun 26, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 15:42:52 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./trapiello.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 15:42:52 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./trapiello.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>58 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Apr 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000101010101_2005:-1:011100001020_2006:-1:120121010200_2007:-1:010001111500_2008:-1:101331000001_2009:-1:000010100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:000010001000_2013:7:101211010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRAPIELLO.jpg" width="361" height="51">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+&quot;...En el verde del agua mirar&eacute; contigo<br>
+c&oacute;mo mueren los d&iacute;as...&quot;<br>
+<br>
+</font><font color="#9BC9BB"><img src="./TRAPIELLO1.jpg" width="250" height="203"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Sleeping 
+woman&quot;<br>
+<br>
+Pablo Picasso</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+	<p align="center"><font color="#9BC9BB"><br></font>
+	<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+	novelista y ensayista espa&ntilde;ol nacido en Manzaneda de Tor&iacute;o, Le&oacute;n, en 1953. <br>
+	En 1975 se traslad&oacute; a Madrid para comenzar sus estudios universitarios, 
+	estudios que abandon&oacute; para dedicarse <br>
+	por completo al periodismo. Es colaborador de diferentes publicaciones 
+	literarias&nbsp; y director de la colecci&oacute;n de <br>
+	poes&iacute;a <em>
+	&quot;La Veleta&quot;</em>.<br>Ha obtenido importantes premios en el campo de la 
+	novela y el ensayo.<br>Su obra po&eacute;tica se inici&oacute; con el poemario &laquo;Junto al 
+	agua&raquo; en 1980, al que siguieron, entre otros, &laquo;La vida f&aacute;cil&raquo; 1985,&nbsp; <br>
+	&laquo;Las tradiciones&raquo; en 1991, &laquo;Acaso una verdad&raquo; en 1993 por el que obtuvo el<em> 
+	&quot;Premio Nacional de la Cr&iacute;tica&quot;</em>
+      <br>
+      y &laquo;Para leer a Leopardi&raquo; en 1995.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&copy;</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#95B3AA">&nbsp;<br>
+	</font></p>
+	<p align="center"><font face="Georgia">
+	<img border="0" src="./PERDUBARRA.jpg" width="77"
+      height="9"></font></p>
+	<p align="left"><font face="Georgia" color="#B0C6C1"><br></font>
+	<font face="Georgia" size="2" color="#A7BEB9"><br>
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./trapiello.htm#A UNA GOTA DE ROC&Iacute;O">A una gota de roc&iacute;o</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <br><br><a href="./trapiello.htm#ADONDE T&Uacute; POR AIRE CLARO VAS">Adonde t&uacute; por aire claro 
+	vas...</a><br>
+	<br><a href="./trapiello.htm#ADORO LAS CIUDADES...">Adoro las ciudades que son viejas...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./trapiello.htm#AL FINAL DE LA TARDE">Al final de la tarde...</a><br><br>
+	<a href="./trapiello.htm#E. D">E. D</a><br><br><a href="./trapiello.htm#EL AMOR DE LAS COSAS">El amor de 
+	las cosas</a><br>
+	<br><a href="./trapiello.htm#EL &Aacute;RBOL DE LA CIENCIA">El &aacute;rbol de la ciencia</a><br><br>
+	<a href="./trapiello.htm#EL R&Iacute;O">El r&iacute;o</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<br><br><a href="./trapiello.htm#ELEG&Iacute;A">Eleg&iacute;a</a><br><br><a href="./trapiello.htm#EN LA SALA APAGADA">En 
+	la sala apagada</a><br>
+	<br><a href="./trapiello.htm#EN LAS LLUVIOSAS TARDES DE NOVIEMBRE...">En las lluviosas 
+	tardes de noviembre...</a><br>
+	<br><a href="./trapiello.htm#EN TUS MEJORES A&Ntilde;OS">En tus mejores a&ntilde;os</a><br><br>
+	<a href="./trapiello.htm#ENDECHA">Endecha</a><br><br><a href="./trapiello.htm#ES ESTO">Es esto...</a><br><br>
+	<a href="./trapiello.htm#ESTUDIO DE PIANO EN RONDA">Estudio de piano en ronda</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./trapiello.htm#LA CARTA">
+	La carta</a><br>
+	<br><a href="./trapiello.htm#LA VENTANA DE KEATS">La ventana de Keats</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./trapiello.htm#LA VIDA F&Aacute;CIL">La vida f&aacute;cil</a><br><br>
+	<a href="./trapiello.htm#LAS HORAS MUERTAS">Las horas muertas</a><br><br>
+	<a href="./trapiello.htm#LAS TRADICIONES">Las tradiciones</a><br><br>
+	<a href="./trapiello.htm#LOS TRIUNFOS">Los triunfos</a><br><br>
+	<a href="./trapiello.htm#ME ASOMO TODAS LAS TARDES...">Me asomo todas las tardes...</a><br>
+	<br><a href="./trapiello.htm#MECINA FONDALES">Mecina Fondales</a><br><br>
+	<a href="./trapiello.htm#MIRADOR DE LA ENFERMA">Mirador de la enferma</a><br>
+	<br>
+	<a href="./trapiello.htm#MON&Oacute;LOGO">Mon&oacute;logo</a><br><br><a href="./trapiello.htm#MUSEO ROM&Aacute;NTICO">Museo 
+	rom&aacute;ntico</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9"><a href="./trapiello.htm#Nada">Nada</a><br>
+	<br><a href="./trapiello.htm#NOCTURNO">Nocturno</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./trapiello.htm#Para un combatiente del Ebro">Para un combatiente del Ebro</a><br><br>
+	<a href="./trapiello.htm#POR LOS CAMINOS DEL TEDIO">Por los caminos del tedio</a><br><br>
+	<a href="./trapiello.htm#POR SI UN D&Iacute;A QUEDARAS...">Por si un d&iacute;a quedaras...</a><br><br>
+	<a href="./trapiello.htm#PREFERENCIAS">Preferencias</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<br><br><a href="./trapiello.htm#QUI&Eacute;N TUVIERA TODAV&Iacute;A...">Qui&eacute;n tuviera todav&iacute;a...</a><br>
+	<br><a href="./trapiello.htm#SONETO">Soneto</a><br><br><a href="./trapiello.htm#TESTAMENTO">Testamento</a><br>
+	<br><a href="./trapiello.htm#TIEMPO DEL AIRE">Tiempo del aire</a><br><br>
+	<a href="./trapiello.htm#UNA MUCHACHA">Una muchacha</a><br><br>
+	<a href="./trapiello.htm#UNA VENTANA AL MUNDO">Una ventana al mundo</a></font><font face="Georgia" size="2" color="#A7BEB9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">Volver a:</font><font face="Georgia" size="2" color="#A7BEB9"> </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+	esta p&aacute;gina</a>
+	</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br></p>
+	<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0"
+        src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA"><a name="A UNA GOTA DE ROC&Iacute;O"></a></font>
+		<font face="Georgia" color="#9BC9BB">A una gota de roc&iacute;o</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Van forjando al roc&iacute;o fondo y forma
+		<br>en la secreta fragua, <br>cuando nadie lo ve, para despu&eacute;s <br>
+		dejarlo igual que un vaso en la alacena 
+		<br>de la naturaleza inabarcable, <br>agua de pozo limpia y sed al mismo 
+		tiempo. 
+		<br>Y c&oacute;mo estos principios se combinan <br>para pulir, tal piedra de 
+		diamante, 
+		<br>el silencio y la rosa <br>de donde nace al fin, como del poro <br>de 
+		la noche agitada van naciendo 
+		<br>nuestros sue&ntilde;os m&aacute;s &iacute;ntimos, <br>esa peque&ntilde;a gota <br>destilada en 
+		el tallo de cualquier loca avena. 
+		<br>Luego el sue&ntilde;o tambi&eacute;n le vence a ella, <br>y se evapora, 
+		devolvi&eacute;ndole al mundo 
+		<br>su perfume de rosa y su silencio, <br>y no deja m&aacute;s rastro <br>que 
+		en nosotros la vida, si morimos. 
+		<br>Y por ello, si fuera dios yo un d&iacute;a, <br>no coger&iacute;a arcilla de la 
+		tierra 
+		<br>ni ninguna otra cosa, <br>sino a ti, mi peque&ntilde;a Galatea <br>que en 
+		la avena te meces dulcemente, 
+		<br>y ordenar&iacute;a al punto: H&aacute;gase el hombre <br>de esta l&aacute;grima pura, <br>
+		y as&iacute; quiz&aacute; pudiera ser el hombre, 
+		<br>pleno en su instante &uacute;nico <br>entre tan bellas nadas, <br>m&aacute;s 
+		duradero sue&ntilde;o, una leyenda.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;Un 
+		sue&ntilde;o en otro&quot;</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB">
+		<a name="ADONDE TÚ POR AIRE CLARO VAS"></a></font>
+		<font face="Georgia"
+      color="#9BC9BB">Adonde t&uacute; por aire claro vas...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>Adonde t&uacute; por aire claro vas,<br>en sombra yo, o 
+		en hojarasca breve,<br>te he seguido. Yo mismo sombra soy<br>de ti. Y no 
+		puedes t&uacute; notar que yo<br>te siga, yo, callado tras de ti,<br>lumbre 
+		contigo o nieve de tu mano.<br>Y veo tu mirar, mas siempre esquivo,<br>
+		oscuro y amoroso, en huertos altos<br>que t&uacute; para tu amor los cercas. 
+		Fuentes,<br>aves, la reja de la casa sue&ntilde;o<br>ser yo, la claridad, su 
+		vuelo limpio,<br>el aire entre los hierros. Pero t&uacute;,<br>a mi trav&eacute;s, 
+		cuando me miras, creo<br>que est&aacute;s mirando a otro, de no verme.<br>Y ya 
+		la fuente, el ave, las espadas<br>de la verja no son nada. La tarde<br>
+		su rosa le retira al vaso. P&eacute;talos<br>s&oacute;lo, los continentes que parecen<br>
+		sobre la mesa, a ti te los ofrezco,<br>te env&iacute;o su gobierno y yo, la 
+		sombra.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="ADORO LAS CIUDADES..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Adoro las ciudades que son viejas...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Adoro las 
+		ciudades que son viejas<br>ciudades de provincia<br>y los puentes de 
+		piedra y los de hierro<br>y los puentes en ruinas,<br>viejos puentes de 
+		piedra solitarios<br>invadidos de ortigas.<br>
+		<br>Pero tambi&eacute;n me cansan esas viejas<br>ciudades de provincia<br>y 
+		todo lo que un puente sobre un r&iacute;o<br>oscuro simboliza.<br>
+		<br><em>De &quot;La vida f&aacute;cil&quot; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="AL FINAL DE LA TARDE"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Al final de la tarde...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Al final de la tarde<br>las &uacute;ltimas estelas se detienen<br>en la pared 
+		de cal,<br>accidentes, cenizas.<br>En los ojos entonces los paisajes<br>
+		suenan como lacados<br>y hasta parecen l&aacute;grimas,<br>tan suavemente 
+		llegan.<br>
+		<br>Hablo de m&iacute; porque temo a la muerte<br>desnuda de las cosas<br>y que 
+		la muerte venga a esta azotea<br>a quedarse en la calma y el silencioso 
+		valle.<br>
+		<br>Como en su vaso el t&eacute; moruno y verde<br>o el viejo libro que abierto 
+		est&aacute; a su lado<br>han conseguido ser due&ntilde;os de su quietud,<br>y en su 
+		quietud<br>igualarse a los astros que van en vastas &oacute;rbitas,<br>
+		<br>como ese viejo libro y ese vaso de t&eacute;,<br>recuerda este lugar y este 
+		momento.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Un d&iacute;a 
+		llegar&aacute; en que te preguntes<br>&iquest;de ti, de m&iacute;,&nbsp; qu&eacute; fue de todo 
+		aquello?,<br>y de los ojos<br>ya no vendr&aacute;n palabras.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Junto 
+		al agua&quot;&nbsp; 1980</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="E. D"></a>E. D<br><br>M&iacute;rame a&uacute;n. Creci&oacute; musgo en mis labios<br>
+		y en los inviernos crudos me visita la nieve.<br>Si&eacute;ntate, viajero, a mi 
+		lado.<br>Cuando la lluvia arranca plateadas<br>coronas de la piedra y 
+		silenciosa<br>en el cipr&eacute;s muere la tarde, s&oacute;lo<br>de ti me acuerdo. 
+		Pero t&uacute; est&aacute;s lejos.<br>Pasa tu mano por mi nombre y quita<br>las hojas 
+		amarillas que lo cubren,<br>y los p&eacute;talos secos de esas flores<br>
+		antiguas. Ll&aacute;mame despu&eacute;s y dime<br>si el viento de esos campos lo ha 
+		borrado<br>o si tiembla en el aire todav&iacute;a<br>como el romero verde.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="EL AMOR DE LAS COSAS"></a>El amor de las cosas</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Y me sent&eacute; por descansar del d&iacute;a<br>junto al gran ventanal<br>y estuve 
+		all&iacute; no s&eacute; qu&eacute; largo rato.<br>Cansado estaba y triste y sin prop&oacute;sito<br>
+		viendo correr el agua de la fuente.<br>Los del jard&iacute;n eran colores 
+		foscos,<br>verdes que se enlutaban y unas rosas<br>al pie de una 
+		escalera por la lluvia<br>gastados. Y all&iacute; mismo, en un rinc&oacute;n,<br>bajo 
+		el naranjo agrio,<br>las viejas herramientas<br>que dej&oacute; el jardinero,<br>
+		la esterilla de esparto y el hocino<br>de primitivo aspecto, curvo y 
+		negro.<br>Se deshac&iacute;a el d&iacute;a en fino polvo<br>de oro, el agua por el 
+		canalillo<br>de barro apenas se atrev&iacute;a al ruido<br>y a su torre volv&iacute;an 
+		las palomas.<br>No era de noche a&uacute;n, sino de azul,<br>de un azul muy 
+		intenso.<br>Vino el amor entonces<br>a mi lado a quedarse,<br>el amor de 
+		las cosas del huerto,<br>parte del cual estaba ya sembrado<br>y esperaba 
+		su fruto.<br>Pero de pronto una blanca lechuza<br>se desplom&oacute; del cielo<br>
+		y me asust&oacute; su majestad al verla<br>detr&aacute;s de unos laureles remontando;<br>
+		hasta escuch&eacute; sus fantasmales alas.<br>no era de noche a&uacute;n,<br>el aire 
+		de azucenas perfumado,<br>y cerr&eacute; la ventana<br>y ya no pude recorrer<br>
+		mi coraz&oacute;n del todo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;El 
+		mismo libro&quot;&nbsp; 1989</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="EL &Aacute;RBOL DE LA CIENCIA"></a>El &aacute;rbol de la ciencia</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Dicen, mi amor, que es imposible hacer<br>versos de amor feliz, de 
+		enamorado,<br>que s&oacute;lo lo perdido o no alcanzado<br>se canta en la 
+		poes&iacute;a, el padecer<br>
+		<br>olvido o el sufrimiento de volver<br>al recuerdo de todo lo pasado.<br>
+		Unas veces la sed de lo vedado;<br>otras, el vino del amargo ayer.<br>
+		<br>No hagas caso, mi amor, habladur&iacute;as.<br>Contigo todas mis 
+		melancol&iacute;as<br>son ramas escarchadas en an&iacute;s<br>
+		<br>donde se posa un p&aacute;jaro de nieve.<br>Esc&uacute;chale cantar tan hondo y 
+		breve.<br>Que no te enga&ntilde;e su plumaje gris.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Acaso 
+		una verdad&quot; 1993</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="EL R&Iacute;O"></a>El r&iacute;o</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Para m&iacute; qu&eacute; encanto tiene un r&iacute;o<br>con barcas en la orilla.<br>Estarse 
+		junto al agua y ver correr<br>voluptuosas nubes en su ancho caudal.<br>
+		Hacerse un sitio all&iacute;, en la maleza<br>azulada, un hueco donde ver<br>
+		c&oacute;mo es cosa de poco nuestra vida<br>y no ser vistos. Y mirar las barcas<br>
+		tensando y destensando<br>una cuerda de esparto en la verde<br>
+		corriente, con el agua de la lluvia<br>pudri&eacute;ndose en sus tablas. 
+		Esperar<br>la tormenta y contemplar el cielo<br>vagabundo y morado. O&iacute;r 
+		el ruido<br>de gotas en el r&iacute;o, sus castillos<br>como timbales 
+		delicados.<br>Y pensar, si se puede,<br>en quien amamos mucho<br>o si 
+		entonces no amamos, no pensar,<br>no pensar, no pensar.<br>Y volver 
+		nuestros ojos<br>a ese mudo transcurso, y vac&iacute;os<br>quedar sin que 
+		sepamos<br>cu&aacute;nto tiene de sue&ntilde;o<br>el fr&iacute;o y el dolor<br>y esas barcas 
+		sin gente<br>chocando unas con otras<br>o si podemos despertar un d&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;La 
+		vida f&aacute;cil&quot; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="ELEG&Iacute;A"></a></font><font face="Georgia" color="#9BC9BB">
+		Eleg&iacute;a</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Miriam</em><br><br>Recuerdas aquel tiempo en que oler una rosa,<br>una 
+		rosa tan s&oacute;lo, ni siquiera perfecta,<br>te arrancaba las l&aacute;grimas? Te 
+		acercabas despacio<br>al rosal preferido y, a resguardo del mundo,<br>
+		como quien lleva dentro el tesoro m&aacute;s hondo<br>pod&iacute;as estar horas a su 
+		lado esperando<br>sin atreverte apenas a confesar tu dicha,<br>sabedor 
+		de que nadie te igualaba en fortuna.<br>
+		<br>Ibas buscando &aacute;vido los temblores simb&oacute;licos,<br>la estrella que 
+		ca&iacute;a de lo negro en lo negro,<br>o sus ojos oscuros o el ruido que en la 
+		noche<br>trenzaban los insectos en el astro bombilla<br>mientras de la 
+		majada volv&iacute;an los acordes<br>truncos de las esquilas a su caja de 
+		m&uacute;sica,<br>todo lo que temblando nac&iacute;a o se acostaba.<br>
+		<br>Mientras atardec&iacute;a ibais por las callejas.<br>&iquest;Recuerdas el olor del 
+		hinojo y la menta?<br>&iquest;Recuerdas que dec&iacute;as &laquo;como pu&ntilde;al lo noto<br>que 
+		me abrasara aqu&iacute;&raquo;, y el vientre se&ntilde;alabas?<br>
+		<br>Apenas si pod&iacute;ais articular palabra<br>por temor a estropear 
+		aquellos sentimientos<br>nombr&aacute;ndolos en alto, y habr&iacute;ais escogido<br>
+		disolveros entonces en el aire anisado,<br>conscientes de que nunca 
+		estar&iacute;ais tan cerca.<br>
+		<br>Cuando pienso que yo de joven cultivaba<br>momentos melanc&oacute;licos 
+		cual gusanos de seda,<br>qu&eacute; lejos me encontraba de sospechar que alguno<br>
+		nacer&iacute;a deforme y me devorar&iacute;a<br>justo cuando a&ntilde;orase la alegr&iacute;a de 
+		entonces,<br>la juventud perdida, aquel sutil talento<br>para hablar de 
+		la muerte al tiempo que llenaba<br>de caricias un cuerpo ce&ntilde;ido por la 
+		gracia.<br>
+		<br>Qui&eacute;n pod&iacute;a decirte que aquellas que trenzabas<br>guirnaldas 
+		primitivas se te marchitar&iacute;an<br>tan pronto entre las manos. Hablabas de 
+		finales,<br>de viejos caserones y de ruinosas casas,<br>de sonidos 
+		oscuros y nidos de otro tiempo,<br>de calles provinciales y sonatas de 
+		Czerny,<br>pero eran entonces palabras solamente,<br>la muerte y la 
+		desdicha palabras nada m&aacute;s,<br>como lo fueran sombra, ruise&ntilde;or o cipr&eacute;s.<br>
+		<br>Han pasado los a&ntilde;os y ya nada es igual.<br>A tu rosal el tiempo le 
+		dio un tronco le&ntilde;oso,<br>pero sus rosas siempre en cada primavera<br>
+		vuelven a florecer. S&oacute;lo t&uacute; te haces viejo<br>de veras, s&oacute;lo t&uacute; has o&iacute;do 
+		hace un rato<br>delante de esa rosa un silencio inhumano<br>y has 
+		sentido miedo, y te has puesto a llorar,<br>no l&aacute;grimas est&eacute;ticas como 
+		aquellas antiguas,<br>sino un lloro da&ntilde;ino, pues todo cuanto entonces<br>
+		pensabas que ser&iacute;a como ruina armoniosa,<br>con su bonita yedra y su 
+		viejo jard&iacute;n,<br>no es m&aacute;s que un trozo informe de mineral silencio,<br>
+		el dolor de ser piedra suelta por un camino.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Acaso 
+		una verdad&quot; 1993</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="EN LA SALA APAGADA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		En la sala apagada</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ha quedado todo al fin<br>recogido: vida, sue&ntilde;o.<br>Hasta la carcoma 
+		duerme<br>con sus mon&oacute;logos secos.<br>
+		<br>El reloj en la pared<br>y en el tic-tac mi miedo<br>como pisadas que 
+		vienen<br>a marcar m&aacute;s los silencios.<br>
+		<br>Lo mismo todas las noches.<br>En voz baja por el precio<br>de mi 
+		muerte con la muerte<br>discuto. Nunca hay acuerdo.<br>
+		<br>Y al despuntar, como amigos<br>nos deseamos los buenos<br>d&iacute;as y 
+		para esa misma<br>noche quedamos en vernos.<br>
+		<br>Silencio de los pianos<br>y de los sonidos negros.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="EN LAS LLUVIOSAS TARDES DE NOVIEMBRE..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		En las lluviosas tardes de noviembre...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>En las lluviosas tardes de noviembre<br>de pesadumbre llenas,<br>con 
+		un libro de rom&aacute;nticas rimas<br>que habla de hojas secas<br>me siento a 
+		ver el fuego<br>junto a la chimenea.<br>En esas cortas tardes oto&ntilde;ales,<br>
+		poca la luz de perla<br>en el sal&oacute;n, a solas, sin testigo,<br>las cosas 
+		se sombrean<br>con azulado tedio<br>de indefinible esencia.<br>&iexcl;Veladas 
+		de borroso calendario<br>y avara somnolencia,<br>de vac&iacute;os laureles y 
+		jardines,<br>agrias tardes eternas<br>que tienen del olvido<br>la 
+		misteriosa rueca!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="EN TUS MEJORES A&Ntilde;OS"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		En tus mejores a&ntilde;os</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Cuando te veo ahora en tus mejores a&ntilde;os<br>con toda la belleza de una 
+		copa de vino,<br>brill&aacute;ndote en los ojos el deseo y las noches<br>
+		estrelladas de agosto, imagino ese invierno<br>en que, vieja y cansada, 
+		te entregues al recuerdo.<br>
+		<br>He querido llegar antes que t&uacute; a ese d&iacute;a.<br>Y revivir los tiempos 
+		en que t&uacute; levantaste<br>de esta ruina una casa, plantaste en ella 
+		higueras,<br>y alimentaste fuegos que a todos nos hicieron<br>imaginar 
+		la vida muy lejos de los muertos.<br>
+		<br>Ya ves que ahora han llegado, siniestros, silenciosos.<br>Por eso tu 
+		poeta ha venido contigo<br>a recorrer de nuevo nuestras amadas ruinas,<br>
+		y si ayer fue tu risa, hoy ser&aacute; tu silencio,<br>cuando, vieja y cansada, 
+		de nada sirve el sue&ntilde;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Acaso 
+		una verdad&quot; 1993</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="ENDECHA"></a></font><font face="Georgia" color="#9BC9BB">
+		Endecha</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">La falda, 
+		un blanco balneario,<br>desaparece en el recodo<br>verde, al finaldel 
+		paseo.<br>Enarenado trecho de los bojes<br>donde t&uacute; caes de ese lado de 
+		la sombra,<br>como durmiendo cambias<br>de sitio, para siempre<br>en 
+		otros brazos<br>que los m&iacute;os despiertos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="ES ESTO"></a>Es esto...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Es esto<br>
+		la temible muerte.<br>Ha llegado el final<br>y no tienes respuesta.<br>
+		el vaso de cristal,<br>la flor sobre la mesa,<br>el dolor de partir<br>
+		sin que tu coraz&oacute;n conozca<br>una sola raz&oacute;n<br>de estas tres cosas<br>
+		sencillas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em></font><font face="Georgia" color="#9BC9BB"><a name="ESTUDIO DE PIANO EN RONDA"></a>
+		Estudio de piano en ronda</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Un mundo empieza a retornar<br>por la reja abierta.<br>Aplazados 
+		sonidos, yunques<br>de platero por el claro<br>callej&oacute;n de luna. 
+		<br>A&uacute;n imperfectos, la noche <br>de vosotros se llena, <br>haci&eacute;ndose 
+		m&aacute;s honda. 
+		<br>Poco a poco, el tableteo <br>de un lejano sim&oacute;n <br>va alcanzando 
+		las notas. 
+		<br>Cuando se han perdido<br>los pasos del caballo, <br>suena la tapa 
+		del piano,<br>cerrando un empedrado<br>que alguien riega.<br>
+		<br><em>De &quot;Las tradiciones&quot; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="LA CARTA"></a>La carta</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		He encontrado la casa<br>donde te llevar&eacute; a vivir. Es grande,<br>como 
+		las casas viejas. Tiene altos<br>los techos y en el suelo,<br>de tarima 
+		de enebro, duerme siempre<br>un rumor de hojas secas<br>que los pasos 
+		avivan. A los ocres<br>de las paredes nada ya parece<br>retenerles aqu&iacute;. 
+		Igual que fr&aacute;giles<br>p&eacute;talos, largo tiempo olvidados<br>en un libro, 
+		amarillean todos.<br>Entre rejas, trenzado,<br>un rosal sin podar.<br>En 
+		el jard&iacute;n peque&ntilde;o, una fuente<br>y un fauno. Y me dicen 
+		<br>que tambi&eacute;n unos mirlos. <br>Cuando en los meses fr&iacute;os de oto&ntilde;o,<br>
+		al escuchar sus silbos<br>cobren vida tus ojos, en el verde<br>del agua 
+		mirar&eacute; contigo<br>c&oacute;mo mueren los d&iacute;as.<br>C&oacute;mo se vuelve polvo en los 
+		muebles<br>oscuros tu silencio<br>que azotar&aacute; la lluvia<br>all&iacute; donde te 
+		encuentres.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="LA VENTANA DE KEATS"></a></font>
+		<font face="Georgia" color="#9BC9BB">La ventana de Keats</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Manuel Borr&aacute;s</em><br>
+		<br>Apartado de todo, vuelto a m&iacute;<br>en silencio ego&iacute;sta, en soledad<br>
+		de campos y de encinas y callejas<br>que el oto&ntilde;o volvi&oacute; m&aacute;s taciturnas;<br>
+		asilado a esta sombra y sin m&aacute;s patria 
+		<br>que una vieja edici&oacute;n de tus poemas;<br>sentado en berroque&ntilde;a piedra 
+		gris 
+		<br>y leyendo tus versos, oigo c&oacute;mo <br>de pronto un ruise&ntilde;or se eleva y 
+		canta. 
+		<br>Todo lo dejo entonces, mi lectura, <br>mis leves pensamientos, mi 
+		silencio. 
+		<br>Todo por escucharle. Es &eacute;l, &eacute;l mismo. <br>El dulce ruise&ntilde;or que t&uacute; 
+		supiste 
+		<br>distinguir entre todas las dem&aacute;s <br>criaturas, por ser no 
+		melodioso, 
+		<br>que lo era, sino por ser el tuyo, <br>el a ti destinado desde 
+		siempre,<br>desde el d&iacute;a en que Dios de mansas fieras<br>ocup&oacute; el 
+		Para&iacute;so y dijo: &laquo;h&aacute;gase<br>tambi&eacute;n el ruise&ntilde;or, para que Keats,<br>en la 
+		umbr&iacute;a Inglaterra, al escucharlo<br>embelesado, alcance esta verdad:<br>
+		que el canto es s&oacute;lo uno, siempre el mismo,<br>y que la rama cambia y 
+		cambia el p&aacute;jaro,<br>mas no la melod&iacute;a. Esta ser&aacute;<br>de pa&iacute;s a pa&iacute;s 
+		siempre la misma,<br>de un continente a otro y desde un siglo<br>a otro 
+		siglo, la misma melod&iacute;a,<br>igual que en el estanque van las ondas<br>
+		cuando alguien en &eacute;l escribi&oacute; un nombre&raquo;.<br>Pues bien. Conmigo est&aacute;, 
+		frente a este Gredos,<br>el ruise&ntilde;or menudo de tus versos,<br>frente a 
+		ese abstracto Gredos, calmo y duro<br>y hecho de pura abstracta lejan&iacute;a.<br>
+		y est&aacute;n tambi&eacute;n los prados y colinas<br>por los que t&uacute; anduviste. Est&aacute;n 
+		comigo<br>ahora, aqu&iacute;. Y las viejas mansiones<br>que el campo ingl&eacute;s 
+		conoce, venerables,<br>cubiertas por la yedra, iluminadas<br>con 
+		quinqu&eacute;s y buj&iacute;as cuya luz<br>llenaba las ventanas de dorada<br>quietud 
+		e invitaci&oacute;n al sue&ntilde;o,<br>de modo que de lejos, si pasaba<br>un viajero, 
+		se dec&iacute;a: &laquo;&iexcl;Qui&eacute;n<br>pudiera estar all&iacute;, junto a esa l&aacute;mpara,<br>dentro 
+		de aquella casa, all&iacute; sentado<br>en c&oacute;modo sill&oacute;n leyendo un libro<br>o 
+		bebiendo los vinos de Madeira<br>y escuchando un piano, o ni siquiera,<br>
+		s&oacute;lo como esa sombra que es el tiempo!<br>&iexcl;S&oacute;lo como la sombra de aquel 
+		hombre<br>que se asoma al balc&oacute;n para mirarme!<br>&iexcl;Qui&eacute;n pudiera 
+		quedarse en esa casa<br>y no tener, cerrada ya la noche,<br>que andar 
+		por estos f&uacute;nebres caminos<br>y exponerse a morir en soledades<br>que 
+		har&iacute;an de la muerte algo a&uacute;n m&aacute;s triste&raquo;...<br>Eso dir&iacute;a el viajero 
+		errante,<br>eso mismo dir&iacute;a al contemplar<br>la vieja casa solitaria y 
+		grande.<br>Y luego seguir&iacute;a su camino<br>sin dejar de mirar de vez en 
+		cuando<br>atr&aacute;s, hasta perder aquella luz,<br>aquel temblor de oro entre 
+		las ramas<br>oscuras de los tejos, sin haber<br>siquiera sospechado que 
+		eras t&uacute;,<br>John Keats, la sombra.<br>
+		<br>Y que le viste<br>llegar por el camino, y que dijiste:<br>&laquo;Al Sur 
+		marcha ese hombre.<br>&iexcl;Qui&eacute;n pudiera con &eacute;l perderse lejos!<br>Ahora 
+		mismo. Sin equipaje alguno.<br>&iexcl;C&oacute;mo envidio su suerte y qu&eacute; tristeza<br>
+		languidecer aqu&iacute; llevando una<br>vida que ni siquiera de infeliz<br>
+		puedo calificarla! Mira, parte<br>de nuevo, se va. Empieza ya la luna<br>
+		a vadear el r&iacute;o. &iexcl;Cu&aacute;nto debe<br>compadecer mis a&ntilde;os!&raquo;...<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y que luego,<br>para apagar la sed de tu aced&iacute;a,<br>tomaste una vez m&aacute;s 
+		un papel nuevo<br>sin dejar de pensar en aquel hombre<br>que viste 
+		peregrino. Quiz&aacute;s ese<br>fue el d&iacute;a en que escribiste aquel poema<br>que 
+		empieza as&iacute;: &laquo;Feliz es Inglaterra...&quot;<br>&iquest;Qui&eacute;n podr&iacute;a saberlo? Ahora 
+		otra vez<br>lo leo en este viejo libro tuyo,<br>y al leer me parece que 
+		tu oto&ntilde;o<br>es este oto&ntilde;o m&iacute;o y que tambi&eacute;n<br>es m&iacute;o el ruise&ntilde;or que ya 
+		ha callado,<br>y me confundo y creo<br>que aquellos claros r&iacute;os entre 
+		hayales<br>son nuestro pedregal, cuna de v&iacute;boras.<br>Y as&iacute;, miro estos 
+		b&iacute;blicos olivos<br>y alcornoques asc&eacute;ticos, la tierra<br>de la que 
+		brotan zarzas s&oacute;lo, ortigas,<br>pestilente cenizo o amargas hierbas,<br>
+		y ebrio de gratitud, no siento ya<br>ni abrasador el sol ni amargo el 
+		aire<br>ni severos los pardos y los negros,<br>que son colores nuestros 
+		metaf&iacute;sicos,<br>sino que cierro el libro y miro lejos,<br>porque tus 
+		versos hacen que yo vea<br>este lugar como lugar del alma,<br>y vuelto a 
+		m&iacute;, comienzo a recorrer<br>de nuevo este paisaje silencioso<br>y a verlo 
+		de otro modo ya sentirlo<br>y a desear tambi&eacute;n la dulce muerte,<br>
+		hermana zarza, hermanos alcornoques,<br>ortigas, alima&ntilde;as, sequedades.<br>
+		<br>De &quot;Acaso una verdad&quot; 1993<br><br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a name="LA VIDA F&Aacute;CIL"></a>La vida f&aacute;cil</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Qu&eacute; f&aacute;cil es vagar los d&iacute;as grises,<br>creer que nuestra vida<br>rebosa 
+		de la vida de otros.<br>Incluso suponer<br>que nosotros seremos<br>el 
+		alto mundo lleno<br>que vivir&aacute;n ma&ntilde;ana los que vengan.<br>A tal extremo 
+		incita un buque, un &aacute;rbol,<br>alguien que oigamos al piano<br>o esas 
+		perspectivas de un paseo<br>con gentes que tambi&eacute;n van suponiendo.<br>El 
+		cielo anubarrado y negro<br>o los gorriones<br>saltando entre los coches<br>
+		saben que vamos<br>y no nos desenga&ntilde;an.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="LAS HORAS MUERTAS"></a>Las horas muertas</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Violeta de la tarde,<br>abejorro amarillo<br>que zumba en el espejo<br>
+		de la poza del r&iacute;o.<br>
+		<br>Las horas verdenegras<br>las pasan los mosquitos<br>haciendo y 
+		deshaciendo<br>sobre el agua su ovillo.<br>
+		<br>Todo parece hecho<br>por obra del Destino,<br>lo que se pierde en 
+		flautas,<br>lo que se pierde en pitos.<br>
+		<br>En el manzano juzga<br>un abejorro fino.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a name="LAS TRADICIONES"></a>Las tradiciones</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Un r&eacute;gimen antiguo en sus ojos insomnes 
+		<br>de jardines y alanos aparece.<br>Cuando su mano alcanza la llave<br>
+		de la l&aacute;mpara y la vuelve, apag&aacute;ndola, 
+		<br>sobre el lino de la mesa se derrama, <br>y en su cuello, un dudoso 
+		azul<br>del alba, tibio latido que se inicia.<br>Y ese mirar cansado 
+		vale m&aacute;s<br>que cualquier siglo presente.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LOS TRIUNFOS"></a></font><font face="Georgia" color="#9BC9BB">
+		Los triunfos</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		En toda victoria un dolor<br>tiene su origen. El est&iacute;o,<br>cuando se 
+		abre el alto ventanuco,<br>se desgarra sobre los chopos que clarean.<br>
+		La traza de aire fresco<br>que entra entonces, levanta<br>de la madera 
+		un fresco olor a lej&iacute;a<br>de suelos muy fregados.<br>Y algo que fue 
+		sombra y vigilia<br>en la pensi&oacute;n, cobra forma<br>con la ligera luz del 
+		alba.<br>En el vasar, sobre blanca labor<br>de lienzo y almid&oacute;n,<br>unos 
+		cuantos jazmines, a&uacute;n lozanos.<br>Y quien lo ve, a&ntilde;ora<br>ese 
+		privilegiado amor que impulsa<br>a quien obtuvo la prodigiosa flor,<br>
+		al abrigo de la fr&iacute;a Segovia.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="ME ASOMO TODAS LAS TARDES..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Me asomo todas las tardes...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Me asomo todas las tardes<br>a este jard&iacute;n soleado<br>a escuchar las 
+		soledades<br>que hablan entre s&iacute; callando:<br>Todo es igual y distinto.<br>
+		&iquest;Crepuscular?, &iquest;machadiano?<br>Qui&eacute;n sabe d&oacute;nde est&aacute; el hilo<br>de un 
+		laberinto tan largo.<br>La tarde desaparece<br>y en el jard&iacute;n encantado<br>
+		oigo una distinta fuente<br>so&ntilde;ar en el mismo ca&ntilde;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="MECINA FONDALES"></a></font>
+		<font face="Georgia" color="#9BC9BB">Mecina Fondales</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		En esta inmensidad<br>la voz oscura y misteriosa<br>de las aves 
+		nocturnas<br>tiene un temblor de sombras<br>y su cantar se funde<br>con 
+		el profundo discurrir del r&iacute;o.<br>En el silencio verdeoscuro y fresco,<br>
+		el agua de una fuente, los rumores y el eco,<br>el calor de una noche de 
+		verano.<br>
+		<br>Europa queda lejos<br>de estas blancas adelfas, de esta luna,<br>de 
+		la radio que o&iacute;mos no s&eacute; d&oacute;nde,<br>de la lejana m&uacute;sica que mueve,<br>
+		como visillo, el viento.<br>Una turbia falena se quema en la bombilla<br>
+		y su chinesca sombra anima la terraza<br>y una estrella fugaz<br>cruza 
+		despu&eacute;s el cielo y un deseo:<br>-Qu&eacute;date entre nosotros y no vuelvas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Junto 
+		al agua&quot; 1980</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="MIRADOR DE LA ENFERMA"></a>Mirador de la enferma</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		En qu&eacute; lejanos d&iacute;as te me muestras.<br>Nav&iacute;o, almendra o armador de 
+		cielos,<br>todo eso en un punto consegu&iacute;as<br>reunir, si levantabas el 
+		semblante.<br>
+		<br>La luna y su bast&oacute;n probaban pasos<br>nuevos, abiertos los balcones, 
+		sobre<br>tus p&oacute;mulos. Vara de nardos, cortos<br>saludos que duraban la 
+		ma&ntilde;ana.<br>
+		<br>Fr&iacute;a fuente de ciervos era el pulso<br>de las hojas desde el jard&iacute;n 
+		cayendo,<br>un surtidor los ruidos en la grava.<br>
+		<br>Y en cada mano siempre una sonata<br>que acortara la espera de la 
+		muerte.<br>Tu sombra har&aacute; la eternidad m&aacute;s breve.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot; 1982</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MONÓLOGO"></a></font><font face="Georgia" color="#9BC9BB">
+		Mon&oacute;logo</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Como una ni&ntilde;a habla para s&iacute;<br>misma, sentada sola al tocador<br>de su 
+		madre, con rouge en las mejillas.<br>Habla de aquel que la amar&aacute; y llora<br>
+		de contento, a pesar del maquillaje<br>excesivo. Las l&aacute;grimas le 
+		anuncian<br>un &aacute;ngel, pero tambi&eacute;n la muerte<br>que ella ignora, 
+		aturdida en esas sedas.<br>El ruido del cepillo en el cristal<br>le 
+		asusta de repente.<br>Levanta su mirada hasta el espejo<br>y se 
+		contempla en unos ojos que son suyos,<br>pero despu&eacute;s de muchos a&ntilde;os.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MUSEO ROM&Aacute;NTICO"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Museo rom&aacute;ntico</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>La penumbra vac&iacute;a de esa peque&ntilde;a sala<br>guarda las campanadas de un 
+		reloj de pared.<br>Como un juguete antiguo suena su mecanismo,<br>la 
+		cuerda de hojalata entre n&aacute;cares negros.<br>
+		<br>Poco a poco la tarde asoma encapotada<br>a las vitrinas, triste. Las 
+		encuadernaciones<br>con el oro cansado y las viejas granadas<br>de los 
+		lomos ya crujen de carcoma y polilla.<br>
+		<br>Abiertos sobre la mesa, pesada como un barco,<br>hay un mont&oacute;n de 
+		libros. Y estampas militares<br>que al rozarlas el aire desprenden un 
+		perfume<br>de caudaloso Sena, de cueva y humedades.<br>
+		<br>&Eacute;ste es sitio tranquilo con algo galdosiano:<br>mecedoras que 
+		suenan, candelabros, espejos<br>con azogues leprosos y en el vitral 
+		pintado<br>un jard&iacute;n erudito de fuente con Cupido.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Ya hace 
+		falta encender unas bombillas pobres<br>para ver aqu&iacute; dentro. Pega fuera 
+		la lluvia.<br>Y cuando vuelve a o&iacute;rse la hora en el reloj,<br>por estas 
+		mismas sombras han pasado cien a&ntilde;os.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Nada"></a>
+		Nada</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Te imagino, lector, dentro de muchos a&ntilde;os<br>
+		leyendo estas palabras. En tu mesa<br>
+		una luz de buj&iacute;a y una rosa<br>
+		anunciar&aacute;n el sue&ntilde;o, un cuerpo, nada.<br>
+		Es in&uacute;til que busques. En la ceniza hay brasas<br>
+		que podr&iacute;as tener entre tus manos<br>
+		sin quemarte. En tu pulso,<br>
+		avisos, aprensiones, tambi&eacute;n nada.<br>
+		Debes saber que, entonces, quiero decir, ahora,<br>
+		volv&iacute;an cada a&ntilde;o vencejos<br>
+		y este viejo Madrid ya era viejo<br>
+		con sus ciegas veletas y sus jardines muertos.<br>
+		&iquest;Qu&eacute; buscas, pues, aqu&iacute;? &iquest;Algo distinto?<br>
+		&iquest;Una forma tan s&oacute;lo? &iquest;Esa nueva manera<br>
+		de traer el ingenio, rimas, nada?<br>
+		&iquest;Buscas tal vez aliento,<br>
+		saber que ha de morir contigo el mundo,<br>
+		el h&aacute;lito m&aacute;s puro de la vida,<br>
+		el cantar de los p&aacute;jaros<br>
+		y los r&iacute;os de susurrar oscuro?<br>
+		Yo mismo cu&aacute;ntas noches<br>
+		fui devanando el tiempo<br>
+		y cu&aacute;ntas, como t&uacute;, mir&eacute; a los ojos<br>
+		de esa hermosa figura cuyo nombre variaba,<br>
+		primero amor, luego silencio, nada.<br>
+		Te imagino, lector, dentro de muchos a&ntilde;os.<br>
+		Sigues aqu&iacute; conmigo<br>
+		sin que sepas t&uacute; mismo<br>
+		que aquello que aqu&iacute; buscas<br>
+		es tu propio dolor, este Madrid,<br>
+		el volar de un vencejo,<br>
+		un tiempo igual al tuyo,<br>
+		el b&aacute;lsamo en el alma<br>
+		de un aire limpio y puro.<br>
+		Que buscas un misterio, vida, nada.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="NOCTURNO"></a></font><font face="Georgia" color="#9BC9BB">
+		Nocturno</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Carlos Pujol</em><br>
+		<br>Como el llover doblaba aquel piano<br>mi soledad y en su cristal 
+		ca&iacute;a.<br>Eran lentas las notas que llegaban<br>hasta el torpe temblor de 
+		la hojarasca.<br>
+		<br>Sonaba a sombras fr&iacute;as esa tarde,<br>el laurel y la yedra, el pozo, 
+		el aire,<br>pero m&aacute;s dulce que el paisaje era<br>aquella melod&iacute;a para 
+		nadie.<br>
+		<br>Yo la escuchaba atento y nada o&iacute;a<br>salvo las gotas repicar 
+		mon&oacute;tonas.<br>Penumbrosa canci&oacute;n que en s&iacute; encerraba<br>al rosal, al 
+		mast&iacute;n, al que naufraga.<br>
+		<br>Al que va peregrino no sabiendo<br>y a aquel que recorri&oacute; todo el 
+		camino<br>y ya nada le queda. Misteriosa<br>canci&oacute;n de viento, de 
+		hojarasca y miedo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">[...]</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Lo que era 
+		jard&iacute;n en la ventana<br>es noche al fin, espesa y negra noche,<br>y este 
+		silencio un eco tambi&eacute;n negro<br>de lo que no sonaba.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;El 
+		mismo libro&quot;&nbsp; 1989</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" color="#9BC9BB">
+		<a name="Para un combatiente del Ebro"></a>Para un combatiente del Ebro</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		&iquest;Qu&eacute; sabemos nosotros<br>
+		de los viejos caminos llenos de barro y lodo?<br>
+		&iquest;Qu&eacute; podemos nosotros recordar<br>
+		de la pasada guerra,<br>
+		de esos pueblos peque&ntilde;os rodeados de vi&ntilde;as?<br>
+		&iquest;De esos bailes de pueblo<br>
+		sobre las verdes eras y a la luz del carburo,<br>
+		cuando el sagrado azul, el azul del crep&uacute;sculo<br>
+		se queda entre las tumbas, viejas y abandonadas?<br>
+		<br>
+		Oto&ntilde;o, oto&ntilde;o m&iacute;o,<br>
+		&iquest;Qu&eacute; sabemos nosotros de la guerra?<br>
+		Dime por qu&eacute; el azul, sagrado azul,<br>
+		es el color de los que nunca vuelven,<br>
+		de aquellos que partieron<br>
+		una ma&ntilde;ana antigua<br>
+		por los viejos caminos llenos de barro y lodo.<br>
+		<br>
+&nbsp;</font></em></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="POR LOS CAMINOS DEL TEDIO"></a>Por los caminos del tedio</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		La vida necesita de ese siglo anterior<br>que la haga soportable. Aquel 
+		momento<br>en que la luz dorada sobre el bosque<br>ard&iacute;a en el quinqu&eacute; 
+		prendido dentro.<br>Y debi&oacute; ser hermoso ese pensar<br>de los viejos 
+		rom&aacute;nticos en palacios barrocos.<br>Vivir con la mirada puesta atr&aacute;s,<br>
+		como el que sigue amando. Nunca<br>aquellos hombres supusieron<br>que su 
+		dolor ser&iacute;a, con los a&ntilde;os,<br>el sue&ntilde;o venidero en un perdido oto&ntilde;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Las 
+		tradiciones&quot;&nbsp; 1982</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="POR SI UN D&Iacute;A QUEDARAS..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Por si un d&iacute;a quedaras...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Por si un d&iacute;a quedaras<br>del lado de la noche,<br>en su fr&iacute;a frontera 
+		un no s&eacute; qu&eacute;<br>esperando del horizonte vasto,<br>yo recuerdo tu voz<br>
+		limpia como una almendra<br>y ese cantar con distra&iacute;do acento<br>y todo 
+		cuanto ard&iacute;a sin que t&uacute; lo supieses.<br>Como pasa la luz por una copa<br>
+		de Oporto, as&iacute; acaba la tarde.<br>Si algo deseara ahora,<br>que fueran 
+		como semillas que arraigaran seguras<br>estas pocas palabras. Como grana<br>
+		de salvia que en cada primavera<br>llevase sus ra&iacute;ces, un poco m&aacute;s all&aacute;,<br>
+		a donde cierra tus p&aacute;rpados<br>de eternidad la tierra.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em>
+		</font><font face="Georgia" color="#9BC9BB"><a name="PREFERENCIAS"></a>
+		Preferencias</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ni las cumbres sublimes ni los r&iacute;os<br>que no han sido ensuciados por 
+		los hombres;<br>ni los palacios ni las blancas ruinas<br>de los templos 
+		antiguos, ni los dioses<br>de m&aacute;rmol o bronce, iguales todos,<br>ni la 
+		alada victoria ni un bugatti,<br>y menos a&uacute;n la m&uacute;sica y el baile,<br>
+		con sus amanerados sacerdotes:<br>ninguna de esas cosas y de otras<br>
+		tan admiradas por los m&aacute;s sensibles<br>y que tienen que ver con el buen 
+		gusto<br>me proporciona una emoci&oacute;n profunda.<br>Si acaso, los hangares 
+		en desuso,<br>las estaciones fuera de servicio,<br>el laberinto de las 
+		fundiciones,<br>el brumoso extrarradio, un descampado<br>en el que s&oacute;lo 
+		puede comprenderse<br>la perpleja tristeza de los hombres,<br>y los r&iacute;os 
+		que arrastran su miseria,<br>oscuros, majestuosos y solemnes,<br>y las 
+		descomunales escombreras.<br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="QUI&Eacute;N TUVIERA TODAV&Iacute;A..."></a>Qui&eacute;n tuviera todav&iacute;a...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Qui&eacute;n tuviera todav&iacute;a<br>aquella suave elegancia<br>de rimar Francia y 
+		fragancia<br>como Lamartine hac&iacute;a.<br>
+		<br>Qui&eacute;n tuviera todav&iacute;a<br>en el cristal de los ojos<br>un bergant&iacute;n 
+		viajero<br>con el amor verdadero<br>de los crep&uacute;sculos rojos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">La vieja 
+		melancol&iacute;a<br>de cerrados caserones<br>junto a abandonados huertos<br>y 
+		de los sonidos muertos<br>que tienen los esquilones<br>la muerta 
+		melancol&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Qui&eacute;n 
+		pudiera todav&iacute;a<br>vagar como los vilanos<br>en deriva silenciosa<br>
+		hasta la fosa<br>y si estuviera en mis manos,<br>qui&eacute;n pudiera todav&iacute;a<br>
+		morir de melancol&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;La 
+		vida f&aacute;cil&quot;&nbsp; 1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="SONETO"></a>Soneto</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ahora es noviembre. Un mes tranquilo. Llueve.<br>Acaso sea para m&iacute; la 
+		vida<br>este solo llover y esta dormida<br>parte del mundo eternamente 
+		leve.<br>
+		<br>Las sombras del camino que se aleja,<br>la iglesia y el zarzal, las 
+		telara&ntilde;as<br>y este pensar en &iacute;nsulas extra&ntilde;as<br>tan s&oacute;lo por libar, 
+		como la abeja.<br>
+		<br>Dulce es la vida as&iacute;, la miel amarga.<br>Es casi equivocarse estar 
+		seguro.<br>El arte es breve, mas la muerte larga.<br>
+		<br>Quiz&aacute; me he confundido de pasado,<br>de presente tal vez y de 
+		futuro.<br>Quiz&aacute; ya s&oacute;lo sea lo so&ntilde;ado.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;El 
+		mismo libro&quot;&nbsp; 1989</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="TESTAMENTO"></a></font><font face="Georgia" color="#9BC9BB">
+		Testamento</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		He muerto ya, paisaje que yo he amado<br>tantas veces aqu&iacute;, rinc&oacute;n del 
+		alma.<br>Una vez m&aacute;s vengo por verte. A un lado,<br>encinares y olivos, 
+		y la calma<br>
+		<br>de ver, al otro, olivos y encinares.<br>Algunos caserones con 
+		jardines<br>llenos de ortigas ya, viejos lagares<br>con aspecto de 
+		viejos polvorines.<br>
+		<br>Un camino con olmos en hilera,<br>una majada, una almazara en 
+		ruinas,<br>musical, perezosa, la palmera,<br>y un Gredos azulado entre 
+		neblinas.<br>
+		<br>Nada de cuanto miro est&aacute; en mis ojos<br>ni el olor del jazm&iacute;n lo 
+		lleva el viento.<br>He muerto ya. Contempla mis despojos:<br>te dejo 
+		este paisaje en testamento.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Acaso 
+		una verdad&quot; 1993<br></em><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="TIEMPO DEL AIRE"></a>Tiempo del aire</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Miro pasar los barcos<br>y oigo el ruido<br>de sus viejos motores<br>
+		como tu coraz&oacute;n, lejano.<br>Oscilan las linternas de los m&aacute;stiles,<br>
+		son l&iacute;neas en el agua<br>las rosas de los vientos.<br>Nada deseo sino 
+		ver la costa<br>que se pierde a lo lejos.<br>Nada sentir, sino sentir<br>
+		los &aacute;cidos olores de este mar,<br>el amarillo yodo y el brillar de las 
+		algas<br>mezclados por la noche.<br>Nada amar,<br>cegar hasta cegarse<br>
+		de oscuridad los ojos y de amor.<br>
+		<br>Pasan los viejos barcos,<br>brama el tiempo del aire<br>y las torres 
+		que pueden<br>ver desde el otro lado,<br>sombr&iacute;as, solitarias, se 
+		asemejan<br>a las que vemos all&iacute;,<br>perdidas flores,<br>semillas de luz<br>
+		aventadas en el mar.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Todos los 
+		puertos son el mismo,<br>uno y el mismo,<br>donde cantan las brumas<br>y 
+		una ciudad se apaga y un estrecho,<br>sin que nunca sepamos<br>si vamos, 
+		si venimos<br>o si estaremos siempre.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Junto 
+		al agua&quot;&nbsp; 1980</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="UNA MUCHACHA"></a></font><font face="Georgia" color="#9BC9BB">
+		Una muchacha</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>
+		(Sobre de un tema de Anacreonte)</em><br><br>Pienso que t&uacute;, y el sue&ntilde;o 
+		me envanece,<br>una muchacha s&oacute;lo,<br>vendr&aacute;s hacia mi encuentro 
+		preguntando por m&iacute;.<br>Juegas con una rama de mirto y da tu pelo,<br>
+		como rosa, leve sombra a tu espalda.<br>
+		<br>Mas yo, despu&eacute;s de tanto tiempo solo,<br>&iquest;c&oacute;mo sabr&eacute; besarte sin que 
+		dejes<br>de jugar con tu rama,<br>sin que mis manos borren<br>la sombra 
+		de esos p&eacute;talos?<br>
+		<br>Es, pues, mejor que sigas<br>vagando por mi sue&ntilde;o.<br>No quieras ser 
+		real<br>ni vengas hasta m&iacute;. Vete, muchacha.<br>Hay todo un mar enfrente 
+		de las ruinas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;Acaso 
+		una verdad&quot; 1993</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="UNA VENTANA AL MUNDO"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Una ventana al mundo</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Para mi hotel de noche un cielo sube<br>del estuario lentaniente. Arde<br>
+		un tremedal de estrellas y esta plaza<br>solitaria se queda y en 
+		silencio.<br>Sin las luces insomnes del tranv&iacute;a,<br>sin su fruto 
+		amarillo y sin su estruendo<br>se adormecen las empinadas calles,<br>se 
+		vac&iacute;an de ni&ntilde;os, y las tiendas<br>y las botiller&iacute;as van cerrando.<br>Es 
+		suave la colina y son los verdes<br>una quinta arruinada, unas palmeras,<br>
+		un aire colonial triste y seguro,<br>testigos de que el Tajo llega al 
+		mar<br>y al puerto negros buques con bombillas.<br>&iexcl;Es ronca su sirena 
+		como el humo!<br>&iexcl;Hermosos animales de la noche,<br>funerales carrozas 
+		por el agua!<br>Viejas ciudades donde siempre hay gente<br>asomada al 
+		balc&oacute;n y en las ventanas.<br>Si yo pudiera estar en esa altura,<br>
+		mirar&iacute;a en silencio y durar&iacute;a siempre:<br>todo el azul, el r&iacute;o y la 
+		memoria.<br>Baja esta calle all&iacute; donde no llego<br>a ver, mi hotel, 
+		final donde me miro<br>y otro por m&iacute; deja mi nombre en un<br>nombre de 
+		otra ciudad y de otro r&iacute;o.<br>
+		<br><em>De &quot;Las tradiciones&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 15:42:52 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:22 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

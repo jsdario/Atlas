@@ -1,0 +1,983 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>William Blake</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de William Blake."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de William Blake. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="William_Blake,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#D2D2D2" vlink="#D2D2D2" alink="#D2D2D2">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/blake.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "4";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/blake.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131204133241" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./blake.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 13:32:41 Dec 4, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./blake.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="18 Feb 2014"><strong>FEB</strong></a>
+		                
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./blake.htm" title="18:20:27 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 13:32:41 Dec 4, 2013">4</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./blake.htm" title="22:09:15 Feb 18, 2014" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
+		                
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./blake.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 13:32:41 Dec 4, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./blake.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>116 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">2 Jun 04 - 18 Feb 14</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000003110101_2005:-1:021201010000_2006:-1:201011200110_2007:-1:425259370400_2008:-1:613342000001_2009:-1:120000110000_2010:-1:100000001110_2011:-1:000000013201_2012:-1:121111001000_2013:11:101210010001_2014:-1:010000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BLAKE.jpg" width="303" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BLAKE1.jpg" width="236" height="23"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="707" height="302">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="699"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="275" width="271" valign="top"><p align="left">
+	<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./BLAKE2.jpg" width="203" height="276"></font></td>
+    <td width="424" valign="top" height="275"><p align="left">
+	<u>
+	<font face="Georgia"
+    color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u><font face="Georgia" size="2"
+    color="#C4CAD4"><br>
+    <br>
+    Poeta, pintor y fil&oacute;sofo ingl&eacute;s nacido en Londres en 1757.<br>
+	Desde muy peque&ntilde;o tom&oacute; cursos de dibujo y grabado en&nbsp; las escuelas de 
+	Henry Pars y&nbsp; James Basire,&nbsp; explorando al mismo tiempo el campo 
+	literario con la lectura de&nbsp; grandes poetas y escritores de la &eacute;poca.<br>
+	La marcada tendencia m&iacute;stica, producto de sus alucinaciones,<br>
+	qued&oacute; claramente expresada en su obra pict&oacute;rica y po&eacute;tica,&nbsp; <br>
+	tal como se observa en su primera colecci&oacute;n de poemas&nbsp; publicados en 
+	1783 como&nbsp; <i>&quot;Poetical Sketches&quot;</i>. Con la <i>&quot;Canci&oacute;n de inocencia&quot;</i> 
+	en 1789&nbsp; y <i>&quot;Canciones de experiencia&quot;</i> en 1794,&nbsp; el poeta 
+	quiso reafirmar su creencia sobre la fuerza creativa de la imaginaci&oacute;n 
+	humana frente a la raz&oacute;n.<br>
+	Entre 1793 y 1818, escribi&oacute;&nbsp; un conjunto de poemas breves y una obra 
+	sat&iacute;rica, <i>&quot;Una isla en la luna&quot;</i>, referente a su ni&ntilde;ez.<br>
+	Falleci&oacute; en medio de la pobreza en agosto de 1827. &copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de William Blake:</font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia">
+		<a href="./blake.htm#A LA ESTRELLA NOCTURNA">A la estrella nocturna</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#ALEGR&Iacute;A">Alegr&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#CANTO DEL RE&Iacute;R">Canto del re&iacute;r </a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#CANTO PARA ACUNAR">Canto para acunar</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#EL PASTOR">El pastor</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#EL TIGRE">El tigre</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#EL VIAJERO MENTAL">El viajero mental</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#ETERNIDAD">Eternidad</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#LA NOCHE">La noche</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#LA PRIMAVERA">La primavera</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#LA ROSA ENFERMA">La rosa enferma</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#NUEVA JERUSAL&Eacute;N">Nueva Jerusal&eacute;n</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#PROVERBIOS DEL INFIERNO">Proverbios del infierno</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#UN SUE&Ntilde;O">Un sue&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./blake.htm#UNA IMAGEN DIVINA">Una imagen divina</a></font><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="3" color="#FFFFFF"><br></font>
+		<font face="Georgia" size="2" color="#FFFFFF"><br>
+		</font>
+		<font face="Georgia" color="#C4CAD4">
+		<a name="A LA ESTRELLA NOCTURNA"></a>A la estrella nocturna</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		&iexcl;T&uacute;, &aacute;ngel rubio de la noche,<br>
+		ahora, mientras el sol descansa en las monta&ntilde;as, enciende<br>
+		tu brillante tea de amor! &iexcl;Ponte la radiante corona<br>
+		y sonr&iacute;e a nuestro lecho nocturno!<br>
+		Sonr&iacute;e a nuestros amores y, mientras corres los<br>
+		azules cortinajes del cielo, siembra tu roc&iacute;o plateado<br>
+		sobre todas las flores que cierran sus dulces ojos<br>
+		al oportuno sue&ntilde;o. Que tu viento occidental duerma en <br>
+		el lago. Di el silencio con el fulgor de tus ojos<br>
+		y lava el polvo con plata. Presto, prest&iacute;simo,<br>
+		te retiras; y entonces ladra, rabioso, por doquier el lobo<br>
+		y el le&oacute;n echa fuego por los ojos en la oscura selva.<br>
+		La lana de nuestras majadas se cubre con<br>
+		tu sacro roc&iacute;o; prot&eacute;gelas con tu favor.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p><p align="left">
+	<font face="Georgia" size="2"
+    color="#C4CAD4"><a name="ALEGR&Iacute;A"></a></font>
+	<font face="Georgia"
+    color="#C4CAD4">Alegr&iacute;a</font><font face="Georgia" size="2"
+    color="#C4CAD4"><br>
+    <br>
+    &quot;No poseo nombre:<br>
+    pero nac&iacute; hace dos d&iacute;as.&quot;<br>
+    &iquest;C&oacute;mo te llamar&eacute;?<br>
+    &quot;Soy feliz.<br>
+    Me llamo alegr&iacute;a.&quot;<br>
+    &iexcl;Que el dulce j&uacute;bilo sea contigo!<br>
+    <br>
+    &iexcl;Bonita alegr&iacute;a!<br>
+    Dulce alegr&iacute;a, de apenas dos d&iacute;as,<br>
+    te llamo dulce alegr&iacute;a:<br>
+    as&iacute; t&uacute; sonr&iacute;es,<br>
+    mientras yo canto.<br>
+    &iexcl;Que el dulce j&uacute;bilo sea contigo!</font></p>
+    <p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de 
+	Antonio Restrepo</em></font><p align="left">&nbsp;<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font><p align="left"><font face="Georgia" size="3" color="#C4CAD4">
+		<br></font>
+		<font size="2" color="#C4CAD4" face="Georgia"><a name="CANTO DEL RE&Iacute;R">
+		</a></font>
+		<font color="#C4CAD4" face="Georgia">Canto del re&iacute;r</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Cuando los verdes bosques r&iacute;en con la voz del j&uacute;bilo,<br>y el arroyo 
+		encrespado se desplaza riendo;<br>cuando r&iacute;e el aire con nuestras 
+		divertidas ocurrencias,<br>y la verde colina r&iacute;e del estr&eacute;pito que 
+		hacemos;<br>cuando los prados r&iacute;en con v&iacute;vidos verdes,<br>y r&iacute;e la 
+		langosta ante la escena gozosa; 
+		<br>cuando Mary y Susan y Emily<br>cantan &quot;&iexcl;ja, ja, ji!&quot; con sus dulces 
+		bocas redondas.<br>Cuando los p&aacute;jaros pintados r&iacute;en en la sombra<br>
+		donde nuestra mesa desborda de cerezas y nueces,<br>acercaos y alegraos, 
+		y un&iacute;os a m&iacute;,<br>para cantar en dulce coro el &quot;&iexcl;ja, ja, ji!&quot;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Antonio 
+		Restrepo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="CANTO PARA ACUNAR"></a>Canto para acunar</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Dulces sue&ntilde;os, formad una pantalla<br>Sobre la linda cabeza de mi ni&ntilde;o;<br>
+		dulces sue&ntilde;os de agradables corrientes<br>bajo rayos de luna felices y 
+		silenciosos.<br>
+		<br>Dulce sue&ntilde;o, que tus cejas tejan<br>con suave felpa una corona 
+		infantil;<br>dulce sue&ntilde;o, &Aacute;ngel terso,<br>fluct&uacute;a sobre mi ni&ntilde;o dichoso.<br>
+		Dulces sonrisas, durante la noche<br>meceos sobre mi encanto;<br>dulces 
+		sonrisas, sonrisas de Madre,<br>cautivad la noche interminable.<br>
+		Dulces lamentos, suspiros de paloma,<br>no alej&eacute;is el letargo de tus 
+		ojos,<br>dulces lamentos, sonrisas a&uacute;n m&aacute;s dulces,<br>cautivad todos los 
+		lamentos de paloma.<br>Duerme, duerme, ni&ntilde;o afortunado,<br>que toda la 
+		creaci&oacute;n duerme y sonr&iacute;e;<br>duerme, duerme felices sue&ntilde;os,<br>mientras 
+		tu madre llora sobre ti.<br>
+		<br>Dulce beb&eacute;, en tu rostro<br>puedo discernir la santa imagen;<br>
+		dulce beb&eacute;, otrora como t&uacute;<br>yac&iacute;a tu hacedor y lloraba por m&iacute;.<br>
+		<br>Llor&oacute; por m&iacute;, por ti, por todos<br>cuando era apenas un peque&ntilde;ito.<br>
+		Su imagen siempre ver&aacute;s,<br>rostro celestial que sobre ti sonr&iacute;e,<br>A 
+		ti, a m&iacute;, a todos les sonr&iacute;e;<br>quien se volvi&oacute; un peque&ntilde;ito.<br>Las 
+		sonrisas infantiles son sus mismas<br>sonrisas;<br>y cautivan con paz el 
+		cielo y la tierra.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="EL PASTOR">
+		</a></font><font color="#C4CAD4" face="Georgia">El pastor</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		&iexcl;Qu&eacute; dulce es la dulce fortuna del Pastor!<br>Deambula desde el alba 
+		hasta el atardecer;<br>debe seguir a su reba&ntilde;o el d&iacute;a entero,<br>y su 
+		lengua se embeber&aacute; con alabanzas.<br>
+		<br>Pues oye el inocente llamado del borrego,<br>y escucha la tierna 
+		respuesta de l a oveja;<br>vigila mientras permanecen en calma<br>pues 
+		saben cu&aacute;ndo est&aacute; pr&oacute;ximo su Pastor.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Antonio 
+		Restrepo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="EL TIGRE"></a></font>
+		<font color="#C4CAD4" face="Georgia">El tigre</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>Tigre, tigre, que te enciendes en luz <br>por los bosques de la 
+		noche 
+		<br>&iquest;qu&eacute; mano inmortal, qu&eacute; ojo <br>pudo idear tu terrible simetr&iacute;a? <br>
+		<br>&iquest;En qu&eacute; profundidades distantes, <br>en qu&eacute; cielos ardi&oacute; el fuego de 
+		tus ojos? 
+		<br>&iquest;Con qu&eacute; alas os&oacute; elevarse?<br>&iquest;Qu&eacute; mano os&oacute; tomar ese fuego? <br>
+		<br>&iquest;Y qu&eacute; hombro, y qu&eacute; arte <br>pudo tejer la nervadura de tu coraz&oacute;n? 
+		<br>Y al comenzar los latidos de tu coraz&oacute;n, <br>&iquest;qu&eacute; mano terrible? 
+		&iquest;Qu&eacute; terribles pies? 
+		<br><br>&iquest;Qu&eacute; martillo? &iquest;Qu&eacute; cadena? <br>&iquest;En qu&eacute; horno se templ&oacute; tu 
+		cerebro? 
+		<br>&iquest;En qu&eacute; yunque? <br>&iquest;Qu&eacute; tremendas garras osaron <br>sus mortales 
+		terrores dominar? 
+		<br><br>Cuando las estrellas arrojaron sus lanzas <br>y ba&ntilde;aron los 
+		cielos con sus l&aacute;grimas 
+		<br>&iquest;sonri&oacute; al ver su obra? <br>&iquest;Quien hizo al cordero fue quien te 
+		hizo? 
+		<br><br>Tigre, tigre, que te enciendes en luz, <br>por los bosques de la 
+		noche 
+		<br>&iquest;qu&eacute; mano inmortal, qu&eacute; ojo <br>os&oacute; idear tu terrible simetr&iacute;a?</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Antonio 
+		Restrepo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL VIAJERO MENTAL"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El viajero mental</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">He viajado a trav&eacute;s de 
+		un pa&iacute;s de hombres,<br>
+		un pa&iacute;s de hombres y tambi&eacute;n de mujeres,<br>
+		y he o&iacute;do y visto tan horrendas cosas <br>
+		como nunca los caminantes de la fr&iacute;a Tierra han conocido.<br>
+		<br>
+		Porque all&iacute; nace en la alegr&iacute;a el ni&ntilde;o<br>
+		que en el atroz dolor fue concebido,<br>
+		tal como en la alegr&iacute;a cosechamos el fruto<br>
+		que fue sembrado en l&aacute;grimas amargas.<br>
+		<br>
+		Y si el reci&eacute;n nacido es un var&oacute;n,<br>
+		es entregado a una mujer anciana<br>
+		que lo clava tendido en una roca<br>
+		y en copas de oro coge sus lamentos.<br>
+		<br>
+		Con espinas de hierro cierne su cabeza,<br>
+		y agujerea sus pies y sus manos,<br>
+		corta su coraz&oacute;n y lo desprende<br>
+		para hacerle sentir calor y fr&iacute;o.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Sus dedos enumeran cada 
+		nervio <br>
+		como un avaro contando su oro, <br>
+		y de lamentos y gritos se nutre, <br>
+		y &eacute;l envejece, y ella se hace joven. <br>
+		<br>
+		Hasta que convertido en un joven sangriento,<br>
+		y ella mudada en espl&eacute;ndida virgen, <br>
+		destroza sus cadenas, y la amarra <br>
+		a ella a la Tierra para su placer. <br>
+		<br>
+		Se planta &eacute;l mismo en lo nervios de ella <br>
+		como un labriego planta en su terreno,<br>
+		y ella se convierte en su morada<br>
+		y en jard&iacute;n que le rinde setenta veces frutos.<br>
+		<br>
+		Pronto se torna envejecida sombra<br>
+		vagando alrededor de una caba&ntilde;a terrestre,<br>
+		llena de pedrer&iacute;as y de oro<br>
+		que gan&oacute; su trabajo.<br>
+		<br>
+		Y &eacute;stas son las pedrer&iacute;as del alma humana,<br>
+		los rub&iacute;es y las perlas de un ojo enfermo de amor,<br>
+		el oro innumerable del coraz&oacute;n que sufre,<br>
+		el gemido del m&aacute;rtir y el suspiro del enamorado.<br>
+		<br>
+		Son su alimento y su bebida,<br>
+		mantiene a los mendigos y a lo pobres,<br>
+		y para el caminante en viaje siempre<br>
+		su puerta permanece abierta.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Su pena es alegr&iacute;a 
+		eterna en ellos;<br>
+		hacen resonar los techos y los muros<br>
+		hasta que de la lumbre del hogar<br>
+		una peque&ntilde;uela emerge de pronto.<br>
+		<br>
+		De fuego s&oacute;lido ella es,<br>
+		y pedrer&iacute;as y oro, en tal manera<br>
+		que nadie osa tocar su infantil forma<br>
+		o envolverla en pa&ntilde;ales.<br>
+		<br>
+		Pero ella llega donde el que ama,<br>
+		joven o viejo o rico o pobre;<br>
+		muy pronto expulsan al anciano hu&eacute;sped<br>
+		que se va mendigando por puertas ajenas.<br>
+		<br>
+		Va llorando errante, muy lejos,<br>
+		hasta que alguien admita hospedarle,<br>
+		a menudo ciego por la edad, desesperado,<br>
+		hasta que puede ganar una doncella.<br>
+		<br>
+		Y para consolar su edad helada<br>
+		en sus brazos la toma el pobre hombre.<br>
+		La caba&ntilde;a desaparece de su vista<br>
+		y tambi&eacute;n el jard&iacute;n con sus dulces encantos.<br>
+		<br>
+		Los hu&eacute;spedes est&aacute;n esparcidos por toda la regi&oacute;n,<br>
+		porque el ojo alterado altera todo.<br>
+		Los sentidos se enrollan en s&iacute; mismos, con miedo,<br>
+		y la Tierra plana se convierte en una pelota.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Las estrellas, el Sol, 
+		la Luna, todo huye.<br>
+		Un vasto desierto sin l&iacute;mites,<br>
+		y no queda nada de comer o beber,<br>
+		y alrededor s&oacute;lo el desierto oscuro.<br>
+		<br>
+		La miel de sus labios de ni&ntilde;a,<br>
+		el pan y el vino de su dulce sonrisa,<br>
+		el juego desordenado de su ojo vagabundo<br>
+		a una ilusoria infancia le conducen.<br>
+		<br>
+		Porque a medida que come y bebe se transforma<br>
+		haci&eacute;ndose m&aacute;s joven cada d&iacute;a,<br>
+		y ambos, en el salvaje desierto<br>
+		van errantes llenos de terror y congoja.<br>
+		<br>
+		Ella huye como cierva salvaje,<br>
+		su temor planta muchos matorrales salvajes,<br>
+		mientras &eacute;l la persigue de noche y de d&iacute;a,<br>
+		por artificios de amor conducido.<br>
+		<br>
+		Por artificios de amor y de odio<br>
+		hasta que el salvaje desierto entero est&aacute; plantado<br>
+		con laberintos de d&iacute;scolo amor<br>
+		donde vagan el le&oacute;n, el lobo y el oso,<br>
+		<br>
+		hasta que &eacute;l se convierte en un d&iacute;scolo ni&ntilde;o<br>
+		y ella en una llorosa mujer envejecida.<br>
+		Van a vagar all&iacute;, entonces, muchos enamorados.<br>
+		El Sol y las estrellas aproximan su curso.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Dulce &eacute;xtasis los 
+		&aacute;rboles producen<br>
+		para todos los que vagan en el desierto,<br>
+		hasta que m&aacute;s de una ciudad all&iacute; es alzada<br>
+		y m&aacute;s de una agradable caba&ntilde;a de pastor.<br>
+		<br>
+		Pero cuando hallan al col&eacute;rico ni&ntilde;o<br>
+		el terror cunde en la extensa regi&oacute;n:<br>
+		gritan <i>&iexcl;El ni&ntilde;o, el ni&ntilde;o ha nacido!</i><br>
+		y huyen en todas direcciones.<br>
+		<br>
+		Porque hasta la ra&iacute;z se seca el brazo<br>
+		de aquel que os&oacute; tocar la col&eacute;rica forma: <br>
+		osos, leones, lobos, todos huyen aullando, <br>
+		y todo &aacute;rbol arroja sus frutos.<br>
+		<br>
+		Y nadie puede tocar esa forma col&eacute;rica<br>
+		a menos que lo haga una mujer anciana.<br>
+		Ella al ni&ntilde;o tendido clava sobre la Tierra<br>
+		y todo pasa como ya lo he dicho.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Oyarz&uacute;n<br>
+		</font></i><font face="Georgia" size="2" color="#C4CAD4"><br>
+		&nbsp;</font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="ETERNIDAD">
+		</a>Eternidad</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Quien a s&iacute; encadenare 
+		una alegr&iacute;a<br>malograr&aacute; la vida alada.<br>Pero quien la alegr&iacute;a besare 
+		en su aleteo<br>vive en el alba de la eternidad.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de M&agrave;rie 
+		Montand</em></font></p>
+		<p><font color="#C4CAD4"><br>
+		&nbsp;</font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><em style="font-style: normal">
+		<font size="2" face="Georgia" color="#C4CAD4"><a name="LA NOCHE"></a></font>
+		<font face="Georgia" color="#C4CAD4">La noche</font><font size="2" face="Georgia" color="#C4CAD4"><br>
+		<br>
+		Desciende el sol por el oeste,<br>
+		brilla el lucero vespertino;<br>
+		los p&aacute;jaros est&aacute;n callados en sus nidos,<br>
+		y yo debo buscar el m&iacute;o.<br>
+		La luna, como una flor<br>
+		en el alto arco del cielo,<br>
+		con deleite silencioso,<br>
+		se instala y sonr&iacute;e en la noche.<br>
+		Adi&oacute;s, campos verdes y arboledas dichosas<br>
+		donde los reba&ntilde;os hallaron su deleite.<br>
+		Donde los corderos pastaron, andan en silencio<br>
+		los pies de los &aacute;ngeles luminosos;<br>
+		sin ser vistos vierten bendiciones<br>
+		y j&uacute;bilos incesantes,<br>
+		sobre cada pimpollo y cada capullo,<br>
+		y sobre cada coraz&oacute;n dormido.<br>
+		Miran hasta en nidos impensados<br>
+		donde las aves se abrigan;<br>
+		visitan las cuevas de todas las fieras,<br>
+		para protegerlas de todo mal.<br>
+		Si ven que alguien llora<br>
+		en vez de estar durmiendo,<br>
+		derraman sue&ntilde;o sobre su cabeza<br>
+		y se sientan junto a su cama.<br>
+		<br>
+		Cuando lobos y tigres a&uacute;llan por su presa,<br>
+		se detienen y lloran apenados;<br>
+		tratan de desviar su sed en otro sentido,<br>
+		y los alejan de las ovejas.<br>
+		Pero si embisten enfurecidos,<br>
+		los &aacute;ngeles con gran cautela<br>
+		amparan a cada esp&iacute;ritu manso<br>
+		para que hereden mundos nuevos.<br>
+		Y all&iacute;, el le&oacute;n de ojos enrojecidos<br>
+		vertir&aacute; l&aacute;grimas doradas,<br>
+		y compadecido por los tiernos llantos,<br>
+		andar&aacute; en torno de la manada,<br>
+		y dir&aacute;: &quot;La ira, por su mansedumbre,<br>
+		y la enfermedad, por su salud,<br>
+		es expulsada<br>
+		de nuestro d&iacute;a inmortal.<br>
+		Y ahora junto a ti, cordero que balas,<br>
+		puedo recostarme y dormir;<br>
+		o pensar en quien llevaba tu nombre,<br>
+		pastar despu&eacute;s de ti y llorar.<br>
+		Pues lavada en el r&iacute;o de la vida<br>
+		mi reluciente melena<br>
+		brillar&aacute; para siempre como el oro,<br>
+		mientras yo vigilo el redil.<br>
+		<br>
+&nbsp;</font></em></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="LA PRIMAVERA"></a>La 
+		primavera</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		&iexcl;Que resuene el flaut&iacute;n<br>que ahora est&aacute; callado!<br>Delicia de las 
+		aves<br>de d&iacute;a y de noche;<br>el ruise&ntilde;or<br>en la quebrada,<br>la 
+		alondra en el cielo,<br>festivamente,<br>festivamente, festivamente,<br>
+		para darle la bienvenida al a&ntilde;o.<br>
+		<br>El muchachito,<br>repleto de gozo;<br>la muchachita,<br>dulce y 
+		diminuta;<br>el gallo canta<br>como t&uacute; lo haces;<br>voz alborozada,<br>
+		barullo infantil,<br>jubilosamente,<br>jubilosamente,<br>para darle la 
+		bienvenida al a&ntilde;o.<br>
+		<br>Corderito,<br>aqu&iacute; estoy;<br>ac&eacute;rcate y lame<br>mi blanco cuello;<br>
+		deja que tironee<br>tu lanilla suave;<br>d&eacute;jame besar<br>tu suave 
+		rostro:<br>jubilosamente,<br>jubilosamente,<br>para darle la bienvenida 
+		al a&ntilde;o.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Antonio 
+		Restrepo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="LA ROSA ENFERMA"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		La rosa enferma</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">est&aacute;s enferma, &iexcl;oh 
+		rosa!<br>El gusano invisible,<br>que vuela, por la noche,<br>en el 
+		aullar del viento,</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">tu lecho descubri&oacute;<br>
+		de alegr&iacute;a escarlata,<br>y su amor sombr&iacute;o&nbsp;&nbsp;&nbsp;&nbsp; y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		secreto<br>consume tu vida.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de M&agrave;rie 
+		Montand</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="NUEVA JERUSAL&Eacute;N"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Nueva Jerusal&eacute;n</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Del poema &quot;Milton&quot;</em></font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">&iquest;Y hollaron esos pies, 
+		anta&ntilde;o,<br>los verdes montes de Inglaterra?<br>&iquest;Y viose el sacro Cordero 
+		de Dios<br>por los pastos ingleses, placenteros?</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Resplandeci&oacute; el divino 
+		rostro<br>sobre nuestras colinas nubladas?<br>&iquest;Y edificose una Jerusal&eacute;n<br>
+		en medio de esos negros, sat&aacute;nicos molinos?</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">&iexcl;Dadme mi arco de oro 
+		ardiente!<br>&iexcl;Dadme mis flechas de deseo!<br>&iexcl;Traed mi lanza! &iexcl;Abr&iacute;os, 
+		oh nubes!<br>&iexcl;Traedme mi carro de llama!</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">No cejar&aacute; en mi 
+		esp&iacute;ritu la lucha<br>ni ha de dormirse en mi mano la espada,<br>hasta 
+		que levantemos otra Jerusal&eacute;n<br>en el solar verdeante y dulce de 
+		Inglaterra.<br>
+		<br><em>Versi&oacute;n de M&agrave;rie Montand</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="PROVERBIOS DEL INFIERNO"></a> 
+		</font><font color="#C4CAD4" face="Georgia">
+		Proverbios del infierno 
+		</font><font size="2" color="#C4CAD4" face="Georgia">
+		<br><br>En tiempos de siembra aprende, en tiempos de cosecha ense&ntilde;a 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y en el invierno goza.<br><br>Conduce tu carro y tu arado sobre los 
+		huesos de los muertos.<br>
+		<br>La senda del exceso lleva al palacio de la sabidur&iacute;a.<br><br>La 
+		prudencia es una fea y rica solterona cortejada por la incapacidad.<br>
+		<br>Quien desea y no act&uacute;a engendra la plaga.<br><br>El gusano perdona 
+		al arado que lo corta. 
+		<br><br>Sumergid en el r&iacute;o a quien ama el agua.<br><br>El necio no ve el 
+		mismo &aacute;rbol que ve el sabio.<br>
+		<br>Aquel cuyo rostro no irradia luz nunca ser&aacute; estrella.<br><br>La 
+		eternidad est&aacute; enamorada de las creaciones del tiempo.<br>
+		<br>A la atareada abeja no le queda tiempo para la pena.<br><br>Las 
+		horas de la locura las mide el reloj, 
+		<br>
+		pero ning&uacute;n reloj puede medir las horas de la sabidur&iacute;a. <br><br>Ning&uacute;n 
+		alimento sano se atrapa con red ni trampa.<br>
+		<br>En a&ntilde;os de escasez, usa n&uacute;mero, peso y medida.<br><br>No hay p&aacute;jaro 
+		que vuele demasiado alto si lo hace con sus propias alas.<br>
+		<br>Un cuerpo muerto no venga injurias.<br><br>El acto m&aacute;s sublime 
+		consiste en poner a otro delante de ti.<br>
+		<br>Si el necio persistiera en sus necedades llegar&iacute;a a sabio.<br><br>La 
+		necedad es el atuendo de la bellaquer&iacute;a, la verg&uuml;enza es 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el atuendo del orgullo.<br><br>Las prisiones se construyen con piedras 
+		de Ley; los burdeles 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con ladrillos de religi&oacute;n.<br><br>La altivez del pavo real es la gloria 
+		de Dios.<br>
+		<br>La lujuria del chivo es la liberalidad de Dios.<br><br>La ira del 
+		le&oacute;n es la sabidur&iacute;a de Dios.<br>
+		<br>La desnudez de la mujer es obra de Dios.<br><br>El exceso de pena 
+		r&iacute;e; el exceso de dicha llora.<br>
+		<br>El rugir de los leones, el aullido de los lobos, el oleaje furioso 
+		del mar huracanado 
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y 
+		la espada destructora, son porciones de la eternidad demasiado grandes <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		para que las aprecie el ojo humano.<br><br>El zorro condena a la trampa, 
+		no a s&iacute; mismo.<br><br>El j&uacute;bilo impregna; las penas engendran.<br>
+		<br>Dejad que el hombre vista la melena del le&oacute;n y la mujer el vell&oacute;n de 
+		la oveja.<br><br>El ave un nido, la ara&ntilde;a una tela, el hombre la 
+		amistad. 
+		<br><br>El ego&iacute;sta y sonriente necio y el necio que frunce malhumorado 
+		el ce&ntilde;o han de considerarse sabios, y podr&iacute;an ser medidos con la misma 
+		vara.<br><br>Lo que hoy est&aacute; probado, en su momento era s&oacute;lo algo 
+		imaginado. 
+		<br><br>La rata, el rat&oacute;n, el zorro y el conejo vigilan las ra&iacute;ces; el 
+		le&oacute;n, el tigre, el caballo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y el elefante 
+		vigilan los frutos.<br><br>La cisterna contiene; el manantial rebosa.<br>
+		<br>Un pensamiento llena la inmensidad.<br><br>Si est&aacute;s siempre listo a 
+		expresar tu opini&oacute;n, el vil te evitar&aacute;.<br>
+		<br>Todo lo que es cre&iacute;ble, es una imagen de la verdad. <br><br>Nunca el 
+		&aacute;guila malgast&oacute; tanto su tiempo como cuando se propuso aprender del 
+		cuervo.<br><br>El zorro se provee a si mismo; pero Dios provee al le&oacute;n.&nbsp; 
+		<br><br>Piensa por la ma&ntilde;ana, act&uacute;a a mediod&iacute;a, come al anochecer y 
+		duerme por la noche.<br><br>Quien ha sufrido tus imposiciones, te 
+		conoce.<br>
+		<br>As&iacute; como el arado sigue a las palabras, Dios recompensa las 
+		plegarias.<br>
+		<br>Los tigres de la ira son m&aacute;s razonables que los caballos de la 
+		instrucci&oacute;n.<br>
+		<br>Del agua estancada espera veneno.<br><br>Nunca sabr&aacute;s lo que es 
+		suficiente a menos que sepas lo que es m&aacute;s que suficiente. <br><br>
+		&iexcl;Escucha los reproches de los tontos! &iexcl;Forman un t&iacute;tulo real! 
+		</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Los ojos del fuego, las 
+		narices del aire, la boca del agua las barbas de la tierra.<br><br>El 
+		d&eacute;bil en coraje es fuerte en astucia.<br><br>El manzano nunca pregunta 
+		al haya c&oacute;mo ha de crecer, tal como el le&oacute;n no
+      	<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		interroga al caballo sobre c&oacute;mo atrapar la presa.<br><br>Quien recibe 
+		agradecido da copiosas cosechas.<br>
+		<br>Si otros no hubiesen sido tontos, lo ser&iacute;amos nosotros.<br><br>El 
+		alma rebosante de dulce deleite jam&aacute;s ser&aacute; profanada.<br>
+		<br>Cuando ves un &aacute;guila, ves una porci&oacute;n de Genio: &iexcl;Alza la cabeza!<br>
+		<br>Tal como la oruga elige las hojas mejores para depositar en ellas 
+		sus huevos, <br>
+		el sacerdote lanza sus imprecaciones&nbsp; para los m&aacute;s &nbsp;dulces goces.<br>
+		<br>Crear una florecilla es labor de siglos.<br><br>La condena estimula, 
+		la bendici&oacute;n relaja.<br>
+		<br>El mejor vino es el m&aacute;s a&ntilde;ejo; la mejor agua, la m&aacute;s nueva.<br><br>
+		&iexcl;Las plegarias no aran! &iexcl;Los elogios no cosechan!<br>
+		<br>Las alegr&iacute;as no r&iacute;en. Las tristezas no lloran. <br><br>La cabeza lo 
+		Sublime; el coraz&oacute;n, lo pat&eacute;tico; los genitales, la Belleza;
+      	<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; manos y pies la 
+		Proporci&oacute;n.<br><br>Como el aire al p&aacute;jaro o el agua al pez, as&iacute; es el 
+		desprecio para el despreciable. <br><br>El cuervo quisiera que todo 
+		fuese negro; el b&uacute;ho, que todo fuese blanco.<br>
+		<br>La exuberancia es belleza. <br><br>Si el le&oacute;n recibiese consejos del 
+		zorro, ser&iacute;a astuto.<br>
+		<br>El perfeccionamiento traza caminos rectos; pero los torcidos y sin 
+		perfeccionar son los caminos del Genio.<br><br>Mejor matar a un ni&ntilde;o en 
+		su cuna que alimentar deseos que no se llevan a la pr&aacute;ctica.<br><br>
+		Donde no est&aacute; el hombre, la naturaleza es est&eacute;ril. <br>
+		<br>La verdad nunca puede decirse de modo que sea comprendida sin ser 
+		cre&iacute;da.<br><br>&iexcl;Suficiente! o demasiado.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4"><a name="UN SUE&Ntilde;O"></a></font>
+		<font face="Georgia" color="#C4CAD4">Un sue&ntilde;o</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Cierta vez un sue&ntilde;o teji&oacute; una sombra<br>
+		sobre mi cama que un &aacute;ngel proteg&iacute;a:<br>
+		era una hormiga que se hab&iacute;a perdido<br>
+		por la hierba donde yo cre&iacute;a que estaba.<br>
+		<br>
+		Confundida, perpleja y desesperada,<br>
+		oscura, cercada por tinieblas, exhausta,<br>
+		tropezaba entre la extendida mara&ntilde;a,<br>
+		toda desconsolada, y le escuch&eacute; decir:<br>
+		&quot;&iexcl;Oh, hijos m&iacute;os! &iquest;Acaso lloran?<br>
+		&iquest;Oir&aacute;n c&oacute;mo suspira su padre?<br>
+		&iquest;Acaso rondan por ah&iacute; para buscarme?<br>
+		&iquest;Acaso regresan y sollozan por m&iacute;?&quot;<br>
+		<br>
+		Compadecido, solt&eacute; una l&aacute;grima;<br>
+		pero cerca vi una luci&eacute;rnaga,<br>
+		que respondi&oacute;: &quot;&iquest;Qu&eacute; quejido humano<br>
+		convoca al guardi&aacute;n de la noche?<br>
+		<br>
+		Me corresponde iluminar la arboleda<br>
+		mientras el escarabajo hace su ronda:<br>
+		sigue ahora el zumbido del escarabajo;<br>
+		peque&ntilde;a vagabunda, vuelve pronto a casa.&quot;</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><em style="font-style: normal"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		&nbsp;</font></em></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em><br></em>
+		<a name="UNA IMAGEN DIVINA"></a></font>
+		<font color="#C4CAD4" face="Georgia">Una imagen divina</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		La crueldad tiene coraz&oacute;n humano<br>y la envidia humano rostro;<br>el 
+		terror reviste divina forma humana<br>y el secreto lleva ropas humanas.<br>
+		<br>Las ropas humanas son de hierro forjado,<br>la forma humana es 
+		fragua llameante,<br>el rostro humano es caldera sellada<br>y el coraz&oacute;n 
+		humano, su gola hambrienta.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Antonio 
+		Restrepo</em><br>
+		<em><br></em><br></font></p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	<font face="Georgia" size="2" color="#8FABC2">
+	<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+	<font color="#AAC0D5">
+	<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+	<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+	</p>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 13:32:41 Dec 4, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:59 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

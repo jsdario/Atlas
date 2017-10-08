@@ -1,0 +1,955 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Oscar Wilde</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Oscar Wilde."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Oscar Wilde. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Oscar_Wilde,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app17.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/wilde.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "5";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/wilde.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131205022122" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./wilde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 2:21:22 Dec 5, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./wilde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="6 Mar 2014"><strong>MAR</strong></a>
+		                
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./wilde.htm" title="17:38:24 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 2:21:22 Dec 5, 2013">5</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./wilde.htm" title="17:44:24 Mar 6, 2014" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
+		                
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./wilde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 2:21:22 Dec 5, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./wilde.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>106 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jan 07 - 6 Mar 14</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:720213021200_2008:-1:011231ff8001_2009:-1:010000120000_2010:-1:100000001110_2011:-1:000000011141_2012:-1:122010001000_2013:11:101210010001_2014:-1:001000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./WILDE.jpg" width="278" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./WILDE1.jpg" width="209" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="733" height="345">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="725">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="318" width="295" valign="top">
+			<p align="left"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+			<img border="0" src="./WILDE2.jpg" width="224" height="308"></td>
+			<td width="426" valign="top" height="318">
+			<p align="left"><u>
+			<font face="Georgia" color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u><font face="Georgia" color="#C4CAD4" size="2"><br>
+			<br>
+			Poeta irland&eacute;s nacido en Doublin el 16 de octubre de 1854, en el 
+			seno de una familia acomodada con buenos fundamentos culturales.<br>
+			Poeta, ensayista, novelista y dramaturgo, estudi&oacute; en el Trinity 
+			College de Doublin y posteriormente en&nbsp;&nbsp; la Universidad de 
+			Oxford, gracias a una beca&nbsp; obtenida por sus brillantes 
+			trabajos en lat&iacute;n y griego.<br>
+			A los 24 a&ntilde;os obtuvo el t&iacute;tulo de <i>Bachelor of Arts</i> con 
+			m&aacute;ximos honores. De all&iacute; en adelante, ya instalado en Londres, 
+			public&oacute; obras de gran fama, en poes&iacute;a, novela, ensayo y teatro, 
+			tales como, <i>Poemas 1881,&nbsp; El fantasma de Canterville 1887, 
+			El retrato de Dorian Gray 1891, El abanico de Lady Windermere, 1892, 
+			Una mujer sin importancia 1893, La importancia de llamarse Ernesto 
+			1895
+			</i>y<i> <br>
+			La balada de la c&aacute;rcel de Reading 1898.<br>
+			</i>En 1895, fue condenado a dos a&ntilde;os de c&aacute;rcel por sus relaciones 
+			homosexuales con el hijo del Marqu&eacute;s de Queensberry<i>.<br>
+			</i>Recobrada la libertad<i>, </i>se instal&oacute; en Paris bajo el nombre 
+			de Sebastian Melmoth. All&iacute; falleci&oacute; el 30 de noviembre de 19o0.&nbsp; 
+			&copy;</font></p>
+			</td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</p>
+<p align="center"><font face="Georgia" size="2" color="#FFFFFF"><br>
+</font><font face="Georgia" color="#C4CAD4">Poemas de Oscar Wilde:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="3" color="#FFFFFF" face="Georgia">
+		<br>
+		</font><font color="#FFFFFF" face="Georgia">
+		<a href="./wilde.htm#A MI MUJER">A mi mujer</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#AMOR INTELLECTUALIS">Amor intellectualis</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#APOLOG&Iacute;A">
+		Apolog&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#CASA DE LA RAMERA">Casa de la ramera</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#EL CUARTO MOVIMIENTO">El cuarto movimiento</a></font><br>
+		<font face="Georgia" size="2"><a href="./wilde.htm#Le R&eacute;veillon">Le R&eacute;veillon</a></font><br>
+		<br>
+		<font face="Georgia"><a href="./wilde.htm#EN EL SAL&Oacute;N DORADO">En el sal&oacute;n dorado</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#ESCRITO EN EL LYCEUM THEATRE">Escrito en el Lyceum Theatre</a></font><font face="Georgia" size="2"><br>
+		<a href="./wilde.htm#Portia">Portia</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#FLORES DE AMOR">
+		Flores de amor</a></font><font face="Georgia" size="2"><br>
+		<a href="./wilde.htm#&#1168; &lambda;&nu;k&#973;&iota;&#1082;&#1088;&sigmaf;  &#904;&rho;&#974;&sigmaf;">
+		&#1168; &#955;&#957;k&#973;&#953;&#1082;&#1088;&#962;&nbsp; &#904;&#961;&#974;&#962;</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#H&Eacute;LAS!">H&eacute;las!</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#IMPRESSION DE VOYAGE">Impression de voyage</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#IMPRESSIONS">
+		Impressions</a></font><font face="Georgia" size="2"><br>
+		<a href="./wilde.htm#Les Silhouettes">Les Silhouettes</a><br>
+		<a href="./wilde.htm#La fuite de la lune">La fuite de la lune</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#IMPRESSIONS DE TH&Eacute;ATRE">Impressions de th&eacute;atre</a></font><font face="Georgia" size="2"><br>
+		<a href="./wilde.htm#Fabien dei Franchi">Fabien dei Franchi</a><br>
+		<a href="./wilde.htm#Phedre">Phedre</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#LA TUMBA DE KEATS :">La tumba de Keats</a></font></p>
+		<p align="left">
+		<a target="_blank" href="./wildeBalada1.htm"><font face="Georgia">La 
+		Balada de la c&aacute;rcel de Reading</font>&nbsp; <font face="Georgia" size="2">
+		(Versi&oacute;n de Bernardo Arias Trujillo)</font></a></p>
+		<p align="left"><font face="Georgia">
+		<a target="_blank" href="./wildeBalada.htm">La Balada de la c&aacute;rcel de 
+		Reading&nbsp; <font size="2">(Versi&oacute;n de E. Caracciolo Trejo)</font></a></font><br>
+		<br>
+		<font face="Georgia"><a href="./wilde.htm#MI VOZ">Mi voz</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#NUEVA CONTRICI&Oacute;N">Nueva contrici&oacute;n</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./wilde.htm#SONETO AL ACERCARME A ITALIA">Soneto al acercarme a Italia</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#T&AElig;DIUM VIT&AElig;">
+		Tædium vitæ</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./wilde.htm#VITA NUOVA">Vita nuova</a></font></p>
+		<p align="left"><font face="Georgia" color="#EEEEEE">
+		<a href="./wilde.htm#NUEVA CONTRICI&Oacute;N">Nueva contrici&oacute;n</a></font><br>
+		<font face="Georgia" size="3" color="#FFFFFF"><br>
+		</font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left"><font size="2" color="#FFFFFF" face="Georgia"><br><br>
+		</font><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="A MI MUJER"></a></font><font color="#C4CAD4" face="Georgia">
+		A mi mujer</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Con una copia de mis poemas</font></i></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">No puedo escribir 
+		majestuoso proemio<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; como preludio a mi 
+		canci&oacute;n,<br>de poeta a poema,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; me 
+		atrever&iacute;a a decir.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Pues si de estos 
+		p&eacute;talos ca&iacute;dos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; uno te pareciera bello,<br>
+		ir&aacute; el amor por el aire<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hasta 
+		detenerse en tu cabello.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Y cuando el viento e 
+		invierno endurezcan<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; toda la tierra sin 
+		amor,<br>dir&aacute; un susurro algo del jard&iacute;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y t&uacute; lo entender&aacute;s.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="AMOR INTELLECTUALIS"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Amor intellectualis</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		A menudo pisamos los valles de Castalia<br>&nbsp;&nbsp;&nbsp;&nbsp; y de 
+		antiguas ca&ntilde;as o&iacute;mos la m&uacute;sica silvana,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		ignorada del com&uacute;n de las gentes;<br>e hicimos nuestra barca a la mar<br>
+		que Musas tienen por imperio suyo,<br>&nbsp;&nbsp;&nbsp;&nbsp; y aramos 
+		libres surcos por ola y por espuma,<br>&nbsp;&nbsp;&nbsp;&nbsp; y hacia 
+		lar m&aacute;s seguro no izamos reacias velas<br>hasta bien rebosar nuestro 
+		nav&iacute;o.<br>De tales despojados tesoros algo queda:<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		la pasi&oacute;n de Sordello y el verso de miel<br>del joven Endimi&oacute;n; altivo 
+		Tamerl&aacute;n<br>&nbsp;&nbsp;&nbsp;&nbsp; portando sus jades tan cuidados, y, 
+		m&aacute;s a&uacute;n,<br>&nbsp;&nbsp;&nbsp;&nbsp; las siete visiones del Florentino.<br>
+		Y del Milton severo, solemnes armon&iacute;as.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="APOLOG&Iacute;A"></a></font>
+		<font color="#C4CAD4" face="Georgia">Apolog&iacute;a</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>&iquest;Es tu voluntad que yo crezca y decline?<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		Trueca mi pa&ntilde;o de oro por la gris estame&ntilde;a<br>y teje a tu antojo esa 
+		tela de angustia<br>&nbsp;&nbsp;&nbsp;&nbsp; cuya hebra m&aacute;s brillante es 
+		d&iacute;a malgastado.<br>
+		<br>&iquest;Es tu voluntad -Amor que tanto amo-<br>&nbsp;&nbsp;&nbsp;&nbsp; que 
+		la Casa de mi Alma sea lugar atormentado<br>donde deban morar, cual 
+		malvados amantes,<br>&nbsp;&nbsp;&nbsp;&nbsp; la llama inextinguible y 
+		el gusano inmortal?<br>
+		<br>Si tal es tu voluntad la he de sobrellevar<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		y vender&eacute; ambici&oacute;n en el mercado,<br>y dejar&eacute; que el gris fracaso sea mi 
+		pelaje<br>&nbsp;&nbsp;&nbsp;&nbsp; y que en mi coraz&oacute;n cave el dolor su 
+		tumba.<br>
+		<br>Tal vez sea mejor as&iacute; -al menos<br>&nbsp;&nbsp;&nbsp;&nbsp; no hice 
+		de mi coraz&oacute;n algo de piedra,<br>ni priv&eacute; a mi juventud de su pr&oacute;digo 
+		fest&iacute;n,<br>&nbsp;&nbsp;&nbsp;&nbsp; ni camin&eacute; donde lo Bello es 
+		ignorado.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font color="#C4CAD4"><br><br>
+		</font><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CASA DE LA RAMERA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Casa de la ramera</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Seguimos la huellas de pies que bailaban<br>hacia la calle alumbrada 
+		de luna<br>y nos detuvimos bajo la casa de la ramera.<br>
+		<br>Adentro, por sobre estr&eacute;pito y movimiento,<br>o&iacute;mos los m&uacute;sicos 
+		tocando a gran volumen 
+		<br>el &laquo;Treues Liebes Herz&raquo; de Strauss. <br><br>Como formas extra&ntilde;as y 
+		grotescas,<br>realizando fant&aacute;stico arabesco<br>corr&iacute;an sombras detr&aacute;s 
+		de las cortinas.<br>
+		<br>Vimos girar los fantasmales bailarines<br>al ritmo de violines y de 
+		cuernos<br>cual hojas negras llevadas por el viento.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Igual que marionetas 
+		tiradas de sus hilos<br>las siluetas de magros esqueletos<br>se 
+		deslizaban en la lenta cuadrilla.<br>
+		<br>Tomados de la mano<br>bailaban majestuosa zarabanda;<br>y el eco de 
+		las risas era agudo y crispado.<br>
+		<br>veces un t&iacute;tere de reloj apretaba<br>la amante inexistente contra el 
+		pecho,<br>y otras parec&iacute;a que quer&iacute;an cantar.<br>
+		<br>A veces una horrible marioneta<br>se asomaba al umbral fumando un 
+		cigarrillo<br>Como cosa viviente.<br>
+		<br>Entonces, volvi&eacute;ndome a mi amor dije,<br>&laquo;Los muertos bailan con los 
+		muertos,<br>el polvo se arremolina con el polvo&raquo;.<br>
+		<br>Pero ella escuch&oacute; el viol&iacute;n,<br>se apart&oacute; de mi lado y entr&oacute;:<br>
+		entr&oacute; el Amor en casa de Lujuria.<br>
+		<br>S&uacute;bitamente, desenton&oacute; la melod&iacute;a,<br>se fatigaron de danzar el 
+		vals,<br>las sombras dejaron de girar.<br>
+		<br>Y por la larga y silenciosa calle<br>en sandalias de plata asom&oacute; el 
+		alba<br>como ni&ntilde;a asustada.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br><br>&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL CUARTO MOVIMIENTO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El cuarto movimiento</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Le R&eacute;veillon"></a>Le 
+		R&eacute;veillon</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		El cielo est&aacute; manchado con espasmos de rojo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		huyen las brumas envolventes y las sombras;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el alba se levanta desde el mar<br>como una blanca dama de su lecho.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y caen flechas melladas, insolentes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a trav&eacute;s de las plumas de la noche,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y 
+		una ola larga de luz gualda<br>rompe en silencio sobre torre y casa,<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y extendi&eacute;ndose amplia sobre el campo 
+		inculto<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; un batir de alas que 
+		despiertan al vuelo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; casta&ntilde;os que se 
+		agitan en la copa<br>y ramas con estr&iacute;as de oro.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="EN EL SALÓN DORADO"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		En el sal&oacute;n dorado</font><font size="2" color="#C4CAD4" face="Georgia"><br><br><i>
+		Una Armon&iacute;a</i><br>
+		<br>Sus manos de marfil en el teclado<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		extraviadas en pasmo de fantas&iacute;a;<br>as&iacute; los &aacute;lamos agitan sus plateadas 
+		hojas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; l&aacute;nguidas y p&aacute;lidas.<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		Como la espuma a la deriva en el mar inquieto<br>cuando muestran las 
+		olas los dientes a la brisa.<br>
+		<br>Cay&oacute; un muro de oro: su pelo dorado.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Delicado tul cuya mara&ntilde;a se hila<br>en el disco bru&ntilde;ido de las 
+		maravillas.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Girasol que se vuelve para 
+		encontrar el sol<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cuando pasaron las 
+		sombras de la noche negra<br>y la lanza del lirio est&aacute; aureolada.<br>
+		<br>Y sus dulces labios rojos en estos labios m&iacute;os<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ardieron como fuego de rub&iacute;es engarzados<br>en el m&oacute;vil candil de la 
+		capilla grana<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o en sangrantes heridas 
+		de granadas,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o en el coraz&oacute;n del loto 
+		anegado<br>en la sangre vertida del vino rojo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ESCRITO EN EL LYCEUM THEATRE"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Escrito en el Lyceum Theatre</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="Portia"></a>P</font><font face="Georgia" color="#C4CAD4">ortia</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Ellen Terry</i><br><br>Poco me maravilla la osad&iacute;a de Basanio<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de arriesgar todo lo que ten&iacute;a al plomo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		o que el orgulloso Arag&oacute;n bajara la cabeza,<br>o que Marroqu&iacute; de coraz&oacute;n 
+		en llamas se enfriara:<br>pues en ese atav&iacute;o de oro batido<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que es m&aacute;s dorado que el dorado sol,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ninguna mujer que Veronese mirara<br>era tan bella como t&uacute; a quien 
+		contemplo.<br>A&uacute;n m&aacute;s bella cuando con la sabidur&iacute;a por escudo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		al vestir la toga severa del jurista<br>y no permitieras que las leyes 
+		de Venecia cedieran<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el 
+		coraz&oacute;n de Antonio a ese jud&iacute;o maldito.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;Oh Portia!, toma mi coraz&oacute;n: es tu debido pago;<br>no he de objetar a 
+		ese aval.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i>
+		<font color="#C4CAD4"><br><br>&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="FLORES DE AMOR"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Flores de amor</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><i>
+		<a name="&#1168; &#955;&#957;k&#973;&#953;&#1082;&#1088;&#962;  &#904;&#961;&#974;&#962;">
+		</a>&#1168; </i>&#955;&#957;<i>k&#973;&#953;&#1082;&#1088;</i>&#962;&nbsp; &#904;&#961;&#974;&#962;</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Amor, no te culpo; la culpa fue m&iacute;a,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		no hubiera yo sido de arcilla com&uacute;n<br>habr&iacute;a escalado alturas m&aacute;s altas 
+		a&uacute;n no alcanzadas,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		visto aire m&aacute;s lleno, y d&iacute;a m&aacute;s pleno.<br><br>Desde mi locura de pasi&oacute;n 
+		gastada<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; habr&iacute;a 
+		ta&ntilde;ido m&aacute;s clara canci&oacute;n,<br>encendido luz m&aacute;s luminosa, libertad m&aacute;s 
+		libre,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; luchado 
+		con malas cabezas de hidra.<br><br>Hubieran mis labios sido doblegados 
+		hasta hacerse m&uacute;sica<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		por besos que s&oacute;lo hicieran sangrar,<br>habr&iacute;as caminado con Bice y los 
+		&aacute;ngeles<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en el 
+		prado verde y esmaltado.<br><br>Si hubiera seguido el camino en que 
+		Dante viera<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los siete c&iacute;rculos brillantes,<br>&iexcl;Ay!, tal vez observara los cielos 
+		abrirse, como<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		se abrieran para el florentino.<br><br>Y las poderosas naciones me 
+		habr&iacute;an coronado,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a m&iacute; que no tengo nombre ni corona;<br>y un alba oriental me hallar&iacute;a 
+		postrado<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al 
+		umbral de la Casa de la Fama.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Me habr&iacute;a sentado en el 
+		c&iacute;rculo de m&aacute;rmol donde<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el m&aacute;s viejo bardo es como el m&aacute;s joven,<br>y la flauta siempre produce 
+		su miel, y cuerdas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de lira est&aacute;n siempre prestas.<br><br>Hubiera Keats sacado sus rizos 
+		himeneos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; del 
+		vino con adormidera,<br>habr&iacute;a besado mi frente con boca de ambros&iacute;a,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tomado la mano del noble amor en la m&iacute;a.<br><br>Y en primavera, cuando 
+		flor de manzano<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		acaricia un pecho bru&ntilde;ido de paloma,<br>dos j&oacute;venes amantes yaciendo en 
+		la huerta<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		habr&iacute;an le&iacute;do nuestra historia de amor.<br><br>Habr&iacute;an le&iacute;do la leyenda 
+		de mi pasi&oacute;n, conocido<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el amargo secreto de mi coraz&oacute;n,<br>habr&iacute;an besado igual que nosotros, 
+		sin estar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		destinados por siempre a separarse.<br><br>Pues la roja flor de nuestra 
+		vida es ro&iacute;da<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		por el gusano de la verdad<br>y ninguna mano puede recoger los restos 
+		ca&iacute;dos:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		p&eacute;talos de rosa juventud.<br>
+		<br>Sin embargo, no lamento haberte amado -&iexcl;ah, qu&eacute; m&aacute;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pod&iacute;a hacer un muchacho,<br>cuando el diente del tiempo devora y los 
+		silenciosos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a&ntilde;os persiguen!<br>
+		<br>Sin tim&oacute;n, vamos a la deriva en la tempestad<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y cuando la tormenta de juventud ha pasado,<br>sin lira, sin la&uacute;d ni 
+		coro, la Muerte,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el piloto silencioso, arriba al fin.<br><br>Y en la tumba no hay placer, 
+		pues el ciego<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		gusano se ceba en la ra&iacute;z,<br>y el Deseo tiembla hasta tornarse ceniza,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y el &aacute;rbol de la pasi&oacute;n ya no tiene fruto.<br><br>&iexcl;Ah!, qu&eacute; m&aacute;s deb&iacute;a 
+		hacer sino amarte; a&uacute;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la madre de Dios me era menos querida,<br>y menos querida la elevaci&oacute;n 
+		cit&eacute;rea desde el mar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como un lirio arg&eacute;nteo.<br>
+		<br>He elegido, he vivido mis poemas y, aunque<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la juventud se fuera en d&iacute;as perdidos,<br>hall&eacute; mejor la corona de mirto 
+		del amante<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; que 
+		la de laurel del poeta.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br></font></i>
+		<font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="H&Eacute;LAS!"></a></font>
+		<font color="#C4CAD4" face="Georgia">H&eacute;las!</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>Con cada pasi&oacute;n a la deriva hasta que mi alma<br>sea un la&uacute;d en 
+		cuyas cuerdas todos los vientos ta&ntilde;en.<br>&iquest;Para esto renunci&eacute;<br>a mi 
+		sabidur&iacute;a antigua ya mi austero control?<br>Mi vida es un palimpsesto<br>
+		garabateado en alguna vacaci&oacute;n de muchacho<br>con canciones ociosas para 
+		flauta y rond&oacute;<br>que solamente ocultan el secreto del todo.<br>Por 
+		cierto que hubo un tiempo cuando os&eacute; pisar<br>las alturas soleadas y de 
+		las disonancias de la vida<br>logr&eacute; claros acordes para llegar al o&iacute;do 
+		de Dios.<br>&iquest;Est&aacute; muerto ese tiempo? Mirad, con mi peque&ntilde;a vara<br>
+		apenas toqu&eacute; la miel del romance,<br>&iquest;y debo yo perder la herencia de un 
+		alma?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br></font></i>
+		<font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="IMPRESSION DE VOYAGE"></a>Impression de voyage</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Era un mar de zafiro y el cielo<br>&nbsp;&nbsp;&nbsp;&nbsp; ard&iacute;a en el 
+		aire como &oacute;palo candente;<br>&nbsp;&nbsp;&nbsp;&nbsp; izamos nuestra 
+		vela; soplaba bien el viento<br>hacia tierras azules situadas en el 
+		Este.<br>Desde mi proa alta divis&eacute; a Zakynthos:<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		cada bosque de olivos, cada cala,<br>&nbsp;&nbsp;&nbsp;&nbsp; las 
+		escarpas de Ithaca, el blanco pico de Lycaon,<br>y flores esparcidas en 
+		colinas de Arcadia.<br>El batir de la vela contra el m&aacute;stil,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		el rumor de las olas contra el casco,<br>&nbsp;&nbsp;&nbsp;&nbsp; rumor 
+		de risas j&oacute;venes en la popa,<br>todo lo que se o&iacute;a, al comenzar a arder 
+		el Oeste.<br>&nbsp;&nbsp;&nbsp;&nbsp; Y un rojo sol cabalg&oacute; por los 
+		mares. 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pisaba, al fin, el suelo griego. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(KATAKOLO)</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br><br>&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="IMPRESSIONS">
+		</a>Impressions</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">1<br></font>
+		<font face="Georgia" color="#C4CAD4"><a name="Les Silhouettes"></a>Les 
+		Silhouettes</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; El mar est&aacute; marcado 
+		con unas bandas grises,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el quieto viento muerto desentona<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y como hoja marchita es llevada<br>la luna por la bah&iacute;a tormentosa.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grabado claramente 
+		sobre p&aacute;lida arena<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		est&aacute; el bote negro: un joven marinero<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sube a bordo en gozo distra&iacute;do<br>con el rostro sonriente y mano 
+		reluciente.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y arriba los 
+		zarapitos claman<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y por el pasto oscuro mesete&ntilde;o<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		van segadores mozos de cuellos brunos ,<br>cual si fueran siluetas 
+		contra el cielo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">2<br></font>
+		<font face="Georgia" color="#C4CAD4"><a name="La fuite de la lune"></a>
+		La fuite de la lune</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hay paz 
+		para los sentidos,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		una paz so&ntilde;adora en cada mano,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y profundo silencio en la tierra fantasmal,<br>profundo silencio donde 
+		las sombras cesan.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S&oacute;lo el 
+		grito que el eco hace chillido<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de alg&uacute;n ave desconsolada y solitaria;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la codorniz que llama a su pareja;<br>la respuesta desde la colina en 
+		brumas.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y s&uacute;bitamente, la luna retira<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		su hoz de los cielos centelleantes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y vuela hacia sus cavernas sombr&iacute;as<br>cubierta en velo de gasa gualda.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br><br><br>&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="IMPRESSIONS DE TH&Eacute;ATRE"></a>Impressions de th&eacute;atre</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		</font><font face="Georgia" color="#C4CAD4">
+		<a name="Fabien dei Franchi"></a>Fabien dei Franchi</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A mi amigo Henry Irving</i><br><br>La silenciosa estancia, la pesada 
+		sombra avanzando furtiva,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; los muertos 
+		inm&oacute;viles viajando, la puerta que se abre,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el hermano asesinado que levita a trav&eacute;s del piso,<br>los blancos dedos 
+		del fantasma posados en tus hombros<br>y luego, el duelo solitario en el 
+		valle, 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; las rotas espadas, el ahogado grito, 
+		la sangre,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tus magn&iacute;ficos ojos 
+		vengativos cuando todo ha pasado.<br>Est&aacute;n bien esas cosas; &iexcl;pero t&uacute; 
+		fuiste hecho<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; para m&aacute;s augustas 
+		creaciones! Lear enloquecido<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deber&iacute;a a 
+		tu arbitrio vagar por el brezal nativo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con el tonto ruidoso que se mofa; Romeo<br>por ti atraer&iacute;a su amor, y el 
+		miedo desesperado<br>sacar&iacute;a de su vaina la daga cobarde de Ricardo.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;T&uacute;, presto instrumento al soplo de los labios de Shakespeare!</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Phedre"></a>Phedre</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br><i>A Sarah Bernhardt</i><br><br>Qu&eacute; vano y qu&eacute; tedioso nuestro mundo 
+		ordinario parecer&aacute;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a alguien Como t&uacute;, 
+		que en Florencia<br>habr&iacute;as conversado con Mirandola, o caminado<br>
+		entre los frescos olivares de Academos:<br>habr&iacute;as recogido ca&ntilde;as de la 
+		verde corriente<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; para la aguda flauta 
+		de Pan, pies de cabrito,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y tocado con 
+		las blancas ni&ntilde;as en el valle Feacio
+		<br>donde el grave Odiseo de su profundo sue&ntilde;o despertara. <br><br>&iexcl;Ah!, 
+		en verdad, una urna de &aacute;tica arcilla 4<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		guard&oacute; tu polvo p&aacute;lido, y has venido otra vez<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a este mundo ordinario, tedioso y vano,<br>fatigada de los d&iacute;as sin sol,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de campos rebosantes de asf&oacute;delos ins&iacute;pidos,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de labios sin amor, con que besan los hombres en el Infierno.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de E. Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="LA TUMBA DE KEATS :"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		La tumba de Keats :</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Libre de la injusticia del mundo y su dolor,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		descansa al fin bajo el velo azul de Dios:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		arrebatado a la vida cuando vida y amor eran nuevos,<br>el m&aacute;rtir m&aacute;s 
+		joven yace aqu&iacute;,<br>justo cual Sebasti&aacute;n y tan temprano muerto.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ning&uacute;n cipr&eacute;s ensombrece su tumba, ni tejo funeral,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sino amables violetas con el roc&iacute;o llorando<br>sobre sus huesos tejen 
+		cadena de perenne floraci&oacute;n.<br>&iexcl;Oh, altivo coraz&oacute;n que destruy&oacute; el 
+		dolor!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &iexcl;Oh, los labios m&aacute;s 
+		dulces desde los de Mitilene!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;Oh, pintor-poeta de nuestra tierra inglesa!<br>Tu nombre inscribi&oacute;se en 
+		el agua; y habr&aacute; de perdurar:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		l&aacute;grimas como las m&iacute;as conservar&aacute;n tu memoria verde,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como el pote de albahaca Isabella.¹<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(ROMA)<br><br><i>¹Alusi&oacute;n al poema de Keats intitulado Isabella, 
+		inspirado en un cuento de<br>Boccaccio. (N. del T )</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="MI VOZ"></a></font>
+		<font face="Georgia" color="#C4CAD4">Mi voz</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		En este mundo inquieto, moderno, apresurado,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		tomamos todo aquello que nuestro coraz&oacute;n deseaba -t&uacute; y yo,<br>y ahora 
+		las velas blancas de nuestro barco est&aacute;n arriadas<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		y agotada la carga del nav&iacute;o.<br>
+		<br>Por ello, prematuras, empalidecen mis mejillas,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		pues el llorar es mi contento huido<br>y el dolor ha apagado el rosa de 
+		mi boca<br>&nbsp;&nbsp;&nbsp;&nbsp; y la ruina corre las cortinas de mi 
+		lecho.<br>
+		<br>Pero toda esta vida atiborrada ha sido para ti<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		solamente una lira, un la&uacute;d, el encanto sutil<br>del violoncello, la 
+		m&uacute;sica del mar<br>&nbsp;&nbsp;&nbsp;&nbsp; que duerme, m&iacute;mico eco, en su 
+		concha marina.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="NUEVA CONTRICIÓN"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Nueva contrici&oacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>El pecado fue m&iacute;o; yo no hab&iacute;a comprendido.<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		As&iacute; de nuevo la m&uacute;sica aprisionada est&aacute; en su cueva,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		excepto ese lugar donde ola irregular y moribunda<br>impacienta con sus 
+		inquietos remolinos esta magra ribera.<br>Y en el pozo marchito de esta 
+		tierra<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el verano ha cavado una tumba 
+		tan honda<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; que apenas puede el plomizo 
+		sauce ansiar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; una plateada flor de la 
+		afilada mano del invierno.<br><br>Pero, &iquest;qui&eacute;n es aquel que por la 
+		ribera viene?<br>Amor, mira y preg&uacute;ntate. &iquest;Qui&eacute;n es &eacute;se<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que viene con vestidos te&ntilde;idos desde el Sur?<br>Es tu nuevo Se&ntilde;or, que 
+		besar&aacute;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; las no violadas rosas de tu 
+		boca,<br>y yo he de llorar, he de adorar, como antes.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 <br></font></i>
+		<font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="SONETO AL ACERCARME A ITALIA"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Soneto al acercarme a Italia</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>Llegu&eacute; a los Alpes: mi alma ard&iacute;a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		al o&iacute;r tu nombre: Italia, Italia m&iacute;a.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y al salir del coraz&oacute;n de la monta&ntilde;a<br>la tierra avizor&eacute; por la que mi 
+		alma tanto suspirara,<br>y re&iacute;, como quien gran premio conquistara,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y meditando en lo maravilloso de tu fama<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el d&iacute;a contempl&eacute; hasta que lo marcaran heridas de llama<br>y el cielo 
+		turquesa fuera oro bru&ntilde;ido.<br>Los pinos ondeaban como cabellos de mujer<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y en los huertos cada rama sarmentosa<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		se abr&iacute;a en copos de floreciente espuma.<br>Pero al saber que all&aacute; lejos 
+		en Roma<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en 
+		cadenas injustas otro Pedro yac&iacute;a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		llor&eacute; de ver tierra tan bella.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+			<p align="left">
+			<font face="Georgia" color="#C4CAD4" size="2"><a name="TÆDIUM VITÆ">
+			</a></font>
+			<font face="Georgia" color="#C4CAD4">Tædium vitæ</font><font face="Georgia" color="#C4CAD4" size="2"><br>
+			<br>
+			Matar mi juventud con dagas impacientes; ostentar<br>
+			la librea extravagante de esta edad mezquina;<br>
+			dejar que cada mano vil se hunda en mi tesoro;<br>
+			trenzar mi alma al cabello de una mujer<br>
+			y ser s&oacute;lo lacayo de Fortuna. Lo juro,<br>
+			&iexcl;no me agrada! Todo eso es menos para m&iacute;<br>
+			que la delgada espuma que se inquieta en el mar,<br>
+			menos que el vilano sin semilla<br>
+			en el aire estival. Mejor permanecer alejado<br>
+			de esos necios que con calumnias se mofan de mi vida,<br>
+			aunque no me conocen. Mejor el m&aacute;s humilde techo<br>
+			para abrigar al pe&oacute;n m&aacute;s abatido<br>
+			que volver a esa cueva oscura de ri&ntilde;as, donde mi alma blanca<br>
+			bes&oacute; por vez primera la boca del pecado.</font></p>
+			<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">
+			Versi&oacute;n de E. Caracciolo Trejo<br>
+			&nbsp;<br>
+&nbsp;</font></i><p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="VITA NUOVA">
+		</a></font><font color="#C4CAD4" face="Georgia">Vita nuova</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Det&uacute;veme junto al mar inmemorial<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		hasta que el roc&iacute;o de la olas cara y cabellos empapara;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los rojos fuegos luengos del d&iacute;a agonizante<br>ard&iacute;an en el Oeste; 
+		soplaba el viento horrible<br>y hu&iacute;an hacia tierra clamorosas gaviotas:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&laquo;&iexcl;Ay!&raquo; grit&eacute;, &laquo;mi vida llena est&aacute; de dolor,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;qui&eacute;n puede cosechar fruto o grano dorado<br>de estos p&aacute;ramos que sin 
+		cesar duramente trabajan?&raquo;<br>Mis redes se abr&iacute;an enormes con roturas y 
+		fallas;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sin embargo, como un &uacute;ltimo esfuerzo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en el mar arroj&eacute;las y aguard&eacute; el final.<br>Entonces, &iexcl;oh gloria s&uacute;bita!<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de las aguas negras de mi pasado torturado<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		vi el esplendor arg&eacute;nteo de blancos brazos ascender!<br><br></font><i>
+		<font face="Georgia" size="2" color="#C4CAD4"><br>Versi&oacute;n de E. 
+		Caracciolo Trejo<br>Edici&oacute;n de Libros R&iacute;o Nuevo 2001 
+		</font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 2:21:22 Dec 5, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:27:14 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

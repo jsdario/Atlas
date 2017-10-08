@@ -1,0 +1,695 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Luis de Camoes</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Luis de Camoes. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros. Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Luis_de_Camoes,poesias,poetas,poemas,versos,biografias,sensuales,amor,desamor,haikus,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app11.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/camoes2.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/camoes2.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163639" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./camoes2.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="5 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:36:39 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./camoes2.htm" title="23:15:33 May 5, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:36:39 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./camoes2.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:36:39 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./camoes2.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>31 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Aug 07 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000010000_2008:-1:102211100000_2009:-1:100000201000_2010:-1:100000001110_2011:-1:000000100101_2012:-1:020010001000_2013:7:101220010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./CAMOES2B.jpg" width="257" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./CAMOES2C.jpg" width="209" height="21"></p>
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<blockquote>
+  <blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><br><font face="Arial" size="2"><br></font>
+	<font face="Georgia" color="#526462"><strong><a href="./camoes2.htm#CANCI&Oacute;N">
+	Canci&oacute;n</a></strong><br>
+	</font>
+	<br>
+	<strong>
+	<font face="Georgia" color="#526462"><a href="./camoes2.htm#CANCI&Oacute;N II">Canci&oacute;n II</a><br>
+	<br>
+	<a href="./camoes2.htm#LOS LUSIADAS">Los Lusiadas&nbsp; (fragmento)</a><br>
+	<br>
+	<a href="./camoes2.htm#&iquest;QU&Eacute; VER&Eacute; QUE ME CONTENTE?">&iquest;Qu&eacute; ver&eacute; que me contente?</a><br>
+	<br>
+	<a href="./camoes2.htm#VERSO AJENO">Verso ajeno</a>&nbsp;&nbsp;&nbsp;&nbsp; <br>
+	<br>
+	<a href="./camoes2.htm#VOS TEN&Eacute;IS MI CORAZ&Oacute;N">Vos ten&eacute;is mi coraz&oacute;n</a></font><font face="Georgia" size="2" color="#526462"><br></font>
+	<font face="Georgia" size="2" color="#404D48"><br>M&aacute;s poes&iacute;a de Camoes en:</font></strong><font face="Georgia" size="2" color="#526462"> </font>
+	<font face="Georgia" color="#526462">
+	<strong><a
+      href="./traducciones.htm">Traducciones </a></strong></font></p>
+	</blockquote>
+	<p align="left"><strong><font face="Georgia" size="2" color="#404D48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Volver a:</font><font face="Georgia" size="2" color="#526462"> </font>
+	<font face="Georgia" color="#526462"> 
+	<a
+      href="./">A media voz</a></font><font face="Georgia" size="2" color="#526462"><br></font>
+	<font face="Georgia" size="2" color="#404D48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Volver a:</font><font face="Georgia" size="2" color="#526462"> </font>
+	<font face="Georgia" color="#526462"> 
+	<a href="./poesiadeoro.htm">Poes&iacute;a de Oro</a></p></font><font face="Georgia" size="2" color="#526462">
+    <blockquote>
+      <p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br>
+      </p>
+      <p align="center"><font color="#404D48" size="2">Tus comentarios o 
+		sugerencias ser&aacute;n de gran ayuda <br>
+      para el desarrollo&nbsp;de esta p&aacute;gina. Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br>
+      </font><font size="4" color="#404D48"><br>
+      </font><font size="4"><a href="mailto:poesia@amediavoz.com">
+		poesia@amediavoz.com</a></font></p>
+      </font></strong>
+    </blockquote>
+</blockquote>
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+<blockquote>
+	<blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia"><a name="CANCIÓN"></a>
+		<font color="#43504C"><strong>Canci&oacute;n</strong></font></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Mote</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Ojos heridos me hab&eacute;is,<br>acabad ya de matarme;<br>mas, muerto, volv&eacute; a 
+		mirarme,<br>porque me resucit&eacute;is.</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Voltas</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Pues me distes tal herida<br>con gana de darme muerte,<br>el morir me es 
+		dulce suerte,<br>pues con morir me dais vida.<br>Ojos, &iquest;qu&eacute; os deten&eacute;is?<br>
+		Acabad ya de matarme;<br>mas, muerto, volv&eacute; a mirarme,<br>porque me 
+		resucit&eacute;is.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><a name="CANCIÓN II"></a>
+		<strong>Canci&oacute;n II</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Mote</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Irme quiero, madre,<br>a aquella galera,<br>con el marinero<br>a ser 
+		marinera</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Voltas</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Madre, si me fuere,<br>do quiera que yo,<br>no lo quiero yo,<br>que el 
+		Amor lo quiere.<br>Aquel ni&ntilde;o fiero<br>hace que me muera<br>por un 
+		marinero<br>a ser marinera.</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		&Eacute;l, que todo lo puede,<br>madre, no podr&aacute;,<br>pues el alma va,<br>que el 
+		cuerpo se quede.<br>con &eacute;l, por quien muero<br>voy, porque no muero<br>
+		voy, porque no muera:<br>que si es marinero,<br>ser&eacute; marinera.</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>Es 
+		tirana ley<br>del ni&ntilde;o se&ntilde;or<br>que por un amor<br>se deseche un rey.<br>
+		Pues desta manera<br>quiero irme, quiero,<br>por un marinero<br>a ser 
+		marinera.</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Decid, ondas, &iquest;cu&aacute;ndo<br>vistes vos doncella,<br>siendo tierna y bella<br>
+		andar navegando?<br>Mas &iquest;qu&eacute; no se espera<br>daquel ni&ntilde;o fiero?<br>Vea 
+		yo quien quiero:<br>sea marinera.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<br><a name="LOS LUSIADAS"></a></font>
+		<font face="Georgia" color="#43504C">Los Lusiadas</font></strong></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Fragmento<br>
+		<br><br>Canto Primero.<br><br>Argumento del Canto Primero.<br><br>
+		Navegaci&oacute;n de los Portugueses por los mares Orientales: celebran los 
+		dioses un consejo:
+      	<br>
+		se opone Baco &aacute; la navegacion: V&eacute;nus y Marte favorecen &aacute; los navegantes: 
+		llegan &aacute; Mozambique, <br>
+		cuyo gobernador intenta destruirlos: encuentro y primera funci&oacute;n de 
+		guerra de los Portugueses <br>
+		contra los gentiles: levan anclas, y pasando por Quiloa, surgen en 
+		Mombaza.<br><br>I<br>Las armas y varones distinguidos, <br>Que de 
+		Occidente y playa Lusitana 
+		<br>Por mares hasta all&iacute; desconocidos, <br>Pasaron m&aacute;s all&aacute; de 
+		Taprobana;
+		<br>Y en peligros y guerra, m&aacute;s sufridos <br>De lo que prometia fuerza 
+		humana,
+		<br>Entre remota gente, edificaron <br>Nuevo reino, que tanto 
+		sublimaron: 
+		<br><br>
+      	II<br>Y tambi&eacute;n los renombres muy gloriosos <br>De los Reyes, que fueron 
+		dilatando 
+		<br>El Imperio y la F&eacute;, pueblos odiosos <br>Del &Aacute;frica y del Asia 
+		devastando; 
+		<br>Y aquellos que por hechos valerosos <br>M&aacute;s all&aacute; de la muerte v&aacute;n 
+		pasando;
+		<br>Si el ingenio y el arte me asistieren, <br>Esparcir&eacute; por cuantos 
+		mundos fueren. 
+		<br><br>
+      	III<br>Callen del sabio Griego, y del Troyano, <br>Los grandes viajes, 
+		conque el mar corrieron; 
+		<br>No diga de Alejandro y de Trajano <br>La fama las victorias que 
+		obtuvieron; 
+		<br>Y, pues yo canto el pecho Lusitano, <br>A quien Neptuno y Marte 
+		obedecieron, 
+		<br>Ceda cuanto la Musa antigua canta, <br>A valor que m&aacute;s alto se 
+		levanta. 
+		<br><br>
+      	IV <br>Vosotras, mis Tajides, que creado <br>En m&iacute; hab&eacute;is un ingenio, 
+		nuevo, ardiente; 
+		<br>Si siempre, en verso humilde, celebrado <br>Fue por m&iacute; vuestro rio 
+		alegremente.,
+		<br>D&aacute;dme ahora un son noble y levantado, <br>Un estilo grand&iacute;locuo y 
+		fluyente, 
+		<br>Con que de vuestras aguas diga Apolo, <br>Que no envidian corrientes 
+		del Pactolo.
+		<br><br>
+		V<br>D&aacute;dme una furia grande y sonorosa, <br>Y no de agreste avena &oacute; 
+		flauta ruda: 
+		<br>M&aacute;s de trompa canora y belicosa, <br>Que arde el pecho, y color al 
+		rostro muda: 
+		<br>Canto digno me dad de la famosa <br>Gente vuestra, &aacute; quien Marte 
+		tanto ayuda: 
+		<br>Que se estienda por todo el universo, <br>Si tan sublime asunto cabe 
+		en verso. 
+		<br><br>
+		VI<br>Y vos, &iexcl;oh bien fundada aseguranza, <br>De la Luse&ntilde;a libertad 
+		antigua,
+		<br>Y no menos ciert&iacute;sima esperanza <br>De la estension de cristiandad 
+		exigua!
+		<br>Vos, miedo nuevo de la M&aacute;ura lanza, <br>En quien hoy maravilla se 
+		atestigua, 
+		<br>Dada al mundo por Dios, Rey sin segundo, <br>Para que &aacute; Dios gran 
+		parte deis del mundo: 
+		<br><br>
+      	VII<br>Vos, tierno y nuevo ramo floreciente <br>De una planta, de Cristo 
+		m&aacute;s amada 
+		<br>Que otra alguna nacida en Occidente, <br>Ces&aacute;rea, &oacute; Cristian&iacute;sima 
+		llamada: 
+		<br>Mirad el vuestro escudo, que presente <br>Os muestra la victoria ya 
+		pasada, 
+		<br>En el que os di&oacute;, de emblemas por acopio, <br>Los que en la Cruz 
+		tom&oacute; para s&iacute; propio: 
+		<br><br>
+      	VIII<br>Vos, poderoso Rey, cuyo alto imperio <br>El primero ve al sol en 
+		cuanto nace, 
+		<br>Y en el medio despues del hemisferio, <br>Y el &uacute;ltimo, al morir, 
+		saludo le hace: 
+		<br>Vos, que yugo impondreis y vituperio <br>Al ginete Ismaelita y duro 
+		Trace,
+		<br>Y al turco de Asia y b&aacute;rbaro gent&iacute;o, <br>Que el agua bebe a&uacute;n del 
+		sacro rio:
+		<br><br>
+      	IX<br>Breve inclinad la majestad severa <br>Que en ese tierno aspecto en 
+		vos contemplo, 
+		<br>Que luce ya, como en la edad entera, <br>Cuando subiendo ireis al 
+		&aacute;rduo templo;
+		<br>Y ora la faz, con vista placentera, <br>Poned en nos: vereis un 
+		nuevo ejemplo
+		<br>De amor de patrios hechos valerosos, <br>Sublimados en versos 
+		numerosos. 
+		<br><br>
+		X<br>Amor vereis de patria, no movido, <br>De vil premio, mas de alto 
+		casi eterno; 
+		<br>Que no es un premio vil ser conocido <br>Por voz que suba del mi 
+		hogar paterno. 
+		<br>Oid; vereis el nombre engrandecido <br>Por los de quienes sois se&ntilde;or 
+		superno, 
+		<br>Y juzgareis lo que es m&aacute;s escelente, <br>Si ser del mundo Rey, &oacute; de 
+		tal gente. 
+		<br><br>
+      	XI <br>O&iacute;d, que no &aacute; los vuestros con haza&ntilde;as <br>Fant&aacute;sticas, fingidas, 
+		mentirosas, 
+		<br>Vereis loar, cual hacen las estra&ntilde;as <br>Musas, de engrandecerse 
+		deseosas: 
+		<br>Las nuestras, no fingidas, son tama&ntilde;as, <br>Que &aacute; las so&ntilde;adas vencen 
+		fabulosas, 
+		<br>Y con Rugiero &aacute; Rodamonte infando <br>Y, aun siendo verdadero, hasta 
+		&aacute; Rolando. 
+		<br><br>
+      	XII <br>Os dar&eacute; en su lugar un Nu&ntilde;o fiero, <br>Que hizo al reino y al 
+		Rey alto servicio: 
+		<br>Un &Eacute;gas y un Don F&uacute;as; que de Homero, <br>Para ellos solos el cantar 
+		codicio; 
+		<br>Y por los doce Pares daros quiero, <br>Los doce de Inglaterra y su 
+		Magricio;
+		<br>Y os doy, en fin, &aacute; aquel insigne Gama, <br>Que de Eneas tambi&eacute;n 
+		vence la fama. 
+		<br><br>
+      	XIII <br>Y si del Franco C&aacute;rlos en balanza, <br>O de C&eacute;sar quer&eacute;is igual 
+		memoria, 
+		<br>Ved al primer Alfonso, cuya lanza <br>Oscurece cualquiera estra&ntilde;a 
+		gloria:
+		<br>Y &aacute; aquel que al nuevo reino aseguranza <br>Dej&oacute;, con grande y 
+		pr&oacute;spera victoria, 
+		<br>Y &aacute; otro Juan, siempre invicto caballero, <br>Y al quinto Alfonso, 
+		al cuarto y al tercero. 
+		<br><br>
+      	XIV<br>Ni dejar&aacute;n mis versos olvidados <br>A aquellos que en los reinos 
+		de la Aurora, 
+		<br>Alzaron, con sus hechos esforzados, <br>Vuestra bandera, siempre 
+		vencedora: 
+		<br>A un Pacheco glorioso, &aacute; los osados <br>Almeidas, por quien siempre 
+		Tajo llora:
+		<br>Al terrible Alburquerque y Castro fuerte, <br>Y otros, con quien 
+		poder no halla la muerte. 
+		<br><br>
+      	XV <br>Y hora (que en estos versos os confieso. <br>Sublime Rey, que no 
+		me atrevo &aacute; tanto) 
+		<br>Tomad las riendas del imperio vueso <br>Y dad materia &aacute; nuevo y 
+		mayor canto: 
+		<br>Y empiecen &aacute; sentir el duro peso <br>(Que por el mundo todo cause 
+		espanto) 
+		<br>De ej&eacute;rcitos y haza&ntilde;as singulares, <br>De Africa tierras y de 
+		Oriente mares.
+		<br><br>
+      	XVI<br>El M&aacute;uro en vos los ojos pone frio, <br>Viendo all&iacute; su suplicio 
+		decretado: 
+		<br>Por vos solo el gentil b&aacute;rbaro imp&iacute;o <br>Al yugo muestra el cuello 
+		ya inclinado: 
+		<br>T&eacute;tis todo el cer&uacute;leo poder&iacute;o <br>Para vos tiene, en dote, 
+		preparado: 
+		<br>Que, aficionada al rostro bello y tierno, <br>Adquiriros desea para 
+		yerno. 
+		<br><br>
+      	XVII<br>M&iacute;ranse en vos, de la eternal morada, <br>De los avos las dos 
+		almas famosas,
+		<br>Una en la paz ang&eacute;lica dorada, <br>Otra en las duras lides 
+		sanguinosas;
+		<br>En vos hallar esperan renovada <br>Su memoria y sus obras valerosas; 
+		<br>Y all&aacute; os muestran lugar, como ac&aacute; ejemplo, <br>Que abre al mortal 
+		de eternidad el templo. 
+		<br><br>
+      	XVIII <br>Mas mientras ese tiempo se dilata <br>De gobernar los pueblos, 
+		que os desean 
+		<br>Dad &aacute; mi atrevimiento ayuda grata, <br>Para que estos mis versos 
+		vuestros sean: 
+		<br>Y mirad ir cortando el mar de plata <br>A vuestros argonautas, 
+		porque vean 
+		<br>Que son vistos de vos en mar airado; <br>Y &aacute; ser, acostumbraos, 
+		invocado. 
+		<br><br>
+      	XIX<br>Ya por el ancho Oce&aacute;no navegaban, <br>Las inconstantes ondas 
+		dividiendo: 
+		<br>Los vientos blandamente respiraban, <br>De las n&aacute;os la hueca lona 
+		hinchendo:
+		<br>Blanca espuma los mares levantaban, <br>Que las tajantes proras van 
+		rompiendo
+		<br>Por la vasta marina, donde cuenta <br>Proteo su manada turbulenta; 
+		<br><br>
+      	XX <br>Cuando los Dioses del Olimpo hermoso, <br>D&oacute; est&aacute; el gobierno de 
+		la humana gente,
+		<br>Van &aacute; verse en consejo majestoso <br>Sobre futuras cosas del 
+		Oriente: 
+		<br>Del cielo hollando el &eacute;ter luminoso, <br>Van, por la L&aacute;ctea v&iacute;a 
+		juntamente, 
+		<br>Convocados de parte del Tonante, <br>Por el nieto gentil del viejo 
+		Atlante. 
+		<br><br>
+      	XXI <br>Dejan de siete cielos regimiento, <br>Que por poder m&aacute;s alto les 
+		fu&eacute; dado;
+		<br>Poder que, con el solo pensamiento, <br>Cielo y tierra gobierna, y 
+		mar airado: 
+		<br>All&iacute; juntos se ven en un momento, <br>Los que habitan Arturo 
+		congelado, 
+		<br>Los que tienen el Austro y partes donde <br>La aurora nace, el rojo 
+		sol se esconde. 
+		<br><br>
+      	XXII <br>Estaba el padre all&iacute; sublime y dino <br>Que vibra el fiero rayo 
+		de Vulcano, 
+		<br>En asiento de estrellas cristalino, <br>Con semblante severo y 
+		soberano: 
+		<br>Exhalaba del rostro aire divino, <br>Que en divino torn&aacute;ra un cuerpo 
+		humano,
+		<br>Con corona y el cetro rutilante, <br>De otra piedra m&aacute;s clara que el 
+		diamante. 
+		<br><br>
+      	XXIII <br>M&aacute;s abajo, en asientos tachonados, <br>De perlas y oro 
+		l&uacute;cidos, estaban 
+		<br>Todos los otros dioses asentados, <br>Seg&uacute;n saber y juicio 
+		demandaban.
+		<br>Los antiguos preceden honorados: <br>Los menores tras ellos se 
+		ordenaban; 
+		<br>Y aqu&iacute; J&uacute;piter alto, de este modo <br>Dijo, y llen&oacute; su voz el cielo 
+		todo: 
+		<br><br>
+      	XXIV <br>&laquo;Eternos moradores del luciente <br>Estrell&iacute;fero polo y claro 
+		asiento,
+		<br>Si del esfuerzo grande de la gente <br>Lusa no hab&eacute;is quitado el 
+		pensamiento, 
+		<br>Recordareis que existe permanente, <br>De los hados escrito 
+		anunciamiento;
+		<br>Por el que han de olvidarse los humanos <br>De Asirios, Persas, 
+		Griegos y Romanos. 
+		<br><br>
+      	XXV<br>&laquo;Ya les fu&eacute;, bien lo visteis, concedido, <br>Que un poder, de 
+		recursos poco lleno, 
+		<br>Tomase M&aacute;uro fuerte y guarnecido <br>Todo el suelo que riega el Tajo 
+		ameno: 
+		<br>Y luego le asisti&oacute;, contra el temido <br>Castellano, favor alto y 
+		sereno: 
+		<br>As&iacute; que siempre, en fin, con fama y gloria, <br>Victoria consigui&oacute; 
+		tras de victoria. (...)</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a
+      name="&iquest;QU&Eacute; VER&Eacute; QUE ME CONTENTE?"></a></font>
+		<font face="Georgia" color="#43504C">&iquest;Qu&eacute; ver&eacute; que me contente?</font></strong></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		Desque una vez yo mir&eacute;,<br>se&ntilde;ora, vuestra beldad,<br>jam&aacute;s por mi 
+		voluntad<br>los ojos de vos quit&eacute;.<br>Pues sin vos placer no siente<br>
+		mi vida, ni lo desea,<br>si no quer&eacute;is que yo os vea,<br>&iquest;Qu&eacute; ver&eacute; que 
+		me contente?</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#43504C"><a name="VERSO AJENO"></a>
+		</font>
+		<font face="Georgia" color="#43504C"><strong>Verso ajeno</strong></font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#43504C">
+		<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Vos ten&eacute;s mi coraz&oacute;n.</strong></font></em></p>
+		<p align="left"><strong><font face="Georgia" color="#43504C">Glosa</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Mi coraz&oacute;n me han robado,<br>y Amor, viendo mis enojos,<br>me dijo: 
+		-Fuete llevado<br>por los m&aacute;s hermosos ojos<br>que desque vivo he 
+		mirado.<br>Gracias sobrenaturales<br>te lo tienen en prisi&oacute;n.<br>Y si 
+		maor tiene raz&oacute;n,<br>se&ntilde;ora, por las se&ntilde;ales,<br>
+		<em>vos ten&eacute;is mi coraz&oacute;n</em>.</font></strong></p>
+		<p align="left"><strong><font face="Georgia" color="#43504C">Mote</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br><em>Ojos, herido me hab&eacute;is,<br>acabad ya de matarme;<br>mas, muerto, 
+		volv&eacute; a mirarme,<br>porque me resucit&eacute;is.</em><br>
+		<br></font></strong></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+  <p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p align="left"><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a
+      name="VOS TEN&Eacute;IS MI CORAZÓN"></a></font>
+		<font face="Georgia" color="#43504C">Vos ten&eacute;is mi coraz&oacute;n</font></strong></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>Mi 
+		coraz&oacute;n me han robado;<br>y Amor viendo mis enojos,<br>me dijo: &quot;Fuete 
+		llevado<br>por los m&aacute;s hermosos ojos<br>que desque vivo he mirado.<br>
+		Gracias sobrenaturales<br>te lo tienen en prisi&oacute;n&quot;.<br>Y si Amor tiene 
+		raz&oacute;n,<br>se&ntilde;ora, por las se&ntilde;ales,<br>vos ten&eacute;is mi coraz&oacute;n.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+		</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:36:39 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:38 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

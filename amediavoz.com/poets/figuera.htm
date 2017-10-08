@@ -1,0 +1,820 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>&Aacute;ngela Figuera Aymerich</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de &Aacute;ngela Figuera Aymerich. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="´Angela_Figuera_Aymerich,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/figuera.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/figuera.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161557" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./figuera.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:15:57 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./figuera.htm" title="16:05:21 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:15:57 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./figuera.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:15:57 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./figuera.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>74 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010001110101_2004:-1:000101010101_2005:-1:011000000004_2006:-1:111111000100_2007:-1:021201010100_2008:-1:102121610012_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:510010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><img border="0" src="./FIGUERA.jpg" width="587" height="60"> 
+	&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><em style="font-style: normal"><font face="Times New Roman" size="3" color="#A6BCCE"><br>
+    </font><font face="Arial" size="2" color="#84B0D6">
+	&quot;...Yac&iacute;amos unidos, sin lujuria, absortos <br>
+    en el hondo tableteo de nuestros corazones...&quot;</font></em></p>
+    <p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./FIGUERA1.jpg" width="300" height="234"></font></p>
+	<p align="center"><font face="Arial" size="2" color="#84B0D6">
+	<em>&quot;The reader&quot;</em></font></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">Frank Weston Benson</font></em></p>
+	<p align="center"><font face="Basil" size="5" color="#84B0D6"><br>
+    </font></p>
+    <p align="center">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <blockquote>
+      <p align="left">&nbsp;</p>
+    </blockquote>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+	<p><font face="Georgia" size="2" color="#84B0D6">Poeta espa&ntilde;ola nacida en 
+	Bilbao en 1902.<br>Estudi&oacute; Filosof&iacute;a y Letras en la Universidad de Madrid, 
+	fue Catedr&aacute;tica de Lengua y Literatura en los Institutos de Huelva, <br>
+	Alcoy y Murcia hasta despu&eacute;s de la guerra civil espa&ntilde;ola y posteriormente 
+	trabaj&oacute; en la Biblioteca Nacional de Madrid.<br>Junto con Blas de Otero y 
+	Gabriel Celaya, form&oacute; parte del importante Triunvirato Vasco de la poes&iacute;a de 
+	post-guerra. <br>&laquo;Mujer de barro&raquo;&nbsp; editado en 1948 fue su primer libro, 
+	al que siguieron luego muchas publicaciones de renombre como <br>
+	&laquo;Belleza cruel&raquo; y &laquo;Toco la tierra&raquo;.<br>Falleci&oacute; en 1984. &copy;</font></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" color="#8FABC2"><a href="./figuera.htm#BELLEZA CRUEL">Belleza 
+	cruel</a><br><br><a href="./figuera.htm#BOMBARDEO">Bombardeo</a><br>
+	<br><a href="./figuera.htm#CA&Ntilde;AVERAL">Ca&ntilde;averal</a><br><br><a href="./figuera.htm#COLINA">Colina</a><br>
+	<br><a href="./figuera.htm#CUANDO NACE UN HOMBRE">Cuando nace un hombre</a><br><br>
+	<a href="./figuera.htm#CULPA">Culpa</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;<br>
+	<a href="./figuera.htm#DESTINO">Destino</a><br><br><a href="./figuera.htm#DURAR">Durar</a>&nbsp;&nbsp;<br>
+	<br><a href="./figuera.htm#EL FRUTO REDONDO">El fruto redondo</a><br><br>
+	<a href="./figuera.htm#&Eacute;XODO">&Eacute;xodo</a>&nbsp;<br><br><a href="./figuera.htm#LA OTRA ORILLA">La otra orilla</a><br>
+	<br><a href="./figuera.htm#MUERTO AL NACER">Muerto al nacer</a><br><br><a href="./figuera.htm#MUJER">
+	Mujer</a><br>
+	<br><a href="./figuera.htm#MUJER DE BARRO">Mujer de barro</a><br><br>
+	<a href="./figuera.htm#NADIE SABE">Nadie sabe</a><br><br><a href="./figuera.htm#NO QUIERO">No quiero</a>&nbsp;&nbsp; 
+	<br><br><a href="./figuera.htm#NOCHE">Noche</a><br>&nbsp;&nbsp;<br><a href="./figuera.htm#SIN LLAVE">Sin llave</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      face="Georgia" size="3" color="#A6BCCE"><br></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#85A6BC"><a name="BELLEZA CRUEL">
+	</a></font><font face="Georgia" color="#84B0D6">Belleza cruel</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Dadme un espeso coraz&oacute;n de 
+	barro,<br>dadme unos ojos de diamante enjuto,<br>boca de amianto, congeladas 
+	venas,<br>duras espaldas que acaricie el aire.<br>Quiero dormir a gusto cada 
+	noche.<br>Quiero cantar a estilo de jilguero.<br>Quiero vivir y amar sin que 
+	me pese<br>ese saber y o&iacute;r y darme cuenta;<br>este mirar a diario de hito en 
+	hito<br>todo el rev&eacute;s atroz de la medalla.<br>Quiero re&iacute;r al sol sin que me 
+	asombre<br>que este existir de balde, sobreviva,<br>con tanta muerte suelta 
+	por las calles.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Quiero cruzar alegre entre 
+	la gente<br>sin que me cause miedo la mirada<br>de los que labran tierra 
+	golpe a golpe,<br>de los que roen tiempo palmo a palmo,<br>de los que llenan 
+	pozos gota a gota.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Porque es lo cierto que me 
+	da verg&uuml;enza,<br>que se me para el pulso y la sonrisa<br>cuando contemplo el 
+	rostro y el vestido<br>de tantos hombres con el mido al hombro,<br>de tantos 
+	hombres con el hambre a cuestas,<br>de tantas frentes con la piel quemada<br>
+	por la escondida rabia de la sangre.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Porque es lo cierto que me 
+	asusta verme<br>las manos limpias persiguiendo a tontas<br>mis mariposas de 
+	papel o versos.<br>Porque es lo cierto que empec&eacute; cantando 
+	<br>para poner a salvo mis juguetes,<br>pero ahora estoy aqu&iacute; mordiendo el 
+	polvo,<br>y me confieso y pido a los que pasan<br>que me perdonen pronto 
+	tantas cosas.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Que me perdonen esta miel 
+	tan dulce<br>sobre los labios, y el silencio noble<br>de mis almohadas, y mi 
+	Dios tan f&aacute;cil<br>y este llorar con arte y preceptiva<br>penas de quita y 
+	pon prefabricadas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">Que me 
+	perdonen todos este lujo,<br>este tremendo lujo de ir hallando<br>tanta 
+	belleza en tierra, mar y cielo,<br>tanta belleza devorada a solas,<br>tanta 
+	belleza cruel, tanta belleza.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font color="#84B0D6"><br>
+	</font>
+	<font face="Georgia" size="2" color="#84B0D6">
+	<br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="BOMBARDEO"></a></font>
+	<font face="Georgia" color="#84B0D6">Bombardeo</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Yo no iba sola entonces. 
+	Iba llena<br>de ti y de m&iacute;. Colmada, verdecida,<br>me ergu&iacute;a como gr&aacute;vida 
+	monta&ntilde;a<br>de tierra f&eacute;rtil donde la simiente<br>se esponja y apresura para 
+	el brote.<br>Era mi carne, tensa y ahuecada,<br>nido cerrado que abrigaba el 
+	vuelo<br>de un ala sin plum&oacute;n y con grillete:<br>casi cristal y casi sue&ntilde;o. 
+	Tierna.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Iba llena de gracia por los 
+	d&iacute;as<br>desde la anunciaci&oacute;n hasta la rosa.<br>Pero ellos no pod&iacute;an, ciego, 
+	brutos,<br>respetar el portento.<br>Rugieron. Embistieron encrespados.<br>
+	Lanzaron sobre m&iacute; y mi contenido<br>un hurac&aacute;n de rayos y metralla.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Del m&aacute;s bello horizonte, 
+	del m&aacute;s puro<br>cielo de oto&ntilde;o vomitaron lluvia<br>de ciegos mecanismos 
+	destructores<br>que desataban sobre el cauce seco<br>del callejero asfalto 
+	sorprendido<br>los r&iacute;os de la sangre.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">(...) Noches de sue&ntilde;o 
+	incierto, triturado<br>por la tremenda sinfon&iacute;a<br>del frente en erupci&oacute;n y 
+	los caballos<br>del miedo galopando en explosivos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y la sangre con hambre que 
+	se exprime<br>hasta la &uacute;ltima esencia<br>para nutrir al hijo sazon&aacute;ndose.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y la desnuda soledad del 
+	cuerpo,<br>desorientado, desgajado en vivo<br>del cuerpo del amante.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Aquellas noches del pavor 
+	sin luces,<br>apelmazadas de odios y de ruinas,<br>yo te esperaba. Me 
+	llegaste a veces.<br>Del &uacute;ltimo bisel de la tragedia,<br>del borde mismo de 
+	la hirviente sima<br>ven&iacute;as hasta m&iacute;. Me contemplabas<br>con unos ojos 
+	llenos de agua sucia<br>donde asomaban rostros de cad&aacute;veres.<br>Ojos que 
+	procuraban ser risue&ntilde;os<br>y mansos al pasar por mi figura<br>y acariciar 
+	con luces de esperanza<br>la curva de mi vientre.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iexcl;Con qu&eacute; exaltada fuerza, 
+	con qu&eacute; prisa,<br>con qu&eacute; vibrar de nervios y ra&iacute;ces<br>nos quisimos 
+	entonces!</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Yac&iacute;amos unidos, sin 
+	lujuria,<br>absortos en el hondo tableteo<br>de nuestros corazones. 
+	Escuchando<br>de vez en vez el t&iacute;mido latido<br>del otro coraz&oacute;n encarcelado<br>
+	que ya, para nosotros, gorjeaba.<br>Yo sonre&iacute;a se&ntilde;alando el sitio<br>en que 
+	un tal&oacute;n menudo percut&iacute;a<br>mis &iacute;ntimas paredes en un ansia<br>gozosa de 
+	correr por los senderos<br>apenas presentidos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Y, en medio del olvido 
+	refrescante,<br>en lo mejor del conseguido sue&ntilde;o,<br>surg&iacute;a denso, 
+	alucinante, bronco,<br>el b&eacute;lico zumbar de la escuadrilla.<br>Bramando, 
+	sacudiendo, despe&ntilde;&aacute;ndose,<br>atropell&aacute;ndose los ecos<br>iban las explosiones 
+	avanzando,<br>cada vez m&aacute;s cercanas,<br>hasta que, al fin, la muerte en 
+	torrentera,<br>en avalancha loca, trascurr&iacute;a<br>sobre nuestras cabezas sin 
+	refugio.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Entonces t&uacute;, imperioso, 
+	dominante,<br>con un impulso elemental de macho<br>que guarda la nidada, con 
+	un gesto<br>ardiente y violento como el acto<br>de la amorosa posesi&oacute;n, 
+	cubr&iacute;as<br>mi cuerpo con tu cuerpo enteramente,<br>haciendo de tus largos 
+	huesos duros,<br>de tu apretada carne exacerbada,<br>un ilusorio escudo 
+	indestructible<br>para el hijo y la madre.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">As&iacute;, unidas las bocas, 
+	trasvas&aacute;ndonos<br>el tembloroso aliento, diluidos<br>en &eacute;xtasis de espanto y 
+	de delicia,<br>las almas contra&iacute;das, esper&aacute;bamos...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">No. Nunca nos quisimos como 
+	entonces.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#84B0D6">
+	<a name="CA&Ntilde;AVERAL"></a>Ca&ntilde;averal</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Entre las ca&ntilde;as tendida;<br>sola y perdida en las ca&ntilde;as.<br>
+	<br>&iquest;Qui&eacute;n me cerraba los ojos,<br>que, solos, se me cerraban?<br><br>&iquest;Qui&eacute;n 
+	me sorb&iacute;a en los labios<br>zumo de miel sin palabras?<br>
+	<br>&iquest;Qui&eacute;n me derrib&oacute; y me tuvo<br>sola y perdida en las ca&ntilde;as?<br><br>
+	&iquest;Qui&eacute;n me apu&ntilde;al&oacute; con besos<br>el ave de la garganta?<br>
+	<br>&iquest;Qui&eacute;n me estremeci&oacute; los senos<br>con tacto de tierra y ascua?<br><br>
+	&iquest;Qu&eacute; toro embisti&oacute; en el ruedo<br>de mi cintura cerrada?<br>
+	<br>&iquest;Qui&eacute;n me esponj&oacute; las caderas<br>con levadura de ansias?<br><br>&iquest;Qu&eacute; 
+	piedra de eternidad<br>me hincaron en las entra&ntilde;as?<br>
+	<br>&iquest;Qui&eacute;n me desat&oacute; la sangre<br>que as&iacute; se me derramaba?<br><br>...Aquella 
+	tarde de Julio,<br>sola y perdida en las ca&ntilde;as.<br>
+	<br>&nbsp;</font></p>
+	<blockquote>
+      <p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+    </blockquote>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="COLINA"></a></font>
+	<font face="Georgia" color="#84B0D6">Colina</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ola cuajada en la piedra<br>
+	con espuma de romero,<br>hasta tu desnuda cima<br>me has levantado sin 
+	vuelo.<br>Sobre tu lomo clavada<br>-m&aacute;stil sin vela en el viento-<br>de un 
+	horizonte redondo<br>soy matem&aacute;tico centro.<br>Ocres, amarillos, verdes,<br>
+	me enredan los pensamientos...<br>-pinos, tierra; tierra, pinos;<br>Duero, 
+	chopos; chopos, Duero-.<br>El aire me hace sorber<br>tragos de fr&iacute;o 
+	silencio.<br>El p&eacute;ndulo de la tarde<br>me bate lento en el pecho.<br>El 
+	grito de un ave avanza,<br>h&eacute;lice de agudo acero:<br>manos y boca me sangran<br>
+	s&oacute;lo de intentar cogerlo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="CUANDO NACE UN HOMBRE"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Cuando nace un hombre...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Cuando nace un hombre <br>siempre es amanecer aunque en la alcoba 
+	<br>la noche pinte negros cristales. <br><br>Cuando nace un hombre <br>hay 
+	un olor a pan reci&eacute;n cocido 
+	<br>por los pasillos de la casa; <br>en las paredes, los paisajes <br>huelen 
+	a mar y a hierba fresca 
+	<br>y los abuelos del retrato <br>vuelven la cara y se sonr&iacute;en.<br><br>
+	Cuando nace un hombre 
+	<br>florecen rosas imprevistas <br>en el jarr&oacute;n de la consola <br>y aquellos 
+	p&aacute;jaros bordados 
+	<br>en los cojines de la sala <br>silban y cantan como locos. <br><br>Cuando 
+	nace un hombre 
+	<br>todos los muertos de su sangre <br>llegan a verle y se comprueban <br>en 
+	el contorno de su boca. 
+	<br><br>Cuando nace un hombre <br>hay una estrella detenida <br>al mismo 
+	borde del tejado 
+	<br>y en un lejano monte o risco <br>brota un hilillo de agua nueva. <br>
+	<br>Cuando nace un hombre <br>todas las madres de este mundo <br>sienten 
+	calor en su regazo 
+	<br>y hasta los labios de las v&iacute;rgenes <br>llega un sabor a miel y a beso. 
+	<br><br>Cuando nace un hombre <br>de los varones brotan chispas, <br>los 
+	viejos ponen ojos graves 
+	<br>y los muchachos atestiguan <br>el fuego alegre de sus venas. <br><br>
+	Cuando nace un hombre 
+	<br>todos tenemos un hermano.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#84B0D6">
+	<a name="CULPA"></a>Culpa</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Si un ni&ntilde;o agoniza, poco a poco, en silencio,<br>con el vientre abombado y 
+	la cara de greda.<br>Si un bello adolescente se suicida una noche<br>tan 
+	s&oacute;lo porque el alma le pesa demasiado.<br>Si una madre maldice soplando las 
+	cenizas.<br>Si un soldado cansado se orina en una iglesia<br>a los pies de 
+	una Virgen degollada, sin Hijo.<br>Si un sabio halla la f&oacute;rmula que aniquile 
+	de un golpe<br>dos millones de hombres del color elegido.<br>
+	<br>Si las hembras rehuyen el parir. Si los viejos<br>a hurtadillas codician 
+	a los guapos muchachos.<br>Si los lobos consiguen mantenerse robustos<br>
+	consumiendo la sangre que la tierra no empapa.<br>
+	<br>Si la c&aacute;rcel, si el miedo, si la tisis, si el hambre.<br>Es terrible, 
+	terrible. Pero yo, &iquest;qu&eacute; he de hacerle?<br>Yo no tengo la culpa. Ni t&uacute;, 
+	amigo, tampoco.<br>Somos gente honrada. Hasta vamos a misa.<br>Trabajamos. 
+	Dormimos. Y as&iacute; vamos tirando.<br>Adem&aacute;s, ya es sabido. Dios dispone las 
+	cosas.<br>
+	<br>Y nos vamos al cine. O a tomar un tranv&iacute;a.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6"><a name="DESTINO"></a>Destino</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Vaso me hiciste, herm&eacute;tico 
+	alfarero,<br>y diste a mi oquedad las dimensiones<br>que sirven a la 
+	alquimia de la carne.<br>Vaso me hiciste, recipiente vivo<br>para la forma 
+	un d&iacute;a dise&ntilde;ada<br>por el secreto ritmo de tus manos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&laquo;H&aacute;gase en m&iacute;&raquo;, repuse. Y 
+	te bendije<br>con labios obedientes al destino.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Por qu&eacute;, despu&eacute;s, me robas 
+	y defraudas?</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Libre el var&oacute;n camina por 
+	los d&iacute;as.<br>Sus recias piernas nunca soportaron<br>esa tremenda gravidez 
+	del fruto.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Liso y escueto entre &aacute;giles 
+	caderas<br>su vientre no conoce pesadumbre.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">S&oacute;lo un instante, furia y 
+	goce, olvida<br>por m&iacute; su altiva soledad de macho;<br>lib&eacute;rase a s&iacute; mismo y 
+	me encadena<br>al ritmo y servidumbre de la especie.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cu&aacute;n hondamente exprimo, 
+	laborando<br>con c&eacute;lulas y fibras, con mis &oacute;rganos<br>m&aacute;s &iacute;ntimos, vitales 
+	dulcedumbres<br>de mi profundo ser, d&iacute;a tras d&iacute;a.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">H&aacute;cese el hijo en m&iacute;. &iquest;Y 
+	han de llamarle<br>hijo del Hombre&nbsp; cuando, fieramente,<br>con decisiva 
+	urgencia me desgarra<br>para moverse vivo entre las cosas?<br>M&iacute;o es el hijo 
+	en m&iacute; y en &eacute;l me aumento.<br>Su coraz&oacute;n prosigue mi latido.<br>Saben a m&iacute; 
+	sus l&aacute;grimas primeras.<br>su risa es aprendida de mis labios.<br>y esa 
+	humedad caliente que lo envuelve<br>es la temperatura de mi entra&ntilde;a.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Por qu&eacute;, Se&ntilde;or, me lo 
+	arrebatas luego?<br>&iquest;Por qu&eacute; me crece ajeno, desprendido,<br>como amputado 
+	miembro, como rama<br>desconectada del nutricio tronco?</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">En vano mi ternura lo 
+	persigue<br>queri&eacute;ndolo ablandar, disminuy&eacute;ndolo.<br>Alto se yergue. duro se 
+	condensa.<br>Su frente sobrepasa mi estatura,<br>y ese pulido azul de sus 
+	pupilas<br>que en un rinc&oacute;n de m&iacute; cuaj&oacute; su brillo<br>me mira desde lejos, 
+	olvidando.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Apenas s&iacute; las yemas de mis 
+	dedos<br>aciertan a seguir por sus mejillas<br>aquella suave curva que, al 
+	beberme,<br>formaba con la curva de mis senos<br>dulc&iacute;sima tangencia.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="DURAR"></a></font>
+	<font face="Georgia" color="#84B0D6">Durar</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Yo pasar&eacute; y apenas habr&eacute; 
+	sido,<br>-fr&aacute;gil destino de mi pobre arcilla-.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Hijo, cuando yo no exista,<br>
+	t&uacute; ser&aacute;s mi carne, viva.<br>Verso, cuando yo no hable,<br>t&uacute;, mi palabra 
+	inextinta.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="EL FRUTO REDONDO">
+	</a></font><font face="Georgia" color="#84B0D6">El fruto redondo</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">S&iacute;, tambi&eacute;n yo quisiera ser 
+	palabra desnuda. <br>Ser un ala sin plumas en un cielo sin aire. <br>Ser un 
+	oro sin peso, un so&ntilde;ar sin ra&iacute;ces, 
+	<br>un sonido sin nadie... <br>Pero mis versos nacen redondos como frutos, 
+	<br>envueltos en la pulpa caliente de mi carne. </font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="&Eacute;XODO"></a></font><font face="Georgia" color="#84B0D6">
+	&Eacute;xodo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Una mujer 
+	corr&iacute;a.<br>Jadeaba y corr&iacute;a.<br>Tropezaba y corr&iacute;a.<br>Con un miedo macizo 
+	debajo de las cejas<br>y un ni&ntilde;o entre los brazos.<br>
+	<br>Corr&iacute;a por la tierra que ol&iacute;a a reci&eacute;n muerto.<br>Corr&iacute;a por el aire con 
+	sabor a trilita.<br>Corr&iacute;a por los hombres erizados de encono.<br>
+	<br>Miraba a todos lados.<br>Quer&iacute;a detenerse.<br>Sentarse en un ribazo y 
+	con su hijo menudo.<br>Sentarse en un ribazo y amamantar en paz.<br>
+	<br>Pero no hallaba sitio.<br>No encontraba reposo.<br>No lograba la pausa 
+	sosegada y segura<br>que las madres precisan.<br>Ese viento apacible que 
+	jam&aacute;s se interpone<br>entre el pecho y el labio.<br>
+	<br>Buscaba cerca y lejos.<br>Buscaba por las calles,<br>por los jardines y 
+	bajo los tejados,<br>en los atrios de las iglesias,<br>por los caminos 
+	desnudos y carreteras arboladas.<br>Buscaba un rinc&oacute;n sin espantos,<br>un 
+	lugar aseado para colocar una cuna.<br>
+	<br>Y corr&iacute;a y corr&iacute;a.<br>Dio la vuelta a la tierra.<br>Buscando.<br>
+	Huyendo.<br>Y no encontraba sitio.<br>Y segu&iacute;a corriendo.<br>
+	<br>Y el ni&ntilde;o sollozaba d&eacute;bilmente.<br>Crec&iacute;a d&eacute;bilmente<br>colgado de su 
+	carne fatigada.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="LA OTRA ORILLA">
+	</a></font><font face="Georgia" color="#84B0D6">La otra orilla</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">A la orilla del r&iacute;o, en una 
+	orilla,<br>miro la otra: juncos, hierva suave,<br>troncos erguidos, ramas en 
+	el viento,<br>cielo profundo, vuelos desiguales...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Y esta orilla?... Mirarla, 
+	verla, verme,<br>estando aqu&iacute; y all&iacute;; completa, ubicua...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cuando te miro, amado -amor 
+	en medio-<br>tambi&eacute;n quisiera estar en la otra orilla.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#84B0D6">
+	<a name="MUERTO AL NACER"></a>Muerto al nacer</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	No aurora fue. Ni llanto. Ni un instante <br>bebi&oacute; la luz. Sus ojos no 
+	tuvieron 
+	<br>color. Ni yo mir&eacute; su boca tierna... <br><br>Ahora, &iquest;sab&eacute;is?, lo siento. 
+	<br>Debisteis d&aacute;rmelo. Yo hubiera debido <br>tenerle un breve tiempo entre 
+	mis brazos, 
+	<br>pues s&oacute;lo para m&iacute; fue cierto, vivo... <br><br>&iexcl;Cu&aacute;ntas veces me habl&oacute;, 
+	desde la entra&ntilde;a, 
+	<br>bull&eacute;ndome gozoso entre los flancos!...</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="MUJER"></a> 
+	</font><font face="Georgia" color="#84B0D6">Mujer</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iexcl;Cu&aacute;n vanamente, cu&aacute;n 
+	ligeramente 
+	<br>me llamaron poetas, flor, perfume!... </font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Flor, no: florezco. Exhalo 
+	sin mudarme. 
+	<br>Me entregan la simiente: doy el fruto. <br>El agua corre en m&iacute;: no soy 
+	el agua. 
+	<br>&Aacute;rboles de la orilla: dulcemente <br>los acojo y reflejo: no soy &aacute;rbol. 
+	<br>Ave que vuela, no: seguro nido. </font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Cauce propicio, c&aacute;lido 
+	camino 
+	<br>para el fluir eterno de la especie. </font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="MUJER DE BARRO"></a></font><font face="Georgia" color="#84B0D6">
+	Mujer de barro</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Mujer de barro soy, mujer de barro:<br>pero el amor me floreci&oacute; el regazo.<br>
+	<br>Mujer<br>&iexcl;Cu&aacute;n vanamente, cu&aacute;n ligeramente<br>me llamaron poetas, flor; 
+	perfume!<br>
+	<br>Flor; no: florezco. Exhalo sin mudarme.<br>Me entregan la simiente: doy 
+	el fruto.<br>El agua corre en m&iacute;: no soy el agua.<br>&Aacute;rboles de la orilla, 
+	dulcemente<br>los acojo y reflejo: no soy &aacute;rbol.<br>Ave que vuela, no: 
+	seguro nido.<br>
+	<br>Cauce propicio, c&aacute;lido camino<br>para el fluir eterno de la especie.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="NADIE SABE"></a></font><font face="Georgia" color="#84B0D6">
+	Nadie sabe</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Abre 
+	tus ojos anchos al asombro<br>cada ma&ntilde;ana nueva y acompasa<br>en m&iacute;stico 
+	silencio tu latido<br>porque un d&iacute;a comienza su voluta<br>y nadie sabe nada 
+	de los d&iacute;as<br>que se nos dan y luego se deshacen<br>en polvo y sombra. 
+	Nadie sabe nada.<br>
+	<br>Pisa la tierra. Vierte la simiente.<br>Coge la flor y el fruto. Sin 
+	palabras.<br>Pues nadie sabe nada de la tierra<br>muda y fecunda que, en 
+	silencio, brota,<br>y nadie sabe nada de las flores<br>ni de los frutos 
+	ebrios de dulzura.<br>
+	<br>Mira la llamarada de los &aacute;rboles<br>irgui&eacute;ndose en lo azul. Contempla, 
+	toca<br>la piedra inm&oacute;vil de alma intraducible<br>y el agua sin contornos 
+	que camina<br>por sus trazados cauces ignor&aacute;ndolos.<br>Sue&ntilde;a sobre ellos. 
+	Sue&ntilde;a. Sin decirlo.<br>Pues nadie sabe nada de los &aacute;rboles<br>ni de la 
+	piedra ni del agua en fuga.<br>
+	<br>Mira las aves, altas, desprendidas,<br>rayando el sol a golpe de sus 
+	alas.<br>Toma del aire el trino y el gorjeo,<br>pero no quieras traducir su 
+	ritmo,<br>pues nadie sabe nada de los p&aacute;jaros.<br>Mira la estrella. Vuela 
+	hasta su altura.<br>Toma su luz y enci&eacute;ndete la frente,<br>pero no inquieras 
+	su remoto arcano<br>pues nadie sabe nada de la estrella.<br>
+	<br>Besa los labios y los ojos. Goza<br>la carne del amante sazonada<br>
+	secretamente para ti. Acomete<br>con decisi&oacute;n humilde la tarea<br>del 
+	imperioso instinto. Crece y ama.<br>Mas nada digas del tremendo rito<br>pues 
+	nadie sabe nada de los besos,<br>ni del amor ni del placer ni entiende<br>la 
+	ruda sacudida que nos pone<br>el hijo concluido entre los brazos.<br>
+	<br>Clama sin gritos. Llora sin estruendo.<br>Cierra las fauces del dolor 
+	oscuro,<br>pues nadie sabe nada de las l&aacute;grimas.<br>
+	<br>Vete a hurtadillas con discreto paso.<br>Traspasa quedamente la 
+	frontera,<br>pues nadie sabe nada de la muerte.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="NOCHE"></a></font>
+	<font face="Georgia" color="#84B0D6">Noche</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Quietos en la noche clara.<br>
+	Mi cara junto a tu cara;<br>la misma luna nos ba&ntilde;a.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Piel contra piel, en mi 
+	cuerpo<br>siento el ritmo de un latido<br>&iquest;es tu coraz&oacute;n o el m&iacute;o?...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">No s&eacute; cu&aacute;ndo me he dormido.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+	<a name="NO QUIERO"></a></font><font face="Georgia" color="#84B0D6">No 
+	quiero</font><font face="Georgia" size="2" color="#84B0D6"><br><br>No quiero<br>
+	que los besos se paguen<br>ni la sangre se venda<br>ni se compre la brisa<br>
+	ni se alquile el aliento.<br>No quiero<br>que el trigo se queme y el pan se 
+	escatime.<br>
+	<br>No quiero<br>que haya fr&iacute;o en las casas,<br>que haya miedo en las 
+	calles,<br>que haya rabia en los ojos.<br>
+	<br>No quiero<br>que en los labios se encierren mentiras,<br>que en las 
+	arcas se encierren millones,<br>que en la c&aacute;rcel se encierre a los buenos.<br>
+	<br>No quiero<br>que el labriego trabaje sin agua<br>que el marino navegue 
+	sin br&uacute;jula,<br>que en la f&aacute;brica no haya azucenas,<br>que en la mina no 
+	vean la aurora,<br>que en la escuela no r&iacute;a el maestro.<br>
+	<br>No quiero<br>que las madres no tengan perfumes,<br>que las mozas no 
+	tengan amores,<br>que los padres no tengan tabaco,<br>que a los ni&ntilde;os les 
+	pongan los Reyes<br>camisetas de punto y cuadernos.<br>
+	<br>No quiero<br>que la tierra se parta en porciones,<br>que en el mar se 
+	establezcan dominios,<br>que en el aire se agiten banderas<br>que en los 
+	trajes se pongan se&ntilde;ales.<br>
+	<br>No quiero<br>que mi hijo desfile,<br>que los hijos de madre desfilen<br>
+	con fusil y con muerte en el hombro;<br>que jam&aacute;s se disparen fusiles<br>que 
+	jam&aacute;s se fabriquen fusiles.<br>
+	<br>No quiero<br>que me manden Fulano y Mengano,<br>que me fisgue el vecino 
+	de enfrente,<br>que me pongan carteles y sellos<br>que decreten lo que es 
+	poes&iacute;a.<br>
+	<br>No quiero amar en secreto,<br>llorar en secreto<br>cantar en secreto.<br>
+	<br>No quiero<br>que me tapen la boca<br>cuando digo NO QUIERO...</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<blockquote>
+      <p align="center">&nbsp;</p>
+    </blockquote>
+	<p><font face="Georgia" color="#84B0D6"><a name="SIN LLAVE"></a>Sin llave</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Me tienes y soy tuya. Tan 
+	cerca uno del otro<br>como la carne de los huesos.<br>Tan cerca uno del otro<br>
+	y, a menudo, &iexcl;tan lejos!...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">T&uacute; me dices a veces que me 
+	encuentras cerrada,<br>como de piedra dura, como envuelta en secretos,<br>
+	impasible, remota... Y t&uacute; quisieras tuya<br>la llave del misterio...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Si no la tiene nadie... No 
+	hay llave. Ni yo misma,<br>&iexcl;ni yo misma la tengo!</font></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:15:57 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:18:03 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

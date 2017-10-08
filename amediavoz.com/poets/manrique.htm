@@ -1,0 +1,918 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jorge Manrique</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jorge Manrique. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.  Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Jorge_Manrique,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/manrique.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/manrique.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161839" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./manrique.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:18:39 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./manrique.htm" title="16:40:24 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:18:39 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./manrique.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 Jul 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:18:39 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./manrique.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>65 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">28 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110101_2003:-1:000001010100_2004:-1:010001010101_2005:-1:012100010010_2006:-1:010010000210_2007:-1:610211130100_2008:-1:202121000000_2009:-1:010000110000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:000010101000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MANRIQUE.jpg" width="260" height="37"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MANRIQUE1.jpg" width="203" height="21"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<p align="center"><br>
+<br>
+<br>
+</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><strong><font color="#526462" face="Georgia">
+		<a
+      href="./manrique.htm#A UNA DAMA MUY HERMOSA">A una dama muy hermosa</a><br>
+		<br>
+		<a href="./manrique.htm#CANCI&Oacute;N">Canci&oacute;n</a><br><br>
+		<a href="./manrique.htm#CANCIONES">Canciones</a><br>
+		<br>
+		<a href="./manrique.htm#COPLAS A LA MUERTE DE SU PADRE">Coplas a la muerte de su padre</a><br>
+		<br>
+		<a href="./manrique.htm#DICIENDO QU&Eacute; COSA ES AMOR">Diciendo qu&eacute; cosa es amor</a><br>
+		<br>
+		<a href="./manrique.htm#ELEG&Iacute;A A MI PADRE">Eleg&iacute;a a mi padre</a><br>
+		<br>
+		<a href="./manrique.htm#ESTANDO TRISTE, SEGURO...">Estando triste, seguro...</a><br>
+		<br>
+		<a href="./manrique.htm#POR QU&Eacute; ESTANDO &Eacute;L DURMIENDO LO BES&Oacute; SU AMIGA">Por qu&eacute; estando 
+		&eacute;l durmiendo lo bes&oacute; su amiga</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+		<a href="./manrique.htm#QUIEN NO ESTUVIERE EN PRESENCIA...">Quien no estuviere en 
+		presencia...</a><br>
+		<br>
+		<a href="./manrique.htm#TAPIA">Tapia</a></font><br>
+		<br>
+		<font face="Georgia"><a href="./manrique.htm#YO SOY QUIEN LIBRE ME VI...">Yo soy quien 
+		libre me vi...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><br>
+		</strong><font size="2" color="#526462"><strong>
+
+		<font face="Georgia" size="3" color="#526462"><br></font>
+		<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font>
+
+</strong></font><strong>
+
+		<font face="Georgia" color="#526462">
+		<a
+      href="./" style="color: #43504C; text-decoration: none">
+		A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+		</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></font><font face="Georgia" color="#526462">
+		<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+		Poes&iacute;a de Oro</a><br>
+&nbsp;</p></font><font face="Georgia" size="2" color="#526462">
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+		<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+		Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+		<p align="center"><font color="#404D48" size="2">Tus comentarios o 
+		sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. 
+		Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+		</font><font size="4">
+		<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+		poesia@amediavoz.com</a></font></p>
+		</font>
+
+</strong>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><a name="A UNA DAMA MUY HERMOSA">
+		</a><strong><font
+      color="#43504C">A una dama muy hermosa</font><font size="2"
+      color="#43504C"><br><br>Gentil dama muy hermosa, 
+		<br>en quien tanta gracia cabe, <br>quien os hizo que os alabe, <br>que 
+		mi lengua ya ni osa 
+		<br>ni lo sabe. <br>Y pues nombre de hermosa <br>os puso como joyel, <br>
+		&iquest;qui&eacute;n osar&aacute; sino Aqu&eacute;l 
+		<br>cuya mano poderosa <br>hizo a vos cual hizo a &Eacute;l? </font>
+		</strong>
+		</font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Compara que la rica febrer&iacute;a <br>quien la haze es quien la'smalta, <br>
+		pues hermosura tan alta, 
+		<br>que la loe quien la cr&iacute;a <br>tan sin falta. <br>Y si alguno ac&aacute; 
+		quisiere 
+		<br>pensar que quiere loaros, <br>vaya a veros, y si os viere, <br>
+		cuando acabe de miraros 
+		<br>no sabr&aacute; sino adoraros. </strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Porque aunque haga la cara <br>en perfecti&oacute;n el pintor, <br>siempre 
+		tiene alg&uacute;n temor <br>que la hiziera, si mirara, 
+		<br>muy mejor. <br>Mas qui&eacute;n a vos os cri&oacute; <br>no tiene temor d'aquesto, 
+		<br>porque en todo vuestro gesto <br>las figuras qu'&Eacute;l pint&oacute; <br>gran 
+		gentileza les dio. 
+		</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Fin Ass&iacute; que hallo que Dios <br>y su Madre gloriosa <br>no criaron tan 
+		preciosa <br>hermosura como vos, 
+		<br>ni tan hermosa. <br>Y pues tanta perfecti&oacute;n <br>os dieron sin 
+		diferencia, 
+		<br>a vuestra gran excelencia <br>escrivo por conclusi&oacute;n: <br>&laquo;Dios haga 
+		vuestra canci&oacute;n.&raquo; 
+		</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="CANCIÓN"></a></font><font color="#43504C" face="Georgia">
+		Canci&oacute;n</font></strong></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Con dolorido cuidado,<br>desgrado, pena y dolor,<br>parto yo, triste 
+		amador<br>d'amores desamparado,<br>d'amores, que no d'amor.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Y 
+		el coraz&oacute;n enemigo<br>de lo que mi vida quiere,<br>ni halla vida, ni 
+		muere,<br>ni queda, ni va conmigo:<br>sin ventura, desdichado,<br>sin 
+		consuelo, sin favor,<br>parto yo triste amador,<br>d'amores desamparado,<br>
+		d'amores, que no d'amor.</strong></font></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="CANCIONES"></a></font><font color="#43504C" face="Georgia">
+		Canciones</font></strong></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>No 
+		tardes, Muerte, que muero;<br>ven, porque viva contigo;<br>qui&eacute;reme, 
+		pues que te quiero,<br>que con tu venida espero<br>no tener guerra 
+		conmigo.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Remedio de alegre vida<br>no lo hay por ning&uacute;n medio,<br>porque mi grave 
+		herida<br>es de tal parte venida<br>qu'eres t&uacute; sola remedio.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Ven aqu&iacute;, pues, ya que muero;<br>b&uacute;scame, pues que te sigo;<br>qui&eacute;reme, 
+		pues que te quiero,<br>e con tu venida espero<br>no tener vida conmigo.</strong></font></p>
+		<p align="left">&nbsp;</p>
+
+<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+
+		<p align="left"><font color="#43504C" face="Georgia">
+		<a name="COPLAS A LA MUERTE DE SU PADRE"></a>
+		<strong>Coplas a la muerte de su padre</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Recuerde el alma dormida,<br>avive el seso y despierte <br>contemplando<br>
+		c&oacute;mo se pasa la vida,<br>c&oacute;mo se viene la muerte<br>
+		tan callando;<br>cu&aacute;n presto se va el plazer,<br>c&oacute;mo, despu&eacute;s de 
+		acordado,<br>da dolor; 
+		<br>c&oacute;mo, a nuestro parescer,<br>cualquiera tiempo pasado<br>fue mejor. 
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Y pues vemos lo presente <br>c&oacute;mo en un 
+		punto se es ido<br>y acabado,<br>si juzgamos sabiamente,<br>daremos lo 
+		no venido<br>por pasado.<br>No se enga&ntilde;e nadie, no,<br>pensando que ha 
+		de durar<br>lo que espera,<br>m&aacute;s que dur&oacute; lo que vio<br>porque todo ha 
+		de pasar<br>por tal manera.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Nuestras vidas son los r&iacute;os<br>que van a 
+		dar en la mar, <br>que es el morir;<br>all&iacute; van los se&ntilde;or&iacute;os<br>derechos 
+		a se acabar<br>y consumir;<br>all&iacute; los r&iacute;os caudales,<br>all&iacute; los otros, 
+		medianos<br>y m&aacute;s chicos,<br>
+		allegados, son iguales<br>los que viven por sus manos<br>y los ricos.<br>
+		<br><i>Invocaci&oacute;n</i><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Dexo las invocaciones<br>de los famosos poetas<br>y 
+		oradores;<br>no curo de sus ficciones,<br>que traen yerbas secretas 
+		<br>sus sabores; <br>A Aqu&eacute;l s&oacute;lo me encomiendo,<br>Aqu&eacute;l s&oacute;lo invoco yo<br>
+		de verdad,<br>que en este mundo viviendo<br>el mundo no conosci&oacute; 
+		<br>su deidad.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Este mundo es el camino<br>para el otro, que es morada<br>
+		sin pesar; 
+		<br>mas cumple tener buen tino<br>para andar esta jornada<br>sin errar.<br>
+		Partimos cuando nascemos,<br>andamos mientras vivimos,<br>y llegamos<br>
+		al tiempo que fenescemos;<br>as&iacute; que, cuando morimos 
+		<br>descansamos.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Este mundo bueno fue<br>
+		si bien us&aacute;ramos d&eacute;l 
+		<br>como debemos,<br>porque, seg&uacute;n nuestra fe, <br>es para ganar aqu&eacute;l<br>
+		que atendemos.<br>
+		Y aun el hijo de Dios,<br>para sobirnos al cielo<br>descendi&oacute; 
+		<br>a nascer ac&aacute; entre nos,<br>y a vivir en este suelo <br>do muri&oacute;.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Ved de cu&aacute;n poco valor <br>son las cosas 
+		tras que andamos<br>y corremos,<br>que, en este mundo traidor,<br>aun 
+		primero que muramos<br>las perdamos: 
+		<br>dellas deshaze la edad, <br>dellas casos desastrados<br>que 
+		acaescen, 
+		<br>dellas, por su calidad,<br>en los m&aacute;s altos estados <br>
+		desfallescen.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Dezidme, la hermosura,<br>la gentil 
+		frescura y tez<br>de la cara,<br>
+		la color y la blancura,<br>cuando viene la vejez, 
+		<br>&iquest;cu&aacute;l se para?<br>Las ma&ntilde;as y ligereza<br>y la fuerça corporal <br>
+		de juventud,<br>todo se torna graveza<br>cuando llega al arrabal 
+		<br>de senectud. <br><br>&nbsp;&nbsp;&nbsp;&nbsp; Pues la sangre de los 
+		godos, <br>y el linaje y la nobleza<br>tan crescida,<br>&iexcl;por cu&aacute;ntas 
+		v&iacute;as y modos<br>se pierde su gran alteza 
+		<br>en esta vida! <br>Unos, por poco valer,<br>&iexcl;por cu&aacute;n bajos y 
+		abatidos<br>que los tienen!<br>otros que, por no tener,<br>con oficios 
+		no debidos<br>se mantienen.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Los estados y riqueza<br>que nos dexan a 
+		deshora, <br>&iquest;qui&eacute;n lo duda?<br>
+		No les pidamos firmeza,<br>pues son de una se&ntilde;ora<br>que se muda;<br>que 
+		bienes son de Fortuna<br>que revuelve con su rueda<br>presurosa,<br>la 
+		cual no puede ser una<br>ni estar estable ni queda<br>en una cosa. 
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Pero digo que acompa&ntilde;en<br>y lleguen 
+		hasta la huesa <br>con su due&ntilde;o: 
+		<br>por eso no nos enga&ntilde;en,<br>pues se va la vida apriesa <br>como 
+		sue&ntilde;o.<br>Y los deleites de ac&aacute; 
+		<br>son, en que nos deleitamos, <br>temporales,<br>y los tormentos de 
+		all&aacute;, 
+		<br>que por ellos esperamos,<br>eternales.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		Los plazeres y dulzores<br>de esta vida trabajada<br>que tenemos, 
+		<br>&iquest;qu&eacute; son sino corredores,<br>y la muerte, la celada <br>en que 
+		caemos?<br>No mirando a nuestro da&ntilde;o,<br>corremos a rienda suelta <br>
+		sin parar; 
+		<br>desque vemos el enga&ntilde;o<br>y queremos dar la vuelta,<br>no hay lugar.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Si fuese en nuestro poder<br>hacer la cara 
+		fermosa<br>corporal, <br>como podemos hazer 
+		<br>el &aacute;nima glor&iuml;osa,<br>angelical, <br>&iexcl;qu&eacute; diligencia tan viva<br>
+		tuvi&eacute;ramos toda hora,<br>y tan presta, 
+		<br>en componer la cativa,<br>dex&aacute;ndonos la se&ntilde;ora<br>descompuesta!<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Esos reyes poderosos <br>que vemos por 
+		escrituras <br>ya pasadas,<br>
+		con casos tristes, llorosos,<br>fueron sus buenas venturas<br>
+		trastornadas.<br>As&iacute; que no hay cosa fuerte,<br>que a papas y 
+		emperadores<br>y prelados,<br>as&iacute; los trata la muerte<br>como a los 
+		pobres pastores<br>de ganados.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Dexemos a los troyanos,<br>que sus males no 
+		los vimos<br>ni sus glorias;<br>dexemos a los romanos,<br>aunque o&iacute;mos y 
+		le&iacute;mos<br>sus historias.<br>No curemos de saber<br>lo de aquel siglo 
+		pasado<br>qu&eacute; fue d'ello;<br>vengamos a lo de ayer,<br>que tambi&eacute;n es 
+		olvidado 
+		<br>como aquello.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; &iquest;Qu&eacute; se hizo el rey 
+		don Juan?<br>Los Infantes de Arag&oacute;n<br>&iquest;qu&eacute; se fizieron? 
+		<br>&iquest;Qu&eacute; fue de tanto gal&aacute;n?<br>&iquest;Qu&eacute; fue de tanta invenci&oacute;n<br>como 
+		truxieron?<br>Las justas y los torneos,<br>paramentos, bordaduras<br>y 
+		cimeras,<br>&iquest;fueron sino devaneos?<br>&iquest;qu&eacute; fueron sino verduras 
+		<br>de las eras?<br><br>&nbsp;&nbsp;&nbsp;&nbsp; &iquest;Qu&eacute; se hizieron las 
+		damas,<br>sus tocados, sus vestidos,<br>sus olores?<br>&iquest;Qu&eacute; se fizieron 
+		las llamas<br>de los fuegos encendidos<br>de amadores?<br>&iquest;Qu&eacute; se hizo 
+		aquel trovar,<br>las m&uacute;sicas acordadas 
+		<br>que ta&ntilde;&iacute;an? <br>&iquest;Qu&eacute; se hizo aquel dançar,<br>aquellas ropas 
+		chapadas 
+		<br>que tra&iacute;an? <br><br>&nbsp;&nbsp;&nbsp;&nbsp; Pues el otro, su 
+		heredero,<br>don Enrique, &iexcl;qu&eacute; poderes<br>alcançaba!<br>&iexcl;cu&aacute;n blando, 
+		cu&aacute;n halaguero<br>el mundo con sus plazeres 
+		<br>se le daba!<br>Mas ver&eacute;is, &iexcl;cu&aacute;n enemigo, <br>cu&aacute;n contrario, cu&aacute;n 
+		cruel 
+		<br>se le mostr&oacute;;<br>habi&eacute;ndole sido amigo, <br>&iexcl;cu&aacute;n poco dur&oacute; con &eacute;l<br>
+		lo que le dio!<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Las d&aacute;divas desmedidas,<br>los edificios 
+		reales<br>llenos de oro,<br>las vaxillas tan febridas,<br>los enriques y 
+		reales<br>
+		del tesoro,<br>los jaezes, los caballos<br>de su gente, y atav&iacute;os<br>tan 
+		sobrados,<br>&iquest;d&oacute;nde iremos a buscallos?<br>&iquest;qu&eacute; fueron sino roc&iacute;os 
+		<br>de los prados?<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Pues su hermano, el inocente, <br>que, en su vida, 
+		sucesor<br>se llam&oacute;,<br>&iexcl;qu&eacute; corte tan excelente<br>tuvo y cu&aacute;nto gran 
+		se&ntilde;or 
+		<br>le sigui&oacute;!<br>Mas, como fuese mortal,<br>meti&oacute;le la muerte luego<br>
+		en su fragua. 
+		<br>&iexcl;Oh, ju&iuml;zio divinal!,<br>cuando m&aacute;s ard&iacute;a el fuego, <br>echaste 
+		agua!<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Pues aquel gran Condestable,<br>maestre que 
+		conoscimos<br>tan privado,<br>no cumple que d&eacute;l se hable,<br>sino s&oacute;lo 
+		que lo vimos<br>degollado.<br>Sus infinitos tesoros,<br>sus villas y sus 
+		lugares,<br>su mandar, 
+		<br>&iquest;qu&eacute; le fueron sino lloros?<br>&iquest;fu&eacute;ronle sino pesares<br>al dexar? 
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Pues los otros dos hermanos,<br>
+		maestres tan prosperados <br>como reyes,<br>que a los grandes y medianos<br>
+		trajeron tan sojuzgados<br>a sus leyes;<br>aquella prosperidad 
+		<br>que tan alto fue subida<br>y ensalzada,<br>&iquest;qu&eacute; fue sino claridad 
+		<br>que, estando m&aacute;s encendida,<br>fue amatada? <br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		Tantos duques excelentes,<br>tantos marqueses y condes,<br>y barones 
+		<br>como vimos tan potentes,<br>di, Muerte, &iquest;d&oacute; los escondes<br>y 
+		traspones?<br>Y las sus claras haza&ntilde;as<br>que hizieron en las guerras<br>
+		y en las pazes,<br>cuando t&uacute;, cruda, te ensa&ntilde;as,<br>con tu fuerça las 
+		atierras<br>y deshazes.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Las huestes innumerables,<br>los pendones y 
+		estandartes <br>y banderas,<br>los castillos impugnables, 
+		<br>los muros y baluartes <br>y barreras,<br>la cava honda, chapada,<br>
+		o cualquier otro reparo,<br>&iquest;qu&eacute; aprovecha? 
+		<br>Que si t&uacute; vienes airada,<br>todo lo pasas de claro<br>con tu flecha.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Aqu&eacute;l, de buenos abrigo,<br>amado por 
+		virtuoso<br>de la gente,<br>el maestre don Rodrigo<br>
+		Manrique, tan famoso<br>y tan valiente; 
+		<br>sus grandes hechos y claros<br>no cumple que los alabe,<br>pues los 
+		vieron,<br>ni los quiero hazer caros<br>pues que el mundo todo sabe 
+		<br>cu&aacute;les fueron.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; &iexcl;Qu&eacute; amigo de sus 
+		amigos!<br>&iexcl;Qu&eacute; se&ntilde;or para criados<br>y parientes! 
+		<br>&iexcl;Qu&eacute; enemigo de enemigos!<br>&iexcl;Qu&eacute; maestro de esforçados<br>y 
+		valientes!<br>
+		&iexcl;Qu&eacute; seso para discretos!<br>&iexcl;Qu&eacute; gracia para donosos!<br>&iexcl;Qu&eacute; raz&oacute;n!<br>
+		&iexcl;Cu&aacute;n benigno a los sujetos,<br>y a los bravos y da&ntilde;osos, 
+		<br>un le&oacute;n!<br><br>&nbsp;&nbsp;&nbsp;&nbsp; En ventura, Octaviano; <br>
+		Julio C&eacute;sar, en vencer <br>y batallar; 
+		<br>en la virtud, Africano; <br>An&iacute;bal, en el saber <br>y trabajar; <br>
+		en la bondad, un Trajano;<br>Tito, en liberalidad 
+		<br>con alegr&iacute;a; <br>en su braço, Aurel&iuml;ano;<br>Marco Atilio, en la 
+		verdad<br>que promet&iacute;a.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Antonio P&iacute;o, en clemencia;<br>Marco 
+		Aurelio, en igualdad<br>del semblante; 
+		<br>Adr&iuml;ano, en elocuencia;<br>Teodosio, en humanidad<br>y buen talante;<br>
+		Aurelio Alexandre fue<br>en disciplina y rigor<br>de la guerra; 
+		<br>un Constantino, en la fe;<br>Camilo, en el gran amor<br>de su 
+		tierra.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; No dex&oacute; grandes tesoros,<br>ni alcanç&oacute; 
+		muchas riquezas<br>ni vaxillas;<br>mas hizo guerra a los moros,<br>
+		ganando sus fortalezas<br>
+		y sus villas.<br>Y en las lides que venci&oacute;,<br>muchos moros y caballos<br>
+		se perdieron, 
+		<br>y en este oficio gan&oacute;<br>las rentas y los vasallos <br>que le 
+		dieron.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Pues por su honra y estado,<br>en otros 
+		tiempos pasados,<br>&iquest;c&oacute;mo se hubo?<br>Quedando desamparado,<br>con 
+		hermanos y criados 
+		<br>se sostuvo.<br>Despu&eacute;s que hechos famosos<br>hizo en esta misma 
+		guerra<br>que haz&iacute;a,<br>hizo tratos tan honrosos<br>que le dieron a&uacute;n 
+		m&aacute;s tierra 
+		<br>que ten&iacute;a. <br><br>&nbsp;&nbsp;&nbsp;&nbsp; Estas sus viejas 
+		estorias <br>que con su braço pint&oacute; 
+		<br>en la juventud,<br>con otras nuevas victorias<br>agora las renov&oacute; <br>
+		en la senectud.<br>Por su grande habilidad,<br>por m&eacute;ritos y ancian&iacute;a
+		<br>bien gastada,<br>alcanç&oacute; la dignidad <br>de la gran caballer&iacute;a<br>de 
+		la Espada. 
+		<br><br>&nbsp;&nbsp;&nbsp;&nbsp; Y sus villas y sus tierras,<br>ocupadas 
+		de tiranos<br>las hall&oacute;;<br>mas por cercos y por guerras<br>y por fuerça 
+		de sus manos<br>las cobr&oacute;.<br>Pues nuestro rey natural, 
+		<br>si de las obras que obr&oacute;<br>fue servido, <br>d&iacute;galo el de Portugal<br>
+		y en Castilla quien sigui&oacute;<br>su partido.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Despu&eacute;s de puesta la vida<br>tantas vezes 
+		por su ley <br>al tablero;<br>despu&eacute;s de tan bien servida<br>la corona 
+		de su Rey 
+		<br>verdadero,<br>despu&eacute;s de tanta haza&ntilde;a<br>a que no puede bastar<br>
+		cuenta cierta,<br>en la su villa de Oca&ntilde;a<br>vino la Muerte a llamar 
+		<br>a su puerta,<br><br>&nbsp;&nbsp;&nbsp;&nbsp; diziendo: &laquo;Buen 
+		caballero,<br>dejad el mundo enga&ntilde;oso<br>
+		y su halago,<br>vuestro coraz&oacute;n de azero,<br>muestre su esfuerço famoso 
+		<br>en este trago;<br>y pues de vida y salud<br>hezistes tan poca cuenta 
+		<br>por la fama, <br>esforçad vuestra virtud <br>para sufrir esta 
+		afrenta 
+		<br>que os llama.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; &raquo;No se os haga tan 
+		amarga<br>la batalla temerosa<br>que esper&aacute;is,<br>pues otra vida m&aacute;s 
+		larga 
+		<br>de fama&nbsp; tan glor&iuml;osa<br>ac&aacute; dex&aacute;is.<br>Aunque esta vida de 
+		honor<br>tampoco no es eternal 
+		<br>ni verdadera,<br>mas con todo es muy mejor<br>que la otra temporal, 
+		<br>perescedera.<br><br>&nbsp;&nbsp;&nbsp; &raquo;El vivir que es perdurable<br>
+		no se gana con estados<br>mundanales, 
+		<br>ni con vida deleitable<br>en que moran los pecados<br>infernales.<br>
+		Mas los buenos religiosos<br>g&aacute;nanlo con oraciones <br>y con lloros;<br>
+		los caballeros famosos, 
+		<br>con trabajos y aflicciones<br>contra moros.<br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		&raquo;Y pues vos, claro var&oacute;n,<br>tanta sangre derramastes 
+		<br>de paganos,<br>esperad el galard&oacute;n<br>que en este mundo ganastes<br>
+		por las manos;<br>y con esta confiança 
+		<br>y con la fe tan entera <br>que ten&eacute;is, <br>partid con buena 
+		esperança, 
+		<br>que esta otra vida tercera<br>ganar&eacute;is.&raquo;</strong></font></p>
+		<p align="left"><i><strong>
+		<font face="Georgia" size="2" color="#43504C">Responde el Maestre</font></strong></i><font size="2" color="#43504C" face="Georgia"><strong><br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		&laquo;No gastemos tiempo ya<br>en esta vida mezquina<br>por tal modo, 
+		<br>que mi voluntad est&aacute;<br>conforme con la divina<br>para todo;<br>y 
+		consiento en mi morir<br>con voluntad plazentera,<br>clara y pura,<br>
+		que querer hombre vivir 
+		<br>cuando Dios quiere que muera,<br>es locura.&raquo;<br><br><i>Oraci&oacute;n</i><br><br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		&laquo;T&uacute;, que por nuestra maldad, 
+		<br>tomaste forma servil<br>y baxo nombre; <br>T&uacute;, que a tu divinidad<br>
+		juntaste cosa tan vil 
+		<br>como es el hombre;<br>T&uacute;, que tan grandes tormentos<br>sufriste sin 
+		resistencia<br>en tu persona,<br>no por mis merescimientos,<br>mas por 
+		tu sola clemencia 
+		<br>me perdona.&raquo;</strong></font></p>
+		<p align="left"><i><strong>
+		<font face="Georgia" size="2" color="#43504C">Cabo</font></strong></i><font size="2" color="#43504C" face="Georgia"><strong><i>
+		</i> <br><br>&nbsp;&nbsp;&nbsp;&nbsp; As&iacute;, con tal entender,<br>todos 
+		sentidos humanos<br>conservados, 
+		<br>cercado de su mujer<br>y de sus hijos, y hermanos,<br>y criados, <br>
+		dio el alma a quien gela dio,<br>el cual la ponga en el cielo 
+		<br>en su gloria. <br>Que aunque la vida perdi&oacute;,<br>nos dex&oacute; harto 
+		consuelo
+		<br>su memoria. </strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a
+      name="DICIENDO QU&Eacute; COSA ES AMOR"></a></font>
+		<font color="#43504C" face="Georgia">Diciendo qu&eacute; cosa es amor...</font></strong></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Es 
+		amor fuerça tan fuerte<br>que fuerça toda raz&oacute;n;<br>una fuerça de tal 
+		suerte,<br>que todo seso convierte<br>
+		en su fuerza y afici&oacute;n.<br>Una porf&iacute;a forçosa<br>que no se puede vencer,<br>
+		cuya fuerza porfiosa<br>hacemos m&aacute;s poderosa<br>queri&eacute;ndonos defender.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Es 
+		placer en c'hay dolores,<br>dolores en c'hay alegr&iacute;a,<br>un pesar en 
+		c'hay dulzores,<br>un esfuerzo en c'hay temores,<br>temor en c'hay 
+		osad&iacute;a.<br>Un plazer en c'hay enojos,<br>una gloria en c'hy pasi&oacute;n,<br>
+		una fe en c'hay antojos,<br>fuerza que hacen los ojos<br>al seso y al 
+		coraç&oacute;n.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Es 
+		una catividad,<br>sin parescer las prisiones,<br>un robo de libertad,<br>
+		un forzar de voluntad<br>donde no valen razones.<br>Una sospecha celosa<br>
+		causada por el querer,<br>una rabia deseosa<br>que no sabe qu'es la cosa<br>
+		que desea tanto ver.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Es 
+		un modo de locura<br>con las mudanzas que hace:<br>una vez pone 
+		tristura,<br>otra vez causa folgura,<br>como lo quiere y lo plaze.<br>Un 
+		deseo que al ausente<br>trabaja, pena y fatiga;<br>un recelo que al 
+		presente<br>hace callar lo que siente,<br>temiendo pena que diga.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Cabo</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Todas estas propiedades<br>tiene el verdadero amor.<br>El falso, mil 
+		falsedades,<br>mil mentiras, mil maldades<br>como fengido traidor.<br>El 
+		toque para probar<br>cu&aacute;l amor es bien forjado,<br>es sufrir el desamar,<br>
+		que no puede comportar<br>el falso sobredorado.<br>
+		<br>
+&nbsp;</strong></font></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<h4 align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a
+      name="ELEG&Iacute;A A MI PADRE"></a></font><font color="#43504C" face="Georgia">
+		Eleg&iacute;a a mi padre</font></strong></h4>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Recuerde el alma dormida,<br>avive el seso y despierte<br>contemplando<br>
+		c&oacute;mo se pasa la vida,<br>c&oacute;mo se viene la muerte<br>tan callando;<br>
+		cu&aacute;n presto se va el placer,<br>c&oacute;mo despu&eacute;s de acordado<br>da dolor,<br>
+		c&oacute;mo a nuestro parescer,<br>cualquiera tiempo pasado<br>fu&eacute; mejor.<br>
+		<br>Y pues cemos lo presente<br>c&oacute;mo en un punto es ido<br>y acabado<br>
+		si juzgamos sabiamente,<br>daremos lo no venido<br>por pasado.<br>No se 
+		enga&ntilde;e nadie, no,<br>pensando que ha de durar<br>lo que espera<br>m&aacute; que 
+		dur&oacute; lo que vi&oacute;,<br>porque todo ha de pasar<br>por tal manera.<br>
+		<br>Nuestras vidas son los r&iacute;os<br>que van a dar en la mar,<br>que es el 
+		morir;<br>all&iacute; van los se&ntilde;or&iacute;os<br>derechos &aacute; se acabar<br>y consumir;<br>
+		all&iacute; los r&iacute;os caudales,<br>all&iacute; los otros medianos<br>y m&aacute;s chicos;<br>
+		allegados, son iguales<br>los que viven por sus manos<br>y los ricos. 
+		</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<p><font color="#43504C" face="Georgia"><a name="ESTANDO TRISTE, SEGURO..."></a>
+		<strong>Estando, triste, seguro...</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Estando, 
+		triste, seguro, 
+		<br>mi voluntad reposava, <br>quando escalaron el muro <br>do mi 
+		libertad estava.
+		<br>A escala vista subieron <br>vuestra beldad y mesura, <br>y tan de 
+		rezio hirieron
+		<br>que vencieron mi cordura. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Luego todos mis 
+		sentidos 
+		<br>huyeron a lo m&aacute;s fuerte, <br>mas ivan ya malheridos <br>con sendas 
+		llagas de muerte. 
+		<br>Y mi libertad qued&oacute; <br>en vuestro poder cativa, <br>mas gran plazer 
+		ove yo 
+		<br>desque supe qu'era biva. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Mis ojos fueron 
+		traidores: 
+		<br>ellos fueron consintientes, <br>ellos fueron causadores <br>
+		qu'entrassen aquestas gentes 
+		<br>qu'el atalaya ten&iacute;an <br>y nunca dixeron nada <br>de la batalla que 
+		v&iacute;an, 
+		<br>ni hizieron ahumada. </strong></font></p>
+	</blockquote>
+	<blockquote>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Despu&eacute;s que 
+		ovieron entrado
+		<br>aquestos escaladores, <br>abrieron el mi costado <br>y entraron 
+		vuestros amores, 
+		<br>y mi firmeza tomaron, <br>y mi coraç&oacute;n prendieron <br>y mis sentidos 
+		robaron, 
+		<br>y a m&iacute; solo no quisieron. </strong></font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Qu&eacute; gran aleve hizieron <br>mis ojos y qu&eacute; traici&oacute;n: <br>&iexcl;por una vista 
+		que os vieron, 
+		<br>venderos mi coraç&oacute;n! </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Pues traici&oacute;n 
+		tan conoscida
+		<br>ya les plaz&iacute;a hazer, <br>vendieran mi triste vida <br>y oviera dello 
+		plazer. 
+		</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Mas el mal que cometieron <br>no tienen escusaci&oacute;n: <br>&iexcl;por una vista 
+		que os vieron <br>venderos mi coraz&oacute;n! 
+		<br>&nbsp; <br>
+&nbsp;</strong></font></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C"><a name="POR QU&Eacute; ESTANDO &Eacute;L DURMIENDO LO BESÓ SU AMIGA">
+		</a></font><strong><font
+      size="2" color="#43504C" face="Georgia">P</font><font color="#43504C" face="Georgia">or 
+		qu&eacute; estando &eacute;l durmiendo lo bes&oacute; su amiga </font>
+		<font
+      size="2" color="#43504C" face="Georgia"> <br><br>Vos cometistes traici&oacute;n,<br>
+		pues me heristes, durmiendo,<br>de una herida que entiendo<br>que ser&aacute; 
+		mayor pasi&oacute;n<br>el deseo de otra tal<br>herida como me distes,<br>que no 
+		la llaga ni mal<br>ni da&ntilde;o que me hecistes.<br>
+		<br>Perdono la muerte m&iacute;a;<br>mas con tales condiciones,<br>que de tales 
+		traiciones<br>comet&aacute;is mil cada d&iacute;a;<br>pero todas contra m&iacute;,<br>porque, 
+		de aquesta manera,<br>no me place que otro muera<br>pues que yo lo 
+		merec&iacute;.<br>
+		<br>
+&nbsp;</font></strong></p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center">
+			<font color="#43504C">
+			<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+			<p align="center"><font color="#43504C"><br>
+&nbsp;</font></p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+
+		<p align="left"><font color="#43504C" face="Georgia">
+		<a name="QUIEN NO ESTUVIERE EN PRESENCIA..."></a>
+		<strong>Quien no estuviere en presencia...</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Quien no estuviere en presencia,<br>no tenga fe en confianza,<br>pues 
+		son olvido y mudanza<br>las condiciones de ausencia.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Quien quisiere ser amado,<br>trabaje por ser presente,<br>que cuan 
+		presto fuere ausente,<br>tan presto ser&aacute; olvidado:<br>y pierda toda 
+		esperanza<br>quien no estuviere en presencia,<br>pues son olvido y 
+		mudanza<br>las condiciones de ausencia.<br>
+		<br>
+&nbsp;</strong></font></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"><font face="Georgia"><br>
+		<br>
+&nbsp;</font></font></p>
+		<p align="left"><font color="#43504C" face="Georgia"><strong>
+		<a name="TAPIA"></a>T</strong></font><strong><font face="Georgia" color="#43504C">apia</font></strong></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Ausencia puede 
+		mudar 
+		<br>amor en otro querer, <br>mas no que tenga poder <br>para hazer 
+		olvidar.
+		</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Porque siendo yo cativo <br>d'una dama que no veo, <br>tengo tan nuevo 
+		el desseo <br>que no s&eacute; c&oacute;mo me bivo.
+		<br>Y por esto de pensar <br>que ausencia mude querer, <br>mas no que 
+		tenga poder 
+		<br>para poder olvidar. <br>
+		<br>
+&nbsp;</strong></font></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="YO SOY QUIEN LIBRE ME VI..."></a></font>
+		<font color="#43504C" face="Georgia">Yo soy quien libre me vi...</font></strong></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Yo 
+		soy quien libre me vi,<br>
+		yo, quien pudiera olvidaros;<br>
+		yo s&oacute; el que, por amaros,<br>
+		estoy, desque os conosc&iacute;,<br>
+		&laquo;sin Dios, y sin vos, y m&iacute;&raquo;.</strong></font></p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">
+		Sin Dios, porque en vos adoro,<br>
+		sin vos, pues no me quer&eacute;is;<br>
+		pues sin m&iacute; ya est&aacute; de coro<br>
+		que vos sois quien me ten&eacute;is.<br>
+		Ass&iacute; que triste nasc&iacute;,<br>
+		pues que pudiera olvidaros.<br>
+		Yo so el que, por amaros,<br>
+		est&oacute;, desque os conosc&iacute;,<br>
+		sin Dios, y sin vos, y m&iacute;&raquo;.<br>&nbsp; 
+		</font><font size="2" color="#526462" face="Georgia"> 
+		<br></font></strong></p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote><font face="Georgia" size="2" color="#8FABC2">
+	<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+	<font color="#AAC0D5">
+	<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+	<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+	</p>
+	<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:18:39 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:46 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

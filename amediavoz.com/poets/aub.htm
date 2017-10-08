@@ -1,0 +1,1250 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Max Aub</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Max Aub. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Max_Aub,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app17.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/aub.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/aub.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162653" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./aub.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:26:53 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./aub.htm" title="18:54:50 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:26:53 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./aub.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:26:53 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./aub.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>20 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">17 Sep 10 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000001110_2011:-1:000000000121_2012:-1:221010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./AUB.jpg" width="200" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Yo no mato a nadie, t&uacute; no matas a nadie, <br>
+&eacute;l no mata a nadie, nosotros matamos a todos, <br>
+vosotros nos mat&aacute;is, ellos se entrematan solos...&quot;</em><br>
+<br>
+<img border="0" src="./AUB1.jpg" width="351" height="278"></font></p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Crucifixhim&quot; 
+1947<br>
+<br>
+Roberto Matta</em><i><br>
+</i></font><font color="#9BC9BB"><i><br>
+</i></font></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#9BC9BB"><br>
+			</font>
+			<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+		novelista y dramaturgo hispano-mexicano nacido en Paris en 1903, 
+		nacionalizado espa&ntilde;ol desde los veinte a&ntilde;os.<br>
+		Hijo de padre alem&aacute;n y madre francesa, residi&oacute; en Espa&ntilde;a desde los once 
+		a&ntilde;os cuando sus padres se instalaron en Valencia<br>
+		huyendo de la guerra. Desde muy joven mostr&oacute; gran inter&eacute;s en la vida 
+		cultural y pol&iacute;tica de Espa&ntilde;a, vincul&aacute;ndose&nbsp; con <br>
+		importantes personajes de la vanguardia. Afiliado al partido socialista 
+		desde 1929,&nbsp; particip&oacute; activamente en campa&ntilde;as pol&iacute;ticas, public&oacute; 
+		algunos escritos en diversos medios period&iacute;sticos, y sirvi&oacute; como 
+		agregado cultural de Espa&ntilde;a en Paris en 1937.<br>
+		Su obra po&eacute;tica se inici&oacute; en 1923 con la publicaci&oacute;n de <i>&quot;Momentos&quot;</i>,&nbsp; 
+		seguida de <i>&quot;Los poemas cotidianos&quot;</i>. En 1939, a ra&iacute;z de la guerra 
+		civil, se exili&oacute; en Francia pasando por varias c&aacute;rceles y campos de 
+		concentraci&oacute;n, siendo deportado a Djelfa, en 1942. <br>
+		A finales de ese mismo a&ntilde;o logr&oacute; huir a M&eacute;xico, pa&iacute;s en el que vivi&oacute; el 
+		resto de su vida. El <i>&quot;Diario de Djelfa&quot;</i>, publicado a&ntilde;os m&aacute;s 
+		tarde, es el producto de su estancia en Argelia.<br>
+		En la d&eacute;cada del 50 viaj&oacute; por Estados Unidos y algunos pa&iacute;ses de Europa, 
+		y s&oacute;lo en 1969 se le permiti&oacute; regresar a Espa&ntilde;a,&nbsp; donde logr&oacute; 
+		recuperar parte de su biblioteca personal que se encontraba en la 
+		Universidad de Valencia. A su regreso a M&eacute;xico continu&oacute;<br>
+		con la actividad literaria, produciendo&nbsp; la parte m&aacute;s valiosa de su 
+		obra.<br>
+		La <i>&quot;Antolog&iacute;a traducida&quot; </i>1963-1972&nbsp; re&uacute;ne una importante 
+		parte de poes&iacute;a,&nbsp; continuada con <i>&quot;Versiones y subversiones&quot;</i> 
+		1971,&nbsp; y finalizada con&nbsp; su libro p&oacute;stumo <i>&quot;Imposible Sina&iacute;&quot;</i> 
+		1982, en el que re&uacute;ne en torno al conflicto &aacute;rabe-israel&iacute; de 1967,&nbsp; 
+		un conjunto de poemas que denuncian y examinan la problem&aacute;tica de dicha 
+		guerra.<br>
+		Tras un corto viaje a Espa&ntilde;a, falleci&oacute; en M&eacute;xico el 2 de julio de 1972.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font></p>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia">
+		<a href="./aub.htm#De Poemas cotidianos 1925">De &quot;Poemas cotidianos&quot; 1925</a><br>
+		<font size="2"><a href="./aub.htm#Absorbi&oacute;...">Absorbi&oacute;...</a></font></font><font size="2"><br>
+		<font face="Georgia"><a href="./aub.htm#Almendros en flor...">Almendros en 
+		flor...</a><br>
+		<a href="./aub.htm#Linda sonata...">Linda sonata...</a><br>
+		<a href="./aub.htm#Por qu&eacute; gustar&eacute;...">Por qu&eacute; gustar&eacute;...</a><br>
+		<a href="./aub.htm#Se contonea y danza...">Se contonea y danza...</a><br>
+		</font></font><font face="Georgia"><a href="./aub.htm#Tu seno..."><font size="2">
+		Tu seno...</font></a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./aub.htm#De Diario de Djelfa 1979">De &quot;Diario de Djelfa&quot; 1979</a><br>
+		<font size="2"><a href="./aub.htm#Cuesti&oacute;n bizantina">Cuesti&oacute;n bizantina</a></font></font><font size="2"><br>
+		<font face="Georgia"><a href="./aub.htm#Odio y amor">Odio y amor</a><br>
+		<a href="./aub.htm#Sim&uacute;n">Sim&uacute;n</a><br>
+		</font></font><font face="Georgia"><a href="./aub.htm#Verano"><font size="2">
+		Verano</font></a></font></p>
+		<p align="left"><font face="Georgia" color="#95B3AA">
+		<a href="./aub.htm#Lamentos del Sina&iacute;">Lamentos del Sina&iacute; 1982</a><br>
+		<br>
+		<font size="2"><a href="./aub.htm#Ali Fakum Nazzar">Ali Fakum Nazzar - Dice el 
+		hombre: <i>dulce...</i></a></font><font color="#95B3AA"><i><font size="2">
+		</font></i><font size="2">&nbsp;&nbsp;&nbsp; </font> </font>
+		<font size="2"><br>
+		</font><a href="./aub.htm#An&oacute;nimo"><font size="2">An&oacute;nimo -&nbsp;Destruiste mi casa...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#An&oacute;nimo hebreo"><font size="2">An&oacute;nimo hebreo - &iquest;Sabr&aacute; 
+		alguien qu&eacute; quiere decir jud&iacute;o?...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#David Mordecai Euron"><font size="2">David Mordecai 
+		Euron -&nbsp;El tiempo a veces hace mal las cosas...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Erhard Goltzins"><font size="2">Erhard Goltzins 
+		-&nbsp;&iquest;Qui&eacute;n es tu hermano?...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Herman Schultz"><font size="2">Herman Schultz -&nbsp;Qu&eacute; m&aacute;s 
+		da morir ma&ntilde;ana...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Ibn Al-Arrafat"><font size="2">Ibn Al-Arrafat -&nbsp;&iquest;Y si 
+		soy, qui&eacute;n soy?...</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Jacobo Ripstein"><font size="2">Jacobo Ripstein 
+		-&nbsp;Centinela</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Saul Stern"><font size="2">Saul Stern -&nbsp;Declinaci&oacute;n</font></a><font size="2"><br>
+		</font><a href="./aub.htm#Segismundo Guri"><font size="2">Segismundo Guri -&nbsp;No 
+		somos nada...</font></a><font size="2"><br>
+		</font><br>
+		</font><font face="Georgia" size="2" color="#95B3AA">Volver a: </font>
+		<font face="Georgia" color="#95B3AA"><a href="./">A 
+		media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC"> </font>
+		<font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><br>
+			<font face="Georgia" size="3" color="#95B3AA">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a> &nbsp;&nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp;
+			<br>
+			<br>
+			<br>
+			</font></p>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#95B3AA">
+		<a name="De Poemas cotidianos 1925"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		De &quot;Poemas cotidianos&quot; 1925</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Absorbi&oacute;..."></a>Absorbi&oacute;<br>
+		la llama<br>
+		la estancia y mi yo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Almendros en flor..."></a>Almendros en flor.<br>
+		cielo azul.<br>
+		&iexcl;Qu&eacute; lindo traje mi amor!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Linda sonata..."></a>Linda sonata.<br>
+		Rubio fruto.<br>
+		La brisa en tu pelo se amansa.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Por qu&eacute; gustar&eacute;..."></a>Por qu&eacute; gustar&eacute;<br>
+		tanto mirarte<br>
+		&iquest;dime mujer?<br>
+		Por qu&eacute; gustar&eacute;<br>
+		tanto mimarte<br>
+		&iquest;dime mujer?<br>
+		Por qu&eacute; gustar&eacute;<br>
+		tanto besarte<br>
+		&iquest;dime mujer?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Y 
+		preocupado por tantos porqu&eacute;s<br>
+		He resuelto que lo mejor es:<br>
+		mirarte,<br>
+		mimarte,<br>
+		besarte,<br>
+		sin pensar porqu&eacute;.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Se contonea y danza..."></a>Se contonea y danza<br>
+		en el lomo de mi libro<br>
+		la llama.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="Tu seno..."></a>Tu seno,<br>
+		-guindas, rosas y armi&ntilde;o-<br>
+		en mi mano pleno,<br>
+		&quot;eso no, eso no&quot;<br>
+		me miraste.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Tu cabeza 
+		en mi hombro,<br>
+		&iquest;has dormido?<br>
+		&iquest;has fingido? </font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Poemas cotidianos&quot; 1925<br>
+		&quot;Talleres Omega, Barcelona 1925</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="De Diario de Djelfa 1979"></a>De &quot;Diario de Djelfa&quot;1944 y 1970</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Cuesti&oacute;n bizantina"></a>Cuesti&oacute;n bizantina</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">La playa 
+		&iquest;es orilla<br>
+		de la mar o de la tierra?<br>
+		Conseja bizantina.<br>
+		La orilla del bosque<br>
+		&iquest;es su l&iacute;mite o del llano borde?<br>
+		&iquest;Qu&eacute; frontera separa<br>
+		lo tuyo de lo m&iacute;o?<br>
+		&iquest;Qui&eacute;n acota la vida?<br>
+		&iquest;Vives hoy o ma&ntilde;ana?<br>
+		Ra&iacute;z, tallo, flor y fruto<br>
+		&iquest;d&oacute;nde empiezan y acaban?<br>
+		El mantillo<br>
+		&iquest;es orillo<br>
+		del ramaje muerto,<br>
+		del renuevo<br>
+		o del retorcido<br>
+		helecho nuevo?<br>
+		Cuesti&oacute;n bizantina.<br>
+		Importa la orilla,<br>
+		dormir limpio en ella.<br>
+		(No somos t&uacute; y yo,<br>
+		sino el hilo impalpable<br>
+		que va de tu presencia<br>
+		a la m&iacute;a.)<br>
+		L&iacute;mites y fronteras<br>
+		se agostar&aacute;n un d&iacute;a.<br>
+		Sin orillo ni orilla<br>
+		&iquest;qu&eacute; m&aacute;s da de qui&eacute;n sean<br>
+		los cachones, la arena?<br>
+		La playa es orilla<br>
+		de la mar y de la tierra,<br>
+		nunca frontera:<br>
+		Nada separa,<br>
+		Nada se para.<br>
+		Palabra.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		8-8-41</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Diario de Djelfa&quot; 2&ordf; edici&oacute;n 1970<br>
+		Editorial Joaqu&iacute;n Mortiz, S.A. M&eacute;xico</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Odio y amor"></a>Odio y amor</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Uno es el 
+		odio y el amor <br>
+		-Juan, Pedro, la tierra, el sol- <br>
+		que lo otro, lo m&iacute;o, es un pozo<br>
+		mudo, ciego, manco, sordo,<br>
+		a lo topo, <br>
+		<br>
+		con su m&uacute;sica interior <br>
+		que ve sin ser visto,<br>
+		habla sin ser o&iacute;do,<br>
+		anda sin ser sentido<br>
+		y para quien todo es amor.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		25-3-42<br>
+		<br>
+		<i>De &quot;Diario de Djelfa&quot; 2&ordf; edici&oacute;n 1970<br>
+		Editorial Joaqu&iacute;n Mortiz, S.A. M&eacute;xico</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Sim&uacute;n">
+		</a>Sim&uacute;n</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Viento 
+		loco, tierra seca,<br>
+		boca sedienta, sediento.<br>
+		Mundo ciego, arena en el cielo.<br>
+		Polvo, tormenta, tormento.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Vuela y 
+		entierra y a&uacute;lla<br>
+		la arena de duna en duna.<br>
+		Tierra que aterra y entierra<br>
+		en cielo vuelto y revuelto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		2-4-42</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Diario de Djelfa&quot; 2&ordf; edici&oacute;n 1970<br>
+		Editorial Joaqu&iacute;n Mortiz, S.A. M&eacute;xico</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Verano">
+		</a>Verano</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">1<br>
+		Igual que en amor,<br>
+		lo que dieras, doy.<br>
+		<br>
+		Despu&eacute;s de haber dado<br>
+		por nubes su nieve,<br>
+		campo, espejo fiel,<br>
+		por azul da verde.<br>
+		<br>
+		Igual que en amor<br>
+		lo que dieras, doy.<br>
+		<br>
+		2<br>
+		Julio dar&aacute; su mies<br>
+		al sol que m&aacute;s caliente,<br>
+		voluptuosa miel<br>
+		que al viento ondula y cede.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		18-3-42</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Diario de Djelfa&quot; 2&ordf; edici&oacute;n 1970<br>
+		Editorial Joaqu&iacute;n Mortiz, S.A. M&eacute;xico</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Lamentos del Sina&iacute;"></a>Lamentos del Sina&iacute;</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008 </font></i></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">La obra 
+		consiste, al igual que Antolog&iacute;a Traducida de 1965, en una recopilaci&oacute;n 
+		de poemas creados <br>
+		por falsos autores, es decir, heter&oacute;nimos que selecciona y traduce Max 
+		Aub, y que tienen en com&uacute;n, <br>
+		en este caso, su participaci&oacute;n como soldados en la llamada Guerra de los 
+		Seis D&iacute;as, que sucedi&oacute; en el<br>
+		Oriente Medio, entre el 5 y el 10 de junio de 1967.<br>
+		<br>
+		Aqu&iacute; est&aacute; una peque&ntilde;a selecci&oacute;n:</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Ali Fakum Nazzar"></a>Ali Fakum Nazzar</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>Naci&oacute; 
+		en 1942, en Alejandr&iacute;a. No pude saber nada de &eacute;l. Nadie se acordaba<br>
+		o se alzaban de hombros. Hay personas que pasan as&iacute; por el mundo; 
+		injustamente,<br>
+		como es de raz&oacute;n. Muri&oacute; el &uacute;ltimo d&iacute;a.</i><br>
+		<br>
+		Dice el hombre: <i>dulce</i><br>
+		y sabe lo que es.<br>
+		Dice el hombre: <i>sal</i><br>
+		y sabe lo que es.<br>
+		Dice el hombre: <i>verga</i><br>
+		y sabe lo que es.<br>
+		Dice el hombre: <i>Dios</i><br>
+		y sabe lo que es.<br>
+		Pero dice <i>muerte</i><br>
+		y nadie lo sabe.<br>
+		<br>
+		Y est&aacute; detr&aacute;s y delante.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008 </font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="An&oacute;nimo">
+		</a>An&oacute;nimo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>
+		Mordehai Mendil Ha-Lev&iacute;, enfermero durante la guerra y aun meses 
+		despu&eacute;s, periodista, <br>
+		me dio este texto. Vive en Jerusal&eacute;n, trabaja ahora en un ministerio. 
+		Nunca quiso decirme nada<br>
+		acerca del autor. Estos fragmentos estaban escritos en ingl&eacute;s en una 
+		hoja tama&ntilde;o oficio, <br>
+		doblado en cuatro sin que se pudiese saber d&oacute;nde empezaban. Son, sin 
+		duda, esbozos para <br>
+		un poema futuro, de ah&iacute; las repeticiones.</i><br>
+		<br>
+		<br>
+		Destruiste mi casa<br>
+		mas no lograr&aacute;s<br>
+		levantar la tuya<br>
+		sobre sus cenizas,<br>
+		esta ceniza es m&iacute;a;<br>
+		ceniza palestina<br>
+		no es ni ser&aacute; jud&iacute;a<br>
+		<br>
+		Cuando lo seas no ser&aacute; tampoco jud&iacute;a<br>
+		<br>
+		&iexcl;Palestino, sin saberlo, jud&iacute;o!<br>
+		<br>
+		Sin huelgo¹ lo dec&iacute;as<br>
+		-&iexcl;ay, triste palestino!-<br>
+		que, sin saberlo,<br>
+		eras jud&iacute;o.<br>
+		Cuando ceniza<br>
+		seas, jud&iacute;o<br>
+		no ser&aacute;s ceniza jud&iacute;a<br>
+		sino palestina.<br>
+		Me has vencido, mas no sabes por qu&eacute;,<br>
+		yo s&iacute; lo s&eacute;<br>
+		y por qu&eacute; ha sido.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Qued&eacute; con 
+		el cuidado,<br>
+		abandonado.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">¹ 
+		Huelgo. Aliento</font></i></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#9BC9BB">&nbsp;</font></i><font face="Georgia" size="2" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="An&oacute;nimo hebreo"></a>
+		An&oacute;nimo hebreo</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">
+		Evidentemente, porque estaba escrito en idioma cl&aacute;sico y perfectamente<br>
+		caligrafiado. No s&eacute; m&aacute;s; me lo dieron en Genezaret.</font></i></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&iquest;Sabr&aacute; 
+		alguien qu&eacute; quiere decir jud&iacute;o?<br>
+		Ni tu ni yo...<br>
+		-No es como ser franc&eacute;s, polaco o ruso;<br>
+		Ser jud&iacute;o es como ser ap&aacute;trida.<br>
+		Ser jud&iacute;o es otra cosa.<br>
+		Tampoco es como ser cristiano, ateo,<br>
+		de&iacute;sta o mahometano.<br>
+		Ser jud&iacute;o tampoco es ser sabra¹<br>
+		Ni tampoco tener un pasaporte israel&iacute;<br>
+		Ser jud&iacute;o &#8211;r&iacute;e un sefard&iacute;- es la hostia<br>
+		-a menos de ser ortodoxo<br>
+		y vivir en Mea Shearim,²<br>
+		haciendo el rid&iacute;culo.<br>
+		- Ser jud&iacute;o es ser hijo de Israel<br>
+		y no creer en &eacute;l.<br>
+		-Ser jud&iacute;o es ser ateo<br>
+		y rendir a Jehov&aacute; culto<br>
+		Ser jud&iacute;o es ser soldado a machamartillo<br>
+		y pacifista al mismo tiempo.<br>
+		Ser jud&iacute;o es ser blanco, amarillo y rojo.<br>
+		-No sabe nadie qu&eacute; es un jud&iacute;o;<br>
+		ni nadie sabe en qu&eacute; consiste serlo.<br>
+		-Y, sin embargo, se es.<br>
+		-Como se nace negro.<br>
+		-Por regla de Dios.<br>
+		-Por regla de dos.<br>
+		-Por regla de tres.<br>
+		-Pero nadie sabe lo que es.<br>
+		<br>
+		(Porque los hay de todos colores, altos, bajos, tontos, listos,<br>
+		imb&eacute;ciles, inteligentes, socialistas, anarquistas, reaccionarios,<br>
+		comunistas, ricos, pobres, feos, guapos, regulares, trabajadores,<br>
+		gandules, dormilones, despiertos, valientes, cobardes,<br>
+		repugnantes, cojos, mancos, bizcos, miopes, bien plantados,<br>
+		rubios, morenos, cobrizos, alemanes, franceses, griegos, <br>
+		turcos, espa&ntilde;oles. Todos jud&iacute;os.) <br>
+		<br>
+		Pero nadie sabe en qu&eacute; consiste serlo ni la circuncisi&oacute;n es una marca de 
+		f&aacute;brica.<br>
+		-No somos nadie -dice la vieja- frente al ido.<br>
+		Es cierto para los dem&aacute;s: nadie es nadie.<br>
+		S&oacute;lo los jud&iacute;os saben lo que son. Mas nadie sabe lo que es un jud&iacute;o.<br>
+		<br>
+		</font><i><font face="Georgia" size="2" color="#9BC9BB">¹ sabra: hijo de 
+		emigrantes nacidos en Israel. Figuradamente franco y generoso.<br>
+		² Mea Shearim: barrio de Jerusal&eacute;n en el que residen los jud&iacute;os 
+		ultraortodoxos<br>
+		llamados &laquo;haredim&raquo;: &laquo;temerosos de Dios&raquo;. </font></i></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><i><font face="Georgia" size="2" color="#9BC9BB">
+		</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="David Mordecai Euron"></a>David Mordecai Euron</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		<i>&iquest;C&oacute;mo se llamar&iacute;a en su juventud? No lo s&eacute;. Al llegar a Israel los 
+		jud&iacute;os cambian nombres <br>
+		y apellidos para no aparecer como Rosenthal, Weisman, Mayer, Meyer, 
+		Kohn, Suderman, etc.<br>
+		Invent&oacute; poetas como aquel esclavo Abu Gosh. Ten&iacute;a pocas ideas. Escrib&iacute;a 
+		en alem&aacute;n y lo <br>
+		traduc&iacute;a al hebreo. Muri&oacute; un viernes, al no encontrar qui&eacute;n ni c&oacute;mo 
+		llevarlo a un hospital,<br>
+		en Jerusal&eacute;n, el 27 de enero de 1967: Ya no era joven, creen que hab&iacute;a 
+		nacido en Berl&iacute;n. <br>
+		No creo que muriera en acci&oacute;n aunque me dijeron que s&iacute;. Lo dudo, no de 
+		la autenticidad <br>
+		de su poes&iacute;a.</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">1<br>
+		El tiempo, a veces, hace mal las cosas:<br>
+		perdida, perdida, perdida<br>
+		que s&oacute;lo en m&iacute; moras.<br>
+		<br>
+		S&oacute;lo a ti ve&iacute;a,<br>
+		gacela: s&oacute;lo a ti ve&iacute;as;<br>
+		no me quer&iacute;as ver.<br>
+		<br>
+		2<br>
+		En el recuerdo s&oacute;lo quedas t&uacute;,<br>
+		historia, piedras, colores,<br>
+		aguas y tierra...<br>
+		All&iacute; quedaste, yo me fui, aqu&iacute; estoy<br>
+		sin ti. Solo qued&oacute; la marca<br>
+		de tus dedos en los m&iacute;os,<br>
+		meras huellas dactilares.<br>
+		S&oacute;lo a ti ve&iacute;a,<br>
+		gacela: s&oacute;lo a ti ve&iacute;a;<br>
+		no me quenas ver.<br>
+		<br>
+		3<br>
+		Nada te ped&iacute;<br>
+		&iquest;qu&eacute; me pod&iacute;as dar que dar pudieras?<br>
+		Nada me diste, s&oacute;lo te miraba.<br>
+		En m&iacute; te llevo, y tu labio inferior,<br>
+		rosa jud&iacute;a, salidillo,<br>
+		el rosa m&aacute;s oscuro, rosa amor<br>
+		y a tus ojos profundos.<br>
+		<br>
+		S&oacute;lo a ti ve&iacute;a<br>
+		gacela: s&oacute;lo a ti ve&iacute;a;<br>
+		no me quer&iacute;as ver.<br>
+		<br>
+		4<br>
+		Nada tienes que ver conmigo y,<br>
+		a pesar de ello, est&aacute;s m&aacute;s cercana a m&iacute;<br>
+		que mi pensamiento<br>
+		en esta noche<br>
+		que nos separa desde siempre<br>
+		de todo y de todos.<br>
+		Estoy solo en la oscuridad del d&iacute;a;<br>
+		solo, contigo; t&uacute; lo sabes.<br>
+		<br>
+		S&oacute;lo a ti ve&iacute;a,<br>
+		gacela: s&oacute;lo a ti ve&iacute;a;<br>
+		no me quenas ver.<br>
+		<br>
+		5<br>
+		Tienes las piernas m&aacute;s perfectas<br>
+		que cualquier hombre haya visto.<br>
+		Si no lo sabes te lo digo.<br>
+		<br>
+		Tienes la boca m&aacute;s perfecta<br>
+		que cualquier hombre haya visto<br>
+		si no lo sabes te lo digo:<br>
+		&iexcl;Oh, t&uacute;, suave, suave, suave,...!<br>
+		<br>
+		S&oacute;lo a ti ve&iacute;a,<br>
+		gacela: s&oacute;lo a ti ve&iacute;a;<br>
+		no me quer&iacute;as ver.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#9BC9BB">&nbsp;</font></i><font face="Georgia" size="2" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Erhard Goltzins"></a>Erhard Goltzins</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		<i>Alem&aacute;n de hecho y derecho, pele&oacute; en las Brigadas Internacionales, en 
+		Espa&ntilde;a, <br>
+		internado en Francia, deportado a Alemania, fue liberado por el ej&eacute;rcito 
+		sovi&eacute;tico. <br>
+		En 1949 emigr&oacute; a Israel. Fue profesor de idiomas en Tel Aviv. Como 
+		traductor,<br>
+		form&oacute; parte del Estado Mayor. A lo largo de su vida -es el escritor m&aacute;s 
+		viejo <br>
+		de los que aqu&iacute; aparecen-. Descifraba cables enemigos. Excelente jugador 
+		de ajedrez. <br>
+		Hombre de gran cultura y numerosos defectos, deja una obra considerable 
+		acerca de<br>
+		Herder¹.<br>
+		La traducci&oacute;n me dio un trabajo -en balde- al intentar reproducir 
+		-infructuosamente- <br>
+		las rimas internas.</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&iquest;Qui&eacute;n es 
+		tu hermano?<br>
+		<br>
+		&iquest;De qu&eacute; te quejas?<br>
+		&iquest;Por qu&eacute; tanto desesperado llanto?<br>
+		Nietzsche ten&iacute;a raz&oacute;n:<br>
+		este es el siglo de los nacionalismos<br>
+		este es el siglo vil de los mil ghettos,<br>
+		del alem&aacute;n, del checo,<br>
+		del ingl&eacute;s, del franc&eacute;s,<br>
+		del espa&ntilde;ol sin olvidar el norteamericano,<br>
+		del hombre en lo que tiene de peor.<br>
+		&iquest;Qui&eacute;n es tu hermano, hermano?<br>
+		&iquest;El comunista,<br>
+		el cat&oacute;lico,<br>
+		el anarquista,<br>
+		el mahometano?<br>
+		&iexcl;Haz rayas en el polvo!<br>
+		No dejar&aacute; ni rastro de ello el viento.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">¹ Johan 
+		von Herder: Fil&oacute;sofo y fil&oacute;logo alem&aacute;n defensor de la humanidad y de la
+		<br>
+&nbsp;&nbsp; dignificaci&oacute;n del hombre. Adem&aacute;s de estudios sobre literaturas 
+		alemana, public&oacute; <br>
+&nbsp;&nbsp; el libro&nbsp; &quot;Estudios de la poes&iacute;a hebraica&quot;.</font></i></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><i><font face="Georgia" size="2" color="#9BC9BB">
+		</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Herman Schultz"></a>Herman Schultz </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>20 
+		a&ntilde;os, nacido en Berl&iacute;n, llegado a Tel Aviv en 1952, con sus padres, 
+		tenderos <br>
+		de ropa &iacute;ntima de mujer; poco ortodoxos y de honradez dudosa. Infancia 
+		dif&iacute;cil, <br>
+		ingl&eacute;s deficiente. Se hizo rega&ntilde;ar no pocas veces por ello. Onanista por 
+		convicci&oacute;n. <br>
+		Introvertido, como es natural.</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&iquest;Qu&eacute; m&aacute;s 
+		me da morir ma&ntilde;ana<br>
+		que ahora? No voy a adelantar gran cosa<br>
+		ni siquiera me agradecer&aacute;n los &aacute;rabes<br>
+		que me convierta en cad&aacute;ver.<br>
+		Escribo en alem&aacute;n.<br>
+		El alem&aacute;n es una lengua muerta<br>
+		en Galilea.<br>
+		Y aunque no fuera as&iacute;<br>
+		lo mismo da.<br>
+		Ya vi que nada sirve para nada<br>
+		y que puedo matar o trabajas<br>
+		como cualquiera.<br>
+		Qu&eacute; m&aacute;s da.<br>
+		No lo cre&iacute; as&iacute; al llegar<br>
+		a esta tierra;<br>
+		pero es igual a las dem&aacute;s.<br>
+		Nada vale la pena.<br>
+		No tiene ninguna importancia<br>
+		que Jehov&aacute;<br>
+		destruya a su enemigo,<br>
+		que dicen, es el m&iacute;o.<br>
+		Da lo mismo<br>
+		que acabe &eacute;l<br>
+		que acabe yo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Si Jehov&aacute; 
+		es Jehov&aacute;,<br>
+		Al&aacute; es Al&aacute;.<br>
+		Tendr&aacute;n un <i>gentleman agreement.</i></font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><i><font face="Georgia" size="2" color="#9BC9BB">
+		</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Ibn Al-Arrafat"></a>Ibn Al-Arrafat</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Naci&oacute; 
+		en las laderas del monte Ararat, vivi&oacute; desde muy joven en Jerusal&eacute;n, <br>
+		fue guardi&aacute;n del museo Rockefeller, donde sucedi&oacute; d&iacute;as antes de morir a 
+		un <br>
+		t&iacute;o suyo, herido. Farfullaba el ingl&eacute;s y el franc&eacute;s. Muri&oacute; en el jard&iacute;n 
+		del museo,<br>
+		el primer d&iacute;a.</font></i></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Y si soy, 
+		&iquest;qui&eacute;n soy?<br>
+		Nadie lo sabe. &iquest;Cantan las piedras<br>
+		como si fuesen viento?<br>
+		Creo que s&iacute;. No. No canta nadie.<br>
+		Todo est&aacute; oscuro.<br>
+		Pero tengo hambre, Noem&iacute;.<br>
+		Hambre de ti, pero hambre sin m&aacute;s,<br>
+		hambre sola, roedora.<br>
+		Comerte poco a poco,<br>
+		empezando por los labios,<br>
+		comerte poco a poco<br>
+		continuando por la lengua,<br>
+		comerte dormido, dormida.<br>
+		<br>
+		Mas s&oacute;lo estoy aqu&iacute; para matar.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#9BC9BB">&nbsp;</font></i><font face="Georgia" size="2" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Jacobo Ripstein"></a>Jacobo Ripstein</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		<i>Naci&oacute; en Esmirna, emigr&oacute; ni&ntilde;o con su t&iacute;o, rabino famoso, en 1949. 
+		Clept&oacute;mano de profesi&oacute;n <br>
+		y miedoso de condici&oacute;n principal, se pas&oacute; la juventud huyendo de calle 
+		en calle, de pueblo en <br>
+		ciudad. Se alist&oacute;. No hizo mal papel: muri&oacute; el cuarto d&iacute;a.</i><br>
+		<br>
+		Centinela<br>
+		<br>
+		Soy centinela:<br>
+		espero la primera luz del d&iacute;a<br>
+		para dar la orden de ataque.<br>
+		De pronto creo posible,<br>
+		hoy de que no salga el sol<br>
+		y que la noche se vuelva<br>
+		eternidad eterna.<br>
+		<br>
+		&iquest;Qu&eacute; debo hacer?<br>
+		dime, Jav&eacute;.<br>
+		Porque parece<br>
+		que as&iacute; va a suceder:<br>
+		-Dime Jav&eacute;, &iquest;qu&eacute; debo hacer?<br>
+		El tiempo est&aacute; pasando en vano.<br>
+		El horizonte no aparece.<br>
+		-Dime, Abraham &iquest;qu&eacute; debo hacer?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Ve, las 
+		estrellas brillan como nunca,<br>
+		no nace el alba...<br>
+		<br>
+		Y si gritara<br>
+		&iquest;y no me oyeran?<br>
+		<br>
+		<br>
+		* * * * *<br>
+		<br>
+		<br>
+		Miedo<br>
+		<br>
+		Todo est&aacute; llano<br>
+		oscuro solitario<br>
+		solo &iquest;d&oacute;nde est&aacute; el viento?<br>
+		All&iacute;. &iquest;Qu&eacute; ruido...? Ninguno<br>
+		y de pronto agudo<br>
+		fino, fino, silbo un tiro<br>
+		el viento muri&oacute; de miedo.<br>
+		Nadie.<br>
+		&iquest;Qui&eacute;n va? &iquest;Qui&eacute;n viene? &iquest;Qui&eacute;n sale?<br>
+		&iexcl;Madre! &iexcl;Ll&eacute;vame!<br>
+		&iexcl;Nunca te conoc&iacute;!<br>
+		Por eso estoy aqu&iacute;.<br>
+		&iexcl;Madre oscura, noche clara<br>
+		ll&eacute;vame a Tel-Aviv!<br>
+		&iquest;Qu&eacute; vine a hacer aqu&iacute;?<br>
+		<br>
+		Me pesa como plomo<br>
+		lo que perd&iacute;.<br>
+		&iexcl;Qu&eacute; leve el odio!<br>
+		No sirve, quiero algo m&aacute;s profundo,<br>
+		atroz, desconocido, machac&aacute;ndolo todo<br>
+		en ti y reducirte a lodo.<br>
+		&iexcl;Estoy perdido!<br>
+		(en todos los sentidos).</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		Espejo<br>
+		<br>
+		He aqu&iacute; la muerte<br>
+		que a nada se parece.<br>
+		Parece, t&uacute;, perece.<br>
+		Estoy frente a la muerte,<br>
+		frente a frente en el frente.<br>
+		&iquest;La tuya? &iquest;La m&iacute;a?<br>
+		&iquest;A qu&eacute; se parece?<br>
+		&iquest;A la noche o al d&iacute;a?<br>
+		&iquest;C&oacute;mo es? &iquest;Qu&eacute; color tiene?<br>
+		&iquest;Negra? &iquest;Por qu&eacute; ha de serlo?<br>
+		A lo mejor<br>
+		es igual al desierto,<br>
+		pero mayor.<br>
+		Como la vida misma,<br>
+		pero m&aacute;s grande.<br>
+		Tal vez muerta de miedo<br>
+		vi&eacute;ndose en un espejo,<br>
+		como yo.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#9BC9BB">&nbsp;</font></i><font face="Georgia" size="2" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">Jerry Levisohn</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Era un 
+		sabra¹ larguirucho, p&aacute;lido, casi albino que cantaba con<br>
+		una voz tan larga como &eacute;l, bien impostada, no como su figura<br>
+		que, a cada momento, parec&iacute;a dispuesta a troncharse. Serv&iacute;a en<br>
+		un restor&aacute;n de los que tiene por buenos, en Jerusal&eacute;n, para uso de<br>
+		altos funcionarios con visitantes o diplom&aacute;ticos suramericanos de<br>
+		pocos quehaceres. Muy apreciado por su valor sin fallas salt&oacute; sobre<br>
+		una mina ya cerca de Ismail&iacute;a, el quinto d&iacute;a.<br>
+		¹Sabra: hijo de emigrantes nacidos en Israel. Figuradamente franco y 
+		generoso.</font></i></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Mi amigo 
+		ha muerto<br>
+		con &eacute;l entierran sus recuerdos.<br>
+		Sus conocidos<br>
+		se acordar&aacute;n d&eacute;l<br>
+		pero nadie sabr&aacute;<br>
+		lo qu&eacute;l¹ sab&iacute;a.<br>
+		Han desaparecido<br>
+		&eacute;l y sus circunstancias<br>
+		y un poco de m&iacute; mismo.<br>
+		Con &eacute;l se va algo<br>
+		que, solo &eacute;l y yo sab&iacute;amos.<br>
+		<br>
+		Ma&ntilde;ana morir&eacute;<br>
+		y ya nadie sabr&aacute;<br>
+		nada de los que fue. (Cantando)<br>
+		Nacemos<br>
+		muertos.<br>
+		Nadie puede decir:<br>
+		mi amigo Jan fue as&iacute;:<br>
+		Dios no quiere testigos.<br>
+		Crecen los &aacute;rboles<br>
+		para morir.<br>
+		Crecen<br>
+		y desaparecen.<br>
+		&iquest;Para qu&eacute;, madre?<br>
+		Nadie lo sabe,<br>
+		&iquest;necesita Dios testigos?<br>
+		Creo que no,<br>
+		mas, &iquest;para qu&eacute; vivimos si no? <br>
+		Ser testigos de Dios...<br>
+		&iquest;O Dios es otro?<br>
+		Para qu&eacute;? <br>
+		&iquest;Contra quien?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">¹ sic</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		* * * * * <br>
+		<br>
+		<br>
+		Canci&oacute;n de orgullo<br>
+		<br>
+		Estoy de pie<br>
+		frente al mar.<br>
+		Al mar<br>
+		en el que nos quer&iacute;an echar.<br>
+		...Echar a la mar...<br>
+		Estoy firme,<br>
+		de pie,<br>
+		en las manos un fusil.<br>
+		Vigilando<br>
+		un campo<br>
+		donde est&aacute;n<br>
+		api&ntilde;ados<br>
+		los que nos quer&iacute;an tirar<br>
+		a la mar.<br>
+		Pienso en ti,<br>
+		que no s&eacute;<br>
+		quien<br>
+		eres.<br>
+		El mar,<br>
+		a mis pies,<br>
+		muriendo<br>
+		una y otra vez,<br>
+		pronuncia<br>
+		tu nombre.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#9BC9BB">&nbsp;</font></i><font face="Georgia" size="2" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Saul Stern"></a>Saul Stern</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Naci&oacute; en 
+		el ghetto de Viena en 1943 y lleg&oacute; tras largas peripecias, con su madre, 
+		a un kibbutz. <br>
+		Estudi&oacute;, en sus horas libres, m&uacute;sica y pintura sin gran &eacute;xito. Public&oacute; 
+		un libro de versos en 1965, <br>
+		que no pas&oacute; desapercibido: Tierra y amores. Fue mec&aacute;nico de fama. Muri&oacute; 
+		el quinto d&iacute;a, <br>
+		en los aleda&ntilde;os de Suez.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		Declinaci&oacute;n<br>
+		<br>
+		Yo no mato a nadie,<br>
+		t&uacute; no matas a nadie,<br>
+		&eacute;l no mata a nadie,<br>
+		nosotros matamos a todos,<br>
+		vosotros nos mat&aacute;is<br>
+		ellos se entrematan solos.<br>
+		<br>
+		Nadie sabe por qu&eacute;.<br>
+		<br>
+		Escudri&ntilde;a el mar.<br>
+		Esp&iacute;a el declinar<br>
+		del sol.<br>
+		Da cuenta de ti.<br>
+		Sal a ver qu&eacute; pasa.<br>
+		Inquiere, examina, descubre,<br>
+		mira a ver, atalaya.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Pide 
+		cuentas, pesquisa.<br>
+		Descubre la fuente del mal.<br>
+		&iquest;qu&eacute; sabes de tu vida?<br>
+		&iquest;Vuelve la verdad por su justicia?<br>
+		Examina...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Nadie sabe 
+		por qu&eacute;.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">yo no mato 
+		a nadie<br>
+		nosotros matamos a todos<br>
+		ellos se entrematan solos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Nadie sabe 
+		por qu&eacute;.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><i><font face="Georgia" size="2" color="#9BC9BB">
+		</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Segismundo Guri"></a>Segismundo Guri</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Hizo 
+		estudios religiosos desde su infancia en las escuelas ortodoxas m&aacute;s 
+		severas <br>
+		del ghetto de Jerusal&eacute;n. Pero no se orden&oacute; rabino sino que se fue a 
+		vivir como<br>
+		pordiosero en los arrabales de Tel-Aviv. Ignoro su edad pero no deb&iacute;a 
+		pasar de los<br>
+		treinta a&ntilde;os al morir el tercer d&iacute;a. En Mea Shearim dej&oacute; recuerdo de&nbsp; 
+		un asceta, <br>
+		en los aleda&ntilde;os obreros de las ciudades ten&iacute;ase por chiflado. Me 
+		hablaron de &eacute;l sin saber <br>
+		a qu&eacute; carta quedarse. Vest&iacute;a harapos y barba de profeta. Ahora procuran 
+		recolectar<br>
+		sus escritos. Ni verso ni prosa creo que tengan resonancia ninguna 
+		debido a su posici&oacute;n heterodoxa.</font></i></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">No somos 
+		nada<br>
+		y no seremos nada.<br>
+		No somos libres<br>
+		no seremos nunca libres.<br>
+		Sin patria seguiremos.<br>
+		Somos la hez del mundo<br>
+		y continuaremos si&eacute;ndolo.<br>
+		&iexcl;Lo sabemos, Se&ntilde;or, lo sabemos!<br>
+		Y nada nos importa<br>
+		porque T&uacute; lo eres todo.<br>
+		nada somos.<br>
+		Tuyos, s&oacute;lo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Aqu&iacute; 
+		naciste t&uacute;, palestino, &iquest;y qu&eacute;?<br>
+		&iquest;Por eso es tuya la tierra?<br>
+		&iquest;Escojiste¹ a tus padres? Tampoco yo,<br>
+		de acuerdo. Pero los m&iacute;os ten&iacute;an pasado.<br>
+		Los tuyos, a la fuerza, tambi&eacute;n.<br>
+		Pero comprende: hay hombres que nacen<br>
+		de cualquier modo, desnudos, como t&uacute;;<br>
+		y otros -como yo- que traen a cuestas<br>
+		(no me preguntes por qu&eacute;) una herencia.<br>
+		Soy de esos. T&uacute; de los otros. Conf&oacute;rmate:<br>
+		soy m&aacute;s alto que t&uacute;.<br>
+		<br>
+		¹ sic</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">Edici&oacute;n 
+		de Pascual Mas i Us&oacute;<br>
+		Ed. Visor 2008 </font></i><font face="Georgia" size="2" color="#9BC9BB">
+		<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<blockquote>
+			<font face="Georgia" size="2" color="#8FABC2">
+			<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+			<font color="#AAC0D5">
+			<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+			<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+			</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:26:53 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:05 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

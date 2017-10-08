@@ -1,0 +1,783 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Carmen Jodra Dav&oacute;</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Carmen Jodra Dav&oacute;. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Carmen_Jodra_Davo,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/jodra.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/jodra.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162905" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./jodra.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="7 Jun 2013"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:29:05 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./jodra.htm" title="14:15:46 Jun 7, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:29:05 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./jodra.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:29:05 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./jodra.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>62 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">24 Jun 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000001010100_2004:-1:000100011101_2005:-1:011100000000_2006:-1:100111000200_2007:-1:510102001100_2008:-1:000121831000_2009:-1:000001110000_2010:-1:100000001110_2011:-1:000010001000_2012:-1:000010001000_2013:7:101211010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./JODRA.jpg" width="431" height="39">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Times New Roman" size="3" color="#C5BEBE"><br>
+</font><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Trasciende de la fonda un olor suave<br>
+a sagrados ung&uuml;entos, y una queda m&uacute;sica, <br>
+contenida y cadenciosa...&quot;</em></font><font face="Georgia" size="3"
+color="#9BC9BB"><br>
+</font><font face="Arial" size="2" color="#9BC9BB"><br>
+</font><font color="#9BC9BB"><img src="./JODRA1.jpg" width="260" height="339"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Poetry&quot;<br>
+<br>
+Alphonse Mucha</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font color="#9BC9BB"><br></font>
+		<font face="Georgia" size="4" color="#9BC9BB">
+		Rese&ntilde;a biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta 
+		espa&ntilde;ola nacida en Madrid, en 1980. <br>Es licenciada en Filolog&iacute;a Cl&aacute;sica 
+		por la Universidad Aut&oacute;noma de Madrid. <br>
+		Muy temprano empez&oacute; a escribir poes&iacute;a y narrativa, convirti&eacute;ndose en una 
+		de las revelaciones de la poes&iacute;a 
+		joven <br>
+		espa&ntilde;ola. Fue merecedora de una beca de creaci&oacute;n otorgada por el 
+		Ayuntamiento de Madrid.<br>En 1998, obtuvo el primer puesto en el II Premio de 
+		Poes&iacute;a Dolores Ma&ntilde;as. En 1999,&nbsp; su libro, <i>&quot;Las moras agraces&quot;</i>,<br>
+		fue proclamado ganador 
+		&uacute;nico por unanimidad, del XIV Premio de Poes&iacute;a Hiperi&oacute;n. <br>
+		Posteriormente, en&nbsp; 1994,&nbsp; public&oacute; <i>&quot;Rincones sucios&quot;</i>.<br>Su poes&iacute;a ha sido catalogada como 
+		&quot;una voz de amplio registro y sorprendentes hallazgos, inscrita en el 
+		coraz&oacute;n <br>
+		de la tradici&oacute;n&quot;. &copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia">
+		<img border="0" src="./PERDUBARRA.jpg" width="77"
+      height="9"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#A7BEB9">
+		<br><br></font><font face="Georgia" color="#A7BEB9">
+		<a href="./jodra.htm#De Concupiscencia:">De &quot;Concupiscencia&quot;:</a></font><font
+      face="Georgia" size="2" color="#95B3AA"><br></font><font
+      face="Georgia" size="2" color="#A7BEB9"><br>
+		<a href="./jodra.htm#SER&Aacute; UN CENTAURO, UN SER HERMANFRODITA...">1. Ser&aacute; un 
+		centauro, un ser hermanfrodita...</a><br>
+		<a href="./jodra.htm#ME PREGUNTO SI ES COSA DE LA EDAD...">2. Me pregunto si es 
+		cosa de la edad...</a><br>
+		<a href="./jodra.htm#NO COMPRENDO. LA SED DEL AGUA FR&Iacute;A...">3. No comprendo. La sed 
+		del agua fr&iacute;a...</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="3" color="#A7BEB9">
+		<a href="./jodra.htm#De El ciclo sat&aacute;nico:">De &quot;El ciclo sat&aacute;nico&quot;:</a></font><font
+      face="Georgia" size="2" color="#A7BEB9"><br><br>
+		<a href="./jodra.htm#ME MIRA. PERO NO DESDE LA ALTURA...">1. Me mira. Pero no desde 
+		la altura...</a><br>
+		<a href="./jodra.htm#LA SOLEDAD, NO EL OCIO COMO DICEN...">2. La soledad, no el 
+		ocio como dicen...</a><br>
+		<a href="./jodra.htm#HOY VIENE A VERME...">3. Hoy viene a verme...</a><br>
+		<a href="./jodra.htm#&iquest;C&Oacute;MO PUDE DUDAR?">4. &iquest;C&oacute;mo pude dudar?</a><br>
+		<a href="./jodra.htm#CUANDO UNA TIENE SANGRE DE RAMERA...">5. Cuando una tiene 
+		sangre de ramera...</a><br>
+		<a href="./jodra.htm#TAMPOCO ES ESTO LO QUE YO BUSCABA...">6. Tampoco es esto lo 
+		que yo buscaba...</a><br>
+		<a href="./jodra.htm#NADA">7. Nada</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia"><a href="./jodra.htm#OTROS POEMAS:">
+		Otros poemas:</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#A7BEB9">
+		<a href="./jodra.htm#AMOR Y PSIQUE">Amor y psique</a><br>
+		<a href="./jodra.htm#DIVERTIMENTO ER&Oacute;TICO">Divertimento er&oacute;tico</a><br>
+		<a
+      href="./jodra.htm#&iexcl;EST&Eacute;RILES! &iquest;PARA QU&Eacute; LLORAS?">&iexcl;Est&eacute;riles! &iquest;Para qu&eacute; lloras?</a><br>
+		<a href="./jodra.htm#FEMMES DAMN&Eacute;ES">Femmes damn&eacute;es</a><br><a href="./jodra.htm#FATIGA">Fatiga</a><br>
+		<a href="./jodra.htm#OREMOS">Oremos</a><br><a href="./jodra.htm#PASTORAL">Pastoral</a><br>
+		<a href="./jodra.htm#RETRATO GONGORINO">Retrato gongorino</a><br>
+		<a href="./jodra.htm#SE&Ntilde;ORES, YO S&Eacute; BIEN DE LOS VENENOS...">Se&ntilde;ores, yo s&eacute; bien de 
+		los venenos...</a><br>
+		<br>Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<p align="center"><font size="3" color="#F3E9EE" face="Georgia">
+	<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center"><font size="3" color="#C5BEBE" face="Georgia"><br></font><br>
+	</p>
+	<blockquote>
+		<p align="left"><br>
+		<font face="Georgia" size="3" color="#95B3AA">
+		<a name="De Concupiscencia:"></a> </font>
+		<font face="Georgia" size="3" color="#9BC9BB">
+		De </font><font face="Georgia" size="3" color="#A7BEB9">
+		<a
+      href="./jodra.htm#ME MIRA. PERO NO DESDE LA ALTURA...">&quot;</a></font><font face="Georgia" size="3" color="#9BC9BB">Concupiscencia&quot;:<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB">
+		<br><br><a name="SER&Aacute; UN CENTAURO, UN SER HERMANFRODITA..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		1. Ser&aacute; un centauro, un ser hermafrodita...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ser&aacute; un centauro, un ser hermafrodita,<br>el toro violador y la paloma,<br>
+		con las m&oacute;rbidas formas de una poma<br>y el escudo anguloso de un 
+		escita.<br>
+		<br>Ser&aacute; otro yo, y as&iacute;, ser&aacute; exquisita<br>la uni&oacute;n. No dejaremos ni una 
+		coma<br>en donde estaba antes, y aun la Roma<br>de Ner&oacute;n aparecer&aacute; 
+		marchita.<br>
+		<br><em>&iquest; &quot;Noverat iam luxuriam...&quot;?</em> Las bacantes<br>ser&aacute;n 
+		vestales, y piadosas preces<br>sus gritos: &iexcl;nadie gana a dos estetas!<br>
+		<br>Danzando sobre &eacute;l con pies sangrantes,<br>quebraremos mil veces y 
+		mil veces<br>el cristal que cantaron los poetas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br>
+		<a name="ME PREGUNTO SI ES COSA DE LA EDAD..."></a></font>
+		<font face="Georgia" color="#9BC9BB">2. Me pregunto si es cosa de la 
+		edad...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Me pregunto si es cosa de la edad<br>o fruto de una mente depravada;<br>
+		en uno u otro caso, jam&aacute;s nada<br>puede apartarme de mi &uacute;nica idea.<br>
+		<br>Cada cosa que miro se recrea;<br>la inocencia del mundo, 
+		transformada,<br>me estremece; la carne delicada<br>se pudre con extra&ntilde;a 
+		enfermedad.<br>
+		<br>Suena un viol&iacute;n, y yo escucho un gemido;<br>miro andar a mi gato, y 
+		s&oacute;lo veo<br>el movimiento firme y repetido;<br>
+		<br>oigo al viento soplar, y oigo un jadeo.<br>y un mundo diferente, 
+		enfebrecido,<br>agita con su vista mi deseo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br>
+		<a name="NO COMPRENDO. LA SED DEL AGUA FR&Iacute;A..."></a></font>
+		<font face="Georgia" color="#9BC9BB">3. No comprendo. La sed del agua 
+		fr&iacute;a...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>No 
+		comprendo. La sed del agua fr&iacute;a<br>se calma al tercer trago; la del 
+		vino,<br>otro tanto, y el paladar m&aacute;s fino<br>se cansa del manjar que 
+		requer&iacute;a.<br>
+		<br>El sue&ntilde;o acaba al empezar el d&iacute;a,<br>y la pereza al verse en el 
+		camino;<br>todo anhelo se va tal como vino<br>apenas toma lo que 
+		pretend&iacute;a.<br>
+		<br>Y sin embargo hay una sed extra&ntilde;a<br>que mantiene sin fin toda su 
+		sa&ntilde;a...<br>Quiz&aacute; sean cosas de la adolescencia,<br>
+		<br>pero devor&eacute; anoche la manzana<br>y de nuevo me hallaba esta ma&ntilde;ana<br>
+		tr&eacute;mula toda de concupiscencia</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br></font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="De El ciclo sat&aacute;nico:"></a>De &quot;El ciclo sat&aacute;nico&quot;:</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<br></font><font face="Georgia" color="#9BC9BB">
+		<a name="ME MIRA. PERO NO DESDE LA ALTURA..."></a>1. Me mira. Pero no 
+		desde la altura...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Me mira. 
+		Pero no desde la altura,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como el Otro miraba,<br>sino asentado en la terrena grava,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sobre la roca dura.<br>
+		<br>Sonr&iacute;e con sonrisa tan impura,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que la reina de Saba<br>no era m&aacute;s seductora que &Eacute;l; me alaba,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como a fruta madura.<br>
+		<br>Yo rehuyo sus ojos en el suave<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		espejo de la alberca,<br>pero estoy deseando, y &Eacute;l lo sabe,<br>
+		<br>ceder. Me olvidar&eacute; de Buda y Cristo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		por verle m&aacute;s de cerca.<br>&iexcl;Mi Se&ntilde;or, Lucifer, Sat&aacute;n, Mefisto!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br><a name="LA SOLEDAD, NO EL OCIO COMO DICEN..."></a></font>
+		<font face="Georgia" color="#9BC9BB">2. La soledad, no el ocio como 
+		dicen...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>La soledad, no el ocio como dicen,<br>es la madre del vicio.<br>Yo, 
+		para descender el precipicio,<br>aguard&eacute; hasta que nadie me mirara.<br>
+		<br>Al dejar que mis manos se deslicen<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		por la pared de roca,<br>cuido siempre que no haya ojo ni boca<br>que 
+		hable de m&iacute; ni pueda ver mi cara.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lo que 
+		entonces no hice<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		fue sospechar que acaso,<br>invisible, miraba y sonre&iacute;a<br>
+		<br>el Mismo que hoy se dice:<br>&quot;Ya dado el primer paso,<br>esta pobre 
+		muchacha ser&aacute; m&iacute;a&quot;.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br></font><font face="Georgia" color="#9BC9BB"><a name="HOY VIENE A VERME..."></a>
+		3. Hoy viene a verme. &Eacute;l, &Eacute;l en persona...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Hoy viene a verme. &Eacute;l, &Eacute;l en persona.<br>No intento resistirme, por 
+		supuesto.<br>Ir&oacute;nico y burl&oacute;n, llega dispuesto<br>a &quot;salvarme de lo que 
+		me obsesiona&quot;:<br>
+		<br>tal dice. Su belleza desentona<br>con el eterno universal denuesto<br>
+		de que le han hecho objeto; aparte de esto,<br>me ofrece lo que nunca se 
+		perdona.<br>
+		<br>Tendiendo, en fin, el ominoso pliego,<br>me ha mirado con ansia tan 
+		humana<br>que chispean sus ojos como el fuego.<br>
+		<br>&iexcl;Un alto precio por una manzana!<br>Temblando igual que &Eacute;l, respiro 
+		y niego,<br>pero no s&eacute; lo que dir&eacute; ma&ntilde;ana.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br><a name="&iquest;CÓMO PUDE DUDAR?"></a></font>
+		<font face="Georgia" color="#9BC9BB">4. &iquest;C&oacute;mo pude dudar? &iquest;C&oacute;mo he 
+		podido...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&iquest;C&oacute;mo pude 
+		dudar? &iquest;C&oacute;mo he podido<br>vivir sin vida todos estos a&ntilde;os?<br>Por 
+		evitarme da&ntilde;os, tuve da&ntilde;os,<br>y huyendo penas, penas me han venido.<br>
+		<br>&iexcl;Cu&aacute;nto tiempo, cu&aacute;nto placer, perdido<br>en virtud, muerte, ritos 
+		tan extra&ntilde;os<br>como inflexibles, m&iacute;sticos enga&ntilde;os,<br>humillaciones, 
+		Dios! &iexcl;Qu&eacute; buena he sido!<br>
+		<br>Me arrepiento del tiempo en que fui buena,<br>viviendo sin gozar el 
+		prodigioso<br>fulgor del mal, quebrando mi destino.<br>
+		<br>Y ahora que su goce me envenena,<br>&iquest;c&oacute;mo negarse, si es tan 
+		delicioso,<br>o c&oacute;mo retornar al buen camino?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br><a name="CUANDO UNA TIENE SANGRE DE RAMERA..."></a></font>
+		<font face="Georgia" color="#9BC9BB">5. Cuando una tiene sangre de 
+		ramera...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Cuando una tiene sangre de ramera,<br>brutal desprecio hacia la 
+		mayor&iacute;a,<br>tendencia a decir no a todo consejo<br>e inclinaci&oacute;n al mal 
+		por el mal mismo,<br>
+		<br>no podr&iacute;a ser casta aunque quisiera,<br>integrarse en la masa no 
+		podr&iacute;a,<br>y sin conseguir nada se har&aacute; viejo<br>quien intente apartarla 
+		del abismo.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pero adem&aacute;s 
+		ocurre<br>que ella no pondr&aacute; nada de su parte.<br>Ya tiene, y hace, y 
+		es, lo que prefiere;<br>
+		<br>pensar siquiera en la virtud aburre<br>a quien ha hecho del vicio 
+		todo un arte,<br>y ni encuentra salida, ni la quiere.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br></font><font face="Georgia" color="#9BC9BB"><a name="TAMPOCO ES ESTO LO QUE YO BUSCABA..."></a>
+		6. Tampoco es esto lo que yo buscaba...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Tampoco es esto lo que yo buscaba.<br>Es mucho, pero a&uacute;n no es 
+		suficiente.<br>No es m&aacute;s que otro camino diferente<br>que no lleva 
+		tampoco a parte alguna.<br>
+		<br>La pena sigue, si el placer acaba;<br>el m&aacute;s bello pecado no es 
+		potente<br>para cambiar las cosas, y el doliente<br>llora como llor&oacute; 
+		desde la cuna.<br>
+		<br>Ni la perversidad m&aacute;s deliciosa<br>lograr&aacute; que me sienta yo dichosa,<br>
+		como antes la virtud no lo lograba.<br>
+		<br><em>Ya tengo, y hago, y soy, lo que prefiero;</em><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de acuerdo, claro... pero<br>tampoco es esto lo que yo buscaba.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * *<br>
+		<br></font><font face="Georgia" color="#9BC9BB"><a name="NADA"></a>7. 
+		Nada</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>Sobre 
+		las altas b&oacute;vedas del cielo,<br>yo habit&eacute; los palacios donde el hielo<br>
+		brilla en azul, y en busca de consuelo<br>me embriagu&eacute; de licores 
+		celestiales.<br>
+		<br>Y en las c&aacute;maras bajas del subsuelo,<br>los antros llameantes del 
+		desvelo<br>y del vicio, y en busca de consuelo<br>me emborrach&eacute; con 
+		vinos infernales.<br>
+		<br>Ahora quieren que elija: o uno u otro.<br>No saben que, una vez la 
+		elecci&oacute;n hecha,<br>seguir&iacute;a buscando, insatisfecha<br>
+		<br>criatura a medio hacer, sobre la cresta<br>de la duda hasta el fin, 
+		y no hay respuesta<br>posible, nada, nunca...<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ni Uno ni Otro.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="OTROS POEMAS:"></a></font><font face="Georgia" color="#9BC9BB">
+		Otros poemas</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="AMOR Y PSIQUE"></a></font><font face="Georgia" color="#9BC9BB">
+		Amor y psique</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Amor, hijo 
+		de Poros y Pen&iacute;a,<br>pobre como su madre la Pobreza,<br>cazador sin 
+		fortuna,<br>un solo pensamiento en la cabeza.<br>Lo que intenta alcanzar 
+		se desvanece<br>apenas alcanzado;<br>vuelve a buscar, y busca,<br>
+		lanzando redes, flechas y a&ntilde;agazas,<br>infatigable, pobre desgraciado.<br>
+		<br>La diosa se est&aacute; peinando<br>entre cortina y cortina;<br>los 
+		cabellos son de oro,<br>el peine de plata fina,<br>y entre pasada y 
+		pasada<br>toma n&eacute;ctar y ambros&iacute;a.<br>y la diosa est&aacute; envidiando<br>a una 
+		pobre ninfa<br>que se debate perpleja, tan joven, tan joven,<br>tan 
+		joven y hermosa<br>como perdida.<br>
+		<br>&iquest;Y bien?... Que se quem&oacute; el Amor los dedos<br>sobre su propia 
+		antorcha<br>por esa tan hermosa que ha irritado<br>a Afrodita la 
+		hermosa.<br>Porque tiene el encanto incomprensible<br>de lo indefenso y 
+		lo reci&eacute;n nacido,<br>porque mira con ojos muy abiertos,<br>porque no 
+		entiende a Dios ni entiende el mundo,<br>y porque se devana la cabeza<br>
+		tratando de entenderlos, y no puede,<br>y porque su estupor le pide a 
+		gritos<br>el trozo que ella siente que le falta...<br>Y porque el joven 
+		dios ve de repente<br>que ella es el trozo que le falta a &eacute;l,<br>y todo 
+		hace que Afrodita sea<br>-tan fuerte, tan segura-, casi fea...<br>
+		<br>Y as&iacute; fue, y as&iacute; ha sido.<br>El uno que sabiendo lo que quiere<br>no 
+		logra mantenerlo,<br>la otra ignorante tanto de qu&eacute; busca<br>como del 
+		modo de llegar a ello,<br>al margen de Afrodita,<br>al margen de la 
+		incomprensible espita<br>por la que orina el mundo incomprensible,<br>al 
+		margen de la vida y de la muerte,<br>para siempre abrazados.<br>Ahora 
+		son ya dos pobres desgraciados.<br>Pero dos. Para siempre.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="DIVERTIMENTO ERÓTICO"></a> 
+		</font><font face="Georgia" color="#9BC9BB">
+		Divertimento er&oacute;tico</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Un gemido doliente entre la alhe&ntilde;a,<br>un r&iacute;tmico suspiro en el helecho,<br>
+		musgo y pluma por s&aacute;bana del lecho,<br>por dosel hoja, por almohada 
+		pe&ntilde;a,<br>
+		<br>y la lujuria tiene como se&ntilde;a<br>violar mujeres y violar derecho<br>y 
+		ley y norma, y un hermoso pecho<br>sabe el pecado y el pecado ense&ntilde;a.<br>
+		<br>Trasciende de la fonda un olor suave<br>a sagrados ung&uuml;entos, y una 
+		queda<br>m&uacute;sica, contenida y cadenciosa,<br>
+		<br>y el blanco cuerpo de la bella ave<br>y el blanco cuerpo de la bella 
+		Leda,<br>bajo el peso del cisne temblorosa. 
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="&iexcl;EST&Eacute;RILES! &iquest;PARA QU&Eacute; LLORAS?"></a>&iexcl;Est&eacute;riles! &iquest;Para qu&eacute; lloras?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		&iexcl;Est&eacute;riles! &iquest;Para qu&eacute; lloras?<br>Si nunca podr&aacute;s tener nada.<br>Si a 
+		demoras siguen demoras,<br>y la explicaci&oacute;n huye alada,
+		<br>y amargan tu lengua las moras<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a&uacute;n en agraz.<br>&iquest;Y pides un poco de paz?<br>
+		<br>El drama es mil veces m&aacute;s viejo<br>que t&uacute;. Piensa en Grecia y en 
+		Roma,<br>y a&uacute;n m&aacute;s atr&aacute;s. No me quejo:<br>de siempre hubo cuervo y 
+		paloma<br>y la lucha atroz. &iquest;Un consejo?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		D&eacute;jate estar.<br>La muerte te vendr&aacute; a buscar.<br>
+		<br>Porque nunca llega el verano<br>que endulce las moras agraces.<br>
+		Amor ni divino ni humano,<br>ni salmos ni bromas procaces,<br>ni artista 
+		ni amigo ni hermano<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		te saciar&aacute;n.<br>Ni vino ni agua ni pan.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Ni esto, 
+		ni eso, ni aquello.<br>Puedes probar cada camino:<br>acaban en nada. El 
+		destello<br>que un tiempo llamaste &quot;divino&quot;<br>no es luz, y apenas si es 
+		bello.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Es fr&iacute;o 
+		y crual.<br>&iquest;A qu&eacute; preocuparse por &eacute;l?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&iquest;A qu&eacute; 
+		tanta lucha, si luego<br>el fin es a todos igual?<br>&iquest;A qu&eacute; este jugar 
+		con el fuego,<br>si juegues bien o juegues mal<br>la muerte es el premio 
+		del juego?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &iquest;O 
+		es el castigo?<br>&iexcl;Est&eacute;riles...! Llora conmigo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="FATIGA"></a>Fatiga</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Hay 
+		demasiadas cosas<br>de las que preocuparse,<br>siempre distintas, 
+		siempre imprescindibles,<br>y nunca se termina,<br>y apenas se 
+		respira... Y adem&aacute;s<br>est&aacute; el muchacho que jam&aacute;s nos mira,<br>la chica 
+		que no sabe que la amamos<br>Y Plat&oacute;n predicando represiones...<br>Y a 
+		esto le llaman vida...</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="FEMMES DAMN&Eacute;ES"></a>Femmes damn&eacute;es</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Muchacha, 
+		si te entregas a los cerdos,<br>merecer&aacute;s morir en la matanza.<br>No 
+		ser&iacute;a en todo caso m&aacute;s horrible que la horrible,<br>c&iacute;nica contradanza.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Preg&uacute;ntate 
+		por qu&eacute; has de estar debajo<br>si eres mejor que ellos.<br>Cr&eacute;eme, 
+		muchacha, la heteropat&iacute;a<br>nunca fue un buen invento.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="OREMOS"></a></font><font face="Georgia" color="#9BC9BB">
+		Oremos</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		L&iacute;branos de la pena porque ella<br>destroza el coraz&oacute;n larvadamente<br>y 
+		trae sombra a los ojos de los ni&ntilde;os.<br>
+		<br>L&iacute;branos de la dicha porque a ella<br>le siguen siempre penas que la 
+		hacen<br>a&uacute;n m&aacute;s amarga que las penas mismas.<br>
+		<br>L&iacute;branos del dolor que nos reduce<br>a tristes bestias de ojos 
+		humillados<br>que s&oacute;lo buscan un rinc&oacute;n caliente.<br>
+		<br>L&iacute;branos del placer que nos obliga<br>a creer que este mundo es 
+		dulce y bueno<br>justo hasta que salimos del encanto.<br>
+		<br>L&iacute;branos del mal hado y la pobreza<br>que nos azotan con mano 
+		invisible<br>hasta que maldecimos nuestros nombres.<br>
+		<br>L&iacute;branos del buen hado y la abundancia<br>que vierten la ponzo&ntilde;a 
+		gris del tedio<br>en la copa de oro del cinismo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="PASTORAL"></a>Pastoral</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A la serena duerme mi ganado...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Miguel Hern&aacute;ndez</em><br><br>A un cordero que es entre los reba&ntilde;os<br>lo 
+		que un muchacho hermoso entre la gente<br>lo quiero con cari&ntilde;o 
+		diferente,<br>m&aacute;s propio de un rapaz que de mis a&ntilde;os.<br>
+		<br>Come en mi mano; bebe de los ca&ntilde;os<br>de metal renegrido de la 
+		fuente;<br>me bala, y su balido sonriente<br>inunda de dulzor los 
+		aleda&ntilde;os.<br>
+		<br>Esta ma&ntilde;ana en que yo estoy bordando<br>grecas en un mantel, y canta 
+		el tordo,<br>y mi cordero bala casi hablando,<br>
+		<br>mientras &eacute;l bala y brilla el sol y bordo,<br>me pregunto si lo 
+		querr&eacute; igual cuando<br>envejezca y se vuelva fuerte y gordo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="RETRATO GONGORINO"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Retrato gongorino</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Es la hora aquella en que el carro Febeo<br>ha comenzado ha poco su 
+		carrera,<br>y una boca de hoguera<br>su aliento abrasador da ya 
+		encendido<br>a hemisferio dormido,<br>cuando aquel a quien nunca llaman 
+		feo<br>ni han raz&oacute;n, que alto m&aacute;s que Cipariso,<br>que Jacinto fragante<br>
+		y m&aacute;s ensimismado que Narciso<br>y orgulloso que Apolo ser pudiera<br>si 
+		Olimpo griego su morada fuera<br>por ciudad castellana,<br>vuelve a la 
+		vida desde el oscilante<br>caliginoso mundo que se habita<br>a p&aacute;rpados 
+		bajados<br>y disuelve la luz de la ma&ntilde;ana.<br>Sobre plumas y linos 
+		abrazados,<br>pasa de tierno ovillo a ancha corriente;<br>los paisajes 
+		que viera un selenita<br>tiemblan en ese r&iacute;o,<br>que a var&oacute;n como a 
+		hembra quita el fr&iacute;o.<br>Al hilo dignifica la hermosura,<br>dulcemente 
+		inmadura,<br>del tendido durmiente,<br>porque en diecis&eacute;is a&ntilde;os 
+		<br>no ha habido tiempo a&uacute;n para los da&ntilde;os <br>de tiempo cruel o 
+		pr&aacute;ctica natura, 
+		<br>que sacrifica el arte a la simiente; <br>en el cuerpo yacente <br>
+		hay candor y abandono y hay tersura<br>que v&eacute;rtigo provoca,
+		<br>como provoca v&eacute;rtigo la boca,<br>roja rosa entreabierta <br>de 
+		riqu&iacute;simo aroma, 
+		<br>con las m&oacute;rbidas formas de una poma, <br>que al m&aacute;s dormido instinto 
+		lo despierta. 
+		<br>Y los p&aacute;rpados lisos, <br>y de las cejas las espesas l&iacute;neas, <br>que 
+		no han tocado nunca las Erinias
+		<br>con sus crueles avisos, <br>la barbilla perfecta, <br>la nariz 
+		intachablemente recta 
+		<br>y la suave mejilla ruborosa; <br>la cara m&aacute;s hermosa, <br>en fin, y 
+		el cuerpo m&aacute;s hermoso y noble 
+		<br>que engendrara jam&aacute;s mujer alguna, <br>y no quiso el azar hacerlo 
+		doble 
+		<br>porque tanta belleza fuera una,<br>y pudiera decirse con justicia:<br>
+		&quot;&iexcl;Sin par!&quot;; y, en su malicia,<br>por no excederse en buena la Fortuna.<br>
+		Frunciendo el fino ce&ntilde;o,<br>la sublime criatura deja el sue&ntilde;o,<br>que 
+		parece llorar por su partida,<br>y en actitud que fuera,<br>para aquel 
+		que lo viera,<br>recompensa y gloria inmerecida,<br>se mueve y despereza<br>
+		con voluptuosidad, y al fin bosteza<br>con tan dulce bostezo,<br>que le 
+		envidian las flores m&aacute;s preciosas<br>del naranjo, el almendro y el 
+		cerezo.<br>Su aliento es el aliento de las rosas...<br>Se yergue, y su 
+		hermosura al cielo embriaga<br>y al barro que su planta pisa halaga,<br>
+		y el &aacute;guila recuerda<br>sus misiones de anta&ntilde;o<br>y lamenta que hoy, 
+		para su da&ntilde;o,<br>sea la divinidad siempre tan cuerda. 
+		<br>Con leve pie el muchacho sale y deja, <br>m&aacute;s cuanto m&aacute;s se aleja, 
+		<br>arrebatada y anhelosa el alma <br>y vac&iacute;a de calma.<br><br><br>&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="SE&Ntilde;ORES, YO S&Eacute; BIEN DE LOS VENENOS..."></a>Se&ntilde;ores, yo s&eacute; bien 
+		de los venenos... 
+		</font><font face="Georgia" size="2" color="#9BC9BB">
+		<br><br>Se&ntilde;ores, yo s&eacute; bien de los venenos <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de la literatura: 
+		<br>la tiran&iacute;a imp&uacute;dica y terrible <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de una Belleza impura 
+		<br>que nos mancha los labios de palabra, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los ojos de figura 
+		<br>y el cerebro de sue&ntilde;os o pecados, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en flagrante, diab&oacute;lica impostura.
+      	<br>No la deseo a nadie, y nadie <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		debe desearla nunca, 
+		<br>pero benditos los que se someten <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a su mirada oscura. 
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br><br>
+		</font><font face="Georgia" size="2" color="#8FABC2">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p></font>
+		<p align="center"></noscript> &nbsp;<!--  http://www.addfreestats.com --><!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --></p>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:29:05 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:20:34 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

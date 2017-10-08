@@ -1,0 +1,695 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Tudor Arghezi</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Tudor Arghezi."
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Tudor Arghezi. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Tudor_Arghezi,poesias,poetas,poemas,traducciones,textos,poesia_visual,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#D2D2D2" vlink="#D2D2D2" alink="#D2D2D2">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/arghezi.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/arghezi.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815182238" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./arghezi.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:22:38 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./arghezi.htm" title="3:08:56 May 4, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:22:38 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./arghezi.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:22:38 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./arghezi.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>51 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jan 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:120031010300_2007:-1:010003030500_2008:-1:100111400100_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000002100_2012:-1:020010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p><script language="javascript" src="/web/20130815182238js_/http://127.0.0.1:1026/js.cgi?pca&amp;r=53"></script></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ARGHEZI.jpg" width="303" height="53"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ARGHEZI1.jpg" width="227" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="705" height="345">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="697"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="318" width="277" valign="top"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./ARGHEZI2.jpg" width="215" height="306"></td>
+    <td width="416" valign="top" height="318">
+	<p align="left"><u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a biogr&aacute;fica</font></u><font size="2" color="#C4CAD4" face="Georgia"><br>
+    <br>
+    Seud&oacute;nimo de Ion Theodorescu, poeta y novelista rumano nacido en Bucharest 
+	en 1880.<br>
+	Despu&eacute;s de terminar la escuela b&aacute;sica en Saint Sava High School, trabaj&oacute; en 
+	diversos oficios para sostener sus estudios superiores. En 1896 public&oacute; los 
+	primeros versos en la revista de su orientador Alexandru Macedonski, 
+	mostrando desde entonces su inclinaci&oacute;n por la escuela simbolista.<br>
+	Ingres&oacute; como monje en el monasterio Cordeleri y posteriormente&nbsp; vivi&oacute; 
+	en Paris, Suiza e Italia. A su regreso a Rumania en 1916, fue perseguido y 
+	encarcelado por su neutralidad pol&iacute;tica. Su primera publicaci&oacute;n po&eacute;tica 
+	apareci&oacute; en 1927 con el nombre de <i>&quot;Palabras adecuadas&quot;.</i><br>
+	Sus escritos contra la autoridad nazi establecida en Rumania durante la 
+	segunda guerra mundial, lo llevaron de nuevo a la c&aacute;rcel en 1944.<br>
+	En 1965 recibi&oacute; m&aacute;ximos honores y fue declarado por el gobierno como Poeta 
+	Nacional. Falleci&oacute; en 1967. &copy;</font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Tudor Arghezi:</font></p>
+<blockquote>
+  <blockquote>
+    <p align="left"><font face="Georgia" size="2" color="#FFFFFF">
+	<br><br></font><font face="Georgia" color="#FFFFFF">
+	<a href="./arghezi.htm#CANCI&Oacute;N PARA ADORMECER A MITZOURA">Canci&oacute;n para adormecer a 
+	Mitzoura</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./arghezi.htm#EL SALMO DEL MISTERIO">El salmo del misterio</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#ENTRE NOCHES">Entre noches</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#ESPONSALES">
+	Esponsales</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#HE AQU&Iacute;, ALMA M&Iacute;A">
+	He aqu&iacute;, alma m&iacute;a, los versos sin rostro...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./arghezi.htm#La ceniza de nuestros sue&ntilde;os...">La ceniza de nuestros sue&ntilde;os...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./arghezi.htm#PR&Oacute;LOGO DEL LIBRO DE LOS PAISAJES">Pr&oacute;logo del libro de los 
+	paisajes</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#SALMO">Salmo</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#STANE, CAPIT&Aacute;N">
+	Stane, capit&aacute;n</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./arghezi.htm#TESTAMENTO">
+	Testamento</a></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+	<a href="./index.htm">A media voz </a><br></font>
+	<font face="Georgia" size="2" color="#D2D2D2">
+	<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#C4CAD4">
+	</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+	Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+	</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: 
+		<br>
+		</font><font color="#D3D3CF"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+  </blockquote>
+</blockquote>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+    <p><font color="#C4CAD4" face="Georgia" size="2"><a name="CANCIÓN PARA ADORMECER A MITZOURA"></a>
+	</font><font color="#C4CAD4" face="Georgia">Canci&oacute;n para adormecer a 
+	Mitzoura</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>Hazle, 
+	Dios m&iacute;o, una caba&ntilde;a al sol,<br>en un rinc&oacute;n de la vieja campi&ntilde;a,<br>no debe 
+	ser m&aacute;s alta que una flor<br>que sea del tama&ntilde;o de una oreja.<br>
+	<br>Hazle una charca de agua bajo el sol,<br>y de un palo de f&oacute;sforo una 
+	nave<br>para que en su azufrada cabecita<br>ella pueda tocar el infinito.<br>
+	<br>D&aacute;le una mariposa delicada<br>y una rana tallada en esmeralda<br>y, Dios 
+	m&iacute;o, promete a su caba&ntilde;a<br>alg&uacute;n calor en el bosque de absintio.<br>
+	<br>Dale tambi&eacute;n, Dios m&iacute;o, los colores<br>y el papel de la China necesario<br>
+	para que borroneando en &eacute;l, Mitzoura,<br>dise&ntilde;e los perfiles de tu gloria.<br>
+	<br>Porque, por fin, cuando todo est&eacute; listo,<br>Dios m&iacute;o, el padre vivir&aacute; en 
+	su casa.<br>
+	<br><em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="EL SALMO DEL MISTERIO"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	El salmo del misterio</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Oh, t&uacute;, la de otro tiempo<br>perdido en los caminos de la tierra!<br>Qui&eacute;n 
+	ha puesto tu frente sobre mi alma<br>tomando en ella el sitio de la madre?<br>
+	Mujer en m&iacute; esparcida<br>como est&aacute; la fragancia en una selva<br>porque tu 
+	nombre se escribi&oacute; en el sue&ntilde;o<br>a golpe de hacha se grab&oacute; en m&iacute; mismo,<br>
+	T&uacute; amarraste mi vida a la canci&oacute;n<br>e hiciste que mis brazos la buscaran<br>
+	en tus manos y sobre tus mejillas.<br>
+	<br>Como si hubieras sido un brazalete<br>ce&ntilde;ida te llev&eacute; a mi pensamiento<br>
+	cuando aspir&eacute; a mecer entre mis brazos<br>al hijo de los hombres.<br>Rosa 
+	pura, te obstinas en mi cruz<br>con clavos de diamante<br>y en cualquier 
+	movimiento<br>pierdes por cada p&eacute;talo una estrella.<br>Im&aacute;n de mis deseos,<br>
+	oh, t&uacute; fuente de sed encarnizada,<br>tierra de los reba&ntilde;os,<br>tierra de las 
+	cosechas y las sombras.<br>
+	<br>Cambiaste mi sendero,<br>lo convertiste en olas sobre el mar<br>que se 
+	lleva mi proa solitaria<br>de un abismo a otro abismo.<br>Mis riberas se 
+	agrandan en la noche,<br>en las olas crecientes,<br>con tu consentimiento<br>
+	se movi&oacute; la marea del dolor,<br>y d&oacute;nde est&aacute;n tus manos<br>para que hagan 
+	volver<br>las v&iacute;as de la luz al aire oscuro?<br>Y d&oacute;nde est&aacute;n tus dedos<br>
+	para que en mi corona<br>delaten las espinas?<br>Y la cadera acostada en la 
+	hierba<br>que las plantas enlazan<br>y escuchan en tus senos el suspiro<br>
+	del amor conquistado en la agon&iacute;a?<br>
+	<br>Oh, t&uacute;, que cuando cruzas las praderas<br>haces estremecerse los 
+	follajes<br>y abrazas lo que encuentras<br>con una red caliente de frescura.<br>
+	T&uacute; que escuchas, sac&aacute;ndote del pecho<br>parte de tu vestido<br>que con el 
+	fuego de tu boca besas<br>y tomas con tus manos suavemente<br>el desierto 
+	del tiempo atravesado<br>por halcones, arenas y cenizas,<br>a los que el 
+	viento entrega<br>una apariencia que no tiene rostro ?<br>
+	<br>Vas extraviada del mundo y su camino<br>como flecha sin rumbo<br>y se 
+	hizo tu belleza<br>s&oacute;lo para enga&ntilde;arme,<br>Pero, por qu&eacute; no fuiste vencedora<br>
+	de aquel destino que acech&oacute; tu ser,<br>no. supiste crear en su camino<br>
+	aquel odio que lo derribar&iacute;a.<br>Levanta de la tierra tus orejas!<br>En esta 
+	hora nocturna te reclamo<br>para que escuches t&uacute;, la inolvidada,<br>mi 
+	maldici&oacute;n ardiente!<br>
+	<em><br>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><a name="ENTRE NOCHES"></a></font>
+	<font face="Georgia" color="#C4CAD4">Entre noches</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>El azad&oacute;n agudo plant&eacute; en mi habitaci&oacute;n,<br>fuera soplaba el viento, la 
+	lluvia estaba afuera.<br>
+	<br>Cav&eacute; mi habitaci&oacute;n debajo de la tierra,<br>afuera era la lluvia, el 
+	viento estaba afuera.<br>
+	<br>Por la ventana ech&eacute; la tierra de la fosa.<br>Negra estaba la tierra: su 
+	cortina era azul.<br>
+	<br>Se amonton&oacute; en los vidrios la tierra hasta la altura.<br>Jes&uacute;s lloraba 
+	encima de aquella altura inmensa.<br>
+	<br>Se rompi&oacute; el azad&oacute;n cavando. Qui&eacute;n lo hizo?<br>Fue el Padre mismo con 
+	sus reliquias de piedra.<br>
+	<br>Volv&iacute;, luego sub&iacute; por el tiempo de nuevo.<br>Volvi&oacute; otra vez el tedio a 
+	mi pieza desnuda.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">Quise subir entonces y 
+	quedarme en la cima.<br>Parpadeaba una estrella. Era tarde en el cielo.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Pablo Neruda<br>
+	&quot;De 44 poetas rumanos&quot; Ed. Losada</em><br>
+	</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center"><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" color="#C4CAD4"><a name="ESPONSALES"></a>Esponsales</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>Quieres ser tu mi tierra<br>con sembrados, con vi&ntilde;as, con estanques,<br>
+	con bosques, con arroyos y animales salvajes?<br>
+	<br>Las vacas traer&aacute;n sus ubres llenas<br>y mugir&aacute;n en nuestra puerta<br>
+	adornada de acacias y de flores azules.<br>
+	<br>Las comadrejas jugar&aacute;n en el patio<br>con lechones y patos,<br>con 
+	polluelos de seda, sin da&ntilde;arlos.<br>
+	<br>Cantar&aacute;n uno a uno los granos de ma&iacute;z<br>y espantar&aacute;n las nubes de 
+	mosquitos.<br>
+	<br>Los altos arces frente a nuestra terraza<br>mientras el gallo canta 
+	mover&aacute;n sus follajes.<br>
+	<br>Traeremos grandes cestas de flores<br>y con ramas de mimbre<br>entre 
+	ambos tejeremos nuestro nido.<br>
+	<br>Y con la lana en vellones<br>formaremos la cuna de los gatos.<br><br>
+	Quieres ser mi jard&iacute;n,<br>de esbeltas hierbas y de terciopelo?</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	1935<br><em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#C4CAD4"><br></font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="HE AQU&Iacute;, ALMA M&Iacute;A"></a></font><font face="Georgia" color="#C4CAD4">
+	He aqu&iacute;, alma m&iacute;a, los versos sin rostro...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	A Walt Whitman</em><br><br>He aqu&iacute;, alma m&iacute;a, los versos sin rostro,<br>sin 
+	sonoridad y sin eco,<br>de polvo y arena.<br>Rec&iacute;belos, sus&uacute;rralos.<br>
+	Respetuosamente t&uacute; nos recibes de nuevo.<br>Ten&iacute;amos miedo porque te 
+	hab&iacute;amos visto<br>salvaje e inquieto.<br>Yo doy abrigo bajo mi mismo techo<br>
+	a Dios ya los grandes milagros.<br>Entonces, &iquest;c&oacute;mo podr&iacute;a no espantarme?<br>
+	<br>Yo desgarr&eacute;, para que se desgraven<br>rosarios desunidos,<br>los 
+	encajes, harapos, gasas de seda y hojas.<br>Yo espero que volvamos a 
+	conversar de nuevo<br>una vez que las danzas se detengan<br>y la orquesta se 
+	calle.<br>
+	<br>Quiero que hablemos idiomas destrozados,<br>arrancar la palabra entre 
+	palabras,<br>y escogiendo los temas seg&uacute;n se nos antoje.<br>
+	<br>Antes habl&eacute; en versos calzados,<br>cortados sobre medida y con adornos.<br>
+	Cansado de que opriman mi lengua los coturnos<br>desde ahora andar&aacute; con pies 
+	desnudos.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	1936<br><em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font size="2" color="#C4CAD4" face="Georgia">
+	<a name="La ceniza de nuestros sue&ntilde;os..."></a> 
+    </font><font color="#C4CAD4" face="Georgia">La ceniza de nuestros sue&ntilde;os...</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+    <br>
+    La ceniza de nuestros sue&ntilde;os <br>
+    se derrama a montones en nosotros, <br>
+    como caen en los c&aacute;ntaros <br>
+    los p&eacute;talos azules, <br>
+    atacados por un insecto<br>
+    oculto entre las hojas. <br>
+    <br>
+    Se agita el viento y gime. <br>
+    La tierra se funde con el cielo, <br>
+    las ciudades son mara&ntilde;a y laberinto, <br>
+    hondos la&uacute;des de blasfemia, <br>
+    y el aire es fr&iacute;o como el hierro. <br>
+    <br>
+    La tierra es un molino hueco <br>
+    con larvas mendigando un aposento, <br>
+    movi&eacute;ndose en el polvo que se muere <br>
+    que se pierde en confusiones y desastres... <br>
+    La tierra de los sue&ntilde;os que no fueron... 
+    </font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em><br>
+    <br>
+	</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="PRÓLOGO DEL LIBRO DE LOS PAISAJES"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Pr&oacute;logo del libro de los paisajes</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>En el a&ntilde;o milnovecientos siete,<br>en una noche del mes de Marzo, <br>
+	desde Hodivoy de pronto surgi&oacute; al cielo,<br>desde Flaminzi y desde 
+	Stanislesti,<br>una gran llamarada.<br>
+	<br>Los cirios y las antorchas se encendieron<br>a lo largo de todos los 
+	caminos<br>como si fuera Pascua de Resurrecci&oacute;n.<br>&iexcl;Todo era luminarias y 
+	candelas!<br>
+	<br>Igual que en nuestra casa, en el altar<br>arde un bot&oacute;n de fuego<br>
+	encima de una vela: 
+	<br>la luz que se consagra a los iconos.<br><br>De aldea a aldea se extendi&oacute;<br>
+	el fuego sobre el trigo acumulado<br>y parec&iacute;a un juego aquel incendio<br>
+	pasando de graneros a castillos.<br>
+	<br>Seguir&iacute;a la fiesta,<br>un requiem por los muertos?<br>Hasta los perros 
+	aullaban, locos!<br>Soc&oacute;rrenos, Se&ntilde;or! &iexcl;El pueblo se amotina!<br>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	1907<br><em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font color="#C4CAD4" face="Georgia" size="2"><br>
+	<a name="SALMO"></a></font><font color="#C4CAD4" face="Georgia">Salmo</font><font color="#C4CAD4" face="Georgia" size="2"><br>
+	<br>Te busco en el bullicio, en el silencio,<br>y as&iacute; como a una presa te 
+	persigo<br>por ver si t&uacute; eres el halc&oacute;n que busco<br>y postrarme a tus pies 
+	o aniquilarte.<br>
+	<br>Entre la negaci&oacute;n y la creencia<br>ando en tu siga in&uacute;til y audazmente.<br>
+	Eres el alto sue&ntilde;o que mantengo:<br>no puedo derribarte de tu cielo.<br>
+	<br>Como en la superficie de una charca<br>de pronto te apareces o te 
+	ocultas,<br>te distingo entre estrellas o entre peces<br>como el toro 
+	salvaje cuando bebe.<br>
+	<br>En esta hora a solas con tu historia<br>he decidido combatir contigo<br>
+	y no quiero alcanzar una victoria<br>sino tocarte y proclamar que existes.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Pablo Neruda<br>
+	&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><br></font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><a name="STANE, CAPIT&Aacute;N">
+	</a></font><font face="Georgia" color="#C4CAD4">Stane, capit&aacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Hay revuelta en el campo.<br>-Buenos muchachos, hacia d&oacute;nde van?<br>No es 
+	d&iacute;a de mercado ni de feria.<br>-A la buena de Dios vamos andando.<br>Bendito 
+	seas, viejo!<br>Como no estamos muertos todav&iacute;a<br>y como ya lleg&oacute; la 
+	primavera<br>vamos a acariciar a los Boyardos!<br>-Y ustedes saben lo que 
+	van a hacer?<br>-No, no lo hemos pensado todav&iacute;a.<br>Nos ahoga la hiel.<br>
+	Est&aacute; que se revienta.<br>-Me parece<br>que no se puede hacer un buen trabajo<br>
+	sin orden.<br>Mucha sangre de ustedes va a perderse.<br>Por qu&eacute; correr tan 
+	lejos como tontos?<br>Por qu&eacute; no han escogido un capit&aacute;n?<br>-Tenemos uno: 
+	Stane.<br>-Oyeme un poco, Stane, capit&aacute;n,<br>qu&eacute; han decidido hacer en 
+	Straoine?<br>Por qu&eacute; correr as&iacute; a pie por los caminos,<br>sin otra cosa que 
+	los propios hombros<br>y las mochilas rotas?<br>Es &eacute;sta una revuelta o una 
+	broma?<br>Y ya que hablamos de esto, qu&eacute; va a pasar ma&ntilde;ana<br>cuando escupan 
+	ustedes la cara de la ley<br>sin prevenirlo todo?<br>-Qu&eacute; caramba! Ya ves,<br>
+	no se nos ocurri&oacute; pensar en eso.<br>Y los hombres se fueron,<br>largo tiempo 
+	marcharon<br>como lo dije antes, a la buena de Dios.<br>Se divis&oacute; m&aacute;s tarde 
+	desde lejos<br>que el horizonte ard&iacute;a como escoria,<br>los &aacute;lamos flameaban 
+	como antorchas.<br>Reba&ntilde;os de caballos y de bueyes<br>mug&iacute;an, relinchaban,<br>
+	del lado del incendio.<br>
+	<br>Los hombres destrozaron los divanes,<br>defecaron adentro de los pianos 
+	de cola,<br>demolieron armarios,<br>los vaciaron con furia<br>y todo lo 
+	incendiaron:<br>tapices, ropas, camas,<br>sillones y cortinas,<br>
+	vertiginosamente.<br>Reventaron los cuadros a patadas,<br>quemaron las 
+	despensas,<br>y aunque all&iacute; hab&iacute;a en cantidad vituallas escogidas<br>y 
+	barricas repletas de los vinos m&aacute;s caros,<br>ni siquiera probaron una miga 
+	de pan,<br>porque sab&iacute;an ellos que el tesoro<br>all&iacute; se acumul&oacute;<br>a costa 
+	de pecados y de sangre.<br>
+	<br>Atardecer. Vuelve a la aldea un grupo.<br>El viejo reaparece.<br>Viene 
+	un hombre con un viol&iacute;n en la mano,<br>viene otro con un ovillo de hilo,<br>
+	otro trae el respaldo de una silla,<br>otro una pala, otro un rastrillo 
+	roto...<br>-Caramba! o&iacute; que mug&iacute;an los reba&ntilde;os<br>de bueyes, balaban los 
+	corderos,<br>o&iacute; que relinchaban los caballos.<br>Cre&iacute; que traer&iacute;an el 
+	ganado,<br>carros llenos de trigo hasta los bordes!<br>El incendio dur&oacute; toda 
+	la noche!<br>Y es esto todo lo que han hecho ustedes<br>despu&eacute;s de sufrir 
+	tanto, despu&eacute;s de esperar tanto?<br>Es esta la victoria que esperaban?<br>
+	Pero, entonces, por qu&eacute; se amotinaron?<br>-Caramba!, dice Stane, no pensemos 
+	en eso.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Pablo Neruda<br>
+	&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><a name="TESTAMENTO"></a></font>
+	<font face="Georgia" color="#C4CAD4">Testamento</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>Cuando me muera no dejar&eacute; bienes,<br>un nombre sobre un libro, nada m&aacute;s.<br>
+	En la noche rebelde que parti&oacute;<br>hacia ti desde mis antepasados,<br>porque 
+	a trav&eacute;s de abismos y de fosos<br>por donde se arrastraron mis abuelos,<br>
+	hacia ti comenz&oacute; a marchar mi libro:<br>Hijo m&iacute;o, los m&iacute;os te esperaban.<br>
+	Deja este documento en tu almohada.<br>Es la primera vez que se expresaron<br>
+	los siervos de hopalanda, es la palabra<br>de sus huesos vaciados en m&iacute; 
+	mismo.<br>Para que hoy por la primera vez<br>se transforme la pala en 
+	lapicero<br>y en tintero la tierra,<br>nuestros antepasados amasaron<br>el 
+	sudor del trabajo de los siglos.<br>Con ruda voz, habl&aacute;ndole a los bueyes,<br>
+	di nacimiento a las palabras nuevas<br>ya la canci&oacute;n de cuna de ma&ntilde;ana.<br>
+	Luego amasando el largo tiempo duro<br>le di forma de &iacute;dolos y sue&ntilde;os.<br>
+	Convert&iacute; los harapos en coronas.<br>Y cuando transform&eacute; el veneno en miel<br>
+	la dulce forma se mantuvo intacta.<br>Hilando el hilo del insulto a veces<br>
+	tej&iacute; la gentileza o la blasfemia.<br>Y en el atrio patricio la ceniza<br>de 
+	los muertos cambi&eacute; en un dios de piedra:<br>En esa alta frontera de dos 
+	mundos<br>fue mi deber velar desde la altura.<br>Mis tristezas amargas, mis 
+	dolores,<br>en un solo viol&iacute;n se acumularon<br>a cuyo son puede el se&ntilde;or 
+	bailar<br>como si degollaran un carnero.<br>Del fango, de las llagas, del 
+	horror,<br>hice que renaciera la belleza.<br>El l&aacute;tigo de ayer es hoy 
+	palabra,<br>es el dulce castigo para el hijo<br>por el crimen de todos y las 
+	c&aacute;rceles.<br>Es el derecho de una rama oscura<br>que sale de la selva hacia 
+	una estrella<br>y as&iacute; como un racimo de verrugas<br>se anuncia el fruto del 
+	dolor humano.<br>
+	<br>Perezosa, tendida en el sof&aacute;,<br>ay, la princesa sufre por mi libro.<br>
+	Porque, letra de fuego o de herrer&iacute;a,<br>en mi libro se casan y se funden<br>
+	como el hierro quemante y la tenaza.<br>El siervo lo escribi&oacute;. El se&ntilde;or lo 
+	lee,<br>pero no ve en el fondo de sus letras<br>la c&oacute;lera de mis 
+	antepasados.<br>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	1927<br><em>Versi&oacute;n de Pablo Neruda<br>&quot;De 44 poetas rumanos&quot; Ed. Losada</em></font></p>
+	<p>&nbsp;</p>
+
+<blockquote>
+  <p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:22:38 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:13:59 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

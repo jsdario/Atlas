@@ -1,0 +1,681 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Joan Maragall</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Joan Maragall."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Joan Maragall. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Joan_Maragall,poesias,poetas,poemas,traducciones,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#DBDBDB">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/maragall.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/maragall.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172958" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./maragall.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:29:58 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./maragall.htm" title="12:07:46 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:29:58 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./maragall.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:29:58 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./maragall.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>57 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">16 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010100010101_2004:-1:000101010101_2005:-1:011100010011_2006:-1:110012000200_2007:-1:011101030300_2008:-1:000120000000_2009:-1:010100100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:100010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MARAGALL.jpg" width="318" height="53"></p>
+
+<p>&nbsp;</p>
+
+<p align="center"><img border="0" src="./MARAGALL1.jpg" width="324" height="23"></p>
+
+<p>&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p><br>
+</p>
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="747">
+  <tr>
+    <td valign="bottom" colspan="3" width="739"></td>
+  </tr>
+  <tr>
+    <td width="273"></td>
+    <td width="6"></td>
+    <td width="452"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="273"><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./MARAGALL2.jpg" width="219" height="281"></td>
+    <td width="6"></td>
+    <td valign="top" width="452"><p align="left">
+	<u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a biogr&aacute;fica&nbsp; </font></u></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Poeta, 
+	ensayista y traductor espa&ntilde;ol nacido en Barcelona en 1860.<br>
+	Perteneciente a una familia de s&oacute;lida posici&oacute;n econ&oacute;mica, rechaz&oacute; el inter&eacute;s 
+	de su padre por involucrarlo en los negocios, para licenciarse en Derecho 
+	por la Universidad de Barcelona en 1884. A partir de 1892 desarroll&oacute; una 
+	intensa actividad literaria participando como columnista de importantes 
+	diarios, traduciendo grandes autores, ocupando la presidencia del Ateneo 
+	Barcelon&eacute;s, y obteniendo galardones importantes como los Juegos Florales de 
+	Barcelona, Maestro en Gai Saber y el premio Fastenrath en 1910. Fue adem&aacute;s 
+	miembro fundador de la Secci&oacute;n Filol&oacute;gica del Instituto de Estudios 
+	Catalanes.<br>
+	Entre sus obras destacadas se encuentran, <i>&quot;Oda a Espanya&quot; </i>1898, <i>
+	&quot;Visions i Cants&quot;</i> 1900, <i>&quot;L'Elogi de la paraula&quot;</i> 1903, <i>&quot;El 
+	Comte Arnau&quot;</i> 
+	1909, <i>&quot;Enll&agrave;&quot;</i> 1906 <i>&quot;Oda nova a Barcelona y</i> <i>Cant espiritual&quot;
+	</i>1910 y <i>&quot;Seq&uuml;&egrave;ncie&quot;</i> en 1911.<br>
+	Falleci&oacute; en Barcelona en diciembre de 1911. &copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4" face="Georgia">Poemas de Joan&nbsp; 
+Maragall:</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#CANTO ESPIRITUAL">Canto espiritual</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#ESCOLIUM">Escolium</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#INSOLADA">Insolada</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#LA VACA CIEGA">La vaca ciega</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./maragall.htm#LAS JOYAS">Las joyas</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#MI&Eacute;RCOLES DE CENIZA">Mi&eacute;rcoles de ceniza</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#&laquo;NUTRE AL AMOR...&raquo;">&laquo;Nutre al amor...&raquo;</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./maragall.htm#ODA A ESPA&Ntilde;A">Oda a Espa&ntilde;a</a></font><font face="Georgia" size="2" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia"><a href="mailto:poesia@amediavoz.com">
+poesia@amediavoz.com</a></font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: 
+		</font><font size="2" color="#D3D3CF"> <br>
+		</font><font color="#D3D3CF"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="CANTO ESPIRITUAL"></a>
+		Canto espiritual</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>Si el mundo es ya tan bello y se refleja,<br>oh, 
+		Se&ntilde;or, con tu paz en nuestros ojos,<br>&iquest;qu&eacute; m&aacute;s nos puedes dar en otra 
+		vida?<br>
+		<br>As&iacute; estoy tan celoso de estos ojos y rostro,<br>y del cuerpo que me 
+		diste, Se&ntilde;or,<br>y del coraz&oacute;n que en &eacute;l late... 
+		<br>
+		&iexcl;y tengo tal miedo a la muerte!<br>
+		<br>Pues, &iquest;con qu&eacute; otros sentidos me har&aacute;s ver<br>este cielo azul sobre 
+		las monta&ntilde;as,<br>y el ancho mar, y el sol que en todo brilla?<br>Dame en 
+		estos sentidos paz eterna<br>y no querr&eacute; m&aacute;s cielo que este cielo azul.<br>
+		<br>Aquel que grite tan s&oacute;lo &laquo;&iexcl;Detente!&raquo;<br>al instante que le traiga la 
+		muerte,<br>no lo entiendo, Se&ntilde;or, &iexcl;yo, que quisiera<br>parar tantos 
+		instantes cada d&iacute;a<br>para que eternos fueran en mi coraz&oacute;n! ...<br>&iquest;O 
+		es que este &laquo;hacer eterno&raquo; es ya la muerte?<br>Pero entonces, la vida 
+		&iquest;qu&eacute; ser&iacute;a?<br>Tan s&oacute;lo sombra del tiempo que pasa,<br>ilusi&oacute;n de lo 
+		cerca y de lo lejos,<br>cuenta del mucho, el poco, el demasiado,<br>
+		enga&ntilde;ador, pues &iquest;ya todo lo es todo?<br>
+		<br>&iexcl;Da igual! Del modo que sea, este mundo<br>tan extenso, tan diverso 
+		y temporal,<br>esta tierra con todo cuanto engendra,<br>es mi patria, 
+		Se&ntilde;or, &iquest;y no podr&iacute;a<br>ser tambi&eacute;n una patria celestial?<br>Hombre soy, 
+		y es humana mi medida<br>para todo lo que pueda creer y esperar:<br>si 
+		mi fe y mi esperanza aqu&iacute; se quedan<br>&iquest;me acusar&aacute;s por ello m&aacute;s all&aacute;?<br>
+		M&aacute;s all&aacute; veo el cielo y las estrellas,<br>y all&iacute; tambi&eacute;n un hombre ser 
+		quisiera:<br>si a mis ojos las cosas has hecho tan bellas,<br>si mis 
+		sentidos y ojos hiciste para ellas,<br>&iquest;por qu&eacute; cerrarlos, pues, otro 
+		&laquo;como&raquo; buscando?<br>&iexcl;Si para m&iacute; jam&aacute;s lo habr&aacute; como &eacute;ste!<br>Ya s&eacute; que 
+		existes, mas d&oacute;nde, &iquest;qui&eacute;n lo sabe?<br>Cuanto miro se te parece en m&iacute;...<br>
+		D&eacute;jame, pues, creer que est&aacute;s aqu&iacute;.<br>Y cuando llegue la hora temerosa<br>
+		en que se cierren estos mis ojos humanos,<br>&aacute;breme t&uacute;, Se&ntilde;or, otros 
+		mayores<br>para tu inmensa faz poder mirar.<br>&iexcl;Nacimiento mayor sea mi 
+		muerte!<br>
+		<br><em>Versi&oacute;n de Jos&eacute; Batll&oacute;</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="ESCOLIUM"></a></font>
+		<font face="Georgia" color="#C4CAD4">Escolium</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Cual dos que hablando juntos van,<br>andando por un sendero partido,<br>
+		uno por el veril soleado;<br>otro abajo, en la umbr&iacute;a,<br>Adelaida y el 
+		poeta se han hablado,<br>cuerpo y esp&iacute;ritu &eacute;l; tan s&oacute;lo esp&iacute;ritu, ella.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">Adelaida:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>Ay! &iexcl;Cu&aacute;nta angustia en este camino!<br>&iexcl;Cu&aacute;n 
+		oscuro y cu&aacute;n malandado!<br>Ve&iacute;as siquiera el sol, las monta&ntilde;as,<br>
+		brillar las cosas bajo el cielo azul,<br>y no este limbo de voces 
+		extra&ntilde;as<br>sin forma ni color... Dime, Arnaldo:<br>&iquest;Qui&eacute;n es &eacute;se que 
+		por la triste senda<br>nos conduce cual sombras sin virtud?<br>Ya ser&aacute; 
+		alg&uacute;n poeta que sue&ntilde;a<br>el sue&ntilde;o de eterna inquietud.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">El poeta:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>La verdadera vida<br>del esp&iacute;ritu vives, &iquest;y 
+		a&uacute;n te quejas?<br>Hacia lo inmutable caminas.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">Adelaida:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>&iexcl;Nada hay como ver el sol!<br>Ll&eacute;vanos, pues, 
+		a la senda<br>de las cosas corporales,<br>buen amigo, aunque sea<br>
+		sufriendo todos sus males.<br>Aunque la luz nos deslumbre,<br>aunque el 
+		fragor nos atonte,<br>y el cuerpo entero nos infierne,<br>con todos sus 
+		sentidos sufriendo,<br>la vida primera quiero,<br>ver, oir, gustar y 
+		tocar:<br>no s&eacute; vivir de otro modo,<br>ni tampoco deseo probar.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">El poeta:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>La vida que ahora ans&iacute;as<br>es la gran 
+		resurrecci6n.<br>Quiz&aacute; no fuera la que ten&iacute;as,<br>pero tampoco la otra; 
+		a&uacute;n no.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">Adelaida:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>Pues bien te contentas t&uacute;<br>con la vida que 
+		ahora tienes.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">El poeta:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>Mientras pueda ver a trav&eacute;s del mundo<br>lo 
+		que para ti s&oacute;lo es puro gozo o tormento,<br>de mi vida estar&eacute; contento,<br>
+		ya que en una dos vidas son.<br>Pero si este ser fuese dividido<br>y 
+		s&oacute;lo corporales quedaran mis sentidos,<br>antes preferir&iacute;a abandonarlos<br>
+		y, como t&uacute;, ser s&oacute;lo un esp&iacute;ritu.<br>No ahora, que todo canta en mis 
+		entra&ntilde;as,<br>y esposa tengo, e hijos,<br>y que en la cima de las 
+		solariegas monta&ntilde;as<br>un grito hay de renacimiento entre mil peligros.<br>
+		De amor y lucha es &eacute;ste mi momento,<br>y ans&iacute;o brazos para amar, luchar.<br>
+		Cuanto tengo, deseo, y a lo hecho pecho.<br>Mas, &iquest;qu&eacute; s&eacute; yo de lo que 
+		querr&eacute; ma&ntilde;ana? (...)<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">Adelaida:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>&iquest;Y qu&eacute; sabes t&uacute; de este mundo o de otros,<br>
+		ni lo que un cuerpo es, o un esp&iacute;ritu,<br>ni el poder que el deseo tiene 
+		sobre nosotros,<br>en el pecho alentando hasta el final?<br>Si por 
+		muerta me tienes, yo me tengo por viva;<br>si bien, cual enterrada en 
+		vida,<br>mis sentidos furiosamente quiero,<br>mas algo hay que me 
+		oprime.<br>Si no puedes librarme de ello,<br>&iquest;de qu&eacute; os sirve, pues, 
+		poetas, la poes&iacute;a?<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">El poeta:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>En tal punto una voz escucho<br>que escuchar 
+		de otro modo no podr&iacute;a.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">Adelaida:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>&iexcl;Oh! &iexcl;La voz sin sonido del difunto!<br>No es 
+		esta voz la que querr&iacute;a,<br>sino la que de mi pecho surgida<br>en torno 
+		m&iacute;o alegre resonaba:<br>&eacute;sa es, amigo, la que yo te pido,<br>todo cu&aacute;nto 
+		ella comportaba.<br>y si tanto no puede tu poes&iacute;a,<br>si no puedes 
+		volverme al mundo, calla y acaba.<br>
+		<br></font><font face="Georgia" size="3" color="#C4CAD4">El poeta:</font><font face="Georgia"
+      size="2" color="#C4CAD4"><br>Por piedad, Adelaida,<br>al igual que a&uacute;n hay 
+		cosas no sabidas,<br>apenas la poes&iacute;a est&aacute; iniciada,<br>y de virtudes 
+		desconocidas est&aacute; llena.<br>Mas tienes raz&oacute;n, ya basta de hablar.<br>En 
+		silencio aguardemos otra edad.<br>
+		<em><br>Versi&oacute;n de Jos&eacute; Batll&oacute;</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="3" color="#C4CAD4" face="Georgia"><a name="INSOLADA"></a>
+		</font><font
+      face="Georgia" color="#C4CAD4">Insolada</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">En una casa campesina 
+		hab&iacute;a<br>una doncella que ten&iacute;a<br>los diecisiete a&ntilde;os de amor, y era 
+		tan bella<br>que dec&iacute;an de ella:<br>&laquo;Es una moza como un sol.&raquo;<br>Ella 
+		bien sab&iacute;a<br>el parentesco que con &eacute;l ten&iacute;a:<br>porque cada ma&ntilde;ana,<br>
+		de par en par abierta la ventana,<br>con su fuego ambarino y ma&ntilde;anero<br>
+		le llenaba su cuarto por entero,<br>y ella, toda desnuda, con delicia,<br>
+		se entregaba al fulgor de su caricia.<br>De tanto darse a estas tan 
+		dulces ma&ntilde;as,<br>el sol se le quedaba en las entra&ntilde;as<br>y bien pronto 
+		sent&iacute;a<br>un ardor que en su seno se mov&iacute;a.<br>&laquo;Adi&oacute;s los m&iacute;os y mi casa 
+		amada:<br>me voy al mundo, por la luz pre&ntilde;ada.&raquo;<br>Abandonada y sin 
+		hogar<br>por la comarca comenz&oacute; a vagar.<br>Alegre como un p&aacute;jaro 
+		volando,<br>iba sola cantando:<br>&laquo;Yo me soy la alborada,<br>pues llevo 
+		dentro el sol y soy rosada,<br>mis cabellos rojean,<br>mis ojos 
+		centellean,<br>mis labios bermejean,<br>llevo en frente y mejillas su 
+		color<br>y en el pecho su ardor:<br>toda yo soy claror contra claror.&raquo;<br>
+		La gente que la o&iacute;a<br>se paraba admirada y la segu&iacute;a:<br>la segu&iacute;a por 
+		el llano y la monta&ntilde;a<br>para escucharle su canci&oacute;n extra&ntilde;a,<br>que poco 
+		a poco la iba embelleciendo.<br>Que su hermosura era cabal sintiendo,<br>
+		dijo: &laquo;Mi hora ha llegado.&raquo;<br>No canto m&aacute;s y, hall&aacute;ndola a su lado,<br>
+		entr&oacute; en una caba&ntilde;a que all&iacute; hab&iacute;a.<br>La gente que en aquel entorno 
+		estaba<br>s&oacute;lo ve&iacute;a un resplandor y o&iacute;a<br>los gritos de dolor que ella 
+		lanzaba.<br>Las grietas de la puerta, de repente<br>lucieron como 
+		estrellas fuertemente.<br>En seguida se alz&oacute; una llamarada,<br>toda la 
+		gente huy&oacute; de all&iacute; aterrada,<br>y en la gran soledad s&oacute;lo quedaba<br>un 
+		ni&ntilde;o igual que el sol, que caminaba<br>y dec&iacute;a, subiendo por la sierra:<br>
+		&laquo;Vengo a juntar al cielo con la tierra...&raquo;</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<a name="LA VACA CIEGA"></a></font><font face="Georgia" color="#C4CAD4">
+		La vaca ciega</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		En los troncos topando de cabeza, 
+		<br>hacia el agua avanzando vagorosa, <br>del todo sola va la vaca. Es 
+		ciega. 
+		<br>De una pedrada harto certera un ojo <br>le ha deshecho el boyero, y 
+		en el otro 
+		<br>se le ha puesto una tela. La vaca es ciega. <br>Va a abrevarse a la 
+		fuente que sol&iacute;a, 
+		<br>mas no cual otras veces con firmeza, <br>ni con sus compa&ntilde;eras, sino 
+		sola. 
+		<br>Sus hermanas por lomas y ca&ntilde;adas, <br>por silencio de prados y 
+		riberas, 
+		<br>hacen sonar la esquila mientras pastan <br>hierba fresca al azar. 
+		Ella caer&iacute;a. 
+		<br>Topa de morro en la gastada pila, <br>afrentada se arredra, pero 
+		torna, 
+		<br>dobla la frente al agua y bebe en calma. <br>Poco y casi sin sed; 
+		despu&eacute;s levanta 
+		<br>al cielo enorme la testuz cornuda <br>con gesto de tragedia; 
+		parpadea 
+		<br>sobre las muertas ni&ntilde;as, y se vuelve, <br>bajo el ardiente sol, de 
+		lumbre hu&eacute;rfana, 
+		<br>por sendas que no olvida, vacilando, <br>blandiendo en languidez la 
+		larga cola.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Miguel 
+		de Unamuno</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left">
+	<font color="#C4CAD4" face="Georgia"><a name="LAS JOYAS"></a>Las joyas&nbsp; </font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Quiero cubrir 
+	de joyas tu cabello,<br>
+    tu garganta y tu pecho, brazos, manos,<br>
+    en memoria de todas las caricias<br>
+    que te haga ahora y que te hice antes.</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Como lluvia, 
+	las joyas en tus miembros,<br>
+    como lluvia los besos de mi amor,<br>
+    y bajo cada beso que se encienda<br>
+    un nuevo resplandor, como una estrella.</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Una joya por 
+	beso, que ilumine,<br>
+    quieta noche, lo noble de tu cuerpo;<br>
+    mas despu&eacute;s del gran d&iacute;a, luego el d&iacute;a;<br>
+    la&nbsp; esposa, sin las joyas, del esposo.</font><p align="left">&nbsp;<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font><p><font face="Georgia" size="2" color="#C4CAD4"><em><br></em>
+		<a name="MI&Eacute;RCOLES DE CENIZA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Mi&eacute;rcoles de Ceniza</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&iexcl;Mi&eacute;rcoles de Ceniza, oh t&uacute; que extiendes
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; tus nubes rosadas<br>sobre la ciudad de mis 
+		pensamientos,<br>igual que en la otra de calles pobladas!<br>Es en &eacute;sta 
+		que alg&uacute;n sonriente rayo<br>&nbsp;&nbsp;&nbsp;&nbsp; del sol de febrero<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		deja la alegr&iacute;a.<br>Tambi&eacute;n sonr&iacute;en mis nubes, cruzadas<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		por un chorro de poes&iacute;a.<br>
+		<br>Es como una vuelta eterna al principio,<br>es la juventud siempre 
+		renovada.<br>De la neblina del mucho pensar<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		surge una palabra<br>&nbsp;&nbsp;&nbsp;&nbsp; toda iluminada<br>con un 
+		sentido nuevo: la niebla se deshace,<br>y el pensamiento toma otra vez 
+		fuerza;<br>un d&iacute;a, esta palabra te tendr&aacute;<br>a ti; tambi&eacute;n a ti, al 
+		verla impresa;<br>y tambi&eacute;n a tus ojos at&oacute;nitos brillar&aacute;<br>en ese 
+		instante, como reci&eacute;n creada.<br>
+		<br>Ser&eacute; yo quien entrar&eacute; traidoramente<br>en tu casa, cuando menos lo 
+		pienses,<br>y aguardar&eacute; all&iacute;, en la penumbra<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		durante d&iacute;as,<br>hasta que al verte solo<br>en tu alcoba, recluido en la 
+		tristeza,<br>sobre ti caer&eacute; cual chorro de sol<br>con mi perenne grito 
+		juvenil.<br>Me meter&eacute; en tus ojos, hasta tu coraz&oacute;n.<br>Mi brillante 
+		pu&ntilde;al hasta la entra&ntilde;a<br>te penetrar&aacute;, d&aacute;ndote la vida con la muerte.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Jos&eacute; 
+		Batll&oacute;<br>
+		<br>
+&nbsp;</font></em></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em><br></em>
+		<a name="&laquo;NUTRE AL AMOR...&raquo;"></a></font>
+		<font face="Georgia" color="#C4CAD4">&laquo;Nutre al amor de recuerdos y 
+		ausencias...&raquo;</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Nutre al amor de recuerdos y ausencias;<br>brotar&aacute; as&iacute; maravillosa flor;<br>
+		desprecia cualquier complacencia<br>que no llegue por medio del dolor.<br>
+		No guardes otro don que tus l&aacute;grimas<br>ni otro consuelo quieras que 
+		suspiros:<br>tu palabra mejor est&aacute; en el alma,<br>y el m&aacute;s sabroso beso 
+		te dieron los zafiros.<br>No ser&iacute;a la amada en su presencia<br>nunca 
+		como es ahora en tu adoraci&oacute;n.<br>Nutre al amor de recuerdos y 
+		ausencias;<br>brotar&aacute; as&iacute; maravillosa flor.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Jos&eacute; 
+		Batll&oacute;</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="ODA A ESPA&Ntilde;A"></a>
+		Oda a Espa&ntilde;a</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Escucha, Espa&ntilde;a, la voz de un hijo<br>que te habla en lengua no 
+		castellana;<br>hablo en la lengua que me ha legado<br>la tierra &aacute;spera;<br>
+		en esta lengua pocos te hablaron;<br>en la otra, demasiado.<br>
+		<br>Demasiado de los saguntinos<br>y de los que mueren por la patria;<br>
+		y por tus glorias y tus recuerdos,<br>recuerdo y gloria de cosas 
+		muertas,<br>triste has vivido.<br>
+		<br>De distinta manera quiero hablarte.<br>&iquest;Por qu&eacute; derramar la sangre 
+		in&uacute;til?<br>La sangre es vida, si est&aacute; en las venas,<br>vida hoy, vida 
+		para los que vengan;<br>vertida, es muerte.<br>
+		<br>Demasiado pensaste en tu honor<br>y escasamente en tu vida:<br>tus 
+		hijos, tr&aacute;gica, diste a la muerte.<br>Mortales honras te satisfac&iacute;an;<br>
+		tus fiestas eran tus funerales,<br>&iexcl;oh triste Espa&ntilde;a!<br>
+		<br>Yo vi barcos zarpar repletos<br>de hijos que a la muerte entregabas:<br>
+		sonriendo iban hacia el azar,<br>y t&uacute; cantabas junto a la mar<br>como 
+		una loca.<br>
+		<br>&iquest;D&oacute;nde tus barcos? &iquest;D&oacute;nde tus hijos?<br>Preg&uacute;ntalo al Poniente, a la 
+		ola brava:<br>perdiste todo, a nadie tienes.<br>&iexcl;Espa&ntilde;a, Espa&ntilde;a, vuelve 
+		en ti,<br>rompe el llanto de madre!<br>
+		<br>S&aacute;lvate, s&aacute;lvate de tantos males;<br>que el llanto te haga alegre, 
+		fecunda y viva;<br>piensa en la vida que te rodea;<br>alza la frente,<br>
+		sonr&iacute;e ante los siete colores del iris.<br>
+		<br>&iquest;D&oacute;nde est&aacute;s Espa&ntilde;a, d&oacute;nde que no te veo?<br>&iquest;No oyes mi voz 
+		atronadora?<br>&iquest;No comprendes esta lengua que entre peligros te habla?<br>
+		&iquest;A tus hijos no sabes ya entender?<br>&iexcl;Adi&oacute;s, Espa&ntilde;a!<br>
+		<br><em>Versi&oacute;n de Jos&eacute; Batll&oacute;</em></font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#C4CAD4"><br></font></p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<blockquote>
+  <blockquote><font face="Georgia" size="2" color="#8FABC2">
+	<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+	<font color="#AAC0D5">
+	<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+	<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+	</p>
+	<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:29:58 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:49 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

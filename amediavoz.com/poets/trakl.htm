@@ -1,0 +1,1396 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Georg Trakl</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Georg Trakl."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Georg Trakl. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Georg_Trakl,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/trakl.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/trakl.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163232" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./trakl.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:32:32 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./trakl.htm" title="21:01:16 May 29, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:32:32 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./trakl.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:32:32 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./trakl.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>48 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Jun 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000001000200_2007:-1:010103031200_2008:-1:011310000010_2009:-1:010000110000_2010:-1:000000001110_2011:-1:000000001130_2012:-1:611010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRAKL.jpg" width="260" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRAKL1.jpg" width="210" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="728" height="306">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="720">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="275" width="249" valign="top">
+			<p align="left">
+			<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="./TRAKL2.jpg" width="194" height="274"></font></td>
+			<td width="467" valign="top" height="275">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+			Poeta austriaco nacido en Salzburgo en 1887.<br>
+			Desde muy joven altern&oacute; el trabajo como farmaceuta con su afici&oacute;n 
+			por la literatura, fundando con varios amigos el grupo literario <i>
+			Apollo</i> y escribiendo algunos poemas que fueron publicados en el 
+			prestigioso peri&oacute;dico &quot;Neues Wiener Journal&quot;. En 1910 obtuvo el 
+			t&iacute;tulo de <i>Magister der Pharmazie </i>por la Universidad de Viena.
+			<br>
+			Aunque su afici&oacute;n por el alcohol y el cloroformo le produjeron 
+			graves cambios de personalidad, su obra literaria, influenciada por 
+			autores como Rimbaud, H&ouml;lderlin y Novalis, oscil&oacute; entre el 
+			expresionismo y el simbolismo, y se convirti&oacute; en&nbsp; un gran 
+			legado para generaciones posteriores.<br>Durante la primera guerra 
+			mundial particip&oacute; en la batalla de Grodek, lo que le produjo una 
+			crisis nerviosa que le condujo al hospital psiqui&aacute;trico de Cracovia, 
+			donde se suicid&oacute; con una sobredosis de coca&iacute;na el 3 de noviembre de 
+			1914. &copy;</font></p></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Georg Trakl:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#FFFFFF"><br>
+		<br>
+		<a href="./trakl.htm#A LOS ENMUDECIDOS">A los enmudecidos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		</font><br>
+		<font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#A UN MUERTO PREMATURO">A un muerto prematuro</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#AL NI&Ntilde;O ELIS">Al ni&ntilde;o Elis</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#ALMA DE NOCHE">Alma de noche</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#ANIF">Anif</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#CANCI&Oacute;N DE KASPAR HAUSER">Canci&oacute;n de Kaspar Hauser</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#CANTO DEL SOLITARIO">Canto del solitario</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#Crep&uacute;sculo en el alma">
+		Crep&uacute;sculo en el alma</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#DE PROFUNDIS">De profundis</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#DECADENCIA">Decadencia</a>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./trakl.htm#EXTRA&Ntilde;A PRIMAVERA">Extra&ntilde;a primavera</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		<a href="./trakl.htm#EN LA OSCURIDAD">En la oscuridad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#GRODEK">Grodek</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#MELANCOL&Iacute;A">
+		Melancol&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#MI CORAZ&Oacute;N EN EL OCASO">Mi coraz&oacute;n en el ocaso</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#Para el joven Elis">Para 
+		el joven Elis&nbsp;&nbsp; <font size="2">(otra versi&oacute;n)</font></a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#PASI&Oacute;N">Pasi&oacute;n</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#PRIMAVERA DEL ALMA">Primavera del alma</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#Queja">Queja</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#QUIETUD Y SILENCIO">Quietud y silencio</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#REVELACI&Oacute;N Y CA&Iacute;DA">Revelaci&oacute;n y ca&iacute;da</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#SALMO">Salmo</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#SIETE CANTOS A LA MUERTE">Siete cantos a la muerte</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#SONIA">Sonia</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./trakl.htm#TRANSFIGURACI&Oacute;N">Transfiguraci&oacute;n</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./trakl.htm#VERANO">Verano</a></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C2C8D1">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF"> 
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#C2C8D1">Ir a:</font><font face="Georgia" size="2" color="#FFFFFF"> </font>
+		<font face="Georgia" color="#FFFFFF"> <a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="A LOS ENMUDECIDOS"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		A los enmudecidos</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Ah, la locura de la gran ciudad cuando al anochecer, <br>
+		junto a los negros muros, se levantan los &aacute;rboles deformes <br>
+		y a trav&eacute;s de la m&aacute;scara de plata se asoma el genio del mal; <br>
+		la luz con l&aacute;tigos que atraen ahuyenta p&eacute;trea noche. <br>
+		Oh, el hundido repique de las campanas del crep&uacute;sculo. <br>
+		<br>
+		Ramera que entre escalofr&iacute;os alumbra una criatura <br>
+		muerta. La ira de Dios con rabia azota la frente de los pose&iacute;dos, <br>
+		epidemia purp&uacute;rea, hambre que rompe verdes ojos. <br>
+		Ah, la odiosa carcajada del oro. <br>
+		<br>
+		Pero una humanidad m&aacute;s silenciosa sangra en oscura cueva <br>
+		forjando con metales duros el rostro redentor.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer<br>
+&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#C4CAD4"><br>
+		</font>
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="A UN MUERTO PREMATURO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		A un muerto prematuro</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Oh, &eacute;l &aacute;ngel negro, que furtivo sali&oacute;<br>
+		del interior del &aacute;rbol,<br>
+		cuando &eacute;ramos dulces compa&ntilde;eros de juego en la tarde,<br>
+		al borde de la fuente azulada.<br>
+		Nuestro paso era sereno, los ojos redondos<br>
+		en la frescura parda del oto&ntilde;o.<br>
+		Oh, la dulzura p&uacute;rpura de las estrellas.<br>
+		<br>
+		Pero aquel baj&oacute; los p&eacute;treos escalones de M&ouml;nschberg<br>
+		con una sonrisa azul, y en la extra&ntilde;a cris&aacute;lida<br>
+		de su m&aacute;s tranquila infancia muri&oacute;.<br>
+		En el jard&iacute;n qued&oacute; el rostro plateado del amigo<br>
+		atento en el follaje o en las antiguas rocas.<br>
+		<br>
+		El alma cant&oacute; la muerte, la verde corrupci&oacute;n de la carne,<br>
+		e imper&oacute; el murmullo del bosque,<br>
+		la queja febril del animal.<br>
+		Siempre ta&ntilde;&iacute;an desde torres<br>
+		las azules campanas de la tarde.<br>
+		<br>
+		Lleg&oacute; la hora en que aquel vio sombras en el sol p&uacute;rpura,<br>
+		veladuras de podredumbre en el ramaje desnudo;<br>
+		en la tarde, cuando en el muro crepuscular<br>
+		cant&oacute; el mirlo,<br>
+		y el esp&iacute;ritu del muerto prematuramente<br>
+		apareci&oacute; silencioso en la alcoba.<br>
+		<br>
+		Oh, la sangre que fluye de la garganta del dios,<br>
+		flor azul; oh, las l&aacute;grimas ardientes<br>
+		lloradas en la noche.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Nube 
+		dorada y tiempo. En solitario recinto<br>
+		hospedas con frecuencia al muerto.<br>
+		Y caminas en di&aacute;logo &iacute;ntimo bajo los olmos<br>
+		bordeando el verde r&iacute;o.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;<br>
+		<br>
+		<a name="AL NI&Ntilde;O ELIS"></a></font><font face="Georgia" color="#C4CAD4">
+		Al ni&ntilde;o Elis</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Elis, cuando el mirlo llame en el oscuro bosque<br>
+		ser&aacute; tu ocaso.<br>
+		Tus labios beben frescura en la pedregosa fuente azul.<br>
+		<br>
+		Cuando tu frente sangre suavemente<br>
+		olvida las antiguas leyendas<br>
+		y el oscuro augurio del vuelo de los p&aacute;jaros.<br>
+		<br>
+		Pues tus leves pasos se adentran en la noche<br>
+		cargada con los p&uacute;rpuras racimos de la vid;<br>
+		mientras el azul hace m&aacute;s bello<br>
+		el movimiento de tus brazos.<br>
+		<br>
+		Se escucha un espino,<br>
+		all&aacute; donde vuelan tus dos ojos de luna.<br>
+		Ah, hace cu&aacute;nto tiempo que eres de la muerte.<br>
+		<br>
+		Tu cuerpo es un jacinto<br>
+		donde un monje sumerge sus dedos de cera.<br>
+		Y una cueva sombr&iacute;a es nuestro silencio<br>
+		de la que a veces surge un apacible animal.<br>
+		Deja caer lento los pesados p&aacute;rpados.<br>
+		<br>
+		Sobre tus sienes gotea un oscuro roc&iacute;o,<br>
+		el &uacute;ltimo oro de las estrellas extinguidas.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ALMA DE NOCHE"></a></font><font face="Georgia" color="#C4CAD4">
+		Alma de noche</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Furtivo desciende de los negros bosques<br>
+		un venado azul, el alma.<br>
+		Es de noche y sobre los escalones musgosos<br>
+		se ve una fuente blanca.<br>
+		<br>
+		La sangre y un grupo de armas antiguas<br>
+		murmuran en el valle de los pinos.<br>
+		La luna brilla siempre en parajes derruidos;<br>
+		embriagada por venenos oscuros,<br>
+		m&aacute;scara de plata inclinada<br>
+		sobre el sue&ntilde;o de los pastores;<br>
+		cabeza abandonada en silencio por sus sagas.<br>
+		<br>
+		Oh, abre ella sus fr&iacute;as manos bajo arcos de piedra<br>
+		mientras lento sube un dorado verano a la ciega ventana<br>
+		y toda la noche se oyen sobre el verde<br>
+		los pasos de la danzarina,<br>
+		y la voz de la lechuza que llama al ebrio<br>
+		en p&uacute;rpura tristeza.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ANIF"></a></font><font face="Georgia" color="#C4CAD4">
+		Anif</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Recuerdo: gaviotas desliz&aacute;ndose sobre un oscuro cielo<br>
+		de melancol&iacute;a masculina.<br>
+		Sosegado habitas t&uacute; a la sombra del fresno oto&ntilde;al,<br>
+		y absorto en las formas de la colina<br>
+		desciendes por el verde r&iacute;o cuando reina la tarde,<br>
+		melodioso amor:<br>
+		apaciblemente te busca el oscuro venado,<br>
+		<br>
+		y un hombre rosado. Ebria de viento azul<br>
+		roza la frente el follaje agonizante<br>
+		mientras recuerdas el rostro adusto de la madre;<br>
+		Oh, c&oacute;mo se hunde todo en lo oscuro;<br>
+		<br>
+		las l&uacute;gubres habitaciones y los viejos utensilios<br>
+		de los ancestros conmueven el pecho del extranjero,<br>
+		Oh, signos y estrellas. <br>
+		<br>
+		Grande es la culpa del que ha nacido.<br>
+		Ay, dorados escalofr&iacute;os de la muerte,<br>
+		cuando el alma sue&ntilde;a flores m&aacute;s frescas.<br>
+		<br>
+		Siempre grita en las ramas desnudas el ave nocturna.<br>
+		Al paso de la luna<br>
+		suena un viento helado en los muros de la aldea.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CANCIÓN DE KASPAR HAUSER"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Canci&oacute;n de Kaspar Hauser</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Bessie Loos</i><br>
+		<br>
+		Amaba el sol que purp&uacute;reo bajaba la colina,<br>
+		los caminos del bosque, el negro p&aacute;jaro cantor<br>
+		y la alegr&iacute;a de lo verde.<br>
+		<br>
+		Serio era su vivir a la sombra del &aacute;rbol<br>
+		y puro su rostro.<br>
+		Dios habl&oacute; como una suave llama a su coraz&oacute;n:<br>
+		&iexcl;Hombre!<br>
+		<br>
+		La ciudad hall&oacute; su paso silencioso en el atardecer;<br>
+		pronunci&oacute; la oscura queja de su boca:<br>
+		so&ntilde;aba ser un jinete.<br>
+		<br>
+		Pero le segu&iacute;an animal y arbusto,<br>
+		la casa y el jard&iacute;n de blancos hombres<br>
+		y su asesino lo asediaba.<br>
+		<br>
+		Primavera y verano y el hermoso oto&ntilde;o del justo,<br>
+		su paso silencioso<br>
+		ante la alcoba sombr&iacute;a de los so&ntilde;adores.<br>
+		De noche permanec&iacute;a solo con su estrella.<br>
+		<br>
+		Mir&oacute; caer la nieve sobre el desnudo ramaje <br>
+		y la sombra del asesino en la penumbra del zagu&aacute;n. <br>
+		Entonces rod&oacute; la cabeza plateada del no nacido a&uacute;n.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CANTO DEL SOLITARIO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Canto del solitario</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Armon&iacute;a es el vuelo de los p&aacute;jaros. Los verdes bosques<br>
+		se re&uacute;nen al atardecer en las caba&ntilde;as silenciosas;<br>
+		los prados cristalinos del corzo.<br>
+		La oscuridad calma el murmullo del arroyo,<br>
+		sentimos las sombras h&uacute;medas<br>
+		y las flores del verano que susurran al viento.<br>
+		Anochece la frente del hombre pensativo.<br>
+		<br>
+		Y una l&aacute;mpara de bondad se enciende en su coraz&oacute;n,<br>
+		en la paz de su cena; pues consagrados el vino y el pan<br>
+		por la mano de Dios, el hermano quiere descansar<br>
+		de espinosos senderos<br>
+		y callado te mira con sus ojos nocturnos.<br>
+		Ah, morar en el intenso azul de la noche. <br>
+		<br>
+		El amoroso silencio de la alcoba<br>
+		envuelve la sombra de los ancianos,<br>
+		los martirios p&uacute;rpuras, el llanto de una gran<br>
+		que en el nieto solitario muere con piedad.<br>
+		<br>
+		Pues siempre despierta m&aacute;s radiante<br>
+		de sus negros minutos la locura,<br>
+		el hombre abatido en los umbrales de piedra<br>
+		poderosamente es cubierto por el fresco azul<br>
+		y por el luminoso declinar del oto&ntilde;o,<br>
+		<br>
+		la casa silenciosa, las leyendas del bosque,<br>
+		medida y ley y senda lunar de los que mueren.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Crep&uacute;sculo en el alma"></a>Crep&uacute;sculo en el alma</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Silenciosa va a dar al lindero del bosque<br>
+		una bestia oscura;<br>
+		en el cerro acaba quedo el viento de la tarde,<br>
+		<br>
+		enmudece en su queja el mirlo,<br>
+		y blandas flautas del oto&ntilde;o<br>
+		callan entre los juncos.<br>
+		<br>
+		En una negra nube<br>
+		navegas ebrio de amapolas<br>
+		la alberca de la noche,<br>
+		<br>
+		el cielo de los astros.<br>
+		A&uacute;n resuena la voz de luna de la hermana<br>
+		en la noche del alma.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+		Luis Ar&aacute;ntegui</font></i></p>
+		<p align="left">
+		&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="DE PROFUNDIS"></a></font><font face="Georgia" color="#C4CAD4">
+		De profundis</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Existe un campo de rastrojos donde cae una lluvia negra.<br>
+		Existe un &aacute;rbol pardo que se alza solitario.<br>
+		Existe un viento que susurra entre chozas vac&iacute;as.<br>
+		Qu&eacute; atardecer tan triste.<br>
+		<br>
+		A la orilla de la aldea<br>
+		la dulce hu&eacute;rfana recoge escasas espigas.<br>
+		Sus ojos redondos y dorados recorren el crep&uacute;sculo<br>
+		y su seno anhela al esposo celestial.<br>
+		<br>
+		De regreso al hogar<br>
+		unos pastores hallaron el dulce cuerpo<br>
+		descompuesto en el espino.<br>
+		<br>
+		Una sombra soy lejos de oscuras aldeas.<br>
+		El silencio de Dios<br>
+		beb&iacute; en la fuente del bosque.<br>
+		<br>
+		Sobre mi frente golpe&oacute; un fr&iacute;o metal.<br>
+		Ara&ntilde;as buscan mi coraz&oacute;n.<br>
+		Hay una luz que se extingui&oacute; en mi boca.<br>
+		<br>
+		De noche me encontr&eacute; en un p&aacute;ramo,<br>
+		colmado de deshechos y de polvo de estrellas.<br>
+		En los avellanos<br>
+		tintinearon &aacute;ngeles cristalinos.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i><font color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="DECADENCIA"></a></font><font face="Georgia" color="#C4CAD4">
+		Decadencia</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Al atardecer cuando tocan a paz las campanas,<br>
+		Sigo de las aves el maravilloso vuelo<br>
+		Que en largas bandadas como devotos peregrinos<br>
+		Desaparecen en las claras vastedades del oto&ntilde;o.<br>
+		<br>
+		Deambulando a trav&eacute;s de umbrosos patios<br>
+		Sue&ntilde;o yo en sus l&uacute;cidos presagios,<br>
+		Y siento que de las sabias horas no podr&eacute; apartarme.<br>
+		As&iacute; prosigo, por sobre nubes, tras sus viajes.<br>
+		<br>
+		He aqu&iacute; que un h&aacute;lito me hace temblar ante las ruinas.<br>
+		El mirlo clama entre las ramas deshojadas.<br>
+		Oscilan las rojas vides entre rejas herrumbrosas.<br>
+		<br>
+		Entretanto como un corro mortal de p&aacute;lidos infantes<br>
+		En torno al oscuro borde de pozos en descomposici&oacute;n.<br>
+		Se inclinan ante el viento, enteleridas, azules ramas.<br>
+		<br>
+		<i>Versi&oacute;n de Walter Hoefler</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EN LA OSCURIDAD"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		En la oscuridad</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		La primavera azul silencia el alma.<br>
+		Bajo el h&uacute;medo ramaje del poniente<br>
+		se hundi&oacute; estremecida la frente de los amantes.<br>
+		<br>
+		Oh, la cruz verdecida. En di&aacute;logo oscuro<br>
+		se reconocieron hombre y mujer.<br>
+		Junto al muro desnudo<br>
+		camina con sus estrellas el solitario.<br>
+		<br>
+		Sobre los senderos del bosque en claro de luna<br>
+		rein&oacute; el desenfreno de cacer&iacute;as olvidadas;<br>
+		la mirada de lo azul<br>
+		irrumpe de la roca derruida.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer<br>
+		<br>
+&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<a name="EXTRA&Ntilde;A PRIMAVERA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Extra&ntilde;a primavera</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Profunda luz. Las doce. En duro suelo<br>
+		me abriga el sue&ntilde;o aquella vieja roca.<br>
+		Tres &aacute;ngeles detienen, suave, el vuelo.<br>
+		Extra&ntilde;os r&iacute;en con extra&ntilde;a boca.<br>
+		<br>
+		Ba&ntilde;a los campos la fundida nieve.<br>
+		Premonitoria es esta primavera,<br>
+		y de aquel abedul se adentra, leve,<br>
+		en fr&iacute;o lago larga cabellera.<br>
+		<br>
+		Veloz acerca el ala hermosa nube,<br>
+		cintas azules en el cielo brillan...<br>
+		Risue&ntilde;o en ellas mi mirar detuve.<br>
+		Los &aacute;ngeles piadosos se arrodillan.<br>
+		<br>
+		De un p&aacute;jaro encantado se levanta<br>
+		muy claro y fuerte el trino de metal<br>
+		y l&uacute;cido, yo escucho lo que canta:<br>
+		&iexcl;Tu dicha no, tu muerte s&iacute;, mortal!</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de &Aacute;ngela Becker</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="GRODEK"></a></font><font face="Georgia" color="#C4CAD4">
+		Grodek</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Por la tarde resuenan en los bosques oto&ntilde;ales<br>
+		las mort&iacute;feras armas, y en las llanuras &aacute;ureas<br>
+		y en los lagos azules rueda el sol m&aacute;s oscuro.<br>
+		La noche abraza a los guerreros moribundos,<br>
+		irrumpe el lamento salvaje de sus bocas quebradas.<br>
+		Pero silenciosas en la pradera,<br>
+		rojas nubes que un dios airado habita<br>
+		convocan la sangre derramada, la frialdad lunar;<br>
+		y todos los caminos desembocan en negra podredumbre.<br>
+		Bajo el dorado ramaje de la noche y las estrellas<br>
+		vaga la sombra de la hermana por el bosque silencioso<br>
+		saludando las almas de los h&eacute;roes,<br>
+		las cabezas sangrantes.<br>
+		Y en el ca&ntilde;averal suenan las oscuras flautas del oto&ntilde;o.<br>
+		Oh, qu&eacute; soberbio duelo, con altares de bronce;<br>
+		un terrible dolor nutre hoy la ardiente llama del esp&iacute;ritu,<br>
+		por los nietos que no han nacido a&uacute;n.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Helmut Pfeiffer</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="MELANCOL&Iacute;A"></a></font><font face="Georgia" color="#C4CAD4">
+		Melancol&iacute;a</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Sombras azuladas y esos ojos oscuros<br>
+		que al pasar me miran hondamente.<br>
+		El sonido del oto&ntilde;o se acompa&ntilde;a con guitarras<br>
+		y en el jard&iacute;n se disuelve su ceniza impura.<br>
+		Las pesadumbres sombr&iacute;as de la muerte<br>
+		preparan sus delicadas manos.<br>
+		De pechos opulentos beben descarnados labios<br>
+		y en la piel dorada del ni&ntilde;o solar<br>
+		ondulan h&uacute;medos sus rizos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer<br>
+		<br>
+&nbsp;</font></i></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="MI CORAZÓN EN EL OCASO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Mi coraz&oacute;n en el ocaso</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Al atardecer se oye el grito de los murci&eacute;lagos.<br>
+		Dos caballos negros saltan en la pradera.<br>
+		El arce rojo murmura.<br>
+		El caminante encuentra el hostal en el camino.<br>
+		Magn&iacute;fico es el vino joven con las nueces.<br>
+		Magn&iacute;fico tambalearse ebrio en el bosque crepuscular .<br>
+		A trav&eacute;s del oscuro follaje suenan campanas dolorosas.<br>
+		Ya sobre el rostro gotea el roc&iacute;o.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Para el joven Elis">
+		</a>Para el joven Elis</font><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp; 
+		(otra versi&oacute;n(<br>
+		<br>
+		Elis, el reclamo del mirlo en el bosque negro<br>
+		se&ntilde;ala tu ocaso.<br>
+		Tus labios beben la frescura de la fuente azul en el roquedal.<br>
+		<br>
+		Deja que tu frente sangre quedamente<br>
+		remotas leyendas<br>
+		y los oscuros indicios del vuelo de las aves.<br>
+		<br>
+		Sin embargo marchas con leve paso por la noche<br>
+		repleta de colgantes racimos purp&uacute;reos.<br>
+		Y es cada vez m&aacute;s bello el moverse de tus brazos en el azul<br>
+		<br>
+		Donde hace o&iacute;r sus sones un zarzal<br>
+		all&iacute; est&aacute;n tus ojos lunares.<br>
+		Oh, cu&aacute;nto tiempo hace, Elis, que est&aacute;s muerto.<br>
+		<br>
+		Tu cuerpo es un jacinto<br>
+		en el que hunde un monje sus dedos de cera.<br>
+		Nuestro mutismo, es una negra caverna,<br>
+		<br>
+		de la que a veces sale un manso animal,<br>
+		que cierra lentamente sus pesados p&aacute;rpados.<br>
+		Corren gotas de un negro roc&iacute;o por tus sienes<br>
+		<br>
+		El oro final de estrellas que se extinguen.<i><br>
+		<br>
+		<br>
+		Versi&oacute;n de Aldo Pellegrini<br>
+&nbsp;</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="PASIÓN"></a></font><font face="Georgia" color="#C4CAD4">Pasi&oacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Cuando Orfeo ta&ntilde;e la lira plateada<br>
+		llora un muerto en el jard&iacute;n de la tarde,<br>
+		&iquest;qui&eacute;n eres t&uacute; que yaces bajo los altos &aacute;rboles?<br>
+		Murmura su lamento el ca&ntilde;averal en oto&ntilde;o.<br>
+		El estanque azul<br>
+		se pierde bajo el verdor de los &aacute;rboles<br>
+		siguiendo la sombra de la hermana;<br>
+		oscuro amor de una estirpe salvaje,<br>
+		que huye del d&iacute;a en sus ruedas de oro.<br>
+		Noche serena.<br>
+		<br>
+		Bajo sombr&iacute;os abetos<br>
+		mezclaron su sangre dos lobos<br>
+		petrificados en un abrazo;<br>
+		muri&oacute; la nube sobre el sendero dorado,<br>
+		paciencia y silencio de la infancia.<br>
+		<br>
+		Aparece el tierno cad&aacute;ver<br>
+		junto al estanque de Trit&oacute;n<br>
+		adormecido en sus cabellos de jacinto.<br>
+		&iexcl;Que al fin se quiebre la fr&iacute;a cabeza!<br>
+		<br>
+		Pues siempre prosigue un animal azul,<br>
+		acechante en la penumbra de los &aacute;rboles,<br>
+		vigilando estos negros caminos,<br>
+		conmovido por su m&uacute;sica nocturna,<br>
+		por su dulce delirio;<br>
+		o por el oscuro &eacute;xtasis<br>
+		que vibra sus cadencias<br>
+		a los helados pies de la penitente<br>
+		en la ciudad de piedra.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="PRIMAVERA DEL ALMA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Primavera del alma</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Grito en el sue&ntilde;o,<br>
+		por calles oscuras avanza el viento,<br>
+		del ramaje aflora el azul primaveral,<br>
+		el roc&iacute;o p&uacute;rpura de la noche adviene<br>
+		y alrededor se apagan las estrellas.<br>
+		Verde amanece el r&iacute;o, plateados son los paseos antiguos<br>
+		y las torres de la ciudad. Ah, la suave embriaguez<br>
+		de la barca que se desliza y el oscuro cantar del mirlo<br>
+		en jardines de la infancia. Ya se aclara el rosado velo.<br>
+		<br>
+		Las aguas murmuran ceremoniosas.<br>
+		Ah, las h&uacute;medas sombras de la pradera,<br>
+		el animal que avanza; intenso verdor,<br>
+		los ramajes floridos tocan la frente cristalina;<br>
+		v&iacute;vido balanceo de la barca.<br>
+		El sol murmura sobre las nubes rosadas de la colina.<br>
+		Grande es el silencio de los abetos, <br>
+		las graves sombras en el r&iacute;o.<br>
+		<br>
+		&iexcl;Pureza!&nbsp; &iexcl;Pureza!<br>
+		&iquest;D&oacute;nde est&aacute;n las terribles veredas de la muerte,<br>
+		del gris silencio p&eacute;treo, las rocas nocturnas<br>
+		y las inquietas sombras? Radiante abismo del sol.<br>
+		Hermana, cuando te encontr&eacute;<br>
+		en el claro solitario del bosque<br>
+		era mediod&iacute;a y vasto el silencio del animal;<br>
+		blanca estabas bajo una encina silvestre<br>
+		y florec&iacute;a plateado el espino.<br>
+		Poderosa la muerte y la llama que canta en el coraz&oacute;n.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Oscuras aguas rodean el 
+		juego de los peces.<br>
+		Hora de la desolaci&oacute;n, silenciosa vista del sol.<br>
+		Es un ser extra&ntilde;o el alma en la tierra.<br>
+		Sagradamente anochece el azul sobre el bosque abatido<br>
+		y repica una sombr&iacute;a campana en la aldea;<br>
+		compa&ntilde;&iacute;a apacible.<br>
+		Sobre los p&aacute;lidos p&aacute;rpados del muerto<br>
+		florece el mirto silencioso.<br>
+		<br>
+		Suaves suenan las aguas al declinar la tarde<br>
+		y en la orilla verdea con intensidad la hierba,<br>
+		fulgor en el viento rosado;<br>
+		el dulce canto del hermano en la colina crepuscular.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Queja"></a>Queja</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Sue&ntilde;o y muerte, &aacute;guilas 
+		de tiniebla,<br>
+		rondan rumor de noche esa frente:<br>
+		a la dorada imagen del hombre<br>
+		parece engullir la ola helada<br>
+		de lo eterno. En arrecifes estremecedores<br>
+		p&uacute;rpura el cuerpo zozobra.<br>
+		Y se alza la oscura voz en su queja<br>
+		de la mar.<br>
+		Hermana en turbulenta pesadumbre,<br>
+		mira una barca de angustia sumirse<br>
+		entre estrellas<br>
+		en el callado rostro de la noche.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Jos&eacute; Luis 
+		Ar&aacute;ntegui </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="QUIETUD Y SILENCIO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Quietud y silencio</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Pastores enterraron al sol en el desnudo bosque.<br>
+		Un pescador sac&oacute;<br>
+		en su delicada red a la luna del lago helado.<br>
+		<br>
+		En el azul cristal<br>
+		habita el hombre p&aacute;lido,<br>
+		la mejilla apoyada en sus estrellas;<br>
+		o inclina la cabeza en sue&ntilde;o purp&uacute;reo.<br>
+		<br>
+		Siempre inquieta al contemplador<br>
+		el negro vuelo de los p&aacute;jaros<br>
+		que en el azul sagrado de las flores<br>
+		piensa en el cercano silencio del olvido,<br>
+		en &aacute;ngeles extintos.<br>
+		<br>
+		De nuevo oscurece la frente en rocas lunares;<br>
+		y radiante surge la hermana<br>
+		en oto&ntilde;o y negra podredumbre.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="REVELACIÓN Y CA&Iacute;DA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Revelaci&oacute;n y ca&iacute;da</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Extra&ntilde;os son los caminos nocturnos del hombre. Cuando iba son&aacute;mbulo por 
+		las habitaciones de piedra y en cada una <br>
+		ard&iacute;a un silencioso candil, un candelabro de cobre, y cuando preso del 
+		fr&iacute;o entr&eacute; en el lecho, reapareci&oacute; en la cabecera <br>
+		la sombra negra de la extranjera, y en silencio ocult&eacute; mi rostro en las 
+		lentas manos. El jacinto florec&iacute;a azul en la ventana <br>
+		y lleg&oacute; al labio p&uacute;rpura de mi aliento la antigua oraci&oacute;n; de sus 
+		p&aacute;rpados cayeron l&aacute;grimas de cristal lloradas por la amargura <br>
+		del mundo. En esta hora la muerte de mi padre hizo de m&iacute; el hijo blanco. 
+		En azules sobresaltos baj&oacute; de la colina el viento <br>
+		de la noche, el oscuro lamento de la madre que mor&iacute;a, y vi el negro 
+		infierno en mi coraz&oacute;n; minuto de radiante mutismo. <br>
+		Suave surgi&oacute; del muro blanqueado con cal un rostro indescriptible -un 
+		joven moribundo-, la belleza de una estirpe que regresa <br>
+		a sus padres. Blancura de luna, el fr&iacute;o de la piedra envolvi&oacute; la sien 
+		desvelada, sonaron los pasos de las sombras sobre erosionadas gradas, un 
+		rosado tumulto en el peque&ntilde;o jard&iacute;n.<br>
+		<br>
+		Silencioso estaba sentado en una taberna abandonada bajo vigas ahumadas, 
+		solo ante el vino; un cad&aacute;ver rutilante inclinado <br>
+		sobre la oscuridad y un cordero muerto a mis pies. De un corrupto azul 
+		sali&oacute; la sombra p&aacute;lida de mi hermana y as&iacute; habl&oacute; su boca ensangrentada:<br>
+		Hiere, espina negra. Ah, todav&iacute;a resuenan las tormentas desatadas en mis 
+		brazos plateados. Sangre, corre de mis pies lunares, floreciendo sobre 
+		los senderos nocturnos, donde la rata salta gritando. Iluminad, 
+		estrellas mis arqueadas cejas; para que <br>
+		el coraz&oacute;n palpite suave en la noche. Irrumpi&oacute; en la casa una sombra 
+		roja con espada flameante, huy&oacute; con su frente de nieve. <br>
+		Oh muerte amarga.<br>
+		<br>
+		Y una voz oscura habl&oacute; dentro de m&iacute;: He roto la nuca a mi caballo negro 
+		en el bosque nocturno, porque de sus purp&uacute;reos ojos brotaba la demencia; 
+		las sombras de los olmos, la risa azul del manantial y la frescura negra 
+		de la noche cayeron sobre m&iacute; <br>
+		cuando levant&eacute; como cazador salvaje una lanza de nieve. En un infierno 
+		de piedra muri&oacute; mi rostro. <br>
+		<br>
+		Cay&oacute; brillando una gota de sangre en el vino del solitario; y cuando lo 
+		beb&iacute; sab&iacute;a m&aacute;s amargo que la adormidera. Una nube profunda envolvi&oacute; mi 
+		cabeza, las l&aacute;grimas de cristal de &aacute;ngeles condenados. Delicadamente 
+		fluy&oacute; la sangre de la plateada herida <br>
+		de la hermana y una lluvia de fuego cay&oacute; sobre m&iacute;.<br>
+		<br>
+		Por el lindero del bosque deseaba caminar, como alguien sombr&iacute;o que ha 
+		dejado caer de sus mudas manos el velo solar, y al atravesar llorando la 
+		colina de la tarde levanta los p&aacute;rpados hacia la ciudad de piedra; como 
+		un animal que se siente tranquilo <br>
+		en la paz del viejo &aacute;rbol; oh, esta cabeza inquieta acechando en la 
+		penumbra, esos pasos que corren dudosos buscando la nube azul en la 
+		colina, persiguiendo tambi&eacute;n implacables constelaciones. A un lado 
+		escolta el corzo la siembra verde, silenciosa compa&ntilde;&iacute;a <br>
+		de los musgosos caminos del bosque. Las caba&ntilde;as de los campesinos se han 
+		cerrado en su mutismo, y atemoriza en la negra calma del viento la queja 
+		azul del torrente.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Pero cuando descend&iacute; 
+		por el sendero de piedras, me asalt&oacute; la locura y grit&eacute; fuerte en la 
+		noche; y cuando con mis dedos plateados me inclin&eacute; sobre las aguas 
+		silenciosas vi que mi rostro me hab&iacute;a abandonado. Y la voz blanca me 
+		dijo: &iexcl;M&aacute;tate! Con un suspiro <br>
+		se levant&oacute; en m&iacute; la sombra de un ni&ntilde;o y me observ&oacute; radiante con ojos 
+		cristalinos: entonces ca&iacute; llorando bajo los &aacute;rboles<br>
+		y la poderosa b&oacute;veda de estrellas.<br>
+		<br>
+		Sobresaltado caminar por el ca&oacute;tico sendero de piedras, lejano de los 
+		caser&iacute;os de la tarde, viendo reba&ntilde;os que regresan; <br>
+		en la distancia pasta el sol del ocaso en la pradera de cristal y su 
+		canto salvaje es conmovedor; el solitario grito del p&aacute;jaro extravi&aacute;ndose 
+		en la paz azul.<br>
+		Pero dulcemente vienes t&uacute; en la noche, mientras yo vigilo sobre la 
+		colina o cuando el delirio se desata en la tempestad de la primavera, y 
+		con nubes cada vez m&aacute;s sombr&iacute;as vela mi cabeza muerta la tristeza. Mi 
+		alma nocturna es horrorizada por fantasmales rel&aacute;mpagos; tus manos 
+		desgarradoras se ensa&ntilde;an sobre mi pecho de aliento entrecortado.<br>
+		<br>
+		Cuando penetr&eacute; en la penumbra del jard&iacute;n y se hab&iacute;a apartado de m&iacute; la 
+		negra presencia del mal, me rode&oacute; la calma del jacinto <br>
+		de la noche; y atraves&eacute; el estanque apacible en una barca ondulada 
+		mientras una dulce paz conmovi&oacute; mi frente de piedra. At&oacute;nito descans&eacute; 
+		bajo los viejos sauces y estaba el cielo azul muy alto colmado de 
+		estrellas; y cuando me perd&iacute; en su contemplaci&oacute;n murieron la angustia y 
+		el dolor en lo m&aacute;s profundo de m&iacute;; y la sombra azul del ni&ntilde;o se levant&oacute; 
+		radiante en la oscuridad, <br>
+		dulce canto. Entonces se elev&oacute; con alas de luna sobre el verdor de las 
+		cimas, por encima de los pe&ntilde;ascos cristalinos, la blanca imagen de la 
+		hermana.<br>
+		<br>
+		Con suelas plateadas descend&iacute; los espinosos escalones y entr&eacute; en la 
+		alcoba blanqueada con cal. Ard&iacute;a all&iacute; un candil silencioso <br>
+		y escond&iacute; calladamente mi cabeza en las s&aacute;banas purp&uacute;reas; y la tierra 
+		arroj&oacute; un cad&aacute;ver infantil, una figura lunar que sali&oacute; lentamente de mi 
+		sombra, precipit&aacute;ndose con los brazos quebrados de piedra en piedra, 
+		cayendo como nieve en copos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="SALMO"></a>
+		</font><font face="Georgia" color="#C4CAD4">Salmo</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Karl Kraus</i><br>
+		<br>
+		Hay una luz que el viento ha extinguido.<br>
+		Hay una taberna que en la tarde un ebrio abandona.<br>
+		Hay una vi&ntilde;a quemada y negra.<br>
+		con agujeros llenos de ara&ntilde;as.<br>
+		Hay un cuarto que han blanqueado con leche.<br>
+		El demente ha muerto.<br>
+		Hay una isla de los mares del sur<br>
+		para recibir al dios del sol. Tocan los tambores.<br>
+		Los hombres ejecutan danzas de guerra.<br>
+		Las mujeres contonean las caderas<br>
+		entre enredaderas y flores de fuego,<br>
+		cuando el mar canta. Oh nuestro para&iacute;so perdido.<br>
+		<br>
+		Las ninfas han abandonado los bosques de oro.<br>
+		Sepultan al extranjero.<br>
+		Comienza entonces una lluvia &iacute;gnea.<br>
+		El hijo de Pan surge<br>
+		bajo la apariencia de un pe&oacute;n caminero,<br>
+		que duerme al mediod&iacute;a sobre la tierra ardiente.<br>
+		Hay ni&ntilde;as en un patio con vestiditos<br>
+		de una pobreza desgarradora.<br>
+		Hay salas colmadas de acordes y sonatas.<br>
+		Hay sombras que se abrazan ante un espejo ciego.<br>
+		En las ventanas del hospital<br>
+		se calientan los convalecientes.<br>
+		Un barco blanco remonta el canal<br>
+		cargado con epidemias sangrientas.<br>
+		<br>
+		La hermana extranjera surge de nuevo<br>
+		en los malos sue&ntilde;os de alguien.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SIETE CANTOS A LA MUERTE"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Siete cantos a la muerte</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Azulada muere la primavera; bajo sedientos &aacute;rboles,<br>
+		camina un ser oscuro en el ocaso<br>
+		escuchando la dulce queja del mirlo.<br>
+		Silenciosa aparece la noche, con un venado sangrante<br>
+		que se abate lentamente en la colina.<br>
+		<br>
+		La h&uacute;meda brisa mece la rama del manzano en flor,<br>
+		se desata plateado lo que estuvo unido,<br>
+		muriendo con ojos nocturnos; estrellas que caen;<br>
+		dulce canto de la infancia.<br>
+		<br>
+		Iluminado baj&oacute; el durmiente por el bosque negro,<br>
+		murmuraba una fuente azul en la distancia<br>
+		cuando &eacute;l levant&oacute; sus p&aacute;lidos p&aacute;rpados<br>
+		sobre su rostro de nieve.<br>
+		<br>
+		La luna espant&oacute; un rojo animal<br>
+		de su guarida,<br>
+		y el oscuro lamento de las mujeres muri&oacute; en suspiros.<br>
+		<br>
+		Radiante levant&oacute; sus manos hacia su estrella<br>
+		el blanco forastero;<br>
+		y silencioso abandona un muerto la casa derruida.<br>
+		<br>
+		Oh la imagen corrupta del hombre;<br>
+		fundida con fr&iacute;os metales,<br>
+		noche y espanto de bosques sumergidos<br>
+		y el ardor del animal solitario;<br>
+		quietud de las corrientes del alma.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La barca sombr&iacute;a lo 
+		llev&oacute; por cauces fulgurantes,<br>
+		llenos de estrellas p&uacute;rpuras, y se inclin&oacute;<br>
+		apacible sobre &eacute;l la verde rama,<br>
+		como una blanca amapola desde sus nubes de plata.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tendida en el bosque de 
+		avellanos<br>
+		juega con sus estrellas.<br>
+		El estudiante, quiz&aacute; un doble,<br>
+		la sigue con la vista desde la ventana.<br>
+		Detr&aacute;s de &eacute;l est&aacute; su hermano muerto,<br>
+		o tal vez baja por la vieja escalera de caracol.<br>
+		A la sombra de los pardos casta&ntilde;os<br>
+		palidece la figura del joven novicio.<br>
+		El jard&iacute;n est&aacute; en el ocaso.<br>
+		En el claustro revolotean murci&eacute;lagos.<br>
+		Los hijos del portero dejan de jugar<br>
+		y buscan el oro del cielo.<br>
+		Acordes finales de un cuarteto.<br>
+		La peque&ntilde;a ciega corre temblando por el camino<br>
+		y despu&eacute;s su sombra va a tientas por muros fr&iacute;os,<br>
+		rodeada de cuentos y leyendas sagradas.<br>
+		<br>
+		Hay un nav&iacute;o vac&iacute;o que al atardecer<br>
+		desciende por el negro canal.<br>
+		En las tinieblas del viejo asilo caen ruinas humanas.<br>
+		Los hu&eacute;rfanos yacen muertos junto al muro del jard&iacute;n.<br>
+		De alcobas en penumbra<br>
+		surgen &aacute;ngeles con alas manchadas de barro.<br>
+		Gotean gusanos de sus p&aacute;rpados amarillentos.<br>
+		La plaza de la iglesia es sombr&iacute;a y silenciosa<br>
+		como en los d&iacute;as de la infancia.<br>
+		Sobre pies de plata se deslizan antiguas vidas<br>
+		y las sombras de los condenados<br>
+		descienden hacia las aguas suspirantes.<br>
+		En su tumba juega el mago blanco con sus serpientes.<br>
+		<br>
+		Silenciosos sobre el calvario<br>
+		se abren los dorados ojos de Dios.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+			<a name="SONIA"></a></font><font face="Georgia" color="#C4CAD4">
+			Sonia</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			La tarde reina en el viejo jard&iacute;n; <br>
+			la vida de Sonia, calma azul. <br>
+			Migran aves silvestres; <br>
+			calma del desnudo &aacute;rbol de oto&ntilde;o. <br>
+			<br>
+			El girasol se inclina suavemente <br>
+			sobre la blanca vida de Sonia.<br>
+			La herida roja indescifrable <br>
+			condena a existir en oscuros recintos, <br>
+			donde azules campanas resuenan. <br>
+			<br>
+			El paso de Sonia y su dulce sosiego. <br>
+			Contempla al animal que muere un<br>
+			y la calma del desnudo &aacute;rbol de oto&ntilde;o. <br>
+			<br>
+			Brilla el sol de d&iacute;as antiguos<br>
+			sobre las cejas blancas de Sonia, <br>
+			la nieve humedece sus mejillas <br>
+			y la espesura de sus cejas.</font></p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+			Versi&oacute;n de </em><i>Helmut Pfeiffer</i></font><p align="left">&nbsp;<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">
+		&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TRANSFIGURACIÓN"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Transfiguraci&oacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Cuando cae la tarde<br>un rostro azul te abandona furtivo.<br>Un 
+		p&aacute;jaro canta en el tamarindo.<br>
+			<br>Un monje apacible<br>junta sus manos ya muertas.<br>Un &aacute;ngel 
+		blanco visita a Mar&iacute;a. 
+			<br><br>Una corona nocturna <br>de violetas, trigo y uvas purp&uacute;reas 
+			<br>es el a&ntilde;o de quien contempla.<br><br>A tus pies <br>se abren los 
+		sepulcros de los muertos, 
+			<br>cuando posas la frente en tus manos plateadas. <br><br>
+		Silenciosa habita<br>en tu boca la luna oto&ntilde;al,<br>sombr&iacute;o es el canto 
+		ebrio del opio;<br>flor azul<br>que suena quedamente en piedras 
+		amarillas.<br>
+			<em><br>Versi&oacute;n de </em><i>Helmut Pfeiffer</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="VERANO"></a>
+		Verano</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Al atardecer calla el lamento<br>
+		del p&aacute;jaro en el bosque.<br>
+		Se inclina la mies,<br>
+		la roja amapola.<br>
+		<br>
+		Una negra tormenta amenaza<br>
+		sobre la colina.<br>
+		El antiguo canto del grillo<br>
+		perece en el campo.<br>
+		<br>
+		Ya no se mueve el follaje<br>
+		del casta&ntilde;o.<br>
+		En la escalera de caracol<br>
+		susurra tu vestido.<br>
+		<br>
+		En silencio alumbra el candil<br>
+		en la habitaci&oacute;n oscura;<br>
+		una mano plateada<br>
+		la apaga.<br>
+		<br>
+		Quietud del viento, noche sin estrellas.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Helmut 
+		Pfeiffer</font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:32:32 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:22 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,639 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Manu C&aacute;ncer</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Manu C&aacute;ncer. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Manu_Cancer,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/cancer.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/cancer.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815174350" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./cancer.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:43:50 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./cancer.htm" title="15:57:24 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:43:50 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./cancer.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:43:50 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./cancer.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>77 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">26 Oct 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000101_2003:-1:010101110101_2004:-1:000101010102_2005:-1:011000000004_2006:-1:110010000104_2007:-1:710114140100_2008:-1:111221000001_2009:-1:010010100000_2010:-1:100000001110_2011:-1:000000001101_2012:-1:000010001000_2013:7:101310010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<img border="0" src="./CANCER.jpg" width="308" height="40">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&quot;...S&oacute;lo por tu pasi&oacute;n yo dar&iacute;a mi vida...<br>
+Yo dar&iacute;a mi boca por la tuya... Yo dar&iacute;a<br>
+los trozos que han quedado en m&iacute;...&quot;</em></font></p>
+
+<p align="center"><font color="#84B0D6"><img border="0" src="./CANCER1.jpg" width="260" height="263"></font></p>
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&nbsp;</em><em>&quot;Les Mari&eacute;s de la Tour Eiffel&quot;</em></font></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#84B0D6">Marc Chagall</font></em><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta 
+		espa&ntilde;ol contempor&aacute;neo nacido en Bilbao donde vivi&oacute; su infancia y su 
+		primera juventud.<br>Se licenci&oacute; en Filosof&iacute;a y Letras por la 
+		Universidad de Deusto, carrera que nunca ha ejercido. Despu&eacute;s de 
+		recorrer <br>
+		varias ciudades espa&ntilde;olas, se estableci&oacute; en Madrid donde actualmente 
+		reside.<br>Su primera obra po&eacute;tica &laquo;Grita&raquo;,&nbsp; fue publicada en 1980 
+		y luego&nbsp; ha seguido trabajando con diversos estudios <br>
+		po&eacute;ticos entre los que&nbsp; sobresale &laquo;Blues de todos los jueves&raquo;. &copy;<br></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+<img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#BALADA DE LA NOTA BORROSA">Balada de la nota borrosa</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./cancer.htm#CANCI&Oacute;N PARA C">Canci&oacute;n para&nbsp; C</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#DOLOR EN PRIMAVERA">Dolor en primavera</a><br><br>
+		<a href="./cancer.htm#EL BLUES DE LA ESTRELLA DEL SUR">El blues de la estrella del 
+		sur</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./cancer.htm#FLOR DE BARRANCO">Flor de barranco</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#LA CANCI&Oacute;N ALMOR&Aacute;VIDE">La canci&oacute;n almor&aacute;vide</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#LA CANCI&Oacute;N DE TODOS LOS D&Iacute;AS">La canci&oacute;n de todos los d&iacute;as</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#LA CANCI&Oacute;N DEL PRESAGIO">La canci&oacute;n del presagio</a><br><br>
+		<a href="./cancer.htm#LA CANCI&Oacute;N DEL VIAJERO">La canci&oacute;n del viajero</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./cancer.htm#LLORAR A MI MANERA">Llorar a mi manera</a><br><br>
+		<a href="./cancer.htm#MOJA MIS QUEMADURAS">Moja mis quemaduras</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./cancer.htm#POEMA DE VIENTO">Poema de viento</a><br><br><a href="./cancer.htm#QUIERO VOLVER DEL VIENTO">
+		Quiero volver del viento...</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./cancer.htm#SABERLO TODO">Saberlo todo</a><br><br><a href="./cancer.htm#TU NOMBRE Y LA SONRISA">
+		Tu nombre y la sonrisa</a><br>
+		<br><a href="./cancer.htm#VINO DE LA MA&Ntilde;ANA...">Vino de la ma&ntilde;ana, dile que la he 
+		querido...</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><br>
+	<font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice 
+		L-Z</a></font><br>
+	<font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="BALADA DE LA NOTA BORROSA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Balada de la nota&nbsp; borrosa</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Si por causalidad<br>encuentras<br>esta nota borrosa,<br>que alguien<br>
+		te lea lo que dice.<br>Hoy<br>s&oacute;lo soy un hombre<br>vencido por la 
+		noche,<br>hoy<br>s&oacute;lo soy un hombre<br>o algo as&iacute;,<br>caminando borracho 
+		por la carretera.<br>Soy un extra&ntilde;o para cualquier extra&ntilde;o y eso es 
+		todo,<br>pero, si por casualidad encuentras<br>esta nota,<br>quiero que 
+		sepas<br>lo que dice:<br>no<br>he sabido<br>olvidarte.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="CANCIÓN PARA C"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Canci&oacute;n para C</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		S&oacute;lo por tu pasi&oacute;n<br>yo dar&iacute;a mi vida,<br>yo dar&iacute;a mis ojos devaluados<br>
+		yo dar&iacute;a mi luz y las cosas que veo,<br>yo dar&iacute;a mi boca por la tuya,<br>
+		yo dar&iacute;a los trozos que han quedado en m&iacute;,<br>yo dar&iacute;a mi fuerza 
+		introducida,<br>yo dar&iacute;a mi caja de sentidos,<br>la sombra de mis 
+		p&aacute;nicos<br>o mis parques desiertos,<br>pero por tu pasi&oacute;n<br>yo viajar&iacute;a 
+		buscando las claves m&aacute;s precisas del futuro,<br>por tu pasi&oacute;n me 
+		vender&iacute;a a plazos a m&iacute; mismo,<br>derrochar&iacute;a los relojes que habitan el 
+		dinero,<br>despreciar&iacute;a el alfabeto pagano de los tristes.<br>Yo puedo 
+		ser un hombre, un grito, un clown,<br>pero por tu pasi&oacute;n<br>yo dar&iacute;a mi 
+		vida.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="DOLOR EN PRIMAVERA"></a>Dolor en primavera</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		T&uacute; me miraste<br>cuando yo era<br>un mendigo,<br>t&uacute; me miraste as&iacute;,<br>
+		cuando estaba sin nadie.<br>Cuando pens&eacute; morir<br>t&uacute;<br>me miraste,<br>y 
+		eso fue<br>para m&iacute;<br>volver a casa:<br>aquella noche<br>t&uacute; me invitaste 
+		a entrar<br>y entonces me miraste.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="EL BLUES DE LA ESTRELLA DEL SUR"></a>El blues de la estrella 
+		del sur</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>La caracola azul<br>de la ma&ntilde;ana<br>y el despertar violento de la 
+		rosa<br>volver&aacute;n a latir<br>debajo de tu piel.<br>Las puertas de cristal 
+		del sentimiento<br>se abrir&aacute;n con un blues:<br>con el blues<br>de la 
+		estrella del sur.<br>Es hora ya de que despierten los colores.<br>Es el 
+		blues de la estrella del sur.<br>El adi&oacute;s, la aventura<br>est&aacute;n en los 
+		bolsillos de tu ropa.<br>Es el blues de la estrella del sur.<br>Brilla 
+		la luna<br>encima de las piedras.<br>Es hora ya, despierta.<br>Es el 
+		blues de la estrella del sur.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="FLOR DE BARRANCO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Flor de barranco</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Las flores de barranco<br>
+		nacen sin m&aacute;s, cada ma&ntilde;ana,<br>como esa flor,<br>tan terca y silenciosa,<br>
+		s&eacute; que nace<br>mi amor<br>por ti<br>cada ma&ntilde;ana.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="LA CANCIÓN ALMOR&Aacute;VIDE"></a>La canci&oacute;n almor&aacute;vide</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Quise buscar la oraci&oacute;n almor&aacute;vide<br>para llorar exactamente a la hora 
+		del desierto.<br>Quiero decirte ahora<br>que sigo am&aacute;ndote y que el 
+		avi&oacute;n se fue.<br>Tengo una carta<br>para ti:<br>te he querido y he 
+		muerto.<br>La oraci&oacute;n de los viernes y el llanto de los viernes<br>se 
+		parecen a verte<br>y recordarte.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="LA CANCIÓN DE TODOS LOS D&Iacute;AS"></a>La canci&oacute;n de todos los d&iacute;as</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Yo vengo de un almendro y he venido<br>a despeinar<br>a esa muchacha.<br>
+		A viajar<br>por los mapas de lluvia<br>y driblar a la muerte.<br>Llegaba<br>
+		de un olivo y he venido<br>para desocupar la nada,<br>para vender 
+		palabras<br>con olor a tomillo;<br>yo vengo a resbalar<br>entre tus 
+		pechos con olor dulce a Oriente.<br>Vengo desde la vid y por suerte soy 
+		feo,<br>feo como la tierra:<br>mi coraz&oacute;n tiene una puerta<br>donde 
+		anidan<br>las l&aacute;grimas y cantan los jilgueros.<br>Sobre tu piel<br>llena 
+		de estrechos y llanuras<br>he venido. Vengo<br>desde un naranjo viejo<br>
+		y camino el camino<br>de tus sobacos salados por el sol,<br>y de tu 
+		vientre<br>salto a tu paladar.<br>Soy como un saltamontes<br>en la 
+		temperatura de tu piel,<br>me siento como un pez<br>en el agua lent&iacute;sima 
+		de las mareas de tu cuerpo.<br>Soy un gorri&oacute;n que vuela<br>de los 
+		pesebres tiernos de tu boca<br>con direcci&oacute;n al libro de tus muslos.<br>
+		Llegaba de un almendro<br>y ahora<br>resulta<br>que he venido.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="LA CANCIÓN DEL PRESAGIO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		La canci&oacute;n del presagio</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Es profeta <br>hasta el 
+		junco<br>hasta el agua y la noche:<br>s&eacute;<br>que me estoy muriendo.<br>
+		Oh, amor, aguja de reloj<br>congelada en mi fuego,<br>s&oacute;lo<br>soy<br>un 
+		sonido de luna,<br>y te llamo y te escucho<br>en el eco<br>del llanto.<br>
+		S&eacute;<br>que me estoy muriendo.</font></p>
+	<blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">
+	&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="LA CANCIÓN DEL VIAJERO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		La canci&oacute;n del viajero</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Baila conmigo en esta 
+		noche,<br>salta,<br>grita,<br>y abraza,<br>s&eacute; latido<br>de vida y amor 
+		lento, muy lento,<br>v&iacute;velo<br>casi todo 
+		<br>en esta noche.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="LLORAR A MI MANERA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Llorar a mi manera</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Que me dejen llorar<br>
+		con l&aacute;grimas igual a lapiceros,<br>con l&aacute;grimas iguales a los p&aacute;jaros,<br>
+		s&oacute;lo quiero<br>que me dejen llorar<br>a mi manera.<br>Que me dejen 
+		llorar<br>como lloran los radios en la madrugada,<br>como los exiliados,<br>
+		que me dejen 
+		<br>llorar a mi manera.</font></p>
+		<p align="center">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="MOJA MIS QUEMADURAS"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Moja mis quemaduras</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Amor, amor, amor,<br>moja mis quemaduras<br>con una sola frase de 
+		esperanza sencilla,<br>una sola caricia<br>azul<br>de madrugada,<br>con 
+		una sola noche m&aacute;s.<br>Amor, amor, amor,<br>hazme vivir,<br>hazme 
+		resurrecci&oacute;n callada,<br>amor, dame luz a beber, dame luz, dame luz,<br>
+		dame coraje apasionado, h&aacute;blame,<br>moja mis quemaduras<br>con una sola 
+		s&iacute;laba de esperanza,<br>una sola caricia<br>azul de madrugada.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="POEMA DE VIENTO"></a>Poema de viento</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Cuando te vas, todo es 
+		de viento,<br>s&oacute;lo viento.<br>Las rosas no son rosas, 
+		<br>no hay sonidos de luna, <br>ya no quedan milagros.<br>Cuando te vas,<br>
+		quiero no perdonar,<br>quiero cerrar mi puerta de ternura,<br>quiero 
+		coger mi patria y marcharme<br>con ella,<br>quiero arrancarme el agua de 
+		la vida.<br>Quiero dormir tranquilo<br>para perder locura y despertar 
+		distinto.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="QUIERO VOLVER DEL VIENTO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Quiero volver del viento</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Quiero volver del 
+		viento,<br>escrutar las palabras<br>y hablarte,<br>hablarte con mis 
+		manos llenas de cicatrices y regueros.<br>Quiero morir con los olivos,<br>
+		silbar dentro de un grillo,<br>quiero morir<br>con los olivos.<br>Con el 
+		oto&ntilde;o intenso<br>me marchar&eacute; tambi&eacute;n,<br>seguramente caminando<br>por la 
+		desolaci&oacute;n de grandes avenidas llenas de hojas,<br>con manos de naranjos 
+		encogidos.<br>S&eacute; que voy a llorar,<br>llorar como hace tiempo,<br>llorar 
+		con los o&iacute;dos, llorar con mis diez dedos,<br>s&eacute; que voy a llorar<br>
+		hasta que me enronquezca el coraz&oacute;n,<br>hasta que yo -yo mismo-<br>sea 
+		otro.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		&nbsp;</font></p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="SABERLO TODO"></a>Saberlo todo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		La noche<br>se hizo para mirarte<br>mientras duermes<br>y admirar tu 
+		quietud, con ternura,<br>decirte cosas al o&iacute;do,<br>saber que est&aacute;s en 
+		paz.<br>Saber que amarte<br>es saber todo.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="TU NOMBRE Y LA SONRISA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Tu nombre y la sonrisa</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Si &uacute;ltimamente he sido so&ntilde;ador<br>fue por sentirte,<br>por hablarte,<br>
+		por despertar<br>junto 
+		<br>a tu boca.<br>Con eso me bastaba.<br>Por si cambio de nombre en esta 
+		noche,<br>cr&eacute;eme,<br>esto es todo<br>lo que puedo escribir<br>para ti.<br>
+		Tu nombre (y tu sonrisa)<br>significan mi elipse<br>remendada:<br>
+		cr&eacute;eme,<br>aqu&iacute; est&aacute;n<br>todas las viejas l&aacute;grimas, las bromas<br>y 
+		tambi&eacute;n<br>las preguntas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="VINO DE LA MA&Ntilde;ANA..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Vino de la ma&ntilde;ana, dile que la he querido...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Vino de la ma&ntilde;ana, dile que la he querido,<br>que la he querido con 
+		coraz&oacute;n de ni&ntilde;o, de fe, de vagabundo,<br>dile que la he querido y 
+		m&aacute;ndale mis labios.<br>&Aacute;brete paso<br>por entre sus cabellos,<br>resbala 
+		por su espalda,<br>hazlo como un susurro, vino de la ma&ntilde;ana.</font></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:43:50 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:46 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

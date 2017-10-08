@@ -1,0 +1,784 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Concha Lagos</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Concha Lagos. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Concha_Lagos,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#99AFC8" vlink="#99AFC8" alink="#99AFC8">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/lagos.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "24";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/lagos.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130824161229" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./lagos.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:12:29 Aug 24, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./lagos.htm" title="17:41:21 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:12:29 Aug 24, 2013">24</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./lagos.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:12:29 Aug 24, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./lagos.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>56 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">8 Jun 04 - 24 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000001010101_2005:-1:011100000005_2006:-1:220011000100_2007:-1:610101020100_2008:-1:101111000000_2009:-1:000100110000_2010:-1:100000001110_2011:-1:000000002100_2012:-1:100010001000_2013:7:101210020000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center"><br>
+    &nbsp; <br>
+    </p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><br>
+    <img border="0" src="./LAGOS.jpg" width="323" height="51"></p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><font face="Arial" size="2" color="#84B0D6">
+	<em style="font-style: normal">&quot;...&iquest;C&oacute;mo ser&aacute;s cuando el r&iacute;o descienda<br>
+    y sientas ya la espuma por las sienes?...&quot;</em></font></p>
+    <p align="center"><font color="#84B0D6"><img src="./LAGOS1.jpg" width="290" height="379"></font></p>
+    <p align="center"><font face="Arial" size="2" color="#84B0D6"><em>&quot;Baronesse 
+	Gourgaud with a black hat&quot;</em></font></p>
+    <p align="center"><font face="Arial" size="2" color="#84B0D6"><em>Marie 
+	Laurencin</em></font><font
+    face="Basil" size="5" color="#84B0D6"><br>
+    </font></p>
+    <p align="center">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+    <p><font face="Georgia" size="2" color="#84B0D6">Concepci&oacute;n Guti&eacute;rrez 
+	Torrero -su verdadero nombre- naci&oacute; en C&oacute;rdoba, Espa&ntilde;a,&nbsp; en 1913.<br>
+	Muy temprano mostr&oacute; su inclinaci&oacute;n por las letras, especialmente por la 
+	poes&iacute;a, aunque su primera aparici&oacute;n <br>
+	fue s&oacute;lo en 1954 con &laquo;Balc&oacute;n&raquo;, al que siguieron numerosas publicaciones 
+	entre las que se destacan: <br>
+	&laquo;El coraz&oacute;n cansado&raquo; en 1957, &laquo;Campo abierto&raquo; en 1960, &laquo;Los anales&raquo; en 1966,&nbsp; 
+	&laquo;Por las ramas&raquo; en 1980, <em><br>
+	Premio Ambito Literario</em>, &laquo;Con el arco a punto&raquo; en 1984, <em>Premio Ibn 
+	Zayd&uacute;n</em>, del Instituto de Estudios Hispano&aacute;rabes, <br>
+	&laquo;En la rueda del viento&raquo; en 1985, &laquo;Últimas canciones&raquo; en 1996 y &laquo;Atados a la 
+	tierra&raquo; en&nbsp; 1997.<br>Ha colaborado en importantes publicaciones 
+	literarias como poeta y prosista, dirigiendo por muchos a&ntilde;os la revista <em><br>
+	Agora
+	</em>y ocupando una silla en la <em>Real Academia de C&oacute;rdoba</em>.<br>Aunque 
+	su vida transcurre en Madrid, mantiene un especial inter&eacute;s por todos los 
+	temas andaluces, raz&oacute;n que la ha <br>
+	hecho&nbsp;acreedora a la <em>Medalla de Andaluc&iacute;a</em> en el a&ntilde;o 2002. &copy;<br>&nbsp;</font></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      size="3" color="#A6BCCE" face="Georgia"><br><br>
+&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./lagos.htm#CAMPO ABIERTO">Campo abierto</a><br><br><a href="./lagos.htm#&iquest;C&Oacute;MO SER&Aacute;S?">
+	&iquest;C&oacute;mo ser&aacute;s sin estos ojos m&iacute;os?</a><br><br>
+	<a href="./lagos.htm#DETENIDA EN EL HUECO DE TU ESPACIO...">Detenida en el hueco de tu 
+	espacio...</a><br>
+	<br><a href="./lagos.htm#EL DI&Aacute;LOGO">El di&aacute;logo</a><br><br><a href="./lagos.htm#INTRODUCCI&Oacute;N">
+	Introducci&oacute;n</a><br>
+	<br><a href="./lagos.htm#ME PREGUNTO POR TI">Me pregunto por ti</a><br><br>
+	<a href="./lagos.htm#OTRA VEZ">Otra vez a so&ntilde;ar desde lo oscuro...</a><br><br><a href="./lagos.htm#POR VOLVERLO A ESCUCHAR">
+	Por volverlo a escuchar</a><br>
+	<br><a href="./lagos.htm#QU&Eacute; F&Aacute;CIL ESTE AHORA">Qu&eacute; f&aacute;cil este ahora</a><br><br>
+	<a href="./lagos.htm#QUIERO MIRAR ESTATUAS">Quiero mirar estatuas</a><br><br>
+	<a href="./lagos.htm#QUISIERA HACERLE HOY A MI VIDA UN NUDO">Quisiera hacerle hoy a mi 
+	vida un nudo...</a><br>
+	<br><a href="./lagos.htm#SABR&Aacute;S">Sabr&aacute;s</a><br><br><a href="./lagos.htm#S&Eacute; QUE TRAZABA SIGNOS">S&eacute; 
+	que trazaba signos</a><br>
+	<br><a href="./lagos.htm#SEA">Sea</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./lagos.htm#SI ME DEJO MECER EN ESTO DEL RECUERDO...">Si me dejo mecer en esto 
+	del recuerdo que nadie lo repruebe...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./lagos.htm#S&Oacute;LO AUSENCIA">
+	S&oacute;lo ausencia</a><br>
+	<br><a href="./lagos.htm#TODO SER&Aacute; SILENCIO">Todo ser&aacute; silencio</a><br><br>
+	<a href="./lagos.htm#YO QUISIERA CONTARLO...">Yo quisiera contarlo como una triste 
+	historia...</a><br><br>
+	<a href="./lagos.htm#YO TE SUE&Ntilde;O TAN ALTO">Yo te sue&ntilde;o tan alto</a><br><br>
+	<a href="./lagos.htm#YO TE VEL&Eacute;">Yo te vel&eacute;</a><br><br><a href="./lagos.htm#5 DE JUNIO">5 de junio</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	<br>Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+	Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      size="3" color="#A6BCCE" face="Georgia"><br><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="CAMPO ABIERTO">
+	</a></font><font face="Georgia" color="#84B0D6">Campo abierto</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Enamoradamente he vuelto la 
+	cabeza,<br>all&iacute;, por la ma&ntilde;ana de luz y de claveles,<br>con la viva alegr&iacute;a<br>
+	del viajero que vuelve al lugar deseado.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Enamoradamente por los 
+	altos balcones,<br>entre jardines tibios, con risas de muchachas<br>que ya 
+	est&aacute;n presintiendo el roce del amor.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Lanzad, lanzad los lazos. 
+	Sujetadlo con bridas.<br>Es el amor, cogedle. No perd&aacute;is un instante.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6"><a name="&iquest;CÓMO SER&Aacute;S?"></a>&iquest;C&oacute;mo 
+	ser&aacute;s sin estos ojos m&iacute;os?</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iquest;C&oacute;mo ser&aacute;s sin estos ojos 
+	m&iacute;os?<br>&iquest;Qui&eacute;n te leer&aacute; palabras por la frente<br>sabi&eacute;ndote despacio, pena 
+	adentro?<br>
+	<br>&iquest;C&oacute;mo ser&aacute;s cuando el r&iacute;o descienda<br>y sientas ya la espuma por las 
+	sienes?<br>La espuma de tu mar, el mar de todos.<br>
+	<br>No s&eacute; d&oacute;nde dejarte escrito el nombre<br>crecido de tu tiempo hacia 
+	otras fechas,<br>desbordado de s&iacute;, fuera de madre.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="DETENIDA EN EL HUECO DE TU ESPACIO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Detenida en el hueco de tu espacio...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Detenida en el hueco de tu 
+	espacio,<br>f&aacute;cil a la impaciencia de tu mano,<br>en el juego incansable, 
+	agua y luz,<br>de la arena y la ola por la playa.<br>
+	<br>Encendida de ti, llama en tu fuego,<br>varada ya en tu orilla, puerto y 
+	ancla,<br>presintiendo las cifras de la resta,<br>mientras sumo otra vez 
+	amor y duda.<br>
+	<br>Otra vez a volar, redoble, vuelo.<br>A contra luz voltean las campanas<br>
+	el alegre repique de esta tarde<br>en vuelo por el aire de tu torre.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="EL DI&Aacute;LOGO"></a></font>
+	<font face="Georgia" color="#84B0D6">El di&aacute;logo</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">No hilvanemos historias, no 
+	hace al caso,<br>lo importante es saber que aqu&iacute; me tienes.<br>&iquest;D&oacute;nde ya la 
+	que fui?<br>Deja que el tiempo se nos lleve y pase,<br>as&iacute; quedamos siempre 
+	renacidos.<br>
+	<br>Hoy no s&eacute; si estas manos son aqu&eacute;llas,<br>s&oacute;lo las siento como manos 
+	tuyas<br>porque tu tiempo es tiempo que me sue&ntilde;a<br>y me vive hacia m&aacute;s y 
+	m&aacute;s por dentro.<br>
+	<br>&laquo;Ayer&raquo;, &iexcl;qu&eacute; lejos la palabra!<br>D&oacute;nde se fueron zapatos y trajes,<br>
+	billetes de un trayecto recorrido<br>entre extra&ntilde;os viajeros vistos para 
+	olvidados.<br>
+	<br>In&uacute;tilmente en los bolsillos busco<br>contactos que ya fueron,<br>y 
+	sombras de mi cuerpo en las ventanas<br>contemplando paisajes con mis 
+	aquellos ojos.<br>
+	<br>&iquest;No descubriste nunca un manojo de llaves<br>para imposibles cerraduras?<br>
+	<br>A veces algo vuelve, pero s&oacute;lo en resumen;<br>una peque&ntilde;a fecha que casi 
+	nada indica<br>o ese breve letrero alarmante que advierte:<br>&laquo;cuidado, es 
+	peligroso volcarse al interior&raquo;.<br>
+	<br>&iquest;Quieres hacer la cuenta?<br>Si miro a la derecha brilla s&oacute;lo tu cifra.<br>
+	<br>A la izquierda la huella de alg&uacute;n borroso cero.<br>&iquest;Qu&eacute; prenda pagar 
+	debo por haber sido antes,<br>sin tu tiempo en mis horas?<br>
+	<br>Alcemos la cabeza<br>a la igualdad del cielo,<br>aunque t&uacute; apuntes 
+	&laquo;Marte&raquo;<br>y yo diga: &laquo;Saturno&raquo; (tal vez por los anillos).<br>
+	<br>Cada cual con su estrella, con su planeta en alto<br>y todas las 
+	preguntas por la arboleda azul,<br>compartiendo verdades,<br>como esta del 
+	amor, el milagro m&aacute;s nuestro.<br>
+	<br>No pienses en mis ramas,<br>me crezco sobre el tronco.<br>A punta de 
+	navaja puedes grabar el nombre.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="left"><font color="#84B0D6"><br>
+	<br>
+	</font>
+	<font face="Georgia" size="2" color="#84B0D6"><a name="INTRODUCCIÓN"></a></font>
+	<font face="Georgia" color="#84B0D6">Introducci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Ya todo est&aacute; inventado, descubierto;<br>llego tarde, muy tarde, a 
+	vuestro lado;<br>por eso no me inquieta lo remoto<br>y voy tras lo sencillo 
+	y cotidiano,<br>llam&aacute;ndole al pan, pan, y al vino, vino...<br>Aunque no 
+	suene bien, &iexcl;es tan humano!<br>
+	<br>Miro el jard&iacute;n y digo: &laquo;&iexcl;Primavera!&raquo;<br>Y al extender los brazos<br>con 
+	t&iacute;mido adem&aacute;n hacia las cosas,<br>siento un tibio aleteo en cada hallazgo:<br>
+	un comp&aacute;s repetido,<br>algo que va, que viene, que es alado.<br>Siempre ser&aacute; 
+	ma&ntilde;ana la ma&ntilde;ana<br>y m&aacute;s &aacute;rbol, el &aacute;rbol.<br>No quiero ya en el alma nada 
+	nuevo,<br>que todo est&eacute; estrenado.<br>
+	<br>Acaso la que ans&iacute;o<br>es caminar segura<br>por las antiguas huellas de 
+	otros pasos,<br>o quedarme tranquila aqu&iacute;, en mi huerto;<br>saber que ya 
+	est&aacute; todo sosegado:<br>el coraz&oacute;n, la casa, los recuerdos...<br>Sentir la 
+	azada fiel del hortelano<br>remover, amoroso, los terrones,<br>como hicieron 
+	en tiempo sus hermanos.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ya est&aacute; todo gastado bajo 
+	el sol,<br>a fuerza de pasar de mano en mano.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ME PREGUNTO POR TI"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Me pregunto por ti</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Me pregunto las m&aacute;s sencillas cosas,<br>ese porqu&eacute;, que acaso nadie sabe,<br>
+	costumbre de vivir sin rumbo fijo.<br>
+	<br>Me pregunto por ti desde el umbral<br>como el que dice al aire &laquo;buenos 
+	d&iacute;as&raquo;,<br>y de pronto descubre que est&aacute; solo.<br>
+	<br>Me pregunto palabras sin respuesta,<br>tal vez para dejar en el recuerdo<br>
+	tu presencia grabada hora tras hora.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+	<br></font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="OTRA VEZ"></a></font>
+	<font face="Georgia" color="#84B0D6">Otra vez a so&ntilde;ar desde el oscuro...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Otra vez a so&ntilde;ar desde el oscuro<br>imposible por qu&eacute;, mano tendida,<br>
+	intentando apresar amor y vida,<br>fijarle a lo inseguro lo seguro.<br>
+	<br>Otras veces cabalgando hacia tu muro,<br>soledad que me tiras de la 
+	brida,<br>seguidora incansable de mi huida,<br>vencedora en la lucha en que 
+	perduro.<br>
+	<br>Otra vez a mirar arena y cielo<br>en tu playa sin fin siempre desnuda,<br>
+	bebi&eacute;ndome el silencio que te nombra.<br>
+	<br>Otra vez como ayer perdido el vuelo<br>por el salto hacia atr&aacute;s de miedo 
+	y duda,<br>seguida y seguidora de tu sombra.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="POR VOLVERLO A ESCUCHAR"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Por volverlo a escuchar</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Urgente la presencia te reclamo,<br>eje te quiero de mi todav&iacute;a,<br>la 
+	espuma de tu orilla por la m&iacute;a<br>ascendiendo sedienta tramo a tramo.<br>
+	<br>Prolongado oleaje del te amo<br>que de mi playa aleje la agon&iacute;a.<br>Por 
+	volverlo a escuchar deshojar&iacute;a<br>hasta el &uacute;ltimo sue&ntilde;o de mi ramo.<br>
+	<br>Vuelve y vuelve otra vez, vuelve a cantarme,<br>rep&iacute;teme el comp&aacute;s a 
+	cada hora,<br>qu&eacute;date detenido en mi presente.<br>
+	<br>Hoy s&eacute; que una campana va a sonarme<br>anunciando la vuelta de otra 
+	aurora<br>la raz&oacute;n de esta lucha por mi frente.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="QU&Eacute; F&Aacute;CIL ESTE AHORA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Qu&eacute; f&aacute;cil este ahora</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Despu&eacute;s de tanto y cuanto, aqu&iacute; estamos de nuevo<br>ahorrando las palabras, 
+	sabi&eacute;ndonos el fondo,<br>porque el silencio dice de nuestra paz ganada.<br>
+	<br>Nos tenemos compactos, casi a rengl&oacute;n seguido:<br>una p&aacute;gina escrita con 
+	tu nombre y mi nombre,<br>encuadernada a pulso de sucesos y tiempo.<br>
+	<br>Qu&eacute; f&aacute;cil este ahora, resumen de los d&iacute;as,<br>y qu&eacute; nueva tu mano por 
+	caricias antiguas<br>estrenando otra vez la mirada y el beso.<br>
+	<br>Te me vas y te quedas en aire que respiro,<br>en ausencia y presencia 
+	que nada me entorpece,<br>como un llevarte dentro aladamente en alto.<br>
+	<br>Y te me quedas m&aacute;s, como el hilo en la malla<br>de un pasar que se 
+	anuda, de un quedar avanzando,<br>de un agua inagotable siempre de cara al 
+	cielo.<br>
+	<br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="QUIERO MIRAR ESTATUAS"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Quiero mirar estatuas</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Iremos por las calles que ya nos vieron antes;<br>el aire distra&iacute;do para que 
+	nadie sepa<br>que la historia prosigue con cap&iacute;tulos nuevos.<br>
+	<br>Quiero mirar estatuas, balcones encendidos,<br>volver a la baranda del 
+	beso y de la noche.<br>Quiero decir tu nombre en calles solitarias<br>
+	sintiendo la cintura fr&aacute;gil bajo el abrazo.<br>
+	<br>Otra vez como ayer con tu verso en el vino,<br>otra vez a tus ojos en 
+	igual frente a frente,<br>otra vez, otra y otra. Para siempre otra vez.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="QUISIERA HACERLE HOY A MI VIDA UN NUDO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Quisiera hacerle hoy a mi vida un nudo...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Quisiera hacerle hoy a mi 
+	vida un nudo<br>y que se detuviera en este punto.<br>Aprisionar la sangre 
+	aqu&iacute;, en las venas,<br>para que inquieta y ciega no corriera,<br>y esperar, 
+	esperar un largo tiempo:<br>como esos negros trenes que, de pronto,<br>
+	traspasados de silencio y sombra,<br>se quedan en la noche detenidos.<br>
+	<br>Quisiera ya quedar por siempre absorta<br>con los remos flotando en el 
+	vac&iacute;o;<br>sin claros firmamentos ni horizontes,<br>con la palabra exacta 
+	suspendida<br>en flor sobre los labios;<br>y olvidar los audaces 
+	pensamientos,<br>los &laquo;por qu&eacute;&raquo;, los letargos,<br>el silbido afilado de los 
+	vientos;<br>sin punta ya todos los alfileres<br>que el coraz&oacute;n usaron de 
+	acerico.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="SABR&Aacute;S"></a></font>
+	<font face="Georgia" color="#84B0D6">Sabr&aacute;s</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Sabr&aacute;s que me has tenido por tenerte,<br>por saberte por fin fijo en tu 
+	adentro. 
+	<br>Sabr&aacute;s lo que se sabe al encontrarse.<br><br>Y me sabr&aacute;s despu&eacute;s, desde 
+	el lejano<br>imposible-jam&aacute;s, r&iacute;o perdido.<br>Ignorado final a cara o cruz.<br>
+	<br>Te esperar&eacute; en ayer, en hoy, en blanco.<br>&iquest;C&oacute;mo explicar en el &laquo;adi&oacute;s&raquo; 
+	ma&ntilde;ana?<br>Si algo se puede hacer, cuenta conmigo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="S&Eacute; QUE TRAZABA SIGNOS"></a>S&eacute; que trazaba signos</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Yo no s&eacute; si te tuve; esto nunca se sabe.<br>S&eacute; que trazaba signos con letras 
+	de tu nombre.<br>Que apretaba las manos inquieta contra el pecho<br>como el 
+	que siempre teme perder una medalla.<br>
+	<br>Estos son los recuerdos mezclados con el humo<br>de tu cualquier tabaco, 
+	de tu cualquier alcohol.<br>
+	<br>Puedes abrir el libro,<br>interrumpida en ti volver&aacute;s a encontrarme.<br>
+	<br>S&eacute; que trazaba signos con letras de tu nombre.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="SEA"></a></font>
+	<font face="Georgia" color="#84B0D6">Sea</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Agua sumisa al pez de tu capricho.<br>T&uacute; me quieres as&iacute;, yo digo: &laquo;sea&raquo;<br>
+	y nos navega el cielo por el fondo.<br>
+	<br>T&uacute; me quieres de estar casi en ausencia,<br>media luz de tu paz y de tu 
+	frente,<br>sujeta a la distancia en que me cercas.<br>
+	<br>T&uacute; me quieres en gris como la tarde.<br>En oraci&oacute;n, en sue&ntilde;o, de 
+	silencios;<br>ala cortada y mano sobre mano.<br>
+	<br>T&uacute; me quieres de espera y de ternura,<br>al aire de tu tiempo y de tu 
+	aire,<br>surco de amor tendido a tu semilla.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="SI ME DEJO MECER EN ESTO DEL RECUERDO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Si me dejo mecer en esto del recuerdo que nadie lo repruebe...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Si me dejo mecer en esto 
+	del recuerdo que nadie lo repruebe.<br>
+      Ese fue mi vivir, el que me dieron hecho.<br>
+      (Las equivocaciones debieron ser, en parte, cosa m&iacute;a.)<br>
+      Con pan llevar de luz, a rienda suelta, corr&iacute;a por los campos.<br>
+      La sierra y sus arroyos se me entregaron siempre generosos<br>
+      y supe del goce de tenerlos, de rumiarlos en paz.<br>
+      Sentada cara a los recuerdos los dejo que se alcen,<br>
+      que invadan mi presente, as&iacute;, con mansedumbre y r&aacute;fagas de aire, de 
+	iron&iacute;a;<br>
+      con los ojos abiertos al sue&ntilde;o irrepetible, tan de las nubes ya,<br>
+      tan del ayer perdido.<br>
+      Tan de mi verso ahora.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="SÓLO AUSENCIA">
+	</a></font><font face="Georgia" color="#84B0D6">S&oacute;lo ausencia</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Yo ser&eacute; s&oacute;lo ausencia cuando gires tu tiempo.<br>Se te abrir&aacute;n los libros 
+	por p&aacute;ginas de entonces.<br>Otra vez la ventana con las mismas estrellas,<br>
+	y otra vez sin quererlo aquella misma calle.<br>
+	<br>Un lunes, un domingo...<br>Para cada recuerdo tendr&aacute;s fechas.<br><br>
+	Deja abierta la puerta al pan de cada d&iacute;a.<br>Cuando gires tu tiempo por 
+	&aacute;rboles del r&iacute;o,<br>yo ser&eacute; s&oacute;lo ausencia.<br>
+	<br>Esc&uacute;chale los pasos y ti&eacute;ndele la mano<br>a la sombra que copie tu 
+	soledad de siempre.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="TODO SER&Aacute; SILENCIO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Todo ser&aacute; silencio</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Estaba el muro triste en lo oscuro del parque;<br>madreselvas tronchadas 
+	entre mustios jazmines,<br>todo ya con la tarde h&uacute;meda de la lluvia<br>
+	arrastrando la pena hacia una larga noche.<br>
+	<br>La memoria encend&iacute;a los muros encalados<br>de otro lejano huerto con 
+	naranjos y sol,<br>pero no era posible anudar la ma&ntilde;ana<br>y se visti&oacute; el 
+	camino su m&aacute;s intensa sombra.<br>
+	<br>De pronto fuiste centro de la tristeza m&iacute;a,<br>el vaso me llenaste de no 
+	s&eacute; qu&eacute; nostalgia,<br>y quise reavivarte soplando la ceniza,<br>volverte a 
+	este recuerdo que acaso no recuerdes.<br>
+	<br>Cu&aacute;ntas cosas por dentro asi&eacute;ndose a la trama<br>del tiempo que se aleja 
+	lim&aacute;ndonos las horas.<br>Qu&eacute; torpemente el pie por el camino 
+	<em>nunca</em><br>creyendo que en el polvo se quedar&aacute; su huella.<br><br>
+	Quiero incrustarte ahora en la piel de este instante,<br>sumamos a la causa 
+	contra viento y marea,<br>sabemos en el muro antiguo de aquel huerto,<br>o 
+	en otro no nacido, pero que acaso llegue<br>no s&eacute; por qu&eacute; destino de p&aacute;jaro 
+	o de rama.<br>
+	<br>Inventa una plegaria que nos una en el coro<br>del espacio sin eco 
+	reservado al silencio.<br>
+	<br>Ya no quiero dolerme de lo que me rodea.<br>Flores en el tejado me est&aacute;n 
+	gritando: &laquo;Canta.&raquo;<br>Puede ser jaramago en la teja encendida<br>y sentirte 
+	en el tallo cuando el viento me impulse.<br>
+	<br>De este mi estar perenne siempre de cara al cielo,<br>alg&uacute;n calor de 
+	vida me dar&aacute; testimonio.<br>Cuanto m&aacute;s se me acorta el camino, m&aacute;s busco<br>
+	ir sobre la dureza del cristal y la piedra;<br>sobre lo que perdura 
+	fij&aacute;ndose en el tiempo.<br>Estar, estar, saberme en latido y en sangre,<br>
+	alimentando orillas con la sal de mis olas.<br>
+	<br>Me crezco cual la llama en estas rebeld&iacute;as<br>antes de que las alas se 
+	resistan al vuelo.<br>Despu&eacute;s ya lo sabemos, ser&aacute; silencio todo.<br>Silencio 
+	y m&aacute;s silencio. Tan s&oacute;lo un gran silencio.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="YO QUISIERA CONTARLO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Yo quisiera contarlo como una triste historia...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Yo quisiera contarlo como una triste historia,<br>pero ya no es posible.<br>
+	El tiempo cicatriza con d&iacute;as las heridas;<br>tal vez est&eacute; olvidado como 
+	olvida el muchacho<br>la reciente ca&iacute;da.<br>
+	<br>A veces, el recuerdo me acerca aquella angustia,<br>impidiendo que 
+	aspire a raudales la vida.<br>Es un algo enojoso esa cortante arista<br>que 
+	roza mi alegr&iacute;a.<br>
+	<br>Si pudiera contarlo con palabras precisas,<br>decir: &laquo;Fue justo de este 
+	modo...&raquo;,<br>&laquo;Comenz&oacute; en tales d&iacute;as...&raquo; 
+	<br><br>Pero ya no es posible,<br>&iexcl;se olvida tan aprisa!<br><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+	<a name="YO TE SUE&Ntilde;O TAN ALTO"></a></font>
+	<font face="Georgia" color="#84B0D6">Yo te sue&ntilde;o tan alto</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Otra vez primavera por los parques de siempre.<br>Volvemos a encontrarnos 
+	con la fecha de entonces<br>borr&aacute;ndole al olvido aquel punto y aparte.<br>
+	<br>A buscarme saliste con temor de mi ausencia<br>y yo estaba arropada en 
+	el ayer tan nuestro<br>que casi me rozaba tu mano al extenderse.<br>
+	<br>Ya es hora de ponernos en orden las preguntas.<br>Sabemos en lo justo 
+	con Dios en la mirada,<br>tendi&eacute;ndonos un puente por el pulso y la sangre.<br>
+	<br>Puedes pedirme el agua para tu sed antigua,<br>ofrecerme el descanso de 
+	tu pecho intranquilo<br>y tierra de tu tierra en este breve plazo.<br>
+	<br>Yo te sue&ntilde;o tan alto por volarme a tu cima,<br>porque s&oacute;lo en la altura 
+	insisto en encontrarte<br>reparti&eacute;ndonos nubes y el paisaje del viento.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p><font color="#84B0D6"><br>
+	</font>
+	<font face="Georgia" size="2" color="#84B0D6"><br><a name="YO TE VEL&Eacute;">
+	</a></font>
+	<font face="Georgia" color="#84B0D6">Yo te vel&eacute;</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Ya s&eacute; de tu so&ntilde;ar, tu duermevela.<br>Ese don de vivir en el olvido;<br>
+	ensayo de otro sue&ntilde;o sin aurora.<br>
+	<br>Te he tenido en mi cruz, mientras que el humo,<br>por el paisaje d&oacute;cil 
+	de tus sienes,<br>tej&iacute;a sus canales sin descanso.<br>
+	<br>Yo te vel&eacute;, derramados los hombros,<br>p&aacute;rpado alzado atento hacia tu 
+	hondura,<br>vig&iacute;a por la sombra de tu noche.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="5 DE JUNIO"></a></font>
+	<font face="Georgia" color="#84B0D6">5 de junio</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Te lo escribo en voz baja desde un 5 de junio.<br>Cuando baje la espuma 
+	(porque siempre<br>desciende).<br>Enci&eacute;rrate este ahora en el recuerdo,<br>
+	no se&ntilde;ales el d&iacute;a.<br>Para olvidar no hay fechas.<br>Escr&iacute;bele postales al 
+	entonces.<br>En alguna ventana<br>se quedar&aacute; tu mano alcanz&aacute;ndome estrellas.<br>
+	<br>No s&eacute; por qu&eacute; me afano en cosas del futuro<br>cuando puedo mirarte y 
+	saber de tus ojos.<br>Qu&eacute; cerca por tus sienes al latir de tu sangre,<br>al 
+	instante infinito que perdura en el beso.<br>
+	<br>Quisiera preguntarle a todas las semanas<br>d&oacute;nde estabas oculto sin 
+	domingos ni lunes,<br>mientras yo caminaba ya por sue&ntilde;os de ahora.<br>
+	<br>A veces cambia todo al volver una esquina.<br><br>Levantar&eacute; la copa 
+	mirando hacia la tarde.<br>Te quedar&aacute; mi gesto bajo la luz tranquila<br>con 
+	m&uacute;sicas lejanas y renovadas lunas.<br>
+	<br></font></p>
+    <blockquote>
+      <font size="4"><p align="center"></font><img border="0" src="./SENSUBARRAINI.jpg" width="72"
+      height="7"></p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:12:29 Aug 24, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:01 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

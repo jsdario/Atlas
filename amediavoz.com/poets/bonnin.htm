@@ -1,0 +1,591 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Ana In&eacute;s Bonnin Armstrong</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Ana In&eacute;s Bonnin. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Ana_Ines_Bonnin_Armstrong,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bonnin.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bonnin.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163331" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bonnin.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:33:31 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bonnin.htm" title="20:31:40 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:33:31 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bonnin.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:33:31 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bonnin.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>66 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">6 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010101010101_2004:-1:010001010201_2005:-1:021000010000_2006:-1:100011100210_2007:-1:041300010100_2008:-1:210121001010_2009:-1:000010100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:500010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><img border="0" src="./BONNIN.jpg" width="357" height="41"> 
+	&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><br>
+    <font size="3" color="#C5BEBE" face="Times New Roman"><br>
+    </font><font face="Arial" size="2" color="#9BC9BB">&quot;...Jam&aacute;s donde hubo amor 
+	los mundos se agotaron;<br>
+    jam&aacute;s donde hubo amor cesaron las palomas...&quot;</font></p>
+    <p align="center"><font face="Arial" size="2" color="#9BC9BB"><img src="./BONNIN1.jpg"
+    width="350" height="277"></font></p>
+    <p align="center"><em><font face="Arial" size="2" color="#9BC9BB">&quot;Les 
+	armourezux&quot;<br>
+    <br>
+    Marc Chagall<br>
+    <br>
+    </font></em></p>
+    <p align="center">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta 
+	puertorrique&ntilde;a nacida en Ponce en 1902, hija de padre espa&ntilde;ol y madre 
+	puertorrique&ntilde;a de ascendencia escocesa. 
+	<br>Desde muy peque&ntilde;a fue llevada a Mallorca y posteriormente a Barcelona, 
+	donde cultiv&oacute; intensamente la m&uacute;sica y la pintura, pudiendo decirse que 
+	lleg&oacute; a la poes&iacute;a escalando esos pelda&ntilde;os para constituirse en una feliz 
+	cantadora del milagro de la vida 
+	<br>
+	y del amor. Cultiv&oacute; tambi&eacute;n el teatro y el ensayo, habiendo sido destacada 
+	varias veces por el Instituto de Artes Teatrales <br>
+	de Puerto Rico.<br>Entre sus obras merecen destacarse: &laquo;Fuga&raquo; en 1948, 
+	&laquo;Poema de las tres voces&raquo; en 1949, &laquo;Luz de blanco&raquo; en 1952, <br>
+	&laquo;La calle&raquo;, in&eacute;dito y &laquo;Compa&ntilde;eros de ruta&raquo;.<br>Obtuvo los premios &laquo;Juan 
+	Alcover&raquo; en 1963 y el &laquo;Ciudad de Palma&raquo; editado por el Ayuntamiento de 
+	Mallorca.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;<br></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#ABC2BD">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./bonnin.htm#HOMBRES DESCALZOS">Hombres descalzos</a>&nbsp;&nbsp;<br><br>
+	<a href="./bonnin.htm#NO ME DEJES, AMOR, EN LA A&Ntilde;ORANZA">No me dejes, amor, en la 
+	a&ntilde;oranza</a><br>
+	<br><a href="./bonnin.htm#&iexcl;OH BUEN AMOR!">&iexcl;Oh buen amor!</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./bonnin.htm#ISI YO NO PIDO TANTO!">&iexcl;Si yo no pido tanto!</a><br><br>
+	<a href="./bonnin.htm#TE BUSCO Y NO TE ENCUENTRO">Te busco y no te encuentro</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./bonnin.htm#T&Uacute; SABES">T&uacute; sabes</a>&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./bonnin.htm#T&Uacute; VEN&Iacute;AS">T&uacute; ven&iacute;as</a>&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./bonnin.htm#VERG&Uuml;ENZA">
+	Verg&uuml;enza</a>&nbsp;&nbsp; 
+	<br><br><a href="./bonnin.htm#Y LA PEQUE&Ntilde;A SOMBRA SE HAR&Aacute; M&Aacute;S DESCUIDADA">Y la peque&ntilde;a 
+	sombra se har&aacute; m&aacute;s descuidada</a> </font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./bonnin.htm#Y NUNCA SIN AMOR FUERON LOS NIDOS">Y nunca sin amor fueron los 
+	nidos</a></font><font face="Georgia" size="2" color="#A7BEB9"><br>
+	<br>Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+	esta p&aacute;gina</a>
+	</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#ABC2BD"><br></font>
+	</p>
+	<p align="center"><font face="Georgia" size="2" color="#ABC2BD">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br></font></p>
+	<p><font face="Georgia" size="2" color="#95B3AA"><br>
+	</font><font face="Georgia" color="#95B3AA">
+	<a name="HOMBRES DESCALZOS"></a></font><font face="Georgia" color="#9BC9BB">
+	Hombres descalzos</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Gr&aacute;vida luz, me hiere tu silencio;<br>qu&eacute;jate, grita, r&oacute;mpeme la sangre<br>
+	con un feroz escalofr&iacute;o.<br>Ser&aacute; la muerte, s&iacute;, pero no importa.<br>&iexcl;Morir 
+	hasta que el mundo resucite!<br>Morir hasta que sean en el mundo<br>los 
+	hombres recorri&eacute;ndolo descalzos:<br>&iexcl;la humanidad por fin enriquecida!<br>
+	<br>Hombres descalzos;<br>por su planta desnuda, justos, buenos.<br>Hombres 
+	que al ir andando en carne viva.<br>sintieran el dolor de cada hombre<br>
+	latir en cada piedra que rozaran;<br>sintieran cada gota de roc&iacute;o<br>temblar 
+	a cada sed, a cada l&aacute;grima,<br>morir a cada muerte, y gota a gota,<br>
+	encadenando as&iacute; nuevos roc&iacute;os.<br>
+	<br>Hombres descalzos;<br>por su planta desnuda,<br>sobre la tierra lentos y 
+	seguros,<br>como una enredadera sorprendente,<br>como si Dios sus &aacute;guilas 
+	postrase,<br>y fueran en el mundo las palomas.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="NO ME DEJES, AMOR, EN LA A&Ntilde;ORANZA"></a>
+	</font><font face="Georgia" color="#9BC9BB">
+	No me dejes, amor, en la a&ntilde;oranza...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>No me dejes, amor, en la a&ntilde;oranza.<br>Dame, por fin, seguro y alto 
+	vuelo.<br>Desarr&aacute;igame, f&iacute;jame. Recelo<br>que aqu&iacute; no lograr&eacute; paz ni 
+	bonanza.<br>
+	<br>Mi sed inextinguible se abalanza<br>y busca un ancho r&iacute;o, paralelo<br>de 
+	un m&iacute;sero y exhausto riachuelo.<br>&iexcl;Amor! Sacia mi sed; dame pujanza<br>
+	<br>para volcarte en molde sin orillas.<br>&iquest;Por qu&eacute;, por qu&eacute; te ci&ntilde;es y 
+	encastillas<br>cuando posees fuerza de coloso?<br>
+	<br>Quisiera derramar esta ternura,<br>que rebasa mi pecho, en la mesura<br>
+	de un pecho inmensamente generoso.<br>
+	</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#9BC9BB"><a name="&iexcl;OH BUEN AMOR!">
+	</a>&iexcl;Oh buen amor!</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	&iexcl;Oh, ternura divina siempre en llamas!<br>&iexcl;Oh buen amor, paciente, generoso!<br>
+	Llegas a m&iacute;, brind&aacute;ndome reposo;<br>no me impones tu af&aacute;n, porque me amas.<br>
+	<br>&iexcl;Oh ternura divina! De tus ramas<br>presiento el florecer maravilloso.<br>
+	T&uacute; quieres que yo sea fruto hermoso,<br>cosecha de tu huerto. Me reclamas.<br>
+	<br>Escucho conmovida la voz tuya.<br>Me llega triste; no le doy consuelo;<br>
+	rechazo su dolor y su agon&iacute;a.<br>
+	<br>Perd&oacute;name, Se&ntilde;or. Cuando destruya<br>las ansias que me clavan en el 
+	suelo,<br>entonces ir&eacute; a Ti sin rebeld&iacute;a.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#9BC9BB">
+	<a name="ISI YO NO PIDO TANTO!"></a>&iexcl;Si yo no pido tanto!</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	&iexcl;Si yo no pido tanto!<br>Amor es lo que pido.<br>Briznas de amor para esta 
+	sed del mundo,<br>tan grande y tan sumisa.<br>Un diminuto amor, pero 
+	constante,<br>que d&eacute; su mano al que su mano tienda,<br>que limpie las 
+	miradas y los ojos<br>llene de dulcedumbre.<br>Algo de amor en esos 
+	corazones<br>que no aman a los ni&ntilde;os,<br>que son capaces de cegar a un 
+	p&aacute;jaro,<br>de aplastar las hormigas.<br>Algo de amor; apenas un murmullo<br>
+	de amor en cada pecho de criatura<br>hacia todos los seres,<br>hacia todas 
+	las cosas.<br>
+	<br>&iexcl;Si yo no pido tanto!<br>Briznas de amor para esta sed del mundo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+	&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#9BC9BB">
+	<a name="TE BUSCO Y NO TE ENCUENTRO"></a>Te busco y no te encuentro...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Te busco y no te encuentro. &iquest;D&oacute;nde moras?<br>&iquest;Lates sin realidad? &iquest;Eres un 
+	mito,<br>una ilusi&oacute;n, un ansia de infinito?<br>Y si amaneces, &iquest;d&oacute;nde tus 
+	auroras?<br>
+	<br>&iquest;En qu&eacute; tiempo sin tiempo van tus horas<br>desgran&aacute;ndose plenas? &iquest;Nunca 
+	el grito<br>humano dolor quiebra el bendito<br>silencio que te envuelve? 
+	&iquest;Nos ignoras?<br>
+	<br>Part&iacute;culas de ti fueron llegando;<br>mi mar inquieto se convierte en 
+	r&iacute;o;<br>hay trinos en el aire, canta el viento.<br>
+	<br>Canta la vida toda. Por fin siento<br>que est&eacute;s, pero, dime, dime: 
+	&iquest;cu&aacute;ndo<br>puedo saberte para siempre m&iacute;o?</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="TÚ SABES"></a></font>
+	<font face="Georgia" color="#9BC9BB">T&uacute; sabes</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>(...) Aunque me sepas, &iexcl;m&iacute;rame!<br>&iquest;Y si yo no pudiera?<br>&iquest;Si al 
+	buscarme,<br>me desmoronara. los desconociera,<br>&iexcl;tus ojos, ellos, sobre 
+	m&iacute;, como una brizna de calor!<br>y dej&aacute;ramos de ser?<br>Ellos, sobre el 
+	mundo.<br>No nos importar&aacute; repasar el camino,<br>andarlo y andarlo.<br>No me 
+	importar&aacute;.<br>Ni la noche. Ni el mar que nunca duerme.<br>Ni ese dolor 
+	difuso de las cosas.<br>Ni un casi aliento imperceptible de espacios vac&iacute;os.<br>
+	Ni ese tu &laquo;poco m&aacute;s&raquo; al que temo y abrazo<br>con todas mis fuerzas,<br>como 
+	si fuera un zumo m&iacute;o que yo quisiera exprimir<br>para fugar en &eacute;l<br>toda 
+	esta carne dolorosamente viva,<br>todo este coraz&oacute;n, miembro a miembro, 
+	ganado.<br>Porque era meta deseada y &uacute;nica!<br>Pero mi coraz&oacute;n est&aacute; aqu&iacute;, 
+	sin ellos, &iexcl;m&iacute;o!,<br>d&aacute;ndome soledad,<br>retorci&eacute;ndose a cada muerte, a cada 
+	enga&ntilde;o,<br>queriendo engendrarse hijos que no se le mueran,<br>y odi&aacute;ndome 
+	porque se los destruyo si los nace.<br>se los destruyo despu&eacute;s de haberlos 
+	amado<br>hasta preferir que mueran.<br>El sentirlos vivir es esta angustia, 
+	Se&ntilde;or,<br>esta extra&ntilde;eza de m&iacute;, de los otros, del mundo,<br>es lo que 
+	balbuceo enajenada:<br>lenguaje del primer hombre que ya quiso desprenderse.<br>
+	<br>
+&nbsp;</font></p>
+	<blockquote>
+      <p align="center"><font face="Georgia" size="3" color="#9BC9BB"><img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+    </blockquote>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="TÚ VEN&Iacute;AS"></a></font>
+	<font face="Georgia" color="#9BC9BB">T&uacute; ven&iacute;as</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>T&uacute; ven&iacute;as.<br>Sobre un mar infinito de lumbre venias so&ntilde;ando.<br>Y en 
+	tus ojos, despierta, venia la flor en su nieve.<br>Tantos p&aacute;jaros eran 
+	contigo, que arpegios gozosos<br>imantaron la seca llanura, &iexcl;y todo fue 
+	vuelo!<br>Fue en el aire canci&oacute;n de azucena tejiendo su encaje.<br>Fue una 
+	danza de luz en espigas fervientes, despacio.<br>Fue clamor de roc&iacute;os 
+	abiertos a gr&aacute;vidas lunas<br>que so&ntilde;aban tu aurora imposible, tu ansiado 
+	rescoldo.<br>Pude verte, sin ti, junto al eco de aquella &laquo;fontana&raquo;,<br>tu 
+	&laquo;bendita ilusi&oacute;n&raquo; abraz&aacute;ndote ya sin huida.<br>&iexcl;Pude verte!<br>Qu&eacute; umbral te 
+	retrajo de m&iacute;? &iexcl;Qu&eacute; desiertos<br>sobre el mundo mis ojos, poetas! Y, o&iacute; tu 
+	mirada.<br>La escuch&eacute;, derrotando caminos, abri&eacute;ndome cauces<br>donde ard&iacute;a 
+	la gota de agua, min&uacute;scula, y firme,<br>donde todo, la tierra y el cielo, mi 
+	nombre y tu mano,<br>era, &iexcl;y eran! por ser con ternura de rosa y de nieve.<br>
+	Uno a uno se alzaron los nidos.<br>&iexcl;Uno a uno! &iexcl;Qu&eacute; amor en tus ojos, poeta, 
+	qu&eacute; amor!<br>&iexcl;Cu&aacute;ntos p&aacute;jaros eran vol&aacute;ndote!<br>
+	<br>Y ven&iacute;as.<br>Sobre un mar infinito de lumbre ven&iacute;as so&ntilde;ando.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="VERGÜENZA">
+	</a></font><font face="Georgia" color="#9BC9BB">Verg&uuml;enza</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	(Ante una muerte)</em><br><br>Cae tu muerte en mi coraz&oacute;n, llen&aacute;ndolo de 
+	verg&uuml;enza.<br>Le grito a mi coraz&oacute;n: &laquo;&iexcl;Nunca!&raquo;<br>Pero &eacute;l levanta una nota y 
+	me contesta:<br>&laquo;Siempre&raquo;, murmuro. &laquo;&iexcl;Siempre!&raquo;<br>El eco repite sobre el 
+	mundo: &laquo;&iexcl;Siempre, siempre!&raquo;<br>y todos los poetas,<br>con tu muerte 
+	doli&eacute;ndoles, avergonz&aacute;ndolos,<br>responden: &laquo;&iexcl;Siempre!&raquo;<br>Porque, mientras 
+	t&uacute; mor&iacute;as,<br>mientras tus manos que mor&iacute;an a&uacute;n intentaban volar<br>todos 
+	los poetas abrazaban su canci&oacute;n.<br>&iexcl;Y oyeron su verg&uuml;enza!<br>La oyeron 
+	viva, con sangre y nervios,<br>como humana criatura<br>contra humana 
+	criatura.<br>Y esa verg&uuml;enza grit&oacute; se&ntilde;al&aacute;ndonos:<br>&laquo;&iexcl;Vosotros!&raquo;<br>No, no 
+	pudimos huir:<br>espigas, &aacute;rboles, flores, se desbordaron,<br>una pared de 
+	alas se amonton&oacute;.<br>Senderos y caminos,<br>el mar,<br>enredaderas azules,<br>
+	el agua de las fuentes,<br>luchaban, se opon&iacute;an.<br>&iexcl;Amor! &iexcl;Amor!<br>
+	&laquo;&iexcl;Vosotros!&raquo;<br>Fue in&uacute;til; no, no pudimos huir:<br>notas, notas, notas, 
+	cubri&eacute;ndonos, amarr&aacute;ndonos.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Nuestra muerte diaria,<br>
+	&iexcl;qu&eacute; parecida a la tuya!<br>&iexcl;Perd&oacute;nanos!<br>Ya que como t&uacute;, mientras 
+	morimos,<br>a&uacute;n nuestras manos intentan morir.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="Y LA PEQUE&Ntilde;A SOMBRA SE HAR&Aacute; M&Aacute;S DESCUIDADA"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Y la peque&ntilde;a sombra se har&aacute; m&aacute;s descuidada</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Ser&eacute; para m&iacute; lo que otros fueron.<br>Y mi mano impiadosa no me mitigar&aacute;.<br>
+	Ni mis ojos sabr&aacute;n verme.<br>Ni dulzura me dar&eacute; sin regate&aacute;rmela.<br>Y me 
+	arrancar&eacute; toda moneda y toda luz.<br>Me har&eacute; pobre con el designio milenario<br>
+	de la maldad del mundo. 
+	<br>Apretar&eacute; mis manos que luchar&aacute;n por desasirse.<br>Cerca, el mar, 
+	acechar&aacute; algo muy querido.<br>Y so&ntilde;ar&eacute; que grito y no gritar&eacute;.<br>Y gritar&eacute; 
+	m&aacute;s hasta romperme el coraz&oacute;n de angustia,<br>hasta poder ver mis manos c&oacute;mo 
+	salen de s&iacute; mismas.<br>Muchas manos ver&eacute; mientras las m&iacute;as quedan atadas.<br>
+	Y con tremenda lentitud volver&eacute; a quererlo.<br>A querer mis manos dos y 
+	libres,<br>dispuestas a mi voluntad, obedientes.<br>Cerca, el mar, por 
+	primera vez sin horizonte y sin color,<br>Su color estar&aacute; en las manos que 
+	me dejan.<br>Que las que queden conmigo no tendr&aacute;n color, 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	como el mar.<br>Y las convertir&eacute; en &aacute;vidas e impiadosas, <br>en capaces de 
+	ahogar algo muy querido.<br>Una peque&ntilde;a sombra blanca y sumisa<br>seguir&aacute; 
+	junto al mar.<br>El mar me pedir&aacute; su color y yo se lo negar&eacute;.<br>Y la 
+	peque&ntilde;a sombra se har&aacute; m&aacute;s descuidada.<br>Volver&eacute; a querer mis manos dos y 
+	libres.<br>Y ellas seguir&aacute;n atadas como las manos de los muertos.<br>Pero 
+	las manos de los muertos se liberan.<br>Las libera Dios que retrocedi&oacute; el 
+	mar.<br>As&iacute; liberar&aacute; &Eacute;l las m&iacute;as,<br>que quedar&aacute;n dos y libres.<br>Y 
+	aquellas que salieron de m&iacute; me perdonar&aacute;n<br>porque ser&aacute;n perdonadas;<br>por 
+	toda moneda que les rob&eacute;,<br>por toda luz que les ment&iacute;.<br>
+	<br>Y sonreir&aacute;n ante las manos suyas obedientes<br>que sufrieron atadas 
+	hasta que Dios las separ&oacute;.<br>
+	<br>Lejos, el mar.<br>Lejos, el designio milenario<br>de la maldad del 
+	mundo.<br>Cerca, mis manos, dos y libres,<br>generosas, azules, obedientes.<br>
+	Y, otra vez, &iexcl;el horizonte!</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a
+      name="Y NUNCA SIN AMOR FUERON LOS NIDOS"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Y nunca sin amor fueron los nidos</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>Amor llena mis ojos,<br>que con amor yo quiero mirar todas las cosas.<br>
+	Yo s&eacute; que si las miro con amor resplandecen;<br>yo s&eacute; que si las miro con 
+	amor se me entregan.<br>Jam&aacute;s donde hubo amor los mundos se agotaron;<br>
+	jam&aacute;s donde hubo amor cesaron las palomas.<br>Y nunca sin amor fueron los 
+	nidos,<br>y si el nido no fuera la vida no ser&iacute;a.<br>&iexcl;Oh, qu&eacute; gozo, los 
+	nidos, por tan desamparados!<br>&iexcl;Qu&eacute; alegr&iacute;a saberlos, muy cerca de 
+	nosotros, 
+	<br>alz&aacute;ndose en el alba!<br>&iexcl;Qu&eacute; alegr&iacute;a saberlos!&nbsp;&nbsp; <br>Amor 
+	llena mis ojos.<br>Ir&eacute; d&aacute;ndote, amor, como a r&iacute;o invencible,<br>y nunca gota 
+	a gota, a manantiales.<br>Llegar&aacute;s a lo seco,<br>llegar&aacute;s a lo &aacute;rido;<br>
+	recorrer&aacute;s la sed viva y eterna;<br>florecer&aacute;n contigo las ra&iacute;ces<br>y del 
+	surco se dar&aacute; lleno de flores.<br>Esmaltar&aacute;s la tierra &iexcl;toda! sin mesura,<br>
+	y hasta el rinc&oacute;n m&aacute;s m&iacute;sero y peque&ntilde;o<br>tendr&aacute; el amanecer que le 
+	otorgaron.<br>
+	<br>Amor llena mis ojos;<br>que en la inmensa amapola de tu luz me derrame<br>
+	sobre el reseco nido, y as&iacute; los nidos sean.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:33:31 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:08 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

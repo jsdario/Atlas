@@ -1,0 +1,911 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Juan Larrea</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Juan Larrea. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Juan_Larrea,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/larrea.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/larrea.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815171004" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./larrea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:10:04 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./larrea.htm" title="6:09:37 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:10:04 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./larrea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:10:04 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./larrea.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>27 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">12 Apr 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000102000000_2009:-1:001000110000_2010:-1:100000001110_2011:-1:000000001130_2012:-1:301010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+	<p align="center"><br>
+&nbsp; <br>
+	</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center"><img border="0" src="./LARREA.jpg" width="270" height="39"></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">
+	&quot;La transparencia viaja a lo largo de los brazos<br>
+	la transparencia prolonga una vida de amargura.&quot;</em></font></p>
+	<p align="center"><font face="Basil" size="5" color="#84B0D6">
+	<img border="0" src="./LARREA1.jpg" width="289" height="330"></font></p>
+	<p align="center">
+	<font face="Arial" size="2" color="#84B0D6"><em>
+	&quot;Autorretrato con siete dedos&quot;<br>
+	<br>
+	Marc Chagall</em></font><font face="Basil" size="5" color="#84B0D6"><br>
+	<br>
+	</font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6">Poeta y ensayista 
+		espa&ntilde;ol nacido en Bilbao en 1895.<br>
+		Inspirado por la po&eacute;tica de Gerardo Diego se inici&oacute; desde muy joven en 
+		la etapa del creacionismo, vincul&aacute;ndose <br>
+		luego al movimiento vanguardista a trav&eacute;s de su amistad con importantes 
+		poetas hispanoamericanos como <br>
+		Vicente Huidobro y C&eacute;sar Vallejo. <br>
+		Fue bibliotecario de profesi&oacute;n, vivi&oacute; en Paris por mucho tiempo&nbsp; y 
+		a ra&iacute;z de la Guerra Civil espa&ntilde;ola, se exili&oacute; en M&eacute;xico, <br>
+		Estados Unidos y Argentina. <br>
+		Su obra po&eacute;tica est&aacute; contenida en <i>&quot;Oscuro dominio&quot;</i> publicado en 
+		M&eacute;xico en 1935, y en la recopilaci&oacute;n de su obra <br>
+		completa bajo el nombre de&nbsp; <i>&quot;Versi&oacute;n celeste&quot;</i> 
+		en 1969. <br>
+		Falleci&oacute; en C&oacute;rdoba, Argentina en 1980.&nbsp; &copy;<br>
+		</font><font face="Georgia" size="2" color="#85A6BC">
+		<br>
+&nbsp;</font></p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p align="left"><br>
+		<font face="Georgia"><a href="./larrea.htm#ALBA DE NO ENTENDER NADA">Alba de no 
+		entender nada</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#AUNQUE BAJO EL TEMOR">Aunque bajo el temor</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./larrea.htm#BRISA LOCA">
+		Brisa loca</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#CARNE DE MI CARNE">Carne de mi carne</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#EL CORAZ&Oacute;N VIENE A ENCALLARSE EN SU FORMA HABITUAL">El coraz&oacute;n 
+		viene a encallarse en su forma habitual</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./larrea.htm#El mar en persona">El mar 
+		en persona</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#EL NI&Ntilde;O OFRECE SUS OJOS A LOS TALLOS DEL VIENTO">El ni&ntilde;o 
+		ofrece sus ojos a los tallos del viento</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#EL UMBRAL DE LAS CALUMNIAS">El umbral de las calumnias</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./larrea.htm#INTERIOR">
+		Interior</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#LOCURA DE LA DANZA">Locura de la danza</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#MONTONCITOS DE DESNUDEZ">Montoncitos de desnudez</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#NADIE DESCIENDE DE UNA L&Aacute;MPARA">Nadie desciende de una l&aacute;mpara</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#NATURALEZA MUERTA">Naturaleza muerta</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#NO TODO ESTABA DICHO">No todo estaba dicho</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#PRIMAVERA PROVISIONAL">Primavera provisional</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#PUNTO DE REFERENCIA">Punto de referencia</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#SILLA FELICIDAD">Silla felicidad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./larrea.htm#VENDIMIA">
+		Vendimia</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./larrea.htm#VERDAD CAPITAL">
+		Verdad capital</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./larrea.htm#VERDORES INNATOS">Verdores innatos</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p><font face="Georgia" size="2" color="#85A6BC"><br>
+		<a name="ALBA DE NO ENTENDER NADA"></a></font>
+		<font face="Georgia" color="#84B0D6">Alba de no entender nada</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		El horizonte salta a los ojos de su amor<br>
+		arrastrando consigo la esperanza de sobrevivirse<br>
+		en este olvido sonrosado de carne y de s&iacute; mismo<br>
+		se est&aacute; lejos de ser puro<br>
+		en mi vida te veo<br>
+		desle&iacute;da inasible<br>
+		los brazos se buscan los brazos se alargan<br>
+		imaginarios<br>
+		desde una a otra orilla de la llama<br>
+		<br>
+		Quisieran matarme<br>
+		pensando volver a verte<br>
+		no hallar&iacute;an de ti m&aacute;s que la esperanza de estar desnudo</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<a name="AUNQUE BAJO EL TEMOR"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Aunque bajo el temor</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		En el fondo estas mujeres necesarias del fr&iacute;o<br>
+		estas mujeres sin recuerdos m&aacute;s all&aacute; de los abedules<br>
+		palidecen sin saber por qu&eacute;<br>
+		<br>
+		El cielo en cambio est&aacute; enfermo de pizarras<br>
+		y sus cabellos caen como pozos de mina<br>
+		<br>
+		El cielo el cielo ingeniero amigo m&iacute;o<br>
+		construir&aacute;s un velero con el soplo que me anima<br>
+		puesto que el reloj hace el dragado de nuestros fastidios<br>
+		y su c&iacute;rculo viene a ser nuestra corona a menudo de espinas<br>
+		<br>
+		Sobre el horizonte de ciego que la hora mojada tentalea<br>
+		los pichones se conducen como segundas intenciones<br>
+		empleando hasta el final la mano de obra del oto&ntilde;o<br>
+		<br>
+		Auque la tarde haga sus v&iacute;ctimas<br>
+		si t&uacute; no temes el deterioro de los mares<br>
+		ven con tus p&aacute;rpados hinchados por un aire familiar<br>
+		ven a expandirte como los autores de cartas an&oacute;nimas<br>
+		<br>
+		Sol de las cumbres sol</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="BRISA LOCA">
+		</a></font><font face="Georgia" color="#84B0D6">Brisa loca</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Un esplendor sin velos 
+		en el hueco del aire<br>
+		&iquest;qui&eacute;n no ama a las gaviotas que desprenden tus buenos modales?<br>
+		quemando impaciencias en el coraz&oacute;n del mar<br>
+		deja ondear el ritmo de una veleta altanera<br>
+		por otra parte nada es m&aacute;s digno de ti que<br>
+		el pudor de un p&aacute;rpado humedecido<br>
+		<br>
+		(pero t&uacute; te equivocas de<br>
+		tristeza y de l&aacute;mpara<br>
+		so&ntilde;adora<br>
+		peque&ntilde;a casa gris<br>
+		tristeza de la l&aacute;mpara<br>
+		de las abnegaciones en el fondo mar&iacute;timas<br>
+		por una extra&ntilde;a coincidencia<br>
+		camisa gris apenas<br>
+		con toda el alba esencial de una botadura de barco<br>
+		me&nbsp; deslizo camisa<br>
+		hacia el infinito<br>
+		me deslizo<br>
+		camisa<br>
+		con placer)</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="CARNE DE MI CARNE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Carne de mi carne</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Entre lirios de falsa alarma<br>
+		la insistencia de una avispa deja adivinar tu cuerpo<br>
+		el ardor ahoga una presa demasiado m&iacute;a para ser fingida <br>
+		nodriza de dos filos sobre su lecho de convidado <br>
+		el ardor deshace el nudo de la marisma viviente<br>
+		donde el amor te esparce y se retira<br>
+		<br>
+		El ancla de tu palidez se sumerge<br>
+		hasta la detenci&oacute;n de las formas es aqu&iacute;<br>
+		donde la lluvia se pinta de azul el coraz&oacute;n<br>
+		y furtiva una corriente de aire<br>
+		desmiente ese gesto que significa ignoro<br>
+		el bello blanco que ofrezco<br>
+		<br>
+		El ojo lava su p&aacute;rpado al borde confuso de la duda<br>
+		y descompone tu cabeza en siete ruise&ntilde;ores m&oacute;rbidos<br>
+		lo hay ya necesidad de apagar nuestras heridas<br>
+		espacio por s&iacute; mismo se olvida para plegarse a tus alas<br>
+		<br>
+		Traducci&oacute;n de&nbsp; Gerardo Diego</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EL CORAZÓN VIENE A ENCALLARSE EN SU FORMA HABITUAL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		El coraz&oacute;n viene a encallarse en su forma habitual</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">La transparencia viaja 
+		a lo largo de sus brazos<br>
+		la transparencia prolonga una vida sin amargura<br>
+		es en el lecho de su lago<br>
+		un pedazo de ella misma de ella misma rodeada<br>
+		centellear de las sombras alud inimitable<br>
+		el &aacute;mbar desnudo de la vida ya no ofrece resistencia<br>
+		<br>
+		(Una mirada nos separa<br>
+		un d&iacute;a hermoso nos enluta<br>
+		porque edificas tu casa<br>
+		con todo lo que de m&iacute; mismo ignoro)<br>
+		<br>
+		Traducci&oacute;n de Carlos Barral</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="El mar en persona"></a>
+		El mar en persona<br>
+		</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		He aqu&iacute; el mar alzado en un abrir y cerrar de ojos de pastor <br>
+		He aqu&iacute; el mar sin sue&ntilde;o como un gran miedo de tr&eacute;boles en flor <br>
+		y en postura de tierra sumisa al parecer <br>
+		Ya se van con sus lanas de evidencia su nube y su labor <br>
+		A la sombra de un olmo nunca hay tiempo que perder <br>
+		<br>
+		Cr&eacute;dula exquisita la oscuridad sale a mi encuentro <br>
+		Mi frente abriga la corteza del pan que llevo adentro <br>
+		cortado a pico sobre un p&aacute;jaro inseguro <br>
+		<br>
+		Y as&iacute; me alejo bajo la acci&oacute;n del piano <br>
+		que me cose a las plantas precursoras del mar <br>
+		Un ciervo de oto&ntilde;o baja a lamer la luna de tu mano <br>
+		Y ahora a mi orilla el mundo se empieza a desnudar <br>
+		para morirse de &aacute;rboles al fondo de mis ojos. <br>
+		<br>
+		Mis cabellos se llenan de peces de penumbra <br>
+		y de esqueletos de nav&iacute;os forzosos <br>
+		<br>
+		Sin ir m&aacute;s lejos <br>
+		t&uacute; eres fr&iacute;a como el hacha que derriba el silencio <br>
+		en la lucha entre el paisaje y su golpe de vista <br>
+		<br>
+		Mas cuando el cielo exporta sus c&eacute;lebres pianistas <br>
+		y la lluvia el olor de mi persona <br>
+		c&oacute;mo tu hermoso coraz&oacute;n se traiciona</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EL NI&Ntilde;O OFRECE SUS OJOS A LOS TALLOS DEL VIENTO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		El ni&ntilde;o ofrece sus ojos a los tallos del viento</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Deshechos como lechos profundos de gestos pero descarnados<br>
+		dejando caer nuestras paredes a lo largo de nuestro Mcuerpo<br>
+		en este oto&ntilde;o que no osa llenar la distancia entre tus manos<br>
+		en este oto&ntilde;o desfigurado por el color de mis desvelos<br>
+		<br>
+		Paseando las sombrillas de un viento de carne mis cicatrices<br>
+		han olvidado sus llaves en los furtivos reflejos de las aguas<br>
+		pero la canastilla que flota all&iacute; llena de pesta&ntilde;eos ef&iacute;meros<br>
+		me indemniza de tantas y tantas puertas cerradas detr&aacute;s de ti<br>
+		<br>
+		Comparte t&uacute; mi angustia y mis banderas llovedoras<br>
+		vela por el canario que persigue su flauta entre mis huesos<br>
+		que come y bebe las tardes en los huecos de una lengua ausente<br>
+		exponi&eacute;ndose a ser sorprendido demasiado lejos de mi sue&ntilde;o<br>
+		<br>
+		Traducci&oacute;n de Gerardo Diego</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="EL UMBRAL DE LAS CALUMNIAS"></a>El umbral de las calumnias</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		El surtidor de alma donde tu esperanza se abate es s&oacute;lo una hip&oacute;tesis 
+		falsa aunque bonita<br>
+		<br>
+		Todos los jardines empiezan por sanarte<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Te mueves<br>
+		y la luz se enturbia<br>
+		crees que evitas las zarzas y entonces es cuando tus cabellos se tornan 
+		transparentes<br>
+		<br>
+		Comprendido por la distancia hermano de tu hermano tierra de tu tierra<br>
+		el jard&iacute;n te relame con motivo del jard&iacute;n de tus poros<br>
+		<br>
+		Tu frente desmigaja las tardes desde la c&uacute;spide de tus alabanzas<br>
+		Hay ya algunos barquitos en tu saliva</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="INTERIOR"></a>Interior</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Tus 
+		cabellos est&aacute;n fuera de ti misma sufriendo pero perdonando<br>
+		gracias al lago que se deshace en c&iacute;rculos<br>
+		alrededor de los ahogados cuya gotera de pasos muertos<br>
+		ahonda en tu coraz&oacute;n el vac&iacute;o que nada vendr&aacute; a llenar<br>
+		a&uacute;n si sientes la necesidad de zurcir<br>
+		<br>
+		a&uacute;n si tu nuca se pliega a los menores caprichos del viento<br>
+		que exploras tu actitud y ahuyenta la ventana all&iacute; dormida<br>
+		y abre tus p&aacute;rpados y tus brazos y se lleva<br>
+		si tienes necesidad de zurcir<br>
+		todo tu follaje hacia tus extremidades</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="LOCURA DE LA DANZA"></a>Locura de la danza</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Su olor se al&iacute;a a la obediencia de mi memoria<br>
+		si en el mundo existen hojas ella no tiene la culpa<br>
+		En los muros de alas sus olvidos vienen a ser muebles de &eacute;poca<br>
+		su voz agrupa en la sombra las r&aacute;fagas de ojos negros<br>
+		<br>
+		Sus manos de habitaci&oacute;n que comunica con el establo<br>
+		respiran el orden que reina en el coraz&oacute;n de los rompientes de luz<br>
+		sus ojos se agrietan en la superficie de un agua de mesa<br>
+		sobre la mesa una flor sostiene su presencia de esp&iacute;ritu<br>
+		<br>
+		Ella come las v&iacute;ctimas de un durmiente solitario<br>
+		Al andar desprende una estatua a cada paso<br>
+		<br>
+		Pero cuando su piel no es m&aacute;s que una nueva forma de obediencia<br>
+		la pelusa que mi alma despide hacia su ombligo<br>
+		sale en tribus de nieve o de huesos sacudidos por la danza<br>
+		sale de los peque&ntilde;os t&uacute;neles de mis piernas visibles<br>
+		<br>
+		Traducci&oacute;n de Gerardo&nbsp; Diego</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="MONTONCITOS DE DESNUDEZ"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Montoncitos de desnudez</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Islotes de soledad pu&ntilde;os de para&iacute;so cerrado<br>
+		el azul del cielo alumbra mejor que ning&uacute;n otro s&iacute;ntoma<br>
+		las relaciones que existen entre mis ojos y los brotes de mujer<br>
+		cuando la sombra desella el ave que cifra la esperanza del mundo<br>
+		<br>
+		Pero t&uacute; controversia en el verdor<br>
+		provisto de brazos para vencer la repugnancia de los so&ntilde;adores<br>
+		reloj que dosifica el viento de las aventuras<br>
+		separada de mi cuerpo por una antigua victoria<br>
+		coronada de rosas iniciativas<br>
+		por qu&eacute; piensas que nunca es demasiado tarde<br>
+		cuando las playas vacilan entre el cielo y sus menudos quehaceres</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NADIE DESCIENDE DE UNA L&Aacute;MPARA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Nadie desciende de una l&aacute;mpara</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		No mientas m&aacute;s enfermedad<br>
+		s&oacute;lo ha quedado un olvido<br>
+		ll&eacute;vatelo lejos de aqu&iacute;<br>
+		las acuarelas de la sangre tamborilean<br>
+		la tarde de sus brazos la he tomado<br>
+		ll&eacute;vate todo<br>
+		sostenida por sus dos tinieblas<br>
+		sombra y sol te lo juro<br>
+		all&iacute; donde el perd&oacute;n se derrumba<br>
+		en traje de novia la ignorancia trapea<br>
+		donde el sol recibe las confidencias para hacer qu&eacute;<br>
+		imposible recuerdo me llama dulzor<br>
+		esc&uacute;chame sin ni&ntilde;os de agua adormilada<br>
+		t&uacute; me amas coraz&oacute;n de arena noche y d&iacute;a<br>
+		t&uacute; me amas<br>
+		cumbres delicia ya no soy aqu&eacute;l<br>
+		que el cielo oscurec&iacute;a fuera</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NATURALEZA MUERTA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Naturaleza muerta</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		El precio de tu silencio<br>
+		y la aureola de las losas<br>
+		el d&iacute;a reducido a tu mano<br>
+		la mano reducida a su invierno apremiante<br>
+		<br>
+		la salida deja que mueran sus mirlos<br>
+		soltando una carne azulada<br>
+		como los ojos que siguen lentamente<br>
+		fuera del dominio del oro tus piernas irradiantes<br>
+		<br>
+		todo lo imprevisto en el rel&aacute;mpago de un cuchillo<br>
+		todo el horizonte en la espera de un sobresalto<br>
+		todos los secretos todos los pesares en una estrella</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NO TODO ESTABA DICHO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		No todo estaba dicho</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Entre t&uacute; y yo el cielo ahogaba a su presa<br>
+		entre el orden y t&uacute; la fuga encamaba a sus pelda&ntilde;os<br>
+		entre el ala y yo el alba amaba su sangre fr&iacute;a<br>
+		<br>
+		Entre t&uacute; y yo los verdores innatos soltaron<br>
+		el pecho de vidrio y de trueno<br>
+		arrastrando carriles de espuma gracia in&uacute;til<br>
+		en los parajes dolorosos para una sola persona<br>
+		<br>
+		Escombros de llanura por todas partes donde la boca serpea<br>
+		cuando mi cad&aacute;ver a&uacute;n est&aacute; en su casa</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PRIMAVERA PROVISIONAL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Primavera provisional</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Deja fluir mis huesos entre las hojas<br>
+		entre las hojas nacidas de haberte conocido<br>
+		un d&iacute;a de lluvia<br>
+		cuando los barquichuelos de tus orejas<br>
+		cortaban las flores ocultas bajo los nombres de mis calles</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PUNTO DE REFERENCIA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Punto de referencia</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		No a la arena ya su soltura<br>
+		no a los pies dispuestos a la persecuci&oacute;n<br>
+		no a un techo m&aacute;s c&aacute;lido que otro<br>
+		no a la noche perforada detr&aacute;s de la oreja<br>
+		no a los guijarros heroicos a las capas de polvo<br>
+		no a la llamada del oro adulterado de las dudas<br>
+		no a los adioses a las mentiras a las reconciliaciones<br>
+		a todo lo que no sea asegurarme<br>
+		que ni t&uacute; ni yo hemos existido nunca<br>
+		<br>
+		Traducci&oacute;n de Carlos Barral</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="SILLA FELICIDAD"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Silla felicidad</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		La ca&iacute;da de vuestros cabellos es el &aacute;ngel que me eterniza se&ntilde;ora<br>
+		pero cada d&iacute;a nos sirve un ala de horizonte posible<br>
+		en la vajilla que rompe vuestra risa<br>
+		sobre el fondo incansable de vuestro car&aacute;cter<br>
+		<br>
+		El abanico instalado en vuestro aire de familia<br>
+		retiene su soplo y vuestro rostro se aquieta<br>
+		fuera hace entonces fr&iacute;o todas las piedras est&aacute;n hu&eacute;rfanas<br>
+		todos los pu&ntilde;os cerrados todas las cenizas al acecho<br>
+		cada gota de sol testimonia una voluntad opuesta a honrar vuestras 
+		deudas<br>
+		<br>
+		Parcialmente sentado sobre un fil&oacute;n de alma no me atrevo<br>
+		a oscilar de miedo a que cielo y tierra rechinen los goznes de nuestra 
+		vida privada<br>
+		si yo os contemplo la noche deposita un sauce en la llanura de los 
+		suspiros<br>
+		si me duermo el viento abre el armario de mi espalda<br>
+		y deja huir las alas de los verdores<br>
+		<br>
+		Traducci&oacute;n de&nbsp; Gerardo&nbsp; Diego</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="VENDIMIA"></a></font><font face="Georgia" color="#84B0D6">
+		Vendimia</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Un gran 
+		viento se ha levantado entre tu espalda y t&uacute;<br>
+		un gran viento armonioso de sorpresas y p&aacute;mpanos<br>
+		en el que voy raptado por un celo sin m&aacute;scara<br>
+		hacia ese &uacute;ltimo extrav&iacute;o que un racimo de olvido asombra<br>
+		<br>
+		La estatua corporal del &eacute;xtasis es sacudida<br>
+		sin embargo porque el sol al cabo de fatigas<br>
+		no se acuerda de haber quemado tu sonrisa<br>
+		s&oacute;lo la niebla que cae despliega sus alas de helecho<br>
+		<br>
+		El proceder ilimitado de la oto&ntilde;ada desfallece<br>
+		en los brazos transparentes de un bello curso de mentiras<br>
+		y el amor reflejado al filo de los adioses se derrumba<br>
+		labios abandonados concluidos como dos remos<br>
+		<br>
+		(La &uacute;nica manera de ser dos es creer en tu dolor<br>
+		d&aacute;ndole un sentido a la tarde que tiembla y se deshoja<br>
+		como un ramo de azares escogido aprisa en, el destino<br>
+		de un ser llamado a producir un tierno despojo mortal )<br>
+		<br>
+		Este mundo reconstruye el crimen de haberte visto<br>
+		enteramente desnuda<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		antorcha<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		no domesticada</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="VERDAD CAPITAL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Verdad capital</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Como ala una concesi&oacute;n a la sombra<br>
+		un gusto definido por los peligros al sol<br>
+		una vida corta<br>
+		una reserva prudente<br>
+		<br>
+		En la escuela de los vencidos el holl&iacute;n empavesa sus ventanas<br>
+		el rosal que te ignora ocupa aqu&iacute; poco sitio<br>
+		las contingencias se agolpan a la puerta como mendigos<br>
+		el error se gu&iacute;a por su volumen<br>
+		<br>
+		La tormenta flaquea en la espera<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La m&iacute;a</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="VERDORES INNATOS"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Verdores innatos</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Amiga m&iacute;a eres tierna 
+		hasta el delirio<br>
+		aqu&iacute; est&aacute; la hierba que sube por tus piernas<br>
+		qu&eacute; llama ligera<br>
+		puesto que en cada oreja una an&eacute;mona<br>
+		la tierra jam&aacute;s escucha las palabras que uno quisiera<br>
+		hagamos nacer mariposas suscitando inquietudes<br>
+		suscitando cal&eacute;ndulas para huir a no importa d&oacute;nde<br>
+		no demasiado pero sin embargo<br>
+		&iquest;no es as&iacute;?<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+		</font>
+	</blockquote>
+</blockquote>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:10:04 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:04 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

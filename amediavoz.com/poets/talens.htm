@@ -1,0 +1,1524 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jenaro Talens</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jenaro Talens. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jenaro_Talens,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/talens.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/talens.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172303" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./talens.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:23:03 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./talens.htm" title="2:51:36 May 30, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:23:03 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./talens.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:23:03 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./talens.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>47 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Feb 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:010101010001_2005:-1:011100010004_2006:-1:110011000100_2007:-1:010002020100_2008:-1:101101002000_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000001000_2012:-1:100110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TALENS.jpg" width="327" height="40">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&quot;El oleaje quieto de tu desnudez golpeando con 
+calma <br>
+este silencio en los acantilados de mi excitaci&oacute;n...&quot;</em><br>
+<br>
+</font><font color="#84B0D6"><img src="./TALENS1.jpg" width="350" height="310"></font></p>
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<span style="font-style: italic; font-weight:400">&quot;Inocencia&quot;</span></font></p>
+<p align="center"><span style="font-weight: 400; font-style: italic">
+<font face="Arial" size="2" color="#84B0D6">James Callahan</font></span></p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6"><br>
+</font><font color="#84B0D6"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font color="#84B0D6"><br></font>
+		<font face="Georgia" size="4" color="#84B0D6">
+		Rese&ntilde;a biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta, 
+		ensayista y traductor espa&ntilde;ol nacido en Tarifa, C&aacute;diz, en 1946.<br>Se 
+		educ&oacute; en Granada donde curs&oacute; el bachillerato y por cuya Universidad se 
+		licenci&oacute; en Filosof&iacute;a y Letras en 1968. <br>
+		Posteriormente se doctor&oacute;&nbsp; en Filolog&iacute;a Rom&aacute;nica por la misma 
+		universidad, con una tesis sobre Luis Cernuda.<br>Es un miembro 
+		destacado de la 
+		<em>Generaci&oacute;n del 70</em>, autor de varios libros de ensayo sobre 
+		Cervantes, Quevedo, <br>
+		Espronceda y Cernuda entre otros, traductor de poetas como Beckett, 
+		Holderin, Hesse y Rilke, y de importantes <br>
+		expresionistas alemanes.<br>Es fundador y co-director de las coleccion<em>es 
+		&quot;Eutop&iacute;as</em>&quot; y 
+		<em>&quot;Signo e imagen</em>&quot;.<br>Su obra po&eacute;tica est&aacute; contenida en m&aacute;s de 
+		veinte publicaciones entre las que merecen destacarse, &laquo;En el umbral del 
+		hombre&raquo; <br>
+		en 1964,&nbsp; &laquo;Ritual para un artificio&raquo; en 1971, &laquo;El cuerpo 
+		fragmentario&raquo; en 1978, &laquo;La mirada extranjera&raquo; en 1985, <br>
+		&laquo;Tabula rasa&raquo; en 1985, &laquo;Cenizas de sentido&raquo; en 1989, &laquo;El largo 
+		aprendizaje&raquo; en 1991,&laquo;Orfeo filmado en el campo de batalla&raquo;
+      	<br>
+		en 1994, &laquo;Viaje al fin del invierno&raquo; en 1997 y &laquo;Profundidad de campo&raquo; 
+		2000.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#B0C6C1">
+		<a href="./talens.htm#A BATALLAS DE AMOR, CAMPOS DE PLUMA">A batallas de amor, 
+		campos de pluma</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font>
+		<font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font><br>
+		<font face="Georgia" color="#8FABC2"><a href="./talens.htm#ALBA">Alba</a><br>
+		<br><a href="./talens.htm#ALGO VA A SUCEDER">Algo va a suceder</a><br><br>
+		<a href="./talens.htm#AMANECER EN EL ESCORIAL">Amanecer en el Escorial</a><br><br>
+		<a href="./talens.htm#&Aacute;NGELES SOBRE ROMA">&Aacute;ngeles sobre Roma</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./talens.htm#DECIR SON MERAS APROXIMACIONES">Decir son meras aproximaciones</a><br>
+		<br><a href="./talens.htm#DIVAGACIONES SOBRE EL PR&Iacute;NCIPE AZUL">Divagaciones sobre el 
+		pr&iacute;ncipe azul</a><br>
+		<br><a href="./talens.htm#EL ESPEJO">El espejo</a><br><br>
+		<a href="./talens.htm#EL LARGO APRENDIZAJE">El largo aprendizaje</a><br><br>
+		<a href="./talens.htm#EL TESTAMENTO DE DR&Aacute;CULA">El testamento de Dr&aacute;cula</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./talens.htm#ENVOI">
+		Envoi</a><br>
+		<br><a href="./talens.htm#EPILOGUE &amp; AFTER">Epilogue &amp; After</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./talens.htm#EPITAFIO">Epitafio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./talens.htm#ES TAN S&Oacute;LO UNA HIP&Oacute;TESIS, PERO A&Uacute;N AS&Iacute;">Es tan s&oacute;lo una 
+		hip&oacute;tesis, pero a&uacute;n as&iacute;</a><br><br><a href="./talens.htm#FABULACI&Oacute;N SOBRE FONDO DE ESPEJO">
+		Fabulaci&oacute;n sobre fondo de espejo</a><br>
+		<br><a href="./talens.htm#FLASHES EN EL BRICK OVEN">Flashes en el Brick Oven</a><br>
+		<br><a href="./talens.htm#LA DEL ALBA SER&Iacute;A">La del alba ser&iacute;a</a><br><br>
+		<a href="./talens.htm#L&Iacute;MITES DE LA REPRESENTACI&Oacute;N">L&iacute;mites de la representaci&oacute;n</a><br>
+		<br><a href="./talens.htm#MEDITACI&Oacute;N DEL SOLITARIO">Meditaci&oacute;n del solitario</a><br>
+		<br><a href="./talens.htm#MIRANDO UNAS FOTOGRAF&Iacute;AS">Mirando unas fotograf&iacute;as</a><br>
+		<br><a href="./talens.htm#MON&Oacute;LOGO EN COLFAX AVENUE">Mon&oacute;logo en Colfax Avenue</a><br>
+		<br><a href="./talens.htm#MUJER EN FORMA DE ELEG&Iacute;A">Mujer en forma de eleg&iacute;a</a><br>
+		<br><a href="./talens.htm#NAVEGACIONES">Navegaciones</a><br><br>
+		<a href="./talens.htm#OBSCENIDAD DE LOS PAISAJES">Obscenidad de los paisajes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./talens.htm#OBSERVACIONES SOBRE UN CUERPO">Observaciones sobre un cuerpo</a><br>
+		<br><a href="./talens.htm#PARA&Iacute;SO CLAUSURADO">Para&iacute;so clausurado</a><br><br>
+		<a href="./talens.htm#ROOM 2 MOVE">Room 2 move</a><br><br><a href="./talens.htm#SOLO">Solo</a><br>
+		<br><a href="./talens.htm#SUCESI&Oacute;N TEMPORAL II">Sucesi&oacute;n temporal II</a><br><br>
+		<a href="./talens.htm#TE EXTRA&Ntilde;O...">Te extra&ntilde;o, oscuridad, mi vieja amiga...</a><br><br>
+		<a href="./talens.htm#TERRITORIOS DE UN CUERPO">Territorios de un cuerpo</a><br><br>
+		<a href="./talens.htm#ZOEY, O DE QU&Eacute; COLOR SON LAS PRINCESAS">Zoey, o de qu&eacute; color 
+		son las princesas</a>
+		</font><font face="Georgia" size="2" color="#8FABC2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="3" color="#B0C6C1"><br>
+		</font><font face="Georgia" size="2" color="#85A6BC">
+		<a name="A BATALLAS DE AMOR, CAMPOS DE PLUMA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		A batallas de amor, campos de pluma</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(a la manera de R. D. Laing)<br>
+		</i><br>
+		</font><font face="Georgia" color="#84B0D6">
+		Ella</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		No le gustaron nunca los encuentros furtivos,<br>
+		con j&oacute;venes muchachas de alquiler,<br>
+		de modo que invent&oacute; una amante mec&aacute;nica.<br>
+		Pod&iacute;a encenderla y apagarla.<br>
+		Con ella se sent&iacute;a relajado y feliz.<br>
+		Colocaba un espejo sobre el rostro,<br>
+		y la besaba sin cesar, con furia,<br>
+		penetrando el abismo de su alteridad.<br>
+		Su cuerpo era de pl&aacute;stico,<br>
+		con una piel suave no del todo insincera.<br>
+		S&oacute;lo su voz met&aacute;lica anunciaba la monoton&iacute;a.<br>
+		En noches como &eacute;sta sol&iacute;a sonre&iacute;r<br>
+		y &eacute;l la abrazaba con desenvoltura<br>
+		manteniendo, no obstante, una cierta distancia<br>
+		para evitar el riesgo de la dependencia.<br>
+		La hab&iacute;a construido con toda precisi&oacute;n<br>
+		y tambi&eacute;n &eacute;l, por tanto, podr&iacute;a destruirla<br>
+		caso de no cumplir con sus obligaciones<br>
+		(por ejemplo decirle con ternura<br>
+		&quot;bienvenido al hogar; heme aqu&iacute;, tuya soy&quot;,<br>
+		o anotar las llamadas del tel&eacute;fono).<br>
+		Una tarde de marzo, discutiendo con ella,<br>
+		le rompi&oacute; el coraz&oacute;n en mil pedazos.<br>
+		Nunca encontr&oacute; la pieza de repuesto.<br>
+		y ahora que ya no est&aacute;, mira el muro vac&iacute;o,<br>
+		los objetos de mimbre que tanto le gustaran,<br>
+		sus huellas imprecisas sobre el aparador.<br>
+		Siente un olor difuso, melanc&oacute;lico.<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<br>
+		&Eacute;l</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		No me gustaron nunca sus encuentros furtivos<br>
+		con j&oacute;venes muchachas de alquiler,<br>
+		ni entend&iacute; el modo en que trat&oacute; de amarme. <br>
+		El poder de apagarme y encenderme<br>
+		fue levantando un muro entre nosotros,<br>
+		fr&aacute;gil como la brisa junto al mar.<br>
+		Nunca fue su mec&aacute;nica nada importante para m&iacute;.<br>
+		Me colocaba espejos sobre el rostro,<br>
+		y me besaba sin cesar, con furia,<br>
+		lanz&aacute;ndome al abismo de su alteridad.<br>
+		Mi cuerpo era de pl&aacute;stico en sus manos,<br>
+		y yo sent&iacute; mi piel como una s&aacute;bana<br>
+		hecha de desencuentros y monoton&iacute;a.<br>
+		En noches como &eacute;sta sol&iacute;a sonre&iacute;r<br>
+		y &eacute;l me abrazaba con desenvoltura<br>
+		manteniendo, no obstante, una distancia<br>
+		para evitar el riesgo de depender de m&iacute;.<br>
+		Me hab&iacute;a imaginado con tanta precisi&oacute;n<br>
+		que tambi&eacute;n &eacute;l podr&iacute;a destruirme<br>
+		caso de no cumplir con mis obligaciones<br>
+		(por ejemplo decirle con ternura<br>
+		&quot;bienvenido al hogar; heme aqu&iacute;, tuya soy&quot;,<br>
+		o anotar las llamadas del tel&eacute;fono ).<br>
+		Una tarde de marzo, (ya he olvidado por qu&eacute;),<br>
+		me rompi&oacute; el coraz&oacute;n en mil pedazos.<br>
+		Nunca encontr&oacute; la pieza de repuesto.<br>
+		y ahora que ya no estoy, me siento frente a &eacute;l,<br>
+		lo miro absorta c&oacute;mo me contempla,<br>
+		c&oacute;mo busca mi cuerpo en la pared vac&iacute;a,<br>
+		en objetos de mimbre donde nunca estar&eacute;,<br>
+		c&oacute;mo reconstruye mis huellas sobre el aparador.<br>
+		Siento un olor difuso, melanc&oacute;lico.<br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		Ella</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		A tus soledades voy,<br>
+		de mis soledades vengo.<br>
+		Como una imagen sin ning&uacute;n volumen,<br>
+		sigo las huellas que la noche borra<br>
+		sobre la arena del desierto.<br>
+		Para saber el d&oacute;nde por quien somos<br>
+		s&oacute;lo dispongo de este cuerpo.<br>
+		No soy presencia que te cubre, s&eacute;<br>
+		la paradoja de ofrecer sin pausa<br>
+		el espesor de un mundo que no tengo.<br>
+		No eres presencia que me cubra. M&iacute;rame:<br>
+		no ser sino un lugar para el encuentro<br>
+		no nos hace un nosotros, s&oacute;lo dice<br>
+		c&oacute;mo el camino es largo y tortuoso<br>
+		y que una primavera nacer&aacute;<br>
+		de las cenizas del invierno.<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="3" color="#84B0D6"><br>
+		<br><a name="ALBA"></a>
+		</font>
+		<font face="Georgia" color="#84B0D6">Alba</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Jean-Marie Roosbroeck</em><br>
+		<br>I<br>Contemplar un jard&iacute;n.<br>Tras la cancela un vago<br>rumor de 
+		sombra: impune<br>amanecer, ya casi<br>luz vencida, y m&aacute;s luces<br>que 
+		se insin&uacute;an. Dalias<br>y moluscos, gaviotas y jazmines<br>tu plenitud 
+		asumen,<br>tu soledad. Los muros,<br>encalados, encubren<br>la noche en 
+		pie, su historia.<br>
+		<br>Ver la nube<br>lacia, como si el mar<br>fuese a la tarde un buque<br>
+		encallado entre labios<br>de espuma. El mar. &iexcl;Qu&eacute; dulce<br>silencio! 
+		Inmensidad<br>sin nombre. En ti concluye<br>todo, el amor, el tiempo,<br>
+		el chamariz que cruje<br>bajo el zarpazo t&iacute;mido del sol<br>y ese 
+		insomnio de piedra<br>que ha de fluir y acrece<br>lo que es dolor, y 
+		duele, y se consume.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">II<br>
+		Contemplar un jard&iacute;n.<br>O el mar. Mejor el mar.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Qu&eacute; importa<br>la vastedad del cielo<br>en esta hora<br>fr&aacute;gil. Qu&eacute; 
+		importar&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Sientes la 
+		luz herirte y aprisionas<br>su sonido tenaz.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Si una palabra<br>hubiera, si una sola<br>palabra, que bastase.<br>Como 
+		a estas aguas quietas,<br>para existir, sus olas.<br>
+		<em><br>&quot;V&iacute;spera de la destrucci&oacute;n&quot; 1966 - 1968</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ALGO VA A SUCEDER"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Algo va a suceder</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		La muerte es como el sue&ntilde;o,<br>parecida a ti:<br>no puede ser pensada.<br>
+		Abro los ojos y amanece el d&iacute;a.<br>No hay obsesi&oacute;n impune, ni fantasmas<br>
+		que la luz no devore<br>sin m&aacute;s imperio que su voluntad,<br>ni otro 
+		poder que el sol que nos despoja. 
+		<br>C&oacute;mo olvidar que fuimos lo innombrado,<br>lo que negaba oscuridad a 
+		un mundo<br>hecho, como t&uacute; y yo, de sue&ntilde;os rotos.<br>No, no duermas. El 
+		p&aacute;jaro del alba<br>dice que ayer no existe. No hay memoria,<br>ni 
+		significa nada. S&oacute;lo, mira<br>esta pasi&oacute;n que nos acoge, que<br>ha 
+		estallado, de pronto, insobornable,<br>como las ganas de vivir.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;La 
+		mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="AMANECER EN EL ESCORIAL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Amanecer en El Escorial</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Ch&uacute;s Visor</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Vuelve a 
+		tu nada,<br>dijo el sol a la noche<br>quebrando el alba.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;De 
+		una obra en marcha&quot; 2001</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="&Aacute;NGELES SOBRE ROMA"></a></font>
+		<font face="Georgia" color="#84B0D6">&Aacute;ngeles sobre Roma</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br>Abra tu luz mi niebla a sus enga&ntilde;os,<br>pues no he nacido para 
+		compartir el odio,<br>sino el amor. He ah&iacute; las huellas de la nieve, el 
+		mar<br>donde todo concluye,<br>briznas de azul al pie de las colinas.<br>
+		La ola en la que fui, mi duraci&oacute;n, el muro<br>es una sombra informe que 
+		se aleja<br>camino de otras playas.<br>De un cuerpo a otro hay el tiempo 
+		de una vida,<br>de su soledad a mis ojos hay la distancia de la muerte.<br>
+		Juntos en un paisaje aterido de sed<br>vemos el sol de julio que se 
+		descompone,<br>c&oacute;mo cae gota a gota<br>desvisti&eacute;ndote incluso<br>del 
+		color que oscurece mis palabras,<br>un viola emborronado por el muslo 
+		del d&iacute;a.<br>Vienes desde el sonido de una vieja ciudad<br>(agua oculta 
+		que llora entre arrayanes),<br>para darle otro nombre a la aventura:<br>
+		un mar sin mar y al fondo los cipreses,<br>ese silencio que me hace 
+		diferente de ti.<br>
+		<br>II<br>Recorrerte sin pausa, como quien<br>se despereza al sol; ser 
+		el sendero<br>donde inscribir tus huellas. Heme aqu&iacute;,<br>acurrucado 
+		junto al estallido<br>que amaga el roce de tu piel.<br>Cobijo mi pasi&oacute;n 
+		a la intemperie<br>bajo el &aacute;rbol frondoso de tus sensaciones,<br>esa 
+		implosi&oacute;n de un cuerpo<br>en el que busco anclarme. Vieja luz<br>que 
+		alumbra, sin embargo, todav&iacute;a.<br>
+		<br>III<br>Piensa si todo esto terminase.<br>La floraci&oacute;n del d&iacute;a y de 
+		la noche,<br>de este d&iacute;a preciso, de esta noche precisa,<br>lo fortuito 
+		de un azar que surge<br>inevitablemente. Piensa si<br>fuese s&oacute;lo el 
+		principio<br>de otro final que ya no espero, que<br>vuelve a decirme que 
+		si todo esto<br>terminase, por qu&eacute;. Piensa. No, toca<br>la luz de nuevo, 
+		sin pensar, el borde<br>de una quietud donde se desmorona<br>cuanto nos 
+		hizo islas. Si acabase<br>todo, el fulgor, la sed, la opacidad<br>de un 
+		territorio que no es cuerpo, que<br>nos vuelve cuerpo, sin limitaciones,<br>
+		piensa, tanto estupor<br>&iquest;cabr&iacute;a en un poema?<br>
+		<br>IV<br>Dar&eacute; tu nombre a cuanto vea,<br>me aferrar&eacute; a la imagen de tu 
+		cuerpo<br>como la yedra al sol de mediod&iacute;a.<br>Igual que el mirlo al 
+		recorrer las hojas<br>busca en la nervadura<br>los gusanos, ir&eacute;<br>a 
+		trabajar los surcos,<br>a sembrar la memoria<br>si es cierto que para 
+		morir,<br>como dijo el anciano,<br>basta s&oacute;lo un ruidillo:<br>el de otro 
+		coraz&oacute;n<br>(&iquest;m&iacute;o, tuyo?) al callarse.<br>
+		<br>V<br>Pero, a decir verdad, no sabemos morir.<br>En el fluir del d&iacute;a 
+		que no acaba<br>oigo un murmullo circular, el labio<br>que bebo sorbo a 
+		sorbo. T&oacute;came.<br>He atravesado oc&eacute;anos de tiempo<br>para llegar a ti, 
+		la noche sin ra&iacute;ces.<br>La tierra fue el principio,<br>la tierra 
+		devastada que repite sus sue&ntilde;os.<br>Me hicieron renacer como quien 
+		siembra<br>entre los intersticios de una roca<br>y espera sin dudar 
+		hasta que crezca el fruto.<br>Luego vino la lluvia<br>desde un cielo 
+		cansado 
+		<br>de oscurecerse sin raz&oacute;n. &iquest;Comprendes<br>ahora? No fui yo.<br><br>VI<br>
+		Lo que sucede, al cabo, son colores.<br>El rojo sangre de quien nada 
+		olvida,<br>el amarillo de la indecisi&oacute;n,<br>o el verdiazul que surge 
+		como un soplo<br>desde una noche que no fue derrota<br>sino conf&iacute;n. El 
+		blanco de reconocerte<br>entre las huellas menos personales<br>de un 
+		alba compartida: s&oacute;lo t&uacute;,<br>las variaciones de la luz y el peso<br>de 
+		una certeza incomprensible.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">VII<br>
+		Suspende el a&ntilde;o enti sus estaciones.<br>En esta antigua selva donde 
+		estoy<br>el tiempo se abre paso con dificultad.<br>Discurre a solas sin 
+		tu nombre<br>y no envejece ni se instaura, s&oacute;lo<br>finge avanzar a 
+		tientas por un t&uacute;nel<br>hecho de azar y de pasi&oacute;n, de todo<br>cuanto nos 
+		hace vagamente humanos.<br>La vasta tierra que recorro me<br>descubre en 
+		el trazado de tu piel,<br>y ese hueco dormido que llaman coraz&oacute;n<br>es 
+		un chorro de agua brotando en el desierto<br>del &uacute;ltimo verano que 
+		perdura.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="DECIR SON MERAS APROXIMACIONES"></a></font>
+		<font face="Georgia" color="#84B0D6">Decir son meras aproximaciones</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Ahora ya s&eacute; que el j&uacute;bilo a&uacute;n existe,<br>que tu rotundo vientre me 
+		unifica<br>en esta dispersi&oacute;n que ha sido mi ceguera.<br>Fuiste verdad 
+		visible, combusti&oacute;n, palabras<br>que mis manos llov&iacute;an sin descanso<br>
+		desde el temblor de un v&eacute;rtigo insondable.<br>Una mirada acuosa me sigue 
+		desde entonces<br>y, como quien no cede a tentaci&oacute;n, sepulta mi memoria<br>
+		bajo un humus de tiempo, donde el amor en llamas<br>borra las sombras. 
+		M&iacute;rame, desnudo<br>de tu calor. No hay muerte ni amargura<br>sino un sol 
+		extranjero que pronuncia tu nombre,<br>su m&uacute;sica callada, su delicadeza,<br>
+		con el fervor de un viento que no olvida.<br>S&eacute; que este martes de 
+		noviembre,<br>mientras paseo atravesando el fr&iacute;o del oto&ntilde;o,<br>tu voz me 
+		grita desde su silencio,<br>desde otro cielo y en ning&uacute;n lugar.<br>No 
+		pude o&iacute;r desde tan lejos el sonido del aire<br>pero aprend&iacute; a mirarte en 
+		cada rostro,<br>en la agon&iacute;a verde de los &aacute;rboles,<br>en su inasible 
+		luz, sabi&eacute;ndote despierta<br>de tu profundo sue&ntilde;o, no de m&iacute;.<br>
+		<br><em>&quot;La mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="DIVAGACIONES SOBRE EL PR&Iacute;NCIPE AZUL"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Divagaciones sobre el pr&iacute;ncipe azul</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Est&aacute; sentada en medio de la alfombra,<br>con una mano sobre sus 
+		cabellos y<br>en la otra un anillo<br>que hace girar con un furor 
+		mec&aacute;nico<br>bajo la luz escueta de la l&aacute;mpara.<br>Murmura con excesiva 
+		lentitud,<br>oigo su voz, golpea 
+		<br>como la lluvia contra los cristales,<br>empa&ntilde;ando sus gafas con una 
+		inc&oacute;moda humedad.<br>Ah, la emoci&oacute;n del trance, o quiz&aacute; s&oacute;lo<br>es el 
+		calor que viene de la estufa.<br>&Eacute;l se levanta, dice, cu&aacute;nto sufres;<br>
+		dice, perdona, voy a hacer caf&eacute;,<br>necesitamos un descanso; vuelve;<br>
+		es hora, piensa, de una pausa; y ella<br>no escucha, dice, mi tragedia 
+		es no<br>saber si el sexo satisface o si<br>es prescindible en su 
+		ilusi&oacute;n; esc&uacute;chame,<br>ignoro incluso en qui&eacute;n o d&oacute;nde estoy<br>cuando 
+		hago o digo cosas como &eacute;sta,<br>todo resulta tan confuso, intenta 
+		comprender.<br>&Eacute;l pone az&uacute;car en la taza, dice,<br>admiro tanto tu 
+		sinceridad.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="EL ESPEJO"></a>El espejo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Tiene la 
+		blanca mano<br>apoyada en el libro peque&ntilde;o,<br>sobre las peque&ntilde;as hojas 
+		blancas<br>donde, absorta, se pierde.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Hundida en 
+		el sill&oacute;n, los ojos<br>tibiamente impregnados de sensaci&oacute;n de ver,<br>
+		aunque sin forma; en torno los objetos<br>se alzan como muros<br>a los 
+		que s&oacute;lo la incansable<br>profundidad de las pupilas<br>puede ahondar en 
+		plenitud, y observa<br>el modo simple en que se acopla el mundo<br>a su 
+		tacto, sin queja.<br>Cuanto sus dedos asen<br>fuertemente lo ti&ntilde;en de 
+		lucidez. Del cerco<br>nunca insalvable de la lejan&iacute;a<br>en que hasta las 
+		palabras<br>m&aacute;s repentinamente pr&oacute;ximas participan<br>la protege este 
+		libro peque&ntilde;o,<br>en cuyas peque&ntilde;as hojas blancas sus blancas manos se 
+		posan.<br>
+		<br>Y alg&uacute;n vago deseo<br>le asalta: &laquo;cuerpo hermoso<br>para ofrecer, 
+		qui&eacute;n sabe, blando muslo,<br>labios acaso con temblor de aurora&raquo;.<br>
+		Pero apenas si el brazo, febrilmente extendido,<br>roza el sereno 
+		cristal que nada responde.<br>
+		<br>Ciego el espejo es<br>para el que en su pulida entra&ntilde;a no consigue 
+		iniciarse<br>con claridad. Y vuelve<br>a acariciar su cuerpo, que, de 
+		nuevo, insensible,<br>se funde en la lejana realidad envolvente.<br>
+		<br>Cuando ha dejado de sentir el apacible mordisco de las <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&uacute;ltimas luces<br>cierra con lentitud el libro. Y comienza otra noche,<br>
+		en donde los objetos, incluso los m&aacute;s cercanos, tambi&eacute;n a ella<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la ignoran.<br>
+		<em><br>&quot;V&iacute;spera de la destrucci&oacute;n&quot; 1966 - 1968</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a
+      name="EL LARGO APRENDIZAJE"></a>El largo aprendizaje</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Una mujer, un hombre, una ciudad.<br>La ciudad sin objeto. O una escena 
+		de amor.<br>
+		<br>Alguien que se desdobla en estr&iacute;as de luz,<br>caminando sin prisa 
+		por los soportales.<br>
+		<br>Una mujer a&uacute;n joven; sus inciertos poderes<br>sin otros l&iacute;mites que 
+		los que impone<br>un rostro ajeno donde nadie ve. 
+		<br><br>El hombre avanza a tientas por el p&aacute;lido cielo, <br>due&ntilde;o de un 
+		aire intacto que no puede usar.<br>
+		<br>Ando cansada por las avenidas,<br>dice; no es amarillo<br>este fuego 
+		en que quemo mi vacilaci&oacute;n.<br>
+		<br>&Eacute;l no responde, se reclina, espera.<br>Ella sonr&iacute;e. No es silencio: 
+		sabe.<br>
+		<br>Del otro lado del espejo, noche.<br>Y una mujer, un hombre, una 
+		ciudad.<br>
+		<br><br><em>&quot;La mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="EL TESTAMENTO DE DR&Aacute;CULA"></a>E</font><font face="Georgia" color="#84B0D6">l 
+		testamento de Dr&aacute;cula</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(seg&uacute;n F. F. C.)</em><br><br>Estas son mis palabras,<br>mis &uacute;ltimas 
+		palabras.<br>Crecen en torno a m&iacute; sin que yo las vigile,<br>luego 
+		retornan a mi boca<br>y en ella se aposentan para pasar la noche.<br>Las 
+		digo en voz tan baja que ni t&uacute; las escuchas<br>a ras de suelo, tan 
+		inaprensibles<br>que hasta las piedras las absorben.<br>Todo es posible 
+		aqu&iacute;. Tan s&oacute;lo yo<br>soy imposible, un rostro<br>sin color ni volumen<br>
+		por estas galer&iacute;as donde se repiten<br>espejos en espejos. Todos est&aacute;n 
+		deshabitados.<br>Nada devuelve su espesor, salvo una luz confusa,<br>
+		dibujando mi ausencia entre los vidrios rotos.<br>Narciso fui cuando 
+		viv&iacute;a.<br>Mientras no estuve en el arc&eacute;n del tiempo,<br>lo miraba pasar. 
+		La muerte ahora<br>es la venganza de los otros, de<br>esos otros 
+		extra&ntilde;os a quienes am&eacute;<br>sin proyectarme en ellos. Ven a m&iacute;.<br>No te 
+		har&eacute; ning&uacute;n da&ntilde;o. Sabe que<br>de soledad en soledad<br>hu&iacute; de un c&uacute;mulo 
+		de eternidades<br>para cruzar la tierra. Fui viajero,<br>me deslic&eacute; 
+		hasta sombras que antes no conoc&iacute;,<br>y en este exilio, cuando miro 
+		atr&aacute;s,<br>pienso en el sue&ntilde;o de los justos:<br>un islote de espuma 
+		saturada de azul.<br>Tal vez los fr&iacute;os del invierno sean piadosos 
+		conmigo.<br>S&eacute; que sobre mi tumba nacer&aacute;n flores amarillas.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ENVOI"></a></font><font face="Georgia" color="#84B0D6">
+		Envoi</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Surges 
+		de un cielo antiguo,<br>del frescor crispado<br>con que la nieve 
+		repentina azota la ciudad.<br>Te cubre un halo, como en una foto<br>en 
+		la que se ha perdido el claroscuro<br>y los contornos y tan s&oacute;lo el fr&iacute;o<br>
+		te reconforta y te protege.<br>sobre la cartulina<br>mis dedos acarician 
+		lo que intuyen de ti<br>y se demoran, impacientes, como quien espera<br>
+		que se abra una puerta.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y le inviten a entrar.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>
+		&quot;Profundidad de campo&quot; 1997 - 2000</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="EPILOGUE &amp; AFTER"></a></font>
+		<font face="Georgia" color="#84B0D6">Epilogue &amp; After</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Cu&aacute;nta ceniza ardiente llueve el cielo,<br>ecos antiguos de una voz que 
+		pasa,<br>ese enemigo que invent&oacute; el espejo<br>y me instal&oacute; sin verme en 
+		su mirada.<br>Dando bandazos, el invierno cae;<br>no me permite 
+		desdecirme. Calla<br>para obligarme a o&iacute;r desde el silencio<br>el rumor 
+		con que anula las palabras<br>y hace hablar a los &aacute;rboles, a las<br>
+		piedras desnudas, a los puentes, con<br>el lenguaje del agua.<br>Burl&oacute;n 
+		y regio por las galer&iacute;as,<br>el aire muerde sin cesar las ramas;<br>
+		ellas me ense&ntilde;an a mirar sin odio:<br>el sol es siempre nuevo cuando se 
+		levanta.<br>El frescor de las cosas desmiente mi agon&iacute;a,<br>y en este 
+		cuerpo im&aacute;n de tu memoria inscribo<br>el lastre fiel de un mon&oacute;logo en 
+		calma.<br>La noche apoya su cabeza en mi hombro,<br>su materia sensible. 
+		No hay nostalgia,<br>sino copos de tiempo que la noche aventa<br>en un 
+		espacio vuelto madrugada.<br>Mis ideas acerca del futuro<br>crecen como 
+		burbujas de sustancia.<br>Por qu&eacute; seguir; la escena ha terminado,<br>y 
+		ahora que ya no necesito nada<br>(si acaso respirar la luz del d&iacute;a),<br>
+		ahora, cuando descubro que esa luz no acaba,<br>s&eacute; que el camino existe<br>
+		porque por &eacute;l avanzo: soy camino.<br>Sobrevivir ha sido mi venganza.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;Tabula rasa&quot;</em> 1985</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EPITAFIO"></a></font><font face="Georgia" color="#84B0D6">
+		Epitafio</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		yesca me han hecho de invisible fuego <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Francisco de la Torre <br>
+		</i><br>
+		Fui un viejo juglar, y cont&eacute; historias.<br>
+		Mi nombre os es indiferente.<br>
+		S&oacute;lo dejo constancia de mi oficio <br>
+		porque fue oficio quien dict&oacute; mis versos <br>
+		no la peque&ntilde;a vida que viv&iacute;, <br>
+		ni su dolor, ni su insignificancia. <br>
+		Ella muri&oacute; conmigo, y aqu&iacute; yace, <br>
+		desnuda como yo, bajo esta piedra. <br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="ES TAN SÓLO UNA HIPÓTESIS, PERO AÚN AS&Iacute;"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Es tan s&oacute;lo una hip&oacute;tesis, pero a&uacute;n as&iacute;</font><font face="Georgia" size="2" color="#84B0D6"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<em>G. lonas, Untitled poem # 3</em><br><br>Dice que s&oacute;lo duerme con 
+		extra&ntilde;os, que<br>gracias a los extra&ntilde;os puede dormir en paz<br>y 
+		permitirles ser amables anfitriones<br>siendo a su vez una invitada 
+		amable.<br>Ellos no pueden tomar nada que le pertenezca,<br>ella tampoco 
+		nada que les pertenezca<br>salvo lo m&aacute;s externo de su piel<br>y el caf&eacute; 
+		con tostadas en el desayuno.<br>Tras noches como &eacute;sas se siente tan 
+		feliz.<br>Dice que s&oacute;lo duerme con extra&ntilde;os, que<br>de ese modo resultan 
+		m&aacute;s sinceros.<br>Saben que ella est&aacute; hoy,<br>sin que jam&aacute;s se hable de 
+		un ma&ntilde;ana.<br>Si se lleva consigo alg&uacute;n objeto,<br>es relativamente 
+		f&aacute;cil perdonar.<br>Y si olvida algo suyo sobre la mesita<br>pueden 
+		tirarlo luego sin problemas.<br>Es un dedo en un timbre despu&eacute;s de 
+		atardecer,<br>o una voz dulce en el tel&eacute;fono.<br>La promesa, tal vez, de 
+		una postal que no<br>suele firmar, y sin remite alguno.<br>Dice que s&oacute;lo 
+		duerme con extra&ntilde;os, que<br>ellos as&iacute; reservan para ella<br>sus m&aacute;s 
+		limpios manteles<br>y su mejor sonrisa.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;Tabula rasa&quot;</em> 1985<br></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a
+      name="FABULACIÓN SOBRE FONDO DE ESPEJO"></a>Fabulaci&oacute;n sobre fondo de 
+		espejo</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>La realidad. El tiempo. Ves tu mano<br>sobre una taza. El humo 
+		difumina<br>las cosas. Tu cigarro. Aqu&iacute; termina<br>tu verdad, cuanto 
+		tocas. Sabes vano<br>
+		<br>el amor, puro viento de verano<br>que el oto&ntilde;o deshace e ilumina<br>
+		con dejadez. La sombra que declina<br>envuelve los objetos, como un vano<br>
+		<br>rescoldo de luz pura. Vuela intacto<br>a la viscosa oscuridad de 
+		donde<br>surgi&oacute;. La paz, de nuevo. Sosegada 
+		<br><br>notas el alma en ti. Borroso, el tacto<br>desdibuja tu cuerpo y 
+		te lo esconde<br>bajo otro cielo gris. No sientes nada.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>
+		&quot;V&iacute;spera de la destrucci&oacute;n&quot; 1966 - 1968</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="FLASHES EN EL BRICK OVEN"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Flashes en el Brick Oven</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>
+		Con Marta y Andr&eacute;s S&aacute;nchez Robayna</em><br>
+		<br>&iquest;Qu&eacute; me ofrece el silencio de esta noche,<br>este amor sin excusa, 
+		vuelto aprendizaje?<br>Paseo por las calles<br>de esta ciudad extra&ntilde;a<br>
+		donde incluso las flores tienen due&ntilde;o.<br>Miro las nubes grises,<br>el 
+		aire iluminado por una luna artificial,<br>y escucho el parpadeo de los 
+		claxons en la carretera.<br>Los grajos llueven en bandadas,<br>vierten 
+		su humosa niebla sobre las ardillas,<br>pero el olor que brota de la 
+		hierba<br>no es un olor distinto<br>del olor con que noviembre ahora 
+		irrumpir&aacute; en tu cuarto<br>dici&eacute;ndote que empieza a amanecer,<br>aunque 
+		sea otro el mar, otros los &aacute;rboles<br>y otro el azul que inunde tu 
+		mirada.<br>El d&iacute;a muere en Austin y estoy solo.<br>Aqu&iacute;, de pie, junto 
+		al Brick Oven,<br>pienso en tu cuerpo, en ti-<br>&iquest; Qu&eacute; podr&iacute;a ofrecerme 
+		esta noche de oto&ntilde;o<br>que no me ofrezcas t&uacute;?<br>
+		<br><em>&quot;La mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="LA DEL ALBA SER&Iacute;A"></a>La del alba ser&iacute;a</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		La gr&iacute;mpola en el m&aacute;stil y el cincel diminuto,<br>el estilete, el fuste 
+		y la magnolia:<br>todo materia de dolor.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(&iexcl;Abridme<br>las puertas de la noche!)<br><br>Pero d&oacute;nde el cendal,<br>
+		d&oacute;nde la encubridora<br>sierpe, el misterio d&oacute;nde<br>est&aacute; que por el 
+		aire<br>sola tu ausencia en sombra<br>como olvido transcurre.<br>
+		<br>Nada pasa, amor m&iacute;o.<br>En la ciudad desierta, el humo del alcohol<br>
+		como la lluvia es breve; es un cuchillo<br>helado, o una forma<br>que 
+		pesa; pero acaba,<br>(todo acaba, amor m&iacute;o)<br>como la lluvia, sobre tu 
+		soledad.<br>
+		<br>Mira el voluble y c&aacute;lido sopor de los escaparates,<br>el triste 
+		parpadeo sin destino de las luces el&eacute;ctricas.<br>No recorras las calles<br>
+		ahora que en las paredes, ciegas de tanta cal, unos labios resbalan<br>y 
+		en el aire agoniza el &uacute;ltimo murmullo de una balada del amanecer.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Esc&uacute;chame, 
+		no temas<br>la quemaz&oacute;n hiriente de los focos,<br>la luz dispuesta en 
+		cajas sobre los anaqueles.<br>No es verdad, amor m&iacute;o.<br>Todo es j&uacute;bilo 
+		aqu&iacute;: la alegre m&aacute;scara<br>del bailar&iacute;n inm&oacute;vil y el asombro<br>de la 
+		muchacha sorprendida al borde del acantilado,<br>mientras el viento 
+		sue&ntilde;a<br>con alacranes rubios y alfileres<br>que la niebla diluye.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Cu&aacute;nto 
+		espacio mudable en avenidas.<br>En el h&uacute;medo c&eacute;sped, como verdor que 
+		estalla,<br>hay celajes de p&uacute;rpura<br>y acrisoladas flores de papel.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Ven, ven. 
+		Tus ojos brillan.<br>Bajo la abrumadora sombra de los parques beso un 
+		cuerpo dormido.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">El aire 
+		gime y tiembla como azulada llama de un antiguo quinqu&eacute;.<br>&iquest;Sabes? La 
+		lluvia arrecia<br>sobre esta&nbsp; humosa floraci&oacute;n de bruma<br>mientras 
+		el boj repite sin l&iacute;mites<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sin l&iacute;mites<br>dulce cuerpo desnudo<br>sobre el que desemboco<br>como en 
+		la mar, o el mar, o un mar: tragaluz de las olas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Mar total 
+		que es un nombre,</font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#84B0D6">un 
+		nombre perseguido sobre un labio.</font></em></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;Una perenne aurora&quot; 1969</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="L&Iacute;MITES DE LA REPRESENTACIÓN"></a>
+		</font><font face="Georgia" color="#84B0D6">
+		L&iacute;mites de la representaci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Ahna Bishop y Ren&eacute; Jara</em><br><br>I<br>El mar, incomparable.<br>El 
+		oleaje quieto de tu desnudez<br>golpeando con calma este silencio<br>en 
+		los acantilados de mi excitaci&oacute;n.<br>El cuarto est&aacute; tranquilo. No hay 
+		fronteras.<br>Miro el escueto resplandor del d&iacute;a<br>desperez&aacute;ndose sobre 
+		tu piel.<br>Dormida,<br>sabes de los vestigios donde se disuelven<br>la 
+		tormenta y su furia. Justo al filo del alba.<br>Nunca los cuerpos solos 
+		en su soledad,<br>siempre aislados en la multitud.<br>Te escucho 
+		respirar, tan lejos y a mi lado,<br>como el agua que muere,<br>libre en 
+		la voluptuosidad de tu deseo<br>vuelta espuma sin nombre,<br>en la 
+		desierta arena del amanecer. 
+		<br><br>II <br>Yo invent&eacute; nombres para ti,<br>t&uacute;, la a&uacute;n no nacida,<br>
+		la oculta por un nombre que no quise ver. 
+		<br>Esper&eacute; mucho, demasiado tiempo<br>para poder sentir<br>desde el 
+		silencio ahora inevitable<br>el rumor de mi cuerpo junto al tuyo,<br>
+		este mar sin fronteras 
+		<br>donde navego al pairo y busco naufragar.<br>Yo invent&eacute; nombres para 
+		ti,<br>como otra forma de caricia.<br>El alba es ya conciencia<br>y nos 
+		acoge. Ven,<br>ac&eacute;rcate. No hay nada<br>como saber que el mundo es un 
+		sendero<br>y nos invita a caminar.<br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;La 
+		mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="MEDITACIÓN DEL SOLITARIO"></a>
+		</font><font face="Georgia" color="#84B0D6">
+		Meditaci&oacute;n del solitario</font><font face="Georgia" size="2" color="#84B0D6"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Vicente Granados</em><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las entra&ntilde;as heladas tomaron poco a poco en piedra dura.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Garcilaso<br></em><br>I<br>La fr&aacute;gil tranquilidad de un hombre solitario<br>
+		tiene a veces la forma ondulada de un cuerpo nunca pose&iacute;do.<br>Nada es 
+		entonces tan desoladamente triste<br>como el silencio que mana de sus 
+		ojos;<br>nada tan profundamente comunicable<br>como ese gesto 
+		inconsciente de vida incorporada a la tierra<br>que envuelve la 
+		inmovilidad de su humano abandono.<br>
+		<br>(Quien no ama, no avanza. Permanece sin nombre.)<br><br>Sentado, el 
+		hombre mira su soledad,<br>que una interrogaci&oacute;n finge y deshace<br>
+		sobre un horizonte sin frontera posible.<br>
+		<br>A veces ser respuesta no sirve, nos limita.<br>Nadie puede<br>
+		sobrepujar esta invisible y c&aacute;lida pared<br>que la espuma corona.<br>
+		<br>Labio de par en par, una ola fluyendo<br>como un sonoro beso sobre 
+		la arena estalla,<br>y en n&iacute;tidos cristales<br>su insinuado fuego se 
+		rompe y desvanece.<br>&iexcl;Qu&eacute; oscuridad! La noche. &iexcl;Qu&eacute; olvidada<br>su 
+		apenas blanca sensaci&oacute;n de nube!<br>
+		<br>El viajero medita.<br>Sobre el oculto pensamiento ondea<br>su 
+		cabellera lacia. El mar, el mar.<br>Y la palabra el labio nunca expresa.<br>
+		Es un continuo ir<br>y regresar, crecerse<br>como en cascada: el mar,<br>
+		inacabada eternidad, silente, renacido.<br>
+		<br>Sin escuchar la temeraria voz de la arena, el hombre luego<br>se 
+		alza. &iexcl;Qu&eacute; ruidosas<br>sandalias! Cuando avance<br>su delicado pie rompa 
+		la espuma<br>su estar quieta, o all&iacute;, sobre las rocas<br>lentamente 
+		apag&aacute;ndose.<br>
+		<br>Junto a la hiriente grava<br>hay sombra. Puede verse<br>que la 
+		verdad m&aacute;s cierta a veces choca<br>contra un muro de agua, donde un d&iacute;a<br>
+		la libertad se escribe, y luego un golpe<br>de mar lo borra bruscamente.<br>
+		<br>&iquest;D&oacute;nde ahora la espuma silenciosa<br>que el horizonte env&iacute;a hasta su 
+		mano?<br>Tiembla en el aire un polvo de ceniza<br>reci&eacute;n ca&iacute;da de lo 
+		alto.<br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">II<br>
+		Henos aqu&iacute;, de pronto,<br>frente al espejo. Cae<br>la luz y los perfiles<br>
+		se desdibujan, arden<br>sin existencia. Blanca<br>superficie -fugaces<br>
+		los l&iacute;mites- devuelve<br>una sombra: la imagen.<br>Sombra y m&aacute;s: soledad<br>
+		sin origen. Es grave<br>la expresi&oacute;n y un vac&iacute;o<br>se asoma por el valle<br>
+		desierto de los ojos.<br>
+		<br>(Qu&eacute; inh&oacute;spita esta c&aacute;rcel,<br>mudo cristal sin tiempo.)<br>Una 
+		arruga nos hace<br>m&aacute;s humanos, esp&iacute;ritu<br>sin medida, el instante.<br>
+		<br>Alrededor el mundo,<br>silencioso paisaje<br>de tristeza, se alza<br>
+		sin amor. El ropaje<br>con que al mirar vestimos<br>nos a&iacute;sla. Se 
+		esparce<br>en torno, como un don,<br>nuestro existir, e invade<br>sin 
+		poseer. Y es tarde<br>para iniciar de nuevo<br>la andadura. Distantes<br>
+		nos contemplamos: dioses<br>del universo. Y cae<br>la luz y los perfiles<br>
+		se borran y no hay nadie<br>ni nada. S&oacute;lo el hombre<br>y sus dos 
+		realidades:<br>la soledad, la muerte,<br>turbio r&iacute;o sec&aacute;ndose.<br>
+		<br>Henos aqu&iacute;. Busc&aacute;bamos<br>la brevedad, el trance<br>de la vida al 
+		amor.<br>De pronto nos invade<br>el misterio. Miradnos.<br>En nuestro 
+		pecho yace<br>la tristeza. Ya somos<br>humanos, perdurables.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>
+		&quot;V&iacute;spera de la destrucci&oacute;n&quot; 1966 - 1968</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="MIRANDO UNAS FOTOGRAF&Iacute;AS"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Mirando unas fotograf&iacute;as</font><font face="Georgia" size="2" color="#84B0D6"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A mi hijo Sergio<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		only when the dock stops does time come to life<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		W. Faulkner</em><br><br>De mi inconstancia bajo a ti,<br>igual que quien 
+		se adentra por un prado<br>con una libertad no del todo insumisa.<br>Una 
+		implacable duraci&oacute;n golpea<br>el rostro de estas horas que no reconozco<br>
+		porque cruzaron sobre m&iacute; sin verte,<br>sin comprender ni disipanne, s&oacute;lo<br>
+		con la desnuda terquedad de un aire desolado.<br>Te miro caminar hacia 
+		mi lejan&iacute;a. Soy ya viejo<br>para unos ojos que a&uacute;n esperan. Vienes,<br>
+		fr&aacute;gil como la lluvia, entre las cosas<br>que la rutina implanta entre 
+		los dos. Querr&iacute;as<br>ser como t&uacute; imaginas que yo soy.<br>Se me han ido 
+		los a&ntilde;os. Si supieras<br>con qu&eacute; avidez me acerco a tu ternura. Fluyo<br>
+		entre libros extra&ntilde;os y lugares sin sol,<br>poblando su silencio con 
+		palabras<br>que no me implican ni me dicen, s&oacute;lo<br>son un mero refugio<br>
+		aunque para ti lleguen todav&iacute;a<br>envueltas en el aura de un misterio,<br>
+		de ese misterio absurdo por el que perd&iacute;<br>ver tu ni&ntilde;ez creci&eacute;ndome, 
+		hijo m&iacute;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;La 
+		mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="MONÓLOGO EN COLFAX AVENUE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Mon&oacute;logo en Colfax Avenue</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Estas 
+		palabras que te escribo<br>piensan de modo diferente<br>y en otras cosas 
+		que no son t&uacute; y yo.<br>Pero es dif&iacute;cil rehuirlas. Vienen<br>para negarme 
+		la mudez, ser carne,<br>a&uacute;n sabi&eacute;ndose infieles<br>porque no son 
+		espejos, ni conocen<br>el temblor que te invade cuando duermes<br>
+		desnuda junto a m&iacute;. No s&eacute; decirlo<br>y, sin embargo, ellas acuden 
+		siempre<br>y te acarician. Las palabras son<br>mi forma de estar solo y 
+		ofrecerte<br>una peque&ntilde;a sensaci&oacute;n, un gesto<br>sin importancia. 
+		T&oacute;malas. No mienten.<br>Son como son. No buscan la agon&iacute;a,<br>pero 
+		tampoco eluden convertirse en muerte,<br>dar testimonio sin venir a m&iacute;,<br>
+		ser ellas mismas aunque yo las niegue.<br>Si mis palabras no hablan del 
+		amor, es s&oacute;lo<br>porque piensan de modo diferente.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;Tabula rasa&quot;</em> 1985</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="MUJER EN FORMA DE ELEG&Iacute;A"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Mujer en forma de eleg&iacute;a</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br>Pura como un enigma,<br>como la luz desnuda que respiro,<br>dime 
+		qu&eacute; soy para el silencio<br>de esta noche de agosto,<br>sin milagros ni 
+		j&uacute;bilo,<br>de este noviembre anticipado<br>donde el amor se anilla como 
+		fruto<br>sobre tus hombros fr&aacute;giles, y tu<br>cuerpo se vuelve playa 
+		rumorosa<br>para mis manos, donde se endurece<br>tanto brusco recuerdo,<br>
+		como un mar desbocado<br>que fuese asombro y muerte y aventura<br>y no 
+		supiera que a&uacute;n hay tiempo, que<br>hall&oacute; hospitalidad donde hall&oacute; nido.<br>
+		<br>II<br>Desnuda y gr&aacute;cil como el aire<br>viniste a m&iacute; desde una 
+		primavera<br>donde la nieve es dulce y da sentido.<br>En tu amorosa 
+		inundaci&oacute;n moraba<br>la plenitud de un mundo devastado<br>sobre el 
+		abismo de la carne. Ard&iacute;as,<br>sola en medio del fr&iacute;o<br>que me llevaba 
+		a ti, blancor indescifrable<br>donde no hay antes ni despu&eacute;s ni nunca<br>
+		sino luz, puro espacio<br>donde el deseo anida sin objeto.<br>Es oto&ntilde;o 
+		otra vez. No hay soledad, ni voces,<br>s&oacute;lo palabras que simulan lumbre<br>
+		sin comprender que el agua de tu boca<br>pudo apagar el fuego de mi 
+		infierno.<br>
+		<br>III<br>Esta lenta penumbra con que muere noviembre<br>se posa en la 
+		terraza, junto a la enredadera<br>que ella sembrara un d&iacute;a tan cercano.<br>
+		Una pereza h&uacute;meda diluye su memoria<br>entre la tierra seca, como esa 
+		sed tan d&oacute;cil,<br>empapando una lluvia que no llega.<br>Aqu&iacute; busc&oacute; 
+		fingir un posible horizonte<br>inventando una gruta que fuese como un 
+		cielo,<br>y conoci&oacute; la muerte por s&iacute; sola.<br>Es &eacute;ste un sitio donde 
+		crecen flores.<br>Supe de la ternura por su opacidad.<br>Y era el aire 
+		tan fr&aacute;gil que no siento su aroma<br>sentado en esta noche donde el sol 
+		ya no brilla<br>oculto como est&aacute; bajo una nieve<br>hecha de amor y 
+		l&iacute;mites y olvido.<br>
+		<em><br>De &quot;Tabula rasa&quot;</em> 1985</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="NAVEGACIONES"></a></font><font face="Georgia" color="#84B0D6">
+		Navegaciones</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br>recuerdo vagamente<br>que comenzaba el fr&iacute;o del oto&ntilde;o<br>o quiz&aacute; se 
+		tratase del estremecimiento<br>de despertar de pronto junto a un cuerpo 
+		dormido<br>
+		<br>recuerdo el gorjeo del mirlo en el jard&iacute;n<br>pero &iquest;c&oacute;mo recordar si 
+		era &eacute;l quien cantaba?<br>
+		<br>II<br>una apacible m&aacute;scara<br>niega saber que un labio son cien 
+		labios<br>cuanto el aire corrompe<br>con indiferencia con obstinaci&oacute;n<br>
+		<br>igualmente real<br>tu nombre pide un desenlace<br>un poco de la 
+		blancura con que los ojos entreabren<br>tras la vitrina por azar la 
+		lluvia<br>la luz indecisa goteando sobre un hombre que pasa<br>
+		<br>hace tiempo y lo s&eacute;<br>tal vez perduren todav&iacute;a<br>la forma de mis 
+		pasos<br>un gesto sin memoria por alg&uacute;n lugar<br>
+		<br>III<br>&iquest;me reconoces aire<br>bajo la corteza de las palabras en que 
+		fui?<br>mi voz navega sin vacilaciones<br>en un paisaje de sonidos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">tiempo t&uacute; 
+		puro espacio<br>en este mediod&iacute;a que duerme<br>el agua dice soy</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">un exceso 
+		de luz<br>vuelve tu cielo inhabitable.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Otra 
+		escena/Profanaci&oacute;n(es)&quot; 1975 - 1979</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="OBSCENIDAD DE LOS PAISAJES"></a></font>
+		<font face="Georgia" color="#84B0D6">Obscenidad de los paisajes</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">I<br>Esta 
+		ma&ntilde;ana somos dos los que observan el movimiento de las hojas, el c&iacute;clico 
+		murmullo de los primeros rostros que marchan al trabajo; dos los que 
+		miran lo impreciso de cuanto existe ajeno y nos rodea y a su manera nos 
+		define como ajenos tambi&eacute;n. Tan s&oacute;lo el ocio fr&aacute;gil de la imaginaci&oacute;n 
+		pudo asociar un d&iacute;a tantos datos dispersos y construir sobre el ca&oacute;tico 
+		mont&oacute;n de sus detritus un simulacro de saber. Nos ceg&oacute; el &eacute;nfasis 
+		soberbio de inventar historias, de otorgar sentido. No supimos ver sino 
+		la luz, o, cuanto m&aacute;s, lo iluminado. Nunca nos detuvimos a sentir los 
+		ojos, su cotidiana sensaci&oacute;n de estar, que no da nada y todo lo recibe, 
+		como un don. Fuimos uno (mirar nos desdoblaba). Tuve piedad (tuvimos) 
+		del gorri&oacute;n temprano, del solitario poto, del jard&iacute;n deshabitado por la 
+		lluvia bajo nuestra ventana. El d&iacute;a viene ahora hasta nosotros como 
+		presencia s&oacute;lida y el aire que me azota dice que en el silencio oscuro 
+		de mis pasos hoy somos al fin dos, yo, t&uacute;, nunca nosotros ni su crimen 
+		lejano, reconocida t&uacute;, por quien camino.<br>
+		<br>II<br>Ah, pronunciar el aura del viaje, sentir un poco cuando el sol 
+		lo pida, decirte soy como lo escucho, y escuchar lo que digo y 
+		descubrirme ah&iacute;. Los murmullos que estallan en mi boca queman como faros 
+		y, a no dudar, impiden que te exile la luz, donde la hierba crece 
+		franqueando el espacio<br>de los ojos. La muerte ya no insiste: una 
+		simple emoci&oacute;n reconocida. De nadie nos consuela la fidelidad (su 
+		intensidad es silenciosa). As&iacute;, sonr&iacute;o al borde de mi voz. Piedra 
+		angular. O antorcha. La locura.<br><br>III<br>De todas formas nadie nos 
+		espera. No hay por qu&eacute; apresurarse. El cartero pasa de largo, sin llamar 
+		(no llamar&aacute; dos veces, ya lo ves). El agua le chorrea y busca d&oacute;nde 
+		guarecerse. Para qu&eacute;, me preguntas. Y de qu&eacute;. La lluvia. Siempre llueve 
+		en esta &eacute;poca del a&ntilde;o. No s&eacute; por qu&eacute; buscamos,<br>sin embargo, su 
+		secreta raz&oacute;n, su calidad de imprevisible. Abandonemos pronto este 
+		recinto; pero no, no es recinto. El fr&iacute;o de la tarde desconoce que a&uacute;n 
+		quedan sensaciones sin clasificar, el sonido amortiguado de los tubos de 
+		escape, la lividez del cielo azul plomizo, el olor del mal tiempo que 
+		camina entre rachas de sol y nubes grises, como un cabrilleo de 
+		liquidaci&oacute;n, sus maneras afables y alguna referencia m&aacute;s bien vaga a las 
+		cisuras que parecen otorgar a cada historia su enf&aacute;tica porci&oacute;n de 
+		intimidad. La ceremonia ciega, &iquest;en qu&eacute; consiste? Dejemos ya de divagar, 
+		me dices, no nos caiga la noche. Ah, s&iacute;, la noche.<br><br>IV<br>La 
+		sombra oblicua que nos desdibuja en el l&iacute;mite del d&iacute;a sabe del 
+		entusiasmo de las estaciones, de la haza&ntilde;a del tiempo, del dolor que 
+		acumula un pensamiento inh&oacute;spito. All&iacute; el deseo se agazapa, se acomoda a 
+		un espacio elaborado con fragmentos de hierba y levadura triste. Nada 
+		tan<br>d&oacute;cil como la sorpresa de distinguir rendijas familiares por 
+		donde penetra un sol sin atributos. Brilla su imaginaria proyecci&oacute;n 
+		sobre el escorzo de aparatos de bronce, de mu&ntilde;ecos mec&aacute;nicos, esa falsa 
+		materia que el mar vislumbra en la prisi&oacute;n del cielo. Ahora que somos 
+		dos (la tormenta lo<br>dice) y la noche que cae nos se&ntilde;ala el camino con 
+		culebras de luz.<br>
+		<br>V<br>A solas otra vez, irremediablemente, como el viejo serr&iacute;n de 
+		una mu&ntilde;eca de trapo, desparramados entre restos de ternura y s&aacute;banas sin 
+		sol. El fr&iacute;o de la madrugada no precisa de af&aacute;n. Un bulto inmarcesible 
+		hecho de incertidumbre, de ruidosa brega. La voluntad de abismo aturde 
+		igual<br>que m&uacute;sica pautada en otras tablas, en la trinchera pr&oacute;xima. Un 
+		espacio concluso donde hacer m&iacute;o el fuego que crepita en torno a las 
+		comisuras tristes de tu boca.<br>
+		<br><em>De &quot;Proximidad del silencio&quot;</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="OBSERVACIONES SOBRE UN CUERPO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Observaciones sobre un cuerpo</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>I<br>el escenario es siempre el mismo<br><br>observa c&oacute;mo el cielo 
+		cae sobre los p&aacute;jaros<br>c&oacute;mo un humo delgado anuncia el l&iacute;mite del d&iacute;a<br>
+		la violencia del fuego que nos conmemora<br>
+		<br>no tienes otra desnudez<br>que esos puntos de luz<br>en donde te 
+		supones desdoblada<br>una segunda superficie que nadie recorre<br>s&oacute;lo 
+		la imagen que te nombra<br>
+		<br>reconstruir un s&iacute;mbolo vac&iacute;o<br>sobre el lugar sin l&iacute;mites<br>donde 
+		todo comience<br>
+		<br>la no conciencia vuelta maquillaje<br><br>el terror de los sue&ntilde;os a 
+		permanecer<br>
+		<br>II<br>siento vivir tus ojos contra el sol que se apaga<br>frente a 
+		este muro destruido<br>
+		<br>la ceremonia muere por desolaci&oacute;n<br><br>el olor que has nombrado<br>
+		m&aacute;s alto que la luz que el aire cristalino<br>es en mi rostro un brillo 
+		solitario<br>una extra&ntilde;a humedad<br>donde la noche nos reconoc&iacute;a</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">el techo 
+		desploma su ceniza sobre el amanecer</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">antes que 
+		el tiempo acabe<br>y nos absorba y desdibuje<br>ahora que ya no somos 
+		inmortales<br>deja entrar la ma&ntilde;ana<br>por los cristales mal cerrados<br>
+		silenciosa y furtiva</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">s&oacute;lo 
+		d&eacute;jala entrar<br>para que todo calle y contin&uacute;e</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Otra 
+		escena/Profanaci&oacute;n(es)&quot; 1975 - 1979</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="PARA&Iacute;SO CLAUSURADO"></a></font><font face="Georgia" color="#84B0D6">
+		Para&iacute;so clausurado</font><font face="Georgia" size="2" color="#84B0D6"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Pedro J. de la Pe&ntilde;a</em><br><br>Y es esta luz (los sue&ntilde;os de la 
+		infancia,<br>el vozarr&oacute;n acuoso de los &oacute;mnibus,<br>la melanc&oacute;lica 
+		decrepitud<br>con que las olas vierten su murmullo)<br>t&iacute;mida luz, 
+		dureza de agon&iacute;a,<br>no la oquedad sin l&iacute;mites<br>tras los escombros del 
+		amanecer.<br>
+		<br>La voz al labio acude,<br>y se rompe, y resbala,<br>y no sabe cu&aacute;nta 
+		culminaci&oacute;n duerme en la noche<br>su plenitud: pupila<br>inmensa 
+		transcurriendo<br>entre unos grises p&aacute;rpados sin fondo.<br>
+		<br>Todo ante ti es silencio, a cuyo tacto,<br>&aacute;spero, el tiempo acrece 
+		su gemido.<br>El chamariz, que es aire (un fogonazo<br>de oscuridad, la 
+		c&aacute;lida estampida<br>de los sollozos), gime, desnudez<br>de un azul que 
+		agoniza entre los &aacute;lamos.<br>Agonizar, qu&eacute; triste maniobra<br>del 
+		coraz&oacute;n.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Canta, amor m&iacute;o,<br>canta las hojas de los parques,<br>este sabernos que 
+		tampoco sacia,<br>pero que ofrece dulce compa&ntilde;&iacute;a;<br>y tu vivir, hoy 
+		lluvia, ya no tierna<br>erosi&oacute;n, resplandezca<br>bajo esta humanizada 
+		soledad<br>que tu quietud penetra y convulsiona.<br>Los sue&ntilde;os que a&uacute;n 
+		perduren<br>olv&iacute;dalos, son m&aacute;scara,<br>antifaces de sombra para el 
+		dolor. Esc&uacute;chame,<br>m&iacute;rame ser: sobre mi rostro adviene<br>la telara&ntilde;a 
+		humosa de los d&iacute;as.<br>
+		<br>Aunque ahora vuelvan a cantar, qu&eacute; calmo<br>este m&iacute;tico ed&eacute;n, los 
+		gnomos y las hadas,<br>tanta historia de pr&iacute;ncipes<br>y de princesas que 
+		en abanico trenzan su sofoco,<br>tanto incansable p&aacute;jaro dormido<br>de 
+		lo que un sue&ntilde;o fue.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		T&uacute; contin&uacute;as<br>ante la clara umbr&iacute;a del oto&ntilde;o,<br>fr&iacute;o sopor de isla 
+		sin peces ni sosiego,<br>bajo una luna en paz.<br>
+		<br>Amor, tu lucidez<br>qu&eacute; torpe todav&iacute;a.<br>Qu&eacute; serena la escarpia 
+		resbalando<br>donde, con un chasquido, la luz asoma entre los &aacute;rboles<br>
+		y una m&uacute;sica fulge<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en el silencio.<br><br><em>&quot;Ritual para un artificio&quot; 1971</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="ROOM 2 MOVE"></a></font><font face="Georgia" color="#84B0D6">
+		Room 2 move</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Por qu&eacute; dudar. No temo la aventura.<br>El deseo no es nada sino el deseo 
+		de romper<br>la superficie donde habitan todas las superficies,<br>de 
+		hablar con un lenguaje sin pronombres ni g&eacute;neros,<br>sin verbos en 
+		pasado o en futuro,<br>de comprender, al fin, por qu&eacute; la muerte es dura:<br>
+		porque tu cuerpo ausente es s&oacute;lo superficie.<br>La voz que me habla con 
+		tus ojos<br>es m&aacute;s profunda y dulce que el olor de las rosas<br>cuando 
+		estas flores imaginan<br>la nieve que se posa con delicadeza sobre tu 
+		piel, y nadie,<br>ni siquiera la lluvia, como peque&ntilde;as manos,<br>puede 
+		ser otra cosa que temblor. Esta explosi&oacute;n de p&eacute;talos<br>que se eriza en 
+		mis dedos cubre tu desnudez,<br>y el vaho de tus labios como un rostro 
+		confuso<br>construye, poco a poco, otro silencio para mi silencio.<br>
+		Cerrar mis ojos y saber qui&eacute;n soy.<br>Si t&uacute; no est&aacute;s la luz ya no es 
+		posible.<br>Si est&aacute;s aqu&iacute; la luz no es necesaria.<br>La audacia de 
+		adentrarnos, solos y juntos, en la madrugada.<br>
+		<br><em>De &quot;Tabula rasa&quot;</em> 1985<br></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="SOLO"></a></font><font face="Georgia" color="#84B0D6">
+		Solo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Si 
+		existe un cielo, llevar&aacute; tu nombre,<br>vendr&aacute; despacio cada noche,<br>se 
+		sentar&aacute; a mi lado, y con el resto<br>de la que fue sol&iacute;cita ternura<br>
+		quiz&aacute; me ofrezca compa&ntilde;&iacute;a.<br>C&oacute;mo negarme a su calor, si es todo cuanto 
+		queda.<br>Tendr&aacute; tus mismos ojos,<br>su claridad sin l&iacute;mites,<br>y el 
+		verde aroma que tu cuerpo exhala<br>como quien abre puertas en la 
+		oscuridad.<br>Si existe un cielo, el cielo ser&aacute;s t&uacute;,<br>t&uacute;, territorio 
+		cuya piel transito<br>mientras la muerte gira alrededor.<br>
+		<em><br>&quot;La mirada extranjera&quot; 1984-1985</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="SUCESIÓN TEMPORAL II"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Sucesi&oacute;n temporal II</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		El cartel claramente la anuncia:<br>Prohibido.<br>Y lo subraya: No 
+		arrojar la basura.<br>Y apagadas celindas,<br>diminutas, sin orden. 
+		Pareces responder<br>a su mirada. Llevas<br>un bonito vestido. S&iacute;, no 
+		empieces<br>otra vez. El crep&uacute;sculo<br>siempre es triste. O acaso<br>era 
+		al amanecer. No la recuerdo.<br>Nunca me lo hab&iacute;as dicho<br>antes. 
+		Llueve. Corramos<br>hasta un cine. No importa. T&uacute; acabas de cumplir<br>
+		veinte a&ntilde;os. &iquest;Me quieres<br>o no? S&iacute;, tal vez no me quieras<br>ya. Qu&eacute; 
+		fragante la noche.<br>De las celindas sube un tenue olor<br>que nos 
+		envuelve, c&aacute;lido. Por siempre.<br>Nos amaremos siempre.<br>
+		<br>C&oacute;mo has cambiado, amor.<br>&iquest;Cu&aacute;nto tiempo? S&iacute;, llevas<br>un bonito 
+		vestido.<br>Se hace tarde. Me esperan.<br>Ahora, incluso te esperan. Ya 
+		lo ves. Y a ti &iquest;c&oacute;mo<br>te va? Junto a estas tapias<br>derruidas, el 
+		tiempo<br>parece detenido. Miras<br>desvanecerse en humo tantas flores 
+		silvestres<br>sobre el sucio cartel. Qu&eacute; poco queda<br>de nosotros, 
+		&iquest;verdad? Aunque ya qu&eacute; decir.<br>Meditar en silencio. S&iacute;, volvamos, es 
+		tarde.<br>A menudo prefiero<br>ir en silencio. Ahora<br>todo es 
+		distinto.<br>&iquest;No te molesta? No. Me da igual. Amor m&iacute;o,<br>cu&aacute;nta 
+		tristeza in&uacute;til.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Y oyes 
+		vibrar el viento entre los matorrales.<br></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>
+		&quot;V&iacute;spera de la destrucci&oacute;n&quot; 1966 - 1968</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="TE EXTRA&Ntilde;O..."></a></font><font face="Georgia" color="#84B0D6">
+		Te extra&ntilde;o, oscuridad, mi vieja amiga...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Te extra&ntilde;o, oscuridad, mi vieja amiga,<br>mientras hago memoria de tu 
+		exilio insaciable,<br>de tu armaz&oacute;n endeble, de tu edad.<br>A trav&eacute;s de 
+		las piedras donde el tiempo fabrica<br>un nombre corro&iacute;do por 
+		vegetaciones<br>las ortigas desl&iacute;en tu poder.<br>El muro escucha 
+		erguido,<br>la m&uacute;sica transcurre sin avidez y cede.<br>Otros lugares 
+		hay. Tambi&eacute;n all&iacute;<br>tu soledad es necesaria.<br>Densas como un olvido 
+		tus palabras llegan a su fin<br>Queda un tibio y espeso calor que todo 
+		lo cubre.<br>D&oacute;nde anudar el hilo de tu historia, dime.<br>La luz que 
+		cae exime de sorpresa.<br>Dulce fue tu universo, oscuridad.<br>
+		<em><br>&quot;Profanaci&oacute;n&quot;(es) 1979</em><br></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="TERRITORIOS DE UN CUERPO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Territorios de un cuerpo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Si te miro a ti,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que salga el sol o no salga<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;qu&eacute; me importa a m&iacute;?<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Camar&oacute;n de la Isla</em><br><br>I<br></font>
+		<font face="Georgia" color="#84B0D6">
+		Hermoso</font><font face="Georgia" size="2" color="#84B0D6">
+		es el desorden de mi pensamiento.<br>Yo no sigo el ejemplo de los m&aacute;s 
+		ancianos:<br>busco lo mismo que buscaban.<br>Por eso, en esta di&aacute;spora 
+		de ti,<br>s&eacute; que el silencio que nos cubre es esto,<br>dos bultos que se 
+		pliegan y se envuelven<br>para volver de nuevo hasta su soledad.<br>
+		Compruebo que es abril, que el invierno termina<br>y que incluso las 
+		flores son felices.<br>Soy como ellas, no pregunto nada;<br>y me limito 
+		a estar sobre tu cuerpo<br>como quien mira sin temor, de frente,<br>un 
+		eclipse<br>de sol.<br>
+		<br>II<br></font><font face="Georgia" color="#84B0D6">
+		D&eacute;jame</font><font face="Georgia" size="2" color="#84B0D6">
+		ser el hu&eacute;sped de tu boca,<br>la lentitud con que el calor recorre tu 
+		desnudo.<br>Soy como el fr&iacute;o de una noche desierta,<br>pronto a buscar 
+		cobijo en los derrumbaderos<br>donde hace nido la melancol&iacute;a.<br>Hay 
+		tanto resplandor, la luna es tanta<br>que me deslumbras con la calidez<br>
+		de tu silencio, y me sumerjo en ti.<br>Nunca pens&eacute; una eternidad tan 
+		cerca.<br>
+		<br>III<br></font><font face="Georgia" color="#84B0D6">
+		Cada</font><font face="Georgia" size="2" color="#84B0D6">
+		nuevo clima<br>es, al cabo, costumbre, y yo, extranjero.<br>El d&iacute;a ha 
+		caducado<br>y va a empezar la oscuridad.<br>D&eacute;jame que me oculte junto a 
+		ti,<br>en el frondoso bosque de unos ojos<br>donde no cesa de llover.<br>
+		Acurrucado entre sus matorrales,<br>aguardar&eacute; a que tu pasi&oacute;n me se&ntilde;ale 
+		el camino.<br>S&eacute; que el aire es m&aacute;s dulce donde crece la luz.<br>
+		<br>IV<br></font><font face="Georgia" color="#84B0D6">
+		Estoy</font><font face="Georgia" size="2" color="#84B0D6">
+		tumbado al borde de tu claridad,<br>en la suntuosidad de una batalla<br>
+		donde ninguno es vencedor,<br>y hasta el olor del cuarto,<br>donde 
+		rugen, insomnes, tu apetito y mi sed,<br>florece sin saberlo, como un 
+		musgo surgido<br>de mi humedad tan tuya, de un sendero<br>que nos 
+		conduce hasta ese mar sin olas,<br>la tierra azul donde se desordena<br>
+		el centro mismo del placer, la espuma<br>en que consiste toda esta 
+		explosi&oacute;n, y, al fondo,<br>la lluvia que golpea las ventanas,<br>la 
+		lluvia siempre otra, insobornable,<br>con sus lentas espinas.</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">V<br></font>
+		<font face="Georgia" color="#84B0D6">Apaga</font><font face="Georgia" size="2" color="#84B0D6"> 
+		las estrellas,<br>desconecta el sol.<br>quiero adentrarme a tientas<br>
+		por los acantilados de tu piel,<br>reconstruir sobre tu boca<br>las 
+		letras, una a una,<br>con que dar nombre al fuego,<br>a la locura de 
+		saber que he visto<br>el cielo tan de cerca, o no, tan m&iacute;o<br>que mi 
+		pa&iacute;s se llama medianoche.<br>&iquest;Qui&eacute;n eres? &iquest;D&oacute;nde est&aacute;s? Qu&eacute; importa,<br>
+		si te eleg&iacute; entre todas las estrellas.<br>
+		<br>VI<br></font><font face="Georgia" color="#84B0D6">Descubrir</font><font face="Georgia" size="2" color="#84B0D6"> 
+		los motivos de la aurora<br>es otra forma de pensarte,<br>asomado a la 
+		baranda del anochecer.<br>En cuanto a m&iacute;, no s&eacute;,<br>&iquest;qu&eacute; m&aacute;s puedo 
+		decirte?<br>S&oacute;lo que por tu causa<br>casi tuve el proyecto de durar.<br>
+		<br>VII<br></font><font face="Georgia" color="#84B0D6">Detr&aacute;s</font><font face="Georgia" size="2" color="#84B0D6"> 
+		de mi silencio o&iacute;ste &laquo;no&quot;,<br>cuando quise decirte que no hay olas sin<br>
+		la polilla del tiempo, su escozor,<br>o el duermevela de un escalofr&iacute;o.<br>
+		De mi antigua ambici&oacute;n no queda nada,<br>quiz&aacute; no m&aacute;s de un torpe 
+		balbuceo<br>quemado en el rescoldo de tu boca.<br>D&eacute;jame a solas con la 
+		muerte.<br>Para impregnarme de tu luz<br>fue necesaria la tiniebla.<br>
+		Luego, al quebrar el alba,<br>con un desasosiego<br>que tiende a 
+		confundirse con la oscuridad<br>busco tus ojos en los m&iacute;os<br>para que 
+		me confirmen que viv&iacute;. &iquest;Me entiendes?<br>Tambi&eacute;n yo, como el sol, me 
+		pondr&eacute; un d&iacute;a.<br>Escribir&eacute; un poema sin mujer, sin nada,<br>y al leer 
+		las palabras que dan forma a mi rostro<br>tal vez no adviertas que no 
+		estoy. Abr&aacute;zame.<br>Pido la vez para apagar el sol.</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>Viaje 
+		al fin del invierno&nbsp; 1995 - 1997</em></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img src="./SENSUBARRA.jpg"
+      width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="ZOEY, O DE QU&Eacute; COLOR SON LAS PRINCESAS"></a></font>
+		<font face="Georgia" color="#84B0D6">Zoey, o de qu&eacute; color son las 
+		princesas</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Founderous wilding weeds endear paradise.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Louis Zukofsky</em><br><br>Los impactos de luz no son el d&iacute;a,<br>aunque 
+		canten la vida que no s&eacute;<br>y haya un sol tan extra&ntilde;o<br>que aspire a 
+		serlo sin palabras, sin<br>viejos nombres, sin furia, sin misterio,<br>
+		ese albor de la muerte donde se asienta el mar.<br>Yo ya no juego Con la 
+		luz. No quiso<br>saber de mis ra&iacute;ces, de las sensaciones<br>que me 
+		acunaron, las que observo en ti,<br>sumida, como est&aacute;s, en el instante<br>
+		fr&aacute;gil de una ni&ntilde;ez que una vez fue mi reino.<br>En lo m&aacute;s hondo de su 
+		plenitud<br>hay un candor que inventa mediod&iacute;as<br>con el fluir concreto 
+		de las horas:<br>un mundo hecho de Cosas que se dan y perduran<br>
+		transmitiendo su flujo copo a copo.<br>Mientras, el tiempo (que no se 
+		repite)<br>me circunda. Heme aqu&iacute;. Ya no podr&iacute;a<br>abrir mis puertas a 
+		tu amanecer,<br>pero la noche ha sido mi morada,<br>y a&uacute;n puedo 
+		percibir, sin su desasosiego,<br>ese aluvi&oacute;n de estrellas y de auroras 
+		en flor<br>que reclaman su cuota de roc&iacute;o.<br>Si parco fui, tu sue&ntilde;o se 
+		ha vengado<br>de mi silencio, en esta concha<br>donde reposa el r&iacute;o que 
+		nos lleva.<br>Dejemos que su claridad disuelva mi costumbre.<br>No 
+		intentar&eacute; siquiera comprender.<br>Un &aacute;rbol no comprende el viento que lo 
+		visita.<br>
+		</font><font face="Georgia" size="3" color="#84B0D6"><br></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><img src="./SENSUBARRA.jpg" width="72" height="7"></p>
+		<blockquote>
+			<blockquote>
+				<blockquote><font face="Georgia" size="2" color="#8FABC2">
+					<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+					<font color="#AAC0D5">
+					<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+					<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+					</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:23:03 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:13 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

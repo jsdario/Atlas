@@ -1,0 +1,679 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Ala&iacute;de Foppa</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Ala&iacute;de Foppa. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Alaide_Foppa,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app12.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/foppa.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/foppa.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815175821" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./foppa.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:58:21 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./foppa.htm" title="19:44:23 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:58:21 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./foppa.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:58:21 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./foppa.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>59 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000001101_2005:-1:011000000003_2006:-1:110011100100_2007:-1:020312150100_2008:-1:102131000000_2009:-1:001000100000_2010:-1:100000001110_2011:-1:000010011020_2012:-1:101011001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center"><br>
+    &nbsp; <br>
+    </p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><img border="0" src="./FOPPA.jpg" width="315" height="51"></p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><br>
+&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">
+	<em style="font-style: normal"><font face="Arial" size="2" color="#84B0D6">
+	&quot;...Entre labio y labio cu&aacute;nta dulzura <br>
+    guarda mi boca abierta al beso...&quot;</font></em></p>
+    <p align="center"><font color="#84B0D6"><img border="0" src="./FOPPA1.jpg" width="230" height="274"></font></p>
+	<p align="center">
+	<span style="font-style: italic"><font face="Arial" size="2" color="#84B0D6">
+	&quot;The morning hour&quot;</font></span></p>
+	<p align="center"><span style="font-style: italic">
+	<font face="Arial" size="2" color="#84B0D6">Frederick J. Mulhaupt</font></span><font face="Basil"
+    size="5" color="#84B0D6"><br>
+    </font></p>
+    <p align="center">&nbsp;</p>
+    <blockquote>
+      <p align="left">&nbsp;</p>
+    </blockquote>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+	<p><font face="Georgia" size="2" color="#84B0D6">De madre guatemalteca y 
+	padre argentino, naci&oacute; en Barcelona en 1914. <br>Vivi&oacute; algunos a&ntilde;os en 
+	Argentina y pas&oacute; la adolescencia en Italia. Casada con ciudadano 
+	guatemalteco adopt&oacute; <br>
+	la ciudadan&iacute;a guatemalteca. <br>Por razones pol&iacute;ticas debi&oacute; exiliarse en 
+	M&eacute;xico por algunos a&ntilde;os. Sus indiscutibles m&eacute;ritos intelectuales le 
+	permitieron <br>
+	ocupar la c&aacute;tedra de <em>Literatura Italiana en la Facultad de Filosof&iacute;a y 
+	Letras de la Universidad Aut&oacute;noma de M&eacute;xico</em>. 
+	<br>
+	Asimismo, fue fundadora de la c&aacute;tedra de Sociolog&iacute;a de dicha Universidad y 
+	catedr&aacute;tica en la 
+	<em>Facultad de Humanidades <br>
+	de la Universidad de San Carlos</em> de Guatemala. <br>En 1980 regres&oacute; de su 
+	exilio. Al poco tiempo de llegar fue secuestrada y desaparecida por el 
+	gobierno del dictador <br>
+	Romeo Lucas Garc&iacute;a. Sus restos nunca fueron hallados. 
+	<br>De su obra po&eacute;tica merecen destacarse: &laquo;La Sin Ventura&raquo;, &laquo;Los dedos de 
+	mi mano&raquo;, &laquo;Aunque es de noche&raquo;, <br>
+	&laquo;Guirnalda de Primavera&raquo;, &laquo;Elogio de mi cuerpo&raquo;, &laquo;Las palabras y el tiempo&raquo;. <br>
+	Tradujo al espa&ntilde;ol <em>El ave F&eacute;nix</em> de Paul Eluard, y la Poes&iacute;a de 
+	Miguel Angel. &copy;<br></font><font face="Georgia" size="2" color="#85A6BC"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./foppa.htm#ELOGIO DE MI CUERPO">Elogio de mi cuerpo:</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	<br>
+	<a href="./foppa.htm#1. LOS OJOS">1.&nbsp;&nbsp; Los ojos</a><br>
+	<a href="./foppa.htm#2. LAS CEJAS">2.&nbsp;&nbsp; Las cejas</a><br>
+	<a href="./foppa.htm#3. LA NARIZ">3.&nbsp;&nbsp; La nariz</a><br><a href="./foppa.htm#4. LA BOCA">
+	4.&nbsp;&nbsp; La boca</a><br>
+	<a href="./foppa.htm#5. LAS OREJAS">5.&nbsp;&nbsp; Las orejas</a><br>
+	<a href="./foppa.htm#6. EL PELO">6.&nbsp;&nbsp; El pelo</a><br><a href="./foppa.htm#7. LAS MANOS">
+	7.&nbsp;&nbsp; Las manos</a><br>
+	<a href="./foppa.htm#8. LOS PIES">8.&nbsp;&nbsp; Los pies</a><br>
+	<a href="./foppa.htm#9. LOS SENOS">9.&nbsp;&nbsp; Los senos</a><br>
+	<a href="./foppa.htm#10. LA CINTURA">10. La cintura</a><br><a href="./foppa.htm#11. EL SEXO">11.&nbsp; 
+	El sexo</a><br>
+	<a href="./foppa.htm#12. LA PIEL">12. La piel</a><br><a href="./foppa.htm#13. LOS HUESOS">13. Los 
+	huesos</a><br>
+	<a href="./foppa.htm#14. EL CORAZ&Oacute;N">14. El coraz&oacute;n</a><br><a href="./foppa.htm#15. LAS VENAS">15. 
+	Las venas</a><br>
+	<a href="./foppa.htm#16. LA SANGRE">16. La sangre</a><br><a href="./foppa.htm#17. EL SUE&Ntilde;O">17. El 
+	sue&ntilde;o</a><br>
+	<a href="./foppa.htm#18. EL ALIENTO">18. El aliento</a><br><br>
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./foppa.htm#ELLA SE SIENTE A VECES...">Ella se siente a veces...</a><br><br>
+	<a href="./foppa.htm#ORACI&Oacute;N">Oraci&oacute;n</a><br><br><a href="./foppa.htm#OSCURO CANTO">Oscuro canto</a><br>
+	<br><a href="./foppa.htm#PROPICIATORIA">Propiciatoria</a><br><br>
+	<a href="./foppa.htm#SE&Ntilde;OR, ESTAMOS SOLOS">Se&ntilde;or, estamos solos</a><br><br>
+	<a href="./foppa.htm#UN D&Iacute;A">Un d&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="left">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      face="Georgia" size="3" color="#A6BCCE"><br></font></p>
+	<p><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	<font face="Georgia" size="2" color="#85A6BC"><a name="ELOGIO DE MI CUERPO">
+	</a></font>
+	<font face="Georgia" color="#84B0D6">Elogio de mi cuerpo</font><font face="Georgia" size="2" color="#84B0D6"><br><br><a name="1. LOS OJOS"></a>
+	</font><font face="Georgia" color="#84B0D6">1. Los ojos</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	M&iacute;nimos lagos tranquilos 
+	<br>donde tiembla la chispa <br>de mis pupilas <br>y cabe todo <br>el 
+	esplendor del d&iacute;a. 
+	<br>L&iacute;mpidos espejos <br>que enciende la alegr&iacute;a <br>de los colores. <br>
+	Ventanas abiertas 
+	<br>ante el lento paisaje <br>del tiempo. <br>Lagos de l&aacute;grimas nutridos <br>
+	y de remotos naufragios. 
+	<br>Nocturnos lagos dormidos <br>habitados por los sue&ntilde;os, <br>a&uacute;n 
+	fulgurantes 
+	<br>bajo los p&aacute;rpados cerrados.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">* * * </font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="2. LAS CEJAS"></a></font><font face="Georgia" color="#84B0D6">
+	2. Las cejas</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Las 
+	breves alas <br>tendidas sobre mis p&aacute;rpados <br>s&oacute;lo abrigan 
+	<br>el espacio escaso <br>en el que flota <br>una interrogaci&oacute;n latente, <br>
+	al que asoma 
+	<br>un permanente asombro.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br><br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="3. LA NARIZ"></a>3. 
+	La nariz</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Casi un 
+	ap&eacute;ndice <br>en la serena geometr&iacute;a 
+	<br>de mi rostro, <br>&uacute;nica recta <br>en la gama de curvas suaves, <br>el 
+	sutil instrumento 
+	<br>que me une al aire. <br>C&aacute;ndidos olores <br>acres aromas <br>densas 
+	fragancias 
+	<br>de flores y de especias <br>-desde el an&iacute;s hasta el jazm&iacute;n- <br>aspira 
+	trepidante 
+	<br>mi nariz.<br>
+	<br>* * * <br>
+	<br><a name="4. LA BOCA"></a></font><font face="Georgia" color="#84B0D6">4. 
+	La boca</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Entre 
+	labio y labio <br>cu&aacute;nta dulzura guarda 
+	<br>mi boca abierta al beso, <br>estuche en que los dientes <br>muerden 
+	v&iacute;vidos frutos, 
+	<br>cuenca que se llena <br>de jugos intensos <br>de &aacute;giles vinos <br>de 
+	agua fresca, 
+	<br>donde la lengua <br>leve serpiente de delicias <br>blandamente ondula, 
+	<br>y se anida el milagro <br>de la palabra.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="5. LAS OREJAS"></a></font><font face="Georgia" color="#84B0D6">
+	5. Las orejas</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Como dos hojas <br>de un &aacute;rbol ajeno 
+	<br>nacen a los lados <br>de mi cabeza. <br>Por el tallo escondido <br>se 
+	desliza 
+	<br>la opulencia <br>de los sonidos, <br>me alcanzan <br>las vivas voces <br>
+	que me llaman.<br>
+	<br>* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="6. EL PELO"></a>6. 
+	El pelo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Dulce 
+	enredadera serpentina, 
+	<br>&uacute;nica vegetaci&oacute;n <br>en la tierra tierna de mi cuerpo, <br>hierba fina 
+	<br>que sigue creciendo <br>sensible a la primavera, <br>ala de sombra <br>
+	contra mi sien, 
+	<br>leve abrigo sobre la nuca. <br>Para mi nostalgia de ave <br>mi penacho 
+	de plumas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="7. LAS MANOS"></a></font><font face="Georgia" color="#84B0D6">
+	7. Las manos</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Las 
+	manos <br>d&eacute;biles, inciertas, 
+	<br>parecen <br>vanos objetos <br>para el brillo de los anillos, <br>s&oacute;lo 
+	las llena 
+	<br>lo perdido, <br>se tienden al &aacute;rbol <br>que no alcanzan, <br>pero me dan 
+	el agua 
+	<br>de la ma&ntilde;ana, <br>y hasta el rosado <br>reto&ntilde;o de mis u&ntilde;as <br>llega el 
+	latido.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="8. LOS PIES"></a>8. 
+	Los pies</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Ya que 
+	no tengo alas, 
+	<br>me bastan <br>mis pies que danzan <br>y que no acaban <br>de recorrer el 
+	mundo. 
+	<br>Por praderas en flor <br>corri&oacute; mi pie ligero, <br>dej&oacute; su huella <br>en 
+	la h&uacute;meda arena, 
+	<br>busc&oacute; perdidos senderos, <br>holl&oacute; las duras aceras <br>de las ciudades 
+	<br>y sube por escaleras <br>que no sabe a donde llegan.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="9. LOS SENOS"></a></font><font face="Georgia" color="#84B0D6">
+	9. Los senos</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Son 
+	dos pl&aacute;cidas colinas 
+	<br>que apenas mece mi aliento, <br>son dos frutos delicados <br>de p&aacute;lidas 
+	venaduras, 
+	<br>fueron dos copas llenas <br>pr&oacute;vidas y nutricias <br>en la plena 
+	estaci&oacute;n 
+	<br>y siguen alimentando <br>dos flores en bot&oacute;n.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="10. LA CINTURA"></a>
+	10. La cintura</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Es el puente cimbreante 
+	<br>que reune <br>dos mitades diferentes, <br>es el tallo flexible <br>que 
+	mantiene 
+	<br>el torso erguido, <br>inclina mi pecho <br>rendido <br>y gobierna el 
+	muelle 
+	<br>oscilar de la cadera. <br>Agradecida <br>adorno mi cintura <br>con un 
+	lazo de seda.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;* * * 
+	<br><br><a name="11. EL SEXO"></a></font>
+	<font face="Georgia" color="#84B0D6">11. El sexo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Oculta rosa palpitante 
+	<br>en el oscuro surco, <br>pozo de estremecida alegr&iacute;a <br>que incendia en 
+	un instante 
+	<br>el turbio curso de mi vida, <br>secreto siempre inviolado, <br>fecunda 
+	herida.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="12. LA PIEL"></a></font><font face="Georgia" color="#84B0D6">
+	12. La piel</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Es 
+	tan fr&aacute;gil la trama 
+	<br>que la rasga una espina, <br>tan vulnerable <br>que la quema el sol, <br>
+	tan susceptible 
+	<br>que la eriza el fr&iacute;o. <br>Pero tambi&eacute;n percibe <br>mi piel delgada <br>
+	la dulce gama 
+	<br>de las caricias, <br>y mi cuerpo sin ella <br>ser&iacute;a una llaga desnuda.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="13. LOS HUESOS"></a></font>
+	<font face="Georgia" color="#84B0D6">13. Los huesos</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Alabo <br>el tibio ropaje 
+	<br>la apariencia <br>el fugitivo semblante. <br>Y casi olvido <br>la 
+	obediente armaz&oacute;n 
+	<br>que me sostiene, <br>el maniqu&iacute; ingenioso, <br>el &aacute;gil esqueleto <br>que 
+	me lleva.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="14. EL CORAZÓN"></a>
+	14. El coraz&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Dicen que es del tama&ntilde;o 
+	<br>de mi pu&ntilde;o cerrado. <br>Peque&ntilde;o, entonces, <br>pero basta <br>para poner 
+	en marcha 
+	<br>todo esto. <br>Es un obrero <br>que trabaja bien, <br>aunque anhele el 
+	descanso, 
+	<br>y es un prisionero <br>que espera vagamente <br>escaparse.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="15. LAS VENAS"></a>
+	15. Las venas</font><font face="Georgia" size="2" color="#84B0D6"><br><br>La 
+	floraci&oacute;n azulada 
+	<br>de las venas <br>dibuja laberintos <br>misteriosos <br>bajo la cera de 
+	mi piel. 
+	<br>Tenue hidrograf&iacute;a <br>apenas aparente, <br>&aacute;giles cauces que conducen 
+	<br>deseos y venenos <br>y entra&ntilde;able alimento.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="16. LA SANGRE"></a></font><font face="Georgia" color="#84B0D6">
+	16. La sangre</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Secreto corre el torrente 
+	<br>de mi sangre r&aacute;pida. <br>Inmenso es el r&iacute;o <br>que en subterr&aacute;neos 
+	meandros 
+	<br>madura <br>y nutre el &aacute;mbito <br>de mi vida profunda. <br>La c&aacute;lida 
+	corriente 
+	<br>que me inunda <br>en la flor de la herida <br>se derrama.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br></font><font face="Georgia" color="#84B0D6"><a name="17. EL SUE&Ntilde;O"></a>
+	17. El sue&ntilde;o</font><font face="Georgia" size="2" color="#84B0D6"><br><br>En 
+	tan blando nido 
+	<br>mi coraz&oacute;n descansa, <br>ni lo asombran <br>los perdidos fantasmas <br>
+	que se asoman. 
+	<br>Pasa por mi sue&ntilde;o <br>la ola calma <br>de mi respiro. <br>En tanto 
+	olvido 
+	<br>el tiempo de ma&ntilde;ana <br>se prepara, <br>mientras estoy viviendo <br>
+	ef&iacute;mera muerte.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * <br>
+	<br><a name="18. EL ALIENTO"></a></font>
+	<font face="Georgia" color="#84B0D6">18. El aliento</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	No se de donde viene 
+	<br>el viento que me lleva, <br>el suspiro que me consuela, <br>el aire que 
+	acompasadamente 
+	<br>mueve mi pecho <br>y alienta <br>mi invisible vuelo. <br>Yo soy apenas 
+	<br>la planta que se estremece <br>por la brisa, <br>el sumiso instrumento, 
+	<br>la gr&aacute;cil flauta <br>que resuena <br>por un soplo de viento.<br></font>
+	</p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6"><br>&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ELLA SE SIENTE A VECES..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Ella se siente a veces...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ella se siente a veces<br>
+	como cosa olvidada<br>en el rinc&oacute;n oscuro de la casa<br>como fruto devorado 
+	adentro<br>por los p&aacute;jaros rapaces,<br>como sombra sin rostro y sin peso.<br>
+	Su presencia es apenas<br>vibraci&oacute;n leve<br>en el aire inm&oacute;vil.<br>Siente 
+	que la traspasan las miradas<br>y que se vuelve niebla<br>entre los torpes 
+	brazos<br>que intentan circundarla.<br>Quisiera ser siquiera<br>una naranja 
+	jugosa<br>en la mano de un ni&ntilde;o<br>-no corteza vac&iacute;a-<br>una imagen que 
+	brilla en el espejo<br>-no sombra que se esfuma-<br>y una voz clara<br>-no 
+	pesado silencio-<br>alguna vez escuchada.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<blockquote>
+		<p align="center">&nbsp;</p>
+
+    </blockquote>
+	<p><font face="Georgia" color="#84B0D6"><a name="ORACIÓN"></a>Oraci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Dame, se&ntilde;or<br>un silencio profundo<br>y un denso velo<br>sobre la 
+	mirada.<br>As&iacute; ser&eacute; un mundo<br>cerrado:<br>una isla oscura;<br>cavar&eacute; en m&iacute; 
+	misma dolorosamente<br>como en tierra dura<br>Y cuando me haya desangrado<br>
+	&aacute;gil y clara ser&aacute; mi vida<br>Entonces, como r&iacute;o sonoro y transparente,<br>
+	fluir&aacute; libremente<br>el canto encarcelado.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br><br>&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="OSCURO CANTO"></a></font>
+	<font face="Georgia" color="#84B0D6">Oscuro canto</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Oscuro canto<br>que brota<br>
+	de la honda esperanza<br>rota,<br>y del retorno<br>al c&iacute;rculo cerrado.<br>
+	Peso escondido<br>como hijo sin nacer<br>en el vientre profundo,<br>apretado 
+	nudo<br>en el lugar del coraz&oacute;n.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Ay, tampoco suena<br>ni 
+	sube<br>el nocturno canto<br>hacia el cielo lejano.<br>Es una voz sorda<br>
+	que se ahoga en la garganta,<br>es un grito callado.<br>Y si sube,<br>no es 
+	un vuelo<br>en la noche muda,<br>es s&oacute;lo una nube de humo<br>que se pierde 
+	en la sombra.<br>
+	<br><br>&nbsp;</font></p>
+	<blockquote>
+      <p align="center"><font color="#84B0D6"><img border="0" src="./SENSUBARRAINI.jpg" width="72"
+      height="7"><br>
+&nbsp;</font></p>
+		<p align="center">&nbsp;</p>
+
+    </blockquote>
+  	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a name="PROPICIATORIA"></a></font><font face="Georgia" color="#84B0D6">
+	Propiciatoria</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Lenta y pl&aacute;cida<br>sea la vida que corre por mis venas,<br>largos sue&ntilde;os y 
+	dulces despertares<br>me asistan,<br>escuchen mis o&iacute;dos voces quedas,<br>
+	mientras crece en secreto<br>la criatura.<br>&iexcl;Ay, que el llanto no empa&ntilde;e mi 
+	pupila!<br>Que por furtivo anhelo<br>no tiemblen mis pesta&ntilde;as,<br>ni 
+	perturbantes fantasmas me llamen,<br>mientras vive en mi seno<br>la 
+	criatura.<br>&iquest;C&oacute;mo puedo estar triste<br>si la rama florece?<br>No empa&ntilde;e su 
+	mirada,<br>antes que se abra,<br>el velo de mis l&aacute;grimas.<br>El alma no me 
+	pertenece.<br>Ma&ntilde;ana,<br>desprendida de m&iacute;<br>la criatura,<br>ir&aacute; libre y 
+	ligero<br>mi imprudente paso,<br>y sin temores,<br>podr&eacute; dejarme lastimar de 
+	nuevo.<br>Pero hoy, Se&ntilde;or,<br>aparta de mi lado<br>las cosas que me hieren:<br>
+	tiende un camino de arena fina<br>bajo mi pie cansado,<br>defiende mi 
+	soledad tranquila<br>y pon sobre mi frente<br>una corona matinal<br>de 
+	pensamientos claros.<br>
+	<br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br>
+	</font><font face="Georgia" color="#84B0D6">
+	<a name="SE&Ntilde;OR, ESTAMOS SOLOS"></a>Se&ntilde;or, estamos solos...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Se&ntilde;or, estamos solos,<br>Yo, frente a Ti:<br>Di&aacute;logo imposible<br>Grave es 
+	tu presencia<br>Para mi solitario amor.<br>Escucho tu llamada<br>Y no s&eacute; 
+	responderte.<br>Vive sin eco y sin destino<br>El amor que sembraste:<br>
+	Sepultada semilla<br>Que no encuentra el camino<br>Hacia la luz del d&iacute;a.<br>
+	En mi pecho encendiste<br>Una llama sombr&iacute;a<br>&iquest;Por qu&eacute; se&ntilde;or, 
+	<br>no me consumes entera,<br>si no hay para tu amor<br>otra respuesta<br>
+	que mi callada espera?</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="UN D&Iacute;A"></a></font>
+	<font face="Georgia" color="#84B0D6">Un d&iacute;a</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Este cielo nublado<br>de 
+	tempestad oculta<br>y lluvia presentida<br>me pesa;<br>este aire denso y 
+	quieto,<br>que ni siquiera mueve<br>la hoja leve<br>del jazm&iacute;n florecido,<br>
+	me ahoga;<br>esta espera<br>de algo que no llega<br>me cansa.<br>Quisiera 
+	estar lejos,<br>donde nadie<br>me conociera:<br>nueva<br>como la yerba 
+	fresca,<br>ligera,<br>sin el peso<br>de los d&iacute;as muertos<br>y libre<br>ir 
+	por caminos ignorados<br>hacia un cielo abierto.</font></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<blockquote>
+      <blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:58:21 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:18:11 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

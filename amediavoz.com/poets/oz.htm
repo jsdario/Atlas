@@ -1,0 +1,690 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Amos Oz</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Amos Oz."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Ana Amos Oz. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Amos_Oz,poesias,poetas,traducciones,poemas,versos,biografias,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/oz.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/oz.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815160236" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./oz.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:02:36 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./oz.htm" title="11:44:56 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:02:36 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./oz.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="12 Jul 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:02:36 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./oz.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>26 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 May 10 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000010001110_2011:-1:000001011130_2012:-1:401011101000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./OZ.jpg" width="200" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./OZ1.jpg" width="113" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="638" height="325">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="630">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="294" width="221" valign="top">
+			<p align="left">
+			<img border="0" src="./OZ2.jpg" width="208" height="289">&nbsp;&nbsp;&nbsp;
+			</td>
+			<td width="405" valign="top" height="294">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta y novelista&nbsp; israel&iacute; nacido en Jerusal&eacute;n en 1939.<br>
+			Estudi&oacute; Literatura y Filosof&iacute;a en la Universidad Hebrea de 
+			Jerusal&eacute;n, especializ&aacute;ndose luego en la Universidad de Oxford, 
+			Inglaterra.<br>
+			Considerado como el m&aacute;s importante escritor hebreo contempor&aacute;neo, 
+			pertenece al partido social dem&oacute;crata israel&iacute;, es miembro de la 
+			Academia del Idioma Hebreo,&nbsp; miembro de la Academia Europea de 
+			Ciencias y Artes, colabora activamente en el movimiento pacifista 
+			israel&iacute; Shalom Ajshav y ocupa la c&aacute;tedra de Literatura en en la 
+			Universidad Ben-Guri&oacute;n de Beer Sheba. <br>
+			Su vasta obra, escrita en hebreo e ingl&eacute;s, comprende novelas, 
+			poes&iacute;a, ensayos y cuentos, que le han valido importantes galardones, 
+			tales como, <i>Premio Israel&iacute; de Literatura</i> 1988, <i>Premio 
+			Goethe de Literatura</i> 2005, <i>Caballero de la Legi&oacute;n de Honor de 
+			Francia</i> en 1997,&nbsp;&nbsp; y <i>Premio Pr&iacute;ncipe de Asturias de 
+			las Letras</i> en 2007.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Amos Oz:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./oz.htm#A trav&eacute;s de nosotros">A trav&eacute;s de nosotros</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#C&aacute;lculos">C&aacute;lculos</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Chandartal">Chandartal</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Dita en voz baja">Dita en 
+		voz baja</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./oz.htm#El narrador copia expresiones del diccionario">El narrador 
+		copia expresiones del diccionario</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./oz.htm#El p&aacute;jaro del lecho del mar">El p&aacute;jaro del lecho del mar</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./oz.htm#Envuelto en sombras la luz proclama">Envuelto en sombras la 
+		luz proclama</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Es duro">Es duro</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Mar&iacute;a">Mar&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Pero c&oacute;mo">Pero c&oacute;mo</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./oz.htm#Se despierta en m&iacute; el deseo">Se despierta en m&iacute; el deseo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./oz.htm#Solo">Solo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><br>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#EEEEEE"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="A trav&eacute;s de nosotros">
+		</a>A trav&eacute;s de nosotros</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Antes de perd&oacute;n, est&aacute; libre la silla,<br>
+		antes de el color de tus ojos, antes de qu&eacute; quieres tomar,<br>
+		antes de soy Rico y me llamo Dita, antes del roce<br>
+		de una mano en un hombro,<br>
+		eso pas&oacute; a trav&eacute;s de nosotros<br>
+		como una puerta entreabierta durante el sue&ntilde;o.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 43<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="C&aacute;lculos"></a>C&aacute;lculos</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		En la calle Amirim el se&ntilde;or Danon a&uacute;n est&aacute; despierto.<br>
+		Las dos de la madrugada. En la pantalla del ordenador<br>
+		las cuentas mal hechas de una compa&ntilde;&iacute;a cualquiera.<br>
+		&iquest;Error o fraude?<br>
+		Busca. No encuentra. Sobre una servilleta bordada<br>
+		un viejo reloj tictaquea. Se viste. Sale. En el T&iacute;bet ya son las seis.<br>
+		Olor a lluvia sin lluvia en la calle de Bat Yam.<br>
+		Vac&iacute;o. Silencio. Viviendas. Error<br>
+		o fraude. Ma&ntilde;ana lo veremos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 22<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Chandartal"></a>
+		Chandartal</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Mana. Se detiene. Fluye.<br>
+		Sale y de nuevo se detiene.<br>
+		Un manantial vacilante<br>
+		en el patio del monasterio.<br>
+		<br>
+		Es la regi&oacute;n de Ladakh, &laquo;la tierra<br>
+		de los hijos de la luna&raquo;. Has llegado aqu&iacute;<br>
+		por el r&iacute;o de la luna, el Chandar,<br>
+		a trav&eacute;s del lago Chandartal.<br>
+		<br>
+		Tiksa se llama el pueblo,<br>
+		Tiksa Gumpa se llama el monasterio,<br>
+		y la mujer se llama Mar&iacute;a. Eres<br>
+		al &uacute;nico que recuerda.<br>
+		<br>
+		El que bes&oacute; sus pies.<br>
+		Y se refiere a ti.<br>
+		T&uacute;. Ac&eacute;rcate a m&iacute;.<br>
+		&iquest;Sab&iacute;as que aqu&iacute; en Ladakh<br>
+		<br>
+		existe la costumbre<br>
+		de casar a una novia<br>
+		con dos o tres hermanos?<br>
+		Eres al &uacute;nico que recuerda.<br>
+		<br>
+		Fluye. Vacila. Se para<br>
+		y vuelve a salir. Un manantial<br>
+		en una esquina del patio del monasterio.<br>
+		<br>
+		La piedra aqu&iacute; no est&aacute; tallada<br>
+		est&aacute; revocada de blanco y rojo<br>
+		el monasterio se llama Tiksa Gumpa<br>
+		y Mar&iacute;a se llama la mujer. Ac&eacute;rcate<br>
+		<br>
+		a m&iacute;. No temas. Te estoy<br>
+		hablando a ti. Esta noche<br>
+		mis labios abrir&aacute;s. Esta noche<br>
+		estar&eacute; contigo. Tiksa Gumpa<br>
+		se llama el monasterio y el lago se llama<br>
+		Chandartal.<br>
+		<br>
+		<i>De &quot;El mismo mar&quot; pag. 140<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Dita en voz baja"></a>
+		Dita en voz baja</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Mi mano en el heno de 
+		tu pecho envejecido<br>
+		recoge paja<br>
+		para hacernos un nido</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * * * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Pero Albert la detiene:</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Su mano suave en el 
+		heno de mi pecho. Sobre su mano<br>
+		mi mano arrugada. Ella con mi soledad. Yo con su soledad.<br>
+		En el porche. De pie. El mar quita el mar<br>
+		da. Una fina silueta y una peque&ntilde;a sombra. Una sombra<br>
+		arrepentida. Se gira. Huye. El mar da el mar<br>
+		quita.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 225<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="El narrador copia expresiones del diccionario"></a>El narrador 
+		copia expresiones del diccionario</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Quien ha jugado con fuego,<br>
+		quien ha prometido el oro y el moro<br>
+		ha perdido la senda, ha perdido los estribos y est&aacute;<br>
+		con la soga al cuello. No ha conseguido vivir como un rey.<br>
+		Ha pasado m&aacute;s hambre que un perro. Le ha tocado.<br>
+		Los a&ntilde;os se le han echado encima, ha recibido<br>
+		su castigo, las desgracias nunca vienen solas.<br>
+		Ahora estampar&aacute; su firma. Dar&aacute; su conformidad.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 94<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="El p&aacute;jaro del lecho del mar"></a></font>
+		<font face="Georgia" color="#C4CAD4">El p&aacute;jaro del lecho del mar</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Un poco antes de morir<br>
+		un p&aacute;jaro sobre una rama me sedujo.<br>
+		<i>Narimi</i> me roz&oacute; su pluma me rode&oacute; por completo<br>
+		con una placenta de mar.<br>
+		<br>
+		Mi viudo por las noches disuelve su lecho, ad&oacute;nde se ha ido<br>
+		el amor de su vida. Mi hu&eacute;rfano se ha marchado lejos<br>
+		a descifrar enigmas.<br>
+		Esposa ni&ntilde;a, t&uacute; eres la mujer de los dos, tuyo es mi camis&oacute;n<br>
+		tuyo es su amor. Mi carne se ha consumido.<br>
+		Ponedme como sello.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 109<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Envuelto en sombras la luz proclama"></a>Envuelto en sombras la 
+		luz proclama</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Viudo y padre. Paciente y recto Como una rama.<br>
+		Por las noches se averg&uuml;enza en la cama.<br>
+		Al otro lado duerme una mujer que ama.<br>
+		<br>
+		El sue&ntilde;o se resiste. Ella est&aacute; al otro lado<br>
+		sola y desnuda de costado,<br>
+		Hija m&iacute;a. Esposa. Tesoro hallado.<br>
+		<br>
+		La luz de la mesilla tiene que encender.<br>
+		En la foto de la c&oacute;moda, su hijo. Su mujer.<br>
+		Se arrastra hacia la cocina. Quiere beber.<br>
+		<br>
+		Vuelve a su habitaci&oacute;n. Se sienta. Bebe un vino embriagador.<br>
+		Se ensimisma frente a la pantalla del ordenador.<br>
+		Teclea: un verano agotador.<br>
+		<br>
+		Desde el jard&iacute;n oscuro un p&aacute;jaro le reclama,<br>
+		envuelto en sombras la luz proclama.<br>
+		<i>Narimi Narimi</i>. &iquest;Recuerdas? Te llama.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Se levanta. Desea ir a 
+		taparla, huir de su soledad,<br>
+		extender sobre su sue&ntilde;o un ala de padre de avanzada edad.<br>
+		Vuelve a la cama. Domina su piedad.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Se olvida de su cuerpo. 
+		Se atormenta. Se mueve.<br>
+		Vuelve a dar la luz. Casi las cinco de la madrugada. Llueve.<br>
+		En el Tibet las cinco son ya las nueve.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 73<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Es duro"></a>Es duro</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Abre los ojos con las primeras luces. Las cadenas monta&ntilde;osas<br>
+		parecen una mujer robusta y tranquila<br>
+		durmiendo de lado despu&eacute;s de una noche de amor.<br>
+		Una suave brisa, satisfecha de s&iacute; misma,<br>
+		mueve la tela de su tienda.<br>
+		La hincha, la agita, como un vientre c&aacute;lido. Sube y baja.<br>
+		<br>
+		Con la punta de la lengua toca ahora<br>
+		el hueco de la palma de su mano izquierda,<br>
+		el punto m&aacute;s interno de la palma. Le da la sensaci&oacute;n<br>
+		de estar tocando un pez&oacute;n suave, duro.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 25<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Mar&iacute;a"></a>Mar&iacute;a</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">le recuerda: el &uacute;ltimo 
+		chico. Su frente. Sus ojos.<br>
+		Su suspiro al llegar.<br>
+		El roce de su brazo y el manantial de su semen.<br>
+		Cuando todos se fueron<br>
+		&eacute;l volvi&oacute; y le bes&oacute; los pies.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 76<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="Pero c&oacute;mo">
+		</a></font><font face="Georgia" color="#C4CAD4">Pero c&oacute;mo</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Abandonarla, dices, es 
+		f&aacute;cil decirlo,<br>
+		abandonarla como un piloto de combate<br>
+		que abandona un avi&oacute;n<br>
+		sin control o en llamas. &iquest;Pero c&oacute;mo se salta<br>
+		de un avi&oacute;n ca&iacute;do, hecho pedazos y oxidado<br>
+		o hundido en las profundidades del mar?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 197<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Se despierta en m&iacute; el deseo"></a>Se despierta en m&iacute; el deseo</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Atardecer. Llueve en las colinas vac&iacute;as del desierto.<br>
+		Cal y roca y 0l0r a tierra mojada<br>
+		despu&eacute;s de un &aacute;rido verano. Se despierta en m&iacute; el deseo<br>
+		de ser lo que ser&iacute;a de no haber sabido lo que es sabido.<br>
+		De ser anterior al conocimiento.<br>
+		Como las colinas. Como una piedra en la superficie<br>
+		de la luna. Inerte, silencioso y seguro<br>
+		de que estar&eacute; tiempo en exposici&oacute;n.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 148<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Solo"></a>Solo</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Una flecha atrapada en 
+		un arco tensado:<br>
+		&eacute;l recuerda el contorno<br>
+		de sus muslos. Adivina el movimiento de sus caderas hacia &eacute;l.<br>
+		Se contiene. Sale del saco de dormir. Respira<br>
+		a pleno pulm&oacute;n el aire de nieve. La niebla p&aacute;lida,<br>
+		di&aacute;fana y lechosa se va retirando, una fina t&uacute;nica<br>
+		sobre las curva de la monta&ntilde;a.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El mismo mar&quot; 
+		pag. 26<br>
+		Ediciones Siruela 1999<br>
+		Versi&oacute;n de Raquel Garc&iacute;a Lozano<br>
+&nbsp;</font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:02:36 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:23:18 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

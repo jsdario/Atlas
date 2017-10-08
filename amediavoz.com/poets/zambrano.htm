@@ -1,0 +1,842 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Mar&iacute;a Zambrano</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Mar&iacute;a Zambrano. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Maria_Zambrano,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app19.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/zambrano.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/zambrano.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815175419" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zambrano.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:54:19 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./zambrano.htm" title="10:55:29 May 30, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:54:19 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zambrano.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:54:19 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./zambrano.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>74 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000003101_2005:-1:011100010001_2006:-1:000021010451_2007:-1:021002110600_2008:-1:001112410001_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000001130_2012:-1:421010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ZAMBRANO.jpg" width="369" height="40"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+&quot;...Y yo hab&iacute;a pasado por la vida <br>
+tan s&oacute;lo de paso, lejana de m&iacute; misma.&quot;<br>
+<img src="./ZAMBRANO1.jpg" width="272" height="363"><em><br>
+<br>
+</em></font><em><font face="Arial" size="2" color="#9BC9BB">&quot;Alg&uacute;n fil&oacute;sofo que 
+quiso dejar su alma<br>
+tallada como un diamante&deg;<br>
+<br>
+Tapiz de Ram&oacute;n P&eacute;rez Carri&oacute;</font></em></p>
+
+<p align="center"><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Pensadora, ensayista y 
+		poeta espa&ntilde;ola nacida&nbsp; en V&eacute;lez, M&aacute;laga, en 1904.<br>Hija del 
+		pensador y pedagogo Blas Jos&eacute; Zambrano, hizo sus primeros estudios en 
+		Segovia. En Madrid estudi&oacute; <br>
+		Filosof&iacute;a y Letras con Ortega y Gasset, Garc&iacute;a Morente, Besteiro y 
+		Zubiri. Vivi&oacute; muy de cerca los acontecimientos <br>
+		pol&iacute;ticos de aquellos a&ntilde;os, de cuya vivencia fue fruto su primer libro 
+		&laquo;Horizonte del liberalismo&raquo; en 1930. 
+		<br>
+		Entabl&oacute; amistad con importantes poetas y pensadores de la &eacute;poca como 
+		Luis Cernuda, Jorge Guill&eacute;n, Emilio Prados <br>
+		y Miguel Hern&aacute;ndez, entre otros.<br>Finalizada la Guerra Civil, sali&oacute; de 
+		Espa&ntilde;a en enero de 1939, dejando atr&aacute;s todo lo suyo, exili&aacute;ndose 
+		inicialmente en Paris <br>
+		donde entabl&oacute; amistad con Albert Camus y con Ren&eacute; Char. Posteriormente 
+		vivi&oacute; en M&eacute;xico, La Habana y Roma, <br>
+		desarrollando una gran intensidad literaria y escribiendo algunas de sus 
+		obras m&aacute;s importantes: &laquo;Los sue&ntilde;os y el tiempo&raquo;, <br>
+		&laquo;Persona y democracia&raquo;, &laquo;El hombre y lo divino&raquo; y &laquo;Pensamiento y Poes&iacute;a&raquo; 
+		entre otros. <br>
+		Despu&eacute;s de 45 a&ntilde;os de exilio regres&oacute; por fin a Madrid en 1984.
+		<br>En 1988 le fue reconocida su obra con&nbsp; el <em>Premio Pr&iacute;ncipe 
+		de Asturias</em> y el 
+		<em>Premio Cervantes</em>.<br>Falleci&oacute; en Madrid en 1991.&nbsp; &copy;<br></font></p>
+		<blockquote>
+			<p>&nbsp;</p>
+			<blockquote>
+				<blockquote>
+					<p align="center">
+					<font face="Georgia" size="3" color="#B0C6C1">
+					<img border="0"
+            src="./PERDUBARRA.jpg" width="77" height="9"><br></font></p>
+				</blockquote>
+			</blockquote>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>Los 
+		textos que aparecen en este v&iacute;nculo han sido tomados de la excelente 
+		publicaci&oacute;n, <br>
+		&quot;La llama sobre el agua&quot;, edici&oacute;n de Mar&iacute;a Fernanda Santiago Bola&ntilde;os, 
+		con ilustraciones de Ram&oacute;n P&eacute;rez Carri&oacute;.<br>(Ediciones Aitana, Comte d' 
+		Altea, 10&nbsp; Altea, Alicante.)</em></font></p>
+		<p align="left"><font face="Georgia" color="#A7BEB9">
+		<a
+      href="./zambrano.htm#ANTES DE LA OCULTACI&Oacute;N">Antes de la ocultaci&oacute;n</a><br><br>
+		<a href="./zambrano.htm#CLAROS DEL BOSQUE">Claros del bosque</a><br><br>
+		<a href="./zambrano.htm#EL TEMPLO Y SUS CAMINOS">El templo y sus caminos</a><br><br>
+		<a href="./zambrano.htm#GEOGRAF&Iacute;A DE LA AURORA">Geograf&iacute;a de la aurora</a><br><br>
+		<a href="./zambrano.htm#LA LLAMA">La llama</a><br><br><a href="./zambrano.htm#LA MIRADA">La mirada</a><br>
+		<br><a href="./zambrano.htm#LA PENSADORA DEL AURA">La pensadora del aura</a><br><br>
+		<a href="./zambrano.htm#LO CELESTE">Lo celeste</a></font></p>
+		<p align="left">
+		<em><font face="Georgia" size="2" color="#A7BEB9">
+		<a href="./zambrano.htm#1."><font color="#95B3AA">1.</font></a></font><font face="Georgia" size="2" color="#95B3AA">Los 
+		textos que aparecen a continuaci&oacute;n han sido tomados&nbsp; de &quot;El agua 
+		ensimismada&quot;, <br>
+		edici&oacute;n de Mar&iacute;a Victoria Atencia, publicados por la Universidad de 
+		M&aacute;laga en 2001</font></em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" color="#A7BEB9">
+		<a href="./zambrano.htm#&iexcl;CU&Aacute;NTA HERMOSURA...!">&iexcl;Cu&aacute;nta hermosura...!</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia"><a href="./zambrano.htm#DE L&Eacute;TOILE DES ALPES">De L'&Eacute;toile des 
+		alpes</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+		</em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia"><a href="./zambrano.htm#DELIRIO DEL INCR&Eacute;DULO">Delirio del 
+		incr&eacute;dulo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+		</em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia"><a href="./zambrano.htm#EL AGUA ENSIMISMADA">El agua ensimismada</a>&nbsp;&nbsp;&nbsp;&nbsp; </font>
+		</em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia"><a href="./zambrano.htm#MUCHAS GRACIAS">Muchas gracias</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></em></p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia"><a href="./zambrano.htm#P&Aacute;MPANO, ROSA, LAS ERAS...">
+		P&aacute;mpano, rosa, las eras...</a>&nbsp;&nbsp;&nbsp; </font>
+		<font face="Georgia" size="2">&nbsp; </font>
+		</em><font face="Georgia" size="2" color="#A7BEB9"><br><br> 
+		</font><font face="Georgia" size="2" color="#95B3AA">Volver a: </font>
+	<font face="Georgia" color="#95B3AA">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+<img border="0"
+  src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p><font color="#95B3AA"><a name="ANTES DE LA OCULTACIÓN"></a></font>
+		<font face="Georgia" color="#9BC9BB">Antes de la ocultaci&oacute;n</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Comenc&eacute; a cantar entre dientes por obedecer 
+		en la oscuridad absoluta que no hab&iacute;a hasta entonces conocido, la vieja 
+		canci&oacute;n del agua todav&iacute;a no nacida, confundida con el gemido de la que 
+		nace; el gemido de la madre que da a luz una y otra vez para acabar de 
+		nacer ella misma, entremezclado con el vagido de lo que nace, la vida 
+		parturiente. Me sent&iacute; acunada por este lloro que era tambi&eacute;n canto tan 
+		de lejos y en m&iacute;, porque nunca nada era m&iacute;o del todo. &iquest;No tendr&iacute;a yo 
+		due&ntilde;o tampoco?<br>&nbsp;&nbsp;&nbsp;&nbsp; La m&uacute;sica no tiene due&ntilde;o, 
+		pues los que van a ella no la poseen nunca. Han sido por ella primero 
+		pose&iacute;dos, despu&eacute;s iniciados. Yo no sab&iacute;a que una persona pudiera ser 
+		as&iacute;, al modo de la m&uacute;sica, que posee porque penetra mientras se 
+		desprende de su fuente, tambi&eacute;n en una herida. Se abre la m&uacute;sica s&oacute;lo en 
+		algunos lugares inesperadamente, cuando errante el alma sola, se siente 
+		desfallecer sin due&ntilde;o. En esta soledad nadie aparece, nadie aparec&iacute;a 
+		cuando me asent&eacute; en mi soledad &uacute;ltima; el amado sin nombre siquiera. 
+		Alguien me hab&iacute;a enamorado all&aacute; en la noche, en una noche sola, en una 
+		&uacute;nica noche hasta el alba. Nunca m&aacute;s apareci&oacute;. Ya nadie m&aacute;s pudo 
+		encontrarme.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: </i>
+		<em>Diotima de Mantinea </em><i>en</i><em>
+    	Hacia un saber sobre el alma, </em><i>Madrid, <br>Ed. Alianza, 1989, p. 
+		196</i><br>
+		<br>&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CLAROS DEL BOSQUE"></a></font>
+		<font face="Georgia" color="#9BC9BB">Claros del bosque</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; No me respondes, hermana. He venido ahora a 
+		buscarte. Ahora, no tardar&aacute;s ya mucho en salir de aqu&iacute;. Porque aqu&iacute; no 
+		puedes quedarte. Esto no es tu casa, es s&oacute;lo la tumba donde te han 
+		arropado viva. Y viva no puedes seguir aqu&iacute;; vendr&aacute;s ya libre, m&iacute;rame, 
+		m&iacute;rame, a esta vida en la que yo estoy. Y ahora s&iacute;, en una tierra nunca 
+		vista por nadie, fundaremos la ciudad de los hermanos, la ciudad nueva, 
+		donde no habr&aacute; ni hijos ni padres. Y los hermanos vendr&aacute;n a reunirse con 
+		nosotros. Nos olvidaremos all&iacute; de esta tierra donde siempre hay alguien 
+		que manda desde antes, sin saber. All&iacute; acabaremos de nacer, nos dejar&aacute;n 
+		nacer del todo. Yo siempre supe de esa tierra. No la so&ntilde;&eacute;, estuve en 
+		ella, moraba en ella contigo, cuando se cre&iacute;a &eacute;se que yo estaba 
+		pensando.<br>&nbsp;&nbsp;&nbsp;&nbsp; En ella no hay sacrificio, y el 
+		amor, hermano, no est&aacute; cercado por la muerte.<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		All&iacute; el amor no hay que hacerlo, porque se vive en &eacute;l. No hay m&aacute;s que 
+		amor.<br>&nbsp;&nbsp;&nbsp;&nbsp; Nadie nace all&iacute;, es verdad, como aqu&iacute; 
+		de este modo. All&iacute; van los ya nacidos, los salvados del nacimiento y de 
+		la muerte. Y ni siquiera hay un Sol; la claridad es perenne. Y las 
+		plantas est&aacute;n despiertas, no en su sue&ntilde;o como est&aacute;n aqu&iacute;; se siente lo 
+		que sienten. Y uno piensa, sin darse cuenta, sin ir de una cosa a otra, 
+		de un pensamiento a otro. Todo pasa dentro de un coraz&oacute;n sin tinieblas. 
+		Hay claridad porque ninguna luz deslumbra ni acuchilla, como aqu&iacute;, como 
+		ah&iacute; fuera.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: &quot;Los 
+		hermanos&quot; en
+    	</i><em>La tumba de Ant&iacute;gona</em><i>, Madrid,<br>Ed. Mondadori, 1989, pp 
+		79-80</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="EL TEMPLO Y SUS CAMINOS"></a></font>
+		<font face="Georgia" color="#9BC9BB">El templo y sus caminos</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Una tinieblas que prometen y a veces 
+		amenazan abrirse. Y es dif&iacute;cil creer que quien recorre tal camino no se 
+		vea acometido por el tempor y un temblor casi paralizantes. Es la luz de 
+		un viaje m&aacute;s bien extrahumano, que el hombre emprend&iacute;a asom&aacute;ndose al 
+		lado d&eacute; all&aacute;, a ese lado al cual se supuso, cada vez con mayor ligereza, 
+		que s&oacute;lo se asoman los m&iacute;sticos. Es la luz que se vislumbra y la luz que 
+		acecha, la luz que hiere. La luz que acecha en la inmensidad de un 
+		horizonte donde perderse parece inevitable, y que hiere con un rayo que 
+		despierta m&aacute;s all&aacute; de lo sostenible, llamando a la completa vigilia, &eacute;sa 
+		donde la mente se incendiar&iacute;a toda.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: &quot;La 
+		respuesta de la Filosof&iacute;a&quot;, en </i><em>Los bienaventurados</em><i>, 
+		Madrid,<br>Ed. Siruela, 1990, pp. 80-81</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"><br>&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="GEOGRAF&Iacute;A DE LA AURORA"></a></font>
+		<font face="Georgia" color="#9BC9BB">Geograf&iacute;a de la aurora</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Y las piedras preciosas, esas grutas de 
+		esmeraldas que nacen en sue&ntilde;os y al so&ntilde;ante acogen tan de verdad que 
+		&eacute;ste conserva en la vigilia las huellas del tacto, a veces hecho memoria 
+		tanto o m&aacute;s que un lugar simplemente natural; y el color que sin nombre 
+		sostiene la retina por a&ntilde;os, por duraciones sin fin, ese color visto tan 
+		s&oacute;lo en sue&ntilde;os y ese felic&iacute;simo estar en la gruta, y aun el poder volver 
+		a ella encontr&aacute;ndola en tierras lejanas ba&ntilde;adas por otra luz. &iquest;C&oacute;mo 
+		suceden, c&oacute;mo est&aacute;n ah&iacute; asequibles aunque no enteramente, y sin sombra 
+		alguna de terror, cosa tan extra&ntilde;a a toda gruta desconocida, por 
+		insignificante que sea? Este no tener, y no esperar, este estar sin 
+		esfuerzo alguno, esta patria perdida o esperada, donde se ha entrado sin 
+		saber c&oacute;mo ni por qu&eacute;, sin esperanza ni temor. Y ese vivir sin anhelar, 
+		ni apetecer, sin a&ntilde;orar sin so&ntilde;ar, duerme al fin en su gruta sin so&ntilde;ar 
+		se&ntilde;or alguno, que le haya herido y sin so&ntilde;arse &eacute;l a s&iacute; mismo, olvidado 
+		de toda herida.<br>&nbsp;&nbsp;&nbsp;&nbsp; El ciervo reposa sin herida, 
+		apoyada su cabeza sobre una piedra, flor azul.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: 
+		&quot;Geograf&iacute;a de la Aurora&quot;, en </i><em>De la Aurora</em><i>, Madrid,<br>
+		Ed. Turner, 1986, p.106</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="LA LLAMA"></a>
+		</font><font face="Georgia" color="#9BC9BB">La llama</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Asisitida por mi alma antigua, por mi alma 
+		primera al fin recobrada, y por tanto tiempo perdida. Ella, la 
+		perdidiza, al fin volvi&oacute; por m&iacute;. Yentonces comprend&iacute; que ella hab&iacute;a sido 
+		la enamorada. Y yo hab&iacute;a pasado por la vida tan s&oacute;lo de paso, lejana de 
+		m&iacute; misma .Y de ella ven&iacute;an las palabras sin due&ntilde;o que todos beb&iacute;an sin 
+		dejarme apenas nada a cambio. Yo era la voz de esa antigua alma. Y ella, 
+		a medida que consumaba su amor, all&aacute;, donde yo no pod&iacute;a verla; me iba 
+		iniciando a trav&eacute;s del dolor del abandono. Por eso nadie pod&iacute;a amarme 
+		mientras yo iba sabiendo del amor. Y yo misma tampoco amaba. S&oacute;lo una 
+		noche hasta el alba. Y all&iacute; qued&eacute; esperando. Me despertaba con la 
+		aurora, si es que hab&iacute;a dormido. Y cre&iacute;a que ya hab&iacute;a llegado, yo, ella, 
+		&eacute;l... Sal&iacute;a el Sol y el d&iacute;a ca&iacute;a como una condena sobre m&iacute;. No, no 
+		todav&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.:&nbsp; 
+		</i><em>Diotima de Mantinea</em><i>, en </i><em>Hacia un saber sobre el 
+		alma</em><i>, Madrid, 
+		<br>Ed. Alianza, 1989, p. 197<br><br>&nbsp;</i></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="LA MIRADA">
+		</a></font><font face="Georgia" color="#9BC9BB">La mirada</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; S&oacute;lo cuando la mirada se abre al par de lo 
+		visible se hace una aurora. Y se detiene entonces, aunque no perdure y 
+		s&oacute;lo sea fugitivamente, sin apenas duraci&oacute;n, pues que crea as&iacute; el 
+		instante. El instante que es al par indeleblemente uno y duradero. La 
+		unidad, pues, entre el instante fugitivo e inasible y lo que perdura. El 
+		instante que alcanza no ser fugitivo y&eacute;ndose.<br>Inasible. El instante 
+		que ya no est&aacute; bajo la amenaza de ser cosa ni concepto. Guardado, 
+		escondido en su oscuridad, en la oscuridad propia, puede llegar a ser 
+		concepci&oacute;n, el instante de concebir, no siempre inadvertido.<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y as&iacute;, la mirada, recogida en su oscuridad parad&oacute;jicamente, saltando 
+		sobre una apor&iacute;a, se abre y abre a su vez, &quot;a la imagen y semejanza&quot;, 
+		una especie de, circulaci&oacute;n. La mirada recorre, abre el c&iacute;rculo de la 
+		aurora que s&oacute;lo se dio en un punto, que se muestra como un foco, el 
+		hogar, sin duda, del horizonte. Lo que constituye su gloria inalterable.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: &quot;La 
+		mirada&quot;, en 
+		</i><em>De la Aurora</em><i>, Madrid, <br>Ed. Turner, 1986 p. 35<br><br>&nbsp;</i></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="LA PENSADORA DEL AURA">
+		</a>La pensadora del aura</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp; Nacer sin pasado, sin nada previo a que 
+		referirse, y poder entonces verlo todo, sentirlo, como deben sentir la 
+		aurora las hojas que reciben el roc&iacute;o; abrir los ojos a la luz 
+		sonriendo; bendecir la ma&ntilde;ana, el alma, la vida recibida, la vida &iexcl;qu&eacute; 
+		hermosura! No siendo nada o apenas nada por qu&eacute; no sonre&iacute;r al universo, 
+		al d&iacute;a que avanza, aceptar el tiempo como un regalo espl&eacute;ndido, un 
+		regalo de un Dios que nos sabe, que nuestro secreto, nuestra inanidad y 
+		no le importa, que no nos guarda rencor por no ser...<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		...Y como estoy libre de ese ser, que cre&iacute;a tener, vivir&eacute; simplemente, 
+		soltar&eacute; esa imagen que ten&iacute;a de m&iacute; misma, puesto que a nada corresponde 
+		y todas, cualquier obligaci&oacute;n, de las que vienen de ser yo, o del querer 
+		serlo.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>Zambrano, M.: 
+		&quot;Adsum&quot;, En
+		</i><em>Delirio y Destino</em><i>, Madrid,<br>Ed. Mondadori, 1989, pp. 
+		21-22</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="LO CELESTE"></a></font><font face="Georgia" color="#9BC9BB">Lo 
+		celeste</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>&quot;En par de los 
+		levantes de la Aurora&quot;<br></em><br>&nbsp;&nbsp;&nbsp;&nbsp; Por amplias 
+		que sean sus alas, la luz auroral que sigue al alba es como un boquete, 
+		un lugar que tiende a absorber y ofrecer al par la inminencia de que 
+		algo inconcebible aparezca. &iquest;Un ser? Un animal quiz&aacute;s, un ser viviente, 
+		se dibuja casi, est&aacute; al dibujarse. Un ser viviente de aliento y de 
+		pasi&oacute;n, un fuego oscuro por indiscernible que luego resulta ser 
+		simplemente blanco. Un blanco inextenso, un ser sin extensi&oacute;n. 
+		&iquest;Pensamiento? Mira tan s&oacute;lo. Es una mirada, ya que la mirada de todo 
+		aquello que se manifiesta visiblemente es lo &uacute;nico que no tiene 
+		extensi&oacute;n y, aun m&aacute;s, la borra.<br>&nbsp;&nbsp;&nbsp;&nbsp; Llega la 
+		mirada anulando la distancia, quien la recibe queda traspasado, raptado 
+		o fijado; fijado, si es la mirada de la luz. Y cuando la luz nos fija es 
+		que nos mira, y, al mirarnos, &iquest;se sabr&iacute;a decir lo que sucede? Y, por no 
+		saberlo decir, se borra: no crea memoria.<br>&nbsp;&nbsp;&nbsp;&nbsp; Y 
+		as&iacute;, de esta mirada de la luz, nace, podr&iacute;a nacer, ha nacido una y otra 
+		vez un pensamiento sin memoria. Un pensamiento liberado del esfuerzo de 
+		la pasi&oacute;n de tener que engendrar memoria y, en su virtud, liberado 
+		tambi&eacute;n de toda representaci&oacute;n y de todo representar.<br><br><i>
+		Zambrano, M.: &quot;Lo celeste&quot;, en 
+		</i><em>De la Aurora</em><i>, Madrid,<br>Ed. Mondadori, 1989, p.43</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em><a name="1.">1.</a> 
+		Los textos que aparecen a continuaci&oacute;n han sido tomados&nbsp; de &quot;El 
+		agua ensimismada&quot;, <br>
+		edici&oacute;n de Mar&iacute;a Victoria Atencia, publicados por la Universidad de 
+		M&aacute;laga en 2001</em></font></p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="&iexcl;CU&Aacute;NTA HERMOSURA...!">
+		</a>&iexcl;Cu&aacute;nta hermosura..!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Nota de Mar&iacute;a Victoria 
+		Atencia:<br>En el verano de hace ahora diez a&ntilde;os, tras la publicaci&oacute;n de 
+		alg&uacute;n libro m&iacute;o, <br>recib&iacute; de Mar&iacute;a un pliego doblado en cuatro y con 
+		un breve escrito que casi se perd&iacute;a <br>en la relativa inmensidad del 
+		papel. <br>Ven&iacute;an en &eacute;l, impresos, su nombre y su direcci&oacute;n postal. Y 
+		m&aacute;s abajo, mecanografiado <br>y centrado en su p&aacute;gina, el t&iacute;tulo, &quot;A 
+		Mar&iacute;a Victoria Atencia&quot;, y el texto en el que suplo <br>alg&uacute;n signo 
+		ortogr&aacute;fico. Prescindo del nombre de la autora que en el pie figuraba 
+		como firma. <br>Pero bajo a ese pie la indicaci&oacute;n sobre el lugar y fecha 
+		en que se escribi&oacute;. Traigo ese<br>texto aqu&iacute;, despu&eacute;s de largas dudas 
+		por razones de discreci&oacute;n personal, al considerar <br>que no se trata de 
+		una bella dedicatoria con ocasi&oacute;n del env&iacute;o de un libro suyo, <br>como 
+		sol&iacute;a hacer, sino de unas l&iacute;neas tan innecesarias como espont&aacute;neamente 
+		escritas <br><i>ex abundantia cordis</i>. Por ese mismo criterio de 
+		discreci&oacute;n reduzco a simple dedicatoria <br>el encabezamiento del poema 
+		y doy a &eacute;ste un t&iacute;tulo con parte de su primer verso.</font></p>
+		<p><i><font face="Georgia" size="2" color="#9BC9BB">A Mar&iacute;a Victoria 
+		Atencia</font></i></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Cu&aacute;nta hermosura en 
+		tierra nuestea!<br>Y que se hace de todos por obra de tu palabra<br>y de 
+		la m&uacute;sica.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Dios os bendiga.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Madrid, 20 de junio de 
+		1989</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="DE L&Eacute;TOILE DES ALPES"></a></font>
+		<font face="Georgia" color="#9BC9BB">De L'etoile des alpes</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">De l'&Eacute;toile des Alpes<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&agrave;<br>l'ëtoile Polaire,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">invisible y presente,<br>
+		&iacute;ntima de<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tan inmediata.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">10.10.1983</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="DELIRIO DEL INCR&Eacute;DULO">
+		</a>Delirio del incr&eacute;dulo</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>&nbsp;&nbsp; Bajo la flor, la rama;<br>sobre la flor, la estrella;<br>
+		bajo la estrella, el viento.<br>&iquest;Y m&aacute;s all&aacute;?<br>M&aacute;s all&aacute;, &iquest;no recuerdas? 
+		, s&oacute;lo la nada.<br>La nada, &oacute;yelo bien, mi alma:<br>du&eacute;rmete, adu&eacute;rmete 
+		en la nada.<br>[Si pudiera, pero hundirme... ]<br>&nbsp;&nbsp; Ceniza de 
+		aquel fuego, oquedad,<br>agua espesa y amarga:<br>el llanto hecho sudor;<br>
+		la sangre que, en su huida, se lleva la palabra.<br>Y la carga vac&iacute;a de 
+		un coraz&oacute;n sin marcha.<br>&iquest;De verdad es que no hay nada? Hay la nada.<br>
+		Y que no lo recuerdes. [Era tu gloria.]<br>&nbsp;&nbsp; M&aacute;s all&aacute; del 
+		recuerdo, en el olvido, escucha<br>en el soplo de tu aliento.<br>Mira en 
+		tu pupila misma dentro,<br>en ese fuego que te abrasa, luz y agua.<br>&nbsp;&nbsp; 
+		Mas no puedo.<br>Ojos y o&iacute;dos son ventanas.<br>Perdido entre m&iacute; mismo, 
+		no puedo buscar nada;<br>no llego hasta la nada.<br>
+		<br>Roma. Enero, 1950. Hotel d'lnghilterra</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="EL AGUA ENSIMISMADA"></a></font>
+		<font face="Georgia" color="#9BC9BB">El agua ensimismada</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Edison Simons</i><br>
+		<br>El agua ensimismada<br>piensa o sue&ntilde;a?<br>El &aacute;rbol que se inclina 
+		buscando sus ra&iacute;ces,<br>el horizonte,<br>ese fuego intocado,<br>&iquest;se 
+		piensan o se sue&ntilde;an?<br>El m&aacute;rmol fue ave alguna vez;<br>el oro, llama;<br>
+		el cristal, aire o l&aacute;grima.<br>&iquest;Lloran su perdido aliento?<br>&iquest;Acaso son 
+		memoria de s&iacute; mismos<br>y detenidos se contemplan ya para siempre?<br>Si 
+		t&uacute; te miras, &iquest;qu&eacute; queda?<br>
+		<br>1950. Roma (antes de abril) .<br>Albergo d'lnghilterra.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">La Pi&egrave;ce, 2 de febrero 
+		de 1978</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MUCHAS GRACIAS"></a></font>
+		<font face="Georgia" color="#9BC9BB">Muchas gracias</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Muchas gracias;<br>muchas, muchas gracias.<br>Qu&eacute; va. Est&aacute; muy bien.<br>
+		Disp&eacute;nseme, se&ntilde;ora.<br>No hay de qu&eacute;.<br>Est&aacute; completo, pero est&aacute; muy 
+		bien.<br>Un farsante, un cuentista,<br>un enterao<br>-la Place de 
+		l'Alma-, un cualquiera,<br>me da igual.<br>Cuando usted quiera.<br>Ah, 
+		se&ntilde;ora, &iexcl;si usted supiese!<br>Est&aacute; bien.<br>Aquellos buenos tiempos...<br>
+		Mas Par&iacute;s es Par&iacute;s, y est&aacute; muy bien.<br>Aunque no lo comprendo.<br>
+		L'&Eacute;toile, Notre-Dame, Les Champs,<br>se sabe, &iquest;por qu&eacute; no?<br>Encuentro, 
+		encontrar&eacute;, &iquest;encontr&eacute;<br>ya?<br>Entonces, apres&uacute;rese, vaya.<br>&iquest;Por qu&eacute; 
+		no?</font></p>
+		<p><i><font face="Georgia" size="2" color="#9BC9BB">Traducci&oacute;n de M&ordf; 
+		Victoria Atencia</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="P&Aacute;MPANO, ROSA, LAS ERAS..."></a></font>
+		<font face="Georgia" color="#9BC9BB">P&aacute;mpano, rosa, las eras...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(<i>Ed. Jes&uacute;s Moreno)</i><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		P&aacute;mpano, rosa, las eras<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las navas<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Altura carrascal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		c&aacute;ntaro, hombre, las eras<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ladera, azul, la quebrada<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cabrerizo, gris, las bre&ntilde;as<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la enramada y el molino<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y a m&iacute; qu&eacute;, de qu&eacute; te quejas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		taciturno. Horado [...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		siempre, jam&aacute;s, nunca<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		amor, ausencia<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Silencio. Ya no m&aacute;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		qu&eacute; lejos<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pan: c&aacute;ntaro, hogaza<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		no vuelvas.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Muerto y yerto. Calcinado<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ardiente y feliz, las arenas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Juntas, secano<br>huidas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		barbecho, quietud, [...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cuita, <i>faenar, gozo,</i> siesta<br><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		llanto</i>, amor, <i>serran&iacute;a</i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		aire. Amanecidos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		soledad, angustia, calma<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sonrisa. &iquest;Por qu&eacute; no?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>reja</i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		colibr&iacute; y mes de mayo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		siempreviva, candela<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		enlucida, cal, claveles<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		rosa y tomillo [ ...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		acacias entre dos luces<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>enterrarme mecida</i>, vega<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cantueso, humilde, brega<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		di que s&iacute; y <i>ser&aacute;</i>. Alondra, paloma<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		risa. &iquest; Qu&eacute; esperas?<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No [ ...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ensimismado y amargo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Espa&ntilde;a, amarilla; [ ...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		desconocido y [ ...]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		confuso, [ ...] pelea<br>t&aacute;rtagos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		humillada y sin ventana<br>somorujos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ya acab&oacute;. Desv&iacute;vete<br>somormujos&nbsp;&nbsp; (*)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No te mueras<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Resucita y agoniza<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No te detengas. Sierpe. Sirena.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;Para qu&eacute;? &iquest;No ves?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No quiero: quer&iacute;a. Sue&ntilde;o<br>La sombra&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ancestro. Fiera<br>de la<br>Corneja<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No vuelvas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ojos, manos, atropello<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		helada, acecho, qu&eacute; <i>pena</i><br>entregas<br>extranjer&iacute;a [ ...] [ ...] 
+		[ ...]<br>embelesos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Madrugada 
+		<i>embebiendo</i>. Pecado<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Culpa. No vuelvas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No vuelvas. No [ ...] cuitas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las candelas sudores Amor<br>Antes de&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Nada<br>morir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No vuelvas<br>quisiera&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Nadie esta Nada<br>transverberaci&oacute;n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Estrellas Alba<br>y &Aacute;ngel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;La Virgen! Luna, El Mar<br>o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La luz<br>substancia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para&iacute;so. Entra&ntilde;as Madre<br>herida. Pero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La Alba<br>esencia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		No vuelvas<br>huesos<br>m&eacute;dula<br>deshechos<br>al cabo de tantas penas<br>
+		qu&eacute; vida<br>Virgen. Paloma. Pureza(**) 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Taciturno [ ...] nada<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		protestante. Rienda<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		suelta<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		caridad<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		locura viviente<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		obediencia<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Libertad. No: admirar<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;Por qu&eacute; no me<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		entiendes? &iexcl;Se&ntilde;or!<br><br>(*) Jes&uacute;s Moreno a&ntilde;ade aqu&iacute; a mano en mi 
+		ejemplar este somormujos&quot; en correcci&oacute;n -supongo- del &quot;somorujos&quot;<br>de 
+		la l&iacute;nea anterior, que no tacha sin embargo. Ignoro, pues, si Mar&iacute;a 
+		escribi&oacute; las dos cosas. Para esa y otras cuestiones <br>
+		ser&iacute;a preciso disponer de su facs&iacute;mil. (Nota de Mar&iacute;a Victoria Atencia)<br><br>
+		(**) Advierte Jes&uacute;s Moreno que aqu&iacute; se lee claramente. bajo una 
+		tachadura. (Nota de Mar&iacute;a Victoria Atencia)<br><br></font></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>&nbsp;</p>
+    <p align="center"><font face="Georgia" size="3" color="#B0C6C1"><img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:54:19 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:27:21 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,636 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Gabriela Mistral</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Gabriela Mistral. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.  Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Gabriela_Mistral,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app19.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/mistralORO.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/mistralORO.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161335" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mistralORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:13:35 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./mistralORO.htm" title="15:22:41 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:13:35 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mistralORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="12 Jul 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:13:35 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./mistralORO.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>95 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">16 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010001_2003:-1:010100010101_2004:-1:010101010001_2005:-1:011100000010_2006:-1:010411001220_2007:-1:511147571300_2008:-1:011421000002_2009:-1:010000100000_2010:-1:110000001211_2011:-1:000000001100_2012:-1:000011101000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p>&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+<p align="center"><br>
+&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MISTRALORO.jpg" width="269" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MISTRALORO1.jpg" width="177" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<blockquote>
+  <blockquote>
+    <p align="left"><font face="Georgia" color="#526462"><strong>
+	<a
+      href="./mistralORO.htm#APEGADO A M&Iacute;">Apegado a m&iacute;</a><br>
+	<br>
+	<a href="./mistralORO.htm#CANCI&Oacute;N DE LAS MUCHACHAS MUERTAS">Canci&oacute;n de las muchachas muertas</a><br>
+	<br>
+	<a href="./mistralORO.htm#DOS &Aacute;NGELES">Dos &aacute;ngeles</a><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	</strong></font><strong><font face="Georgia" color="#526462">&nbsp;&nbsp;&nbsp; <br><a href="./mistralORO.htm#EL &Aacute;NGEL GUARDI&Aacute;N">
+	El &aacute;ngel guardi&aacute;n</a><br>
+	<br>
+	<a href="./mistralORO.htm#LA EXTRANJERA">La extranjera</a><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+	<a href="./mistralORO.htm#LA FLOR DEL AIRE">La flor del aire</a><br>
+	<br><a href="./mistralORO.htm#LA ENCINA">La encina</a><br>
+	<br>
+	<a href="./mistralORO.htm#MECIENDO">Meciendo</a><br>
+	<br><a href="./mistralORO.htm#MIENTRAS BAJA LA NIEVE">Mientras baja la nieve</a><br>
+	<br>
+	<a href="./mistralORO.htm#VOLVERLO A VER">Volverlo a ver</a></font><font face="Georgia" size="2" color="#526462"><br>
+	<br> 
+	</font><font face="Georgia" size="2" color="#404D48">M&aacute;s poes&iacute;a de este 
+	autor en: </font><font color="#526462"><b><font face="Georgia">
+	<a target="_blank" href="./indice-A-K.htm" style="color: #43504C; text-decoration: none">
+	&Iacute;ndice A-K</a></font></b></font><br>
+	</strong><font size="2" color="#526462"><strong>
+
+	<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+	</font>
+
+</strong></font><strong>
+
+	<font face="Georgia" color="#526462">
+	<a
+      href="./" style="color: #43504C; text-decoration: none">
+	A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+	</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+	</font></font><font face="Georgia" color="#526462">
+	<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+	Poes&iacute;a de Oro</a><br>
+&nbsp;</p></font><font face="Georgia" size="2" color="#526462">
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+	<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+	Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+	<p align="center"><font color="#404D48" size="2">Tus comentarios o 
+	sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. 
+	Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+	</font><font size="4">
+	<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+	poesia@amediavoz.com</a></font></p>
+	</font>
+
+</strong>
+	<p align="center">&nbsp;</p>
+	<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+  </blockquote>
+	<p align="center"><font face="Georgia"><br></font></p>
+	<blockquote>
+		<p><strong>
+		<font face="Georgia" color="#526462">
+		<a name="APEGADO A M&Iacute;"></a></font><font face="Georgia" color="#43504C">
+		Apegado a m&iacute;</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Velloncito de 
+		mi carne<br>que en mis entra&ntilde;as tej&iacute;,<br>velloncito tembloroso,<br>
+		&iexcl;du&eacute;rmete apegado a m&iacute;!</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>La perdiz 
+		duerme en el trigo<br>escuch&aacute;ndola latir.<br>No te turbes por aliento,<br>
+		&iexcl;du&eacute;rmete apegado a m&iacute;</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Yo que todo lo 
+		he perdido<br>ahora tiemblo hasta al dormir.<br>No resbales de mi pecho,<br>
+		du&eacute;rmete apegado a m&iacute;!</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="CANCIÓN DE LAS MUCHACHAS MUERTAS"></a></font>
+		<font face="Georgia" color="#43504C">Canci&oacute;n de las muchachas muertas</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>
+		<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Recuerdo de mi sobrina Graciela</em><br><br>&iquest;Y las pobres muchachas 
+		muertas,<br>escamoteadas en abril,<br>las que asom&aacute;ronse y hundi&eacute;ronse<br>
+		como en las olas el delf&iacute;n?<br>
+		<br>&iquest;A d&oacute;nde fueron y se hallan,<br>encuclilladas por re&iacute;r<br>o 
+		agazapadas esperando<br>voz de un amante que seguir?<br>
+		<br>&iquest;Borr&aacute;ndose como dibujos<br>que Dios no quiso rete&ntilde;ir<br>o anegadas 
+		poquito a poco<br>como en sus fuentes un jard&iacute;n?<br>
+		<br>A veces quieren en las aguas<br>ir componiendo su perfil,<br>y en 
+		las carnudas rosas-rosas<br>casi consiguen sonre&iacute;r.<br>
+		<br>En los pastales acomodan<br>su talle y bulto de ce&ntilde;ir<br>y casi 
+		logran que una nube<br>les preste cuerpo por ardid;<br>
+		<br>Casi se juntan las deshechas;<br>casi llegan al sol feliz;<br>casi 
+		reniegan su camino<br>recordando que eran de aqu&iacute;;<br>
+		<br>Casi deshacen su traici&oacute;n<br>y van llegando a su redil.<br>&iexcl;Y casi 
+		vemos en la tarde<br>el divino mill&oacute;n venir!</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="DOS &Aacute;NGELES"></a></font><font face="Georgia" color="#43504C">
+		Dos &aacute;ngeles</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>
+		No tengo s&oacute;lo un &Aacute;ngel<br>
+		con ala estremecida:<br>
+		me mecen como al mar<br>
+		mecen las dos orillas<br>
+		el &Aacute;ngel que da el gozo<br>
+		y el que da la agon&iacute;a,<br>
+		el de alas tremolantes<br>
+		y el de las alas finas.<br>
+		<br>
+		Yo s&eacute;, cuando amanece,<br>
+		cu&aacute;l va a regirme el d&iacute;a,<br>
+		si el de color de llama<br>
+		o el color de ceniza,<br>
+		y me les doy como alga<br>
+		a la ola, contrita.<br>
+		<br>
+		S&oacute;lo una vez volaron<br>
+		con las alas unidas:<br>
+		el d&iacute;a del amor,<br>
+		el de la Epifan&iacute;a.<br>
+		<br>
+		&iexcl;Se juntaron en una<br>
+		sus alas enemigas<br>
+		y anudaron el nudo<br>
+		de la muerte y la vida!</font></strong><font face="Georgia" size="2" color="#43504C"><strong>
+		<br><br>&nbsp;</strong></font></p>
+	<blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <p align="center">
+			<font color="#43504C">
+			<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+			<p align="center">&nbsp;</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="EL &Aacute;NGEL GUARDI&Aacute;N"></a></font>
+		<font face="Georgia" color="#43504C">El &aacute;ngel guardi&aacute;n</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Es verdad, no 
+		es un cuento; 
+		<br>hay un &Aacute;ngel Guardi&aacute;n <br>que te toma y te lleva como el viento <br>
+		y con los ni&ntilde;os va por donde van.<br>
+		<br>Tiene cabellos suaves <br>que van en la venteada, <br>ojos dulces y 
+		graves 
+		<br>que te sosiegan con una mirada <br>y matan miedos dando claridad. 
+		<br>(No es un cuento, es verdad.)<br><br>El tiene cuerpo, manos y pies 
+		de alas 
+		<br>y las seis alas vuelan o resbalan, <br>las seis te llevan de su aire 
+		batido 
+		<br>y lo mismo te llevan de dormido.<br><br>Hace m&aacute;s dulce la pulpa 
+		madura 
+		<br>que entre tus labios golosos estruja; <br>rompe a la nuez su taimada 
+		envoltura 
+		<br>y es quien te libra de gnomos y brujas.<br><br>Es quien te ayuda a 
+		que cortes las rosas, 
+		<br>que est&aacute;n sentadas en trampas de espinas, <br>el que te pasa las 
+		aguas ma&ntilde;osas 
+		<br>y el que te sube las cuestas m&aacute;s pinas.</strong></font></p>
+		<p style="mso-outline-level: 5" align="left">&nbsp;</p>
+		<p style="mso-outline-level: 5" align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font><font face="Georgia" size="2"
+      color="#43504C"><strong><br
+      style="mso-special-character: line-break"><br>
+&nbsp;</strong></font></p>
+	</blockquote>
+	<blockquote>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="LA ENCINA"></a></font><font face="Georgia" color="#43504C">La 
+		encina</font><font face="Georgia" size="2" color="#43504C"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A la maestra Se&ntilde;orita Br&iacute;gida Walker.</em><br>
+		<br>I<br>ESTA alma de mujer viril y delicada,<br>dulce en la gravedad, 
+		severa en el amor,<br>es una encina espl&eacute;ndida de sombra perfumada,<br>
+		por cuyos brazos rudos trepara un mirto en flor.<br>
+		<br>Pasta de nardos suaves, pasta de robles fuertes,<br>le amasaron la 
+		carne rosa del coraz&oacute;n,<br>y aunque es altiva y recia, si miras bien 
+		adviertes<br>un temblor en sus hojas que es temblor de emoci&oacute;n.<br>
+		<br>Dos millares de alondras el gorjeo aprendieron<br>en ella, y hacia 
+		todos los vientos se esparcieron<br>para poblar los cielos de gloria. 
+		&iexcl;Noble encina,<br>
+		<br>d&eacute;jame que te bese en el tronco llagado,<br>que con la diestra en 
+		alto, tu macizo sagrado<br>largamente bendiga, como hechura divina!<br>
+		<br>II<br>El peso de los nidos &iexcl;fuerte! no te ha agobiado.<br>Nunca la 
+		dulce carga pensaste sacudir.<br>No ha agitado tu fronda sensible otro 
+		cuidado<br>que el ser ancha y espesa para saber cubrir.<br>
+		<br>La vida (un viento) pasa por tu vasto follaje<br>como un 
+		encantamiento, sin violencia, sin voz;<br>la vida tumultuosa golpea en 
+		tu cordaje<br>con el sereno ritmo que es el ritmo de Dios.<br>
+		<br>De t&aacute;nto albergar nido, de t&aacute;nto albergar canto,<br>de t&aacute;nto hacer 
+		tu seno aromosa tibieza,<br>de t&aacute;nto dar servicio, y t&aacute;nto dar amor,<br>
+		<br>todo tu le&ntilde;o heroico se ha vuelto, encina, santo.<br>Se te ha hecho 
+		en la fronda inmortal la belleza,<br>&iexcl;y pasar&aacute; el oto&ntilde;o sin tocar tu 
+		verdor!<br>
+		<br>III<br>&iexcl;Encina, noble encina, yo te digo mi canto! <br>Oue nunca de 
+		tu tronco mane amargor de llanto,<br>que delante de ti prosterne el 
+		le&ntilde;ador<br>de la maldad humana, sus hachas; y que cuando<br>el rayo de 
+		dios hi&eacute;rate, para ti se haga blando<br>y ancho como tu seno, el seno 
+		del Se&ntilde;or!</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="LA EXTRANJERA"></a></font><font face="Georgia" color="#43504C">
+		La extranjera</font><font face="Georgia" size="2" color="#43504C"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Francis de Miomandre</em><br>
+		<br>Habla con dejo de sus mares b&aacute;rbaros,<br>con no s&eacute; qu&eacute; algas y no s&eacute; 
+		qu&eacute; arenas;<br>reza oraci&oacute;n a dios sin bulto y peso,<br>envejecida como 
+		si muriera.<br>Ese huerto nuestro que nos hizo extra&ntilde;o,<br>ha puesto 
+		cactus y zarpadas hierbas.<br>
+		<br>Alienta del resuello del desierto<br>y ha amado con pasi&oacute;n de que 
+		blanquea,<br>que nunca cuenta y que si nos contase<br>ser&iacute;a como el mapa 
+		de otra estrella.<br>
+		<br>Vivir&aacute; entre nosotros ochenta a&ntilde;os,<br>pero siempre ser&aacute; como si 
+		llega,<br>hablando lengua que jadea y gime<br>y que le entienden s&oacute;lo 
+		bestezuelas.<br>Y va a morirse en medio de nosotros,<br>en una noche en 
+		la que m&aacute;s padezca,<br>con s&oacute;lo su destino por almohada,<br>de una 
+		muerte callada y extranjera.</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="LA FLOR DEL AIRE"></a></font>
+		<font face="Georgia" color="#43504C">La flor del aire</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Yo la encontr&eacute; 
+		por mi destino, 
+		<br>de pie a mitad de la pradera, <br>gobernadora del que pase, <br>del 
+		que le hable y que la vea.<br>
+		<br>Y ella me dijo:&nbsp; &laquo;Sube al monte. <br>Yo nunca dejo la pradera, 
+		<br>y me cortas las flores blancas <br>como nieves, duras y tiernas.&raquo; 
+		<br><br>Me sub&iacute; a la &aacute;cida monta&ntilde;a, <br>busqu&eacute; las flores donde albean, 
+		<br>entre las rocas existiendo <br>medio dormidas y despiertas.<br><br>
+		Cuando baj&eacute;, con carga m&iacute;a, 
+		<br>la hall&eacute; a mitad de la pradera, <br>y fui cubri&eacute;ndola fren&eacute;tica, <br>
+		con un torrente de azucenas.<br>
+		<br>Y sin mirarse la blancura, <br>ella me dijo:&nbsp; &laquo;T&uacute; acarrea <br>
+		ahora s&oacute;lo flores rojas. 
+		<br>Yo no puedo pasar la pradera.&raquo; <br><br>Trepe las penas con el 
+		venado, 
+		<br>y busqu&eacute; flores de demencia, <br>las que rojean y parecen <br>que de 
+		rojez vivan y mueran. 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"><font face="Georgia"><br>
+		</font></font><font face="Georgia" size="2" color="#43504C"><strong><br>
+		&nbsp;</strong></font></p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="MECIENDO"></a></font><font face="Georgia" color="#43504C">
+		Meciendo</font></strong></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>El mar sus 
+		millares de olas<br>mece divino.<br>Oyendo a los mares amantes,<br>mezo 
+		a mi ni&ntilde;o.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>El viento 
+		errabundo en la noche<br>mece los trigos.<br>Oyendo a los vientos 
+		amantes,<br>mezo a mi ni&ntilde;o.</strong></font></p>
+		<p><font face="Georgia" size="2" color="#43504C"><strong>Dios Padre sus 
+		miles de mundos<br>mece sin ruido.<br>Sintiendo su mano en la sombra,<br>
+		mezo a mi ni&ntilde;o.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong>
+		<font face="Georgia" size="2" color="#43504C">
+		<a name="MIENTRAS BAJA LA NIEVE"></a></font>
+		<font face="Georgia" color="#43504C">Mientras baja la nieve</font><font face="Georgia" size="2" color="#43504C"><br><br>
+		Ha bajado la nieve, divina criatura,<br>el valle a conocer .<br>Ha 
+		bajado la nieve, esposa de la estrella.<br>&iexcl;Mir&eacute;mosla caer!<br>
+		<br>&iexcl;Dulce! Llega sin ruido, como los suaves seres<br>que recelan da&ntilde;ar 
+		.<br>As&iacute; baja la luna y as&iacute; bajan los sue&ntilde;os.<br>&iexcl;Mir&eacute;mosla bajar!<br>
+		&iexcl;Pura! Mira tu valle c&oacute;mo lo est&aacute; bordando<br>de su ligero azahar .<br>
+		Tiene unos dulces dedos, tan leves y sutiles,<br>que rozan sin rozar.<br>
+		&iexcl;Bella! &iquest;No te parece que sea el don magn&iacute;fico<br>de un alto Donador?<br>
+		Detr&aacute;s de las estrechas su ancho peplo de seda<br>desgaja sin rumor.<br>
+		D&eacute;jala que en la frente te diluya su pluma<br>y te prenda su flor.<br>
+		&iexcl;Qui&eacute;n sabe si no trae un mensaje a los hombres,<br>de parte del Se&ntilde;or!</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+	<p><strong>
+	<font face="Georgia" size="2" color="#43504C">
+	<a name="VOLVERLO A VER"></a></font><font face="Georgia" color="#43504C">
+	Volverlo a ver</font></strong></p>
+	<p><font face="Georgia" size="2" color="#43504C"><strong>&iquest;Y nunca, nunca 
+	m&aacute;s, ni en noches llenas<br>de temblor de astros, ni en las alboradas<br>
+	v&iacute;rgenes, ni en las tardes inmoladas?<br>
+	<br>&iquest;Al margen de ning&uacute;n sendero p&aacute;lido,<br>que ci&ntilde;e el campo, al margen de 
+	ninguna<br>fontana tr&eacute;mula, blanca de luna?<br>
+	<br>&iquest;Bajo las trenzaduras de la selva,<br>donde llam&aacute;ndolo me ha anochecido,<br>
+	ni en la gruta que vuelve mi alarido?<br>
+	<br>&iexcl;Oh, no! &iexcl;Volverlo a ver, no importa d&oacute;nde,<br>en remansos de cielo o en 
+	v&oacute;rtice hervidor,<br>bajo unas lunas pl&aacute;cidas o en un c&aacute;rdeno horror!<br>
+	<br>&iexcl;Y ser con &eacute;l todas las primaveras<br>y los inviernos, en un angustiado<br>
+	nudo, en torno a su cuello ensangrentado! 
+	</strong></font></p>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:13:35 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:12 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

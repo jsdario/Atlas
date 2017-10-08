@@ -1,0 +1,1190 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Ingeborg Bachmann</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Ingeborg Bachmann."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Ingeborg Bachmann. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Ingeborg_Bachmann,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bachmann.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bachmann.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163606" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bachmann.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:36:06 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bachmann.htm" title="21:10:47 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:36:06 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bachmann.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="27 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:36:06 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bachmann.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>16 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">29 Jul 11 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000100120_2012:-1:101111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p><script language="javascript" src="/web/20130815163606js_/http://127.0.0.1:1026/js.cgi?pca&amp;r=53"></script>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BACHMANN.jpg" width="439" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BACHMANN1.jpg" width="202" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="703" height="345" id="table1">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="695">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="318" width="279" valign="top">
+			<p align="left">&nbsp;
+			<img border="0" src="./BACHMANN2.jpg" width="230" height="308"></td>
+			<td width="412" valign="top" height="318">
+			<p align="left"><u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font size="2" color="#C4CAD4" face="Georgia"><br>
+			<br>
+			Poeta&nbsp; y novelista austriaca nacida en Klagenfurt en 1926.<br>
+			Due&ntilde;a de una vasta cultura, obtuvo doctorados en Filosof&iacute;a, 
+			Psicolog&iacute;a y Literatura, por las&nbsp; universidades de Innsbruck, 
+			Graz y Viena.<br>
+			Adscrita al c&iacute;rculo literario &quot;Gruppe 47&quot;, public&oacute; su primer libro 
+			de poemas bajo el t&iacute;tulo de <i>&quot;El retraso consentido&quot;</i> en 1953. 
+			La influencia que en ella ejercieron los diferentes movimientos 
+			literarios europeos, la llevaron a viajar por Francia, Estados 
+			Unidos e Inglaterra, estableciendo su residencia final en Roma, 
+			donde se dedic&oacute; por completo a la producci&oacute;n de poemas, ensayos, 
+			cuentos y libretos de &oacute;pera.<br>
+			Es considerada como una de las m&aacute;s importantes escritoras modernas 
+			en lengua alemana.<br>
+			De su obra po&eacute;tica se destacan principalmente <i>&quot;Últimos poemas&quot;</i>,
+			<i>&quot;El tiempo postergado&quot; </i>e <i>&quot;Invocaci&oacute;n a la Osa Mayor&quot;.</i>
+			<br>
+			Falleci&oacute; en Roma en 1973, a ra&iacute;z de las quemaduras sufridas en un 
+			incendio en su residencia.&nbsp;&nbsp;&nbsp; &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Ingeborg 
+Bachmann:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia">
+		<a href="./bachmann.htm#Bajo la tormenta de rosas">Bajo la tormenta de rosas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Cantos durante la huida">
+		Cantos durante la huida</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Curr&iacute;culum Vitae">
+		Curr&iacute;culum Vitae</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#El tiempo postergado">El 
+		tiempo postergado</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#En la penumbra">En la 
+		penumbra</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Expl&iacute;came, amor">
+		Expl&iacute;came, amor</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bachmann.htm#Invocaci&oacute;n a la Osa Mayor">Invocaci&oacute;n a la Osa Mayor</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Nueva">Nueva</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Publicidad">Publicidad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Salmo">Salmo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#S&oacute;lo cosas sombr&iacute;as">S&oacute;lo 
+		cosas sombr&iacute;as</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Sombra rosas sombra">
+		Sombra rosas sombra</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Temprano mediod&iacute;a">
+		Temprano mediod&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Todos los d&iacute;as">Todos los 
+		d&iacute;as</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Toma de tierra">Toma de 
+		tierra</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Una especie de p&eacute;rdida">
+		Una especie de p&eacute;rdida</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bachmann.htm#Vuelo nocturno">Vuelo 
+		nocturno</a></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font><font face="Georgia" color="#C4CAD4">
+		<a name="Bajo la tormenta de rosas"></a>Bajo la tormenta de rosas</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Adonde nos dirijamos 
+		bajo la tormenta de rosas,<br>
+		las espinas iluminan la noche, y el trueno<br>
+		de las hojas, antes tan silenciosas en los arbustos,<br>
+		nos sigue ahora muy de cerca. </font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El tiempo 
+		postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><br>
+&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Cantos durante la huida"></a>Cantos durante la huida</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>Dura legge d'Amor! ma, ben che obliqua, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Servar convensi; per&ograve; ch'ella aggiunge <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Di cielo in terra, universale, antiqua&laquo; <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Petrarca, &quot;I Ttriunfi&quot; </i><br>
+		<br>
+		I <br>
+		La hoja de palma se parte con la nieve, <br>
+		las escaleras se derrumban, <br>
+		la ciudad yace tiesa y brilla <br>
+		en el extra&ntilde;o resplandor de invierno. <br>
+		<br>
+		Los ni&ntilde;os gritan y suben <br>
+		a la colina del hambre, <br>
+		comen de la blanca harina <br>
+		y rezan al cielo. <br>
+		<br>
+		La rica quincalla invernal, <br>
+		el oro de las mandarinas, <br>
+		vuela en las r&aacute;fagas salvajes. <br>
+		Rueda la naranja sanguina. <br>
+		<br>
+		II <br>
+		Yo, sin embargo, yazgo solo <br>
+		encerrado en hielo, lleno de heridas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Todav&iacute;a la nieve<br>
+		no me vend&oacute; los ojos.<br>
+		<br>
+		Los muertos, abrazados a m&iacute;,<br>
+		callan en todas las lenguas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Nadie me ama ni ha 
+		agitado<br>
+		una l&aacute;mpara para m&iacute;!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">X<br>
+		&iexcl;Oh amor, que rompiste y tiraste<br>
+		nuestras cortezas, nuestro escudo,<br>
+		el cobijo y la herrumbre marr&oacute;n de a&ntilde;os!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Oh penas, que 
+		pis&aacute;ndolo apagaron nuestro amor,<br>
+		su fuego h&uacute;medo&nbsp; en las partes sensibles!<br>
+		Llena de humo, sucumbiendo en el humo, la llama se repliega.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XII<br>
+		Boca que durmi&oacute; en mi boca,<br>
+		ojo que vigil&oacute; mi ojo,<br>
+		mano-</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">y los que me arrasaron, 
+		los ojos!<br>
+		&iexcl;Boca que pronunci&oacute; la sentencia,<br>
+		mano que me ejecut&oacute;!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XV<br>
+		El amor tiene un triunfo y la muerte tiene otro, <br>
+		el tiempo y el tiempo de despu&eacute;s. <br>
+		Nosotros no tenemos ninguno. <br>
+		<br>
+		A nuestro alrededor s&oacute;lo hundirse de astros. Destellos y silencio. <br>
+		Mas la canci&oacute;n por encima del polvo despu&eacute;s <br>
+		va a superarnos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></i></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Curr&iacute;culum Vitae"></a>
+		Curr&iacute;culum Vitae </font><font size="2" color="#C4CAD4" face="Georgia">
+		<br>
+		<br>
+		Larga es la noche, <br>
+		larga para el hombre <br>
+		que no puede morir, largamente <br>
+		se tambalea bajo farolas <br>
+		su ojo desnudo y su ojo <br>
+		cegado por el aliento de aguardiente, y el olor <br>
+		a carne mojada bajo sus u&ntilde;as <br>
+		no siempre le aturde, oh dios, <br>
+		larga es la noche. <br>
+		<br>
+		Mi cabello no se encanece <br>
+		porque sal&iacute; del vientre de las m&aacute;quinas, <br>
+		Rosarroja* me unt&oacute; de alquitr&aacute;n la frente <br>
+		y los mechones, hab&iacute;an estrangulado <br>
+		a su hermana, blanca como la nieve. Pero yo, <br>
+		el jefe de la tribu, pas&eacute; por la ciudad <br>
+		de diez veces cien mil almas, y mi pie <br>
+		pisaba las cucarachas del alma bajo el cielo de cuero, del cual <br>
+		pend&iacute;an diez veces cien mil pipas de la paz, <br>
+		fr&iacute;as. Una calma de &aacute;ngeles <br>
+		dese&eacute; a menudo para m&iacute; <br>
+		y cotos de caza llenos <br>
+		de los gritos impotentes <br>
+		de mis amigos.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">&nbsp;Con las piernas y las 
+		alas abiertas <br>
+		sub&iacute;a la sabihonda juventud <br>
+		sobre m&iacute;, sobre el esti&eacute;rcol, sobre el jazm&iacute;n, <br>
+		hacia las inmensas noches del secreto <br>
+		de la ra&iacute;z cuadrada, la leyenda de la muerte <br>
+		empa&ntilde;a mi ventana cada hora, <br>
+		dadme euforbia y verted <br>
+		la risa en mi garganta <br>
+		de los viejos que nos antecedieron, cuando <br>
+		caiga yo sobre los infolios <br>
+		en el sue&ntilde;o vergonzoso, <br>
+		para que no pueda pensar, <br>
+		para que juegue con flecos <br>
+		de los que cuelgan serpientes. <br>
+		<br>
+		Tambi&eacute;n nuestras madres <br>
+		so&ntilde;aron con el futuro de sus maridos, <br>
+		los vieron poderosos, <br>
+		revolucionarios y solitarios, <br>
+		pero despu&eacute;s del retiro los han visto encorvados en el huerto <br>
+		sobre las llameantes malas hierbas, <br>
+		mano a mano con el fruto charlat&aacute;n <br>
+		de su amor. Triste padre m&iacute;o, <br>
+		&iquest;por qu&eacute; callasteis entonces <br>
+		y no hab&eacute;is seguido pensando? <br>
+		<br>
+		Perdido en las cascadas de fuego, <br>
+		En una noche junto a un ca&ntilde;&oacute;n <br>
+		que no dispara, condenadamente larga <br>
+		es la noche, bajo el esputo<br>
+		de una luna enfermiza, su luz <br>
+		biliosa, pasa volando sobre m&iacute; <br>
+		el trineo con la historia <br>
+		embellecida, <br>
+		en la v&iacute;a del sue&ntilde;o de poder (lo cual no impido). <br>
+		No era que yo durmiese: estaba despierto, <br>
+		entre esqueletos de hielo buscaba el camino, <br>
+		volv&iacute;a a casa, me ce&ntilde;&iacute;a el brazo <br>
+		y la pierna con hiedra y con restos <br>
+		de sol blanqueaba las ruinas. <br>
+		Respet&eacute; los d&iacute;as festivos, <br>
+		y s&oacute;lo si mi pan estaba bendecido <br>
+		lo com&iacute;a. <br>
+		<br>
+		En una &eacute;poca arrogante <br>
+		hay que pasar de prisa <br>
+		de una luz a otra, de un pa&iacute;s <br>
+		a otro, bajo el arco iris, <br>
+		con la punta del comp&aacute;s en el coraz&oacute;n, <br>
+		tomando la noche por radio. <br>
+		Abierto de par en par. Desde las monta&ntilde;as <br>
+		se ven lagos, en los lagos <br>
+		monta&ntilde;as, y en el armaz&oacute;n de las nubes <br>
+		se balancean las campanas <br>
+		de un mundo. Saber de qui&eacute;n <br>
+		es ese mundo, me est&aacute; prohibido. <br>
+		<br>
+		Ocurri&oacute; un viernes: <br>
+		-yo estaba ayunando por mi vida, <br>
+		el aire chorreaba del zumo de los limones<br>
+		y la espina estaba clavada en mi paladar­ <br>
+		entonces saqu&eacute; del pez abierto <br>
+		un anillo que lanzado <br>
+		al nacer yo, cay&oacute; en el r&iacute;o <br>
+		de la noche y se hundi&oacute;. <br>
+		Yo volv&iacute; a lanzarlo a la noche. <br>
+		<br>
+		Oh &iexcl;si no tuviera miedo a la muerte! <br>
+		Si tuviera la palabra <br>
+		(y no la errase) <br>
+		si no tuviera cardos en el coraz&oacute;n <br>
+		(y rechazara el sol), <br>
+		si no tuviera avidez en la boca <br>
+		(y no bebiera el agua salvaje), <br>
+		si no abriera el p&aacute;rpado <br>
+		(y no hubiera visto la cuerda). <br>
+		&iquest;Est&aacute;n tirando del cielo? <br>
+		Si no me sostuviera la tierra <br>
+		hace tiempo que yacer&iacute;a quieta, <br>
+		hace tiempo que yacer&iacute;a <br>
+		donde me quiere la noche, <br>
+		antes de que hinche las narices <br>
+		y levante su casco <br>
+		para nuevos golpes, <br>
+		siempre para golpear. <br>
+		Siempre la noche. <br>
+		Y nunca el d&iacute;a.&nbsp; </font></p>
+		<p><i><font size="2" color="#C4CAD4" face="Georgia">*Rosarroja y 
+		Blancanieves son hermanas en el cuento.</font></i></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></i></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El tiempo postergado">
+		</a>El tiempo postergado</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Vienen d&iacute;as m&aacute;s duros.
+		<br>
+		El tiempo postergado hasta nuevo aviso <br>
+		asoma por el horizonte. <br>
+		Pronto tendr&aacute;s que atarte los zapatos <br>
+		y correr los perros de vuelta a las granjas marisme&ntilde;as. <br>
+		Pues las v&iacute;sceras de los peces <br>
+		se han enfriado al viento. <br>
+		Arde pobre la luz de los altramuces. <br>
+		Tu mirada rastrea la niebla: <br>
+		el tiempo postergado hasta nuevo aviso <br>
+		asoma por el horizonte. <br>
+		<br>
+		All&iacute; se te hunde la amada en la arena, <br>
+		sube por su cabello ondeante, <br>
+		le quita la palabra, <br>
+		le ordena callarse, <br>
+		le parece mortal <br>
+		y dispuesta a la despedida <br>
+		tras cada abrazo. <br>
+		<br>
+		No mires hacia atr&aacute;s. <br>
+		&Aacute;tate los zapatos. <br>
+		Corre los perros de vuelta. <br>
+		Tira los peces al mar. <br>
+		&iexcl;Apaga los altramuces! <br>
+		<br>
+		Vienen d&iacute;as m&aacute;s duros. </font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El tiempo 
+		postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="En la penumbra"></a>En la penumbra</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">De nuevo 
+		metemos los dos las manos en el fuego, <br>
+		t&uacute;, para el vino de la noche largamente embodegada, <br>
+		yo, para la fuente de la ma&ntilde;ana, que desconoce los lagares. <br>
+		Aguarda el fuelle del maestro, en quien confiamos. <br>
+		<br>
+		Al sentir el calor de la preocupaci&oacute;n, el soplador se acerca. <br>
+		Se va antes de que amanezca, viene antes de que llames, es viejo <br>
+		como la penumbra en nuestras tenues cejas. <br>
+		<br>
+		De nuevo, &eacute;l prepara el plomo en caldera de l&aacute;grimas, <br>
+		a ti, para un vaso -se trata de celebrar lo desaprovechado-, <br>
+		a m&iacute;, para el pedazo lleno de humo -este se vac&iacute;a sobre el fuego.<br>
+		As&iacute; avanzo hasta ti y hago sonar las sombras. <br>
+		<br>
+		Descubierto est&aacute; quien ahora vacile, <br>
+		descubierto, quien haya olvidado el dicho. <br>
+		&iexcl;T&uacute; no puedes ni quieres saberlo, <br>
+		t&uacute; bebes del borde, donde est&aacute; fresco, <br>
+		y como anta&ntilde;o, bebes y permaneces sobrio, <br>
+		a ti a&uacute;n te crecen cejas, a ti a&uacute;n te contemplan! <br>
+		<br>
+		Pero yo ya aguardo el momento <br>
+		en amor, a m&iacute; se me cae el pedazo <br>
+		en el fuego, a m&iacute; se me convierte en el plomo <br>
+		que era. Y detr&aacute;s de la bala <br>
+		estoy yo, tuerta, segura del blanco, delgada, <br>
+		envi&aacute;ndola al encuentro de la ma&ntilde;ana.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El 
+		tiempo postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Expl&iacute;came, amor"></a>
+		Expl&iacute;came, amor </font><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+		<br>
+		Tu sombrero se levanta despacio, saluda, y vuela al viento, <br>
+		tu cabeza desnuda enamora a las nubes, <br>
+		tu coraz&oacute;n tiene que hacer en otra parte, <br>
+		tu boca asimila lenguas nuevas, <br>
+		la hierba tembladera menudea por aqu&iacute;, <br>
+		el verano apaga y enciende los &aacute;steres con un soplo, <br>
+		ciego por los copos levantas el rostro, <br>
+		r&iacute;es y lloras y te hundes en ti, <br>
+		qu&eacute; m&aacute;s ha de ocurrirte - <br>
+		<br>
+		&iexcl;Expl&iacute;came, amor! <br>
+		<br>
+		El pavo con solemne asombro hace la rueda, <br>
+		la paloma levanta su collar de plumas, <br>
+		el aire se dilata repleto de arrullos, <br>
+		grita el &aacute;nade, el pa&iacute;s entero <br>
+		se sirve de la miel silvestre, tambi&eacute;n en el sereno parque <br>
+		los arriates est&aacute;n enmarcados con un polvo dorado. <br>
+		<br>
+		El pez se ruboriza, adelanta a la bandada <br>
+		y se precipita entre grutas al lecho de coral. <br>
+		Al son de la m&uacute;sica de la arena plateada baila t&iacute;mido el escorpi&oacute;n. <br>
+		El escarabajo huele de lejos a la m&aacute;s espl&eacute;ndida; <br>
+		&iexcl;si yo tuviera sus sentidos, notar&iacute;a tambi&eacute;n <br>
+		que brillan alas bajo el caparaz&oacute;n de ella, <br>
+		y tomar&iacute;a el camino del fresal lejano!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Expl&iacute;came, amor! <br>
+		<br>
+		El agua sabe hablar, <br>
+		la ola toma a la ola de la mano, <br>
+		en la vi&ntilde;a el racimo se hincha, salta y cae. <br>
+		&iexcl;Cu&aacute;n confiado sale el caracol de su casa! <br>
+		<br>
+		&iexcl;Una piedra sabe conmover a otra! <br>
+		<br>
+		Expl&iacute;came amor, lo que no s&eacute; explicar: <br>
+		&iquest;tratar&eacute; durante este tiempo corto y hostil <br>
+		&uacute;nicamente con pensamientos y s&oacute;lo yo <br>
+		no conocer&eacute; ni har&eacute; nada afectuoso? <br>
+		&iquest;Tiene uno que pensar? &iquest;No le echar&aacute;n de menos? <br>
+		<br>
+		Dices: otro esp&iacute;ritu cuenta con &eacute;l... <br>
+		No me expliques nada. Veo a la salamandra <br>
+		pasar por todos los fuegos. <br>
+		Ning&uacute;n horror la persigue y nada le causa dolor.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></i><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;
+		</font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Invocaci&oacute;n a la Osa Mayor"></a>Invocaci&oacute;n a la Osa Mayor</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Osa Mayor, baja, 
+		hirsuta noche, <br>
+		animal de piel de nubes con ojos viejos, <br>
+		ojos de estrellas, <br>
+		por la espesura irrumpen relucientes <br>
+		tus patas con las garras, <br>
+		garras de estrellas, <br>
+		mantenemos despiertos los reba&ntilde;os, <br>
+		pero encantados por ti, desconfiamos <br>
+		de tus flancos cansados y de tus dientes <br>
+		agudos y semidescubiertos, <br>
+		vieja osa. <br>
+		<br>
+		Una pi&ntilde;a: vuestro mundo. <br>
+		Vosotros: sus escamas. <br>
+		Yo la muevo, la hago rodar <br>
+		desde los abetos del principio <br>
+		hasta los abetos del final, <br>
+		la resoplo, la pruebo en la boca <br>
+		y la agarro con las zarpas. <br>
+		<br>
+		Ya teng&aacute;is miedo o no lo teng&aacute;is, <br>
+		pagad en la limosnera y dadle <br>
+		al ciego una buena palabra, <br>
+		para que sostenga a la osa de la correa. <br>
+		Y sazonad bien los corderos. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Podr&iacute;a ser que esta osa<br>
+		se soltara, no amenazara ya m&aacute;s<br>
+		y corriera tras todas las pi&ntilde;as ca&iacute;das<br>
+		de los abetos grandes y alados<br>
+		que cayeron del para&iacute;so.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></i><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4"><a name="Nueva">
+		</a>Nueva</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Sale del 
+		atrio celestial templado de cad&aacute;veres el sol.<br>
+		No est&aacute;n all&iacute; los inmortales,<br>
+		sino los ca&iacute;dos en batalla, o&iacute;mos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Y el 
+		esplendor no repara en la putrefacci&oacute;n. Nuestra deidad,<br>
+		la Historia, nos ha dispuesto una sepultura<br>
+		de la que no hay resurrecci&oacute;n.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El 
+		tiempo postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p align="left"><br>
+&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Publicidad"></a>
+		Publicidad </font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Pero ad&oacute;nde vamos <br>
+		<i>no te preocupes no te preocupes </i><br>
+		cuando oscurece y cuando viene el fr&iacute;o <br>
+		<i>no te preocupes <br>
+		</i>pero <br>
+		<i>con m&uacute;sica </i><br>
+		qu&eacute; debemos hacer <br>
+		<i>alegre y con m&uacute;sica </i><br>
+		y pensar <br>
+		<i>alegre <br>
+		</i>cara a un final <br>
+		<i>con m&uacute;sica </i><br>
+		y ad&oacute;nde llevamos <br>
+		<i>mejor <br>
+		</i>nuestras preguntas y el escalofr&iacute;o de todos los a&ntilde;os <br>
+		<i>a la lavander&iacute;a de sue&ntilde;os no te preocupes no te preocupes </i><br>
+		pero qu&eacute; ocurre <br>
+		<i>mejor </i><br>
+		cuando sobreviene <br>
+		<br>
+		un silencio de muerte.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">
+		&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4"><a name="Salmo">
+		</a>Salmo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">1<br>
+		&iexcl;Callad conmigo, como callan todas las campanas! <br>
+		<br>
+		En la placenta de los horrores <br>
+		buscan las sabandijas alimento nuevo. <br>
+		P&uacute;blicamente, cuelga los Viernes Santo una mano <br>
+		en el firmamento, le faltan dos dedos, <br>
+		y no puede jurar que todo, <br>
+		todo, no haya sido y que nada <br>
+		ser&aacute;. Se hunde en las nubes pardas, <br>
+		arroba a los nuevos asesinos <br>
+		y sale absuelta. <br>
+		<br>
+		De noche, sobre esta tierra, <br>
+		forzar ventanas, darle para atr&aacute;s a las s&aacute;banas, <br>
+		que quede al descubierto el embozo de los enfermos, <br>
+		una llaga llena de alimento, infinitos dolores <br>
+		para todos los gustos. <br>
+		<br>
+		Enguantados contienen los carniceros <br>
+		el aliento de los desembozados, <br>
+		la luna en la puerta cae al suelo, <br>
+		no recojas los fragmentos, la cinta de la que colg&oacute;... <br>
+		<br>
+		Todo estaba preparado para la extremaunci&oacute;n. <br>
+		(El sacramento no puede llevarse acabo).</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">2<br>
+		Qu&eacute; vanidad de vanidades. <br>
+		Arrastra una ciudad hasta ti, <br>
+		lev&aacute;ntate del polvo de esa ciudad, <br>
+		toma posesi&oacute;n de un cargo <br>
+		y enmasc&aacute;rate <br>
+		para no ser desenmascarado. <br>
+		<br>
+		Cumple las promesas <br>
+		delante de un espejo ciego en el aire, <br>
+		delante de una puerta cerrada en el viento. <br>
+		<br>
+		Intransitados est&aacute;n los caminos sobre la pared a plomo del cielo. <br>
+		<br>
+		3 <br>
+		Oh ojos, que la tierra, almac&eacute;n solar, quem&oacute;, <br>
+		con la carga de lluvia de todos los ojos cargados, <br>
+		cubiertos ahora de hilos, de telas <br>
+		hiladas por las ara&ntilde;as tr&aacute;gicas <br>
+		del presente ... <br>
+		<br>
+		4 <br>
+		En la cuenca de mi mudez <br>
+		pon una palabra <br>
+		y levanta grandes bosques a ambos lados, <br>
+		que mi boca <br>
+		entera quede en la sombra.&nbsp; <br>
+		<br>
+		</font><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El tiempo 
+		postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p align="left"><br>
+&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></i><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Sombra rosas sombra">
+		</a>Sombra rosas sombra</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Bajo un cielo extra&ntilde;o<br>
+		sombra rosas<br>
+		sombra<br>
+		sobre una tierra extra&ntilde;a<br>
+		entre rosas y sombra<br>
+		dentro de un agua extra&ntilde;a<br>
+		mi sombra</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></i><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4">
+		</font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="S&oacute;lo cosas sombr&iacute;as"></a>S&oacute;lo cosas sombr&iacute;as</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Como Orfeo, toco <br>
+		en las cuerdas de la vida la muerte, <br>
+		y ante la belleza de la tierra <br>
+		y de tus ojos, que administran el cielo, <br>
+		s&oacute;lo s&eacute; decir cosas sombr&iacute;as. <br>
+		<br>
+		No olvides que tambi&eacute;n t&uacute;, de pronto, <br>
+		aquella ma&ntilde;ana, cuando tu lecho <br>
+		todav&iacute;a estaba h&uacute;medo de roc&iacute;o y el clavel <br>
+		dorm&iacute;a junto a tu coraz&oacute;n, <br>
+		viste el r&iacute;o oscuro <br>
+		pasar a tu lado. <br>
+		<br>
+		La cuerda del silencio, <br>
+		tensada sobre la ola de sangre, <br>
+		puso manos en tu coraz&oacute;n sonante. <br>
+		Transformado qued&oacute; tu rizo <br>
+		en la cabellera de sombras de la noche, <br>
+		los copos negros de las tinieblas <br>
+		nevaron tu semblante. <br>
+		<br>
+		Y mi lugar no est&aacute; a tu lado. <br>
+		Ahora nos lamentamos los dos. <br>
+		<br>
+		Pero como Orfeo, s&eacute; <br>
+		junto a las cuerdas de la muerte la vida, <br>
+		y en m&iacute; reverbera el azulado <br>
+		de tu ojo por siempre cerrado.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El 
+		tiempo postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Temprano mediod&iacute;a"></a>Temprano mediod&iacute;a</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Silencioso 
+		verde a el tilo en el verano inaugurado, <br>
+		muy apartada de las ciudades tiembla <br>
+		el brillo opaco de la luna diurna. Ya es mediod&iacute;a, <br>
+		ya se agita en la fuente el chorro, <br>
+		ya se alza bajo el destrozo <br>
+		el ala maltratada del p&aacute;jaro de f&aacute;bula, <br>
+		y la mano, desfigurada por tirar la piedra, <br>
+		cae en el despertar del trigo. <br>
+		<br>
+		Donde el cielo de Alemania ennegrece la tierra, <br>
+		busca su &aacute;ngel decapitado una tumba para el odio <br>
+		y te entrega el cuenco del coraz&oacute;n. <br>
+		<br>
+		Un pu&ntilde;ado de dolor se pierde sobre la colina. <br>
+		<br>
+		Siete a&ntilde;os m&aacute;s tarde <br>
+		te acuerdas nuevamente, <br>
+		junto a la fuente, ante la puerta, <br>
+		no mires demasiado profundamente, <br>
+		se te saltar&aacute;n los ojos. <br>
+		<br>
+		Siete a&ntilde;os m&aacute;s tarde, <br>
+		en casa de amortajado, <br>
+		apuran los ayer verdugos <br>
+		el vaso dorado. <br>
+		Se te hundir&iacute;an los ojos. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ya es 
+		mediod&iacute;a, en las cenizas <br>
+		dobla el hierro, sobre el mandril <br>
+		est&aacute; izada la bandera, y sobre la roca <br>
+		<br>
+		del sue&ntilde;o ancestral, queda de aqu&iacute; en adelante <br>
+		forjada el &aacute;guila. <br>
+		<br>
+		Solo la esperanza, aquejada de ceguera, est&aacute; acurrucada bajo la luz. <br>
+		&iexcl;Rompe sus cadenas, gu&iacute;ala <br>
+		ladera abajo, ponle <br>
+		la mano sobre los ojos, que no la <br>
+		abrase ninguna sombra! <br>
+		<br>
+		Donde la tierra de Alemania ennegrece el cielo, <br>
+		busca la nube palabras y llena el cr&aacute;ter de silencio <br>
+		antes de que el verano las perciba bajo la llovizna. <br>
+		Lo inexplicable recorre, en voz baja, el pa&iacute;s: <br>
+		ya es mediod&iacute;a. </font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El 
+		tiempo postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Todos los d&iacute;as"></a>Todos los d&iacute;as</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ya no se 
+		declara la guerra, <br>
+		se prosigue. Lo inconcebible <br>
+		se ha hecho cotidiano. El h&eacute;roe <br>
+		permanece alejado de los combatientes. El d&eacute;bil <br>
+		ha avanzado hasta las zonas de fuego. <br>
+		El uniforme de diario es la paciencia, <br>
+		la condecoraci&oacute;n, la m&iacute;sera estrella <br>
+		de la esperanza sobre el coraz&oacute;n. <br>
+		<br>
+		Se concede<br>
+		cuando ya no pasa nada,<br>
+		cuando el fuego nutrido ha enmudecido,<br>
+		cuando el enemigo se ha hecho invisible,<br>
+		y la sombra del armamento eterno<br>
+		oscurece el cielo.<br>
+		<br>
+		Se concede <br>
+		por abandonar las banderas, <br>
+		por el valor ante el amigo, <br>
+		por revelar secretos indignos <br>
+		y desacatar <br>
+		toda orden. <br>
+		<br>
+		</font><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El tiempo 
+		postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Toma de tierra"></a>
+		Toma de tierra </font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Llegu&eacute; a las dehesas <br>
+		cuando ya era de noche, <br>
+		olfateando en los prados la hierba <br>
+		y el viento antes de levantarse. <br>
+		Ya no pastaba el amor, <br>
+		las campanas se hab&iacute;an extinguido <br>
+		y los haces de hierba endurecido. <br>
+		<br>
+		En el suelo hab&iacute;a un cuerno clavado <br>
+		por el obstinado animal de gu&iacute;a <br>
+		hundido en la oscuridad. <br>
+		<br>
+		Lo saqu&eacute; de la tierra, <br>
+		lo alc&eacute; al cielo <br>
+		con todas mis fuerzas. <br>
+		<br>
+		Para llenar este pa&iacute;s <br>
+		del todo con sonidos <br>
+		toqu&eacute; el cuerno, <br>
+		dispuesto a vivir en el viento venidero <br>
+		y bajo los tallos ondeantes <br>
+		de cualquier procedencia.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><br>
+&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Una especie de p&eacute;rdida"></a>Una especie de p&eacute;rdida</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Usados en com&uacute;n: 
+		estaciones del a&ntilde;o, libros y una m&uacute;sica.<br>
+		Las llaves, los boles de t&eacute;, la panera, s&aacute;banas y una<br>
+		cama.<br>
+		Un ajuar de palabras, de gestos, tra&iacute;dos, empleados,<br>
+		gastados.<br>
+		Un reglamento de casa observado. Dicho. Hecho. Y<br>
+		siempre alargada la mano.<br>
+		De inviernos, de un septeto vien&eacute;s y de veranos me he <br>
+		enamorado.<br>
+		De mapas, de un poblacho de monta&ntilde;a, de una playa y de una cama.<br>
+		Con fechas he hecho un culto, promesas he declarado<br>
+		irrevocables,<br>
+		he adornado un algo y he sido devota delante de una nada,<br>
+		(-de un peri&oacute;dico doblado, de las cenizas fr&iacute;as, del<br>
+		papel con un apunte)<br>
+		imp&aacute;vida ante la religi&oacute;n, porque la iglesia era esta cama.<br>
+		De la vista de un lago surgi&oacute; mi pintura inagotable.<br>
+		Desde el balc&oacute;n hab&iacute;a que saludar a los pueblos, mis<br>
+		vecinos.<br>
+		Junto al fuego de la chimenea, en la seguridad, mi<br>
+		cabello ten&iacute;a su color m&aacute;s intenso.<br>
+		La llamada a la puerta era la alarma para mi alegr&iacute;a.<br>
+		No te he perdido a ti,<br>
+		sino al mundo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Invocaci&oacute;n a la 
+		Osa Mayor&quot; Ediciones Hiperi&oacute;n 2001<br>
+		Versi&oacute;n de Cacilia Dreym&uuml;ller y Concha Garc&iacute;a</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Vuelo nocturno"></a>Vuelo nocturno</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Nuestro 
+		campo es el cielo, <br>
+		arado con el sudor de los motores, <br>
+		frente a la noche, <br>
+		bajo la intervenci&oacute;n del sue&ntilde;o. <br>
+		<br>
+		So&ntilde;ado sobre calvarios y piras, <br>
+		bajo el tejado del mundo, cuyas tejas <br>
+		se ha llevado el viento -y ahora, lluvia, lluvia, lluvia <br>
+		en nuestra casa y en los molinos <br>
+		los ciegos vuelos de los murci&eacute;lagos. <br>
+		&iquest;Qui&eacute;n viv&iacute;a all&iacute;? &iquest;Qui&eacute;n ten&iacute;a l&iacute;mpidas las manos? <br>
+		&iquest;Qui&eacute;n resplandec&iacute;a en la noche, <br>
+		fantasma a los fantasmas? <br>
+		<br>
+		Al abrigo del plumaje de acero, interrogan <br>
+		instrumentos el espacio, relojes y escalas, <br>
+		la maleza de nubes, y roza el amor <br>
+		el lenguaje olvidado de nuestro coraz&oacute;n: <br>
+		corto y largo largo... Durante una hora <br>
+		bate granizo el t&iacute;mpano del o&iacute;do, <br>
+		que, desafecto a nosotros, escucha y distorsiona. <br>
+		<br>
+		No ha desaparecido el sol ni la tierra, <br>
+		solo se han movido como astros, irreconocibles. <br>
+		<br>
+		Nos hemos remontado de un puerto <br>
+		en que no cuenta el retorno, <br>
+		ni la carga ni la pesca.<br>
+		Las especias de la India y las sedas del Jap&oacute;n <br>
+		les pertenecen a los comerciantes, <br>
+		como los peces a las redes. <br>
+		<br>
+		Pero se percibe un olor <br>
+		que se anticipa a los cometas, <br>
+		y el tejido del aire <br>
+		desgarrado por el cometa ca&iacute;do. <br>
+		Ll&aacute;malo estado de los solitarios <br>
+		en que se lleva a cabo el asombro. <br>
+		Nada m&aacute;s. <br>
+		<br>
+		Nos hemos remontado, y los conventos est&aacute;n vac&iacute;os <br>
+		desde que toleramos, una orden, que no salva ni ense&ntilde;a. <br>
+		Actuar no es asunto de los pilotos. Tienen la vista fija <br>
+		en las bases y extendido sobre las rodillas <br>
+		el mapa de un mundo al que nada hay que a&ntilde;adir. <br>
+		<br>
+		&iquest;Qui&eacute;n vive ah&iacute; abajo? &iquest;Qui&eacute;n llora...? <br>
+		&iquest;Qui&eacute;n pierde la llave de la casa? <br>
+		&iquest;Qui&eacute;n no encuentra su cama, qui&eacute;n duerme <br>
+		sobre los umbrales? &iquest;Qui&eacute;n, cuando llega la ma&ntilde;ana, <br>
+		se atreve a interpretar la estela de plata: mirad, por encima de m&iacute;...?
+		<br>
+		Cuando el agua impulsa de nuevo la rueda del molino, <br>
+		&iquest;qui&eacute;n se atreve a recordar la noche? <br>
+		<br>
+		</font><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;El tiempo 
+		postergado&quot; Ediciones C&aacute;tedra S. A. 1991<br>
+		Versi&oacute;n de Arturo Parada </font></i>
+		<font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<blockquote>
+			<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		</blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+		</font>
+	</blockquote>
+</blockquote>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:36:06 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:15 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

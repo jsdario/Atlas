@@ -1,0 +1,842 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Vicente Molina Foix</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Vicente Molina Foix. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Vicente_Molina_Foix,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body link="#95B3AA" vlink="#95B3AA" alink="#95B3AA" background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/molinaFoix.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/molinaFoix.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172247" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./molinaFoix.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:22:47 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./molinaFoix.htm" title="5:09:47 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:22:47 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./molinaFoix.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:22:47 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./molinaFoix.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>42 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Jun 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000001000201_2007:-1:010102000100_2008:-1:200102100001_2009:-1:010000100000_2010:-1:100000001211_2011:-1:000000001130_2012:-1:121010001000_2013:7:101220010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./MOLINAFOIX.jpg" width="435" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Una naturaleza peque&ntilde;a le conviene<br>
+a nuestro repentino y algo escu&aacute;lido amor.&quot;</em><br>
+<br>
+</font><font color="#9BC9BB"><img border="0" src="./MOLINAFOIX1.jpg" width="263" height="325"></font></p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;The prayer&quot;<br>
+<br>
+Constantin Brancusi</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#9BC9BB"><br>
+			</font>
+			<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+		novelista, cr&iacute;tico de arte&nbsp; y traductor espa&ntilde;ol, nacido en Elche, 
+		Alicante, en 1946.<br>
+		Estudi&oacute; Derecho, Filosof&iacute;a y Letras y se gradu&oacute; m&aacute;s tarde como &quot;Master 
+		of Arts&quot; en la Universidad de Londres. <br>
+		Salt&oacute; a la fama a los veinticuatro a&ntilde;os cuando fue incluido en la 
+		antolog&iacute;a <i>Nueve nov&iacute;simos poetas espa&ntilde;oles <br>
+		</i>de<i> 
+		</i>Jos&eacute; Mar&iacute;a Castellet.&nbsp; Fue profesor de Literatura Espa&ntilde;ola en 
+		la Universidad de Oxford, y de Filosof&iacute;a del Arte <br>
+		en la Universidad del Pa&iacute;s Vasco.<br>
+		Gracias a su s&oacute;lida formaci&oacute;n intelectual, su labor literaria se 
+		extiende a la novela, el ensayo, las obras de teatro, <br>
+		la direcci&oacute;n de cine,&nbsp; y la traducci&oacute;n de autores como Shakespeare 
+		y Kubrick.&nbsp; De su vasta obra literaria cabe <br>
+		destacaren poes&iacute;a&nbsp; <i>Nueve nov&iacute;simos poetas espa&ntilde;oles </i>1970<i>, 
+		Los esp&iacute;as del realista </i>1990<i> y Vanas penas de amor <br>
+		en </i>1998<i>.</i> En narrativ, <i>Busto </i>1973<i>, Los padres viudos </i>
+		1983<i>, La quincena sovi&eacute;tica </i>1988<i>, La mujer sin cabeza </i>1997 <br>
+		y <i>El vampiro de la calle M&eacute;jico </i>2002<i>.</i><br>
+		Teatro: <i>Los abrazos del pulpo </i>1985<i>, Hamlet </i>1989<i> </i>
+		(traducci&oacute;n de Shakespeare), <i>Seis armas cortas </i>
+		1998<i> <br>
+		</i>
+		y<i> Romeo y Julieta </i>
+		2005<i> </i>
+		(traducci&oacute;n de Shakespeare).<br>
+		Ensayo: <i>New cinema in Spain
+		</i>1977<i>, El novio del cine
+		</i>2000<i> y&nbsp; 98 y 27 dos generaciones ante el cine
+		</i>2005<i>.<br>
+		</i>En 1973 gan&oacute; el Premio Barral por <i>Busto, </i>&nbsp;en 1983&nbsp; el 
+		Premio Azor&iacute;n por <i>Los padres viudos, 
+		</i>en 1988 el Premio <br>
+		Herralde por <i>La quincena sovi&eacute;tica</i>, y en 2002 el premio 
+		Garc&iacute;a-Ramos&nbsp; por <i>El vampiro de la calle M&eacute;jico. &copy;</i><br>
+		&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia"><a href="./molinaFoix.htm#AMANTE QUE ESCAPA">Amante 
+		que escapa</a><br>
+		<br>
+		<a href="./molinaFoix.htm#BUC&Oacute;LICA">Buc&oacute;lica</a><br>
+		<br>
+		<a href="./molinaFoix.htm#DESCARTES">Descartes</a><br>
+		<br>
+		<a href="./molinaFoix.htm#DRAMATIS PERSONAE">Dramatis personae</a><br>
+		<br>
+		<a href="./molinaFoix.htm#EL BAR&Oacute;N DE ESCANDINAVIA">El Bar&oacute;n de Escandinavia</a><br>
+		<br>
+		<a href="./molinaFoix.htm#FRAGMENTO DE UNA COL">Fragmento de una col</a><br>
+		<br>
+		<a href="./molinaFoix.htm#H. P. LOVECRAFT">H. P. Lovecraft</a><br>
+		<br>
+		<a href="./molinaFoix.htm#HENRY JAMES">Henry James</a><br>
+		<br>
+		<a href="./molinaFoix.htm#JUEGO DE DISFRACES">Juego de disfraces</a><br>
+		<br>
+		<a href="./molinaFoix.htm#MARCEL PROUST">Marcel Proust</a><br>
+		<br>
+		<a href="./molinaFoix.htm#MATCHMAKING">Matchmaking</a><br>
+		<br>
+		<a href="./molinaFoix.htm#TREN FANTASMA">Tren fantasma</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		<br>
+		Volver a: </font>
+	<font face="Georgia" color="#95B3AA">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#95B3AA">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a> &nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp;&nbsp;
+			<br>
+			<br>
+			<br>
+			</font></p>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			</blockquote>
+			<p align="left"><font face="Georgia" size="2" color="#95B3AA"><br>
+			</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">
+		<a name="AMANTE QUE ESCAPA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Amante que escapa</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		He o&iacute;do los cascos de un caballo<br>
+		temblar en la colina.<br>
+		No he hecho nada.<br>
+		<br>
+		He comido ra&iacute;ces y el fruto de las bayas<br>
+		que crecen sin provecho<br>
+		entre las calaveras.<br>
+		No me ha ocurrido nada.<br>
+		<br>
+		He tocado la estela de tu cuerpo.<br>
+		He visto nuestras cartas h&uacute;medas y arrugadas.<br>
+		He pasado la lengua por los labios<br>
+		que s&oacute;lo a m&iacute; me cierras.<br>
+		No he sentido nada.<br>
+		<br>
+		<i>Publicado en la antolog&iacute;a &quot;Del goce y de la dicha&quot;</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a name="BUCÓLICA"></a>Bub&oacute;lica</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Arrancar florecillas<br>
+		del campo<br>
+		est&aacute; hecho para nosotros.<br>
+		<br>
+		Y saltar riachuelos<br>
+		sin que el salto<br>
+		nos impida seguir<br>
+		con la mirada<br>
+		los deslices plateados<br>
+		del pez vivo.<br>
+		<br>
+		O&iacute;r la esquila y ver<br>
+		las nubes bajas<br>
+		confundidas<br>
+		con los reci&eacute;n nacidos<br>
+		del reba&ntilde;o.<br>
+		<br>
+		Recostarse a la sombra<br>
+		del arbolito<br>
+		que apenas tiene<br>
+		y observar c&oacute;mo crecen<br>
+		las cr&iacute;as de la reina<br>
+		de las rapaces.<br>
+		<br>
+		Una naturaleza peque&ntilde;a<br>
+		le conviene<br>
+		a nuestro repentino<br>
+		y algo escu&aacute;lido amor.<br>
+		<br>
+		<i>Publicado en &quot;&Iacute;nsula&quot;</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="DESCARTES"></a></font><font face="Georgia" color="#9BC9BB">
+		Descartes</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">En un 
+		principio se crey&oacute; ver en &eacute;l al desprovisto de mensajes,<br>
+		al venido de lejos,<br>
+		a s&oacute;lo un miembro de secciones ocultas<br>
+		que todo encierran en el estrecho cauce de los libros.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -ignorantes, seg&uacute;n se 
+		observa, lo fiel de su manejo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con problemas 
+		de audiencia m&aacute;s vasta-.<br>
+		<br>
+		Tuvieron que llegar edades m&aacute;s adultas<br>
+		que le reconocieran.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -algunos han pensado que 
+		hall&aacute;banse<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ante un nuevo 
+		profeta de lo in&uacute;til-.<br>
+		<br>
+		(Los grabados de &eacute;poca nos muestran un Descartes<br>
+		siempre sentado junto al fuego,<br>
+		con el h&aacute;bito negro,<br>
+		m&aacute;s preocupado en la textura o esencia del escrito<br>
+		que propiamente haci&eacute;ndolo.)</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="DRAMATIS PERSONAE"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Dramatis personae</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Al&eacute;janse de mi horizonte algunos personajes de tragedia,<br>
+		aquellos que -preciosamente- guardaba entre los hielos<br>
+		en espera de una hipot&eacute;tica reuni&oacute;n esc&eacute;nica.<br>
+		<br>
+		Los peces de asim&eacute;trica calcificaci&oacute;n que Pr&iacute;amo enviara<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; como signo de mal talante 
+		a su hija Alejandra.<br>
+		<br>
+		Las huellas del desespero, las que provocan unas sandalias <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mal anudadas en pies 
+		desobedientes a mandatos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; del coraz&oacute;n.<br>
+		<br>
+		El cachorro que despu&eacute;s creci&oacute;, pero en la &eacute;poca en que<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Holofernes no tem&iacute;a 
+		soliviantarlo con maullidos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ficticios y una 
+		escaramuza de carne cruda y helechos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nunca, finalmente, 
+		otorgados.<br>
+		<br>
+		La escarapela de Clitemnestra, de decisivo empleo en la<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resoluci&oacute;n de los debates 
+		C&aacute;stor-P&oacute;lux, aunque<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; aumentado su valor 
+		dram&aacute;tico ahora por ciertos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c&eacute;lebres sollozos que 
+		conserva guardados en los <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pespuntes de la capa.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="EL BARÓN DE ESCANDINAVIA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		El Bar&oacute;n de Escandinavia</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		S&iacute;, puedo perfectamente recordar que suced&iacute;a en la noche <br>
+		por el ruido preciso y espectacular -que a&uacute;n estalla en mi rostro- <br>
+		de los espolones de la guardia de corps, dif&iacute;cilmente sujeta <br>
+		a sus se&ntilde;ores en unos tiempos, aquellos de los que os hablo, <br>
+		sembrados del desorden y la m&aacute;s indisciplinada nocturna <br>
+		diversi&oacute;n desconsiderada. Nos sentamos, mi protector y yo, <br>
+		en el banco frontal a la iglesia Nazarena, y all&iacute; escuch&eacute;, arrobado, <br>
+		el maligno relato. &Eacute;l hab&iacute;a conocido bien al Bar&oacute;n, y de aquel trato <br>
+		su conocimiento tan pormenorizado del color rojizo que ten&iacute;a <br>
+		en el pelo y el amor antinatural que a&uacute;n le profesaba.<br>
+		<br>
+		Hubo un rasgo en la historia, con todo, que me asombr&oacute;: el lobo <br>
+		calzaba medias en lugar de mirliflores, como suele ser habitual, <br>
+		y la princesa, no siendo una belleza deslumbrante, se negaba <br>
+		una y otra vez a hacerse pasar por coqueluche y por amante de la Bestia,
+		<br>
+		ignorando la tonta que estas uniones un poco fuera de lo normal<br>
+		siempre reportan despu&eacute;s grandes beneficios, y renombre.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="FRAGMENTO DE UNA COL"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Fragmento de una col</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		&iquest;Eres col o<br>
+		me escuchas,<br>
+		oreja de los campos<br>
+		que el genio de la tierra<br>
+		m&aacute;s profunda<br>
+		ha tenido el capricho<br>
+		de moldear as&iacute;,<br>
+		como espiral de carne<br>
+		que respira?<br>
+		<br>
+		Ya no puedo comerte,<br>
+		por respeto.<br>
+		Lo m&aacute;s probable es<br>
+		que tengas vida,<br>
+		blanca col,<br>
+		col acaracolada,<br>
+		y si muerdo los nervios<br>
+		de ese cuerno<br>
+		de tu abundancia<br>
+		oiga al fondo<br>
+		la queja de las manos<br>
+		de los hombres<br>
+		que han tardado<br>
+		un a&ntilde;o<br>
+		y algunos siglos m&aacute;s<br>
+		de raciocinio<br>
+		en darte forma.<br>
+		<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="H. P. LOVECRAFT"></a>H. P. Lovecraft</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		En mi viaje a las Islas me contaron que Lovecraft jam&aacute;s muri&oacute;, <br>
+		al menos no en el lugar ni en fechas que sus bi&oacute;grafos marcaron.<br>
+		<br>
+		Sostienen, ellos, que este escritor sab&iacute;a otras muchas m&aacute;s cosas <br>
+		de las que consign&oacute; en sus libros, y no todas, precisamente, <br>
+		las recibidas de sus -ya certificados- contactos <br>
+		con personas del M&aacute;s All&aacute;.<br>
+		<br>
+		Los moradores me dicen, sin embargo, que ellos nunca observaron <br>
+		por estos parajes sucesos sorprendentes, lejos de lo normal; <br>
+		quiz&aacute;, retrocediendo mucho, la cabalgadura que se neg&oacute; <br>
+		a seguir tirando la rueda del molino, convertida despu&eacute;s <br>
+		en manantial ( a&ntilde;o 70) , o todo un pinar que en el verano <br>
+		m&aacute;s lluvioso del cant&oacute;n, el que no se recuerda, ardi&oacute; sin un motivo <br>
+		porque, seg&uacute;n parece, no se aven&iacute;a a ser talado de unos &aacute;rboles s&iacute; <br>
+		y de otros no.</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="HENRY JAMES"></a></font><font face="Georgia" color="#9BC9BB">
+		Henry James</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		De mis postreras deducciones llego a pensar que este escritor mantuvo 
+		-durante mucho tiempo- <br>
+		una compensaci&oacute;n on&iacute;rica.<br>
+		<br>
+		Parece ser que todo suced&iacute;a de la siguiente forma: a los pocos minutos 
+		de entrado en la Caverna, y con operaciones <br>
+		envidiables, muy extra&ntilde;as, de pulgares cruzados,<br>
+		chasquidos de la lengua, silbos desacordados, el fulgor permanente de 
+		una l&aacute;mpara azul, se presentaban en la estancia <br>
+		unos cuantos sujetos -protagonistas de los hechos-, bien adiestrados 
+		para aquello por embozados de tradici&oacute;n.<br>
+		<br>
+		En los &uacute;ltimos a&ntilde;os, por lo menos, las im&aacute;genes fueron siempre las 
+		mismas (y tambi&eacute;n <br>
+		el lugar de la escena): un p&aacute;jaro ideado, con el plumaje al viento, 
+		reconstruido en cera, <br>
+		pl&aacute;stico y cart&oacute;n, hermos&iacute;simo objeto de cuyo resplandor la habitaci&oacute;n 
+		s&uacute;bitamente se encend&iacute;a; <br>
+		un hombre deformado, con la cara rayada y ostensible carencia de curvas, <br>
+		cualquier &aacute;ngulo, cabello, ojo izquierdo y palabras ( sin vestido 
+		adecuado, torpemente ali&ntilde;ado, y sin dientes, <br>
+		sentado en una tabla, dif&iacute;cilmente habituado al fluido carnal de aquella 
+		casa); y -por si elegir fuera ya f&aacute;cil- <br>
+		una tercera instancia, la de la reflexi&oacute;n ajena a la belleza, que 
+		suscitaba una forma d&eacute;bil y cenicienta, unas tablas de ley, <br>
+		plumas pintadas, restos de muebles que sostuvieron una preciosa culpa, 
+		los polvitos de magia que ya no cambian nada.<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="JUEGO DE DISFRACES"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Juego de disfraces</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Desmadejado, desaparecido mi control sobre una cabellera<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en alboroto que opta a 
+		menudo por resoluciones<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; distintas a las del 
+		sistema motriz,<br>
+		<br>
+		penetro en la des&eacute;rtica extensi&oacute;n de los telares y en el<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dep&oacute;sito de las almas 
+		muertas, que sostienen resignadamente <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; colores de lapisl&aacute;zuli y 
+		cartonajes con memoria particular, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mas desechada, ra&iacute;dos, 
+		t&uacute;mido, ominosamente numeradas, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delicadamente&nbsp; 
+		sustra&iacute;dos de tono, agrietados, por ajena <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; voluntad borrada.<br>
+		<br>
+		En los pasadizos de la trastienda no &uacute;nicamente duele<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el hallazgo de frondas 
+		que treparon vertiginosas escalones<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de m&aacute;rmol despintado o la 
+		arboleda que pose&iacute;a pose&iacute;a <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; articulaciones mec&aacute;nicas 
+		para asustar y hacer caer de su caballo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a la Joven Furtiva que 
+		eligi&oacute; las incertidumbres de un Caballero <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s&oacute;lo recientemente 
+		armado,<br>
+		<br>
+		pues tal vez con semejante desafecci&oacute;n encontr&aacute;ramos el mascar&oacute;n <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de proa que puso en pie a 
+		toda una generaci&oacute;n y los nimbos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; algodonosos que por 
+		primera vez llevaron a muchos a pensar <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; que quiz&aacute; no todo 
+		consista en arribar al propio domicilio una vez <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; la obra terminada y 
+		revolverse entonces pesarosos entre las <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enga&ntilde;osamente mullidas 
+		plumas del jerg&oacute;n.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		Vuelta la espalda a un creciente clamor de asentimiento que invade <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; la platea, navego con 
+		vacilaci&oacute;n un estrecho cuarto de luces y el <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; camar&iacute;n de la estrella, 
+		dejado intacto en su crep&uacute;sculo de noche <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; resonante y con la misma 
+		argolla a&uacute;n, sujetando los muslos que <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trastornan y aquella 
+		m&aacute;scara de labios curvados hacia abajo, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; poseedora del secreto que 
+		desencaden&oacute; guerras.<br>
+		<br>
+		Decretada mi extinci&oacute;n por ocupantes de los palcos m&aacute;s celebrados, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dudo acerca de 
+		enfrentarme a la conjuraci&oacute;n mortal de luces <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; que convergen en el 
+		proscenio,<br>
+		<br>
+		o practicar (sea por una sola vez!) la compuerta de hierro que conduce
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; al callej&oacute;n de la Mala 
+		Conducta y hace evitar la probablemente <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; desmerecida dial&eacute;ctica de 
+		la palestra.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MARCEL PROUST"></a></font><font face="Georgia" color="#9BC9BB">
+		Marcel Proust</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Buscando, buscando, hall&oacute;, en efecto,<br>
+		acurrucado entre los pliegues calientes de la s&aacute;bana,<br>
+		a su sexo de por las ma&ntilde;anas, el peque&ntilde;o y burl&oacute;n,<br>
+		que le enviaba gestos como queriendo continuar su reposo.<br>
+		<br>
+		Proust, sin embargo, se mostr&oacute; aquella ma&ntilde;ana inflexible<br>
+		y se lo calz&oacute; ( ayud&aacute;ndose de un cuchar&oacute;n de palo y del man&iacute;pulo de 
+		cinc),<br>
+		y ajust&aacute;base despu&eacute;s los faldones de la redingote<br>
+		pronunciando con decisi&oacute;n el apellido del chofer,<br>
+		&quot;Fontainebleau&quot; .<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="MATCHMAKING"></a>
+		</font><font face="Georgia" color="#9BC9BB">Matchmaking</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Con los a&ntilde;os<br>
+		me estoy haciendo<br>
+		un excelso<br>
+		casamentero<br>
+		de antiguos<br>
+		amores.<br>
+		<br>
+		Visito en las ciudades<br>
+		m&aacute;s pobladas<br>
+		de tres pa&iacute;ses<br>
+		a parejas estables<br>
+		que se cogen la mano<br>
+		agradecidas<br>
+		y tienen el detalle de tenerme<br>
+		en el altar<br>
+		de sus aparadores<br>
+		con una foto<br>
+		de entonces,<br>
+		muy favorecedora.<br>
+		He llegado a contar<br>
+		en hogares felices<br>
+		seis libros dedicados<br>
+		<br>
+		de mi pu&ntilde;o y letra<br>
+		con promesa<br>
+		de amor eterno.<br>
+		<br>
+		Y en un caso reciente<br>
+		pude reconocer<br>
+		la chaqueta de punto<br>
+		tejida a mano<br>
+		que regal&eacute; a mi amante<br>
+		por Reyes<br>
+		llevada por el otro,<br>
+		y unas manchas de vomitona m&iacute;a<br>
+		en el entarimado<br>
+		de la alcoba<br>
+		que hoy me est&aacute; prohibida.<br>
+		Soy el visitador<br>
+		de los enamorados.<br>
+		<br>
+		Si es verdad, como dices,<br>
+		t&uacute;, conciencia,<br>
+		la que no miente,<br>
+		que ya no s&eacute; amar,<br>
+		reconoce al menos<br>
+		que preparo muy bien<br>
+		a quienes yo renuncio<br>
+		para las duras pruebas<br>
+		del amor de verdad.<br>
+		<br>
+		</font><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="TREN FANTASMA"></a></font><font face="Georgia" color="#9BC9BB">
+		Tren fantasma</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Al final de la barra apareciste<br>
+		como un tren fantasma<br>
+		que mueve campanillas.<br>
+		<br>
+		Tu cara a&uacute;n ten&iacute;a<br>
+		el susto del viajero<br>
+		que, en vag&oacute;n de madera,<br>
+		siente los escobazos, el hilo de<br>
+		la muerte, la calabaza hueca.<br>
+		<br>
+		Quer&iacute;as compa&ntilde;&iacute;a para entrar en el t&uacute;nel.<br>
+		<br>
+		No te la di, no puedo.<br>
+		He de ocupar mi sitio<br>
+		detr&aacute;s de las cortinas,<br>
+		para seguir aullando<br>
+		y mordiendo a los ni&ntilde;os.<br>
+		<br>
+		<br>
+&nbsp;</font></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		</blockquote>
+	</blockquote>
+<!-- START STATS CODE -->
+</blockquote>
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:22:47 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:17 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,902 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Carlota Caulfield</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Carlota Caulfield. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Carlota_Caulfield,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/caulfield.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "6";
+var displayMonth = "Oct";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/caulfield.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131006195921" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./caulfield.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 19:59:21 Oct 6, 2013">OCT</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Nov
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./caulfield.htm" title="16:19:08 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 19:59:21 Oct 6, 2013">6</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./caulfield.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 19:59:21 Oct 6, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./caulfield.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>87 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 6 Oct 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000001123_2005:-1:364100000104_2006:-1:020112101200_2007:-1:010103020100_2008:-1:101131b10000_2009:-1:000100110000_2010:-1:100000001110_2011:-1:000000001130_2012:-1:101010001000_2013:9:101210020100_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center"><br>
+    &nbsp; <br>
+    </p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">
+	<img border="0" src="./CAULFIELD.jpg" width="384" height="40"></p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><font face="Arial" size="2" color="#84B0D6">
+	<em style="font-style: normal">&quot;Son tus hombros todos los pilares,<br>
+    tu pecho todas las geograf&iacute;as,<br>
+    tus brazos todos los vientos...&quot;</em></font></p>
+    <p align="center"><font color="#84B0D6"><img src="./CAULFIELD1.jpg" width="230" height="474"></font><font face="Basil"
+    size="5" color="#84B0D6"><br>
+    </font></p>
+    <p align="center"><font face="Arial" size="2" color="#84B0D6"><em>&quot;Le soir&quot;<br>
+    <br>
+    Alphonse Mucha</em></font></p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <blockquote>
+      <p align="left">&nbsp;</p>
+    </blockquote>
+    <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+	biogr&aacute;fica</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Poeta cubana de origen 
+	irland&eacute;s nacida en La Habana en 1953.<br>Recibi&oacute; la Licenciatura en Historia 
+	y Filosof&iacute;a en la Universidad de La Habana. 
+	<br>Decidi&oacute; viajar inicialmente a Europa estableci&eacute;ndose en Doublin y 
+	Zurich, para radicarse luego en forma definitiva <br>
+	en Estados Unidos donde obtuvo un Master en Literatura espa&ntilde;ola y 
+	latinoamericana por la Universidad de San Francisco, <br>
+	y el PHD en Filosof&iacute;a y Letras por <em>Tulane University</em> con la tesis <em>
+	&quot;Entre el alef y la mandorla: po&eacute;tica, er&oacute;tica y m&iacute;stica <br>
+	en la obra de Jos&eacute; Angel Valente&quot;</em>.<br>En la actualidad es profesora del 
+	programa de Estudios Hisp&aacute;nicos del Mills College de Okland, California.<br>
+	Entre los premios obtenidos se destacan: <em>Premio Internacional Ultimo 
+	Novecento</em>, Pisa, 1988, 
+	<em>Premio Internacional <br>
+	Riccardo Marchi-Torre dei Calafuria </em>Italia, 1995, Menci&oacute;n de Honor&nbsp; <em>
+	Latino Literature Prize</em> en Nueva York 1997, <br>
+	Primer Premio de Poes&iacute;a <em>Dulce Mar&iacute;a Loynaz</em> 2002.<br>Es autora de 
+	&laquo;Fanaim&raquo; en 1984, &laquo;Oscuridad divina&raquo; 1987, &laquo;A veces me llamo infancia&raquo; 1985, 
+	&laquo;El tiempo es una mujer <br>
+	que espera&raquo; 1986,&nbsp; &laquo;Polvo de Angel&raquo; 1990, &laquo;Libro de los XXXIX 
+	escalones&raquo; 1995, &laquo;A las puertas del papel con amoroso fuego&raquo; 
+	<br>
+	en 1996, y &laquo;Autorretrato en ojo ajeno&raquo; 2001. &copy;</font><font face="Georgia" size="2" color="#85A6BC"><br><br>&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" color="#8FABC2">
+	<a href="./caulfield.htm#A VECES ME LLAMO INFANCIA">A veces me llamo infancia</a><br><br>
+	<a href="./caulfield.htm#&Aacute;UREO OJO EL ORIGEN">&Aacute;ureo ojo el origen</a><br><br>
+	<a href="./caulfield.htm#AUTORRETRATO EN EL ESPEJO CONVEXO">Autorretrato en el espejo 
+	convexo</a><br>
+	<br><a href="./caulfield.htm#CARTA DE CAMILLA DE PISA A FRANCESCO DEL NERO">Carta de 
+	Camilla de Pisa a Francesco del Nero</a><br><br>
+	<a href="./caulfield.htm#CARTA DE LUCRECIA BORGIA A SU CONFESOR">Carta de Lucrecia Borgia a 
+	su confesor</a><br>
+	<br><a href="./caulfield.htm#CARTA DE UNA VIRGEN DEL SOL A SU AMANTE">Carta de una virgen 
+	del sol a su amante</a><br>
+	<br><a href="./caulfield.htm#CON MI RUECA">Con mi rueca</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<br><br><a href="./caulfield.htm#FILTRI D'AMORE">Filtri d'amore</a><br><br>
+	<a href="./caulfield.htm#LA MANO EN EL AIRE">La mano en el aire</a><br><br>
+	<a href="./caulfield.htm#LIBRO DE LOS XXXIX ESCALONES">Libro de los 39 escalones</a><br>
+	<br><a href="./caulfield.htm#LLAVES PARA SUBIR LOS 39 ESCALONES">Llaves para subir los 39 
+	escalones</a><br><br>
+	<a href="./caulfield.htm#MI &Uacute;LTIMA CARTA ES">Mi &uacute;ltima carta es &nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./caulfield.htm#RESPIRO Y DESCANSO...">Respiro y descanso...</a><br><br>
+	<a href="./caulfield.htm#SCUSAMI, I WALK ALONE">Scusami, I walk alone</a><br>
+	<br>
+	<a href="./caulfield.htm#STOLEN KISSES ARE THE SWEETEST, LOUVECIENNES, 1932">Stolen kisses 
+	are the sweetest, Louveciennes, 1932</a><br><br><a href="./caulfield.htm#Y SOBRE TODO">Y 
+	sobre todo</a><br>
+	<br><a href="./caulfield.htm#TODO BESO A MUJER HONESTA ES UN ATENTADO">Todo beso a mujer 
+	honesta es un atentado</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+	Volver a:  
+	</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+	Volver a: </font>
+	<font face="Georgia" color="#85A6BC">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+	<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<p align="center"><font size="3" color="#A6BCCE" face="Georgia"><br></font>
+	</p>
+	<p><font face="Georgia" size="2" color="#85A6BC">
+	<a name="A VECES ME LLAMO INFANCIA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	A veces me llamo infancia</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Y mir&eacute; hacia atr&aacute;s contenta<br>de estar lejos de todo<br>engrandeciendo los 
+	recuerdos<br>convertida en poeta.<br>Y estaba all&iacute; sola pensando<br>all&iacute; 
+	sola me quedar&eacute;.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br>
+	<a name="&Aacute;UREO OJO EL ORIGEN"></a>
+	</font><font face="Georgia" color="#84B0D6">&Aacute;ureo ojo el origen</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Dos amantes caminan por un muro h&uacute;medo<br>y aparece frente a ellos una 
+	ciudad.<br>Suave es el animal que abre su mirar, 
+	<br>disuelve su respiraci&oacute;n <br>y se desnuda entre espacios sin l&iacute;mites.<br>
+	-Te dejar&eacute; pacer en mis mejillas, 
+	<br>mientras una gota de agua fresca trae consigo <br>un olor a este mismo 
+	instante.<br>
+	</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="AUTORRETRATO EN EL ESPEJO CONVEXO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Autorretrato en el espejo convexo</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>En el cuadro hay un ni&ntilde;o son&aacute;mbulo, pero no se puede<br>saber si camina 
+	o vuela. El movimiento de la retina<br>no quiere terminar el juego de lo que 
+	reposa o se alza.<br>El hilo de luz crea una transparencia en la mano que 
+	hace 
+	<br>ver su anillo. Parmigianino es capaz de refractarse.<br>En el cuadro hay 
+	una ni&ntilde;a son&aacute;mbula, 
+	<br>pero no se puede saber si camina o vuela.<br><br>Convergencias. Fluir 
+	desde el riesgo de una ma&ntilde;ana 
+	<br>an&oacute;nima. Los ni&ntilde;os entran en la c&aacute;mara l&uacute;cida y se <br>dan la mano. Un 
+	d&iacute;a nos veremos al otro lado del 
+	<br>prisma, abri&eacute;ndonos caminos en territorios l&uacute;dicos.<br><br>Hab&iacute;tame en 
+	ellos.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br>
+	</font><font face="Georgia" color="#84B0D6">
+	<a name="CARTA DE CAMILLA DE PISA A FRANCESCO DEL NERO"></a>Carta de Camilla 
+	de Pisa a Francesco del Nero</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>Traducci&oacute;n libre</em></font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iexcl;Que Dios castigue con toda 
+	clase de castigos a esa mujer que en este mismo instante posee aquello que 
+	me es m&aacute;s querido en este siglo XVI! Maldigo las noches y todos los 
+	instantes que pasas en otros brazos que no son los m&iacute;os. Malditos sean los 
+	besos y todos los actos que me causan tanto dolor. Dios m&iacute;o, dame paciencia.<br>
+	No hay nada que yo pueda hacer.<br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="CARTA DE LUCRECIA BORGIA A SU CONFESOR"></a>
+	</font><font face="Georgia" color="#84B0D6">
+	Carta de Lucrecia Borgia a su confesor</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Padre, si usted fuera mujer<br>entender&iacute;a las razones<br>y no me har&iacute;a 
+	decir tantas avemar&iacute;as<br>Padre, &iquest;no se da cuenta?<br>mi castigo de ahora<br>
+	es libertad en el siglo XX.<br>
+	</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="CARTA DE UNA VIRGEN DEL SOL A SU AMANTE"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Carta de una virgen del sol a su amante</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<em><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Para Abraham</em><br><br>En una tinaja<br>escondo el quip&uacute;<br>con la 
+	historia<br>y los sonidos<br>de nuestros besos.<br>Querido mio,<br>Guarda 
+	bien la cinta de mi talle.<br>Piensa en mi pelo y en sus adornos.<br>Yo 
+	pienso en ti y te aseguro<br>que muy prontico sobornar&eacute; a mamaogro<br>para 
+	seguir tejiendo de colores tu cuerpo a mi cuerpo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br><a name="CON MI RUECA">
+	</a></font><font face="Georgia" color="#84B0D6">Con mi rueca</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	No reconozco mi color.<br>En Alejandr&iacute;a perd&iacute; mi sombra<br>y toda apariencia 
+	de ciudad<br>ha sido belleza de lo in&uacute;til.<br>Todas mis coartadas s&oacute;lo<br>
+	sirvieron para estrechar<br>los lazos con la muerte.<br>Mi cuerpo 
+	encuadernado de lino<br>y la operaci&oacute;n final 
+	<br>de enrollar mis venas.<br><br>&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="FILTRI D'AMORE">
+	</a></font><font face="Georgia" color="#84B0D6">Filtri d'amore</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	miel en todos los panes<br>miel en todas las bocas<br>miel en ti, amado m&iacute;o,<br>
+	con una pizca de canela,<br>y una cucharadita de vainilla.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	<a name="LA MANO EN EL AIRE"></a></font>
+	<font face="Georgia" color="#84B0D6">La mano en el aire </font>
+	<font face="Georgia" size="2" color="#84B0D6"> <br><br>Se extiende la 
+	escritura desatada<br>ante los espejos del cuerpo.<br>
+	<br>Las im&aacute;genes son pr&oacute;digas<br>y el chispazo delicado del gozo<br>se 
+	cierran sobre la cintura<br>mientras se declara disidente.<br>
+	<br>Con fragmentos se construye el &aacute;nfora.<br>El descenso de la rueda 
+	termina.<br>La luz se hace forja<br>en su reflejo an&oacute;nimo.<br>
+	<br>Cuando llegue el d&iacute;a<br>en que est&eacute; terminada<br>la forma entrar&aacute; como 
+	aire<br>y un abrazador torrente<br>ser&aacute; murmullo.<br>
+	<br>De Giuseppe Arcimboldo<br>se ha dicho<br>que inventaba rompecabezas.<br>
+	<br><em>De &quot;Polvo de Angel&quot;</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="LIBRO DE LOS XXXIX ESCALONES"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Libro de los 39 escalones</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	<br>1<br>En los espejos<br>diez esferas y diez decires<br>especulan a libro 
+	abierto:<br>la luz del ojo brota de la pupila<br>de la siempre sorprendida.<br>
+	<br>2<br>Pintar el mundo al rev&eacute;s<br>es recordar:<br>la risa del rey estalla<br>
+	sobre la corona y la volatiliza.<br>El camino lleva a Gerona.<br>
+	<br>3<br>Las letras se combinan<br>con agua, tierra, madera,<br>piedras, 
+	ca&ntilde;as y hierro:<br>mientras Belleza juega<br>llegar&eacute; al observatorio.<br>
+	<br>4<br>En el universo de las notas<br>la armon&iacute;a se define<br>en el peor 
+	dibujo del tri&aacute;ngulo:<br>soy Antonello da Messina,<br>el de las trampas 
+	visuales.<br>
+	<br>5<br>Ba&uacute;l abierto de las sustancias.<br>Viaje en c&iacute;rculos de lo que creo 
+	es.<br>Las pir&aacute;mides, los rombos y los hex&aacute;gonos<br>se divierten con la 
+	flor:<br>trazo lo oscuro y el poema se imagina luz.<br>
+	<br>6<br>Emana la sombra de la forma<br>y de la forma las desapariciones.<br>
+	Mientras m&aacute;s se mira menos se ve:<br>la s&iacute;ntesis de todo y su opuesto<br>es 
+	llama propia en el interior del ba&uacute;l.<br>
+	<br>7<br>El tejido de esencias<br>se hace ave, rombo y espiral.<br>Los 
+	sue&ntilde;os maduran entre los hilos<br>de la clave de sol hecha semilla:<br>el 
+	libro mudo es reflexi&oacute;n de azar.<br>
+	<br>8<br>El tiempo reposa en su apariencia<br>y las que soy yo viven en las 
+	paredes:<br>el juego de manos se resume<br>en un teclado que r&iacute;e peligros.<br>
+	Quiero que la silla abra su nido.<br>
+	<br>9<br>Sin querer parecerse a nadie,<br>sin ser nadie,<br>se llega al 
+	silencio<br>que se parece a todo y es todo:<br>bordo el manto terrestre.<br>
+	<br>10<br>Cuando de apariciones se trata<br>los ojos y el alma forman el 
+	reino.<br>Cuando se habla de desapariciones<br>la consonancia se disuelve en 
+	el espejo:<br>dime si es hora de trazarte.<br>
+	<br>11<br>La ni&ntilde;ez es una caravana sin eje:<br>en el medio del cero<br>la 
+	semilla de mostaza camina a paso lento.<br>Mi proceso de iniciaci&oacute;n fue<br>
+	un peregrinaje a la memoria.<br>
+	<br>12<br>Para emprender la b&uacute;squeda<br>no vale lanzarse tras el espejo:<br>
+	abandona tu nave en la humedad del puerto<br>que el viento es favorable<br>y 
+	la ribera quietud y visi&oacute;n interior.<br>
+	<br>13<br>Los profetas ya no est&aacute;n<br>y los sabios son ausencia:<br>los 
+	sue&ntilde;os son ahora profetas y sabios<br>bienaventurados en tus santuarios 
+	<br>de 32 pilares matem&aacute;ticos.<br><br>14<br>Angelo Milfastos en tu barquito 
+	pintado<br>ibas a dejar caer tu cuchillo en el agua:<br>el mundo se despoja 
+	de los ojos<br>y el microcosmos nos levanta por el aire.<br>Sin t&iacute;tulos me 
+	muevo por el pabell&oacute;n de los cangrejos.<br>
+	<br>15<br>Regresamos a la fuente de los sue&ntilde;os y vemos las voces:<br>
+	le&aacute;mosnos hasta la saciedad<br>(desterremos el color azul y seamos astutos)<br>
+	despi&eacute;rtenos la m&uacute;sica, cantemos el &quot;Lekha Dodi&quot;<br>en la armon&iacute;a del telar 
+	de las hadas celtas.<br>
+	<br>16<br>Si la jornada est&aacute; hecha de met&aacute;foras.<br>viajemos con el 
+	vagabundo, carta del tarot o cuadro:<br>no hay criatura m&aacute;s preciosa que un 
+	gato<br>para el alma volar tras su memoria.<br>Dentro de la visita al pasado 
+	margino preceptos.<br>
+	<br>17<br>El boceto de nuestras caras son dos espejos de mano<br>con 
+	nuestras manos enlazadas en el banquito del mar:<br>el primer beso anida en 
+	el majestuoso gigante pasado.<br>Amamos las cosas imbuidas de misterio.<br>
+	El tesoro tiene el prestigio de lo inaccesible.<br>
+	<br>18<br>En el encuentro nos vimos y no sabemos qui&eacute;n es qui&eacute;n:<br>somos 
+	dos y una entidad que tras la pared se escurre del cofre.<br>Tus ojos son 
+	mis ojos que escuchan,<br>tras la l&aacute;mpara, el poema &quot;Zum Storchen&quot; de Paul 
+	Celan<br>y recuerdan que un d&iacute;a tambi&eacute;n fuimos Paracelso.<br>
+	<br>19<br>El fragmento de arriba est&aacute; timbrado<br>por el Splendor Solis :<br>
+	campanitas, banderas, capillas, ruedas dentadas.<br>Si seguimos la V&iacute;a Seca 
+	o la V&iacute;a H&uacute;meda<br>seremos adeptos de la nada.<br>
+	<br>20<br>Las planchas del espejo<br>contienen nuestros signos zodiacales.<br>
+	Ve&aacute;monos las caras de le&oacute;n, de cabra,<br>de cangrejo, de pavo real y de pez:<br>
+	la magia musical es mi prop&oacute;sito.<br>
+	<br>21<br>Volemos con el papalote que nos da Remedios:<br>ya salimos a la 
+	calle en el tandem de huesos de pollo.<br>En cuanto al simbolismo del texto,<br>
+	digamos que tiene un valor aproximado<br>de chorro de leche que cae al mar.<br>
+	<br>22<br>Salgo del sicoanalista con mi traje verde<br>despu&eacute;s de recoger 
+	las Doce Llaves de Basilio Valent&iacute;n:<br>el doctor Jung me ha aconsejado que 
+	con la &uacute;ltima llave<br>abra el laboratorio en cuyo centro est&aacute; mi padre<br>
+	junto al le&oacute;n que vomita la serpiente.<br>
+	<br>23<br>La iconograf&iacute;a del pelo nos permite pasearnos<br>con la certeza de 
+	que el viaje es m&aacute;s seguro.<br>Llegaremos a tiempo para que la presencia 
+	inesperada<br>nos acaricie la espalda con su lengua:<br>ignoremos el 
+	encuadre y entremos.<br>
+	<br>24<br>La m&iacute;mesis que H&ouml;lderlin me confi&oacute;<br>est&aacute; otra vez de verde:<br>
+	me siento y me vuelvo<br>el eje de los secretos quim&eacute;ricos<br>bajo la mirada 
+	de Amach.<br>
+	<br>25<br>Nunca antes hab&iacute;amos salido a cazar estrellas.<br>Alguien te habl&oacute; 
+	del Uno-Todo y de la constelaci&oacute;n no vista:<br>la piedra blanca muerde a la 
+	piedra roja<br>y vemos con el anteojo c&oacute;mo el drag&oacute;n enano<br>abreva en la 
+	fuente.<br>
+	<br>26<br>De Z&uuml;rich a Venecia volamos<br>en un tren sombrilla:<br>nuestro 
+	prestigio est&aacute; en el azar y el peligro.<br>La met&aacute;fora del camino nos ofrece<br>
+	el tejido secreto de los orfebres, y no me olvides.<br>
+	<br>27<br>La ruptura del c&iacute;rculo vicioso lleva a la infancia:<br>mi aro me 
+	hace hablar de juegos y de fuegos<br>en el ojo absoluto de lo s&uacute;bito.<br>En 
+	el cuadro se yergue un susurro -nazco de nuevo<br>con la luna enlazada a la 
+	copa que mira.<br>
+	<br>28<br>Los tratados &aacute;rabes y sus recetas sobre la coloraci&oacute;n del vidrio<br>
+	son caminos visionarios que alcanzan la salida:<br>Jan van Eyck descubri&oacute; 
+	una f&oacute;rmula de pintura al &oacute;leo<br>y t&uacute; llevas el mortero del alquimista al 
+	cuello.<br>Llamarte es la vivacidad de mi pelo enlazado al astro.<br>
+	<br>29<br>Dej&eacute;mos las espirales y recorramos el palacio<br>que m&aacute;s all&aacute; del 
+	mundo est&aacute; sin historia:<br>Fray Luis de Granada tiene un libro de 
+	maravillas<br>con hilos en la creaci&oacute;n de mi destino<br>en aquellos otros 
+	muros.<br>
+	<br>30<br>En el viaje circular toda superioridad<br>se pone en tela de 
+	juicio:<br>da validez a tu lectura y ascendamos al Monte An&aacute;logo.<br>Si 
+	rompemos el c&iacute;rculo vicioso inventaremos<br>la totalidad y el vac&iacute;o de 
+	nuestro itinerario.<br>
+	<br>31<br>Lleg&oacute; la huida y nos confundieron con los emigrantes<br>en el 
+	trasmundo de mi exilio sin reino:<br>yo, como la malabarista, he hecho 
+	prodigios<br>ante una multitud insensible a mi acto de vuelo y<br>a mis 
+	inscripciones del &quot;centro en el tri&aacute;ngulo del centro&quot;.<br>
+	<br>32<br>De id&eacute;nticos hilos es mi af&aacute;n de belleza<br>desde que se desbord&oacute; 
+	el festejo del Sechseläuten:<br>encontrar tu luz en la nota de San Pedro<br>
+	fue cambiar mi horario gremial, desfilar con los ni&ntilde;os<br>y dejar que mi 
+	traje hist&oacute;rico terminara solo el cortejo.<br>
+	<br>33<br>De la visita a la catedral he salido<br>como un esqueleto y su 
+	clepsidra y su flecha:<br>toda mortificaci&oacute;n ha sido necesaria para el 
+	&eacute;xito.<br>La tr&iacute;ada elemental se imagina pierna entre &aacute;rboles<br>mientras 
+	soy media luna de plata unida al le&oacute;n verde.<br>
+	<br>34<br>Gozo de trajes alusivos y de nueve meses simb&oacute;licos<br>entre el 
+	espacio po&eacute;tico y los dibujos interiores.<br>La escritura es una visita 
+	inesperada, hilillo fino:<br>&quot;Veo prodigios que me maravillan&quot; y confundo la 
+	historia<br>de la catabasis hacia el reino de Hades con la del enano.<br>
+	<br>35<br>Tejemos con las agujas de nuestras plumas<br>y brindamos &quot;Au 
+	bonheur des dames&quot; con alambiques estelares:<br>las manipulaciones del 
+	pincel satisfacen mis impulsos<br>de un pa&iacute;s de los locos sobre un caballo 
+	de cart&oacute;n.<br>El Libro de San Cipriano bebe del espejo que escucha.<br>
+	<br>36<br>Mi casa tiene una cocina y un laboratorio<br>y una despedida de 
+	varias puertas<br>y un viaje ansioso de De Chirico<br>y el para&iacute;so de los 
+	gatos:<br>Belleza busca en la memoria de mi mundo alterno.<br>
+	<br>37<br>La tejedora de Verona me ha escrito<br>una carta en metal 
+	bienaventurado de Praga:<br>los gabinetes de curiosidades de Rodolfo II<br>
+	a&uacute;n contienen cabezas compuestas y versos sueltos.<br>-&Aacute;mame poco, pero 
+	contin&uacute;a, dice el tesoro.<br>
+	<br>38<br>-&iexcl;Cu&eacute;ntame una mentira que he de contarte<br>otra m&aacute;s grande!, 
+	dice el hada gallega<br>con su alegr&iacute;a de siempre, y me canta<br>aquella 
+	cantiga que nadie nunca pudo aprender:<br>el huso y la rueca nos hilan a lo 
+	que estaba escrito.<br>
+	<br>39<br>Y si mis escalones a cada rato se transmutan<br>es porque un 
+	cierta Tabla de Esmeralda<br>se ha apoderado de las v&aacute;lvulas de mi coraz&oacute;n:<br>
+	entre Tuatha de Dannan y aguafuertes de islas:<br>cada texto es due&ntilde;o de su 
+	propia red, y &quot;todo es uno&quot;.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="LLAVES PARA SUBIR LOS 39 ESCALONES"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Llaves para subir los 39 escalones</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	1- 2- 3-.&nbsp; Juegos alqu&iacute;micos, memorias de tesoros de Alvaro Cunqueiro y 
+	un viaje al observatorio de Julio Cort&aacute;zar. Un escuchar y decir con Abraham 
+	Abulafia (Zaragoza 1240-Barcelona 1292) y la C&aacute;bala prof&eacute;tica. El camino 
+	hacia la juder&iacute;a de Gerona en el siglo XIII: el punto de llegada, el call y 
+	la casa de Jon&aacute;h. Hay que agregar algunas manipulaciones: calcinaci&oacute;n, 
+	congelaci&oacute;n, coagulaci&oacute;n, disoluci&oacute;n, digesti&oacute;n, destilaci&oacute;n, sublimaci&oacute;n, 
+	fermentaci&oacute;n y desgarraci&oacute;n. La Belleza fue una criatura de pelaje beato y 
+	quieto (que perd&iacute;, que llor&eacute; y a&uacute;n lloro). Podemos a&ntilde;adir con Valle-Incl&aacute;n: <em>
+	&quot;La belleza es la intuici&oacute;n de la unidad, y sus caminos, los m&iacute;sticos 
+	caminos de Dios&quot; </em>entre l&aacute;mparas maravillosas y preludios de &eacute;xtasis.<br>
+	<br>4. &quot;Armon&iacute;a&quot;, 1956 (Oleo sobre masonite). Remedios Varo escribi&oacute; sobre 
+	su cuadro: &quot;El personaje est&aacute; tratando de encontrar el hilo invisible que 
+	une todas las cosas, por eso, en un pentagrama de hilos de metal, ensarta 
+	toda clase de objetos, desde el m&aacute;s simple hasta un papelito conteniendo una 
+	f&oacute;rmula matem&aacute;tica que es ya en s&iacute; un c&uacute;mulo de cosas...&quot; (Octavio Paz - 
+	Roger Callois, Remedios Varo). Una visita al estudio de San Jer&oacute;nimo con 
+	Antonello Da Messina (c.1430-1479) me lleva a jugar al trompe d'oeil, a 
+	darme un paseo por Venecia y a descubrir d&oacute;nde est&aacute;s le&oacute;n que no te veo. De 
+	mi mano sali&oacute; la cara de Lautr&eacute;amont.<br><br>5. M&aacute;s armon&iacute;a y un encuentro 
+	con la mujer-lechuza de &quot;La creaci&oacute;n de las aves&quot;, 1958 (Oleo sobre 
+	masonite). &iquest;De qu&eacute; flor se trata aqu&iacute;? &iquest;Acaso de la rosa m&iacute;stica?<br><br>6. 
+	&quot;Encuentro&quot;, 1959 (Oleo sobre tela). Una mujer abre un cofre y se encuentra 
+	que &eacute;ste contiene su doble, &iexcl;vaya sorpresa!<br><br>7. Otro mirar (o remirar) 
+	la &quot;Armon&iacute;a&quot; y &quot;La creaci&oacute;n de las aves&quot;. tejer, ser, deshacer y dejar de 
+	ser. Semilla, mandorla, el espacio de la creaci&oacute;n.<br>
+	<br>8.&nbsp; &quot;Mimetismo&quot;, 1960 (Oleo sobre masonite). Varo escribi&oacute; sobre su 
+	cuadro: &quot;Esa se&ntilde;ora qued&oacute; tanto rato pensativa e inm&oacute;vil que se est&aacute; 
+	transformando en sill&oacute;n, la carne se le ha puesto igual que la tela del 
+	sill&oacute;n y las manos y pies ya son de madera torneada...&quot;<br><br>9.&nbsp; 
+	&quot;Bordando el manto terrestre&quot;, 1961 (Oleo sobre masonite). Una muchacha teje 
+	su salvaci&oacute;n, escapa de lo impuesto y huye con su amado.<br><br>10.&nbsp; 
+	&quot;Los amantes&quot;, 1963 (Mixta sobre cartulina). El alquimista confund&iacute;a 
+	incesantemente la imaginaci&oacute;n con sus experiencias f&iacute;sicas: el amor es una 
+	alquimia bien extra&ntilde;a que lo confunde todo.<br><br>11. &quot;Caravana&quot;, 1955 
+	(Oleo sobre masonite). Vuelta a la semilla, recordar, ver la infancia, verme 
+	y querer siempre ser la ni&ntilde;a de pocos a&ntilde;os que fui, al lado de mi madre y de 
+	mi padre, en aquellos d&iacute;as felices de La Habana, entre mar, y puertas, y 
+	miedos a la oscuridad, y sonambulismo.<br><br>12.&nbsp; &quot;El Tiempo era un 
+	vasto mar que me tragaba, y de su seno angustioso y tenebroso mi alma sal&iacute;a 
+	cubierta de recuerdos como si hubiese vivido mil a&ntilde;os&quot; (Valle-Incl&aacute;n, La 
+	l&aacute;mpara maravillosa).<br>Quietismo, contemplaci&oacute;n, si se llega al puerto se 
+	acaba &quot;el oficio de la vela y el remo&quot;, por eso quiero ser &quot;Sindbad&quot; y tal 
+	vez ma&ntilde;ana el sol y me voy a Dubl&iacute;n, y a M&eacute;xico, donde haremos muchas cosas, 
+	hasta morir, pero un d&iacute;a 7, Gilberto Owen.<br><br>13. Tratado herm&eacute;tico 
+	ilustrado del siglo XIV, Aurora consurgens. Me valgo del manuscrito de 
+	Z&uuml;rich (Zentralbibliothek, Codex Rhenovacenses, 172).<br><br>14.&nbsp; 
+	&quot;Retrato del bar&oacute;n Angelo Milfastos cuando era ni&ntilde;o&quot; (L&aacute;piz en papel).<br><br>
+	15.&nbsp; Dice el Zohar que so&ntilde;ar &quot;en azul&quot; es un mal presagio. Isaac Luria, 
+	brillante pensador jud&iacute;o del siglo XVI, fue un apasionado de la canci&oacute;n 
+	&quot;Lekha Dodi&quot; (&quot;Ven, mi amada&quot;), escrita por Salom&oacute;n Alkabez. Lo de la 
+	armon&iacute;a del telar es asunto de Cunqueiro.<br><br>16.&nbsp; &quot;Vagabundo&quot;, 1958 
+	(Oleo sobre masonite). El Bosco deja la baraja de &quot;El loco&quot;, inocente tocado 
+	por los dioses, que encuentra siempre el tesoro.<br>
+	<br>17.&nbsp; &quot;Los amantes&quot;, 1963 (Mixta sobre cartulina).<br><br>18.&nbsp; 
+	&quot;Z&uuml;rich, Zum Storchen&quot; y los versos de Celan que m&aacute;s me gustan: &quot;Dein Aug 
+	sah mir zu, sah hinweg, / dein Mund / sprach sich dem Aug zu, ich h&ouml;rte:&quot; Al 
+	suizo Paracelso (1493-1541) le gustaba pasearse, mientras rumiaba sus 
+	alquimifilosof&iacute;as y hablaba de las bacterias, por los portales de la 
+	Herberge zum Storchen. Tambi&eacute;n yo, en 1981, 1988, 1989, 1991 y 1993 he 
+	rumiado tratados esot&eacute;ricos por esos portales suizos.<br><br>19.&nbsp; 
+	Ocup&eacute;monos ahora del Splendor solis, obra maestra de los manuscritos 
+	alqu&iacute;micos. Escrito por Salom&oacute;n Trismonin, el libro narra las aventuras del 
+	alquimista, en el siglo XV, en la b&uacute;squeda de la Piedra Filosofal. La Gran 
+	Obra alqu&iacute;mica pod&iacute;a tener lugar por dos v&iacute;as: la seca o la h&uacute;meda.<br><br>
+	20.&nbsp; Serie de grabados alqu&iacute;micos dedicados al bestiario herm&eacute;tico. 
+	Para reproducciones v&eacute;ase Arte y alquimia de Van Lennep.<br><br>21.&nbsp; 
+	&quot;Retrato de los ni&ntilde;os Andrea y Lorenzo Villase&ntilde;or&quot;, 1957 (Oleo sobre 
+	masonite). Tambi&eacute;n los papalotes son s&iacute;mbolos de la ascensi&oacute;n espiritual en 
+	la filosof&iacute;a china. En cuanto al &quot;Tandem&quot;, adem&aacute;s de cierta aventura m&iacute;a en 
+	la que me mont&eacute; en una de esas bicicletas curiosas, una tarde de una tarde 
+	de Barcelona, se trata aqu&iacute; de &quot;De Homo Rodans&quot;, escultura de Varo, hecha 
+	con huesos de pescado, de pollo, de pavo y alambre. En cuanto al simbolismo 
+	del texto (y de todo el libro), b&uacute;scalo t&uacute;.<br><br>22.&nbsp; &quot;Mujer saliendo 
+	del psicoanalista&quot;, 1961 (Oleo sobre tela). Varo escribi&oacute; sobre su cuadro: 
+	&quot;Esta se&ntilde;ora sale del psicoanalista arrojando a un pozo la cabeza de su 
+	padre (como es correcto hacer al salir del psicoanalista). En el cesto lleva 
+	otros desperdicios psicol&oacute;gicos: un reloj, s&iacute;mbolo del temor de llegar 
+	tarde, etc. El doctor se llama Dr. FJA (Freud, Jung, Adler)&quot;. Las Doce 
+	Llaves es un tratado alqu&iacute;mico que se basa en grabados simb&oacute;licos. La 
+	primera edici&oacute;n apareci&oacute; en Alemania en 1599 con el t&iacute;tulo de Zw&ouml;lff 
+	Schl&uuml;ssel. Basilio Valent&iacute;n, su autor, fue un monje del siglo XV.<br><br>23.&nbsp; 
+	&quot;Locomoci&oacute;n capilar&quot;, 1960 (Oleo sobre masonite). Tambi&eacute;n imaginemos lo que 
+	es una &quot;Presencia inesperada&quot;, 1959 (Oleo sobre masonite).<br>
+	<br>24.&nbsp; &quot;M&iacute;mesis&quot;, 1960 (Oleo sobre masonite). Juego de bellezas 
+	griegas, Hiperi&oacute;n y recuerdos de cuando H&ouml;lderlin (1770-1843) me llev&oacute; a 
+	estudiar alem&aacute;n. &quot;Amach&quot; es vocablo irland&eacute;s que significa &quot;estar afuera&quot;, y 
+	as&iacute; se llama mi gato.<br><br>25.&nbsp; El Uno-Todo es aqu&iacute; un andr&oacute;gino, 
+	criatura so&ntilde;ada y so&ntilde;ante, as&iacute; como el Foco Universal. Para los alquimistas, 
+	la piedra blanca era capaz de transformar cualquier metal en plata, mientras 
+	que la piedra roja lograba transmutar los metales innobles en oro. Ese 
+	drag&oacute;n enano que mata su sed en la fuente vive en un grabado alqu&iacute;mico.<br>
+	<br>26.&nbsp; El &quot;tren sombrilla&quot; est&aacute; en el cuadro &quot;La huida&quot;, 1962 (Oleo 
+	sobre masonite) donde ella y &eacute;l escapan en un curioso veh&iacute;culo (objeto 
+	maravilloso surrealista) hacia el infinito. Es tambi&eacute;n un tren que sale de 
+	Z&uuml;rich (Via Gotthard-Chiasso-Milano) a Venecia.<br><br>27.&nbsp; Tres 
+	cuadros de Varo se unen aqu&iacute;: &quot;Cazadora de astros&quot;, 1956 (Mixta sobre 
+	papel), &quot;Nacer de nuevo&quot;, 1960 (Oleo sobre masonite) y &quot;La llamada&quot;, 1961 
+	(Oleo sobre masonite).<br><br>28.&nbsp; De nuevo &quot;La llamada&quot;, 1961 (Oleo 
+	sobre masonite). Y Van Eyck (1390-1441), con sus cuadros &quot;Hombre con 
+	turbante rojo&quot; y &quot;Retrato de bodas&quot;.<br><br>29.&nbsp; De Fray Luis de 
+	Granada, su peque&ntilde;o poema en prosa sobre la creaci&oacute;n, escrito en el siglo 
+	XVI, Maravilla del Mundo: &quot;Mas volviendo a la hermosura desta ave, dijimos 
+	haberla el Criador fabricado tan hermosa que por ella levant&aacute;semos nuestro 
+	esp&iacute;ritu a la contemplaci&oacute;n de la hermosura del que para este fin la cri&oacute;&quot;.<br>
+	<br>30.&nbsp; Nerval escribi&oacute;: &quot;Un vago soplo exhalan vagabundas esferas...&quot; 
+	y si entramos en la conspiraci&oacute;n del c&iacute;rculo podemos jugar a ser uroboros y 
+	vernos Uno-todo. Cuadro de Varo: &quot;Ascensi&oacute;n al Monte An&aacute;logo&quot;, 1960 (Oleo 
+	sobre triplay). Debemos incluir &quot;Rompiendo el c&iacute;rculo vicioso&quot;, 1962 
+	(T&eacute;cnica mixta).<br>
+	<br>31.&nbsp; Escapar, huir, dejar atr&aacute;s: &quot;El malabarista&quot;, 1956 (Oleo sobre 
+	masonite). En la villa italiana Palombara, que fue morada de un rosacruz, 
+	hab&iacute;a una puerta herm&eacute;tica, la porta magica, llevada a la Piazza Vittorio 
+	Emmanuele. Esta &quot;puerta&quot; est&aacute; llena de inscripciones y signos alqu&iacute;micos, y 
+	podemos leer en ella: &quot;El centro en el tri&aacute;ngulo del centro&quot;.<br><br>32.&nbsp; 
+	Belleza, emoci&oacute;n pura, se pase&oacute; por las calles de Z&uuml;rich al comienzo de la 
+	primavera y celebr&oacute; en el tercer lunes de abril la quema del mu&ntilde;eco de paja 
+	llamado B&ouml;&ouml;gg a las seis de la tarde en Bellevue. Si de San Pedro se trata, 
+	yo siempre estoy con el o&iacute;do abierto a los tonos del &oacute;rgano y del reloj con 
+	la esfera m&aacute;s grande de Europa.<br>
+	<br>33.&nbsp; Otra vez los grabados alqu&iacute;micos y un ir-venir por los ojos de 
+	otro.<br>
+	<br>34.&nbsp; Proceso alqu&iacute;mico, descenso, experimentaci&oacute;n, cuerpo tatuado 
+	por las llamas, Angel Dust.<br><br>35.&nbsp; Si no sabemos tejer, brindemos 
+	&quot;Au bonheur des dames&quot;, 1956 (Oleo sobre masonite). La inocencia se hace a 
+	veces la loca y viaja en naves de diferentes formas. En cuanto al Libro, 
+	puedo decir que es un tratado de misterios, misticismo y sue&ntilde;os.<br><br>36.&nbsp; 
+	Varo pint&oacute; &quot;El para&iacute;so de los gatos&quot;, 1955 (Oleo sobre masonite) y yo he 
+	vivido en un palazzo sure&ntilde;o que es refugio de gatos y de &aacute;ngeles. En cuanto 
+	a de De Chirico, siempre me ha obsesionado su pintura.<br><br>37.&nbsp; Otro 
+	cuadro, &quot;La tejedora de Verona&quot;, 1956 (Oleo). Sin lugar a dudas, el 
+	emperador Rodolfo II fue un ser extraordinario. Se asegur&oacute; los servicios de 
+	los mejores alquimistas del mundo y convirti&oacute; su corte praguense en la m&aacute;s 
+	fabulosa de Europa. Sus gabinetes de curiosidades o Wunderkämmern expon&iacute;an 
+	monstruos y toda clase de objetos ex&oacute;ticos. Rodolfo fue un apasionado del 
+	manierismo y en su corte Arcimboldo pint&oacute; sus &quot;cabezas compuestas&quot;.<br><br>
+	38.&nbsp; Fascinada por los tesoros que encontr&oacute; Cunqueiro, salto a la risa 
+	del huso y la rueca que escriben lo ya tejido.<br><br>39.&nbsp; Tabla 
+	alqu&iacute;mica, vista de un mapa y uno de los primeros grupos que poblaron 
+	Irlanda, los adoradores de la diosa Diana.<br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p>
+	<font face="Georgia" size="2" color="#84B0D6"><a name="MI ÚLTIMA CARTA ES">
+	</a></font>
+	<font face="Georgia" color="#84B0D6">Mi &uacute;ltima carta es</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	para dejar mi vestido amarillo<br>mi escudo de armas<br>mis cincuenta y una 
+	perlas<br>mis poemas y mis cartas<br>a aquel que una tarde de enero,<br>en 
+	Piazza San Marco,<br>se mir&oacute; en mis ojos<br>sin decirme nada...<br>
+	<br>Ver&oacute;nica del Cinquecento</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="RESPIRO Y DESCANSO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Respiro y descanso...</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Encontrado entre los papeles in&eacute;ditos de George Sand.
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Se cree que esta carta fue escrita en Mallorca <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	en medio de su pasi&oacute;n por Federico</em><br>
+	<br>Respiro y descanso<br>al mirarte desnudo.<br>Este acompa&ntilde;arnos y saber 
+	callar<br>por los caminos de nuestro dolor:<br>mi escritura se teje<br>sobre 
+	las paredes<br>del incomparable acorde de tus manos.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="SCUSAMI, I WALK ALONE"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Scusami, I walk alone</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&quot;La bandada de aves cruza el viento por encima del r&iacute;o&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Inscripci&oacute;n egipcia</em><br><br>Entre la palabra y la m&uacute;sica<br>llevo mi 
+	rubor ce&ntilde;ido<br>hasta los tobillos.<br>
+	<br>Ojos, p&aacute;rpados, labios, u&ntilde;as...<br>vigilan la suerte<br>de la quietud 
+	imposible.<br>Busco purificaciones<br>y a modo de tela<br>me dejo ungir con 
+	gracia.<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br>
+	<a name="STOLEN KISSES ARE THE SWEETEST, LOUVECIENNES, 1932"></a></font>
+	<font face="Georgia" color="#84B0D6">Stolen kisses are the sweetest, 
+	louveciennes, 1932</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Henri:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Je pense &agrave; toi tous le temps.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Ana&iuml;s</em><br><br>Lo &uacute;nico que quiero saber es<br>si detr&aacute;s del espejo<br>me 
+	esperan tus ojos.<br>Kess me quick, my dear,<br>que la vida es breve.<br>
+	<br>Te amo ha tomado por asalto<br>todos mis Diarios.<br>Ve&aacute;monos d&oacute;nde y 
+	c&oacute;mo sea.<br>Quiero que tus manos<br>escriban en los pliegues<br>de mis 
+	p&aacute;ginas<br>todas tus aventuras,<br>y que cada trazo de tu pluma<br>sirva 
+	para hacer<br>menos virgen mi cuaderno.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="TODO BESO A MUJER HONESTA ES UN ATENTADO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Todo beso a mujer honesta es un atentado</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Marco di Piero di Batista da Ortignano per<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	havere per forza baciato una fanciulla da marito nella strada.<br>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	(Exiliado en Pisa por cinco a&ntilde;os bajo la pena 
+	<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	de dos a&ntilde;os de galeras, parag.III, art. 81, Edit.general Gob. Roma, 1540)</em><br><br>
+	Por haberme besado, querido amigo, 
+	<br>tienes varios a&ntilde;os de buena suerte <br>y pasas a la posteridad 
+	inmaculado. 
+	<br>Debo decirte que admiro varias cosas de ti: <br>tu manera de vestirte, 
+	<br>tus brazos, la curva de tus labios, <br>tu sonrisa de ni&ntilde;o salvaje, <br>
+	tu buen apetito y el no haber 
+	<br>contestado mis cartas.<br><br></font></p>
+	<font size="4">
+	<p align="center"></font>
+	<font color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72"
+      height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="Y SOBRE TODO"></a></font>
+	<font face="Georgia" color="#84B0D6">Y sobre todo</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Inmutable e infinito<br>es tu cuerpo<br>de venado salvaje:<br>Es tu pelo<br>
+	todos los &aacute;rboles<br>Son tus ojos<br>todas las luces<br>Es tu nariz<br>todos 
+	los puentes<br>Son tus labios<br>todos los caminos<br>Es tu cuello<br>todas 
+	las canteras<br>Son tus hombros<br>todos los pilares<br>Tu pecho<br>todas 
+	las geograf&iacute;as<br>tus brazos<br>todos los vientos<br>Tu vientre<br>todas las 
+	espesuras<br>Tus piernas<br>todas las transformaciones<br>
+	<br>Inmutable e infinito:<br>eres <br><br><br><br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 19:59:21 Oct 6, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:16:19 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

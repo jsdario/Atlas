@@ -1,0 +1,916 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Alexandr Pushkin</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Alexandr Pushkin."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Alexandr Pushkin. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Biograf&iacute;as y traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Alexandr_Pushkin,poesias,traducciones,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/pushkin.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/pushkin.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815171011" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pushkin.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:10:11 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./pushkin.htm" title="6:16:52 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:10:11 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pushkin.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:10:11 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./pushkin.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>57 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jul 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:0000007d5001_2009:-1:110000110000_2010:-1:100000001110_2011:-1:000010011231_2012:-1:302110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+999999999</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./PUSHKIN.jpg" width="399" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./PUSHKIN1.jpg" width="195" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="726" height="317">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="718">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="286" width="268" valign="top">
+			<p align="left">&nbsp;<img border="0" src="./PUSHKIN2.jpg" width="246" height="305"></td>
+			<td width="446" valign="top" height="286">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica<br>
+			<br>
+			</font></u><font face="Georgia" size="2" color="#C4CAD4">Poeta y 
+			novelista ruso nacido en Mosc&uacute; en 1799.<br>
+			Perteneciente a una familia arist&oacute;crata y acaudalada,&nbsp; recibi&oacute; 
+			una educaci&oacute;n con marcada influencia de la lengua y la literatura 
+			francesa. Desde los doce a&ntilde;os mostr&oacute; su afici&oacute;n por la poes&iacute;a cuando 
+			a&uacute;n estudiaba en el Liceo Puskhin.<br>
+			En 1817, mientras ocupaba un cargo oficial en San Petersburgo, trab&oacute; 
+			amistad con intelectuales de la &eacute;poca, participando en grupos 
+			literarios clandestinos de oposici&oacute;n al r&eacute;gimen zarista, raz&oacute;n por 
+			la cual fue obligado a exiliarse en Ucrania y Crimea. De esta &eacute;poca 
+			datan <i>&quot;El prisionero del C&aacute;ucaso&quot;</i> 1822, <i>&quot;Los hermanos 
+			bandoleros&quot;</i> 1822 y&nbsp; <i>&quot;La fuente de Bakhcisaraj&quot;</i> 1824.<br>
+			Perdonado&nbsp; en 1826 por el Zar Nicol&aacute;s I, continu&oacute; escribiendo&nbsp; 
+			importantes obras, entre los que se destaca la novela en verso <i>
+			&quot;Eugenio Onieguin&quot;</i>,&nbsp; <i>&quot;Boris Godunov&quot;</i>, <i>&quot;La dama de 
+			picas&quot;</i>, <i>&quot;Poltava&quot;</i>,&nbsp; <i>&quot;Relatos de Belkin&quot;</i>, <i>
+			&quot;El caballero de bronce&quot; </i>y&nbsp; <i>&quot;La hija del Capit&aacute;n&quot;</i>.<br>
+			Falleci&oacute; en 1837, a ra&iacute;z de un duelo sostenido por defender el honor 
+			de su mujer.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Adonis 
+		Alexandr Pushkin:</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./pushkin.htm#A...">A...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#&iexcl;Adi&oacute;s mujer oriental amada!">&iexcl;Adi&oacute;s mujer oriental amada!</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Apuro sediento tu tierno gemido...">Apuro sediento tu tierno 
+		gemido...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Bajo el cielo de azul de su tierra nativa...">Bajo el cielo de 
+		azul de su tierra nativa...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Como fui en otro tiempo, as&iacute; soy ahora">Como fui en otro 
+		tiempo, as&iacute; soy ahora...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pushkin.htm#Del c&eacute;firo nocturno...">
+		Del c&eacute;firo nocturno...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pushkin.htm#El cantor">El cantor</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pushkin.htm#El prisionero">El 
+		prisionero</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Fue en su patria, bajo aquel cielo azul...">Fue en su patria, 
+		bajo aquel cielo azul...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Se apag&oacute; el astro del d&iacute;a...">Se apag&oacute; el astro del d&iacute;a...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Termin&oacute; el d&iacute;a lluvioso; de la lluviosa noche...">Termin&oacute; el 
+		d&iacute;a lluvioso; de la lluviosa noche...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Todo lo sacrifico a tu memoria...">Todo lo sacrifico a tu 
+		memoria...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pushkin.htm#Ya vague por las calles bulliciosas...">Ya vague por las 
+		calles bulliciosas...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pushkin.htm#Yo la am&eacute;...">Yo la 
+		am&eacute;...</a><br>
+		</font>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#C4CAD4"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="A..."></a></font>
+		<font face="Georgia" color="#C4CAD4">A...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> (Kern)*</i></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Recuerdo aquel instante 
+		prodigioso<br>
+		en el que apareciste frente a m&iacute;,<br>
+		lo mismo que una ef&iacute;mera visi&oacute;n<br>
+		igual que un genio de belleza pura.<br>
+		<br>
+		En mi languidecer sin esperanza,<br>
+		en las zozobras del ruidoso af&aacute;n,<br>
+		tu tierna voz se oy&oacute; en mi largo tiempo<br>
+		y so&ntilde;aba con tus divinos rasgos.<br>
+		<br>
+		Transcurrieron los a&ntilde;os. La agitada<br>
+		tormenta dispers&oacute; los viejos sue&ntilde;os<br>
+		y al olvido entregu&eacute; tu tierna voz<br>
+		as&iacute; como tus rasgos celestiales.<br>
+		<br>
+		En cautiverio oscuro y tenebroso<br>
+		mis d&iacute;as en silencio se arrastraban,<br>
+		sin la deidad y sin la inspiraci&oacute;n,<br>
+		sin l&aacute;grimas, sin vida, sin amor.<br>
+		<br>
+		Mas ahora que el despertar lleg&oacute; a mi alma,<br>
+		y de nuevo apareces ante m&iacute;,<br>
+		lo mismo que una ef&iacute;mera visi&oacute;n<br>
+		igual que un genio de belleza pura.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Y el coraz&oacute;n me late 
+		arrebatado<br>
+		porque en &eacute;l nuevamente resucitan<br>
+		La inspiraci&oacute;n y la divinidad<br>
+		y la vida, y el llanto y el amor.<br>
+		&nbsp;<br>
+		<i>*Anna Pyetr&oacute;vna Kem (1800-1879)</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center"><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="&iexcl;Adi&oacute;s mujer oriental amada!"></a>&iexcl;Adi&oacute;s mujer oriental amada!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Adi&oacute;s 
+		mujer oriental amada!<br>
+		Poco falt&oacute; y contra mi extravagancia,<br>
+		el h&aacute;bito que me dicta todo o nada<br>
+		casi me arrastra a las estepas, a la errancia<br>
+		detr&aacute;s de las huellas de tu carreta.<br>
+		Tienes rasgados los ojos,<br>
+		la naricita rara, la frente amplia,<br>
+		no balbuceas en franc&eacute;s tus antojos,<br>
+		los pies no aprietas con seda,<br>
+		y junto al samovar, a la inglesa,<br>
+		no sirves el t&eacute;, ni las galletas,<br>
+		no suspiras por poetas de moda,<br>
+		Shakespeare no te inquieta,<br>
+		no te abrumas de melancol&iacute;a<br>
+		cuando la cabeza se queda vac&iacute;a,<br>
+		no tarareas <i>ma dov' &eacute;,</i><br>
+		el baile &uacute;ltimo no conoces...<br>
+		Algo ocurri&oacute; conmigo, apenas media hora,<br>
+		mientras alistaban los caballos,<br>
+		la mente y el coraz&oacute;n los llenaba<br>
+		tu belleza agreste, tus ojos.<br>
+		&iquest;No es igual amigo m&iacute;o:<br>
+		extraviar al alma, ociosa<br>
+		entre espejos brillantes, en un teatro<br>
+		que huir por la estepa, n&oacute;mada?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1829</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Rub&eacute;n Fl&oacute;rez Arcila</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Apuro sediento tu tierno gemido..."></a>Apuro sediento tu 
+		tierno gemido...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Apuro sediento tu tierno gemido,<br>
+		tu intimidad que me embriaga<br>
+		y ardiente, la lengua del dulce deseo,<br>
+		pasi&oacute;n cuyo vino no sacia.<br>
+		Pero corta con ese relato,<br>
+		oculta, calla tu sue&ntilde;o:<br>
+		su llama que quema yo temo,<br>
+		tengo miedo de saber tu secreto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1828</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Rub&eacute;n Fl&oacute;rez Arcila</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Bajo el cielo de azul de su tierra nativa..."></a>Bajo el cielo 
+		de azul de su tierra nativa...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Bajo el cielo azul de su tierra nativa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; languidec&iacute;a ella, se 
+		agostaba...*<br>
+		Al fin se marchit&oacute;, y ya de seguro<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; su joven sombra sobre m&iacute; 
+		volaba;<br>
+		Nos separa una l&iacute;nea infranqueable.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En vano el sentimiento 
+		despert&eacute;.<br>
+		Su muerte o&iacute; de un labio indiferente<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y con indiferencia la escuch&eacute;.<br>
+		&iexcl;Y mi alma la am&oacute; con tanto fuego,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con una turbaci&oacute;n tan dolorosa,<br>
+		con tanto sufrimiento y extrav&iacute;o,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; con tortura tan tierna y 
+		angustiosa!<br>
+		&iquest;Qu&eacute; se hicieron la pena y el cari&ntilde;o?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ni reproches me quedan ya ni 
+		llanto<br>
+		para rememorar su sombra cr&eacute;dula<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ni la dulce memoria de los d&iacute;as 
+		pasados.<br>
+		<br>
+		<i>*El poema se refiere a Arnalia Riznich, muerta en Italia en 1825 y 
+		destinataria<br>
+		de algunos de los m&aacute;s hermosos poemas pushkinianos.</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><br>
+&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Como fui en otro tiempo, as&iacute; soy ahora"></a>Como fui en otro 
+		tiempo, as&iacute; soy ahora...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>Tel j'&eacute;tais autrefois et el je suis encore <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Andr&eacute; Chenier</i><br>
+		<br>
+		Como fui en otro tiempo, as&iacute; soy ahora,<br>
+		descuidado, amoroso. Bien sab&eacute;is, mis amigos,<br>
+		si puedo una belleza mirar sin conmoverme,<br>
+		sin t&iacute;mida ternura, sin emoci&oacute;n secreta.<br>
+		&iquest;Jug&oacute; poco el amor, acaso, en mi existencia?<br>
+		&iquest;Bastante no luch&eacute; cual joven gerifalte<br>
+		en la red traicionera tendida por la Cipria?*<br>
+		Pero a&uacute;n no escarmentado por centenas de ofensas, <br>
+		ante otros nuevos &iacute;dolos elevo mis plegarias...</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">*Afrodita</font></i></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Del c&eacute;firo nocturno..."></a>Del c&eacute;firo nocturno...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Del c&eacute;firo nocturno<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&eacute;ter fluye.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Bulle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		huye<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el Guadalquivir.<br>
+		<br>
+		Sali&oacute; la luna dorada,<br>
+		&iexcl;silen...! &iexcl;chis!...&nbsp; guitarra al son.<br>
+		La espa&ntilde;ola enamorada<br>
+		se ha asomado a su balc&oacute;n.<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Del c&eacute;firo nocturno<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&eacute;ter fluye.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Bulle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		huye<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el Guadalquivir.<br>
+		<br>
+		&iexcl;Qu&iacute;tate, &aacute;ngel, la mantilla!<br>
+		&iexcl;Cual claro d&iacute;a mu&eacute;strate!<br>
+		&iexcl;Por la f&eacute;rrea barandilla<br>
+		ense&ntilde;a el divino pie!<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Del c&eacute;firo nocturno<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&eacute;ter fluye.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Bulle,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		huye<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el Guadalquivir.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El cantor"></a>El 
+		cantor</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Echasteis la voz 
+		nocturna junto al soto<br>
+		del cantor del amor, del cantor de su pena?<br>
+		en la hora matutina, cuando callan los campos<br>
+		y el son triste y sencillo de la zampo&ntilde;a suena,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;no la hab&eacute;is escuchado?<br>
+		<br>
+		&iquest;Hallasteis en la yerma oscuridad boscosa<br>
+		al cantor del amor, al cantor de su pena?<br>
+		&iquest;Notasteis su sonrisa, la huella de su llanto,<br>
+		su apacible mirada, de melancol&iacute;a llena?<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;No lo hab&eacute;is encontrado?<br>
+		<br>
+		&iquest;Suspirasteis atentos a la voz apacible<br>
+		del cantor del amor, del cantor de su pena?<br>
+		Cuando visteis al joven en medio de los bosques,<br>
+		al cruzar su mirada sin brillo con la vuestra,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;no hab&eacute;is suspirado?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El prisionero"></a>El 
+		prisionero</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Estoy entre rejas en 
+		h&uacute;meda celda.<br>
+		Criada en cautiverio, un &aacute;guila joven,<br>
+		mi triste compa&ntilde;a, batiendo sus alas,<br>
+		junto a la ventana su pitanza pica.<br>
+		<br>
+		La pica, la arroja, mira la ventana,<br>
+		como si pensara lo mismo que yo.<br>
+		Sus ojos me llaman y su griter&iacute;o,<br>
+		y proferir quiere: &iexcl;Alcemos el vuelo!<br>
+		<br>
+		&iexcl;T&uacute; y yo somos libres como el viento, hermana!<br>
+		Huyamos, es hora, do blanquea entre nubes<br>
+		la monta&ntilde;a y brilla de azul la marina,<br>
+		donde paseemos s&oacute;lo el viento. ..&iexcl;y yo!</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Fue en su patria, bajo aquel cielo azul..."></a>Fue en su 
+		patria, bajo aquel cielo azul...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Fue en su patria, bajo 
+		aquel cielo azul<br>
+		ella, la marchita rosa...<br>
+		Al fin muri&oacute;, un h&aacute;lito eras t&uacute;,<br>
+		sombra adolescente que nadie toca;<br>
+		pero una l&iacute;nea hay entre nosotros, es un abismo.<br>
+		Intent&eacute;, en vano, avivar mi sentimiento:<br>
+		la muerte dijeron los labios con oscuro cinismo,<br>
+		y, yo la atend&iacute; indiferente.<br>
+		A qui&eacute;n am&eacute; entonces con alma fervorosa,<br>
+		a qui&eacute;n le di mi amor en vilo,<br>
+		con tanta infinita, amante tristeza,<br>
+		con callado martirio, con delirio.<br>
+		&iquest;Qu&eacute; fue del amor y la pena? Ay en el alma m&iacute;a<br>
+		para la ingenua, la pobre sombra,<br>
+		para el feliz recuerdo de los perdidos d&iacute;as,<br>
+		no tengo l&aacute;grimas, ni m&uacute;sica que la nombra.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1826</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rub&eacute;n 
+		Fl&oacute;rez Arcila<br>
+&nbsp;</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Se apag&oacute; el astro del d&iacute;a..."></a>Se apag&oacute; el astro del d&iacute;a</font><font face="Georgia" size="2" color="#C4CAD4">...<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Se apag&oacute; el astro del 
+		d&iacute;a;<br>
+		el mar azul cubri&oacute; la niebla de la tarde.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &iexcl;Restallad, restallad, d&oacute;ciles velas!<br>
+		&iexcl;Encr&eacute;spate a mis pies, l&uacute;gubre oc&eacute;ano!<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contemplo las orillas 
+		apartadas,<br>
+		el m&aacute;gico conf&iacute;n del mediod&iacute;a;<br>
+		Voy hacia &eacute;l con emoci&oacute;n y angustia,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; embelesado por recuerdos 
+		tantos...<br>
+		siento que afloran l&aacute;grimas de nuevo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hasta los ojos, y 
+		me hierve el alma<br>
+		y deja de alentar; en torno m&iacute;o<br>
+		Un sue&ntilde;o familiar revolotea.<br>
+		Recuerdo mi amor loco del pasado,<br>
+		todo cuando sufr&iacute; y cuanto fue bueno,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; torturador enga&ntilde;o de esperanza y deseo...<br>
+		&iexcl;Restallad, restallad, d&oacute;ciles velas!<br>
+		&iexcl;Encr&eacute;spate a mis pies, l&uacute;gubre oc&eacute;ano!<br>
+		Vuela, bajel, cond&uacute;ceme a lejanos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parajes, al capricho de 
+		los mares,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; enga&ntilde;osos, mas no a las 
+		tristes costas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de mi brumosa patria, de 
+		mi tierra<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; donde por vez primera mis 
+		sentidos<br>
+		ardieron inflamados de pasi&oacute;n,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; donde las tiernas musas 
+		me sonrieron<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en secreto, donde entre 
+		tempestades<br>
+		Se marchit&oacute; temprano mi perdida<br>
+		juventud, donde al&iacute;gera alegr&iacute;a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; me traicion&oacute;, y el 
+		coraz&oacute;n helado<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; entreg&oacute; al sufrimiento.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En b&uacute;squeda de nuevas 
+		sensaciones<br>
+		de vosotros hu&iacute;, paternos lares,<br>
+		de vosotros, alumnos del deleite,<br>
+		ef&iacute;meros amigos de mi ef&iacute;mera<br>
+		juventud; y vosotras, confidentes<br>
+		de mis pecaminosos extrav&iacute;os,<br>
+		a quienes sin amor sacrificara<br>
+		reposo, gloria, libertad y alma,<br>
+		y vosotras, a quienes he olvidado,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j&oacute;venes traicioneras, 
+		misteriosas<br>
+		amigas de mi &aacute;urea primavera,<br>
+		y vosotras, a quienes he olvidado...<br>
+		Pero del coraz&oacute;n la antigua herida,<br>
+		la honda llaga de amor, nada cur&oacute;...<br>
+		&iexcl;Restallad, restallad, d&oacute;ciles velas!<br>
+		&iexcl;Encr&eacute;spate a mis pies, l&uacute;gubre oc&eacute;ano!</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center"><br>
+&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Termin&oacute; el d&iacute;a lluvioso; de la lluviosa noche..."></a>Termin&oacute; 
+		el d&iacute;a lluvioso; de la lluviosa noche...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Termin&oacute; el d&iacute;a 
+		lluvioso; de la lluviosa noche<br>
+		la sombra el cielo cubre con plomizo vestido. <br>
+		Lo mismo que un espectro, detr&aacute;s de la pineda,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la luna, rodeada de niebla, ha aparecido.<br>
+		Todo inspira en mi alma una angustia sombr&iacute;a.<br>
+		All&aacute; lejos la luna brilla en pleno fulgor;<br>
+		all&aacute; el aire rezuma tibieza vespertina,<br>
+		all&aacute; la mar agita su manto de esplendor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		bajo el azul del cielo.<br>
+		Es el momento: ahora va ella por el monte<br>
+		a las costas hundidas por las ruidosas olas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		All&aacute;, bajo unas pe&ntilde;as escondidas,<br>
+		ahora est&aacute; ella sentada, entristecida y sola.<br>
+		Sola... delante de ella ninguno llora o sufre,<br>
+		sus rodillas de besos nadie en &eacute;xtasis cubre.<br>
+		Sola... sin que a los labios de amante alguno entregue<br>
+		ni hombros, ni h&uacute;medos labios, ni sus senos de nieve.<br>
+		De su amor celestial ninguno es digno.<br>
+		&iquest;No es Cierto? Sola est&aacute;s... lloras... yo estoy tranquilo. <br>
+		Pero si...</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Todo lo sacrifico a tu memoria..."></a>Todo lo sacrifico a tu 
+		memoria...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Todo lo sacrifico a tu memoria:<br>
+		los acentos de la lira inspirada,<br>
+		el llanto de una joven abrasada,<br>
+		el temblor de mis celos. De la gloria<br>
+		el brillo, y mi destierro tenebroso,<br>
+		lo bello de mis claros pensamientos<br>
+		y la venganza, sue&ntilde;o tormentoso<br>
+		de mis encarnizados sufrimientos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo<br>
+		<br>
+		</font></i><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><br>
+		<a name="Ya vague por las calles bulliciosas..."></a>Ya vague por las 
+		calles bulliciosas...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Ya vague por las calles 
+		bulliciosas,<br>
+		ya penetre en el templo populoso,<br>
+		ya me rodeen alocados j&oacute;venes,<br>
+		en mis ensue&ntilde;os sigo estando absorto.<br>
+		<br>
+		Me digo: pasar&aacute;n raudos los a&ntilde;os<br>
+		y por muchos que aqu&iacute; nos encontremos,<br>
+		todos iremos a la eterna fosa<br>
+		y para alguno ya lleg&oacute; su tiempo.<br>
+		<br>
+		Cuando contemplo el roble solitario,<br>
+		este patriarca de los bosques -pienso-<br>
+		sobrevivi&oacute; al cruel siglo de mis padres<br>
+		y sobrevivir&aacute; a este siglo nuestro.<br>
+		<br>
+		Cuando acaricio a una tierna criatura<br>
+		pienso que es hora ya de despedirme:<br>
+		te cedo el puesto, florecer te toca,<br>
+		y para m&iacute; ya es hora de pudrirme.<br>
+		<br>
+		Cada d&iacute;a que pasa, cada hora,<br>
+		me he acostumbrado a ejercitar la mente,<br>
+		e intento adivinar cu&aacute;l de entre ellos<br>
+		ser&aacute; el aniversario de mi muerte.<br>
+		<br>
+		Y &iquest;d&oacute;nde me enviar&aacute; la muerte el Hado?<br>
+		&iquest;En la guerra, en la mar, como viajero?<br>
+		&iquest;O si acaso ser&aacute;, el valle vecino<br>
+		el que reciba mis helados restos?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Y aunque para mi cuerpo 
+		inanimado<br>
+		d&oacute;nde se descomponga igual le sea,<br>
+		yo, m&aacute;s cercano a mi solar querido,<br>
+		de ser posible, reposar quisiera.<br>
+		<br>
+		Y que a la entrada misma de mi tumba<br>
+		una juvenil vida jugar pueda,<br>
+		y que Naturaleza indiferente<br>
+		con su eterna hermosura resplandezca.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Eduardo 
+		Alonso Duengo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Yo la am&eacute;..."></a>Yo la 
+		am&eacute;...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Yo la am&eacute;,<br>
+		y ese amor tal vez,<br>
+		est&aacute; en mi alma todav&iacute;a, quema mi pecho.<br>
+		Pero confundirla m&aacute;s, no quiero.<br>
+		Que no le traiga pena este amor m&iacute;o.<br>
+		Yola am&eacute;. Sin esperanza, con locura.<br>
+		Sin voz, por los celos consumido;<br>
+		la am&eacute;, sin enga&ntilde;o, con ternura,<br>
+		tanto, que ojal&aacute; lo quiera Dios,<br>
+		y que otro, amor le tenga como el m&iacute;o.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1829</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Rub&eacute;n Fl&oacute;rez Arcila</font></i></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:10:11 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:29 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

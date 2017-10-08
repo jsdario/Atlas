@@ -1,0 +1,795 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Robert Frost</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Robert Frost."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Robert Frost. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Robert_Frost,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#FFFFFF">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/frost.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "4";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/frost.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131204064645" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./frost.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="3 Nov 2013"><strong>NOV</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 6:46:45 Dec 4, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jan
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./frost.htm" title="17:57:38 Nov 3, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 6:46:45 Dec 4, 2013">4</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./frost.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 6:46:45 Dec 4, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./frost.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>64 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jan 06 - 4 Dec 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:200011000400_2007:-1:520313231200_2008:-1:111321000001_2009:-1:010000110000_2010:-1:100000001110_2011:-1:000000011111_2012:-1:000111001000_2013:11:101210010011_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./FROST.jpg" width="268" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./FROST1.jpg" width="296" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="715" height="324">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="707"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="293" width="285" valign="top"><p align="left">
+	<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./FROST2.jpg" width="220" height="290"></font></td>
+    <td width="418" valign="top" height="293"><p align="left">
+	<u><font face="Georgia"
+    color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u><font face="Georgia" size="2"
+    color="#C4CAD4"><br>
+    <br>
+    Poeta norteamericano nacido en San Francisco en 1874.<br>
+	Al terminar estudios b&aacute;sicos en Darthmouth College de New Hampshire, ingres&oacute;&nbsp; 
+	a la Facultad de Derecho de la Universidad de&nbsp; Harvard carrera que 
+	suspendi&oacute; en 1899 debido a problemas de salud.<br>
+	En 1912, buscando un mejor futuro, viaj&oacute; con su familia a Inglaterra&nbsp; 
+	donde permaneci&oacute; tres a&ntilde;os en los cuales public&oacute; su primera colecci&oacute;n de 
+	poemas <i>&quot;La voluntad de un muchacho&quot;</i> en 1913. De regreso a 
+	Norteam&eacute;rica apoyado por amigos poetas como Ezra Pound, adquiri&oacute; gran fama y 
+	fue reconocido como uno de los grandes poetas de su pa&iacute;s, con trabajos como
+	<i>&quot;Intervalos en la monta&ntilde;a&quot; </i>&nbsp;en 1916, <i>&quot;New Hampshire&quot;</i> en 1923, <i>
+	&quot;El arroyo que fluye al oeste&quot; </i>en 1928, <i>&quot;Una cordillera de m&aacute;s all&aacute;&quot;</i> 
+	en 1936, <i>&quot;M&aacute;scara de la raz&oacute;n&quot;</i> en 1945&nbsp; y <i>&quot;En el calvero&quot;</i> 
+	en 1962.<br>
+	Recibi&oacute; el premio <i>Pullitzer</i> en cuatro ocasiones.<br>
+	Falleci&oacute; en Boston en 1963. &copy;</font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Robert Frost:</font><font size="3" color="#FFFFFF" face="Georgia"><br>
+</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><br>
+		<font face="Georgia" color="#FFFFFF"><a href="./frost.htm#ABEDULES">
+		Abedules</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#ALTO EN EL BOSQUE EN UNA NOCHE DE INVIERNO">Alto en el bosque 
+		en una noche de verano</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#ARROBAMIENTO">
+		Arrobamiento</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#EL CAMINO NO ELEGIDO">El camino no elegido</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#EL PASTIZAL">El pastizal</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#EL PELIGRO DE LA ESPERANZA">El peligro de la esperanza</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#EL POTRO DESBOCADO">El potro desbocado</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#EL TEL&Eacute;FONO">El tel&eacute;fono</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#FUEGO Y HIELO">
+		Fuego y hielo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#Lo m&aacute;s pr&oacute;ximo">Lo m&aacute;s 
+		pr&oacute;ximo</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#NOCHE INVERNAL DE UN ANCIANO">Noche invernal de un anciano</a></font><font face="Georgia" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia"><a href="./frost.htm#SIEGA">Siega</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#UN ALTO EN EL BOSQUE MIENTRAS NIEVA">Un alto en el bosque 
+		mientras nieva&nbsp;&nbsp; (otra versi&oacute;n)</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./frost.htm#UNA VEZ, JUNTO AL PAC&Iacute;FICO">Una vez, junto al pac&iacute;fico</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia"><a href="mailto:poesia@amediavoz.com">
+poesia@amediavoz.com</a></font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="3" color="#FFFFFF"><br><br>
+		</font>
+		<font face="Georgia" size="3" color="#C4CAD4">
+		<a name="ABEDULES"></a></font>
+		<font face="Georgia" color="#C4CAD4">Abedules</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Cuando veo abedules oscilar a derecha<br>y a izquierda, ante una hilera 
+		de &aacute;rboles m&aacute;s oscuros,<br>me complace pensar que un muchacho los mece.<br>
+		Pero no es un muchacho quien los deja curvados,<br>sino las tempestades. 
+		A menudo hemos visto<br>los &aacute;rboles cargados de hielo, en claros d&iacute;as<br>
+		invernales, despu&eacute;s de un aguacero.<br>Cuando sopla la brisa se les oye 
+		crujir,<br>se vuelven irisados cuando se resquebraja<br>su esmaltada 
+		corteza. Pronto el sol les arranca<br>sus conchas cristalinas, que 
+		mezcla con la nieve...<br>Esas pilas de conchas esparcidas dir&iacute;ase<br>
+		que son la rota c&uacute;pula interior de los cielos.<br>La carga los doblega 
+		hacia los mustios<br>matorrales cercanos, pero nunca se quiebran,<br>
+		aunque jam&aacute;s podr&aacute;n enderezarse solos:<br>durante muchos a&ntilde;os las ramas 
+		de sus troncos<br>curvadas barrer&aacute;n con sus hojas el suelo,<br>igual que 
+		arrodilladas doncellas con los sueltos<br>cabellos hacia atr&aacute;s y 
+		sec&aacute;ndose al sol.<br>Mas cuando la Verdad se me interpuso<br>en la forma 
+		de un hecho como la tempestad,<br>iba a decir que quiz&aacute;s un muchacho,<br>
+		yendo a buscar las vacas, inclinaba los &aacute;rboles...<br>Un muchacho que 
+		por vivir lejos del pueblo<br>s&oacute;lo sabe jugar, en invierno o en verano,<br>
+		a juegos que ha inventado para jugar &eacute;l solo.<br>Ha domado los &aacute;rboles 
+		de su padre uno a uno<br>pasando por encima de ellos tan a menudo<br>que 
+		nada les dej&oacute; de su tiesura.<br>A todos dobleg&oacute;; no dej&oacute; ni uno solo 
+		<br>sin conquistar. Aprendi&oacute; la manera<br>de no saltar de un &aacute;rbol sin 
+		haber conseguido<br>doblarlo contra el suelo. Conserv&oacute; el equilibrio<br>
+		hasta llegar arriba, trepando con cuidado,<br>con la misma destreza que 
+		uno emplea al llenar<br>la copa hasta el borde, y aun arriba del borde.<br>
+		Entonces, de un envi&oacute;n, disparaba los pies<br>hacia afuera y saltaba del 
+		aire hasta la tierra.<br>
+		<br>Yo fui tambi&eacute;n, anta&ntilde;o, un columpiador de &aacute;rboles;<br>muy a menudo 
+		sue&ntilde;o en que volver&eacute; a serlo,<br>cuando me hallo cansado de mis 
+		meditaciones,<br>y la vida parece un bosque sin caminos<br>donde, al 
+		vagar por &eacute;l, sentirnos en la cara<br>ardiente el cosquilleo de rotas 
+		telara&ntilde;as,<br>y un ojo lagrimea a causa de una brizna,<br>y quisiera 
+		alejarme de la tierra alg&uacute;n tiempo,<br>para luego volver y empezar otra 
+		vez.<br>Que jam&aacute;s el destino, comprendi&eacute;ndome mal,<br>me otorgue la 
+		mitad de lo que anhelo<br>y me niegue el regreso. Nada hay, para el 
+		amor,<br>como la tierra; ignoro si existe mejor sitio.<br>Quisiera 
+		encaramarme a un abedul, trepar,<br>por las ramas oscuras del 
+		blanquecino tronco<br>y subir 
+		<em>hacia</em> el cielo, hasta que el abedul, <br>dobl&aacute;ndose vencido, me 
+		volviese a la tierra.<br>Subir y regresar ser&iacute;a muy hermoso.<br>Pues hay 
+		cosas peores en la vida que ser<br>un columpiador de &aacute;rboles.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="ALTO EN EL BOSQUE EN UNA NOCHE DE INVIERNO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Alto en el bosque en una noche de invierno</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Me imagino de qui&eacute;n son estos bosques.<br>Pero en el pueblo su casa se 
+		encuentra;<br>no me ver&aacute; parada en este sitio,<br>ante sus bosques 
+		cubiertos de nieve.<br>
+		<br>Mi peque&ntilde;o caballo encuentra ins&oacute;lito<br>parar aqu&iacute;, sin ninguna 
+		alquer&iacute;a<br>entre el helado lago y estos bosques,<br>en la noche m&aacute;s 
+		l&oacute;brega del a&ntilde;o.<br>
+		<br>Las campanillas del arn&eacute;s sacude<br>Como si presintiera que ocurre 
+		algo...<br>S&oacute;lo se oye otro son: el sigiloso<br>paso del viento entre 
+		los copos blandos.<br>
+		<br>&iexcl;Qu&eacute; bellos son los bosques, y sombr&iacute;os!<br>Pero tengo promesas que 
+		cumplir,<br>y andar mucho camino sin dormir,<br>y andar mucho camino sin 
+		dormir.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ARROBAMIENTO"></a></font><font face="Georgia" color="#C4CAD4">
+		Arrobamiento</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		La lluvia le dijo al viento:<br>-Empuja t&uacute; que yo azoto-<br>y t&aacute;nto 
+		hirieron el soto<br>que de las flores altivas,<br>doblegadas pero vivas,<br>
+		yo sent&iacute;a el sufrimiento.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="EL CAMINO NO ELEGIDO"></a></font>
+		<font face="Georgia" color="#C4CAD4">El camino no elegido</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Dos caminos se bifurcaban en un bosque amarillo, 
+		<br>Y apenado por no poder tomar los dos<br>Siendo un viajero solo, 
+		largo tiempo estuve de pie 
+		<br>Mirando uno de ellos tan lejos como pude, <br>Hasta donde se perd&iacute;a 
+		en la espesura;<br>
+		<br>Entonces tom&eacute; el otro, imparcialmente, <br>Y habiendo tenido quiz&aacute;s 
+		la elecci&oacute;n acertada, 
+		<br>Pues era tupido y requer&iacute;a uso; <br>Aunque en cuanto a lo que vi 
+		all&iacute;
+		<br>Hubiera elegido cualquiera de los dos. <br><br>Y ambos esa ma&ntilde;ana 
+		yac&iacute;an igualmente, 
+		<br>&iexcl;Oh, hab&iacute;a guardado aquel primero para otro d&iacute;a! <br>Aun sabiendo el 
+		modo en que las cosas siguen adelante, 
+		<br>Dud&eacute; si deb&iacute;a haber regresado sobre mis pasos. <br><br>Debo estar 
+		diciendo esto con un suspiro 
+		<br>De aqu&iacute; a la eternidad:<br>Dos caminos se bifurcaban en un bosque y 
+		yo, 
+		<br>Yo tom&eacute; el menos transitado, <br>Y eso hizo toda la diferencia.<br>
+		<br><em>Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL PASTIZAL"></a></font><font face="Georgia" color="#C4CAD4">
+		El pastizal</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Voy a limpiar el arroyo, en los pastos...<br>S&oacute;lo rastrillar&eacute; las hojas 
+		secas.<br>(Y quiz&aacute;s me detenga hasta ver clara el agua.)<br>No, no 
+		tardar&eacute; mucho. -Ven tambi&eacute;n.<br>
+		<br>Voy a buscar el lindo ternerillo<br>que se apoya en su madre. Es tan 
+		peque&ntilde;o<br>que cuando ella lo lame se menea.<br>No tardar&eacute; mucho. -Ven 
+		tambi&eacute;n.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2"
+    color="#C4CAD4"><br>
+		<br>
+		<a name="EL PELIGRO DE LA ESPERANZA"></a></font>
+		<font face="Georgia"
+    color="#C4CAD4">El peligro de la esperanza</font><font face="Georgia" size="2"
+    color="#C4CAD4"><br>
+    <br>
+    	Es justo all&iacute;<br>
+    	a mitad de camino entre<br>
+    	el huerto desnudo<br>
+    	y el huerto verde,<br>
+    	cuando las ramas est&aacute;n a punto<br>
+    	de estallar en flor,<br>
+    	en rosa y blanco,<br>
+    	que tememos lo peor.<br>
+    <br>
+    	Pues no hay regi&oacute;n<br>
+    	que a cualquier precio<br>
+    	no elija ese tiempo<br>
+    	para una noche de escarcha.<br>
+    <br>
+    <em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL POTRO DESBOCADO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El potro desbocado</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Tiempo ha, cuando la nieve empezaba a caer,<br>nos detuvimos junto, a 
+		unos pastos... &iquest;De qui&eacute;n ser&aacute;<br>aquel potro?&quot;, dijimos. El peque&ntilde;o 
+		Morgan hab&iacute;a<br>puesto una pata delantera sobre el muro de piedra<br>y 
+		la otra sobre el pecho, encogida. Agachando<br>la cabeza, nos contempl&oacute; 
+		un instante y huy&oacute;.<br>Escuchamos el diminuto retumbo de su fuga,<br>y 
+		nos pareci&oacute; verle, una sombra gris recort&aacute;ndose<br>contra el inmenso 
+		cortinaje de los copos de nieve.<br>&quot;Ese peque&ntilde;o est&aacute; asustado de la 
+		nieve que cae.<br>No conoce el invierno. Para ese peque&ntilde;uelo<br>no es 
+		cosa balad&iacute;. Y huye trotando.<br>Ni su madre podr&iacute;a decirle: &laquo;&iexcl;Quieto! 
+		&iexcl;Es s&oacute;lo el tiempo!&raquo;<br>El pensar&iacute;a que ella s&oacute;lo habla por hablar.<br>
+		&iquest;D&oacute;nde estar&aacute; su madre? &iquest;Por qu&eacute; no va con &eacute;l?&quot;<br>
+		<br>El potro ya regresa con su p&eacute;treo repiqueteo,<br>salta de nuevo el 
+		muro con ojos blanquecinos<br>y erguida la cola sin pelo.<br>Hace 
+		temblar su piel como si sacudiera moscas.<br>&quot;Quienquiera que deja ese 
+		potro afuera tan tarde,<br>cuando los dem&aacute;s animales est&aacute;n en el 
+		establo,<br>hay que avisarle para que salga y lo haga entrar.&quot;<br>
+		<br><em>Versi&oacute;n de Agust&iacute; Bartra</em><br><br>
+&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL TEL&Eacute;FONO"></a></font><font face="Georgia" color="#C4CAD4">
+		El tel&eacute;fono</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&quot;Cuando hoy me hallaba yo lejos de aqu&iacute;,<br>paseando sola,<br>quieta y 
+		tranquila<br>era la tarde.<br>Sobre una flor inclin&eacute; mi cabeza<br>y o&iacute; 
+		tu voz.<br>&iexcl;Oh, no digas que no, porque entend&iacute;...!<br>Me hablaste desde 
+		aquella flor que est&aacute; en la ventana. 
+		<br>&iquest;Has olvidado lo que me dijiste?&quot;<br><br>Pero dime antes qu&eacute; creiste 
+		oir.&quot;<br>
+		<br>&quot;Esquivando una abeja de la flor,<br>inclin&eacute; mi cabeza<br>y, 
+		cogi&eacute;ndola luego por el tallo,<br>escuch&eacute; y o&iacute;, clara, la palabra...<br>
+		&iquest;Pronunciaste mi nombre? &iquest;O bien dijiste...?<br>S&iacute;, alguien dijo: 
+		&laquo;&iexcl;Ven!&raquo;, mientras yo me inclinaba.&quot;<br>
+		<br>&quot;Si acaso lo pensaba, no lo dije en voz alta.&quot;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&quot;Por eso 
+		regres&eacute;.&quot;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Agust&iacute; Bartra<br>
+		<br>
+&nbsp;</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="FUEGO Y HIELO"></a></font><font face="Georgia" color="#C4CAD4">
+		Fuego y hielo</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		El mundo acabar&aacute;, dicen, presa del fuego;<br>otros afirman que vencer&aacute; 
+		el hielo.<br>Por lo que yo s&eacute; acerca del deseo,<br>doy la raz&oacute;n a los 
+		que hablan de fuego.<br>Mas si el mundo tuviera que sucumbir dos veces,<br>
+		pienso que s&eacute; bastante sobre el odio<br>para afirmar que la ruina ser&iacute;a<br>
+		quiz&aacute;s tan grande,<br>y bastar&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<em>Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">
+		&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Lo m&aacute;s pr&oacute;ximo"></a>Lo 
+		m&aacute;s pr&oacute;ximo<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		Pens&oacute; que a solas pod&iacute;a captar el universo entero; <br>
+		Pero la &uacute;nica voz que obtuvo por respuesta <br>
+		Fue el falso eco de s&iacute; mismo <br>
+		Que proced&iacute;a del precipicio, <br>
+		al otro lado del lago. <br>
+		<br>
+		Una ma&ntilde;ana, desde una roca de la playa, <br>
+		Clam&oacute; que lo que &eacute;l quer&iacute;a en la vida <br>
+		No era una mera copia hablada de su propio amor <br>
+		Sino un amor correspondido, y con voz propia. <br>
+		Y la &uacute;nica respuesta encarnada <br>
+		Capaz de dar respuesta a su queja matinal <br>
+		Comenz&oacute; a descender, en la otra orilla, <br>
+		por el talud del acantilado hasta el lago <br>
+		para zambullirse despu&eacute;s en las distantes aguas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Pero cuando tras nadar 
+		un buen trecho se aproxim&oacute; a su orilla <br>
+		En lugar de poseer forma humana <br>
+		Y de ser quien &eacute;l tanto hab&iacute;a anhelado <br>
+		Result&oacute; ser un gran macho cabr&iacute;o, que aparec&iacute;a poderoso <br>
+		apartando las encrespadas aguas con su enorme pecho. <br>
+		Y al llegar a tierra <br>
+		Desprendiendo agua como una cascada, <br>
+		Comenz&oacute; a tambalearse a trav&eacute;s de las rocas con su cornamenta, <br>
+		Hasta que se perdi&oacute; en la maleza -y eso fue todo-.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Sergio 
+		Trig&aacute;n</font></em><font face="Georgia" size="2" color="#C4CAD4"> <br>
+&nbsp;</font></p>
+	<p>&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">
+		&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="NOCHE INVERNAL DE UN ANCIANO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Noche invernal de un anciano</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		M&aacute;s all&aacute; de las puertas, a trav&eacute;s de la helada<br>
+		que cubre la ventana formando unas estrellas<br>
+		dispersas-, en la sombra, el mundo esta mirando <br>
+		su cara: est&aacute; vac&iacute;a la habitaci&oacute;n. Y duerme.<br>
+		La l&aacute;mpara inclinada muy cerca de su rostro<br>
+		le impide ver el mundo. Ya no recuerda nada.<br>
+		Y la vejez le impide recordar en qu&eacute; tiempo<br>
+		lleg&oacute; hasta estos lugares, y por qu&eacute; est&aacute; aqu&iacute; solo.<br>
+		Rodeado de toneles se encuentra aqu&iacute; perdido.<br>
+		Sus pasos temblorosos hacen temblar el s&oacute;tano:<br>
+		lo asusta con sus pasos temblorosos: y asusta<br>
+		otra vez a la noche (la noche de sonidos<br>
+		familiares ). Los &aacute;rboles a&uacute;llan all&aacute; afuera;<br>
+		todas las ramas crujen. Una luz hay tan s&oacute;lo<br>
+		para su rostro, quieta, una luz en la noche.<br>
+		A la Luna conf&iacute;a -en esa Luna rota<br>
+		que por ahora vale m&aacute;s que el sol- el cuidado<br>
+		de velar por la nieve que yace sobre el techo,<br>
+		de velar los car&aacute;mbanos que cuelgan desde el muro.<br>
+		Sigue durmiendo. Un le&ntilde;o se derrumba en la estufa.<br>
+		Despierta con el ruido. Sobresaltado cambia<br>
+		de lugar. Es la noche. Respira suavemente.<br>
+		No puede un viejo solo llenar toda una casa,<br>
+		un rinc&oacute;n de los campos, una granja. No puede.<br>
+		As&iacute; un anciano guarda la casa solitaria,<br>
+		en la noche de invierno. Y est&aacute; solo. Est&aacute; solo.</font></em></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Miguel Arteche</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="SIEGA"></a>Siega</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>En la linde del bosque no hab&iacute;a m&aacute;s sonido<br>que el leve cuchicheo 
+		de una larga guada&ntilde;a<br>hablando con la tierra. No s&eacute; qu&eacute; le dir&iacute;a.<br>
+		Quiz&aacute;s le contaba algo sobre el calor del sol,<br>o quiz&aacute;s algo acerca 
+		de aquel vasto silencio,<br>y por esto su voz no era m&aacute;s que susurro.<br>
+		No le hablaba de un sue&ntilde;o nacido de los ocios,<br>ni de oro regalado por 
+		alg&uacute;n hada o duende:<br>fuera de la verdad, todo parece fr&aacute;gil<br>para 
+		el ferviente amor que aline&oacute; gavillas,<br>no sin dejar algunas flores 
+		(blancas orqu&iacute;deas) ,<br>y asust&oacute; a una serpiente de un verde 
+		coruscante.<br>El sue&ntilde;o m&aacute;s hermoso que el trabajo conoce<br>son los 
+		hechos. Mi larga guada&ntilde;a susurr&oacute;,<br>y 0lvid&oacute;se del heno.<br>
+		<em><br>Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="UN ALTO EN EL BOSQUE MIENTRAS NIEVA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Un alto en el bosque mientras nieva&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(otra versi&oacute;n)</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>De qui&eacute;n es este bosque, saber creo<br>-en el poblado su morada veo-<br>
+		no habr&aacute; de sorprenderme contemplando<br>cubrir su bosque el invernal 
+		blanqueo.<br>
+		<br>Mi caballito se dir&aacute; extra&ntilde;ado<br>que, sin granja cercana, hemos 
+		parado<br>de este a&ntilde;o en la tarde m&aacute;s oscura,<br>entre el bosque y el 
+		lago congelado.<br>
+		<br>Sacudi&eacute;ndose, agita su cencerro<br>preguntando quiz&aacute;: -&iquest;ser&aacute; alg&uacute;n 
+		yerro?<br>S&oacute;lo el cierzo y los copos rumorean<br>blandamente del bosque 
+		en el encierro.<br>
+		<br>Yo, el bosque hondo y fusco veo risue&ntilde;o...<br>Mas, en cumplir 
+		promesas tengo empe&ntilde;o,<br>y millas debo andar antes del sue&ntilde;o,<br>un 
+		largo andar para llegar al sue&ntilde;o.<br>
+		<br><em>Versi&oacute;n de Agust&iacute; Bartra</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="UNA VEZ, JUNTO AL PAC&Iacute;FICO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Una vez, junto al pac&iacute;fico</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Las aguas agitadas con gran fragor romp&iacute;an.<br>Y las olas cimeras, al 
+		ver las que ven&iacute;an,<br>hacer algo quer&iacute;an a la costa cercana<br>que el 
+		mar jam&aacute;s ha hecho a la tierra su hermana.<br>Bajas e hirsutas eran las 
+		nubes en el cielo,<br>como guedejas sobre unos ojos de anhelo.<br>
+		Dir&iacute;ase, en verdad, sin poder dar razones,<br>que agradaba a la costa 
+		tener sus farallones,<br>y a &eacute;stos ser sostenidos por todo un 
+		continente.<br>Se acercaba una noche de tiniebla evidente,<br>y no s&oacute;lo 
+		una noche, sino una &eacute;poca horrible.<br>Habr&iacute;a que aprestarse contra un 
+		furor posible,<br>pues vendr&iacute;a algo m&aacute;s que olas en algazara<br>cuando 
+		su &uacute;ltimo 
+		<em>&iexcl;Ap&aacute;guese la luz!</em> Dios decretara.<br><em><br>Versi&oacute;n de Agust&iacute; 
+		Bartra</em></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 6:46:45 Dec 4, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:18:13 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

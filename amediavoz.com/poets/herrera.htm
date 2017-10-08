@@ -1,0 +1,645 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Fernando de Herrera</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Fernando de Herrera. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros. Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Fernando_ de_Herrera,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/herrera.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/herrera.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815173545" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./herrera.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:35:45 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./herrera.htm" title="13:34:43 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:35:45 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./herrera.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:35:45 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./herrera.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>55 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">28 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110101_2003:-1:000101010001_2004:-1:010101010001_2005:-1:011000110010_2006:-1:010011000200_2007:-1:010101030100_2008:-1:102211000000_2009:-1:120000100000_2010:-1:100000001110_2011:-1:000000100100_2012:-1:000010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./HERRERA.jpg" width="341" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./HERRERA1.jpg" width="203" height="21"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#526462" face="Georgia"><strong>
+		<a href="./herrera.htm#AMOR, EN UN INCENDIO NO ACABADO...">Amor, en un incendio no 
+		acabado...</a><br>
+		<br>
+		<a href="./herrera.htm#&iquest;D&Oacute; VAS? D&Oacute; VAS, CR&Uuml;EL, D&Oacute; VAS?...">&iquest;D&oacute; vas? D&oacute; vas, cr&uuml;el, d&oacute; 
+		vas?...</a><br>
+		<br>
+		<a href="./herrera.htm#ESTA DESNUDA PLAYA">Esta desnuda playa</a><br>
+		<br>
+		<a href="./herrera.htm#OS&Eacute; Y TEM&Iacute;, MAS PUDO LA OSAD&Iacute;A">Os&eacute; y tem&iacute;, mas pudo la osad&iacute;a</a><br>
+		<br>
+		<a href="./herrera.htm#PENS&Eacute;, MAS FUE ENGA&Ntilde;OSO EL PENSAMIENTO">Pens&eacute;, mas fue 
+		enga&ntilde;oso el pensamiento</a><br><br>
+		<a href="./herrera.htm#ROJO SOL">Rojo sol</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br>
+		<a href="./herrera.htm#SONETO I">Soneto I</a><br>
+		<br>
+		<a href="./herrera.htm#SUBO CON TAN GRAN PESO QUEBRANTADO...">Subo con tan gran peso 
+		quebrantado...</a><br>
+		<br>
+		<a href="./herrera.htm#TRENZAS QUE EN LA SERENA Y LIMPIA FRENTE...">Trenzas que en la 
+		serena y limpia frente...</a><br><br>
+		<a href="./herrera.htm#VOY SIGUIENDO LA FUERZA DE MI HADO...">Voy siguiendo la fuerza 
+		de mi hado...</a>&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./herrera.htm#YO VI UNOS BELLOS OJOS...">Yo vi unos bellos ojos...</a>&nbsp;&nbsp; 
+		</strong></font></p>
+		<p align="left"><font size="2" color="#526462"><strong>
+		<font face="Georgia" size="3" color="#526462"><br></font>
+		<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></strong></font><strong><font face="Georgia" color="#526462">
+		<a
+      href="./" style="color: #43504C; text-decoration: none">
+		A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+		</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></font><font face="Georgia" color="#526462">
+		<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+		Poes&iacute;a de Oro</a><br>
+&nbsp;</p>
+	</blockquote>
+	</font><font face="Georgia" size="2" color="#526462">
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+	<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+	Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+	<p align="center"><font color="#404D48" size="2">Tus comentarios o 
+	sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. 
+	Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+	</font><font size="4">
+	<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+	poesia@amediavoz.com</a></font></p>
+	</font></strong>
+	<p align="center">&nbsp;</p>
+	<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<font face="Georgia">
+		</font>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font size="2" color="#526462" face="Georgia">
+		<a
+      name="AMOR, EN UN INCENDIO NO ACABADO..."></a></font>
+		<font color="#43504C" face="Georgia">Amor, en un incendio no acabado...</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Amor, en un 
+		incendio no acabado<br>ard&iacute; del fuego tuyo, en la florida<br>saz&oacute;n y 
+		alegre de mi dulce vida,<br>todo en tu viva imagen transformado.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Y ahora, oh 
+		vano error, en este estado,<br>no con llama en cenizas escondida,<br>mas 
+		descubierta, clara y encendida,<br>pierdo en ti lo mejor de mi cuidado.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>No m&aacute;s, baste, 
+		cruel, ya en tantos a&ntilde;os<br>rendido haber al yugo el cuello yerto,<br>y 
+		haber visto en el fin tu desvar&iacute;o.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Abra la luz la 
+		niebla a tus enga&ntilde;os,<br>antes que el lazo rompa el tiempo y muerto<br>
+		sea el fuego del tardo hielo m&iacute;o.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia">
+		<a name="&iquest;DÓ VAS? DÓ VAS, CRÜEL, DÓ VAS?..."></a>
+		<strong>&iquest;D</strong></font><strong><font color="#43504C" face="Georgia">&oacute; 
+		vas? &iquest;d&oacute; vas, cr&uuml;el, d&oacute; vas?; refrena</font></strong><font color="#43504C" face="Georgia"><strong>...</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		&iquest;D&oacute; vas? &iquest;d&oacute; vas, cr&uuml;el, d&oacute; vas?; refrena,<br>refrena el pressuroso 
+		passo, en tanto<br>que de mi dolor grave el largo llanto<br>a abrir 
+		comiença esta honda vena;
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>oye la voz de 
+		mil suspiros llena,<br>y de mi mal sufrido el triste canto,<br>que no 
+		podr&aacute;s ser fiera y dura tanto<br>que no te mueva esta mi acerba pena; 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>vuelve tu luz a 
+		m&iacute;, vuelve tus ojos,<br>antes que quede oscuro en ciega niebla&quot;,<br>
+		dez&iacute;a en sue&ntilde;o, o en ilusi&oacute;n perdido.
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Volv&iacute;, hall&eacute;me 
+		solo y entre abrojos,<br>y en vez de luz, cercado de tiniebla,<br>y en 
+		l&aacute;grimas ardientes convertido. 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<font face="Georgia">
+		<strong>
+		<p align="left"><font color="#43504C" face="Georgia">
+		<a name="ESTA DESNUDA PLAYA"></a>Esta desnuda playa, esta llanura...</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Esta desnuda playa, esta llanura 
+		<br>de astas y rotas armas mal sembrada, <br>do el vencedor cay&oacute; con 
+		muerte airada, 
+		<br>es de Espa&ntilde;a sangrienta sepultura. <br><br>Mostr&oacute; el valor su 
+		esfuerzo, mas ventura 
+		<br>neg&oacute; el suceso y dio a la muerte entrada, <br>que rehuy&oacute; dudosa, y 
+		admirada
+		<br>del temido furor, la suerte dura. <br><br>Venci&oacute; otomano al espa&ntilde;ol 
+		ya muerto, 
+		<br>antes del muerto el vivo fue vencido, <br>y Espa&ntilde;a y Grecia lloran 
+		la vitoria,
+		<br><br>pero ser&aacute; testigo este desierto <br>que el espa&ntilde;ol muriendo, no 
+		rendido, 
+		<br>llev&oacute; de Grecia y Asia el nombre y gloria.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></strong></p>
+		<p align="center">&nbsp;</p>
+		</font><strong>
+		<p align="left"><font size="2" color="#43504C" face="Georgia">
+		<a name="OS&Eacute; Y TEM&Iacute;, MAS PUDO LA OSAD&Iacute;A"></a></font>
+		<font color="#43504C" face="Georgia">
+		Os&eacute; y tem&iacute;, mas pudo la osad&iacute;a...</font><font size="2" color="#43504C" face="Georgia"><br>
+		<br>Os&eacute; y tem&iacute;, mas pudo la osad&iacute;a <br>tanto que despreci&eacute; el temor 
+		cobarde; 
+		<br>sub&iacute; a do el fuego m&aacute;s me enciende y arde <br>cuanto m&aacute;s la 
+		esperanza se desv&iacute;a. 
+		<br><br>Gast&eacute; en error la edad florida m&iacute;a, <br>ahora veo el da&ntilde;o, pero 
+		tarde, 
+		<br>que ya mal puede ser que el seso guarde <br>a quien se entrega ciego 
+		a su porf&iacute;a. 
+		<br><br>Tal vez pr&uuml;ebo &#8212;mas, &iquest;qu&eacute; me vale?&#8212; alzarme <br>del grave peso 
+		que mi cuello oprime, 
+		<br>aunque falta a la poca fuerza el hecho. <br><br>Sigo al fin mi 
+		furor, porque mudarme 
+		<br>no es honra ya, ni justo que se estime <br>tan mal de quien tan bien 
+		rindi&oacute; su pecho.</font><font face="Georgia"></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></font></p>
+		</strong>
+		<p>&nbsp;</p>
+		<p><font color="#43504C" face="Georgia">
+		<a name="PENS&Eacute;, MAS FUE ENGA&Ntilde;OSO EL PENSAMIENTO"></a>
+		<strong>P</strong></font><strong><a target="_blank" href="http://gigs.infase.es/cgi-bin/status.cgi?88779"><font face="Georgia">ens&eacute;, 
+		mas fu&eacute; enga&ntilde;oso pensamiento</font></a><font face="Georgia" color="#43504C">...</font></strong></p>
+		<a HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+		<p><font size="2" face="Georgia"><strong>Pens&eacute;, mas fu&eacute; enga&ntilde;oso 
+		pensamiento,<br>armar de puro hielo el pecho m&iacute;o;<br>porque el fuego de 
+		Amor al grave fr&iacute;o<br>no desatase en nuevo encendimiento. 
+		</strong></font></p>
+		<p><font size="2" face="Georgia"><strong>Procur&eacute; no rendirme al mal que 
+		siento,<br>y fue todo mi esfuerzo desvar&iacute;o;<br>perd&iacute; mi libertad, perd&iacute; 
+		mi br&iacute;o,<br>cobr&eacute; un perpetuo mal, cobr&eacute; un tormento. 
+		</strong></font></p>
+		<p><font size="2" face="Georgia"><strong>El fuego al hielo destempl&oacute;, en 
+		tal suerte,<br>que, gastando su humor, qued&oacute; ardor hecho;<br>y es llama, 
+		es fuego, todo cuanto espiro. 
+		</strong></font></p>
+		<p><font size="2" face="Georgia"><strong>Este incendio no puede darme 
+		muerte;<br>que, cuando de su fuerza m&aacute;s deshecho,<br>tanto m&aacute;s de su 
+		eterno af&aacute;n respiro.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"></a>
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font><a
+      HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank"></p>
+		</a>
+		<font face="Georgia"><strong>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia">
+		<a name="ROJO SOL"></a></font><font color="#43504C" face="Georgia">
+		Rojo sol que con hacha luminosa...</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Rojo sol que con hacha luminosa<br>coloras el purp&uacute;reo alto cielo,<br>
+		&iquest;hallaste tal belleza en todo el suelo,<br>que iguale a mi serena luz 
+		dichosa?<br>
+		<br>Aura s&uuml;ave, blanda y amorosa <br>que nos halagas con tu fresco 
+		vuelo;<br>cuando el oro descubre y rico velo<br>mi luz, &iquest;trenza tocaste 
+		m&aacute;s hermosa?<br>
+		<br>Luna, honor de la noche, ilustre coro<br>de los errantes astros y 
+		fijados 
+		<br>&iquest;consideraste tales dos estrellas?<br><br>Sol puro, aura, luna, 
+		llamas de oro<br>&iquest;o&iacute;steis mis dolores nunca usados?<br>&iquest;visteis luz m&aacute;s 
+		ingrata a mis querellas?<br>
+		<br></font></p></strong></font>
+<font face="Georgia" color="#43504C"><strong>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></strong></p>
+		</font>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="SONETO I"></a></font><font color="#43504C" face="Georgia">
+		Soneto I</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Yo voy por esta 
+		solitaria tierra,<br>de antiguos pensamientos molestado,<br>huyendo el 
+		resplandor del sol dorado, 
+		<br>que de sus puros rayos me destierra. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>El paso a la 
+		esperanza se me cierra;<br>de una ardua cumbre a un cerro vo enriscado, <br>
+		con los ojos volviendo al apartado 
+		<br>lugar, solo principio de mi guerra. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Tanto bien 
+		presenta la memoria,<br>y tanto mal encuentra la presencia, 
+		<br>que me desmaya el coraz&oacute;n vencido. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>&iexcl;Oh cr&uuml;eles 
+		despojos de mi gloria,<br>desconf&iuml;anza, olvido, celo, ausencia!; <br>
+		&iquest;por qu&eacute; cans&aacute;is a un m&iacute;sero rendido? 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia">
+		<a name="SUBO CON TAN GRAN PESO QUEBRANTADO..."></a>
+		<strong>Subo con tan gran peso quebrantado...</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Subo con tan gran peso quebrantado<br>por esta alta, empinada, aguda 
+		sierra,<br>que a&uacute;n no llego a la cumbre, cuando yerra<br>el pie, y 
+		trabuco al fondo despe&ntilde;ado. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Del golpe y de 
+		la carga maltratado,<br>me alzo a pena, y a mi antigua guerra<br>vuelvo; 
+		mas &iquest;qu&eacute; me vale? que la tierra<br>misma me falta al curso acostumbrado. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Pero aunque en 
+		el peligro desfallezco,<br>no desamparo el paso; que antes torno<br>mil 
+		veces a cansarme en este enga&ntilde;o. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Crece el temor, 
+		y en la porf&iacute;a crezco;<br>y sin cesar, cual rueda vuelve en torno,<br>
+		as&iacute; rebuelvo a despe&ntilde;arme al da&ntilde;o.
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong><br></strong>
+		</font></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#43504C" face="Georgia">
+		<a name="TRENZAS QUE EN LA SERENA Y LIMPIA FRENTE..."></a>
+		<strong>Trenzas que en la serena y limpia frente...</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Trenzas que en 
+		la serena y limpia frente<br>de anillos de oro crespo coronadas<br>
+		formais lucientes vueltas y lazadas,<br>donde el mayor Vulcano espira 
+		ardiente, 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>el Sol, o que 
+		aparezca en Or&iuml;ente<br>con las puntas de llamas dilatadas,<br>o que las 
+		junte, de subir cansadas,<br>se rinde a vuestra luz resplandeciente. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Vos, mis 
+		hermosos cercos, anudado<br>teneis mi cuello, y nunca espero el d&iacute;a,<br>
+		principio a libertad, fin a la pena. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Porque alegre 
+		en el mal de mi cuidado,<br>de la prisi&oacute;n huir no pienso m&iacute;a;<br>ni los 
+		lazos romper de esta cadena.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote><font face="Georgia">
+<blockquote>
+	<blockquote>
+		<strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<p><a
+      name="VOY SIGUIENDO LA FUERZA DE MI HADO..."></a></font>
+		<font color="#43504C" face="Georgia">
+		Voy siguiendo la fuerza de mi hado...</font><font size="2" color="#43504C" face="Georgia"><br>
+		<br>Voy siguiendo la fuerza de mi hado <br>por este campo est&eacute;ril y 
+		escondido;
+		<br>todo calla y no cesa mi gemido <br>y lloro la desdicha de mi estado. 
+		<br><br>Crece el camino y crece mi cuidado, <br>que nunca mi dolor pone 
+		en olvido; 
+		<br>el curso al fin acaba, aunque estendido, <br>pero no acaba el da&ntilde;o 
+		dilatado. 
+		<br><br>&iquest;Qu&eacute; vale contra un mal siempre presente <br>apartarse y huir, 
+		si en la memoria 
+		<br>se estampa y muestra frescas las se&ntilde;ales? <br><br>Vuela Amor en mi 
+		alcance y no consiente, 
+		<br>en mi afrenta, que olvide aquella historia <br>que descubri&oacute; la 
+		senda de mis males</font></strong><font color="#43504C">.</font></p>
+		<p>
+		<a HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+		&nbsp;</p>
+		<p align="center"></a>
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font><strong><font size="2" color="#43504C" face="Georgia"><br>
+		</font></p>
+		<p align="center">&nbsp;</p>
+		</strong>
+		<p><strong><font face="Arial" size="2" color="#43504C">
+		<a name="YO VI UNOS BELLOS OJOS..."></a></font>
+		<font color="#43504C" face="Georgia">Y</font></strong><font color="#43504C" face="Georgia"><strong>o 
+		vi unos bellos ojos, que hirieron</strong></font><strong><font color="#43504C" face="Georgia">...</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Yo vi unos 
+		bellos ojos, que hirieron <br>con dulce flecha un coraz&oacute;n cuitado, <br>y 
+		que para encender nuevo cuidado 
+		<br>su fuerza toda contra m&iacute; pusieron. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Yo vi que 
+		muchas veces prometieron <br>remedio al mal, que sufro no cansado, <br>y 
+		que cuando esper&eacute; vello acabado, 
+		<br>poco mis esperanzas me valieron. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Yo veo que se 
+		asconden ya mis ojos <br>y crece mi dolor y llevo ausente <br>en el 
+		rendido pecho el golpe fiero. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Yo veo ya 
+		perderse los despojos 
+		<br>y la membrana de mi bien presente <br>y en ciego enga&ntilde;o de esperanza 
+		muero.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<blockquote><font face="Georgia" size="2" color="#8FABC2">
+			<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+			<font color="#AAC0D5">
+			<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+			<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+			</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</font>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:35:45 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:19:53 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

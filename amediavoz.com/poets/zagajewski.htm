@@ -1,0 +1,764 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Adam Zagajewski</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Adam Zagajewski."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Adam Zagajewski. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Biograf&iacute;as y traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Adam_Zagajewski,poesias,traducciones,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/zagajewski.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/zagajewski.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815180130" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zagajewski.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:01:30 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./zagajewski.htm" title="12:34:07 May 30, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:01:30 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./zagajewski.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:01:30 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./zagajewski.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>31 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Jun 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000002000001_2009:-1:101000110000_2010:-1:100000001110_2011:-1:000010112130_2012:-1:101010001010_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./ZAGAJEWSKI.jpg" width="395" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./ZAGAJEWSKI1.jpg" width="139" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="723" height="317">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="715">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="286" width="247" valign="top">
+			<p align="left">
+			&nbsp;
+			<img border="0" src="./ZAGAJEWSKI2.jpg" width="221" height="292"></td>
+			<td width="464" valign="top" height="286">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica<br>
+			<br>
+			</font></u><font face="Georgia" size="2" color="#C4CAD4">Poeta, 
+			novelista y ensayista polaco nacido en Lvov, hoy Ucrania, en 1945.<br>
+			Su infancia transcurri&oacute; en Gliwice, Silesia, donde sus padres fueron 
+			repatriados poco despu&eacute;s de su nacimiento. Estudi&oacute; Psicolog&iacute;a y 
+			Filosof&iacute;a en la Universidad de Cracovia.<br>
+			Fue miembro del grupo po&eacute;tico <i>Ahora</i>&nbsp; hasta 1975, y es 
+			uno de los poetas m&aacute;s brillantes&nbsp; de la llamada <i>Generaci&oacute;n&nbsp; 
+			de la</i> <i>Nueva Ola</i>, junto a Kornhauser, Lipska, Krynicki y 
+			Baranczak.<br>
+			Censurado por el r&eacute;gimen comunista de su pa&iacute;s, emigr&oacute; a Paris en 
+			1982.&nbsp; Desde 1989 es profesor visitante asociado de la 
+			Universidad de Houston, alternando la docencia con la pr&aacute;ctica 
+			literaria ejercida desde su residencia actual en Cracovia. Ha sido 
+			galardonado con los premios <i>Prix de la Libert&eacute;</i>&nbsp; 1987, <i>
+			GranPremio de Literatura de la Fundaci&oacute;n Konrad Adenauer de Weimar</i> 
+			2002 y el Premio <i>Horst Bienek</i> de la Academia de Bellas Artes 
+			de Baviera en 2003. De su obra po&eacute;tica se destacan <i>&quot;Comunicado&quot;</i> 
+			1972, <i>&quot;Carnicer&iacute;as&quot;</i> 1975,&nbsp; <i>&quot;Oda a la mayor&iacute;a&quot;</i> 
+			1982, <i>&quot;Ir a Lvov&quot;</i> 1985, <i>&quot;Lienzo&quot;</i> 1990, <i>&quot;Tierra de 
+			fuego&quot;</i> 1994&nbsp; y <i>&quot;Sed&quot;</i> 1999.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center"><br>
+&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Adam 
+		Zagajewski:</font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./zagajewski.htm#A m&iacute; mismo en mis memorias">A m&iacute; mismo en mis memorias</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Autorretrato">
+		Autorretrato</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Canci&oacute;n del emigrado">
+		Canci&oacute;n del emigrado</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Habla m&aacute;s suave">Habla 
+		m&aacute;s suave</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./zagajewski.htm#Intenta alabar al mundo herido">Intenta alabar al mundo herido</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Lienzo">Lienzo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Oda a la suavidad">Oda a 
+		la suavidad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Senza Flash">Senza Flash</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Una ma&ntilde;ana en Vicenza">
+		Una ma&ntilde;ana en Vicenza</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./zagajewski.htm#Vaporetto">Vaporetto</a><br>
+		</font>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#C4CAD4"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="A m&iacute; mismo en mis memorias"></a>A m&iacute; mismo en mis memorias</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Fluye, fluye, nube 
+		gris,<br>
+		se abre la flor de la peon&iacute;a,<br>
+		nada te une ya a esta tierra,<br>
+		nada te une ya a este cielo.<br>
+		<br>
+		Delira en la can&iacute;cula el jard&iacute;n,<br>
+		un gato da bostezos en el porche.<br>
+		Caminas por la calle de los tilos<br>
+		en flor, de qu&eacute; ciudad, lo ignoras,<br>
+		<br>
+		en qu&eacute; pa&iacute;s, no lo recuerdas.<br>
+		Brillan livianos los estorninos,<br>
+		la noche se aproxima suavemente, <br>
+		juegan al escondite los capullos de las rosas.<br>
+		<br>
+		Eres tan s&oacute;lo un sue&ntilde;o, una imagen,<br>
+		s&oacute;lo un anhelo eres.<br>
+		Cuando te vayas, como las nubes,<br>
+		se te&ntilde;ir&aacute; de bronce tu recuerdo.<br>
+		<br>
+		Y rondar&aacute;s los r&iacute;os<br>
+		y las sombras de los &aacute;rboles,<br>
+		pero naufragar&aacute;s en la tierra, en la tierra, en la tierra.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Autorretrato"></a>
+		Autorretrato</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Entre ordenador, l&aacute;piz y m&aacute;quina de escribir<br>
+		se me pasa la mitad del d&iacute;a. Alg&uacute;n d&iacute;a se convertir&aacute; en medio siglo.<br>
+		Vivo en ciudades ajenas y a veces converso<br>
+		con gente ajena sobre cosas que me son ajenas. <br>
+		Escucho mucha m&uacute;sica: Bach, Mahler, Chopin, Shostakovich.<br>
+		En la m&uacute;sica encuentro la fuerza, la debilidad y el dolor, los tres 
+		elementos.<br>
+		El cuarto no tiene nombre.<br>
+		Leo a poetas vivos y muertos, aprendo de ellos<br>
+		tenacidad, fe y orgullo. Intento comprender<br>
+		a los grandes fil&oacute;sofos -la mayor&iacute;a de las veces consigo<br>
+		captar tan s&oacute;lo jirones de sus valiosos pensamientos.<br>
+		Me gusta dar largos paseos por las calles de Par&iacute;s<br>
+		y mirar a mis pr&oacute;jimos, animados por la envidia,<br>
+		la ira o el deseo; observar la moneda de plata<br>
+		que pasa de mano en mano y lentamente pierde<br>
+		su forma redonda (se borra el perfil del emperador).<br>
+		A mi lado crecen &aacute;rboles que no expresan nada,<br>
+		salvo su verde perfecci&oacute;n indiferente.<br>
+		Aves negras caminan por los campos<br>
+		siempre esperando algo, pacientes como viudas espa&ntilde;olas.<br>
+		Ya no soy joven, mas sigue habiendo gente mayor que yo.<br>
+		Me gusta el sue&ntilde;o profundo, cuando no estoy,<br>
+		y correr en bici por caminos rurales, cuando &aacute;lamos y casas<br>
+		se difuminan como nubes con el buen tiempo.<br>
+		A veces me dicen algo los cuadros en los museos<br>
+		y la iron&iacute;a se esfuma de repente.<br>
+		Me encanta contemplar el rostro de mi mujer.<br>
+		Cada semana, el domingo, llamo a mi padre.<br>
+		Cada dos semanas me re&uacute;no con mis amigos,<br>
+		de esta forma seguimos siendo fieles.<br>
+		Mi pa&iacute;s se liber&oacute; de un mal. Quisiera<br>
+		que le siguiera a&uacute;n otra liberaci&oacute;n.<br>
+		&iquest;Puedo aportar algo para ello? No lo s&eacute;.<br>
+		No soy hijo de la mar,<br>
+		como escribi&oacute; sobre s&iacute; mismo Antonio Machado,<br>
+		sino del aire, la menta y el violonchelo,<br>
+		y no todos los caminos del alto mundo<br>
+		se cruzan con los senderos de la vida que, de momento,<br>
+		a m&iacute; me pertenece.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Canci&oacute;n del emigrado">
+		</a>Canci&oacute;n del emigrado</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		En ciudades ajenas venimos al mundo<br>
+		y las llamamos patria, mas breve es<br>
+		el tiempo concedido para admirar sus muros y sus torres.<br>
+		Caminamos de este a oeste, ante nosotros rueda<br>
+		el gran aro del sol<br>
+		ardiente, a trav&eacute;s del cual, como en el circo,<br>
+		salta &aacute;gilmente un le&oacute;n domado. En ciudades extra&ntilde;as<br>
+		contemplamos las obras de viejos maestros<br>
+		y, sin asombro, en a&ntilde;ejos cuadros vemos<br>
+		nuestros propios rostros. Hab&iacute;amos existido<br>
+		antes, e incluso conoc&iacute;amos el sufrimiento,<br>
+		nos faltaban tan s&oacute;lo las palabras. En la iglesia<br>
+		ortodoxa de Par&iacute;s los &uacute;ltimos rusos blancos,<br>
+		encanecidos, rezan a Dios, varios lustros<br>
+		m&aacute;s joven que ellos y, como ellos,<br>
+		impotente. En ciudades ajenas<br>
+		permaneceremos, como los &aacute;rboles, como las piedras.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Habla m&aacute;s suave"></a>
+		Habla m&aacute;s suave</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Habla m&aacute;s suave: eres 
+		mayor que aquel<br>
+		que fuiste tanto tiempo; eres mayor<br>
+		que t&uacute; mismo y sigues sin saber<br>
+		qu&eacute; es la ausencia, el oro, la poes&iacute;a.<br>
+		<br>
+		El agua sucia aneg&oacute; la calle; una tormenta breve<br>
+		sacudi&oacute; esta ciudad plana, adormecida.<br>
+		Cada tormenta es un adi&oacute;s, cientos de fot&oacute;grafos<br>
+		parecen sobrevolarnos, inmortalizar con flash<br>
+		segundos de miedo y p&aacute;nico.<br>
+		<br>
+		Sabes qu&eacute; es el duelo, la desesperaci&oacute;n<br>
+		violenta que ahoga el ritmo cardiaco y el futuro.<br>
+		Entre extra&ntilde;os llorabas, en un moderno almac&eacute;n<br>
+		donde el dinero, &aacute;gil, sin cesar, circulaba.<br>
+		<br>
+		Has visto Venecia, y Siena, y en los lienzos, en la calle,<br>
+		jovenc&iacute;simas, tristes <i>Madonnas</i> que ansiaban ser<br>
+		muchachas normales y bailar en carnaval.<br>
+		<br>
+		Has visto incluso peque&ntilde;as urbes, nada bonitas,<br>
+		gente vieja extenuada por el sufrimiento y el tiempo.<br>
+		Ojos de santos morenos brillando en iconos<br>
+		medievales, ojos ardientes de bestias salvajes.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Entre los dedos cog&iacute;as 
+		guijarros de la playa <i>La Galere,</i><br>
+		y de pronto sent&iacute;as por ellos una inmensa ternura,<br>
+		por ellos y por el pino fr&aacute;gil, por todos los que all&iacute;<br>
+		estuvieron contigo y por el mar,<br>
+		que aunque potente, es tan solitario.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Una ternura inmensa, 
+		como si fu&eacute;semos hu&eacute;rfanos<br>
+		de la misma casa, para siempre apartados los unos de los otros,<br>
+		condenados a breves momentos de visitas<br>
+		en las fr&iacute;as c&aacute;rceles de la actualidad.<br>
+		<br>
+		Habla m&aacute;s suave: ya no eres joven,<br>
+		el &eacute;xtasis ha de pactar con semanas de ayuno,<br>
+		has de elegir y abandonar, dar largas<br>
+		<br>
+		y hablar extensamente con embajadores de secos pa&iacute;ses<br>
+		y labios cuarteados, has de esperar,<br>
+		escribir cartas, leer libros de quinientas p&aacute;ginas.<br>
+		Habla m&aacute;s suave. No abandones la poes&iacute;a.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Intenta alabar al mundo herido"></a>Intenta alabar al mundo 
+		herido</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Intenta alabar al mundo herido.<br>
+		Recuerda los largos d&iacute;as de junio,<br>
+		fresas silvestres, gotas rosadas de vino.<br>
+		Los hierbajos que met&oacute;dicamente invad&iacute;an<br>
+		las casas abandonadas de los desterrados.<br>
+		Debes alabar al mundo herido.<br>
+		Mirabas yates y barcos,<br>
+		uno de ellos ten&iacute;a que emprender un largo viaje,<br>
+		al otro le aguardaba s&oacute;lo la salobre nada.<br>
+		Ve&iacute;as refugiados caminar hacia ninguna parte,<br>
+		o&iacute;as a los verdugos cantar<br>
+		alegremente.<br>
+		Deber&iacute;as alabar al mundo herido.<br>
+		Recuerda aquellos momentos, en la habitaci&oacute;n blanca,<br>
+		cuando estabais juntos y el visillo se mov&iacute;a.<br>
+		Vuelve con la mente al concierto, cuando estall&oacute;<br>
+		la m&uacute;sica,<br>
+		Recog&iacute;as bellotas en el parque en oto&ntilde;o<br>
+		y las hojas sobrevolaban girando las cicatrices de la tierra.<br>
+		Alaba al mundo herido<br>
+		y la pluma gris perdida por un mirlo,<br>
+		y la luz delicada que vaga y desaparece<br>
+		y regresa.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Lienzo"></a>Lienzo</font><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+		<br>
+		De pie, callado ante el cuadro sombr&iacute;o, <br>
+		ante el lienzo que hubiera podido tornarse<br>
+		abrigo, camisa, bandera,<br>
+		pero en cosmos se hab&iacute;a convertido.<br>
+		<br>
+		Permanec&iacute; en silencio,<br>
+		colmado de encanto y rebeli&oacute;n, pensando<br>
+		en el arte de pintar y el arte de vivir,<br>
+		en tantos d&iacute;as fr&iacute;os y vac&iacute;os,<br>
+		<br>
+		en los momentos de impotencia<br>
+		de mi imaginaci&oacute;n,<br>
+		que como el coraz&oacute;n de la campana<br>
+		vive tan s&oacute;lo en el balanceo,<br>
+		<br>
+		golpeando lo que ama<br>
+		y amando lo que golpea,<br>
+		y pens&eacute; que este lienzo<br>
+		tambi&eacute;n hubiera podido ser mortaja.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Oda a la suavidad"></a>
+		Oda a la suavidad</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Los amaneceres son ciegos como gatitos.<br>
+		Las u&ntilde;as crecen confiadamente, a&uacute;n<br>
+		saben qu&eacute; tocar&aacute;n. Suaves<br>
+		son los sue&ntilde;os y la ternura como niebla<br>
+		suspendida sobre nosotros, igual que la campana de Sigismundo<br>
+		antes que el fr&iacute;o la abrazase.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Senza Flash"></a>Senza 
+		Flash</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<i>Senza flash!&nbsp; &laquo;Sin flash!&raquo;<br>
+		(exclamaci&oacute;n que se oye a menudo en las galer&iacute;as italianas)</i><br>
+		<br>
+		Sin llama, sin noches de insomnio, sin ardor,<br>
+		sin l&aacute;grimas, sin grandes pasiones, sin convencimiento.<br>
+		Viviremos as&iacute;: <i>senza flash.</i><br>
+		<br>
+		Queda y pausadamente, d&oacute;cilmente, entre sue&ntilde;os,<br>
+		las manos manchadas con la tinta negra de los diarios,<br>
+		las caras grasientas de crema: <i>senza flash.</i><br>
+		<br>
+		Turistas sonrientes, camisas impecables,<br>
+		Herr Lange y Miss Fee, Monsieur et Madame Rien<br>
+		entrar&aacute;n en el museo: <i>senza flash.</i><br>
+		<br>
+		Se detendr&aacute;n ante el cuadro de Piero della Francesca, donde<br>
+		Cristo, casi enajenado, surge de la tumba,<br>
+		resucitado, libre: <i>senza flash.</i><br>
+		<br>
+		Quiz&aacute;s ocurra entonces alg&uacute;n hecho imprevisto:<br>
+		se agite el coraz&oacute;n bajo el tejido suave,<br>
+		se haga el silencio, destelle el flash.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Una ma&ntilde;ana en Vicenza">
+		</a>Una ma&ntilde;ana en Vicenza</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>&nbsp;(En memoria de Josif Brodski y Krzysztof Kieslowski)</i><br>
+		<br>
+		El sol era tan tierno, tan delicado,<br>
+		que hasta tem&iacute;amos por &eacute;l; un adem&aacute;n incauto<br>
+		pod&iacute;a rayarlo, incluso un grito -si alguien hubiera<br>
+		querido gritar- lo habr&iacute;a puesto en peligro; tan s&oacute;lo a las veloces 
+		golondrinas<br>
+		de alas duras, como de hierro fundido,<br>
+		se les permit&iacute;a silbar en alta voz, porque vivieron<br>
+&nbsp;&nbsp;&nbsp;&nbsp; su infancia<br>
+		breve, en la inquietud de sus nidos de barro,<br>
+		junto a sus hermanos, peque&ntilde;os planetas locos,<br>
+		negros como bayas silvestres.<br>
+		<br>
+		En un peque&ntilde;o caf&eacute; un mozo so&ntilde;oliento -bajo sus ojos<br>
+		las &uacute;ltimas sombras de la noche acumuladas- buscaba calderilla<br>
+		en su bolsillo sin fondo, y el caf&eacute; ol&iacute;a a solemnidad<br>
+		de tinta de impresi&oacute;n, a dulzura y a Arabia. El azul del cielo promet&iacute;a<br>
+		una larga tarde, un infinito d&iacute;a.<br>
+		Te estaba mirando como si te viera por primera vez.<br>
+		Y hasta las columnas de Palladio ten&iacute;an aspecto<br>
+		de reci&eacute;n nacidas, de reci&eacute;n surgidas de las olas del alba<br>
+		como Venus, tu compa&ntilde;era mayor.<br>
+		<br>
+		Empezar de nuevo, contar las p&eacute;rdidas, contar a los ca&iacute;dos,<br>
+		empezar el nuevo d&iacute;a, aunque ya no est&eacute;is, t&uacute;,<br>
+		a quien dos veces enterramos y lloramos dos veces,<br>
+		-viviste una vida dos veces m&aacute;s intensa que otros, en dos continentes,<br>
+		dos idiomas, en la realidad y en la imaginaci&oacute;n- y t&uacute;, de cara afilada<br>
+		y una mirada que hac&iacute;a crecer los objetos y los corazones<br>
+&nbsp;&nbsp;&nbsp;&nbsp; (siempre demasiado peque&ntilde;os).<br>
+		No est&aacute;is, y por eso llevaremos a partir de ahora una doble vida,<br>
+		en la luz y en la sombra a la vez, en el sol estridente del d&iacute;a,<br>
+		en la frescura de los pasillos de piedra, en el duelo, en la alegr&iacute;a.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Vaporetto"></a>
+		Vaporetto</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		En el bolsillo de la cazadora encuentras<br>
+		un pasaje azul para el vaporetto<br>
+		<i>(il biglietto, non cedibile).<br>
+		</i><br>
+		El billete azul, poco mayor<br>
+		que un sello de la Rep&uacute;blica de Togo,<br>
+		te promete un cambio, un viaje.<br>
+		<br>
+		Se derrite la laca en el recuerdo,<br>
+		se deshiela la almendra de la nieve alpina.<br>
+		Ahora puede empezar la expedici&oacute;n.<br>
+		<br>
+		Est&aacute;s en Texas, en la tierra llana,<br>
+		entre los robles eternamente verdes,<br>
+		que no recuerdan nada.<br>
+		<br>
+		Por canales estrechos navegar&aacute;s<br>
+		con !&quot;alemas, a contracorriente;<br>
+		y hallar&aacute;s glaciares y grisura.<br>
+		<br>
+		El billete reza: <i>corsa semplice,</i><br>
+		pero no menciona el desierto,<br>
+		la monoton&iacute;a del gravoso mar,<br>
+		<br>
+		el deseo, el aduanero malicioso,<br>
+		que no te espera s&oacute;lo a ti,<br>
+		islas de indiferencia y de cenizas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Navegar&aacute;s largamente. 
+		Quiz&aacute;s llegues<br>
+		all&iacute; donde descansa el erizo de Venecia,<br>
+		agua, encajes y oro.<br>
+		<br>
+		Quiz&aacute;s llegues all&iacute; donde se alzan<br>
+		las rojas torres de Venecia, torres fieles,<br>
+		agujas de un comp&aacute;s perdido en el oc&eacute;ano.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Elzbieta 
+		Bortkiewicz</font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:01:30 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:27:19 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

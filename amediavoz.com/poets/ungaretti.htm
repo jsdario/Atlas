@@ -1,0 +1,848 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Giuseppe Ungaretti</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Giuseppe Ungaretti."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Giuseppe Ungaretti. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Giuseppe_Ungaretti,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/ungaretti.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/ungaretti.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815180917" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ungaretti.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:09:17 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./ungaretti.htm" title="14:20:41 May 30, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:09:17 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ungaretti.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:09:17 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./ungaretti.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>53 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Jan 05 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:111000000000_2006:-1:100011000200_2007:-1:010113151200_2008:-1:000211000000_2009:-1:110000110100_2010:-1:100000001110_2011:-1:000000101130_2012:-1:201010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./UNGARETTI.jpg" width="438" height="53"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./UNGARETTI1.jpg" width="189" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="689" height="315">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="681"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="288" width="262" valign="top"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./UNGARETTI2.jpg" width="216" height="290"></td>
+    <td width="415" valign="top" height="288">
+	<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+    <br>
+    Poeta y traductor italiano nacido en Alejandr&iacute;a, Egipto, en 1888.<br>
+	Pas&oacute; su infancia y adolescencia en Alejandr&iacute;a mientras su padre trabajaba en 
+	la construcci&oacute;n del Canal de Suez. En 1912 viaj&oacute; a Paris, estudi&oacute; en <i>La 
+	Sorbona</i> y&nbsp; trab&oacute; amistad con intelectuales famosos de la &eacute;poca. De 
+	regres&oacute; a Italia en 1914, se enrol&oacute; como voluntario durante la Primera 
+	Guerra Mundial. Dos a&ntilde;os despu&eacute;s public&oacute; sus primeros poemas bajo los 
+	t&iacute;tulos <i>&quot;El puerto sepultado&quot; </i>1916 y <i>&quot;La alegr&iacute;a&quot;</i>1919. <br>
+	A partir de 1921 trabaj&oacute; como periodista en Roma, public&oacute; su obra m&aacute;s 
+	conocida <i>&quot;Sentimiento del tiempo&quot; </i>en 1933 , y luego, en 1936,&nbsp; 
+	se radic&oacute; en Brasil oficiando como profesor universitario. <br>
+	Regres&oacute; a Roma en 1942, ense&ntilde;&oacute; literatura moderna, public&oacute; <i>&quot;El dolor&quot;</i> 
+	en 1947 y la compilaci&oacute;n de su labor po&eacute;tica entre 1942 y 1961, bajo el 
+	t&iacute;tulo <i>&quot;La vida de un hombre&quot;</i>. En los &uacute;ltimos a&ntilde;os de su vida tradujo 
+	al italiano obras de importantes autores.<br>
+	Falleci&oacute; en Mil&aacute;n en junio de 1970.&nbsp; &copy;</font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Giuseppe 
+Ungaretti:</font></p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left">
+		<font face="Georgia" color="#FFFFFF"><a href="./ungaretti.htm#A LA SALIDA">A la salida</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#ATARDECER">Atardecer</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#CIELO DESPEJADO">Cielo despejado</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#CONDENA">Condena</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#DISTANTE">Distante</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./ungaretti.htm#EL &Aacute;NGEL DEL POBRE">El &aacute;ngel del pobre</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#JUNO">Juno</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#LA MADRE">La madre</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#LA MUERTE MEDITADA">La muerte meditada</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#LA PIEDAD">La piedad</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#LOS RECUERDOS">Los recuerdos</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#NO GRIT&Eacute;IS M&Aacute;S">No grit&eacute;is m&aacute;s</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#NO LLORES M&Aacute;S">No llores m&aacute;s</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#NOSTALGIA">Nostalgia</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#PLACER">Placer</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#QUIETUD">Quietud</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#SAN MART&Iacute;N DEL CARSO">San Mart&iacute;n del Carso</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+		<br>
+		<a href="./ungaretti.htm#SOLDADOS">Soldados</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#TIERRA">Tierra</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#VAGABUNDO">Vagabundo</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./ungaretti.htm#VIGILIA">Vigilia</a></font><font face="Georgia" size="2" color="#FFFFFF"><br>
+		</font><font face="Georgia" size="3" color="#FFFFFF"><br> 
+		</font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="A LA SALIDA"></a>
+		A la salida</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Qui&eacute;n viniera conmigo a trav&eacute;s de los campos<br><br>El sol se esparce en 
+		diamantinas<br>gotas de agua<br>sobre la fr&aacute;gil hierba<br>
+		<br>Me recuesto con<br>el placer<br>del apacible coraz&oacute;n del universo<br>
+		<br>Las monta&ntilde;as crecen<br>en corrientes de sombra lila<br>y se perfilan 
+		contra el cielo<br>
+		<br>En la luminosa c&uacute;pula arriba<br>el hechizo se ha roto<br><br>Y yo 
+		retorno hacia m&iacute;<br>y anidado me escondo dentro de m&iacute; mismo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Versa, 27 Abril 1916<br><br><em>Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="ATARDECER"></a>
+		Atardecer</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Versa, 20 de mayo de 1916</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">La 
+		ruborosa cara del cielo<br>despierta el oasis<br>para el n&oacute;mada amor.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="CIELO DESPEJADO"></a>
+		Cielo despejado</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Bois de Courton, Julio 1918</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Despu&eacute;s de 
+		la creciente<br>niebla<br>una<br>por una<br>las estrellas<br>se quitan 
+		el velo</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Respiro<br>
+		el aire fresco<br>que el color del cielo<br>me ofrece</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">S&eacute; soy<br>
+		una pasajera<br>imagen</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">atrapada 
+		en un c&iacute;rculo<br>inmortal</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CONDENA"></a></font><font face="Georgia" color="#C4CAD4">
+		Condena</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>Como 
+		la &aacute;spera piedra del volc&aacute;n,<br>como la piedra pulida del torrente,<br>
+		como la noche sola y desnuda,<br>alma como honda y con terrores<br>&iquest;Por 
+		qu&eacute; no te recoge<br>la mano firme del Se&ntilde;or?<br>
+		<br>Este alma<br>que sabe las vanidades del coraz&oacute;n<br>y sabe p&eacute;rfidas 
+		sus tentaciones,<br>y del mundo conoce la medida,<br>y los planes de 
+		nuestra mente<br>considera minucias,<br>&iquest;por qu&eacute; no puede soportar<br>
+		m&aacute;s que arrebatos terrenos?<br>
+		<br>T&uacute; no me miras ya, Se&ntilde;or...<br>Y no busco sino olvido<br>en la 
+		ceguedad de la carne.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="DISTANTE"></a>
+		Distante</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Versa, 15 Febrero 1917</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Distante 
+		en una tierra distante<br>como a un hombre ciego<br>ellos me han 
+		abandonado</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL &Aacute;NGEL DEL POBRE"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El &aacute;ngel del pobre</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+    <br>
+    	Ahora que invade las nubladas mentes<br>
+    	m&aacute;s &aacute;spera piedad de la sangre y la tierra,<br>
+    	ahora que nos mide a cada p&aacute;lpito<br>
+    	el silencio de tanta injusta muerte,<br>
+    <br>
+    	ahora que despierta el &aacute;ngel del pobre,<br>
+    	gentileza del alma, pervivida...<br>
+    <br>
+    	Con el gesto inextinguible de los siglos<br>
+    	baje a la cabecera de su viejo pueblo<br>
+    	en medio de las sombras...<br>
+    	<em><br>
+    	Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia"><a name="JUNO"></a>
+		Juno</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1931</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Alrededor 
+		de esa perfecta madurez que me atormenta,<br>Un muslo levant&aacute;ndose por 
+		sobre otro...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Esparce tu 
+		furia a trav&eacute;s de una acerba noche!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Rafael D&iacute;az Borb&oacute;n</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="LA MADRE"></a>La madre</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Y cuando el coraz&oacute;n de un &uacute;ltimo latido<br>haya hecho caer el muro de 
+		sombra,<br>para conducirme, madre, hasta el Se&ntilde;or,<br>como una vez me 
+		dar&aacute;s la mano.<br>
+		<br>De rodillas, decidida,<br>ser&aacute;s una estatua delante del Eterno,<br>
+		como ya te ve&iacute;a<br>cuando estabas todav&iacute;a en la vida.<br>
+		<br>Alzar&aacute;s temblorosa los viejos brazos,<br>como cuando expiraste<br>
+		diciendo: Dios m&iacute;o, heme aqu&iacute;.<br>
+		<br>Y s&oacute;lo cuando me haya perdonado<br>te entrar&aacute;n deseos de mirarme.<br>
+		<br>Recordar&aacute;s haberme esperado tanto<br>y tendr&aacute;s en los ojos un r&aacute;pido 
+		suspiro.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="LA MUERTE MEDITADA"></a></font>
+		<font face="Georgia" color="#C4CAD4">La muerte meditada</font><font face="Georgia" size="2" color="#C4CAD4"><br><br><em>
+		Canto quinto</em><br>
+		<br>Has cerrado los ojos,<br>nace una noche<br>nena de falsos huecos,<br>
+		de ruidos muertos<br>como de corchos<br>de redes caladas en el agua.<br>
+		<br>Tus manos se hacen como un soplo<br>de inviolables lontananzas,<br>
+		inaferrables como las ideas,<br>
+		<br>y el equ&iacute;voco de la luna<br>y el balancearse, dulc&iacute;simos,<br>si 
+		quieres pos&aacute;rmelas sobre los ojos,<br>tocan el alma.<br>
+		<br>Eres la mujer que pasa<br>como una hoja<br>y dejas en los &aacute;rboles un 
+		fuego de oto&ntilde;o.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em><br><br>&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="LA PIEDAD"></a></font><font face="Georgia" color="#C4CAD4">La 
+		piedad</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>1<br>
+		Soy un hombre herido.<br>Y yo quisiera irme<br>y llegar finalmente,<br>
+		piedad, a donde se escucha<br>al hombre que est&aacute; s&oacute;lo consigo.<br>
+		<br>No tengo m&aacute;s que soberbia y bondad.<br><br>Y me siento exilado en 
+		medio de los hombres.<br>
+		<br>Mas por ellos estoy en pena.<br><br>&iquest;No ser&iacute;a digno de volver a m&iacute;?<br>
+		<br>He poblado de nombres el silencio.<br><br>&iquest;He hecho pedazos coraz&oacute;n 
+		y mente<br>para caer en servidumbre de palabras?<br>Reino sobre 
+		fantasmas.<br>
+		<br>Hojas secas,<br>alma llevada aqu&iacute; y all&aacute;...,<br><br>No, odio el 
+		viento y su voz<br>de bestia inmemorable.<br>
+		<br>Dios, &iquest;aqu&eacute;llos que te imploran<br>no te conocen m&aacute;s que de nombre?<br>
+		<br>Me has arrojado de la vida:<br>&iquest;me arrojar&aacute;s de la muerte?<br><br>
+		Quiz&aacute; el hombre tambi&eacute;n es indigno de esperanza.<br>
+		<br>&iquest;Hasta la fuente del remordimiento est&aacute; seca?<br><br>El pecado, qu&eacute; 
+		importa<br>si ya no conduce a la pureza.<br>
+		<br>La carne apenas recuerda<br>que tuvo fuerza una vez.<br><br>Loca y 
+		gastada est&aacute; el alma.<br>
+		<br>Dios mira nuestra debilidad.<br><br>Queremos una certeza.<br><br>&iquest;Ya 
+		ni siquiera te r&iacute;es de nosotros?<br>
+		<br>Compad&eacute;cenos entonces, crueldad.<br><br>No puedo seguir amurallado<br>
+		en el deseo sin amor .<br>
+		<br>Mu&eacute;stranos una huella de justicia.<br><br>Tu ley, &iquest;cu&aacute;l es?<br><br>
+		Fulmina mis pobres emociones,<br>lib&eacute;rame de la inquietud.<br>Estoy 
+		cansado de gritar sin voz.<br>
+		<br><br>2<br>Carne melanc&oacute;lica<br>donde una vez pulul&oacute; la alegr&iacute;a,<br>
+		ojos entreabiertos del despertar cansado,<br>&iquest;ves t&uacute;, alma demasiado 
+		madura,<br>lo que ser&eacute; ca&iacute;do en la tierra?<br>
+		<br>Est&aacute; en los vivos el camino de los difuntos,<br><br>nosotros somos 
+		una riada de sombras,<br>
+		<br>y ellas el grano que explota en el sue&ntilde;o,<br><br>de ellas es la 
+		lejan&iacute;a que nos queda<br>y de ellas la sombra que da peso a los nombres.<br>
+		<br>La esperanza de una gran sombra<br>&iquest;s&oacute;lo es esto nuestra suerte?<br>
+		<br>&iquest;Y no ser&iacute;as t&uacute; m&aacute;s que un sue&ntilde;o, Dios?<br><br>Temerarios, por lo 
+		menos un sue&ntilde;o<br>queremos que sea semejante a ti.<br>
+		<br>Es parto de la locura m&aacute;s clara.<br><br>No tiembla en nubes de ramas<br>
+		como p&aacute;jaros de la madrugada<br>al borde de los p&aacute;rpados.<br>
+		<br>En nosotros est&aacute; y languidece, llaga misteriosa<br><br>3<br>La luz 
+		que nos aguija<br>es un hilo cada vez m&aacute;s sutil.<br>&iquest;S&oacute;lo deslumbras 
+		matando?<br>D&aacute;me esta alegr&iacute;a suprema.<br>
+		<br>4<br>El hombre, mon&oacute;tono universo,<br>cree acrecentar sus bienes,<br>
+		y de sus manos febriles<br>no salen, sin fin, m&aacute;s que l&iacute;mites.<br>
+		<br>Pegado al vac&iacute;o,<br>a su hilo de ara&ntilde;a,<br><br>no teme ni seduce <br>
+		m&aacute;s que a su propio grito. 
+		<br><br>Evita el desgaste haciendo tumbas,<br>y para pensarte, Eterno,<br>
+		no tiene m&aacute;s que blasfemias.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Jes&uacute;s 
+		L&oacute;pez Pacheco</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font color="#C4CAD4"><br>
+		</font>
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font>
+		<font face="Georgia" color="#C4CAD4">
+		<a name="LOS RECUERDOS"></a>Los recuerdos</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Los recuerdos, in&uacute;til infinito,<br>pero solos y unidos contra el mar, 
+		intacto,<br>en medio de estertores infinitos...<br>
+		<br>El mar,<br>voz de una libre grandeza<br>pero inocencia enemiga en 
+		los recuerdos,<br>tan r&aacute;pido en borrar las huellas dulces<br>de un 
+		pensamiento fiel...<br>
+		<br>El mar, sus blanduras indolentes<br>tan feroces y esperadas tanto, 
+		tanto,<br>y en su agon&iacute;a,<br>presente siempre, renovada siempre,<br>en 
+		el despierto pensamiento, la agon&iacute;a.<br>
+		<br>Los recuerdos,<br>el revolverse vano<br>de arena que se mueve<br>sin 
+		pesar sobre la arena,<br>
+		<br>ecos breves y lentos,<br>sin voz, ecos de los adioses<br>a minutos 
+		que parec&iacute;an felices...<br>
+		<em><br>Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="NO GRIT&Eacute;IS M&Aacute;S"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		No grit&eacute;is m&aacute;s</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Dejad de matar a los muertos,<br>no grit&eacute;is m&aacute;s, no grit&eacute;is,<br>si les 
+		quer&eacute;is todav&iacute;a o&iacute;r<br>si esper&aacute;is no perecer .<br>
+		<br>Tienen un susurro imperceptible,<br>no hacen m&aacute;s rumor<br>que el 
+		crecer de 1a hierba,<br>alegre donde no pasa el hombre.<br>
+		<em><br>Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="NO LLORES M&Aacute;S"></a>
+		No llores m&aacute;s</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Para de matar a los 
+		muertos,<br>No llores m&aacute;s, no llores m&aacute;s<br>Si deseas a&uacute;n escucharlos,<br>
+		Si esperas no perecer.<br>Su susurro es imperceptible,<br>Ellos no hacen 
+		m&aacute;s ruido<br>Que el crecimiento de la hierba,<br>Felices donde el hombre 
+		no transita.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		D&iacute;az Borb&oacute;n</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="NOSTALGIA"></a>
+		Nostalgia</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Locvizza, 28 Septiembre 1916<br>
+		<br>
+		Cuando<br>la noche est&aacute; por pasar<br>un poco antes de empezar la 
+		primavera<br>y la gente<br>comience a transitar<br>
+		<br>Un sombr&iacute;o color<br>de llanto<br>se espesa sobre Par&iacute;s<br><br>En la 
+		esquina<br>del puente<br>contemplo<br>el inabarcable silencio<br>de una 
+		pobre ni&ntilde;a<br>
+		<br>Nuestras dos<br>enfermedades<br>van juntas<br><br>Y si arrastradas a 
+		otro lugar<br>all&aacute; estar&iacute;amos juntos</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		D&iacute;az Borb&oacute;n</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="PLACER"></a>Placer</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Versa, 18 Febrero 1917</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Ardo con la<br>fiebre<br>
+		de este torrente de luz</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Doy la bienvenida a 
+		este<br>d&iacute;a como<br>a dulcificante fruta</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Esta noche<br>sentir&eacute;<br>
+		remordimiento como un<br>alarido<br>perdido en el<br>desierto</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Rafael 
+		D&iacute;az Borb&oacute;n</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="QUIETUD"></a>Quietud</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1931</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Las uvas maduras, el 
+		campo arado,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La colina se recorta en 
+		las nubes.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">En los espejos 
+		polvorientos del verano<br>la sombra ha ca&iacute;do,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Entre los dedos 
+		inciertos<br>Su destello es claro,<br>Y distante,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Con las golondrinas 
+		vuela<br>La &uacute;ltima angustia.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		D&iacute;az Borb&oacute;n</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		<a name="SAN MART&Iacute;N DEL CARSO"></a></font>
+		<font face="Georgia" color="#C4CAD4">San Mart&iacute;n del Carso</font></em></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>(Valloncello dell' 
+		Albero Isolato a 27 agosto de 1916)</em><em style="font-style: normal"><br>
+		<br>
+		De estas casas<br>
+		no ha quedado<br>
+		m&aacute;s que alg&uacute;n<br>
+		pedazo de muro<br>
+		<br>
+		De tantos<br>
+		a quienes estaba unido<br>
+		no ha quedado<br>
+		ni siquiera eso<br>
+		<br>
+		Pero en el coraz&oacute;n<br>
+		ninguna cruz falta<br>
+		<br>
+		Mi coraz&oacute;n<br>
+		es el pa&iacute;s m&aacute;s desvastado.<br>
+		<br>
+		</em><em>Versi&oacute;n de Ra&uacute;l Zurita</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="SOLDADOS"></a></font>
+		<font face="Georgia" color="#C4CAD4">Soldados</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Se est&aacute; como<br>en oto&ntilde;o<br>sobre los &aacute;rboles<br>las hojas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Jes&uacute;s 
+		L&oacute;pez Pacheco</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font color="#C4CAD4"><br>
+		</font>
+		<font face="Georgia" size="2" color="#C4CAD4"><br><a name="TIERRA">
+		</a></font>
+		<font face="Georgia" color="#C4CAD4">Tierra</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Podr&iacute;a haber en la guada&ntilde;a<br>un r&aacute;pido reflejo, y el rumor<br>tornar y 
+		perderse por grados<br>hacia las grutas, y el viento podr&iacute;a<br>de otra 
+		sal enrojecer los ojos...<br>
+		<br>Podr&iacute;as, la quilla sumergida,<br>o&iacute;rla deslizarse a lo lejos,<br>o a 
+		una gaviota equivocar su pico,<br>la presa hu&iacute;da, en el espejo...<br>
+		<br>Del trigo de noches y d&iacute;as<br>colmadas mostraste las manos,<br>
+		delfines de los viejos tirrenos<br>viste pintados en secretos<br>muros 
+		inmateriales y, luego, detr&aacute;s<br>de las naves, vivos volar,<br>y tierra 
+		eres a&uacute;n de cenizas<br>de inventores sin descanso.<br>
+		<br>Cauto temblor podr&iacute;a otra vez a adormecedoras<br>mariposas en los 
+		olivos, de un instante a otro,<br>despertar;<br>quedar&aacute;s inspiradas 
+		vigilias de extintos,<br>intervenciones insomnes de ausentes,<br>la 
+		fuerza de cenizas, sombras<br>en el raudo oscilar de las platas.<br>
+		<br>Contin&uacute;as derribando al viento ;<br>desde abetos a palmeras el 
+		estr&eacute;pito<br>por siempre desolas; silente<br>el grito de los muertos es 
+		m&aacute;s fuerte.<br>
+		<br><em>Versi&oacute;n de Jes&uacute;s L&oacute;pez Pacheco</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		<a name="VAGABUNDO"></a></font><font face="Georgia" color="#C4CAD4">
+		Vagabundo</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>En 
+		ninguna<br>parte<br>de la tierra<br>me puedo<br>arraigar<br>
+		<br>A cada<br>nuevo<br>clima<br>que encuentro<br>descubro<br>
+		desfalleciente<br>que<br>una vez<br>ya le estuve<br>habituado<br>
+		<br>Y me separo siempre<br>extranjero<br><br>Naciendo<br>tornado de 
+		&eacute;pocas demasiado<br>vividas<br>
+		<br>Gozar un solo<br>minuto de vida<br>inicial<br><br>Busco un<br>pa&iacute;s 
+		inocente</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br><br><br>
+		<a name="VIGILIA"></a></font><font face="Georgia" color="#C4CAD4">
+		Vigilia</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>Una 
+		entera velada<br>tendido al costado<br>de un compa&ntilde;ero<br>masacrado<br>
+		con su boca<br>desencajada<br>vuelta al plenilunio<br>con la congesti&oacute;n<br>
+		de sus manos<br>penetrada<br>en mi silencio<br>he escrito<br>cartas 
+		llenas de amor.<br>
+		<br>No me he sentido nunca<br>tan<br>aferrado a la vida.<br><br>&nbsp;</font></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:09:17 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:30 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

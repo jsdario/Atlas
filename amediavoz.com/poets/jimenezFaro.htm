@@ -1,0 +1,659 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Luzmar&iacute;a Jim&eacute;nez Faro</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Luzmar&iacute;a Jim&eacute;nez Faro. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Luzmar&iacute;a_Jim&eacute;nez_Faro,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/jimenezFaro.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/jimenezFaro.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161655" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./jimenezFaro.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:16:55 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./jimenezFaro.htm" title="16:16:23 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:16:55 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./jimenezFaro.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:16:55 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./jimenezFaro.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>31 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Dec 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000001_2009:-1:010000200100_2010:-1:101000001211_2011:-1:000000002130_2012:-1:221010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./JIMENEZFARO.jpg" width="429" height="39"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Echa a volar, gaviota de mi puerto,<br>
+por las rotas arterias de mis olas...&quot;</em><br>
+<br>
+</font><font color="#9BC9BB"><img border="0" src="./JIMENEZFARO1.jpg" width="230" height="282"></font></p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Paranoia&quot;<br>
+<br>
+Salvador Dal&iacute;</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#9BC9BB"><br>
+			</font>
+			<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta y 
+		editora espa&ntilde;ola nacida en Madrid en 1937.<br>
+		Es fundadora y Directora de Ediciones Torremozas, miembro del Patronato 
+		de la &quot;Fundaci&oacute;n Carmen Conde <br>
+		y Antonio Oliver&quot; de Cartagena y Presidenta de la &quot;Fundaci&oacute;n Gloria 
+		Fuertes&quot;. <br>
+		Su trayectoria literaria se inici&oacute; con la publicaci&oacute;n del poemario <i>
+		&quot;Por un c&aacute;lido sendero&quot;</i> 1978, seguido por <br>
+		una extensa obra de la que se destacan especialmente <i>&quot;S&eacute; que vivo&quot; </i>
+		1984,&nbsp; <i>&quot;Bolero&quot;</i> 1993,&nbsp; <i>
+		<br>
+		&quot;Amados &aacute;ngeles&quot; </i>1997,&nbsp; <i>&quot;Mujer sin alcuza&quot; </i>2005, y la 
+		edici&oacute;n de Poetisas Espa&ntilde;olas desde el siglo XV al a&ntilde;o 2001.<br>
+		Su labor como editora ha sido reconocida con las distinciones del Ateneo 
+		Puertorrique&ntilde;o de Nueva York en 1987, <br>
+		la Medalla de Oro de la Fundaci&oacute;n Josefina Romo Arregui&#8221; de Nueva York 
+		en 1988, y el galard&oacute;n &quot;Women in poetry&quot; <br>
+		de Los &Aacute;ngeles, California, en el a&ntilde;o 2005.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<p align="left">&nbsp;</p>
+			<p align="center"><font face="Georgia" size="3" color="#95B3AA">
+			Especial</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">Gracias,&nbsp; 
+		Luzmar&iacute;a, por compartir con nuestros visitantes los siguientes poemas:</font></p>
+		<p align="left"><font face="Georgia"><a href="./jimenezFaro.htm#&Aacute;ngeles barrocos">&Aacute;ngeles 
+		barrocos</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./jimenezFaro.htm#Cita con mis poetas">Cita 
+		con mis poetas</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./jimenezFaro.htm#Derribado el crep&uacute;sculo se alza...">Derribado el crep&uacute;sculo se 
+		alza...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./jimenezFaro.htm#Echa a volar, gaviota de mi puerto...">Echa a volar, gaviota 
+		de mi puerto...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./jimenezFaro.htm#El &aacute;ngel de la muerte">El 
+		&aacute;ngel de la muerte</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./jimenezFaro.htm#En un sal&oacute;n de La Habana">En un sal&oacute;n de La Habana</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./jimenezFaro.htm#La memoria es s&oacute;lo un espejismo">La memoria es s&oacute;lo un 
+		espejismo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./jimenezFaro.htm#Mujer sin alcuza">Mujer 
+		sin alcuza</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./jimenezFaro.htm#Para contar cualquier historia vieja...">Para contar cualquier 
+		historia vieja...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./jimenezFaro.htm#Un &aacute;ngel pasa">Un &aacute;ngel 
+		pasa</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">Volver a:
+		</font><font face="Georgia" color="#95B3AA">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		</font><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+		<a href="./indice-L-Z.htm"><font face="Georgia">&Iacute;ndice L-Z</font></a></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#95B3AA">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a> &nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp;&nbsp;
+			</font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+				<p align="center">&nbsp;</p>
+			</blockquote>
+		</blockquote>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="&Aacute;ngeles barrocos"></a>&Aacute;ngeles barrocos</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Bajo la nervaduras y los arcos<br>
+		&aacute;ngeles puros en racimos ebrios<br>
+		con sus risas de lirios nos deslumbran.<br>
+		Sobre su piel la p&aacute;tina del tiempo <br>
+		difumina los &oacute;palos dormidos<br>
+		prolongando los oros en su hondura.<br>
+		En las columnas d&oacute;ricas se apoyan,<br>
+		roban sus alas las policrom&iacute;as<br>
+		para fraguar azahares en el aire.<br>
+		Con encajes de luz hieren las sombras<br>
+		y del perfume de los incensarios<br>
+		tejen guirnaldas de rosas de humo.<br>
+		Se desmayan los bucles en las frentes<br>
+		mientras, locos, estallan su alegr&iacute;a<br>
+		contra la frigidez austera de los m&aacute;rmoles.<br>
+		<br>
+		<i>De &quot;Amados &aacute;ngeles&quot; 1997</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Cita con mis poetas"></a>Cita con mis poetas</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Oblicuamente noche llegas<br>
+		a sacudir la fiebre que recorre <br>
+		el azulado hor&oacute;scopo que anudo.<br>
+		Abro las manos torpe<br>
+		y cuento mis diez dedos<br>
+		que como diez cuchillos afilados<br>
+		apu&ntilde;alan lo oscuro.<br>
+		Y yo,<br>
+		y t&uacute;,<br>
+		nosotros y vosotros,<br>
+		los que amamos la voz y la palabra<br>
+		al margen del insomnio,<br>
+		descifraremos el ajedrez de espejos<br>
+		para despu&eacute;s, a plena luz, reconocernos.<br>
+		<br>
+		<i>In&eacute;dito en libro</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Derribado el crep&uacute;sculo se alza..."></a>Derribado el crep&uacute;sculo 
+		se alza...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Derribado 
+		el crep&uacute;sculo se alza<br>
+		el hueco de tu frente en el ensue&ntilde;o<br>
+		por el &aacute;mbito oscuro de la alcoba.<br>
+		Tu perfil transfundido se dibuja<br>
+		en la pared de cal, y dulcemente<br>
+		en su blancor se unen nuestras sombras.<br>
+		No hay derrota en el gesto: soplo somos<br>
+		compa&ntilde;eros de viaje hacia un poema <br>
+		fugitivos anclados en un verso.<br>
+		<br>
+		<i>De &quot;S&eacute; que vivo&quot; 1984</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><i>
+		</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Echa a volar, gaviota de mi puerto..."></a>Echa a volar, 
+		gaviota de mi puerto...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Echa a 
+		volar, gaviota de mi puerto,<br>
+		por las rotas arterias de mis olas,<br>
+		y en las blancas estelas de mis pechos<br>
+		dib&uacute;jame tu sombra en la distancia.<br>
+		All&iacute;, donde parece que se estrellan<br>
+		mi inquieta espuma y tu batir de alas,<br>
+		all&iacute; ser&aacute; el encuentro todo fuego,<br>
+		all&iacute;.<br>
+		bajo la sombra de la luna helada.<br>
+		Echa a volar, gaviota de mi puerto,<br>
+		sin mirar hacia atr&aacute;s: ve a tu bandada<br>
+		y derrama mi sangre por el viento.<br>
+		<br>
+		<i>De &quot;S&eacute; que vivo&quot; 1984</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB"><i>&nbsp;</i></font><font face="Georgia" size="3" color="#9BC9BB"><img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="El &aacute;ngel de la muerte"></a>El &aacute;ngel de la muerte</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Usted y yo tenemos una cita.<br>
+		Se que jam&aacute;s se retras&oacute; en la hora.<br>
+		Tal vez pueda darme algo ti tiempo<br>
+		para mirar mi vida.<br>
+		&iquest;Podr&eacute; volver la vista hasta mi patio?<br>
+		All&iacute; la madreselva era alegr&iacute;a<br>
+		su aroma resbalaba por los sue&ntilde;os<br>
+		de mi sangre crecida.<br>
+		Ser&aacute; muy puntual. Siempre lo ha sido.<br>
+		Usted perdonar&aacute; si me entretengo<br>
+		y acaricio mis libros con ternura.<br>
+		Comprenda usted &iexcl;son tantas horas juntos!<br>
+		que as&iacute;, partir, tan fr&iacute;amente,<br>
+		no me parece bien. Se quedan solos...<br>
+		Quiero que sepa que s&eacute; que ha de venir<br>
+		para llevarme con usted<br>
+		y cr&eacute;ame si digo que estoy lista.<br>
+		He tratado de aprovecha mi tiempo:<br>
+		Amar, Vivir. Vivir y amar.<br>
+		No puede imaginarse el equipaje <br>
+		Que llevo en la memoria...<br>
+		Usted &iexcl;que culpa tiene!<br>
+		S&oacute;lo es usted el &aacute;ngel de la muerte<br>
+		Y usted y yo tenemos una cita.<br>
+		<br>
+		<i>De &quot;Amados &aacute;ngeles&quot; 1997</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="En un sal&oacute;n de La Habana"></a>En un sal&oacute;n de La Habana</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Hay mujeres que empapadas en ron<br>
+		hacen memoria de las cosas perdidas.<br>
+		La lumbre de sus cuerpos,<br>
+		el tibio don donde la fruta canta<br>
+		y se desborda el j&uacute;bilo,<br>
+		es un manjar del tr&oacute;pico<br>
+		para bocas de ortiga.<br>
+		Mujeres dulces de trago desmedido.<br>
+		Mujeres de voz clara y de resaca.<br>
+		Color mulato de m&uacute;sica habitado<br>
+		y caderas ci&ntilde;&eacute;ndose al sonido.<br>
+		Vosotras,<br>
+		puro habano: humo que exhala<br>
+		la Caridad del Cobre<br>
+		os entreg&aacute;is a Yemay&aacute; Olokun<br>
+		para que nunca os falte<br>
+		el pan de cada d&iacute;a.<br>
+		Vosotras,<br>
+		luz del Caribe, flor de la guayaba,<br>
+		jineteras de luna sin pecado.<br>
+		Aqu&iacute; dejo memoria de vosotras.<br>
+		<br>
+		<br>
+		<i>De &quot;Mujer sin alcuza&quot; 2005</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><i>
+		</i><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="La memoria es s&oacute;lo un espejismo"></a>La memoria es s&oacute;lo un 
+		espejismo</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Granos de arena. Traves&iacute;a del polvo.<br>
+		Pi&eacute;lago rendido a la distancia.<br>
+		Vaharada de tiempo que sofoca<br>
+		la r&aacute;faga encendida.<br>
+		Fiebre sedienta y &aacute;vida.<br>
+		La memoria es s&oacute;lo un espejismo.<br>
+		No remuevas la arena.<br>
+		<br>
+		<i>De &quot;Mujer sin alcuza&quot; 2005</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Mujer sin alcuza"></a>Mujer sin alcuza</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Esta mujer no avanza por la acera<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de esta ciudad.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Esta mujer va por un campo yerto.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(D&aacute;maso Alonso)</i><br>
+		<br>
+		<br>
+		La mujer deja la alcuza sobre su soledad.<br>
+		Observa<br>
+		la ciudad nocturna con sus negras pupilas<br>
+		donde habitan, furiosos, s&oacute;lo p&aacute;jaros ciegos.<br>
+		Mira las luces de ne&oacute;n, su colorido<br>
+		de acompasado parpadeo y respira<br>
+		el turbio aroma de las calles flageladas de lluvia. <br>
+		La mujer ha doblado su chal. De pie, junto al espejo<br>
+		se coloca su nuevo vestuario de colores. Con sus manos<br>
+		espectrales pone flores y plumas en su triste cabeza<br>
+		carcomida de horas. Lentamente, en su rito, completa<br>
+		su disfraz con guantes y zapatos de Dra. Queen.<br>
+		No oye, no habla, no se r&iacute;e.<br>
+		Desprende un viento fr&iacute;o de orfandades<br>
+		y un h&aacute;lito de flores derrotadas.<br>
+		Esta mujer, viajera de lo inm&oacute;vil,<br>
+		Jam&aacute;s descansa en estaci&oacute;n alguna.<br>
+		Puede tardar, m&aacute;s llega a su destino,<br>
+		a su espacio de tr&aacute;nsito, puntual y sedienta.<br>
+		La mujer prepara su maleta:<br>
+		para este nuevo viaje nada puede olvidar. <br>
+		Como joyas mal&eacute;ficas va guardando cuidadosamente,<br>
+		la coca, el &eacute;xtasis, el sida, la hero&iacute;na.<br>
+		Un nuevo &aacute;lbum de fotos y una lista.<br>
+		Esta mujer de paso leve y actitud sombr&iacute;a<br>
+		ir&aacute; hacia la noche<br>
+		y entre una multitud ebria de luces y de sombras,<br>
+		ebria de m&uacute;sica, cumplir&aacute; cual verdugo su destino.<br>
+		<br>
+		<i>De &quot;Mujer sin alcuza&quot; 2005</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><i>
+		</i><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Para contar cualquier historia vieja..."></a>Para contar 
+		cualquier historia vieja...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>Hoy mi playa se viste de amargura<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Porque tu barca tiene que partir<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A buscar otros mares de locura...</i><br>
+		<br>
+		Para contar cualquier historia vieja. Para que el tiempo<br>
+		reconozca que sangre, o grito, o verso es vida. Para decir<br>
+		tu nombre y no caer en un proyecto de monoton&iacute;a. Para <br>
+		que las flores de Baudelaire encuentren esa capacidad de<br>
+		asombro y abrir al hombre a una memoria compartida.<br>
+		Para que las palabras que evitan desangrarse pierdan esa<br>
+		solemnidad de pompas de jab&oacute;n. Para que este dolor de <br>
+		piedra y ala que se alza desde el pecho hasta la luna encuentre<br>
+		la cicatriz precisa. Para que este miedo con percusi&oacute;n oscura<br>
+		de campanas se seque al sol. Para que esto y aquello no se nos<br>
+		vuelva a&ntilde;icos, debemos usar algo la locura.<br>
+		Detesto a las abejas desde ni&ntilde;a porque jam&aacute;s poseer&aacute;n<br>
+		Los mares.<br>
+		<br>
+		<i>De &quot;Bolero&quot; 1993</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		</font><font face="Georgia" color="#9BC9BB"><a name="Un &aacute;ngel pasa"></a>
+		Un &aacute;ngel pasa</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Rosas con las en el aire mudas..<br>
+		Latido sin latido de la sangre.<br>
+		Rel&aacute;mpago de pura luz sin trueno.<br>
+		M&uacute;sica que, sin notas, acompa&ntilde;a.<br>
+		La voz amada sin rumos alguno.<br>
+		Hay un silencio pleno de alegr&iacute;a...<br>
+		Y es que ha pasado un &aacute;ngel.<br>
+		<br>
+		<i>De &quot;Amados &aacute;ngeles&quot; 1997</i><br>
+		<br>
+&nbsp;</font></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<font face="Georgia" size="2" color="#8FABC2">
+			<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+			<font color="#AAC0D5">
+			<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+			<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+			</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:16:55 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:20:33 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,931 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Emilio Prados</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Emilio Prado. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Emilio_Prados,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/prados.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "31";
+var displayMonth = "Oct";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/prados.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131031213458" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./prados.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 21:34:58 Oct 31, 2013">OCT</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Nov
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./prados.htm" title="16:21:15 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 21:34:58 Oct 31, 2013">31</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./prados.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 21:34:58 Oct 31, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./prados.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>68 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 31 Oct 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010001_2003:-1:000001010101_2004:-1:010101010101_2005:-1:021100000020_2006:-1:010021000200_2007:-1:010123141100_2008:-1:002112000100_2009:-1:020000110000_2010:-1:100000001110_2011:-1:000000012100_2012:-1:000021001000_2013:9:101210010100_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+<br>
+<br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./PRADOS.jpg" width="221" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./PRADOS1.jpg" width="203" height="21"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Arial" size="2"><br><br></font>
+		<strong>
+		<font size="2" color="#526462" face="Georgia"><br>
+		</font>
+		<font color="#526462" face="Georgia">
+		<a href="./prados.htm#ALBA R&Aacute;PIDA">Alba r&aacute;pida</a><br>
+		<br><a href="./prados.htm#CANCI&Oacute;N">Canci&oacute;n</a><br>
+		<br>
+		<a href="./prados.htm#CANCI&Oacute;N PARA LOS OJOS">Canci&oacute;n para los ojos</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia" color="#526462">
+		<a href="./prados.htm#Cantar del dormido en la yerba">Cantar del dormido en la yerba</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia" color="#526462">
+		<a href="./prados.htm#Cantar triste">Cantar triste</a></font></strong><font color="#526462" face="Georgia"><strong><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><a href="./prados.htm#CERR&Eacute; MI PUERTA AL MUNDO...">Cerr&eacute; mi puerta al mundo</a></strong></font></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#DORMIDO EN LA YERBA">Dormido en la yerba</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#EL CUERPO EN EL ALBA">El cuerpo en el alma</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#Junto al arroyo">Junto al arroyo</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#La ciudad">La ciudad</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#ME ASOM&Eacute;, LEJOS, A UN ABISMO">Me asom&eacute;, lejos, a un abismo...</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#NUEVO AMOR">Nuevo amor</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#POSESI&Oacute;N LUMINOSA">Posesi&oacute;n luminosa</a></font></strong></p>
+		<p align="left"><strong><font face="Georgia">
+		<a href="./prados.htm#Primavera">Primavera</a></font></strong></p>
+		<p align="left"><font color="#526462" face="Georgia"><strong>
+		<a href="./prados.htm#RINCON DE LA SANGRE">Rinc&oacute;n de la sangre</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br>
+		<a href="./prados.htm#RUMOR DE ESPEJOS">Rumor de espejos</a><br>
+		<br>
+		<a href="./prados.htm#SOLEDAD EN EL ALBA">Soledad en el alba</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><a href="./prados.htm#TR&Aacute;NSITOS">
+		Tr&aacute;nsitos</a><br>
+		<br>
+		<a href="./prados.htm#VEGA EN CALMA">Vega en calma</a><br>
+		<br>
+		<a href="./prados.htm#VEN, M&Eacute;TEME MANO">Ven, m&eacute;teme mano</a><br>
+		&nbsp;&nbsp;&nbsp;&nbsp; <br>
+		<a href="./prados.htm#&iquest;VIVO DEL MAR?">&iquest;Vivo del mar?</a><br>
+		<br>
+		<a href="./prados.htm#Y MI SILENCIO...">Y mi silencio...</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+		&nbsp;<br>
+		</strong></font><font size="2" color="#526462"><strong>
+		<font face="Georgia" size="3" color="#526462"><br></font>
+		<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></strong></font><strong><font face="Georgia" color="#526462">
+		<a
+      href="./" style="color: #43504C; text-decoration: none">
+		A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+		</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+		</font></font><font face="Georgia" color="#526462">
+		<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+		Poes&iacute;a de Oro</a><br>
+&nbsp;</p></font><font face="Georgia" size="2" color="#526462">
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+		<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+		Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+		<p align="center"><font color="#404D48" size="2">Tus comentarios o 
+		sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. 
+		Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+		</font><font size="4">
+		<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+		poesia@amediavoz.com</a></font></p>
+		</font></strong>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p><strong><font size="2" color="#526462" face="Georgia">
+		<a name="ALBA R&Aacute;PIDA"></a></font><font color="#43504C" face="Georgia">
+		Alba r&aacute;pida</font><font size="2" color="#43504C" face="Georgia"><br>
+		<br>&iexcl;Pronto, deprisa, mi reino,<br>que se me escapa, que huye,<br>que se 
+		me va por las fuentes!<br>
+		<br>&iexcl;Qu&eacute; luces, qu&eacute; cuchilladas<br>sobre sus torres enciende!<br>Los 
+		brazos de mi corona,<br>&iexcl;qu&eacute; ramas al cielo tienden!<br>&iexcl;Qu&eacute; silencios 
+		tumba el alma!<br>&iexcl;Qu&eacute; puertas cruza la Muerte!<br>&iexcl;Pronto, que el reino 
+		se escapa!<br>&iexcl;Qu&eacute; se derrumban mis sienes!<br>&iexcl;Qu&eacute; remolino en mis 
+		ojos!<br>&iexcl;Qu&eacute; galopar en mi frente!<br>&iexcl;Qu&eacute; caballos de blancura<br>mi 
+		sangre en el cielo vierte!<br>Ya van por el viento, suben,<br>saltan por 
+		la luz, se pierden<br>sobre las aguas...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ya vuelven<br>redondos, limpios, desnudos...<br>&iexcl;Qu&eacute; primavera de nieve!<br>
+		<br>Sujetadme el cuerpo, &iexcl;pronto!,<br>&iexcl;que se me va!, &iexcl;que se pierde<br>
+		su reino entre mis caballos!,<br>&iexcl;que lo arrastran! , &iexcl;que lo hieren!<br>
+		&iexcl;que lo hacen pedazos, vivo,<br>bajo sus cascos celestes !<br>&iexcl;Pronto, 
+		que el reino se acaba!<br>&iexcl;Ya se le tronchan las fuentes!<br>&iexcl;Ay, 
+		limpias yeguas del aire!<br>&iexcl;Ay, banderas de mi frente!<br>&iexcl;Qu&eacute; galopar 
+		en mis ojos!<br>Ligero, el mundo amanece...</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia"><strong>
+		<font size="2" color="#43504C"><a name="CANCIÓN"></a></font>
+		<font color="#43504C">Canci&oacute;n</font><font size="2" color="#43504C"><br>
+		<br>No es lo que est&aacute; roto, no, <br>el agua que el vaso tiene: <br>lo 
+		que est&aacute; roto es el vaso 
+		<br>y, el agua, al suelo se vierte. <br><br>No es lo que est&aacute; roto, no 
+		<br>la luz que sujeta al d&iacute;a: <br>lo que est&aacute; roto es el tiempo <br>y en 
+		la sombra se desliza. 
+		<br><br>No es lo que est&aacute; roto, no <br>la sangre que te levanta: <br>lo 
+		que est&aacute; roto es tu cuerpo 
+		<br>y en el sue&ntilde;o te derramas. <br><br>No es lo que est&aacute; roto, no, <br>
+		la caja del pensamiento: 
+		<br>lo que est&aacute; roto es la idea <br>que la lleva a lo soberbio. <br><br>
+		No es lo que est&aacute; roto Dios, 
+		<br>ni el campo que &Eacute;l ha creado: <br>lo que est&aacute; roto es el hombre <br>
+		que no ve a Dios en su campo.</font></strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="CANCIÓN PARA LOS OJOS"></a></font>
+		<font face="Georgia" color="#43504C">Canci&oacute;n para los ojos</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Lo que yo quiero saber<br>es d&oacute;nde estoy...<br>D&oacute;nde estuve,<br>s&eacute; 
+		que nunca lo sabr&eacute;.<br>Ad&oacute;nde voy ya lo s&eacute;...<br>
+		<br>D&oacute;nde estuve,<br>d&oacute;nde voy,<br>d&oacute;nde estoy<br>quiero saber,<br>pues 
+		abierto sobre el aire,<br>muerto, no sabr&eacute; que, soy vivo,<br>lo que 
+		quise ser.<br>
+		<br>Hoy lo quisiera yo ver;<br>no ma&ntilde;ana:<br>&iexcl;Hoy!</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" color="#43504C">
+		<a name="Cantar del dormido en la yerba"></a>Cantar del dormido en la 
+		yerba</font></strong></p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">La 
+		muerte est&aacute; conmigo;<br>mas la muerte es jard&iacute;n<br>cerrado, espacio, 
+		coto,<br>silencio amurallado<br>por la piel de mi cuerpo<br>donde, 
+		inm&oacute;vil -almendra<br>viva, virgen,-, mi luz<br>contempla y da la imagen<br>
+		redimida del fuego.<br>
+		<br>Si he de morir, ya es muerte:<br>la estrella, la avenida,<br>el 
+		silencio, la noche,<br>el agua y el amor.<br>
+		<br>Lo dice as&iacute; la fuente<br>y el suspiro.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Tambi&eacute;n<br>mi sangre cuando besa.<br><br>Si he de morir: mis labios<br>
+		vencidos de misterio<br>ya nada buscan: cantan,<br>pues no ha de ser mi 
+		olvido<br>la tierra ni el silencio...<br>
+		<br>Y el jazm&iacute;n no pregunta<br>desmayado en la sombra :<br>-&iquest;Ad&oacute;nde ir&aacute; 
+		el lucero<br>que mi nieve ha perdido?...<br>
+		<br>Si ha de morir: su aroma<br>es muerte; su flor muerte,<br>como la 
+		tierra h&uacute;meda<br>del cerrado jard&iacute;n<br>de mi alma, es carne<br>de la 
+		muerte, tambi&eacute;n:<br>&iexcl;Luz! &iexcl;F&uacute;lgida memoria!<br>&iexcl;Eje de un universo<br>
+		nuevo, que va a nacer<br>sin niebla, al fin, de olvidos!<br>
+		<br>Lo dice as&iacute; la fuente<br>y el suspiro.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Tambi&eacute;n<br>mi sangre cuando besa.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" color="#43504C">
+		<a name="Cantar triste"></a>Cantar triste</font></strong></p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">Yo 
+		no quer&iacute;a,<br>no quer&iacute;a haber nacido.<br><br>Me sent&eacute; junto a la fuente<br>
+		mirando la tarde nueva...<br>
+		<br>El agua brotaba, lenta.<br>No quer&iacute;a haber nacido.<br><br>Me fui 
+		bajo la alameda<br>a ocultarme en su tristeza.<br>
+		<br>El viento lloraba en ella.<br>No quer&iacute;a haber nacido.<br><br>Me 
+		reclin&eacute; en una piedra,<br>por ver la primera estrella...<br>
+		<br>&iexcl;Bella l&aacute;grima de est&iacute;o!<br>No quer&iacute;a haber nacido.<br><br>Me dorm&iacute; 
+		bajo la luna.<br>&iexcl;Qu&eacute; fina luz de cuchillo!<br>
+		<br>Me levant&eacute; de mi pena...<br><br>(Ya estaba en el sue&ntilde;o hundido).<br>
+		<br>Yo no quer&iacute;a,<br>no quer&iacute;a haber nacido.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong><font size="2" color="#43504C" face="Georgia">
+		<a
+      name="CERR&Eacute; MI PUERTA AL MUNDO..."></a></font>
+		<font color="#43504C" face="Georgia">Cerr&eacute; mi puerta al mundo...</font></strong></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Cerr&eacute; mi puerta al mundo;<br>se me perdi&oacute; la carne por el sue&ntilde;o...<br>Me 
+		qued&eacute;, interno, m&aacute;gico, invisible,<br>desnudo como un ciego.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Lleno hasta el mismo borde de los ojos,<br>me ilumin&eacute; por dentro.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Tr&eacute;mulo, transparente,<br>me qued&eacute; sobre el viento,<br>igual que un vaso 
+		limpio<br>de agua pura,<br>como un &aacute;ngel de vidrio<br>en un espejo.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia"><font color="#43504C">
+		<a name="DORMIDO EN LA YERBA"></a></font><strong><font color="#43504C">
+		Dormido en la yerba</font><font size="2" color="#43504C"><br><br>Todos 
+		vienen a darme consejo. 
+		<br>Yo estoy dormido junto a un pozo. 
+		<br><br>Todos se acercan y me dicen: <br>-La vida se te va, <br>y t&uacute; te 
+		tiendes en la yerba,
+		<br>bajo la luz m&aacute;s tenue del crep&uacute;sculo, <br>atento solamente <br>a 
+		mirar c&oacute;mo nace 
+		<br>el temblor del lucero <br>o el peque&ntilde;o rumor <br>del agua, entre los 
+		&aacute;rboles. 
+		<br><br>Y t&uacute; te tiendes sobre la yerba: <br>cuando ya tus cabellos <br>
+		comienzan a sentir 
+		<br>m&aacute;s cerca y fr&iacute;os que nunca, <br>la caricia y el beso <br>de la mano 
+		constante 
+		<br>y sue&ntilde;o de la luna. <br><br>Y t&uacute; te tiendes sobre la yerba: <br>
+		cuando apenas si puedes 
+		<br>sentir en tu costado <br>el h&uacute;medo calor <br>del grano que germina 
+		<br>y el amargo crujir <br>de la rosa muerta. <br><br>Y t&uacute; te tiendes 
+		sobre la yerba:
+		<br>cuando apenas si el viento <br>contiene su rigor, <br>al mirar en 
+		ruina 
+		<br>los muros de tu espalda, <br>y, el sol, ni se detiene <br>a levantar 
+		tu sangre del silencio.- 
+		<br><br>Todos se acercan y me dicen: <br>-T&uacute; duermes en la tierra <br>y 
+		tu coraz&oacute;n sangra 
+		<br>y sangra, gota a gota <br>ya sin dolor, encima de tu sue&ntilde;o, <br>como 
+		en lo m&aacute;s oscuro del jard&iacute;n, en la noche, 
+		<br>ya sin olor, se muere la violeta.- <br>Todos vienen a darme consejo. 
+		<br>Yo estoy dormido junto a un pozo. <br><br>S&oacute;lo, si alg&uacute;n amigo m&iacute;o 
+		<br>se acerca, y, sin pregunta <br>me da un abrazo entre las sombras: 
+		<br>lo llevo hasta asomarnos <br>al borde, juntos, del abismo, <br>y, en 
+		sus profundas aguas, 
+		<br>ver llorar a la luna y su reflejo, <br>que m&aacute;s tarde ha de hundirse 
+		<br>como piedra de oro, <br>bajo el oto&ntilde;o fr&iacute;o de la muerte.</font></strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#43504C" face="Georgia">
+		<a name="EL CUERPO EN EL ALBA"></a></font>
+		<font color="#43504C" face="Georgia"><strong>El cuerpo en el alba</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Ahora s&iacute; que ya 
+		os miro<br>cielo, tierra, sol, piedra,<br>como si viera mi propia carne.<br>
+		<br>Ya s&oacute;lo me falt&aacute;bais en ella<br>para verme completo,<br>hombre 
+		entero en el mundo<br>y padre sin semilla 
+		<br>de la presencia hermosa del futuro.<br><br>Antes, el alma vi nacer
+		<br>y acud&iacute; a salvarla, <br>fiel tutor perseguido y doloroso,<br>pero 
+		siempre seguro<br>de mi mano y su aviso.<br>
+		<br>Ayud&eacute; a la hermosura<br>y a su felicidad,<br>aunque nunca dud&eacute; que 
+		traicionaba<br>al maestro, al disc&iacute;pulo,<br>m&aacute;s, si aquel daba forma 
+		<br>en su libertad <br>al pensamiento de lo bello.<br><br>Y as&iacute; visti&oacute; 
+		su ropa<br>mi hueso madurado,<br>tan lleno de dolor y de negrura 
+		<br>como noche nublada <br>sin perfume de flor,<br>sin lluvia y sin 
+		silencio... 
+		<br><br>Solo el cumplir mi paso,<br>aunque por suelo tan arisco,<br>me 
+		daba luz y fuerza en el vivir. 
+		<br><br>Mas hoy me abr&iacute;s los brazos,<br>cielo, tierra, sol, piedra,<br>
+		igual que present&iacute; de ni&ntilde;o 
+		<br>que iba a ser la verdad bajo lo eterno.<br><br>Hoy siento que mi 
+		lengua<br>confunde su saliva 
+		<br>con la gota m&aacute;s tierna del roc&iacute;o<br>y prolonga sus tactos<br>fuera 
+		de m&iacute;, en la yerba<br>o en la obscura ra&iacute;z secreta y h&uacute;meda. 
+		<br><br>Miro mi pensamiento <br>llegarme lento como un agua,<br>no s&eacute; 
+		desde qu&eacute; lluvia o lago<br>o profundas arenas<br>de fuentes que palpitan<br>
+		bajo mi coraz&oacute;n ya sostenido por la roca del monte.<br>
+		<br>Hoy s&iacute;, mi piel existe,<br>mas no ya como l&iacute;mite <br>que antes me 
+		persegu&iacute;a, 
+		<br>sino tambi&eacute;n como vosotros mismos, <br>cielo hermoso y azul,<br>
+		tierra tendida... 
+		<br><br>Ya soy Todo: Unidad<br>de un cuerpo verdadero.<br>De ese cuerpo 
+		que Dios llamo su cuerpo<br>y hoy empieza a asentirse<br>a, sin muerte 
+		ni vida, como rosa en presencia constante 
+		<br>De su verbo acabado y en olvido<br>De lo que antes pens&oacute; aun sin 
+		llamarlo<br>Y temi&oacute; ser: Demonio de la Nada.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" color="#43504C">
+		<a name="Junto al arroyo"></a>Junto al arroyo</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Amanecer.<br>Caudal del sue&ntilde;o,<br>lluvia del est&iacute;o:<br>&iquest;ad&oacute;nde va<br>la 
+		nube en que has nacido?<br>
+		<br>Eco del bosque,<br>coraz&oacute;n del viento:<br>&iquest;d&oacute;nde a voz<br>que te 
+		dej&oacute; en el cielo?<br>
+		<br>Rumor el agua<br>entre los tallos d&eacute;biles:<br>&iquest;ad&oacute;nde va<br>el 
+		frescor de tu corriente?<br>
+		<br>Cuerpo fugaz del hombre,<br>esbelto junco:<br>&iquest;d&oacute;nde olvid&oacute; tu 
+		sombra<br>su desnudo?<br>
+		<br>Belleza, soledad.<br>contemplaci&oacute;n callada:<br>&iquest;d&oacute;nde el aroma fiel<br>
+		de tu palabra?...<br>
+		<br>(La voz de Dios<br>resuena contra el tiempo...)<br>&iquest;D&oacute;nde, el amor,<br>
+		oculta su misterio?</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" color="#43504C"><a name="La ciudad"></a>
+		La ciudad</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Las numerosas aguas que tu frente circundan<br>hoy solamente mojan 
+		tu dolor y silencio;<br>ni un reflejo tan s&oacute;lo la luz pone en tu orilla;<br>
+		ni una l&aacute;grima brota de tu oculta tristeza.<br>
+		<br>Ciudad, yo he conocido la lumbre de tus barrios,<br>el fuego 
+		estremecido de tus amplios mercados,<br>el rumor de tus voces junto al 
+		sabor del vino,<br>el cotidiano drama de tus plazas redondas.<br>
+		<br>Junto con la fatiga que rinde en el trabajo<br>y atiranta las horas 
+		del sue&ntilde;o y de la angustia,<br>he pisado en tus calles la pasi&oacute;n de tu 
+		aurora<br>y el amor ya despierto por conocer su dicha.<br>
+		<br>Ahora que estoy lejano, quisiera conocerte,<br>como dentro del &aacute;rbol 
+		ya conoce la savia<br>el fruto porque enciende la flor de su destino:<br>
+		as&iacute; quiere mi sangre conocer m victoria.<br>
+		<br>Cuando vine, dejando tan necesariamente<br>lo que nunca el olvido 
+		turbar&aacute; con su sombra:<br>mi casa destruida, mi pan abandonado<br>y el 
+		ardor de la muerte ya abrasando tus venas,<br>
+		<br>&iexcl;ay! c&oacute;mo recordaba los venturosos d&iacute;as<br>que aun cercanos me daban 
+		la bondad de otra suerte :<br>la hermandad de tus hombres y el calor de 
+		los campos<br>unidos ya en su vuelo con tus veloces m&aacute;quinas.<br>
+		<br>La sombra de tus muelles abiertos a la luna<br>mostraban tus 
+		naranjas ya al borde del viaje,<br>mano a mano del plomo, con el dorado 
+		aceite,<br>el blanqu&iacute;simo az&uacute;car y la sal del pescado.<br>
+		<br>Tus m&aacute;s r&aacute;pidos trenes, rodando por tus huertos,<br>te robaban las 
+		frutas maduras de los &aacute;rboles;<br>desterrados, al viento los humos 
+		ascend&iacute;an<br>de las triunfantes f&aacute;bricas, a la luz, despeinados.<br>
+		<br>&iexcl;Qu&eacute; batir en los &eacute;litros de tu vida profunda,<br>tu libertad, tan 
+		f&aacute;cil, ciudad, al fin te abr&iacute;a!<br>En las fugaces horas que mis ojos te 
+		vieron,<br>aun dentro de la guerra, tu memoria cambiaba<br>y una nueva 
+		sonrisa tus labios encend&iacute;an<br>al ajustarse al tiempo por pronunciar tu 
+		nombre.<br>
+		<br>Hoy yo s&eacute; que enmudeces sin tr&aacute;nsito perdida<br>bajo el dolor oscuro 
+		de tu triste abandono.<br>Desiertos tus hogares, arrancadas sus puertas,<br>
+		al silencio te clavan con soledad de rumba.<br>
+		<br>Se aprietan en tus sienes tus altas chimeneas,<br>levantando su 
+		olvido por coronar tu muerte.<br>Desuncido el caballo junto al carro 
+		dormita.<br>Ni una voz se levanta, ni una brizna en el viento.<br>
+		<br>El motor ya no gira su fecundo engranaje<br>y la harina parada se 
+		ennegrece en la piedra.<br>En los atardeceres, el farol sin oficio,<br>
+		paso a paso en la sombra busca refugio al tedio.<br>
+		<br>Ciudad, &iquest;qu&eacute; mundo habitas? &iquest;En qu&eacute; cielo padeces?<br>&iquest;Sin pulsos y 
+		sin p&aacute;jaros de tu suerte te olvidas?<br>Mira: yo bien conozco las alas 
+		del futuro<br>que sobre ti se cierne prometedor y hermoso,<br>
+		<br>No busques en tu espalda, que el haberle perdido<br>quiz&aacute;s m&aacute;s 
+		fuertemente haga nacer tu gloria:<br>roja flor da el granado y al 
+		perderse sus p&eacute;talos<br>crece el fruto jugoso que hace curvar la rama.<br>
+		<br>Pero acaso yo canto y en mi canto me olvido.<br>&iquest;Son&aacute;mbula de 
+		angustia ni aun el llanto te mueve?<br>No, que el tiempo ha pasado y al 
+		pisar en tus ojos<br>levanta tu bandera rebelde de su entra&ntilde;a.<br>
+		<br>&iexcl;Gloria, gloria a ese fuego que en tu sangre se viste!<br>&iexcl;Ciudad, 
+		ciudad, espera, que mi canto se nubla!<br>
+		<br>&nbsp;</font></strong></p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"><font face="Georgia"><br>&nbsp;</font></font></p>
+		<p align="left"><font face="Georgia"><strong>
+		<font size="2" color="#43504C"><br></font><font color="#43504C">
+		<a name="ME ASOM&Eacute;, LEJOS, A UN ABISMO"></a>Me asom&eacute;, lejos, a un 
+		abismo...</font><font size="2" color="#43504C"><br><br>Me asom&eacute;, lejos, 
+		a un abismo... 
+		<br>(Sobre el espejo que perd&iacute; he nacido.) <br><br>Clav&eacute; mis manos en 
+		mis ojos... 
+		<br>(Manando estoy en m&iacute; desde mi rostro.) <br><br>Tir&eacute; mi cuerpo, 
+		hueco, al aire... 
+		<br>(Abren su voz los ojos de mi sangre.) <br><br>Rod&eacute; en el llanto de 
+		una herida... 
+		<br>(Nazco en la misma luz que me ilumina.) <br><br>Se coagul&oacute; mi llanto 
+		en sombra... 
+		<br>Carne es la luz y el n&aacute;car de mi boca.) <br><br>Dentro de m&iacute; se 
+		hundi&oacute; mi lengua... 
+		<br>(Siembro en mi cielo el cuerpo de una estrella.) <br><br>Se pudri&oacute; 
+		el tiempo en que habitaba... 
+		<br>(Brota en mi espejo un cielo de dos caras.) <br><br>Huy&oacute; mi cuerpo 
+		por mi cuerpo... 
+		<br>(Bebo en el agua limpia de mi espejo.) <br><br>&iexcl;A mi existencia uno 
+		mi vida! 
+		<br>(Espejo sin cristal es mi alegr&iacute;a.)</font></strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#43504C" face="Georgia"><strong><a name="NUEVO AMOR">
+		</a>N</strong></font><strong><font face="Georgia" color="#43504C">uevo 
+		amor</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Este cuerpo que 
+		Dios pone en mis brazos<br>para ense&ntilde;arme a andar por el olvido,<br>no 
+		s&eacute; ni de qui&eacute;n es.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<br>Al encontrarlo,<br>un &aacute;ngel negro, una gigante sombra,<br>se me 
+		acerc&oacute; a los ojos, y entr&oacute; en ellos<br>silencioso y tenaz igual que un 
+		r&iacute;o.<br>
+		<br>Todo lo destruy&oacute; con su corriente.<br>Los &iacute;ntimos lugares m&aacute;s 
+		ocultos<br>visit&oacute;, alborot&oacute;; fue levantado,<br>violento, dulce, 
+		atropellado y roto,<br>a otro mundo en los bordes de mi beso:<br>&uacute;nica 
+		flor a&uacute;n viva en el espacio,<br>que en m&aacute;s fecundo ardor cambi&oacute; la 
+		ausencia.<br>Luego en mi carne abri&oacute; sus amplias alas,<br>clav&aacute;ndome sus 
+		plumas bajo el pecho<br>todo temblor y anuncio de otras dudas...<br>
+		<br>No s&eacute; qu&eacute; vida, as&iacute;, podr&aacute; encenderme<br>la entrada de este &aacute;ngel.<br>
+		Soy un templo<br>arruinado, desde que vino a m&iacute;:<br>farol vac&iacute;o;<br>como 
+		puerta cerrada de lo eterno...<br>
+		<br>Y lo que fui no s&eacute;: quiz&aacute;s lo sepa,<br>cuando este cuerpo vuelva a 
+		abandonarme<br>y yo vuelva a nacer desde mis labios<br>despegado al 
+		calor que los concibe...<br>
+		<br>Mas hoy, por fin, he detenido al d&iacute;a<br>le he destrozado el coraz&oacute;n 
+		al tiempo,<br>aunque dentro de m&iacute; como una daga,<br>siento al &aacute;ngel 
+		crecer, que me atormenta.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" color="#43504C">
+		<a name="POSESIÓN LUMINOSA"></a>Posesi&oacute;n luminosa</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Igual que este viento, quiero figura 
+		<br>de mi calor ser y, despacio, <br>entrar donde descanse tu cuerpo del 
+		verano; 
+		<br>irme acercando hasta &eacute;l sin que me vea; <br>llegar, como un pulso 
+		abierto latiendo en el aire; 
+		<br>ser figura del pensamiento m&iacute;o de ti, <br>en su presencia; abierta 
+		carne de viento, 
+		<br>estancia de amor en alma. <br><br>T&uacute; -blando marfil de sue&ntilde;o, nieve 
+		de carne, 
+		<br>quietud de palma, luna en silencio-, <br>sentada, dormida en medio 
+		de tu cuarto. 
+		<br>Y yo ir entrando igual que un agua serena, <br>inundarte todo el 
+		cuerpo hasta cubrirte, y, entero, 
+		<br>quedarme ya as&iacute; por dentro como el aire en un farol, <br>vi&eacute;ndote 
+		temblar, luciendo, brillar en medio de m&iacute;, 
+		<br>encendi&eacute;ndote en mi cuerpo, <br>iluminando mi carne toda ya carne de 
+		viento.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">
+		<br></font><font face="Georgia" color="#43504C"><a name="Primavera"></a>
+		Primavera</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>frente al mar, los espejos<br>
+		romp&iacute;an sus barandillas<br>y el jazm&iacute;n agrandaba<br>su diminuta 
+		estrella,<br>hasta cumplir el l&iacute;mite<br>de su aroma en la noche.<br>
+		<br>Cuando era primavera.<br><br>Cuando era primavera en Espa&ntilde;a:<br>
+		junto a la orilla de los r&iacute;os,<br>las grandes mariposas de la luna<br>
+		fecundaban los cuerpos desnudos<br>de las muchachas<br>y los nardos 
+		crec&iacute;an silencios<br>dentro del coraz&oacute;n<br>hasta taparnos la garganta.<br>
+		Cuando era primavera.<br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>todas las playas converg&iacute;an en un 
+		anillo<br>y el mar sonaba entonces,<br>como el ojo de un pez sobre la 
+		arena,<br>frente a un cielo m&aacute;s limpio<br>que la paz de una nave, sin 
+		viento, en su pupila.<br>Cuando era primavera.<br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>los olivos temblaban<br>
+		adormecidos bajo la sangre azul del d&iacute;a,<br>mientras que el sol rodaba<br>
+		desde la piel tan limpia de los toros,<br>al terr&oacute;n en barbecho<br>
+		reci&eacute;n movido por la lengua caliente de la azada<br>Cuando era 
+		primavera.<br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>los cerezos en flor<br>se 
+		clavaban de un golpe contra el sue&ntilde;o<br>y los labios crec&iacute;an<br>como la 
+		espuma en celo de una aurora,<br>hasta dejarse nuestro cuerpo a su 
+		espalda,<br>igual que el agua humilde<br>de un arroyo que empieza.<br>
+		Cuando era primavera.<br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>todos los hombres olvidaban su 
+		muerte<br>y se tend&iacute;an confiados, juntos, sobre la tierra<br>hasta 
+		olvidarse el tiempo<br>y el coraz&oacute;n tan d&eacute;bil por el que ard&iacute;an.<br>
+		Cuando era primavera.<br>
+		<br>Cuando era primavera en Espa&ntilde;a:<br>yo buscaba en el cielo.<br>yo 
+		buscaba<br>las huellas tan antiguas<br>de mis primeras l&aacute;grimas<br>y 
+		todas las estrellas levantaban mi cuerpo<br>siempre tendido en una misma 
+		arena,<br>al igual que el perfume, tan lento,<br>nocturno, de las 
+		magnolias.<br>Cuando era primavera.<br>
+		<br>Pero, &iexcl;ay!, tan s&oacute;lo<br>cuando era primavera en Espa&ntilde;a.<br>Solamente 
+		en Espa&ntilde;a,<br>antes, cuando era primavera.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="RINCON DE LA SANGRE"></a></font>
+		<font face="Georgia" color="#43504C">Rinc&oacute;n de la sangre</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Tan chico el almoraduj<br>y... &iexcl;c&oacute;mo huele!<br>Tan chico.<br><br>De 
+		noche, bajo el lucero,<br>tan chico el almoraduj,<br>y &iexcl;c&oacute;mo huele!<br>
+		<br>Y cuando en la tarde llueve,<br>&iexcl;c&oacute;mo huele !<br><br>Y cuando 
+		levanta el sol,<br>tan chico el almoraduj,<br>&iexcl;c&oacute;mo huele !<br>
+		<br>Y ahora que del sue&ntilde;o vivo,<br>&iexcl;c&oacute;mo huele,<br>tan chico, el 
+		almoraduj!<br>&iexcl;C&oacute;mo huele!...<br>Tan chico.<br>
+		<br>&nbsp;</font></strong></p>
+		<blockquote>
+			<p align="center"><font color="#43504C">
+			<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<p><strong><font color="#43504C" face="Georgia">
+		<a name="RUMOR DE ESPEJOS"></a>Rumor de espejos</font><font size="2" color="#43504C" face="Georgia"><br>
+		<br>El cuerpo en que yo viv&iacute;a<br>nunca supo de mi cuerpo.<br>Nada 
+		pregunt&oacute; por &eacute;l<br>y de m&iacute; sali&oacute; sin verlo.<br>
+		<br>Lleg&oacute; a una fuente. En sus aguas<br>vio la flor azul del cielo:<br>
+		-Di, &iquest;c&oacute;mo te llamas, flor?...<br>-Nombre soy de tu silencio.<br>
+		<br>Nada entendi&oacute;. Subi&oacute; al monte<br>de la soledad. El viento,<br>se 
+		desnudaba en la cumbre<br>de Dios, todo su misterio.<br>
+		<br>-Di, viento: &iquest;cu&aacute;l es tu nombre?...<br>-Nombre soy de tu silencio.<br>
+		Y dos &aacute;guilas volaron,<br>resbalando, hasta mi sue&ntilde;o.<br>
+		<br>Sigui&oacute; mi cuerpo tras ellas,<br>olvid&aacute;ndose en su vuelo,<br>de s&iacute; 
+		mismo, y nuevamente<br>entr&oacute; en m&iacute;, sin yo saberlo.<br>
+		<br>&iquest;Y est&aacute; en m&iacute;?...&nbsp; (Busco su nombre;<br>pero al buscarlo, me 
+		pierdo<br>dentro del mundo que trajo<br>mi cuerpo hasta mi silencio.)<br>
+		<br>&laquo;&iquest;Lleno de ti mismo est&aacute;s<br>y buscas nombre a tu cuerpo?&raquo;,<br>
+		siento que un rumor me canta,<br>quebrando, en m&iacute;, dos reflejos...<br>
+		<br>Llamo en &eacute;l y en &eacute;l estoy.<br>Salgo de m&iacute; y en &eacute;l entro...<br><br>
+		&iexcl;A&uacute;n no conozco mi nombre<br>pero s&eacute; que lo navego!<br>
+		<br></font></strong></p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#43504C">
+		<a name="SOLEDAD EN EL ALBA"></a><strong>Soledad en el alba</strong></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#43504C"><strong>
+		&iexcl;Ay!, rosa, calla, calla:<br>ocult&eacute;monos juntos<br>bajo los pies del 
+		agua.<br><br>&iexcl;Ay!, calla, calla, viento :<br>bajo los pies del monte<br>
+		dejemos nuestros cuerpos.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-&iquest;Qu&eacute; ocurre?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-El sol naciente,<br>-joya de primavera-<br>luce sobre lo verde.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-&iquest;Yel amor?...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-En olvido.<br>(Como un rumor de sue&ntilde;os<br>rueda el agua en el r&iacute;o.)</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia">
+		<a name="TR&Aacute;NSITOS"></a></font><font color="#43504C" face="Georgia">
+		<strong>Tr&aacute;nsitos</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		&iexcl;Qu&eacute; bien te siento bajar!<br>&iexcl;Qu&eacute; despacio vas entrando,<br>caliente, 
+		viva, en mi cuerpo,<br>desde ti misma manando<br>igual que una fuente, 
+		ardiendo!</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Contigo por ti has llegado<br>escondida bajo el viento,<br>-desnuda en 
+		&eacute;l-, y en mis p&aacute;rpados<br>terminas, doble tu vuelo.<br>&iexcl;Qu&eacute; caliente 
+		est&aacute;s! Tu brazo<br>temblando arde ya en mi pecho.</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Entera te has derramado<br>por mis ojos. Ya est&aacute;s dentro<br>de mi carne, 
+		bajo el &aacute;rbol<br>de mis pulsos, en su sombra<br>bajo el sue&ntilde;o:<br>
+		&iexcl;Entera dentro del sue&ntilde;o!<br>&iexcl;Qu&eacute; certera en mi descanso<br>dominas al 
+		fin tu reino!</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		...Pero yo me salvo, salto,<br>libre fuera de m&iacute;, escapo<br>por mi 
+		sangre, me liberto,<br>y a ti filtr&aacute;ndome m&aacute;gico,<br>vuelvo a dejarte en 
+		el viento<br>otra vez sola, buscando<br>nueva prisi&oacute;n a tu cuerpo.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><strong><font size="2" color="#43504C" face="Georgia">
+		<a name="VEGA EN CALMA"></a></font><font color="#43504C" face="Georgia">
+		Vega en calma</font></strong></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Cielo gris. <br>
+		suelo rojo... 
+		<br>De un olivo a otro <br>vuela el tordo. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>En la tarde hay 
+		un sapo 
+		<br>de ceniza y de oro.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Suelo gris. <br>
+		Cielo rojo... 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Qued&oacute; la luna 
+		enredada 
+		<br>en el olivar. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>&iexcl;Qued&oacute; la luna 
+		olvidada! 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#43504C" face="Georgia"><strong>
+		<a name="VEN, M&Eacute;TEME MANO"></a>Ven, m&eacute;teme mano...</strong></font></p>
+		<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>
+		Ven, m&eacute;teme mano 
+		<br>por la honda vena oscura de mi carne. <br>Dentro, se cuajar&aacute; tu 
+		brazo 
+		<br>con mi sombra; <br>se har&aacute; piedra de noche, <br>seca ra&iacute;z de 
+		sangre... 
+		<br><br>Coagulada la fuente de mi pecho, <br>para pedir ayuda <br>subir&aacute; 
+		a mi garganta. 
+		<br><br>&iexcl;Ni&eacute;gasela si es vida! <br>&iexcl;Cl&aacute;vame m&aacute;s tu brazo!... <br>
+		&iexcl;Cr&uacute;zamelo! 
+		<br>&iexcl;Atravi&eacute;same! <br><br>Aunque me cueste el &aacute;rbol de mi cuerpo, <br>
+		cond&uacute;ceme a ti, muerte.</strong></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia"><font color="#43504C"><a name="&iquest;VIVO DEL MAR?">
+		</a></font><strong><font color="#43504C">&iquest;Vivo del mar?...</font><font size="2" color="#43504C"><br>
+		<br>&iquest;Vivo del mar?...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(El mar por m&iacute; ha nacido<br>y al sol del mar mi soledad se acoge.)<br><br>
+		Canto a la soledad:<br>Mar de la soledad &iquest;por qu&eacute; no brillas?<br>Mar de 
+		tu soledad vive mi cuerpo.<br>Mi soledad sin piel tambi&eacute;n te busca.<br>
+		&iexcl;Soledad soy del mar para cantarte!<br>
+		<br>Tendido en ti, mi soledad, espero<br>que al sol de ti mi soledad 
+		responda.<br>-Sobre la soledad del mar que vivo<br>desnudo en soledad, 
+		&iquest;qu&eacute; mar se esconde?...<br>
+		<br>Un mar de angustia en soledad se niega<br>a darle nombre al mar que 
+		estoy cantando;<br>innominado mar que por m&iacute; siento<br>gemir en soledad 
+		de mar que ha sido.<br>
+		<br>Todo mi cuerpo en soledad abierto,<br>rindo por verle en soledad su 
+		nombre...<br>Barbecho al sol, mojado por la lluvia<br>de mi llanto, es 
+		el tiempo que le doy. 
+		<br><br>Antes de ver, mi soledad, la espiga <br>verde y granada sobre el 
+		mar que enciendes:<br>del mar que vivo al sol del mar que acoges<br>s&eacute; 
+		que debo arrancar el mar que espero.<br>
+		<br>Soledad: &iquest;de qu&eacute; mar de ti ha venido<br>el mar sin nombre en mi que 
+		estoy cantando?:<br>&laquo;&iexcl;Soledad soy de ti: mar de tu vida!&raquo;,<br>sola en el 
+		mar mi soledad responde.<br>
+		<br>&iquest;Mar de mi vida, el mar sin m&iacute; se llama?<br>&iquest;Vive la soledad, mar de 
+		mi cuerpo,<br>y espera en m&iacute; su nombre inesperado?<br>&iexcl;Tan s&oacute;lo aguardar 
+		fue lo que he vivido!<br>
+		<br>No soy mar, soledad, no soy tu nombre<br>y canto en ti mi nombre de 
+		esperanza.</font></strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong><font face="Georgia" size="2" color="#43504C">
+		<a name="Y MI SILENCIO..."></a></font>
+		<font face="Georgia" color="#43504C">Y mi silencio no ha sido una 
+		crueldad...</font><font face="Georgia" size="2" color="#43504C"><br>
+		<br>Y mi silencio no ha sido una crueldad que se perd&iacute;a oculta entre mis 
+		ropas<br>Yo no s&eacute; predecir<br>La luz &uacute;nicamente m&aacute;s all&aacute; de m&iacute; mismo<br>
+		Todo lo conoc&iacute;a<br>Conoc&iacute;a el mar y esos cuerpos desnudos<br>Pero me 
+		devoraba la sangre entre las manos<br>Pedir perd&oacute;n ser&iacute;a recordar un 
+		poema<br>Y si yo escribo es &uacute;nicamente porque no s&eacute; si he muerto<br>Tan 
+		lejos<br>La emancipaci&oacute;n de nuestros sentidos est&aacute; en recuperar la 
+		palabra<br>A B C D nos refer&iacute;an nuestras antiguas historias 
+		<br><br>&nbsp;</font></strong></p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 21:34:58 Oct 31, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:19 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

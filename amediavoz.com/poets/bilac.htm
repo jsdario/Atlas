@@ -1,0 +1,611 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Olavo Bilac</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Olavo Bilac"
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Olavo Bilac. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Olavo_Bilac,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body link="#DBDBDB" vlink="#DBDBDB" alink="#626262" background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bilac.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bilac.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162757" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bilac.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:27:57 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bilac.htm" title="19:08:28 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:27:57 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bilac.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:27:57 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bilac.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>65 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">22 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000100001_2003:-1:010101010100_2004:-1:010101110101_2005:-1:012100010000_2006:-1:200011000300_2007:-1:024103020100_2008:-1:100112000001_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000101101_2012:-1:020010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BILAC.jpg" width="254" height="41"></p>
+
+<p>&nbsp;</p>
+
+<p align="center"><img border="0" src="./BILAC1.jpg" width="195" height="19"></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="717" height="325">
+  <tr>
+    <td valign="top" colspan="3" width="709" height="1"></td>
+  </tr>
+  <tr>
+    <td width="278" height="1" valign="top"></td>
+    <td width="4" height="1"></td>
+    <td width="419" height="1"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="278" height="307"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./BILAC2.jpg" width="220" height="295"></td>
+    <td width="4" height="307"></td>
+    <td valign="top" width="419" height="307"><p align="left">
+	<u>
+	<font color="#C4CAD4"
+    face="Georgia">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">Poeta, 
+	ensayista&nbsp; y periodista brasile&ntilde;o nacido en R&iacute;o de Janeiro en 1865.<br>
+	Dedicado desde muy joven al ejercicio period&iacute;stico, fund&oacute; las revistas <i>A 
+	cigarra</i> y <i>Meio.</i> Es considerado como el m&aacute;s importante poetas 
+	parnasiano de su pa&iacute;s, al lado de&nbsp;&nbsp; Alberto de Oliveira y Raimundo 
+	Correia. <br>
+	Su primer libro,<i> &quot;Poes&iacute;as&quot; </i>fue<i>&nbsp; </i>publicado en 1888, 
+	seguido en los a&ntilde;os siguientes por cr&oacute;nicas, conferencias literarias, libros 
+	infantiles y did&aacute;cticos.&nbsp; Ejerci&oacute; varios cargos p&uacute;blicos, fue uno de 
+	los fundadores de la Academia Brasile&ntilde;a de Letras y form&oacute; parte de diversas 
+	delegaciones diplom&aacute;ticas de su pa&iacute;s.<br>
+	En 1907&nbsp; fue elegido <i>Pr&iacute;ncipe de los poetas brasile&ntilde;os</i> en el 
+	c&eacute;lebre concurso auspiciado por la&nbsp; revista Fon-Fon.<br>
+	Su libro p&oacute;stumo <i>&quot;Tarde&quot;</i>, publicado en 1919, resume gran parte de su 
+	obra po&eacute;tica.<br>
+	Falleci&oacute; en 1918. &copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4" face="Georgia">Poemas de Olavo Bilac:</font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#A LAS CAMPANAS">A las campanas</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#ABSTRACCI&Oacute;N">Abstracci&oacute;n</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#EL PECADOR">El pecador</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./bilac.htm#EXILIO">Exilio</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#ORACI&Oacute;N">Oraci&oacute;n</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#&Uacute;LTIMA P&Aacute;GINA">Última p&aacute;gina</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#VANIDAD">Vanidad</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#V&Iacute;A L&Aacute;CTEA">V&iacute;a l&aacute;ctea</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./bilac.htm#VITA NUOVA">Vita nuova</a></font><font color="#FFFFFF" face="Georgia" size="2"><br><br>
+		</font><font color="#C4CAD4" face="Georgia" size="2">
+		Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br></font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>para el 
+				desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: 
+				<br>Windows/Fonts: <br></font><font color="#EEEEEE"><br></font>
+				<a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="A LAS CAMPANAS"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		A las campanas</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Campanas de las torres, resonad clamorosas!<br>La tierra nuestro anhelo 
+		de infinito no sacia,<br>queremos la conquista de un mundo en que las 
+		cosas<br>se eternicen en una primavera de gracia.<br>
+		<br>Desde aqu&iacute;, desde el fango de estas playas tediosas<br>hasta donde 
+		el zafiro de los cielos se espacia,<br>llevad en vuestras voces nuestras 
+		voces llorosas<br>y el grito milenario de la tierra en desgracia.<br>
+		<br>En repiques festivos, en dobles de amargura,<br>en rebatos de 
+		angustia, todo lo que sufrimos<br>llevadlo a la impasible soledad de 
+		l'altura.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Y &iexcl;oh 
+		campanas! decidles en clamores supremos,<br>nuestro dolor a aquellos 
+		astros en que nacimos,<br>nuestra esperanza a aquellos astros a donde 
+		iremos!<br>
+		<br><em>Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="ABSTRACCIÓN"></a></font><font color="#C4CAD4" face="Georgia">
+		Abstracci&oacute;n</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Hay 
+		millares de estrellas en la altura<br>que puedes alcanzar con la mirada;<br>
+		mas t&uacute; buscas la estrella que, ignorada,<br>en espacios il&iacute;mites 
+		fulgura.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Hay 
+		mujeres de n&uacute;bil hermosura<br>que te cercan en ronda apasionada;<br>pero 
+		t&uacute; buscas la mujer so&ntilde;ada,<br>una mujer pret&eacute;rita y futura.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Arriba, el 
+		cielo es f&uacute;nebre, nublado;<br>la tierra en rededor es yermo triste...<br>
+		y as&iacute; habr&aacute;s de morir abandonado,</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">con los 
+		sue&ntilde;os de amor que perseguiste:<br>la imposible mujer que no has amado<br>
+		y la estrella ideal que nunca viste.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de Delio Seraville</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="EL PECADOR"></a></font><font color="#C4CAD4" face="Georgia">
+		El pecador</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Pec&oacute;, mas es el pecador sereno<br>que sofoca el sollozo en la garganta,<br>
+		y que a los labios, sin temblar, levanta<br>la rebosante copa de veneno.<br>
+		<br>Manch&oacute; su excelsa cl&aacute;mide en el cieno<br>del mal. Y al cabo de 
+		flaqueza t&aacute;nta,<br>ning&uacute;n remordimiento lo quebranta,<br>ni lo sonroja 
+		el parecer ajeno.<br>
+		<br>Lleva ocultas las l&aacute;grimas consigo,<br>y erguido lleva el coraz&oacute;n 
+		doliente<br>cual un pend&oacute;n de reto enarbolado.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Y acepta 
+		la amargura del castigo,<br>con la misma altivez con que sonriente<br>
+		prob&oacute; todo el deleite del pecado.<br>
+		<br><em>Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left">
+	<font size="2" color="#C4CAD4"
+    face="Georgia"><a name="EXILIO"></a></font>
+	<font color="#C4CAD4"
+    face="Georgia">Exilio</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">&iquest;Ya no me 
+	amas? &iexcl;Bien! Partir&eacute; desterrado<br>
+    de mi primer amor a otro amor que imagino...<br>
+    Adi&oacute;s carne amorosa, rapazuelo divino<br>
+    de mis sue&ntilde;os, &iexcl;adi&oacute;s bello cuerpo adorado!</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">En ti, como en 
+	un valle, me adormec&iacute; embriagado<br>
+    en un sue&ntilde;o de amores a mitad del camino;<br>
+    quiero darte ya mi &uacute;ltimo beso peregrino<br>
+    como quien abandona la patria, desterrado.</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">&iexcl;Adi&oacute;s, cuerpo 
+	fragante, patria de mi embeleso,<br>
+    nido de blandas plumas de mi primer idilio,<br>
+    jard&iacute;n, en que hecho flores, brot&oacute; mi primer beso!</font></p>
+    <p align="left"><font size="2" color="#C4CAD4" face="Georgia">&iexcl;Adi&oacute;s! Ese 
+	otro amor ha de amargarme tanto,<br>
+    como el pan que se come lejos, en el exilio,<br>
+    amasado con hieles y humedecido en llanto.</font></p>
+    <p align="left"><i><font size="2" color="#C4CAD4" face="Georgia">Versi&oacute;n de 
+	Eduardo Castillo</font></i><p align="left">&nbsp;<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><p align="left">
+		&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="ORACIÓN"></a></font><font color="#C4CAD4" face="Georgia">
+		Oraci&oacute;n</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Bendito el que en la tierra hizo el agua y el fuego;<br>el que unci&oacute; a 
+		la carreta al buey manso y amigo;<br>el que encontr&oacute; la azada, y el que 
+		del fango lu&eacute;go<br>hizo brotar el oro milagroso del trigo.<br>
+		<br>El que fundi&oacute; los bronces; el que tall&oacute; en sosiego<br>la cuna de la 
+		infancia, y el que al primer mendigo<br>dio la primer limosna conmovido 
+		a su ruego,<br>y el que labr&oacute; este lecho que compartes conmigo.<br>
+		<br>El que ech&oacute; al mar la quilla y a los vientos las velas;<br>el que 
+		invent&oacute; las trovas; el que encold&oacute; la lira;<br>el que dom&oacute; los rayos y 
+		aplac&oacute; las procelas.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Mas, 
+		bendito entre todos, aquel que en lo profundo<br>descubri&oacute; la esperanza, 
+		la divina mentira,<br>que dora las siniestras espesuras del mundo.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="ÚLTIMA P&Aacute;GINA"></a></font><font color="#C4CAD4" face="Georgia">
+		Última p&aacute;gina</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Primavera: 
+		sonrisa de las cosas, los ramos<br>palpitaban de flores y hu&eacute;spedes 
+		parleros;<br>octubre anaranjaba la arena en los senderos,<br>recuerdas? 
+		Bajo el cielo de octubre nos amamos.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Verano: 
+		sin testigos, cabe la mar llegamos;<br>Oto&ntilde;o deshojaba los &aacute;lamos 
+		ligeros;<br>tent&oacute;nos el pecado, te acercaste, pecamos...<br>Ah! tu 
+		primer sonrisa, tus abrazos primeros!</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Sobrevino 
+		el Invierno: saltaste a mis rodillas;<br>bes&eacute; con largo beso tu boca y 
+		tus mejillas;<br>ardi&oacute; con viva llama tu n&uacute;bil cuerpo en flor.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">&iexcl;Oh carne! 
+		qu&eacute; ambicionas? Coraz&oacute;n, &iquest;qu&eacute; m&aacute;s quieres?<br>Huyen las estaciones y 
+		pasan las mujeres,<br>y yo que he amado tanto desconozco el amor.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de V&iacute;ctor M. Londo&ntilde;o</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="VANIDAD"></a></font><font color="#C4CAD4" face="Georgia">
+		Vanidad</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Cieco, febril, insomne, con nerviosa porf&iacute;a,<br>pule el artista el 
+		m&aacute;rmol de la estrofa anhelada:<br>qui&eacute;rela palpitante, qui&eacute;rela 
+		emocionada,<br>quiere infundir al m&aacute;rmol un temblor de agon&iacute;a.<br>
+		<br>Triunfa gallardamente de la forma brav&iacute;a;<br>lucha, repule, y la 
+		obra resplandece acabada:<br>-&laquo;&iexcl;Mundo que con mis manos arranqu&eacute; de la 
+		nada!<br>&iexcl;Hija de mi trabajo!-luce a la luz del d&iacute;a.<br>
+		<br>&laquo;Llena de mis angustias y encendida en mi fiebre,<br>eras la piedra 
+		tosca; te di brillo profundo<br>e iric&eacute; tus facetas con esmeros de 
+		orfebre.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Puedo 
+		esperar, pues vives, una muerte serena&raquo;.<br>E imagina que exhausto 
+		rodar&aacute; al pie del mundo,<br>y, &iexcl;oh vanidad! sucumbe junto a un grano de 
+		arena.<br>
+		<br><em>Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#C4CAD4">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="V&Iacute;A L&Aacute;CTEA"></a></font><font color="#C4CAD4" face="Georgia">
+		V&iacute;a l&aacute;ctea</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Sale al jard&iacute;n cuando la aurora aclara,<br>y envuelta en muselinas 
+		vaporosas,<br>muestra a las rosas del jard&iacute;n las rosas<br>tr&eacute;mulas y 
+		encendidas de su cara.<br>
+		<br>Todo el jard&iacute;n al verla se prepara<br>a la oblaci&oacute;n. Y hay voces 
+		misteriosas<br>que, al pasar, la saludan jubilosas<br>como si leve 
+		s&iacute;lfide pasara.<br>
+		<br>La luz la besa; el aire es m&aacute;s sonoro;<br>tiemblan las flores 
+		c&aacute;ndidas; el bando<br>de las aves sal&uacute;dala en un coro,</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">y ella va, 
+		dando al sol el rostro blando,<br>dando a los vientos el cabello de oro,<br>
+		y a los rosales sus sonrisas dando.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="VITA NUOVA"></a>
+		</font><font color="#C4CAD4" face="Georgia">
+		Vita nuova</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>Si con los mismos ojos abrasados,<br>al mismo gozo antiguo me 
+		convidas,<br>m&aacute;ta el recuerdo de las horas idas<br>en que los dos 
+		vivimos separados.<br>
+		</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">Y no me 
+		hables de l&aacute;grimas perdidas,<br>ni me culpes por besos disipados;<br>
+		caben en una vida cien mil vidas,<br>como en un coraz&oacute;n cien mil 
+		pecados.<br>
+		<br>&iexcl;Te amol &iexcl;La llama del amor, m&aacute;s fuerte<br>revive. Olvida mi pasado, 
+		loca!<br>Qu&eacute; importa el tiempo que viv&iacute; sin verte,</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">si aun te 
+		quiero, despu&eacute;s de amores t&aacute;ntos,<br>y si aun tengo, en los ojos y en la 
+		boca,<br>nuevas fuentes de besos y de llantos!</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de Miguel Rasch-Isla</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:27:57 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:57 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

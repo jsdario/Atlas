@@ -1,0 +1,723 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jos&eacute; Corredor-Matheos</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jos&eacute; Corredor-Matheos. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jos&eacute;_Corredor-Matheos,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#95B3AA" vlink="#95B3AA" alink="#95B3AA">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app14.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/corredormatheos.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "16";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/corredormatheos.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131216132221" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./corredormatheos.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 13:22:21 Dec 16, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jan
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./corredormatheos.htm" title="16:01:07 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 13:22:21 Dec 16, 2013">16</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./corredormatheos.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 Oct 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 13:22:21 Dec 16, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./corredormatheos.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>59 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">17 Jan 06 - 16 Dec 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:101012000300_2007:-1:511232120100_2008:-1:000211100000_2009:-1:001000100000_2010:-1:100000001110_2011:-1:000000001010_2012:-1:601020011100_2013:11:102210010001_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+&nbsp;</p>
+<p align="center">
+<br>
+<img border="0" src="./CORREDOR-MATHEOS.jpg" width="522" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;Luz a lo lejos.<br>
+Infinita nostalgia de no s&eacute; qu&eacute;...&quot;</em><br>
+<br>
+</font><font color="#9BC9BB"><img src="./CORREDOR-MATHEOS1.jpg" width="230" height="288"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Woman, bird 
+and star&quot;<br>
+<br>
+Joan Mir&oacute;</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+	<p align="center"><font color="#9BC9BB"><br></font>
+	<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+	ensayista y traductor espa&ntilde;ol, nacido en Alc&aacute;zar de San Juan en 1929.<br>Se 
+	radic&oacute; en Barcelona desde 1936 donde se licenci&oacute; en Derecho, iniciando su 
+	trayectoria po&eacute;tica en 1953 con su libro <br>
+	&laquo;Ocasiones para amarte&raquo;, al que le han seguido otros t&iacute;tulos reunidos en 
+	&laquo;Poes&iacute;a 1951-1975&raquo;&nbsp; y &laquo;Poes&iacute;a 1970-1994&raquo;. <br>Es adem&aacute;s autor de varias 
+	monograf&iacute;as sobre arte contempor&aacute;neo, arquitectura, dise&ntilde;o y artes 
+	populares.<br>Es acad&eacute;mico correspondiente de la <em>Real Academia de Bellas 
+	Artes San Fernando</em>.<br>Aunque pertenece a la generaci&oacute;n de poetas de 
+	los 50, su inclinaci&oacute;n literaria se aproxima a la cultura oriental, la 
+	poes&iacute;a <br>
+	china y la filosof&iacute;a budista.<br>Entre los galardones obtenidos se destacan: 
+	el 
+	<em>Premio Bosc&aacute;n de Poes&iacute;a</em> en 1961, el <em>Premi d&#8217;Arts Pl&agrave;stiques de 
+	la Generalitat <br>
+	de Catalunya</em> en 1993, el P<em>remio Nacional de Traducci&oacute;n</em> por su 
+	antolog&iacute;a biling&uuml;e &laquo;Poes&iacute;a catalana contempor&aacute;nea&raquo; 1983, <br>
+	y el <em>Premio Nacional de Poes&iacute;a</em> 2005 por &laquo;El don de la ignorancia&raquo;. 
+	&copy;<br><br><br></font><font color="#9BC9BB"><br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#95B3AA"><br><br>
+	</font><font face="Georgia" color="#95B3AA">
+	<a href="./corredormatheos.htm#&iquest;C&Oacute;MO PODR&Eacute; PAGARTE...">&iquest;C&oacute;mo podr&eacute; pagarte...</a><br><br>
+	<a href="./corredormatheos.htm#C&Oacute;MO RESBALA EL SOL...">C&oacute;mo resbala el sol...</a></font></p>
+	<p align="left"><font face="Georgia" color="#95B3AA">
+	<a href="./corredormatheos.htm#CONTEMPLA EN SU DELIRIO...">Contempla en su delirio...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./corredormatheos.htm#CONTEMPLO EL MAR, LAS OLAS...">Contemplo el mar, las olas...</a><br>
+	<br><a href="./corredormatheos.htm#DESDE ESTE TREN CONTEMPLO...">Desde este tren contemplo...</a><br>
+	<br><a href="./corredormatheos.htm#&iquest;ES EL MAR EL QUE BRILLA...">&iquest;Es el mar el que brilla...</a><br>
+	<br><a href="./corredormatheos.htm#ESTE CAMPO TAN ANCHO...">Este campo tan ancho...</a><br><br>
+	<a href="./corredormatheos.htm#HAY QUE LLEGAR AL BORDE...">Hay que llegar al borde...</a><br><br>
+	<a href="./corredormatheos.htm#...LA MANERA QUE TIENE...">...La manera que tiene...</a><br><br>
+	<a href="./corredormatheos.htm#ME GUSTA CAMINAR...">Me gusta caminar...</a><br><br>
+	<a href="./corredormatheos.htm#MUEREN TODOS LOS HOMBRES...">Mueren todos los hombres...</a><br>
+	<br><a href="./corredormatheos.htm#NADA DE LOS QUE HAS SIDO...">Nada de lo que has sido...</a><br>
+	<br><a href="./corredormatheos.htm#NO HAY NADA QUE ME IMPIDA...">No hay nada que me impida...</a><br>
+	<br><a href="./corredormatheos.htm#NO S&Eacute; SI MIS PALABRAS...">No s&eacute; si mis palabras...</a><br><br>
+	<a href="./corredormatheos.htm#POCAS COSAS DESPIERTAN...">Pocas cosas despiertan...</a><br><br>
+	<a href="./corredormatheos.htm#QU&Eacute; ANGUSTIA...">Qu&eacute; angustia...</a><br><br>
+	<a href="./corredormatheos.htm#QU&Eacute; TARDE...">Qu&eacute; tarde...</a><br><br>
+	<a href="./corredormatheos.htm#RECUERDO AQUEL PASEO...">Recuerdo aquel paseo...</a><br><br>
+	<a href="./corredormatheos.htm#TODO LO VEO EN ACTITUD DE ESPERA...">Todo lo veo en actitud de 
+	espera...</a><br>
+	<br><a href="./corredormatheos.htm#T&Uacute; ESCRIBES EN EL FUEGO...">T&uacute; escribes en el fuego...</a><br>
+	<br><a href="./corredormatheos.htm#UNA PALOMA...">Una paloma...</a></font><font face="Georgia" size="2" color="#95B3AA"><br><br> 
+	</font><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#95B3AA">
+	<a
+      HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a>
+      &nbsp;&nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp; 
+	<br><br><br></font></p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+			<img border="0"
+        src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<p align="left"><a name="&iquest;CÓMO PODR&Eacute; PAGARTE..."></a>
+		<font face="Georgia"
+      color="#9BC9BB">&iquest;C&oacute;mo podr&eacute; pagarte...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La nada es el fruto de mi<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		constante meditaci&oacute;n.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Omar Jayyam</em><br><br>&iquest;CÓMO podr&eacute; pagarte<br>que me hayas hecho ver<br>
+		la irrealidad de todo,<br>la vanidad de todo?<br>&iquest;Cu&aacute;nto dar&iacute;a yo<br>por 
+		o&iacute;r en tu voz<br>que la nada es el fruto<br>de tu meditaci&oacute;n,<br>que 
+		despu&eacute;s de la muerte<br>hay la nada<br>o la misericordia?<br>Tus 
+		palabras me llegan<br>con sabor a tu voz<br>y me parece verte<br>con un 
+		vaso en la mano,<br>que levantas<br>hacia ese firmamento<br>resultado 
+		tan s&oacute;lo<br>de la imaginaci&oacute;n.<br>Si es que eres t&uacute;, Omar,<br>arr&aacute;ncame 
+		una a una<br>las certezas.<br>Que quede tan desnudo<br>como las claras 
+		dunas<br>del desierto.<br>Omar Jayyam, brindemos,<br>porque aunque todo 
+		sea<br>viento, espejismo, sue&ntilde;o,<br>quiero seguir oyendo<br>tus 
+		palabras,<br>contemplar tu figura<br>de apagada ceniza<br>y beber en 
+		silencio<br>el vino de tu c&aacute;liz.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="CÓMO RESBALA EL SOL..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">C&oacute;mo resbala el sol...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">CÓMO 
+		resbala el sol<br>sobre las hojas.<br>Sensaci&oacute;n de que todo,<br>ahora, 
+		en torno a m&iacute;,<br>ha dejado de ser,<br>y no hay nada, no hay nada<br>que 
+		se pueda cantar,<br>si no es el canto mismo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CONTEMPLA EN SU DELIRIO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Contempla en su delirio...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Contempla 
+		en su delirio<br>
+		algo que es tan real<br>
+		que yo no puedo verlo.<br>
+		Oigo c&oacute;mo la lluvia<br>
+		va cayendo<br>
+		en las calles que no existen<br>
+		si no es en la memoria.<br>
+		&iquest;Por qu&eacute; los corazones<br>
+		elegidos<br>
+		son siempre solitarios?<br>
+		En el cuarto de al lado,<br>
+		un hombre est&aacute; hablando<br>
+		con sus muertos.<br>
+		El soplo del delirio,<br>
+		los presagios<br>
+		lavados por la lluvia,<br>
+		son una luz muy pura.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="CONTEMPLO EL MAR, LAS OLAS..."></a>
+		Contemplo el mar, las olas...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>CONTEMPLO el mar, las olas.<br>Saboreo sus aguas,<br>
+		feliz en esta tarde<br>que no ha de tener fin.<br>&iquest;Por qu&eacute;, por qu&eacute; esta 
+		angustia<br>que me inunda de pronto<br>con sus aguas oscuras,<br>que me 
+		arroja desnudo<br>a la apagada arena<br>de la playa?<br>&iquest;Por qu&eacute;, por 
+		qu&eacute;, si est&aacute;n<br>las gaviotas<br>volando tierra adentro<br>en la tarde 
+		tranquila<br>y las aguas me cubren<br>hasta saciar mi sed ?</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="DESDE ESTE TREN CONTEMPLO..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Desde este tren contemplo...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>DESDE este tren contemplo<br>la paz con que los 
+		campos<br>se me entregan,<br>la monta&ntilde;a que crece<br>si la miro,<br>el 
+		&aacute;rbol solitario<br>que camina<br>en busca de ra&iacute;ces,<br>alguna casa 
+		aislada<br>que recuerda<br>que el hombre a&uacute;n existe.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="&iquest;ES EL MAR EL QUE BRILLA..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">&iquest;Es el mar el que brilla...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ante la tumba de Paul Val&eacute;ry</em><br>
+		<br>&iquest;ES el mar el que brilla<br>o eres t&uacute;, que apareces<br>disuelto all&aacute; 
+		en las olas<br>para gozar de nuevo<br>lo que cantan tus versos?<br>Veo 
+		el mar con tus ojos,<br>el cielo con tus ojos,<br>los p&aacute;jaros marinos<br>
+		con tus ojos.<br>Y t&uacute; me est&aacute;s mirando<br>con los m&iacute;os,<br>despojados de 
+		todo<br>t&uacute; y yo,<br>envueltos en la luz<br>de un nuevo mediod&iacute;a.<br>Lo 
+		que queda de ti,<br>lo que queda de m&iacute;,<br>es tan poco que es nada.<br>
+		S&oacute;lo, s&oacute;lo tus versos<br>brillan como las olas<br>bajo el sol,<br>baten 
+		en mi memoria<br>con tu voz.<br>Tu nombre sobre el m&aacute;rmol,<br>los 
+		m&iacute;seros despojos<br>que adivino,<br>se borran con el eco 
+		<br>de tus versos<br>disueltos en la espuma.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="ESTE CAMPO TAN ANCHO..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Este campo tan ancho...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br><em>Campo de La Mancha</em><br>
+		<br>ESTE campo tan ancho<br>viste la desnudez<br>que t&uacute; anhelabas.<br>
+		Mir&aacute;ndolo descubres<br>lo que eres<br>cuando logras librarte<br>de todas 
+		las monta&ntilde;as,<br>los r&iacute;os y los &aacute;rboles<br>que impiden ver en ti<br>m&aacute;s 
+		all&aacute; del paisaje,<br>de todos los paisajes.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="HAY QUE LLEGAR AL BORDE..."></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Hay que llegar al borde...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">HAY que 
+		llegar al borde<br>y apurar esta vida<br>que duda de s&iacute; misma<br>y que 
+		vacila,<br>y acaso se detiene.<br>y volver, si es posible,<br>por haber 
+		descubierto<br>que nada, nada pasa,<br>porque no hay en ti<br>m&aacute;s que 
+		ocres,<br>estos grises,<br>los oscuros azules<br>del oto&ntilde;o.<br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="...LA MANERA QUE TIENE..."></a></font>
+		<font face="Georgia" color="#9BC9BB">...La manera que tiene...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">...LA 
+		manera que tiene<br>el infinito<br>de caber en un c&aacute;ntaro,<br>horizontes 
+		que crecen<br>con el viento,<br>cuando la tarde acaba<br>y la &uacute;ltima 
+		noche<br>no ha comenzado a&uacute;n.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="ME GUSTA CAMINAR..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Me gusta caminar...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>ME gusta caminar<br>sin compa&ntilde;&iacute;a,<br>descubrir en 
+		los &aacute;rboles<br>la semilla del fuego,<br>ver crecer los arbustos<br>con 
+		su ritmo tranquilo<br>y sentir c&oacute;mo a todo<br>lo ilumina<br>la misma 
+		&uacute;nica muerte<br>que me ilumina a m&iacute;.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a name="MUEREN TODOS LOS HOMBRES..."></a>Mueren todos los hombres...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">MUEREN 
+		todos los hombres,<br>los que ignoran,<br>los que viven pensando<br>en 
+		el ma&ntilde;ana<br>de un tiempo que no existe.<br>Todos los hombres mueren,<br>
+		y esta tarde,<br>luminosas tinieblas<br>hacen brillar en m&iacute;<br>una fe 
+		que no es fe,<br>sino conciencia<br>de cegadora luz.<br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="NADA DE LOS QUE HAS SIDO..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Nada de lo que has sido...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		...estando ya mi casa sosegada.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		San Juan de la Cruz</em><br><br>NADA de lo que has sido<br>permanece.<br>
+		No tienes ni pasado<br>ni futuro,<br>y hasta el mismo morir<br>no es muy 
+		seguro.<br>Nada ni nadie a ti<br>te pertenece.<br>Pero respira el campo<br>
+		si anochece.<br>Vuelve a ser todo transparente<br>y puro.<br>Avanzas 
+		confiado<br>hacia lo oscuro.<br>El mundo nace en tu interior<br>y crece.<br>
+		Qu&eacute; sencillo morir.<br>y qu&eacute; sencillo<br>poder vivir al fin<br>como si 
+		todo<br>fuera un ir devan&aacute;ndose<br>el ovillo,<br>y nunca hubiera sido<br>
+		de otro modo.<br>Todo vuelve a ser tuyo,<br>siendo nada,<br>estando ya 
+		la noche<br>iluminada.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="NO HAY NADA QUE ME IMPIDA..."></a>
+		No hay nada que me impida...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>NO hay nada que me impida<br>o&iacute;r la Voz del &aacute;rbol<br>
+		cuando sue&ntilde;a,<br>las plegarias que brotan<br>de sus hojas.<br>Ya no me 
+		queda nada<br>por perder,<br>pero soy tan feliz<br>que soy feliz tan 
+		s&oacute;lo,<br>y los ramos floridos<br>de la infancia<br>se encienden como 
+		l&aacute;mparas<br>cuando acaba la noche.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="NO S&Eacute; SI MIS PALABRAS..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">No s&eacute; si mis palabras...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>NO s&eacute; si mis palabras<br>son de paz y consuelo<br>
+		o de desolaci&oacute;n.<br>Desolado es mi rostro<br>si me miro<br>en alg&uacute;n fr&iacute;o 
+		espejo,<br>desoladas mis manos<br>que sostienen el mundo,<br>desolada la 
+		mente<br>que sostiene mi mano.<br>La mirada se posa<br>serenamente en 
+		todo,<br>y el mundo se detiene,<br>el verso se detiene.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="POCAS COSAS DESPIERTAN..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Pocas cosas despiertan...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><br>POCAS cosas despiertan<br>mi alegr&iacute;a<br>como el 
+		brincar gozoso<br>de alg&uacute;n perro<br>que me ha salido al paso.<br>Pocas 
+		cosas remueven<br>algo profundo en m&iacute;<br>como el mirar de un perro<br>
+		fatigado<br>de haber vivido tanto.<br>Todo el amor del mundo<br>que tu 
+		ans&iacute;as<br>y la desolaci&oacute;n que sientes<br>asoman a los ojos<br>de un 
+		perro que te mira,<br>interrog&aacute;ndote.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="QU&Eacute; ANGUSTIA..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Qu&eacute; angustia, en la cumbre...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">QU&Eacute; 
+		angustia, en la cumbre<br>de la desolaci&oacute;n.<br>Y qu&eacute; desolaci&oacute;n,<br>tan 
+		lejos de la cumbre.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="QU&Eacute; TARDE..."></a>
+		</font>
+		<font face="Georgia" color="#9BC9BB">Qu&eacute; tarde...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		QU&Eacute; tarde<br>m&aacute;s hermosa.<br>Qu&eacute; dulce<br>es esta brisa<br>que acaricia<br>
+		sin prisa<br>la piel<br>de cada cosa.<br>Se ha detenido,<br>ociosa,<br>
+		la mirada<br>indecisa<br>y asoma<br>la sonrisa<br>cuando en la luz<br>se 
+		posa.<br>C&oacute;mo expresar<br>en prosa<br>con palabra<br>precisa<br>la 
+		sensaci&oacute;n dichosa<br>de la tarde<br>indivisa,<br>si el verso<br>lo 
+		improvisa<br>la mano<br>temblorosa.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="RECUERDO AQUEL PASEO..."></a>
+		</font>
+		<font face="Georgia"
+      color="#9BC9BB">Recuerdo aquel paseo...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">RECUERDO 
+		aquel paseo<br>solitario<br>en que s&oacute;lo el silencio<br>era lo que 
+		alcanzaba<br>a o&iacute;r entre las hojas,<br>y pod&iacute;a sentirme<br>como un 
+		&aacute;rbol,<br>sentirme como un p&aacute;jaro.<br>y recuerdo tambi&eacute;n<br>un &uacute;nico 
+		paseo<br>acompa&ntilde;ado,<br>hace ya mucho tiempo.<br>No puedo recordar<br>
+		qui&eacute;n pisaba las hojas<br>a mi lado.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="TODO LO VEO EN ACTITUD DE ESPERA..."></a>
+		</font>
+		<font face="Georgia" color="#9BC9BB">Todo lo veo en actitud......</font><font face="Georgia"
+      size="2" color="#9BC9BB"><br><br>TODO lo veo en actitud<br>de espera.<br>
+		&iquest;Por qu&eacute; esa mansedumbre<br>de las cosas,<br>la manera que tienen<br>de 
+		parecer que esperan?<br>Rec&oacute;gete en silencio,<br>aunque todo se agite<br>
+		en torno a ti,<br>igual que si esperaras.<br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="TÚ ESCRIBES EN EL FUEGO..."></a></font>
+		<font face="Georgia" color="#9BC9BB">T&uacute; escribes en el fuego...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Gonzalo Rojas<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Crezco y crezco en el &aacute;rbol.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		G.R.</em><br><br>TÚ escribes en el fuego<br>como otros en el agua.<br>
+		Endureces la tierra<br>haci&eacute;ndola fecunda,<br>y juegas con el aire<br>
+		que respira.<br>Cuando hablas o lees<br>tus poemas,<br>uno no sabe nunca<br>
+		cu&aacute;ndo acaba el poeta<br>de decirnos sus versos.<br>Ahora que est&aacute;s 
+		lejos,<br>yo te escucho y escribo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="UNA PALOMA..."></a>
+		</font>
+		<font face="Georgia" color="#9BC9BB">Una paloma...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		UNA paloma.<br>Pero t&uacute; &iquest;c&oacute;mo sabes<br>que eso es una paloma<br>y que no 
+		es un domingo<br>o una ma&ntilde;ana gris<br>o esa ave extranjera<br>que no 
+		conoce nadie<br>y que rompe el espacio<br>y sorprende a las copas<br>de 
+		los &aacute;rboles<br>con cantos no aprendidos?<br>S&eacute; que es una paloma<br>y 
+		que no es un domingo,<br>ni una ma&ntilde;ana gris,<br>ni alg&uacute;n astro perdido,<br>
+		como s&eacute;, estoy seguro,<br>que yo, no siendo nada,<br>soy un hombre<br>
+		que ve alzar el vuelo<br>a una paloma<br>que va rompiendo el aire<br>y 
+		deja la ma&ntilde;ana<br>vac&iacute;a para siempre.<br>
+		<br><br>&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 13:22:21 Dec 16, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:16:51 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

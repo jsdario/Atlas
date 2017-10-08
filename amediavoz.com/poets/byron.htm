@@ -1,0 +1,773 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Lord Byron</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Lord Byron."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Lord Byron. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Lord_Byron,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body link="#DBDBDB" vlink="#DBDBDB" alink="#DBDBDB" background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app12.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/byron.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/byron.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163733" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./byron.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:37:33 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./byron.htm" title="21:29:27 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:37:33 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./byron.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:37:33 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./byron.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>181 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">25 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110001_2003:-1:010101010101_2004:-1:010101010101_2005:-1:011100010013_2006:-1:222263110115_2007:-1:a53124141300_2008:-1:322324ffb003_2009:-1:020000110000_2010:-1:100000001110_2011:-1:000000002100_2012:-1:210111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BYRON.jpg" width="233" height="51"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BYRON1.jpg" width="236" height="23"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="735" height="308">
+  <tr>
+    <td height="300" width="256" valign="top"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./BYRON2.jpg" width="222" height="293"></td>
+    <td width="467" valign="top" height="300"><p align="left">
+	<u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+	<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">Jorge Noel Gordon, poeta 
+	ingl&eacute;s nacido en Londres en 1788.<br>
+	Estudi&oacute; en el colegio Harrow y en la Universidad de Cambridge. <br>
+	En 1798 hered&oacute; de su t&iacute;o abuelo el titulo de Bar&oacute;n y en 1809 ocup&oacute; un esca&ntilde;o 
+	en la C&aacute;mara de los Lores.<br>
+	Su primera colecci&oacute;n de poemas se public&oacute; en 1807 con el nombre de <i>&quot;Horas 
+	de ocio&quot;</i>, seguida por <i>&quot;Bardos ingleses y cr&iacute;ticos escoceses&quot;</i> en 
+	1809 como r&eacute;plica a las cr&iacute;ticas que recib&iacute;a. Viaj&oacute; durante dos a&ntilde;os por 
+	Espa&ntilde;a, Portugal y Grecia y a su regres&oacute; public&oacute; en 1812 los primeros cantos<i>
+	</i>de<i> &quot;Childe Harold&quot;</i>, poema que lo llev&oacute; a la fama convirti&eacute;ndolo 
+	en uno de los escritores m&aacute;s vers&aacute;tiles e importantes del romanticismo.<br>
+	A ra&iacute;z de su separaci&oacute;n matrimonial y de los rumores de la relaci&oacute;n 
+	incestuosa con su hermanastra, abandon&oacute; para siempre a Inglaterra en 1816, 
+	estableciendo su residencia en Venecia y Pisa. <i><br>
+	&quot;Don Juan&quot;</i>, considerada su mejor obra po&eacute;tica, fue publicada en 1823.
+	<br>
+	En enero de 1824 por su apoyo a los griegos en la lucha contra los turcos, 
+	fue nombrado Comandante en Jefe. Falleci&oacute; tres meses despu&eacute;s. &copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Obra 
+		po&eacute;tica importante:<br>
+		<i>&quot;El infiel&quot; </i>1813 <br>
+		<i>&quot;La novia de Abydos&quot;</i> 1813 <br>
+		<i>&quot;El corsario&quot;</i> 1814 <br>
+		<i>&quot;Lara&quot; </i>1814<br>
+		<i>&quot;Melod&iacute;as hebreas&quot;</i> 1815 <br>
+		<i>&quot;Ca&iacute;n y Sardan&aacute;palo&quot;</i> 1821<br>
+		<i>&quot;Mazzepa&quot; </i>1822<br>
+		<i>&quot;La isla&quot;</i> 1822</font></p>
+
+<p align="center"><font face="Georgia" size="2" color="#C4CAD4"><br>
+</font><font face="Georgia" color="#C4CAD4">Poemas de&nbsp; Lord Byron:</font></p>
+		<p align="left"><br>
+		<font face="Georgia" color="#FFFFFF">
+		<a href="./byron.htm#ACU&Eacute;RDATE DE M&Iacute;">Acu&eacute;rdate de m&iacute;</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./byron.htm#ADI&Oacute;S">Adi&oacute;s</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#AL CUMPLIR MIS 36 A&Ntilde;OS">Al cumplir mis 36 a&ntilde;os</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./byron.htm#CAMINA BELLA">Camina 
+		bella, como la noche...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#CANCI&Oacute;N DEL CORSARIO">Canci&oacute;n del corsario</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#CUANDO NOS SEPARAMOS">Cuando nos separamos...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./byron.htm#EN UN &Aacute;LBUM">En un &aacute;lbum</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#HUBO UN TIEMPO...&iquest;RECUERDAS?">Hubo un tiempo...&iquest;Recuerdas?</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#LA DESTRUCCI&Oacute;N DE SENAQUERIB">La destrucci&oacute;n de Senaquerib</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#LA GACELA SALVAJE">La gacela salvaje</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./byron.htm#LA PARTIDA">La partida</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#NO VOLVEREMOS A VAGAR">No volveremos a vagar</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./byron.htm#SOL DEL QUE TRISTE VELA...">Sol del que triste vela...</a></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF"> 
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF"> </font>
+		<font face="Georgia" color="#FFFFFF"> <a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a name="ACU&Eacute;RDATE DE M&Iacute;"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Acu&eacute;rdate de m&iacute;</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		Llora en silencio mi alma solitaria, <br>excepto cuando est&aacute; mi coraz&oacute;n<br>
+		unido al tuyo en celestial alianza 
+		<br>de mutuo suspirar y mutuo amor. <br><br>Es la llama de mi alma cual 
+		lumbrera,<br>que brilla en el recinto sepulcral:<br>casi extinta, 
+		invisible, pero eterna...<br>ni la muerte la puede aniquilar.<br>
+		<br>&iexcl;Acu&eacute;rdate de m&iacute;!... Cerca a mi tumba <br>no pases, no, sin darme 
+		una oraci&oacute;n;<br>para mi alma no habr&aacute; mayor tortura<br>que el saber que 
+		olvidaste mi dolor. 
+		<br><br>Oye mi &uacute;ltima voz. No es un delito<br>rogar por los que fueron. 
+		Yo jam&aacute;s<br>te ped&iacute; nada: al expirar te exijo 
+		<br>que vengas a mi tumba a sollozar.</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Enrique &Aacute;lvarez Bonilla</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a name="ADIÓS"></a></font><font color="#C4CAD4" face="Georgia">
+		Adi&oacute;s</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		&iexcl;Adi&oacute;s! si dicha se concede al hombre<br>de una plegaria en premio, &eacute;sta 
+		tu nombre<br>elevar&aacute; hasta el trono del Se&ntilde;or. 
+		<br>Promesas, quejas, llanto, fueran vanos;<br>m&aacute;s que el lloro, 
+		exprimido, ya sangrante,<br>de ojos sin luz, tenaz remordimiento<br>esta 
+		palabra dice... &iexcl;Adi&oacute;s! &iexcl;Adi&oacute;s!<br>
+		<br>Secos est&aacute;n mis ojos, extinguida<br>mi voz, pero al dejarte, de mi 
+		vida<br>se adue&ntilde;a para siempre un gran dolor.<br>Aunque el pesar y la 
+		pasi&oacute;n torturan<br>mi coraz&oacute;n, quejarse no le es dado...<br>Yo s&oacute;lo s&eacute; 
+		que en vano hemos amado...<br>S&oacute;lo puedo sentir... &iexcl;Adi&oacute;s! adi&oacute;s.</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Jorge Isaacs</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="3" color="#C4CAD4">
+		<a
+      name="AL CUMPLIR MIS 36 A&Ntilde;OS"></a></font>
+		<font color="#C4CAD4" face="Georgia">Al cumplir mis 36 a&ntilde;os
+		</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">&iexcl;Calma, 
+		coraz&oacute;n, ten calma!<br>&iquest;A qu&eacute; lates, si no abates<br>ya ni alegras a 
+		otra alma?<br>&iquest;A qu&eacute; lates?<br><br>Mi vida, verde parral,<br>dio ya su 
+		fruto y su flor,<br>amarillea, oto&ntilde;al,<br>sin amor.<br><br>M&aacute;s no 
+		pongamos mal ce&ntilde;o!<br>&iexcl;No pensemos, no pensemos!<br>D&eacute;monos al alto 
+		empe&ntilde;o<br>que tenemos.<br><br>Mira: Armas, banderas, campo<br>de 
+		batalla, y la victoria,<br>y Grecia. &iquest;No vale un lampo<br>de esta 
+		gloria?<br><br>&iexcl;Despierta! A H&eacute;lade no toques,<br>Ya H&eacute;lade despierta 
+		est&aacute;.<br>Inv&oacute;cate a ti. No invoques <br>m&aacute;s all&aacute;<br><br>Viejo volc&aacute;n 
+		enfriado<br>es mi llama; al firmamento<br>alza su ardor apagado.<br>&iexcl;Ah 
+		momento!<br><br>Temor y esperanza mueren.<br>Dolor y placer huyeron.<br>
+		Ni me curan ni me hieren.<br>No son. Fueron.<br><br>&iquest;A qu&eacute; vivir, correr 
+		suerte,<br>si la juventud tu sien<br>ya no adorna? He aqu&iacute; tu <br>
+		muerte.<br><br>Y est&aacute; bien.<br>Tras tanta palabra dicha,<br>el silencio. 
+		Es lo mejor.<br>En el silencio &iquest;no hay dicha?<br>y hay valor.<br><br>Lo 
+		que tantos han hallado<br>buscar ahora para ti:<br>una tumba de soldado.<br>
+		Y hela aqu&iacute;.<br><br>Todo cansa todo pasa.<br>Una mirada hacia atr&aacute;s,<br>
+		y march&eacute;monos a casa.<br>All&iacute; hay paz. </font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Enrique &Aacute;lvarez Bonilla</font></em></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#C4CAD4"><br>
+		</font><font color="#C4CAD4" face="Georgia" size="2"><br>
+		<a name="CAMINA BELLA"></a></font><font color="#C4CAD4" face="Georgia">
+		Camina bella, como la noche...</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		Camina bella, como la noche 
+		<br>De climas despejados y de cielos estrellados,<br>Y todo lo mejor de 
+		la oscuridad y de la luz 
+		<br>Resplandece en su aspecto y en sus ojos, <br>Enriquecida as&iacute; por esa 
+		tierna luz 
+		<br>Que el cielo niega al vulgar d&iacute;a. <br><br>Una sombra de m&aacute;s, un rayo 
+		de menos,<br>Hubieran mermado la gracia inefable<br>Que se agita en cada 
+		trenza suya de negro brillo,<br>O ilumina suavemente su rostro,<br>Donde 
+		dulces pensamientos expresan<br>Cu&aacute;n pura, cu&aacute;n adorable es su morada. 
+		<br><br>Y en esa mejilla, y sobre esa frente, <br>Son tan suaves, tan 
+		tranquilas, y a la vez elocuentes,<br>Las sonrisas que vencen, los 
+		matices que iluminan 
+		<br>Y hablan de d&iacute;as vividos con felicidad. <br>Una mente en paz con 
+		todo, 
+		<br>&iexcl;Un coraz&oacute;n con inocente amor!<br><br><em>Versi&oacute;n de F. Maristany</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia">
+		<a
+      name="CANCIÓN DEL CORSARIO"></a>Canci&oacute;n del corsario</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">En su 
+		fondo mi alma lleva un tierno secreto<br>solitario y perdido, que yace 
+		reposado;<br>mas a veces, mi pecho al tuyo respondiendo,<br>como antes 
+		vibra y tiembla de amor, desesperado.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">Ardiendo 
+		en lenta llama, eterna pero oculta,<br>hay en su centro a modo de 
+		f&uacute;nebre vel&oacute;n,<br>pero su luz parece no haber brillado nunca:<br>ni 
+		alumbra ni combate mi negra situaci&oacute;n.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">&iexcl;No me 
+		olvides!... Si un d&iacute;a pasaras por mi tumba,<br>tu pensamiento un punto 
+		reclina en m&iacute;, perdido...<br>La pena que mi pecho no arrostrara, la 
+		&uacute;nica,<br>es pensar que en el tuyo pudiera hallar olvido.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">escucha, 
+		locas, t&iacute;midas, mis &uacute;ltimas palabras<br>-la virtud a los muertos no 
+		niega ese favor-;<br>dame... cuanto ped&iacute;. Ded&iacute;came una l&aacute;grima,<br>&iexcl;la 
+		sola recompensa en pago de tu amor!...</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de F. Maristany</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a
+      name="CUANDO NOS SEPARAMOS"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Cuando nos separamos...</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">Cuando nos 
+		separamos 
+		<br>en silencio y con l&aacute;grimas, <br>con el coraz&oacute;n medio roto, <br>para 
+		apartarnos por a&ntilde;os,<br>tu mejilla se torn&oacute; p&aacute;lida y fr&iacute;a<br>y tu beso 
+		a&uacute;n m&aacute;s fr&iacute;o...<br>Aquella hora predijo<br>en verdad todo este dolor.<br>
+		El roc&iacute;o de la ma&ntilde;ana<br>resbal&oacute; fr&iacute;o por mi frente<br>y fue como un 
+		anuncio 
+		<br>de lo que ahora siento.<br><br>Tus juramentos se han roto<br>y tu 
+		fama ya es muy fr&aacute;gil;<br>cuando escucho tu nombre<br>comparto su 
+		verg&uuml;enza.<br>Cuando te nombran delante de m&iacute;,<br>un toque l&uacute;gubre llega 
+		a mi o&iacute;do<br>y un estremecimiento me sacude.<br>&iquest;Por qu&eacute; te quise tanto?<br>
+		Aquellos que te conocen bien<br>no saben que te conoc&iacute;:<br>Por mucho, 
+		mucho tiempo<br>habr&eacute; de arrepentirme de ti<br>tan hondamente, 
+		<br>que no puedo expresarlo.<br><br>En secreto nos encontramos,<br>y en 
+		silencio me lamento<br>de que tu coraz&oacute;n pueda olvidar 
+		<br>y tu esp&iacute;ritu enga&ntilde;arme.<br>Si llegara a encontrarte<br>tras largos 
+		a&ntilde;os,<br>&iquest;c&oacute;mo habr&iacute;a de saludarte?<br>&iexcl;Con silencio y con l&aacute;grimas! 
+		</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Arturo Rizzi</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2"><em><br>
+		</em><a name="EN UN &Aacute;LBUM"></a></font>
+		<font color="#C4CAD4" face="Georgia">En un &aacute;lbum</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		Sobre la fr&iacute;a losa de una tumba<br>un nombre retiene la mirada de los 
+		que pasan,<br>de igual modo, cuando mires esta p&aacute;gina,<br>pueda el m&iacute;o 
+		atraer tus ojos y tu pensamiento.<br>
+		<br>Y cada vez cada vez que acudas a leer este nombre,<br>piensa en m&iacute; 
+		como se piensa en los muertos;<br>e imagina que mi coraz&oacute;n est&aacute; aqu&iacute;,<br>
+		inhumado e intacto.<br>
+		<em><br>Versi&oacute;n de Arturo Rizzi</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a
+      name="HUBO UN TIEMPO...&iquest;RECUERDAS?"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		Hubo un tiempo... &iquest;recuerdas?</font><font color="#C4CAD4" face="Georgia" size="2"><br>
+		<br>Hubo un tiempo... &iquest;recuerdas? su memoria<br>Vivir&aacute; en nuestro pecho 
+		eternamente...<br>Ambos sentimos un cari&ntilde;o ardiente;<br>El mismo, &iexcl;oh 
+		virgen! que me arrastra a ti.<br>
+		<br>&iexcl;Ay! desde el d&iacute;a en que por vez primera<br>Eterno amor mi labio te 
+		ha jurado,<br>Y pesares mi vida han desgarrado,<br>Pesares que no puedes 
+		t&uacute; sufrir;<br>
+		<br>Desde entonces el triste pensamiento<br>De tu olvido falaz en mi 
+		agon&iacute;a:<br>Olvido de un amor todo armon&iacute;a,<br>Fugitivo en su yerto 
+		coraz&oacute;n.<br>
+		<br>Y sin embargo, celestial consuelo<br>Llega a inundar mi esp&iacute;ritu 
+		agobiado,<br>Hoy que tu dulce voz ha despertado<br>Recuerdos, &iexcl;ay! de un 
+		tiempo que pas&oacute;.<br>
+		<br>Aunque jam&aacute;s tu coraz&oacute;n de hielo<br>Palpite en mi presencia 
+		estremecido,<br>Me es grato recordar que no has podido<br>Nunca olvidar 
+		nuestro primer amor.<br>
+		<br>Y si pretendes con tenaz empe&ntilde;o<br>Seguir indiferente tu camino...<br>
+		Obedece la voz de tu destino<br>Que odiarme puedes; olvidarme, no.</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Arturo Rizzi</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a
+      name="LA DESTRUCCIÓN DE SENAQUERIB"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		La destrucci&oacute;n de Senaquerib<br>
+		</font><font color="#C4CAD4" face="Georgia" size="2">
+		<br>BAJARON los asirios como al redil el lobo :<br>brillaban sus 
+		cohortes con el oro y la p&uacute;rpura ;<br>sus lanzas fulguraban como en el 
+		mar luceros,<br>como en tu onda azul, Galilea escondida.<br>
+		<br>Tal las ramas del bosque en el est&iacute;o verde,<br>la hueste y sus 
+		banderas traspas&oacute; en el ocaso:<br>tal las ramas del bosque cuando sopla 
+		el oto&ntilde;o,<br>yac&iacute;a marchitada la hueste, al otro d&iacute;a.<br>
+		<br>Pues vol&oacute; entre las r&aacute;fagas el &Aacute;ngel de la Muerte<br>y toc&oacute; con su 
+		aliento, pasando, al enemigo:<br>los ojos del durmiente fr&iacute;os, yertos, 
+		quedaron,<br>palpit&oacute; el coraz&oacute;n, qued&oacute; inm&oacute;vil ya siempre.<br>
+		<br>Y all&iacute; estaba el corcel, la nariz muy abierta,<br>mas ya no 
+		respiraba con su aliento de orgullo:<br>al jadear, su espuma qued&oacute; en el 
+		c&eacute;sped, blanca,<br>fr&iacute;a como las gotas de las olas brav&iacute;as.<br>
+		<br>Y all&iacute; estaba el jinete, contorsionado y p&aacute;lido,<br>con roc&iacute;o en la 
+		frente y herrumbre en la armadura,<br>y las tiendas calladas y solas las 
+		banderas,<br>levantadas las lanzas y el clar&iacute;n silencioso.<br>
+		<br>Y las viudas de Asur con gran voz se lamentan<br>y el templo de Baal 
+		ve quebrarse sus &iacute;dolos,<br>y el poder del Gentil, que no abati&oacute; la 
+		espada,<br>al mirarle el Se&ntilde;or se fundi&oacute; como nieve.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2"><em>
+		Versi&oacute;n de M&agrave;rie Montand</em></font></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font color="#C4CAD4">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a name="LA GACELA SALVAJE"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		La gacela salvaje</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		La gacela salvaje en montes de Judea<br>Puede brincar a&uacute;n, alborozada,<br>
+		puede abrevarse en esas aguas vivas<br>que en la sagrada tierra brotan 
+		siempre;<br>puede alzar el pie leve y con ardientes ojos<br>mirar, en un 
+		transporte de ind&oacute;mita alegr&iacute;a.<br>
+		<br>Pies &aacute;giles tambi&eacute;n y ojos m&aacute;s encendidos<br>aqu&iacute; tuvo Judea en 
+		otros tiempos,<br>y en el lugar del ya perdido gozo,<br>m&aacute;s bellos 
+		habitantes hubo un d&iacute;a.<br>Ondulan en el L&iacute;bano los cedros, mas se 
+		fueron<br>las hijas de Judea, aun m&aacute;s majestuosas.<br>
+		<br>M&aacute;s bendita la palma de esos llanos<br>que de Israel la dispersada 
+		estirpe,<br>pues echa aqu&iacute; ra&iacute;ces y se queda,<br>graciosa y solitaria:<br>
+		ya su suelo natal no deja nunca<br>y no podr&aacute; vivir en otras tierras.<br>
+		<br>Mas nosotros vagamos, agostados,<br>para morir muy lejos:<br>donde 
+		est&aacute;n las cenizas de los padres<br>nunca descansar&aacute;n nuestras cenizas;<br>
+		ya ni un solo sillar le queda a nuestro templo<br>y en trono de Salem se 
+		ha sentado la Burla.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2"><em>
+		Versi&oacute;n de M&agrave;rie Montand</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="LA PARTIDA"></a></font><font face="Georgia" color="#C4CAD4">
+		La partida</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">&iexcl;Todo 
+		acab&oacute;! La vela temblorosa<br>se despliega a la brisa del mar,<br>y yo 
+		dejo esta playa cari&ntilde;osa<br>en donde queda la mujer hermosa,<br>&iexcl;ay!, la 
+		sola mujer que puedo amar.<br>Si pudiera ser hoy lo que antes era,<br>y 
+		mi frente abatida reclinar<br>en ese seno que por m&iacute; latiera,<br>quiz&aacute; 
+		no abandonara esta ribera<br>y a la sola mujer que puedo amar.<br>
+		<br>Yo no he visto hace tiempo aquellos ojos<br>que fueron mi contento y 
+		mi pesar;<br>loa amo, a pesar de sus enojos,<br>pero abandono Albi&oacute;n, 
+		tierra de abrojos,<br>y a la sola mujer que puedo amar.<br>Y rompiendo 
+		las olas de los mares,<br>a tierra extra&ntilde;a, patria ir&eacute; a buscar;<br>mas 
+		no hallar&eacute; consuelo a mis pesares,<br>y pensar&eacute; desde extranjeros lares<br>
+		en la sola mujer que puedo amar.<br>
+		<br>Como una viuda t&oacute;rtola doliente<br>mi coraz&oacute;n abandonado est&aacute;,<br>
+		porque en medio de la turba indiferente<br>jam&aacute;s encuentro la mirada 
+		ardiente<br>de la sola mujer que puedo amar.<br>Jam&aacute;s el infeliz halla 
+		consuelo<br>ausente del amor y la amistad,<br>y yo, proscrito en 
+		extranjero suelo,<br>remedio no hallar&eacute; para mi duelo<br>lejos de la 
+		mujer que puedo amar.</font></p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">Mujeres 
+		m&aacute;s hermosas he encontrado,<br>mas no han hecho mi seno palpitar,<br>que 
+		el coraz&oacute;n ya estaba consagrado<br>a la fe de otro objeto idolatrado,<br>
+		a la sola mujer que puedo amar.<br>Adi&oacute;s, en fin. Oculto en mi retiro,<br>
+		en el ausente nadie ha de pensar;<br>ni un solo recuerdo, ni un suspiro<br>
+		me dar&aacute; la mujer por quien deliro,<br>&iexcl;ay!, la sola mujer que puedo 
+		amar.<br>
+		<br>Comparando el pasado y el presente,<br>el coraz&oacute;n se rompe de pesar,<br>
+		pero yo sufro con serena&nbsp; frente<br>y mi pecho palpita eternamente<br>
+		por la sola mujer que puedo amar.<br>Su nombre es un secreto de mi vida<br>
+		que el mundo para siempre ignorar&aacute;,<br>y la causa fatal de mi partida<br>
+		la sabr&aacute; s&oacute;lo la mujer querida,<br>&iexcl;ay!, la sola mujer que puedo amar.<br>
+		<br>&iexcl;Adi&oacute;s!..Quisiera verla... mas me acuerdo<br>que todo para siempre 
+		va a acabar;<br>la patria y el amor, todo lo pierdo...<br>pero llevo el 
+		dulc&iacute;simo recuerdo<br>de la sola mujer que puedo amar.<br>&iexcl;Todo acab&oacute;! 
+		La vela temblorosa<br>se despliega a la brisa del mar,<br>y yo dejo esta 
+		playa cari&ntilde;osa<br>en donde queda la mujer hermosa,<br>&iexcl;ay!, la sola 
+		mujer que puedo amar.</font></p>
+		<p align="left"><em><font color="#C4CAD4" face="Georgia" size="2">
+		Versi&oacute;n de Ismael Enrique Arciniegas</font></em><font color="#C4CAD4" face="Georgia" size="2"><br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+
+<p align="center"><font color="#C4CAD4">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia" size="2">
+		<a
+      name="NO VOLVEREMOS A VAGAR"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		No volveremos a vagar</font><font color="#C4CAD4" face="Georgia" size="2"><br><br>
+		As&iacute; es, no volveremos a vagar 
+		<br>Tan tarde en la noche, <br>Aunque el coraz&oacute;n siga amando<br>Y la 
+		luna conserve el mismo brillo.<br>
+		<br>Pues as&iacute; como la espada gasta su vaina,<br>Y el alma consume el 
+		pecho, 
+		<br>Asimismo el coraz&oacute;n debe detenerse a respirar,<br>E incluso el amor 
+		debe descansar.<br>
+		<br>Aunque la noche fue hecha para amar, <br>Y los d&iacute;as vuelven 
+		demasiado pronto, 
+		<br>A&uacute;n as&iacute; no volveremos a vagar <br>A la luz de la luna.</font></p>
+<p align="left">&nbsp;</p>
+<p align="center"><font color="#C4CAD4">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+<a name="SOL DEL QUE TRISTE VELA..."></a></font>
+<font face="Georgia" color="#C4CAD4">
+Sol del que triste vela...</font></p>
+<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Sol del que 
+triste vela,<br>
+    astro de cumbre fr&iacute;a,<br>
+    cuyos tr&eacute;mulos rayos de la noche<br>
+    para mostrar las sombras s&oacute;lo brillan.<br>
+    !Oh, cu&aacute;nto te asemeja<br>
+    de la pasada dicha<br>
+    al p&aacute;lido recuerdo, que del alma<br>
+    s&oacute;lo hace ver la soledad umbr&iacute;a!<br>
+    <br>
+    Reflejo de una llama<br>
+    oculta o extinguida,<br>
+    llena la mente, pero no la enciende;<br>
+    vive en el alma, pero no lo anima.<br>
+    Descubre cual t&uacute;, sombras<br>
+    que esmalta o acaricia,<br>
+    y como a ti, tan s&oacute;lo la contempla<br>
+    el dolor mudo en f&eacute;rvida vigilia.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:37:33 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:28 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,714 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Aldous Huxley</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Aldous Huxley."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Aldous Huxley. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Aldous_Huxley,poesias,poetas,traducciones,poemas,versos,biografias,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/huxley.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/huxley.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162110" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./huxley.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:21:10 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./huxley.htm" title="17:09:41 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:21:10 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./huxley.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:21:10 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./huxley.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>25 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">17 May 09 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000010100100_2010:-1:100000001110_2011:-1:000010012120_2012:-1:101010001001_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./HUXLEY.jpg" width="511" height="51"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./HUXLEY1.jpg" width="235" height="23"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="736" height="331">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="728">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="300" width="247" valign="top">
+			<p align="left">
+			<img border="0" src="./HUXLEY2.jpg" width="230" height="307">&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
+			<td width="477" valign="top" height="300">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta, ensayista, y fil&oacute;sofo ingl&eacute;s nacido en&nbsp; Godalming, 
+			Surrey, en 1894. <br>
+			Perteneciente a una familia de intelectuales, estudi&oacute; en la 
+			prestigiosa Escuela de Eaton hasta 1913. Una grave enfermedad le 
+			hizo perder gran parte de su visi&oacute;n, situaci&oacute;n que le oblig&oacute; a 
+			renunciar al deseo de estudiar medicina, matricul&aacute;ndose en el 
+			Balliol College de Oxford donde se gradu&oacute; en Literatura Inglesa en 
+			1915.<br>
+			Sus primeros poemas fueron editados bajo el nombre de &quot;<i>The 
+			Burning Wheel&quot;</i> en 1916, seguidos luego por <i>&quot;Jonah&quot;</i> en 
+			1917, <i>&quot;The Defeat of Youth&quot;</i> en 1918, <i>&quot;Leda&quot;</i> en 1920, 
+			Arabia Infelix en 1929, <i>&quot;The Cicadas and other poems&quot;</i> en 
+			1931, y<i> &quot;First Philosopher's Song&quot;</i>.<br>
+			Colabor&oacute; con diferentes publicaciones literarias criticando&nbsp; la 
+			burgues&iacute;a inglesa, public&oacute; novelas, ensayos, estudios filos&oacute;ficos, 
+			viaj&oacute; con su esposa e hijo por muchos pa&iacute;ses europeos y finalmente 
+			se radic&oacute; en Estados Unidos donde desarroll&oacute; una vasta labor 
+			literaria.<br>
+			Por su m&aacute;s importante obra en prosa, <i>&quot;Un mundo feliz&quot;</i>, 
+			recibi&oacute; el <i>American Academy of Arts and Letters Award.&nbsp; </i>
+			<br>
+			Falleci&oacute; en&nbsp; California el 22 de noviembre de 1963.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Aldous Huxley:</font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Todos los 
+		poemas que aparecen en este v&iacute;nculo fueron cedidos gentilmente por el 
+		Doctor en Filolog&iacute;a Inglesa <br>
+		J. Isa&iacute;as G&oacute;mez L&oacute;pez, quien public&oacute; recientemente el libro:&nbsp; <i><br>
+		</i></font><i><font face="Georgia" color="#C4CAD4"><br>
+		Aldous Huxley, poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Queremos dejar constancia de nuestro agradecimiento&nbsp; por la 
+		deferencia que el Dr. G&oacute;mez L&oacute;pez <br>
+		ha tenido con nuestro portal. </font></p>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./huxley.htm#Almer&iacute;a">Almer&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Amor extraviado">Amor 
+		extraviado</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Carpe noctem">Carpe 
+		noctem</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#El espejo">El espejo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Filosof&iacute;a">Filosof&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#La rueda ardiente">La 
+		rueda ardiente</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Las puertas del templo">
+		Las puertas del templo</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a target="_blank" href="./Huxley_Las-puertas-de-la-percepcion.htm">Las 
+		puertas de la percepci&oacute;n ( ensayo en versi&oacute;n de )</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Magn&aacute;nimos romanos">
+		Magn&aacute;nimos romanos</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Tinieblas">Tinieblas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./huxley.htm#Topiario">Topiario</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><br>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#EEEEEE"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		<br>
+		</font><font color="#C4CAD4" face="Georgia"><a name="Almer&iacute;a"></a>
+		Almer&iacute;a</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Los vientos aqu&iacute; no tienen insignias en movimiento, pero recorren<br>
+		una vac&iacute;a oscuridad, una destemplada luz;<br>
+		ramas que no se doblan, nunca una flor torturada<br>
+		se estremece, ra&iacute;ces agotadas, a punto de volar;<br>
+		alado futuro, marchito pasado, ni semillas ni hojas<br>
+		dan fe de esos veloces pies invisibles: corren<br>
+		libres por una tierra desnuda, cuyo pecho recibe<br>
+		todo el fiero ardor de un sol desnudo.<br>
+		T&uacute; tienes la Luz por amante. &iexcl;Tierra afortunada!<br>
+		Que concibe el fruto de su divino deseo.<br>
+		Mas el seco polvo es todo lo que ella da a luz,<br>
+		esa hija de arcilla creada por el perpetuo fuego celestial.<br>
+		Por lo tanto venid, suave lluvia y delicadas nubes, y calmad<br>
+		este amor radiante que tiene la fuerza del odio.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Amor extraviado"></a>
+		Amor extraviado<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		El vino tinto que lentamente ca&iacute;a y rebosaba en la concha<br>
+		de la perla, donde los labios se hab&iacute;an rozado, tan livianos y veloces<br>
+		como los p&eacute;talos desnudos de la rosa a la deriva<br>
+		sobre el lento estribillo de la&uacute;d<br>
+		del canto estival de la abeja: ri&eacute;ndose mientras descend&iacute;an,<br>
+		memorias doradas: inciensos de sue&ntilde;o, regalos de infancia,<br>
+		azules como el humo que transportan los lejanos horizontes,<br>
+		fr&aacute;giles como las alas de Ariel: -<br>
+		<br>
+		en la pira estas cosas entra&ntilde;ables extend&iacute;;<br>
+		y se prendi&oacute; la llama, y fuerte la atic&eacute;,<br>
+		y, cargado de esperanza, pude contemplar el pasado en ruinas.<br>
+		Ansioso, ante el fuego menguante me arrodill&eacute;,<br>
+		F&eacute;nix, para recibir tu inmortalidad... <br>
+		pero s&oacute;lo hubo cenizas al final.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Carpe noctem"></a>Carpe 
+		noctem</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		No hay futuro, no hay m&aacute;s pasado,<br>
+		ni ra&iacute;ces ni frutos, flores pasajeras solo.<br>
+		T&uacute;mbate tranquila, t&uacute;mbate tranquila y la noche perdurar&aacute;,<br>
+		silenciosa y oscura, no por un espacio de horas,<br>
+		sino eternamente. D&eacute;jame olvidar<br>
+		todo menos tu perfume, todas las noches menos esta,<br>
+		la pena, el infructuoso llanto, el pesar.<br>
+		Solo t&uacute;mbate tranquila: este l&aacute;nguido y suave embeleso<br>
+		florecer&aacute; al borde del sue&ntilde;o y se esparcir&aacute;,<br>
+		hasta que no haya nada m&aacute;s que t&uacute; y yo<br>
+		abrazados en un silencio intemporal. Mas como<br>
+		el que, condenado a morir, por la ma&ntilde;ana estar&aacute; muerto,<br>
+		yo s&eacute;, aunque la noche parezca eterna, que el cielo<br>
+		ha de iluminarse pronto antes del sol del ma&ntilde;ana.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia">
+		<a name="El espejo"></a>El espejo</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		A c&aacute;mara lenta, la luz de la luna una vez atraves&oacute;<br>
+		el so&ntilde;ador espejo,<br>
+		donde, hincados, inviolablemente hondos,<br>
+		viejos secretos no olvidados albergan<br>
+		inolvidables maravillas.<br>
+		Pero ahora polvorientas telara&ntilde;as se entrelazan <br>
+		por el espejo, el que anta&ntilde;o<br>
+		viera los dedos que retiraban el oro<br>
+		de una despreocupada frente;<br>
+		y las profundidades son cegadas a la luna,<br>
+		y olvidados sus secretos, nunca dichos.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Filosof&iacute;a"></a>
+		Filosof&iacute;a<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		&laquo;Dios no necesita bautismo<br>
+		-murmura el pante&iacute;sta-,<br>
+		el amor abre los postigos<br>
+		en el resplandor del cielo,<br>
+		carne, ojo de la cerradura que escucha,<br>
+		oye lo que Dios dice&raquo;&#8230;<br>
+		S&iacute;, pero Dios tartamudea.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font color="#C4CAD4" face="Georgia"><a name="La rueda ardiente"></a>La 
+		rueda ardiente</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Exhausta de tantas vueltas,<br>
+		mortificada por tan fren&eacute;tico desasosiego,<br>
+		ansiando perfilar el dolor circunferente<br>
+		-la vertiginosa llanta a toda velocidad-<br>
+		hacia el centro inanimado, y all&iacute; reposar,<br>
+		la rueda debe ir de agon&iacute;a <br>
+		en agon&iacute;a contray&eacute;ndose, hasta volver<br>
+		al n&uacute;cleo de acero.<br>
+		Y por fin la rueda encuentra reposo, queda en calma,<br>
+		agazapada en diamantino n&uacute;cleo:<br>
+		cumpliendo su voluntad en lo inmutable.<br>
+		Pero los ansiosos &aacute;tomos, en tanto se frotan <br>
+		cada vez m&aacute;s cerca, m&aacute;s y m&aacute;s, <br>
+		violentamente unidos, engendran<br>
+		una llamarada que enhiesta se eleva,<br>
+		hinch&aacute;ndose de un ardiente, <br>
+		apasionado, fiero deseo de encontrar<br>
+		la paz infinita del pecho de la madre.<br>
+		Y all&iacute; la llama es un Ni&ntilde;o Jes&uacute;s durmiente,<br>
+		luminoso, dulcemente radiante;<br>
+		toda amargura disipada<br>
+		en la infinita paz del seno de la madre.<br>
+		Mas la muerte avanza en una marea<br>
+		de lento olvido, hasta que la llama asustada<br>
+		despierte del sue&ntilde;o de su calmo resplandor<br>
+		y se incendie de nublada pasi&oacute;n y de dolor,<br>
+		no sea que, al olvidarlo todo en la calma, fenezca.<br>
+		Pues mientras arde y se angustia se aviva,<br>
+		engendrando una vez m&aacute;s la rueda que a&ntilde;ora<br>
+		-aquejada de su velocidad- la espantosa quietud<br>
+		del diamantino n&uacute;cleo y de la cadena de fuerte acero.<br>
+		Y as&iacute; una vez m&aacute;s<br>
+		girar&aacute; la rueda hasta cesar su angustia<br>
+		en la f&eacute;rrea angustia de la fijeza,<br>
+		hasta que otra vez<br>
+		la llama se expanda a lo infinito,<br>
+		sumi&eacute;ndose en el sue&ntilde;o luminoso<br>
+		de tan vasta e inconsciente paz.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font color="#C4CAD4" face="Georgia"><a name="Las puertas del templo">
+		</a>Las puertas del templo</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Numerosas son las puertas del esp&iacute;ritu que llevan<br>
+		al m&aacute;s &iacute;ntimo santuario:<br>
+		y considero las puertas del templo divinas,<br>
+		pues el dios del lugar es Dios mismo.<br>
+		Y estas son las puertas que Dios dispuso<br>
+		que a su casa llevaran: vino y besos,<br>
+		fr&iacute;os abismos del pensamiento, juventud sin tregua,<br>
+		y tranquila senectud, plegaria y deseo,<br>
+		el pecho del amante y de la madre,<br>
+		el fuego del juicio y el fuego del poeta.<br>
+		<br>
+		Pero &eacute;l que venera en soledad esas puertas,<br>
+		olvid&aacute;ndose del santuario de m&aacute;s all&aacute;, ver&aacute;<br>
+		de pronto abrirse los cierres,<br>
+		revelando, no el trono radiante de Dios,<br>
+		sino los fuegos de la ira y del dolor.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Magn&aacute;nimos romanos">
+		</a>Magn&aacute;nimos romanos</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Columnas y fuentes eternas,<br>
+		chorros de escarcha y viva espuma, <br>
+		desde las siete monta&ntilde;as dej&eacute;moslas saltar,<br>
+		Las siete colinas de Roma.<br>
+		<br>
+		Por resonantes arcos y b&oacute;vedas flanqueadas,<br>
+		dejemos las calles marchar triunfales;<br>
+		mandemos a los acueductos marchar<br>
+		por la llanura de abajo infatigables.<br>
+		<br>
+		Elevados como columnas hacia el aire azul,<br>
+		dejemos a los C&eacute;sares de m&aacute;rmol estar;<br>
+		dejemos a los dioses, que en vida eran<br>
+		romanos, una mano dorada levantar.<br>
+		<br>
+		Muchos, pero cada uno solo, una multitud,<br>
+		aunque de romanos, atestan sus sepulcros;<br>
+		ellos mismos divinos fieles,<br>
+		dioses ante dioses suntuosamente inclinados;<br>
+		<br>
+		los romanos se inclinaban ante figuras que ellos,<br>
+		escultores de la mente, liberaban;<br>
+		suplicando poder ser<br>
+		iguales que aquellos a quienes oran.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font color="#C4CAD4" face="Georgia"><a name="Tinieblas"></a>Tinieblas</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Mi alma tapiada jam&aacute;s ha conocido<br>
+		oscuridad tan &iacute;ntima, paisaje deslumbrante, <br>
+		como el punto ciego, del que brotan las visiones<br>
+		en el coraz&oacute;n de la mirada cris&oacute;lita&#8230; <br>
+		la oscuridad m&iacute;stica que acaricia el trono de Dios<br>
+		en un esplendor m&aacute;s all&aacute; de lo imaginable,<br>
+		tan r&aacute;pido y brillante.<br>
+		<br>
+		Mas las muchas tinieblas retorcidas<br>
+		que por la ciudad se despliegan,<br>
+		sutilmente confusas, se cruzan y separan,<br>
+		menguan y viscosamente fluyen;<br>
+		tinieblas de lujuria y avaricia,<br>
+		del cuerpo devastado y del coraz&oacute;n indecente&#8230;<br>
+		yo conozco estas tinieblas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de J. Isa&iacute;as G&oacute;mez L&oacute;pez</i><br>
+		<i>Aldous Huxley: Poes&iacute;a completa&nbsp;&nbsp; Editorial Universidad de 
+		Almer&iacute;a, Almer&iacute;a 2008</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font color="#C4CAD4" face="Georgia"><a name="Topiario"></a>Topiario</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		No siendo posible a veces comprender<br>
+		por qu&eacute; hay gente cuya carne ha de parecer<br>
+		cual carro&ntilde;a tumefacta en f&eacute;tida vaharada,<br>
+		henchida de larvas ante el ojo que la mira,<br>
+		henchida de larvas para el tacto de una mano;<br>
+		por qu&eacute; hay hombres sin piernas,<br>
+		como balas en carritos chirriando<br>
+		cual monos de interminables brazos:<br>
+		no pudiendo ver por qu&eacute; Dios el Topiario<br>
+		ha de formar, esculpir y retorcer<br>
+		los cuerpos humanos en tan fantasmag&oacute;ricas figuras:<br>
+		s&iacute;, ignorando la finalidad de todo esto, a veces deseo <br>
+		ser algo fabuloso en la mente de un tonto,<br>
+		o, en el fondo del oc&eacute;ano, en un mundo sordo y ciego,<br>
+		feliz y remoto, un gigantesco pez de desorbitados ojos.</font></p>
+		<p><i><font face="Georgia" color="#C4CAD4" size="2">Aldous Huxley, 
+		poes&iacute;a completa (edici&oacute;n biling&uuml;e), edici&oacute;n, <br>
+		traducci&oacute;n y notas de Jes&uacute;s Isa&iacute;as G&oacute;mez L&oacute;pez, C&aacute;tedra (Letras <br>
+		Universales), Madrid, 2011 (732 p&aacute;ginas).</font></i></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:21:10 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:20:11 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

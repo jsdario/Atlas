@@ -1,0 +1,614 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Giosu&egrave; Carducci</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Giosu&egrave; Carducci."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Giosu&egrave; Carducci. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Giosue_Carducci,poesias,poetas,poemas,versos,traducciones,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#DBDBDB">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app14.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/carducci.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/carducci.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815174922" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./carducci.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:49:22 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./carducci.htm" title="17:24:40 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:49:22 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./carducci.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:49:22 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./carducci.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>50 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">9 Jun 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000001000101_2004:-1:010001010101_2005:-1:011000000000_2006:-1:000011000300_2007:-1:010212120100_2008:-1:100111101000_2009:-1:010010100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:100010001000_2013:7:102210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./CARDUCCI.jpg" width="355" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./CARDUCCI1.jpg" width="189" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="667" height="319">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="659"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="288" width="248" valign="top"><p align="left">
+	<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+	<img border="0" src="./CARDUCCI2.jpg" width="205" height="287"></td>
+    <td width="407" valign="top" height="288">
+	<p align="left">
+	<u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>
+    Poeta y cr&iacute;tico italiano nacido en&nbsp; Val di Castello&nbsp; en 1835.<br>
+	Estudi&oacute; Filosof&iacute;a y Letras en la Universidad de Pisa y desde 1860 fue 
+	profesor de Literatura en Bologna&nbsp; hasta tres a&ntilde;os antes de su muerte.
+	<br>
+	El rechazo a las formas dominantes de la literatura de la &eacute;poca y la 
+	adaptaci&oacute;n de metros cl&aacute;sicos latinos a la poes&iacute;a,&nbsp;&nbsp; lo 
+	convirtieron en el baluarte del modernismo po&eacute;tico italiano. En sus escritos 
+	siempre demostr&oacute; el inconformismo por las instituciones pol&iacute;ticas y&nbsp; 
+	religiosas vigentes.<br>
+	De su obra merecen destacarse: <i>&quot;Juvenilia&quot;</i> 1860,&nbsp; <i>&quot;Levia 
+	Gravia&quot;</i> 1871, <i>&quot;Giambi ed epodi&quot;</i> 1879, <i>&quot;Rime nuove&quot;</i> 1871,
+	<i>&quot;Odi barbare&quot;</i> 1889, <i>&quot;Rime e ritmi&quot; </i>1897, <i>&quot;Intermezzo&quot; </i>
+	1886, <i>&quot;La canzone di Legnano&quot;</i> 1879, <i>&quot;Ça ira&quot; </i>1883 y <i>
+	&quot;Primizie e reliquie&quot;</i>, publicada p&oacute;stumamente en 1928.<br>
+	Obtuvo el <i>&quot;Premio Nobel de Literatura&quot; </i>en 1906.<br>
+	Falleci&oacute; en Bologna en 1907. &copy;</font></p>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Giosu&egrave; 
+Carducci:</font><font face="Georgia" size="3" color="#FFFFFF"><br>
+</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><br>
+		<font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#EL BUEY">El buey</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#EL SONETO">El soneto</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#LA NIEBLA DE CUELLOS RIZADOS...">La niebla de cuellos 
+		rizados...</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#LA PRINCESA DE LAMBALLE">La princesa de Lamballe</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#MEDIOD&Iacute;A ALPINO">Mediod&iacute;a alpino</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./carducci.htm#MORS">Mors</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./carducci.htm#ODIO LA POES&Iacute;A AL USO...">Odio la poes&iacute;a al uso...</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#PANTEISMO">Panteismo</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./carducci.htm#PRELUDIO">Preludio</a> </font><font face="Georgia" size="2" color="#FFFFFF">
+		&nbsp; </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia"><a href="mailto:poesia@amediavoz.com">
+poesia@amediavoz.com</a></font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#D3D3CF"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="3" color="#FFFFFF"><br>
+		&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="EL BUEY">
+		</a></font><font color="#C4CAD4" face="Georgia">El buey</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		&iexcl;Piadoso buey! Al verte mi coraz&oacute;n se llena<br>de un grato sentimiento 
+		de paz y de ternura,<br>y te amo cuando miras inm&oacute;vil la llanura<br>que 
+		debe a tus vigores ser m&aacute;s fecunda y buena.<br>
+		<br>Bajo el pesado yugo t&uacute; no sientes la pena<br>y as&iacute; ayudas al hombre 
+		que tu paso apresura,<br>y a su voz y a su hierro contesta la dulzura<br>
+		doliente con que gira tu mirada serena.<br>
+		<br>De tu ancha nariz brota como un vaho tu aliento<br>y tu afable 
+		mugido lentamente en el viento<br>vibrando como un salmo de alegr&iacute;a, se 
+		pierde...<br>
+		<br>Y en su austera dulzura, tus dos verdes pupilas<br>reflejan cual si 
+		fuesen dos lagunas tranquilas,<br>el divino silencio de la llanura 
+		verde. 
+		<br><br><em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="3" color="#C4CAD4"><a name="EL SONETO"></a></font>
+		<font color="#C4CAD4" face="Georgia">El soneto</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Dante le dio del seraf&iacute;n el vuelo<br>circundado de azules y de oros;<br>
+		en manantial de rimas y de lloros<br>diole Petrarca el coraz&oacute;n en duelo.<br>
+		<br>Del venosino y del mantuano suelo,<br>la musa tiburtina los decoros<br>
+		diole al Tasso; yen d&eacute;spotas desdoros<br>Alfieri lo clav&oacute; como 
+		escalpelo.<br>
+		<br>F&oacute;scolo, el trino de los ruise&ntilde;ores<br>y del nativo acanto los 
+		primores<br>le dio bajo los j&oacute;nicos cipreses.<br>
+		<br>Último yo -no sexto- vuelo y llanto,<br>arte, h&aacute;litos, iras, en &eacute;l 
+		canto,<br>y lo elevo a los Manes como preces.<br>
+		<br><em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="LA NIEBLA DE CUELLOS RIZADOS..."></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		La niebla de cuellos rizados...</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		La niebla de cuellos rizados<br>se levanta como la lluvia.<br>El mar 
+		a&uacute;lla y palidece<br>bajo el efecto del mistral.<br>Pero en los caminos 
+		de la aldea,<br>unas cubas en fermentaci&oacute;n<br>el &aacute;spero olor de los 
+		vinos<br>regocija el coraz&oacute;n.<br>
+		<br>Sobre los le&ntilde;os candentes,<br>el asador gira crepitando,<br>el 
+		cazador silba<br>y desde el umbral de su puerta, observa<br>entre las 
+		nubes plomizas<br>el vuelo de unos p&aacute;jaros oscuros<br>que migran en el 
+		crep&uacute;sculo,<br>como pensamientos desterrados.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="LA PRINCESA DE LAMBALLE"></a></font>
+		<font color="#C4CAD4" face="Georgia">
+		La princesa de Lamballe</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		Por la natal Saboya, enhiesta y fr&iacute;a,<br>r&iacute;os que lloran, gemebundo 
+		viento;<br>de hierros y furores sordo acento:<br>Madame de Lamballe en 
+		la Abad&iacute;a.<br>
+		<br>Los cabellos, n&oacute; m&aacute;s -oro y argento-<br>cubren su desnudez sobre la 
+		v&iacute;a;<br>y el cuerpo, tibio a&uacute;n, palpa y esp&iacute;a<br>feroz sicario de mirar 
+		sangriento.<br>
+		<br>Fina la piel, del lirio la blancura<br>tiene el cuello, y una risa 
+		que perdura<br>agoniza en la dulce boca inerte.<br>
+		<br>Ojos marinos, bucles que despeina<br>el viento: Id al Temple y a la 
+		Reina<br>dadle los buenos-d&iacute;as de la muerte.<br>
+		<br><em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez<br>
+		</em></font><font color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<a name="MEDIOD&Iacute;A ALPINO"></a> 
+		</font><font color="#C4CAD4" face="Georgia">Mediod&iacute;a alpino</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>
+		En el c&iacute;rculo de los Alpes<br>sobre el gran&iacute;tico retorcido y desangrado<br>
+		entre las nieves candescentes<br>reina parado<br>intenso e infinito en 
+		su amplio silencio el mediod&iacute;a.<br>Pinos y abetos blancos<br>sin el 
+		aliento de los vientos<br>se elevan al sol que sereno los mira<br>y un 
+		p&aacute;jaro canta<br>con fr&aacute;giles sonidos de lira<br>el agua que lentamente 
+		entre las rocas camina. 
+		</font></p>
+		<p><em><font size="2" color="#C4CAD4" face="Georgia">Versi&oacute;n de Mar&iacute;a 
+		Dolores Sartorio</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<em style="font-style: normal"><a name="MORS"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Mors</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Cuando a nuestros hogares la diosa severa desciende,<br>
+		se oye de lejos el rumor de sus alas.<br>
+		<br>
+		La sombra que proyecta cuando g&eacute;lida, avanza,<br>
+		difunde en torno l&uacute;gubres silencios.<br>
+		<br>
+		Su cabeza los hombres inclinan cuando ella ha llegado;<br>
+		los femeninos pechos tiemblan de anhelo.<br>
+		<br>
+		As&iacute; en los altos bosques, cuando julio condensa huracanes,<br>
+		ni un soplo corre por las verdosas cumbres;<br>
+		<br>
+		como inm&oacute;viles, yertos, deja el escalofr&iacute;o a los bosques;<br>
+		s&oacute;lo se escucha al r&iacute;o que gime ronco.<br>
+		<br>
+		Entra ella, y pasa, y toca; sin volverse siquiera, derriba<br>
+		los arbolitos, de su frescor gozosos;<br>
+		<br>
+		siega la rubia espiga, y arranca tambi&eacute;n los agraces;<br>
+		ll&eacute;vase esposas, ll&eacute;vase las doncellas<br>
+		<br>
+		galanas y los ni&ntilde;os; &eacute;stos tienden sus brazos de rosa<br>
+		hacia el sol, bajo el ala negra, y sonr&iacute;en. <br>
+		<br>
+		&iexcl;Triste el hogar en donde, frente a rostros de padres dolientes,<br>
+		p&aacute;lida diosa, vidas nuevas apagas!<br>
+		<br>
+		Dentro de sus paredes, risas y voces festivas no se oyen,<br>
+		ni bisbiseos, como en nidos de mayo.<br>
+		<br>
+		No se oyen los rumores de los a&ntilde;os que crecen alegres,<br>
+		ni de amor cuitas, ni las danzas de boda.<br>
+		<br>
+		All&iacute; los que perviven, en la sombra envejecen, atentos<br>
+		siempre a tus pasos; siempre, &iexcl;oh diosa!, esper&aacute;ndote.<br>
+		<br>
+		</font>
+		</em><font face="Georgia" size="2" color="#C4CAD4">
+		<em>Versi&oacute;n de Amando L&aacute;zaro </em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">
+	&nbsp;</p>
+		<p align="left">
+	<font face="Georgia" size="2"
+    color="#C4CAD4"><a name="ODIO LA POES&Iacute;A AL USO..."></a></font>
+	<font face="Georgia"
+    color="#C4CAD4">Odio la poes&iacute;a al uso...</font></p>
+		<p align="left">
+	<font face="Georgia" size="2"
+    color="#C4CAD4">&quot;Odio la poes&iacute;a al uso; brinda,<br>
+    f&aacute;cil, al vulgo sus costados lacios;<br>
+    al&aacute;rgase entre abrazos rutinarios,<br>
+    l&aacute;nguida, y duerme.<br>
+    <br>
+    <br>
+    Viva la estrofa quiero yo, que al ritmo<br>
+    de pies y palmas en los coros salte;<br>
+    su ala yo atrapo al vuelo, y ella, ind&oacute;mita,<br>
+    ni&eacute;gase y lucha&quot;.</font></p>
+    	<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="PANTEISMO"></a></font><font color="#C4CAD4" face="Georgia">
+		Panteismo</font><font size="2" color="#C4CAD4" face="Georgia"><br><br>No 
+		os lo dir&eacute; jam&aacute;s, claras estrellas;<br>ni a ti lo dir&eacute; nunca, sol 
+		fulgente. 
+		<br>Su nombre, hermosa flor de cosas bellas,<br>en mi pecho ha sonado 
+		solamente.<br>
+		<br>Las estrellas no obstante, en sus reflejos,<br>mi secreto se 
+		cuentan, una a una; 
+		<br>por eso, puesto el sol, sonr&iacute;en lejos<br>en todos sus coloquios con 
+		la luna. 
+		<br><br>Y una flor a otra flor con voz secreta<br>lo murmura en los 
+		c&aacute;rmenes risue&ntilde;os;<br>las aves cantan al pasar: &laquo;Poeta,<br>el amor te ha 
+		ense&ntilde;ado dulces sue&ntilde;os&raquo;.<br>
+		<br>Nunca dije el secreto de mi vida,<br>mas divino fragor el hombre 
+		clama;<br>y entre efluvios de acacia florecida<br>el gran todo murmura: 
+		&laquo;Ella te ama&raquo;.</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia"><em>
+		Versi&oacute;n de Ismael Enrique Arciniegas</em></font></p>
+
+<blockquote>
+	<p align="center">&nbsp;</p>
+  <p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+</blockquote>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><a name="PRELUDIO"></a></font>
+		<font color="#C4CAD4" face="Georgia">Preludio</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>Odio la usada poes&iacute;a: al vulgo<br>los flancos cede, y sin temblor de 
+		anhelo,<br>y sin vibrar bajo habitual abrazo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ti&eacute;ndese y duerme.<br><br>Dame la estrofa que el aplauso excite,<br>
+		r&iacute;tmico el pie con el comp&aacute;s del coro;<br>le cojo el ala cuando rauda 
+		vuela,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		vu&eacute;lvese y lucha.<br><br>Tal entre brazos de amador silvano<br>ninfa se 
+		tuerce en el Ed&oacute;n nevoso:<br>bellos encantos de su pecho entonces<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		saltan opresos.<br><br>Besos y gritos en la ardiente boca<br>m&eacute;zclanse; 
+		r&iacute;e la marm&oacute;rea frente<br>al sol, y en ondas los cabellos libres<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tiemblan al aire.</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><em>Versi&oacute;n de Ismael 
+		Enrique Arciniegas</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote><font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:49:22 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:50 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

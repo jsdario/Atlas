@@ -1,0 +1,713 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Dionisio Ridruejo</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Dionisio Ridruejo. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Dionisio_Ridruejo,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app11.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/ridruejo.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/ridruejo.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815160327" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ridruejo.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:03:27 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./ridruejo.htm" title="11:55:56 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:03:27 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./ridruejo.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:03:27 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./ridruejo.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>56 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">21 Oct 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000100_2003:-1:010100010100_2004:-1:000101021101_2005:-1:021100010011_2006:-1:100011100100_2007:-1:010101011100_2008:-1:001102001001_2009:-1:110000110000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:100010001010_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center">&nbsp;<img border="0" src="./RIDRUEJO.jpg" width="373" height="51">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Times New Roman" size="3" color="#C5BEBE"><br>
+</font><font face="Arial" size="2" color="#9BC9BB">&quot;...Viniste sobre un aire de 
+amapolas, <br>
+como suspiros estallando rojos, <br>
+bajo el ardor de las estrellas plenas...&quot; <br>
+<br>
+<img border="0" src="./RIDRUEJO1.jpg" width="250" height="203"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;At the beach&quot;</em></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>Edgar Degas</em></font></p>
+
+<p align="center">
+<font color="#9BC9BB">
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#9BC9BB"><br>
+<br>
+<br>
+</font>
+<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+
+<blockquote>
+  <blockquote>
+    <p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta espa&ntilde;ol 
+	nacido en El Burgo de Osma, Soria, en 1912.<br>Fue alumno de Antonio 
+	Machado, y como otros compa&ntilde;eros de su generaci&oacute;n, particip&oacute; activamente <br>
+	en las empresas pol&iacute;ticas y culturales de su pa&iacute;s, trasladando a su obra esa 
+	dualidad tan caracter&iacute;stica <br>
+	de aquellos a&ntilde;os, entre el esteticismo cl&aacute;sico y la proyecci&oacute;n ideol&oacute;gica. 
+	Public&oacute; sus primeras poes&iacute;as en 1935, <br>
+	y con el paso del tiempo su obra mostr&oacute; una m&eacute;trica cada vez menos 
+	formalista y de expresi&oacute;n m&aacute;s sencilla. 
+	<br>
+	Fue profesor de Literatura Espa&ntilde;ola en varias universidades norteamericanas, 
+	ensayista y autor dram&aacute;tico. <br>Obtuvo el Premio Nacional de Literatura en 
+	1951 y falleci&oacute; en 1975, poco despu&eacute;s de publicar su &uacute;ltimo libro <br>
+	&laquo;En breve&raquo;. &copy;<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font><br></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./ridruejo.htm#A LA PIEDRA DEL MOLINO...">A la piedra del molino...</a><br><br>
+	<a href="./ridruejo.htm#A UNA ESTATUA DE MUJER DESNUDA">A una estatua de mujer desnuda</a> 
+	&nbsp;<br>
+	<br><a href="./ridruejo.htm#ASALTO">Asalto</a><br><br><a href="./ridruejo.htm#&Aacute;UREA CAMINANTE">&Aacute;urea 
+	caminante</a><br>
+	<br><a href="./ridruejo.htm#C&Oacute;MO MAMA TU SAVIA ARDIENTE...">C&oacute;mo mana tu savia ardiente...</a><br>
+	<br><a href="./ridruejo.htm#DE EN MARCHA">De en marcha</a><br><br>
+	<a href="./ridruejo.htm#EL AMOR DESIERTO">El amor desierto</a><br><br>
+	<a href="./ridruejo.htm#EL IDILIO QUE S&Oacute;LO FUE MIRADA">El idilio que s&oacute;lo fue mirada</a><br>
+	<br><a href="./ridruejo.htm#ELEG&Iacute;A A UN RETRATO">Eleg&iacute;a a un retrato</a><br><br>
+	<a href="./ridruejo.htm#EPITAFIO DE LA AMADA EN LA VOZ DEL AMANTE">Epitafio de la amada en 
+	la voz del amante</a><br><br><a href="./ridruejo.htm#MANOS ORANTES">Manos orantes</a>&nbsp;<br><br>
+	<a href="./ridruejo.htm#MEMORIA">Memoria</a><br><br><a href="./ridruejo.htm#NOSTALGIA DEL PRIMER AMOR">
+	Nostalgia del primer amor</a><br>
+	<br><a href="./ridruejo.htm#SERENA T&Uacute; MI SANGRE, CLARA FUENTE">Serena t&uacute; mi sangre, clara 
+	fuente</a><br>
+	<br><a href="./ridruejo.htm#VEN A MIS DULCES CAMPOS DE RIBERA">Ven a mis dulces campos de 
+	ribera</a>&nbsp;&nbsp;&nbsp; <br><br><a href="./ridruejo.htm#YA SOLO EN MI CORAZ&Oacute;N...">Ya 
+	solo en mi coraz&oacute;n...</a></font><font face="Georgia" size="2" color="#A7BEB9"><br>
+	<br></font>
+	<font face="Georgia" size="2" color="#95B3AA">Volver a:</font><font face="Georgia" size="2" color="#A7BEB9"> </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+	esta p&aacute;gina</a>
+	</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#95B3AA">
+	<a name="A LA PIEDRA DEL MOLINO..."></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	A la piedra del molino</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	El recto andar del agua prisionera<br>se hizo c&iacute;rculo y copla en tus 
+	ardores, 
+	<br>pan de roca, en tu danza molinera, <br>alegres de tus albas mis rumores. 
+	<br><br>Sol de espigas, tus labios giradores, <br>labios del llanto, pesadez 
+	ligera,<br>enmudecen tu amarga primavera,<br>luna muerta en el llanto de las 
+	flores.<br>
+	<br>Hoy te miro, descanso del camino, <br>moneda del recuerdo abandonada<br>
+	en la quieta nostalgia del molino.<br>
+	<br>C&iacute;clope triste, el ojo sin mirada<br>y la forma andadora sin destino,<br>
+	en el eje del aire atravesada.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="A UNA ESTATUA DE MUJER DESNUDA"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	A una estatua de mujer desnuda</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>Desnuda y vertical, pero ce&ntilde;ida,<br>la l&iacute;nea de la tierra a la pereza<br>
+	de una carne que cede, cuando empieza<br>la perfecci&oacute;n del sue&ntilde;o, su medida.<br>
+	<br>Materia sin amor, pero encendida<br>por el n&uacute;mero fiel de la pureza<br>
+	donde la fr&iacute;a carne se adereza<br>sin el gusto del tiempo y de la vida.<br>
+	<br>&iexcl;Oh, d&oacute;cil a los ojos y apartada<br>del fuego de la sangre, muda gloria<br>
+	en &eacute;xtasis de tierra levantada!<br>
+	<br>Antigua juventud fresca y gastada<br>que aflige la pasi&oacute;n de su memoria<br>
+	en esta eternidad tan sosegada.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="ASALTO"></a></font>
+	<font face="Georgia" color="#9BC9BB">Asalto</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Suave y firme tu mano. <br>
+	No tembl&oacute; tu coraz&oacute;n; era un instante 
+	<br>de calma y superficie <br>en tu voz como plata con arena <br>y en la 
+	h&uacute;meda pizarra de tus ojos. 
+	</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Ha sido ahora, ausente, <br>
+	cuando el tacto recuerda una caricia 
+	<br>y sangre adentro va tu aroma alzando <br>el oleaje y quema tu piel de 
+	oro. 
+	</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Sufro extra&ntilde;ado en esta 
+	mano nueva 
+	<br>con su emoci&oacute;n de almendro, <br>que late y crea al recordar. La paso <br>
+	por los objetos de costumbre: el hierro, 
+	<br>la madera, el cristal, la lana -tuyos- <br>y una descarga el&eacute;ctrica de 
+	rosas 
+	<br>los hace carne viva.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="&Aacute;UREA CAMINANTE">
+	</a></font><font face="Georgia" color="#9BC9BB">&Aacute;urea caminante</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Como ofrenda del trigo aventurada<br>para dar su pasi&oacute;n a la marina<br>
+	avanzabas, esbelta y matutina,<br>de oro gentil vestida y coronada.<br>
+	<br>Mediod&iacute;a del sol, tierra postrada<br>con niebla de estupor, siesta 
+	salina;<br>y agosto en ti, con la saz&oacute;n divina<br>de una torre solar, libre 
+	y pausada.<br>
+	<br>Espada fresca, el aire de tu paso,<br>calmaba la aridez mientras ard&iacute;a<br>
+	sosteniendo los cielos, milagrosa.<br>
+	<br>S&oacute;lo mi coraz&oacute;n era el ocaso;<br>mi alma detr&aacute;s, la noche s&oacute;lo m&iacute;a,<br>
+	para s&oacute;lo tu lumbre victoriosa.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="3" color="#9BC9BB">
+	<a
+      name="CÓMO MAMA TU SAVIA ARDIENTE..."></a></font>
+	<font face="Georgia"
+      color="#9BC9BB">C&oacute;mo mana tu savia ardiente....</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Nos junta el 
+	resplandor en esta hoguera<br>que tu alabastro transparenta y dora,<br>y en 
+	lenguas alegr&iacute;simas devora<br>una vi&ntilde;a de muerta primavera.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Astros de 
+	veloc&iacute;sima carrera<br>resbalan en tus ojos, y me explora<br>todo tu ser en 
+	ascua tentadora,<br>el coraz&oacute;n que consumido espera.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Amada sin 
+	secreto, tan cercana,<br>veo &iacute;ntima y abierta, en un ocaso<br>que hace el 
+	sol en ti misma, c&oacute;mo mana</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">tu savia 
+	ardiente bajo limpio raso;<br>y hago sarmiento de mi amor, que gana<br>oro 
+	para la sed en que me abraso.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="DE EN MARCHA"></a></font>
+	<font face="Georgia" color="#9BC9BB">De en marcha</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Anteayer dorm&iacute; en el prado<br>
+	sobre el olor de la hierba,<br>ayer entre los pinares,<br>hoy en la 
+	tranquila selva,<br>ma&ntilde;ana, raso con raso,<br>solo entre el cielo y la 
+	tierra.<br>El alba de cada sol<br>nuevo campo me revela,<br>y el sue&ntilde;o de 
+	cada noche<br>las mismas hondas estrellas.<br>En el d&iacute;a se recorre<br>lo que 
+	en la noche se sue&ntilde;a:<br>siempre la misma esperanza<br>bajo distinta 
+	promesa,<br>y en la noche se vigila<br>todo lo que el paso deja,<br>compa&ntilde;&iacute;a 
+	militar<br>en camino de la ausencia.<br>&iquest;Cu&aacute;nto ser&aacute; lo que avanza<br>y 
+	cu&aacute;nto lo que regresa?<br>Coraz&oacute;n aventurado:<br>&iquest;qu&eacute; miras en lo que 
+	sue&ntilde;as?<br>La sangre, toda la sangre.<br>La tierra, toda tu tierra.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="EL AMOR DESIERTO">
+	</a></font><font face="Georgia" color="#9BC9BB">El amor desierto</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Quien le d&eacute; un coraz&oacute;n a 
+	este minuto<br>yerto, a este fluir sin armon&iacute;a,<br>a esta mi sangre dolorosa 
+	y fr&iacute;a,<br>a este seco dolor sin voz ni luto.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Quien pula aristas al 
+	diamante bruto,<br>quien vuelva al ave su perdida gu&iacute;a,<br>quien haga 
+	soledad y compa&ntilde;&iacute;a,<br>voz y silencio al c&aacute;ntico absoluto.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Quien me devuelva todos mis 
+	paisajes<br>y vea, en mis quietudes recogida,<br>costa anhelada y velo de 
+	mis viajes;</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Quien la salud me torne con 
+	su herida,<br>quien a mis sue&ntilde;os vista con sus trajes,<br>&iexcl;ansia sin forma! 
+	cumplir&aacute; mi vida.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="EL IDILIO QUE SÓLO FUE MIRADA"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	El idilio que s&oacute;lo fue mirada</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Es, si en olvidos dolorosos 
+	entro,<br>tu voz jam&aacute;s o&iacute;da la que grita.<br>Fuiste eterno despu&eacute;s y eterna 
+	cita<br>que no cumpli&oacute; el minuto del encuentro.<br>
+	<br>Como &oacute;rbita turbada por su centro<br>que en fugas torna y el contacto 
+	evita,<br>con la certeza del amor escrita,<br>viv&iacute;as lejos y lat&iacute;as dentro.<br>
+	<br>Ni caricia ni voz se conocieron, <br>ni el aire sospech&oacute; nuestros amores<br>
+	que en un tiempo sin horas se durmieron.<br>
+	<br>Ojos tuvo el amor, siembra sin flores,<br>y en aquellos sin llanto que 
+	me vieron<br>a&uacute;n me ver&aacute;n las l&aacute;grimas que llores.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" color="#9BC9BB">
+	<a name="ELEG&Iacute;A A UN RETRATO"></a>Eleg&iacute;a a un retrato</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Muerta que mueve a amor, presente vida<br>con la sangre arrastrada por 
+	pinceles<br>y de nuevo en mis ojos concebida.<br>
+	<br>Muerta en muerte nublada por laureles,<br>con los &uacute;ltimos llantos 
+	enterrados,<br>en el descanso de tu carne, fieles.<br>
+	<br>Muerta de los minutos reposados,<br>lejana de tus siglos de ceniza<br>y 
+	de tus breves a&ntilde;os animados.<br>
+	<br>Caliente juventud que se eterniza<br>en el &uacute;nico vuelo de mirada<br>que 
+	a una luz sin edades paraliza.<br>
+	<br>Vida por blandas rosas encauzada,<br>venas al tiempo del mejor latido<br>
+	vertidas en la boca enamorada.<br>
+	<br>Seno en la nieve del suspiro erguido,<br>frente en el fr&aacute;gil pensamiento 
+	fr&iacute;a<br>bajo oro en seda sin rubor ce&ntilde;ido.<br>
+	<br>Peso de nube, grave de armon&iacute;a,<br>en c&aacute;ndido vestido sin materia<br>que 
+	de ascua cede al hielo su porf&iacute;a.<br>
+	<br>Oh, muerte dulce, tu presencia ser&iacute;a<br>posada, sin atm&oacute;sfera en el 
+	lecho<br>hiela del tiempo la fluida arteria.<br>
+	<br>La voz que guarda tu lejano pecho<br>habla en la risa de tu nueva 
+	esencia<br>adolescente, del ayer deshecho.<br>
+	<br>Tus ojos me revelan la evidencia<br>de aquellos ojos que brotaron flores<br>
+	en polvo de tu muerte sin ausencia.<br>
+	<br>Tu talle, apenas arco de temores,<br>libra sus flechas hacia el bosque 
+	yerto,<br>en el que fueron ramas tus temblores.<br>
+	<br>S&oacute;lo mi amor para la angustia abierto<br>sufre de no llegar a las 
+	entra&ntilde;as<br>del dolor a mis venas descubierto.<br>
+	<br>Oh, forma que a amor mueves y que enga&ntilde;as<br>-viva sin existir, muerta 
+	sin piedra-<br>al fuego fr&iacute;o que sin llanto ba&ntilde;as.<br>
+	<br>Dime cu&aacute;l &aacute;rbol de tus huesos medra,<br>se&ntilde;&aacute;lame el verdor que te 
+	levanta<br>y al tronco limpio juntar&eacute; mi hiedra.<br>
+	<br>Pero en la fiel mudez de tu garganta<br>vuelvo a verte tan cierta y 
+	renacida<br>velada por un aire que no canta,<br>
+	<br>que se torna la muerte la fingida.<br>Y t&uacute;, la trenzadora del anhelo<br>
+	que asciende casi eterno por mi vida,<br>confuso si de tierra o si de cielo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="EPITAFIO DE LA AMADA EN LA VOZ DEL AMANTE"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Epitafio de la amada en la voz del amante</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	No es, enterrada bajo sauce mudo,<br>piedra y silencio su presencia pura,<br>
+	la encuentro en alas de tu voz segura<br>de vida y muerte en amoroso nudo. 
+	<br><br>Su luz erige tu clamor agudo<br>y en &eacute;l anida su feliz ternura,<br>
+	puebla del gozo la florida altura<br>y de los llantos el vergel desnudo.<br>
+	<br>Todo tu verbo de su pulso nace,<br>toda tu tierra se estremece y vive<br>
+	de ser la tierra en que su forma yace.<br>
+	<br>Tu ser cumplido de su ayer recibe<br>este balido que en sus labios pace<br>
+	hierba presente que el ma&ntilde;ana escribe.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+	<br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="MANOS ORANTES">
+	</a></font><font face="Georgia" color="#9BC9BB">Manos orantes</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Como tibia azucena adelantada<br>castamente, entre el alba y el roc&iacute;o;<br>
+	orante nieve, c&uacute;pula de fr&iacute;o,<br>ojiva pura, levedad trenzada.<br>
+	<br>Como ramo del alma, revelada<br>pulcramente a la luz sin atav&iacute;o<br>como 
+	la fe del suspirante br&iacute;o<br>en un vuelo de carne sosegada.<br>
+	<br>Como un sue&ntilde;o de amor encaminado,<br>en alba de gemelos surtidores,<br>
+	al &eacute;xtasis del cielo recatado.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Como ave par, alzada sin 
+	temblores,<br>calmando en un misterio desposado<br>la desaz&oacute;n humana de las 
+	flores.<br>
+	<br>
+&nbsp;</font></p>
+    <p align="center"><font face="Georgia" size="3" color="#9BC9BB"><img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"><br>
+	<br>
+&nbsp;</font></p>
+	<p><font face="Georgia" color="#9BC9BB"><a name="MEMORIA"></a>
+	Memoria</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Y resbal&oacute; el amor 
+	estremecido<br>por las mudas orillas de tu ausencia. 
+	<br>La noche se hizo cuerpo de tu esencia<br>y el campo abierto se pleg&oacute; 
+	vencido. 
+	<br><br>Un ayer de tus labios en mi o&iacute;do, <br>una huella sonora, una 
+	cadencia, 
+	<br>hizo flor de latidos tu presencia<br>en el &uacute;ltimo borde del olvido. <br>
+	<br>Viniste sobre un aire de amapolas. <br>Como suspiros estallando rojos, 
+	<br>bajo el ardor de las estrellas plenas, <br><br>los labios avanzaron como 
+	olas. 
+	<br>Y sumido en el sue&ntilde;o de tus ojos<br>muri&oacute; el dolor en las floridas 
+	venas. 
+	<br><br>
+&nbsp;</font></p>
+	<h4 align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></h4>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="NOSTALGIA DEL PRIMER AMOR"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Nostalgia del primer amor</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Tu soledad de nieve 
+	reclinada, 
+	<br>virginal y sencilla, en mi memoria, <br>como agua fiel de fatigada noria<br>
+	viene a regar mi voz enamorada. 
+	<br><br>&iexcl;C&oacute;mo recrea el alma sosegada<br>la penumbra y dulzor de aquella 
+	historia<br>con resplandores de tard&iacute;a gloria<br>entre abejas y frutos 
+	constelada! 
+	<br><br>&iexcl;Oh, delicada llama, ardor primero<br>velado en llanto y celestial 
+	mirada, 
+	<br>par del trino, la fuente y la azucena! <br><br>M&iacute;rame combatido y 
+	prisionero<br>volver a tu ilusi&oacute;n breve y tronchada<br>como un temblor en la 
+	desierta arena. 
+	</font></p>
+	<p align="center"><font color="#9BC9BB"><br>
+	</font>
+	<font face="Georgia" size="2" color="#9BC9BB"><br>
+	<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p><font color="#9BC9BB"><br>
+	<br>
+	</font>
+	<font face="Georgia" size="2" color="#9BC9BB">
+	<a
+      name="SERENA TÚ MI SANGRE, CLARA FUENTE"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Serena t&uacute; mi sangre, clara fuente</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Me est&aacute; dejando casi sin 
+	entra&ntilde;as<br>este tremendo amor enarbolado<br>-&iexcl;Oh, p&aacute;ramo de ardores 
+	dilatado!-<br>en que escucho mis voces como extra&ntilde;as.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Serena t&uacute; mi sangre en las 
+	caba&ntilde;as<br>&iacute;ntimas de tu ser y tu cuidado,<br>y gu&aacute;rdame en el aire 
+	enamorado<br>con que a veces mi dolor enga&ntilde;as.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Si mi lumbre te duele, &iexcl;Oh, 
+	clara fuente!,<br>yo borrar&eacute; los h&uacute;medos celajes<br>que tus p&aacute;rpados prenden 
+	tibiamente.</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Volver&eacute; a tus cielos sus 
+	paisajes<br>clav&aacute;ndote en los ojos hondamente<br>los mansos huertos de mi 
+	ardor salvajes.</font></p>
+	<p>&nbsp;</p>
+	<h4 align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></h4>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a
+      name="VEN A MIS DULCES CAMPOS DE RIBERA"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Ven a mis dulces campos de ribera...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+	<br>Ven a mis dulces campos de ribera<br>que suspiran en &aacute;lamos por verte.<br>
+	Hacia la brisa que tu aliento vierte<br>levantar&aacute; sus hierbas la pradera.<br>
+	<br>Se cuajar&aacute; de flor la primavera<br>que al peso de tu sue&ntilde;o se despierte.<br>
+	Saldr&aacute;n de las ra&iacute;ces de la muerte<br>las alas de la vida que te espera.<br>
+	<br>Las aguas de la espuma de tu ba&ntilde;o<br>se abrir&aacute;n como labios, como 
+	orillas,<br>para besar la luz en tu tama&ntilde;o.<br>
+	<br>Y ahora que s&oacute;lo de inminencia brillas,<br>mira en mi coraz&oacute;n, a&ntilde;o tras 
+	a&ntilde;o,<br>pleno el mundo y las horas de rodillas.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="YA SOLO EN MI CORAZÓN..."></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Ya solo en mi coraz&oacute;n...<br></font>
+	<font face="Georgia" size="2" color="#9BC9BB">
+	<br>Ya solo en mi coraz&oacute;n<br>desiertamente he quedado;<br>el alma es como 
+	una nieve<br>extendida sobre el campo,<br>la tierra desaparece,<br>el cielo 
+	niega el espacio,<br>las cosas que me rodean<br>rechazan la luz del h&aacute;bito.<br>
+	<br>&iquest;De qu&eacute; me sirven los ojos?<br>&iquest;De qu&eacute; el aroma sin rastro?<br>&iquest;De qu&eacute; 
+	la voz sin el nombre<br>que se despoja del labio?<br>El tiempo de mi 
+	esperanza<br>es como tiempo pasado.<br>Ya solo en mi coraz&oacute;n<br>
+	desiertamente he quedado.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:03:27 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:41 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

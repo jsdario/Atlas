@@ -1,0 +1,769 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Enric S&ograve;ria</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Enric S&ograve;ria. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Enric_Soria,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#8FABC2" vlink="#8FABC2" alink="#8FABC2">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/soria.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/soria.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172356" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./soria.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="7 Jun 2013"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:23:56 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./soria.htm" title="2:09:31 Jun 7, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:23:56 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./soria.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:23:56 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./soria.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>43 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jan 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:210011000100_2007:-1:011102020100_2008:-1:011121000001_2009:-1:001000100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:500010001000_2013:7:101211010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./SORIA.jpg" width="243" height="39">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><em style="font-style: normal">
+<strong><font face="Arial" size="2" color="#84B0D6">&quot;...Cuerpo de l&iacute;neas claras, 
+luz y l&iacute;mite.<br>
+Tan angustioso y bello como los teoremas&quot;</font></strong></em></p>
+
+<p align="center"><font color="#84B0D6"><img src="./SORIA1.jpg" width="260" height="321"></font></p>
+<p align="center">
+<span style="font-weight: 400; font-style:italic"><font face="Arial" size="2" color="#84B0D6">
+&quot;Untitled&quot;</font></span></p>
+<p align="center"><span style="font-weight: 400; font-style: italic">
+<font face="Arial" size="2" color="#84B0D6">Francine von Hove</font></span><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta 
+		espa&ntilde;ol nacido en Oliva, Valencia, en 1958. <br>Licenciado en Historia 
+		por la Universidad deValencia, es uno de los m&aacute;s importantes poetas de 
+		la literatura <br>
+		catalana actual, autor de una obra que&nbsp; seg&uacute;n sus cr&iacute;ticos, &quot;posee 
+		los atributos de una de las mejores tradiciones <br>
+		literarias de todos los tiempos: precisi&oacute;n verbal, contenci&oacute;n efectiva, 
+		profundidad de reflexi&oacute;n e inter&eacute;s por las <br>
+		viejas verdades del coraz&oacute;n del hombre&quot;. <br>Ha sido miembro fundador de 
+		la revista 
+		<em>Daina</em> y redactor del semanario <em>El temps</em>, desde 1985 
+		hasta 1988. <br>
+		Actualmente es colaborador del diario 
+		<em>El observador</em>.<br>Ha publicado los libros de poes&iacute;a &laquo;Mirall de 
+		miratges&raquo; Valencia, 1982, &laquo;Varia et memorabilia&raquo; Valencia, 1982 y 1988,&nbsp; <br>
+		y &laquo;Compas d'espera&raquo; Valencia, 1993. Junto a Heike van Lawick tradujo al 
+		catal&aacute;n &laquo;La metamorfosis&raquo; de Kafka,&nbsp; 1989.<br>De sus obras en prosa 
+		se destacan: &laquo;Trenta anys de cultura literaria a la Safor&raquo;1959 - 1990, 
+		&laquo;Fragments d'un dietari
+		<br>
+		inici&agrave;tic Barcelona&raquo; 1991,&nbsp; y &laquo;Sermonari laic&raquo; Alzira, en 1994.&nbsp; 
+		&copy;<br></font><font face="Georgia" size="2" color="#85A6BC"><br>
+&nbsp;</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+<img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+<p align="center"><br></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2"><a href="./soria.htm#ALBA">
+		Alba</a><br><br><a href="./soria.htm#ALGUNA COSA">Alguna cosa</a><br>
+		<br><a href="./soria.htm#ANTRO">Antro</a><br><br><a href="./soria.htm#ARS LONGA, VITA BREVIS">
+		Ars longa, vita brevis</a><br>
+		<br><a href="./soria.htm#ARS POETICA">Ars po&eacute;tica</a><br><br>
+		<a href="./soria.htm#BALC&Oacute;N INTERIOR">Balc&oacute;n interior</a><br><br>
+		<a href="./soria.htm#CONSTATACI&Oacute;N">Constataci&oacute;n</a><br><br>
+		<a href="./soria.htm#CONVERSACI&Oacute;N NOCTURNA">Conversaci&oacute;n nocturna</a><br><br>
+		<a href="./soria.htm#CUERPO QUE DUERME">Cuerpo que duerme</a><br><br>
+		<a href="./soria.htm#DESEO">Deseo</a><br><br><a href="./soria.htm#EL POETA REVUELVE CAJONES">
+		El poeta revuelve cajones</a><br>
+		<br><a href="./soria.htm#ESPERA">Espera</a><br><br><a href="./soria.htm#HABITACI&Oacute;N CON LUZ">
+		Habitaci&oacute;n con luz</a><br>
+		<br><a href="./soria.htm#POR TI">Por ti</a><br><br><a href="./soria.htm#QU&Eacute; DIF&Iacute;CIL">Qu&eacute; 
+		dif&iacute;cil</a><br>
+		<br><a href="./soria.htm#TAMBI&Eacute;N">Tambi&eacute;n</a><br><br><a href="./soria.htm#TARDE">Tarde</a><br>
+		<br><a href="./soria.htm#UN CUERPO">Un cuerpo</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#89A7BE"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a></font><font
+      face="Georgia" size="4" color="#8FABC2"> </font>
+		<font face="Georgia" size="4"
+      color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; <br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#85A6BC"><a name="ALBA"></a></font>
+		<font face="Georgia" color="#84B0D6">Alba</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Mira la mar, &iquest;no ves c&oacute;mo nos lleva,<br>so&ntilde;olientos, hasta la orilla de 
+		nosotros mismos?<br>Todo es camino. La perezosa luz, al despertarse,<br>
+		levanta atajos de escamosos limites.<br>Te beso entre esos oros, y el 
+		rumor de la mar<br>es un vasto reflejo del aliento<br>que mece la 
+		caricia. Esta ma&ntilde;ana<br>la brisa de tu cuerpo es otra inmensidad.<br>
+		<br>Mira la mar. Qu&eacute; justa semejanza<br>con los dos, en la ma&ntilde;ana 
+		inm&oacute;vil<br>y sin embargo fr&aacute;gil como brisa.<br>Te beso. No s&eacute; nada. Te 
+		amo como la ola<br>que hierve entre la arena. Y mi gozo<br>es una pura 
+		llama que el alba multiplica<br>en encendidas crines que avanzan y se 
+		rompen:<br>una explosi&oacute;n de estrellas en la gloria solar.<br>La gloria 
+		de tu cuerpo espejado en el m&iacute;o.<br>
+		<br>Despu&eacute;s<br>la arena no sabr&aacute;<br>qu&eacute; gozo ardiente la ma&ntilde;ana ilumina.<br>
+		<em><br>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="ALGUNA COSA"></a>
+		Alguna cosa</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		No eran tan s&oacute;lo cuerpos<br>aquello que yo amaba, hab&iacute;a algo distinto,<br>
+		alguna cosa, al menos entre los m&aacute;s queridos,<br>adem&aacute;s de la l&iacute;nea 
+		perfecta o la sonrisa, tan hermosas.<br>S&iacute;, es cierto que fueron muy 
+		hermosos<br>los cuerpos que yo am&eacute;, a trav&eacute;s de las noches,<br>mucho m&aacute;s 
+		que a m&iacute; mismo y mucho m&aacute;s que a todo.<br>Sin embargo, los cuerpos no 
+		eran tan s&oacute;lo amables,<br>no eran tan s&oacute;lo hermosos.<br>Hab&iacute;a algo 
+		distinto muy amado en los cuerpos.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;And&eacute;n de 
+		cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>Traducci&oacute;n de 
+		Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font>
+		<font face="Georgia" size="2" color="#84B0D6"><br></font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="ANTRO"></a>Antro</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		All&iacute;, en aquel antro oscuro,<br>que pronto dejar&aacute; de estar de moda,<br>
+		en la mesa vecina &eacute;l lo besaba.<br>Con qu&eacute; placer y con qu&eacute; exaltaci&oacute;n<br>
+		&eacute;l lo besaba.<br>Los ojos incendiados, y la urgencia<br>de los besos 
+		aquellos, aquellas contorsiones<br>de un cuerpo que se vuelca.<br>La 
+		fiebre de la carne y la sed de los labios.<br>Todo en &eacute;l me caus&oacute; 
+		admiraci&oacute;n.<br>Y el placer otorgaba<br>otro sentido nuevo al antro 
+		oscuro.<br>
+		<br>Nosotros, en la mesa vecina, hablamos del Amor,<br>y los antiguos 
+		h&eacute;roes, alegres.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;And&eacute;n de 
+		cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>Traducci&oacute;n de 
+		Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="ARS LONGA, VITA BREVIS"></a>Ars longa, vita brevis</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Recuerdo muy bien aquella lengua. <br>Aquella suavidad, aquella forma 
+		dulce 
+		<br>y delicada de acariciar la verga, de acunarla. <br>Amaba mucho 
+		aquella gracia suya, 
+		<br>aquellos labios diestros y carnales, <br>sonrientes. <br><br>Al cabo 
+		de los a&ntilde;os, he olvidado los ojos, 
+		<br>los senos, los tobillos, aquel cuerpo <br>de belleza com&uacute;n. Fueron 
+		pasto del tiempo. 
+		<br>Pero recuerdo bien aquella lengua. <br>Mi memoria resulta 
+		agradecida. 
+		<br><br>Un proverbio latino nos habla de estas cosas. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;And&eacute;n de 
+		cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>Traducci&oacute;n de 
+		Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="ARS POETICA"></a>
+		Ars poetica</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		His little, nameless, unremembered acts<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		of kindness and love.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Wordsworth<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		der s&uacute;sse Glaube<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		an Wesen, die mein Traum gebar,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		der rauhen Wirklichkeit zum Raube,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		was einst so schon, so gottlich war.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		F. Schiller</em><br><br>C&oacute;mo podr&iacute;a no acordarme de vosotras,<br>tardes 
+		an&oacute;nimas,<br>vac&iacute;as como el deseo, cuando en nada descansa.<br>Las horas 
+		en que, altivo,<br>abandonaba el gris ajetreo del hombre,<br>buscando la 
+		m&aacute;s callada voz,<br>la que me era precisa.<br>
+		<br>Tardes solitarias, s&oacute;lo para m&iacute; vivas,<br>s&oacute;lo para mi amor llenas y 
+		resonantes.<br>Bajo esa luz, el turbi&oacute;n de los hechos<br>quim&eacute;ricamente 
+		llegaba a transformarse<br>en se&ntilde;al de aquiescencia,<br>tan bella como 
+		digna,<br>y el recuerdo m&aacute;s s&oacute;rdido era fuente<br>de un centelleo 
+		amable,<br>si el deseo del tiempo, tan antiguo,<br>anidaba tambi&eacute;n, 
+		all&iacute;, diviniz&aacute;ndolo.<br>Como evocan las ruinas forjadores imperios,<br>
+		quiz&aacute; con esplendores que jam&aacute;s alcanzaron,<br>y la memoria inventa<br>
+		falaces espejismos en el ayer desierto,<br>as&iacute; yo agradec&iacute;a las horas y 
+		las cosas,<br>y de una perfecci&oacute;n deriv&eacute; las restantes,<br>juzg&aacute;ndome, 
+		juzg&aacute;ndolas,<br>con atenta franqueza y la atenci&oacute;n<br>distanciada y 
+		tranquila.<br>Dejando en el olvido los m&iacute;seros rencores,<br>asperezas, 
+		actos calamitosos, brusquedades.<br>As&iacute;, en las quietas horas,<br>el 
+		mundo y mi destino por fin no parec&iacute;an<br>dos seres escindidos, 
+		dispersi&oacute;n de fragmentos<br>en danza inacabable.<br>As&iacute;, la lucidez<br>
+		edificaba espectros renovados.<br>
+		<br>Poco dur&oacute; la farsa.<br>En el reba&ntilde;o humano, la pantomima es ley;<br>
+		y el silencio no encuentra una rendija<br>en que vivir por el silencio 
+		ajeno.<br>Los hombres pasan, son&aacute;mbulos, histriones,<br>armados de sus 
+		vagas creencias y motivos,<br>con ciega confianza en los objetos.<br>Del 
+		resto, una vez m&aacute;s, el olvido se encarga.<br>
+		<br>C&oacute;mo no acordarme de vosotras,<br>tardes sin nombre, tardes en que 
+		el amor<br>inventaba palabras convenientes,<br>palabras que jam&aacute;s 
+		deber&iacute;an ser dichas por el hombre,<br>por nadie predicadas.<br>Igual de 
+		in&uacute;til que buscar la firmeza en las nubes,<br>la ternura en las piedras.<br>
+		<br>Entonces, cuando hablaba a mi solo deseo.&nbsp; </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;And&eacute;n de 
+		cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>Traducci&oacute;n de 
+		Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="BALCÓN INTERIOR"></a>
+		Balc&oacute;n interior</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Ay, Valencia, capital del olvido<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Luis Fern&aacute;ndez</em><br><br>No s&eacute; si a&uacute;n te acuerdas;<br>ten&iacute;as 
+		dieciocho.<br>Est&aacute;bamos en casa de un amigo,<br>en un atardecer del mes 
+		de junio.<br>Bebidos por completo,<br>buscamos la frescura del balc&oacute;n.<br>
+		Valencia era un paisaje de patios interiores,<br>de grises derrotados.<br>
+		Un paisaje secreto,<br>un paisaje trist&iacute;simo,<br>una belleza s&oacute;rdida,<br>
+		como una obra de Buero<br>o la modulaci&oacute;n<br>de un lamento alargado.<br>
+		<br>Entonces s&iacute; goz&aacute;bamos del tiempo.<br><br>No hemos vuelto jam&aacute;s a 
+		aquella casa.<br>Ni el due&ntilde;o nos saluda.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="CONSTATACIÓN"></a>
+		Constataci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>No soy mejor que t&uacute;, lo s&eacute;,<br>no lo pretendo.<br>Ni siquiera he 
+		inventado el tedio y el cansancio<br>ni tal vez he escogido apenas uno<br>
+		de mis h&aacute;bitos &iacute;ntimos.<br>
+		<br>Es in&uacute;til, sencillamente, fingir que me interesa<br>alguna cosa en 
+		ti, criatura meramente humana<br>(como yo al fin y al cabo, que te busco 
+		y te ignoro)<br>m&aacute;s all&aacute; del banal enigma de tu cuerpo.<br>
+		<em><br>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="CONVERSACIÓN NOCTURNA">
+		</a>Conversaci&oacute;n nocturna</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Hemos hablado hoy mucho,<br>y saciado la noche de temas que nos gustan:<br>
+		la F&iacute;sica, el Amor y la Alta Teolog&iacute;a.<br>Ha sido, de verdad, hermosa 
+		nuestra charla,<br>pero ahora estoy cansado.<br>Ya es hora de apurar 
+		bien este vaso<br>-este daiquiri, el &uacute;ltimo,<br>qu&eacute; color delicioso 
+		guard&oacute; para el adi&oacute;s.<br>Te puedes ir. Desde ahora el alba me acompa&ntilde;a<br>
+		tal vez mejor que t&uacute;.<br>Vuelve con un poema, ma&ntilde;ana, si es que quieres.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="CUERPO QUE DUERME"></a>
+		Cuerpo que duerme</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Puramente dormida, tranquila, entre mis brazos.<br>La admiro, la 
+		imagino, desconf&iacute;o.<br>Intento acariciarla como intento creer<br>que me 
+		es posible amar este cuerpo que duerme<br>Un cuerpo; una borrosa 
+		resistencia a la mano.<br>Una tibia frontera.<br>
+		<br>Invento o magnifico espinas de penumbra.<br>Puramente dormido un 
+		cuerpo junto a m&iacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;And&eacute;n de 
+		cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>Traducci&oacute;n de 
+		Carlos Marzal</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6"><a name="DESEO">
+		</a>Deseo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Porque el deseo es una pregunta<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cuya respuesta nadie sabe.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Luis Cernuda</em><br><br>No dec&iacute;a palabras. S&oacute;lo era<br>dos labios que 
+		se abr&iacute;an expectantes.<br>No, no dec&iacute;a palabras, tan s&oacute;lo acariciaba,<br>
+		lentamente, mientras todo su cuerpo<br>unas manos distintas lo surcaban.<br>
+		y all&iacute;, entre esas manos, el silencio.<br>
+		<br>Dos bocas que se juntan,<br>renuevan el silencio,<br>y el aliento y 
+		la sangre<br>cobran sabidur&iacute;a<br>de alg&uacute;n secreto ardiente e invencible,<br>
+		como ola encabritada o tensa brida,<br>un secreto al que callan y 
+		otorgan.<br>
+		<br>Los cuerpos son tan s&oacute;lo interrogantes<br>planteados deprisa,<br>
+		porque no hay m&aacute;s respuesta<br>que no sea respuesta de unos labios 
+		abiertos,<br>que no sea de un cuerpo,<br>cuando un cuerpo es propicio.<br>
+		El amor tambi&eacute;n es una sombra<br>que busca entre las sombras<br>otro 
+		cuerpo silente.<br>
+		<br>No dec&iacute;a palabras.<br>Tan s&oacute;lo se entreabr&iacute;a<br>a una imperiosa&nbsp;&nbsp;&nbsp; 
+		voz no articulada.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="EL POETA REVUELVE CAJONES"></a>El poeta revuelve cajones</font><font face="Georgia" size="2"
+      color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Recuerdo o espina lenta, amor; te pienso<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Joan Fuster</em><br><br>Amo tu adolescencia postergada:<br>menosprecio, 
+		carencias, soledad,<br>la absurda metaf&iacute;sica infligida,<br>para lograr 
+		que fueras<br>otra resignaci&oacute;n gris del mont&oacute;n,<br>jugando encadenada, 
+		en un patio perpetuo de colegio.<br>Qu&eacute; f&aacute;cil es leer las fotos viejas.<br>
+		<br>Amo esa mirada muerta de las fotograf&iacute;as,<br>los desiertos que 
+		esconde, las apagadas quejas, la plegaria.<br>Qu&eacute; tristes quince a&ntilde;os, 
+		qu&eacute; belleza.<br>Cu&aacute;nta desolaci&oacute;n habr&aacute; sido precisa<br>para cristalizar 
+		una mirada as&iacute;<br>(cu&aacute;nto amo esa mirada que eres t&uacute;,<br>trampa trivial, 
+		lo s&eacute;, de la fotograf&iacute;a).<br>
+		<br>Ahora, esa mirada es m&iacute;a, como es m&iacute;a<br>la voz de los amigos 
+		muertos ya,<br>alg&uacute;n cielo de Brueghel<br>y alg&uacute;n verso de Borges, alg&uacute;n 
+		cuerpo,<br>y nuestro desamor, y este poema.<br>Talism&aacute;n espinoso que 
+		soporto, y que me da soporte:<br>la sombra m&aacute;s leal en la orilla del 
+		tiempo.<br>
+		<br>Cu&aacute;nto has cambiado.<br>Qu&eacute; fatuamente imp&uacute;dicos<br>nos han vuelto 
+		los a&ntilde;os,<br>y la vertiginosa continuidad de los gestos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br><em>
+		Traducci&oacute;n de Carlos Marzal</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<a name="ESPERA"></a></font><font face="Georgia" color="#84B0D6">Espera</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Espera, que no es hora<br>de nada imprescindible. No te marches.<br>Que 
+		el sol ahora acaricia, y en la playa<br>el rumor de las olas se acerca 
+		solitario.<br>Ven, que andaremos cogidos entre las alquer&iacute;as<br>y 
+		hablaremos de todo como si lo crey&eacute;ramos<br>y el amor en los besos 
+		tambi&eacute;n ser&aacute; cre&iacute;ble.<br>Ven y pasearemos entre cosas amigas,<br>
+		pl&aacute;cidamente unidos, como los que se aman.<br>&iquest;No adivinas qu&eacute; atardecer 
+		di&aacute;fano<br>a la orilla del agua, en nuestra misma mesa,<br>embriagados 
+		de vino y de presencia mutua,<br>preludio ya de abrazos en el frescor 
+		nocturno?<br>
+		<br>Ven, que hallar&eacute; para ti<br>las flores que te har&aacute;n a&uacute;n m&aacute;s bella,<br>
+		los gestos m&aacute;s amables, un sentido a las cosas.<br>Todo aquello que solo 
+		jam&aacute;s yo encontrar&iacute;a.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><a name="HABITACIÓN CON LUZ"></a></font>
+		<font face="Georgia" color="#84B0D6">Habitaci&oacute;n con luz</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		He estado, casualmente, delante de la casa,<br>y la luz encendida 
+		dibujaba una sombra<br>en la ventana abierta.<br>
+		<br>Nos am&aacute;bamos mucho en esa habitaci&oacute;n,<br>con un amor amigo del grito 
+		y del teatro,<br>amor hecho de abrazos y mentiras excelsas.<br>
+		<br>Alguien vive ahora all&iacute;<br>-quiz&aacute; un cuerpo bell&iacute;simo-,<br>alguien 
+		que no eres t&uacute;.<br>
+		<br>No nos amamos ya<br>(cu&aacute;nto amor ha pasado, qui&eacute;n nos lo iba a 
+		decir.<br>Y no nos ha quedado el menor rastro).<br>
+		<br>Y sin embargo, en la luz encendida,<br>entre sombras extra&ntilde;as,<br>
+		aquel amor hondamente perdura.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal<br>
+		<br>
+&nbsp;</em></font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<br><a name="POR TI"></a></font><font face="Georgia" color="#84B0D6">
+		Por ti</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Dices 
+		que ya has hecho el amor con ciento veinte cuerpos<br>(y has arreglado 
+		el tuyo, seg&uacute;n dices)<br>contando las mujeres y los hombres.<br>Te gusta 
+		pregonarlo,<br>y pasear ese sentido higi&eacute;nico del mundo<br>por encima de 
+		cosas y de seres.<br>En cambio yo, ya ves, casi un mon&oacute;gamo<br>
+		(perversi&oacute;n que a menudo me fastidia)<br>me s&eacute; id&eacute;ntico a ese amante 
+		voluble<br>que busca cada noche en un cuerpo distinto<br>aquello que no 
+		cambia;<br>a los adolescentes, cuando rondan<br>la Alameda en la noche, 
+		o a los m&iacute;sticos<br>que saben de otro amor y de otros medios:<br>o a 
+		gigol&oacute;s y a putas.<br>Pero no a ti, en nada a ti, jam&aacute;s a ti.<br>Yo 
+		comparto con ellos un id&eacute;ntico espasmo,<br>un id&eacute;ntico miedo, una 
+		ansiedad id&eacute;ntica<br>y una id&eacute;ntica e indiferente lasitud.<br>Una 
+		belleza bronca se nos revela id&eacute;ntica,<br>esa grosera, flaca, y siempre 
+		esquiva, realidad del amor<br>(la gracia verdadera de la vida). Una 
+		id&eacute;ntica<br>burla nos aguarda al final. Divina, s&iacute;.<br>En cambio, t&uacute;, 
+		que del amor has hecho<br>una lista de nombres, una absurda terapia<br>
+		sin dioses ni deseos,<br>no te atrevas a hablarme.<br>
+		<br>Ya tienes tu castigo.<br>El amor, para ti, jam&aacute;s ser&aacute; una ofrenda.<br>
+		<br>**<br><br>Nos un&iacute;amos<br>como bocas o sexos<br>sin fisura ni sombra.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<a name="QU&Eacute; DIF&Iacute;CIL"></a></font><font face="Georgia" color="#84B0D6">
+		Qu&eacute; dif&iacute;cil</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Qu&eacute; dif&iacute;cil resulta levantarse<br>y mirar otro cuerpo, tan nuevo 
+		todav&iacute;a,<br>con una amarga serenidad de grieta.<br>Conocido de anoche. 
+		Tan s&oacute;lo y para siempre.<br>Anoche, el desvar&iacute;o... Juntos en un espasmo,<br>
+		comunidad de llama, trenza carnal. Anoche.<br>Ese cuerpo distante que se 
+		espabila y t&uacute;<br>dejando una palabra, lastre, sobre las s&aacute;banas.<br>Qu&eacute; 
+		dif&iacute;cil resulta levantarse,<br>la ducha, la gillette, y como un rito<br>
+		el orden apagado de la ropa.<br>Por siempre y para siempre. Noches. 
+		Amaneceres.<br>y noches otra vez. Y pesadumbre.<br>Se pierde alguna cosa 
+		en el cuarto que dejas.<br>Siempre pasa.<br>
+		<br>Un gesto, una mirada, un abrazo indolente,<br>tiembla por los 
+		pasillos mientras la luz se impone.<br>Hoy, nuestros gestos diarios 
+		nacen con a&ntilde;oranza,<br>siempre pasa. Es el sue&ntilde;o. Alguna broma<br>flota 
+		como en un fr&aacute;gil puente oscilatorio.<br>Un beso. Alguna risa.<br>
+		<em>Fins aviat. Ens tornarem a veure. -Fins aviat.</em><br>La puerta. El 
+		ascensor.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="TAMBI&Eacute;N"></a></font><font face="Georgia" color="#84B0D6">
+		Tambi&eacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Tambi&eacute;n habr&iacute;a que llamarla Lesbia,<br>por m&aacute;s de una raz&oacute;n, Catulo 
+		amigo.<br>Podr&iacute;an encontrarse otras similitudes.<br>T&uacute; y yo, que nos 
+		vendemos por elogios<br>y sonrisas falaces, en callejas y esquinas,<br>
+		nunca perdonaremos su peculiar pureza.<br>Catulo, nuestra Lesbia no 
+		merece un mal verso.<br>Aun as&iacute;, los escribo,<br>movido, como t&uacute;, por un 
+		prurito<br>de tradici&oacute;n ret&oacute;rica.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="TARDE"></a></font><font face="Georgia" color="#84B0D6">Tarde</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Contigo, como siempre, tengo esta sensaci&oacute;n<br>de transcendente y 
+		contagioso hast&iacute;o<br>-la elaborada forma en que me ignoras-<br>y esta 
+		esperanza m&iacute;a tan in&uacute;til<br>que promueve reencuentros y viejas 
+		cortes&iacute;as.<br>Una palabra tuya, y acudo, como siempre,<br>contento 
+		incluso de que me llamaras.<br>Otro error m&aacute;s, seguro.<br>Por ti me 
+		enga&ntilde;o m&aacute;s de la que me conviene.<br>
+		<br>Los besos grises, las miradas grises,<br>los amores grises,<br>del 
+		gris de la ceniza,<br>el gris de las met&aacute;foras gastadas,<br>est&eacute;riles 
+		por siempre,<br>me son la merecida recompensa.<br>
+		<br>Como dos sombras o dos copas vac&iacute;as,<br>desandamos Valencia<br>-sin 
+		jardines ni flores; s&iacute;, Valencia-<br>toda una larga, interminable tarde.<br>
+		<br>Una ceniza gris, menos que nada;<br>este amor trasnochado no se 
+		estila.<br>Una parodia gris en el olvido,<br>esta tarde que nada hace 
+		inmortal.<br>
+		<br><em>De &quot;And&eacute;n de cercan&iacute;as&quot;, Ed. Pre-Textos, Valencia, 1996</em><br>
+		<em>Traducci&oacute;n de Carlos Marzal</em><br><br>&nbsp;</font></p>
+		<p align="center"><font face="Georgia" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<br><br><br><a name="UN CUERPO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Un cuerpo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Un 
+		cuerpo preciso<br>como un teorema.<br>
+		<br>Cuerpo de piernas rectas, delineadas,<br>con la tensa armon&iacute;a de un 
+		comp&aacute;s.<br>Cuerpo de l&iacute;neas claras, luz y l&iacute;mite.<br>Tan angustioso y 
+		bello como los teoremas.<br>
+		<br>Delante de m&iacute;, ahora,<br>bajo cualquier excusa.<br><br><br><br>&nbsp;</font></p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<blockquote>
+		<blockquote>
+			<blockquote><font face="Georgia" size="2" color="#8FABC2">
+				<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+				<font color="#AAC0D5">
+				<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+				<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+				</p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:23:56 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:59 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

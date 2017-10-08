@@ -1,0 +1,1213 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Rudyard Kipling</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Rudyard Kipling."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Rudyard Kipling. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Rudyard_Kioling,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/kipling.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/kipling.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815160522" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./kipling.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:05:22 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./kipling.htm" title="12:15:43 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:05:22 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./kipling.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:05:22 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./kipling.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>39 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">20 May 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000010511011_2009:-1:110000110000_2010:-1:100000001110_2011:-1:000000111120_2012:-1:321110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./KIPLING.jpg" width="349" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./KIPLING1.jpg" width="236" height="23"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="716" height="322">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="708">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="295" width="286" valign="top">
+			<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="./KIPLING2.jpg" width="239" height="300"></td>
+			<td width="418" valign="top" height="295">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u></p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Poeta 
+			y novelista ingl&eacute;s nacido en Bombay, India, en 1865.<br>
+			Fue enviado a Inglaterra desde los seis a&ntilde;os para&nbsp; recibir 
+			educaci&oacute;n en una escuela de North Devon. De regreso a la India en 
+			1882, trabaj&oacute; como redactor de varias revistas y peri&oacute;dicos en 
+			Lahore. Una serie de cuentos cortos escritos en esta &eacute;poca&nbsp; lo 
+			dieron a conocer en los medios literarios. Vivi&oacute; durante alg&uacute;n 
+			tiempo en Estados Unidos y tras visitar varios pa&iacute;ses como 
+			corresponsal de <i>The Pionner</i>, regres&oacute; a Inglaterra radic&aacute;ndose 
+			en un pueblo costero de Devon en 1896. Consolidado como poeta y 
+			novelista, public&oacute; obras importantes como <i>&quot;Cuarteto&quot;</i> en 1884,
+			<i>&quot;Mandalay&quot; </i>en 1892, <i>&quot;Gunga Din&quot;</i> en 1892, la novela <i>
+			&quot;Kim&quot;</i> en 1901 <i>&quot;Las cinco naciones&quot;</i> en 1903&nbsp; y <i>
+			&quot;Hadas y recompensas&quot;</i> en 1910.<br>
+			Rechaz&oacute; distinciones como <i>Caballero de la Corte Inglesa</i> y <i>
+			Orden al m&eacute;rito</i>, y solo acept&oacute; ser enterrado en la Abad&iacute;a de 
+			Westminster reservada para reyes y h&eacute;roes ingleses. Obtuvo el <i>
+			Premio Nobel de Literatura</i> en 1907. Falleci&oacute; en enero de 1936.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center">&nbsp;</p>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center"><br>
+<br>
+<font face="Georgia" color="#C4CAD4">Poemas de Joseph Rudyard Kipling:</font></p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia">
+		<a href="./kipling.htm#Canci&oacute;n de arpas para las mujeres danesas">Canci&oacute;n de arpas 
+		para las mujeres danesas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#Canto pagano">Canto 
+		pagano</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#El vampiro">El vampiro</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#Epitafios de la guerra">
+		Epitafios de la guerra:</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#1. &laquo;Igualdad en el sacrificio&raquo;">
+		1.&nbsp;&nbsp; Igualdad en el sacrificio</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#2. Un sirviente">2.&nbsp;&nbsp; 
+		Un sirviente</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#3. Un hijo">3.&nbsp;&nbsp; Un 
+		hijo</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#4. Un hijo &uacute;nico">4.&nbsp;&nbsp; 
+		Un hijo &uacute;nico</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#5. Ex-oficinista">5.&nbsp;&nbsp; 
+		Ex-oficinista</a></font><br>
+		<a href="./kipling.htm#6. El milagro"><font size="2" face="Georgia">6.&nbsp;&nbsp; El 
+		milagro</font></a><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#7. Hind&uacute; cipayo en Francia">7.&nbsp;&nbsp; 
+		Hind&uacute; cipayo en Francia</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#8. El cobarde">8.&nbsp;&nbsp; El 
+		cobarde</a></font><br>
+		<font face="Georgia" size="2"><a href="./kipling.htm#9. Conmoci&oacute;n">9.&nbsp;&nbsp; 
+		Conmoci&oacute;n</a></font><br>
+		<font face="Georgia" size="2">
+		<a href="./kipling.htm#10. Una tumba cerca de El Cairo">10. Una tumba cerca de El 
+		Cairo</a><br>
+		<a href="./kipling.htm#11. Pel&iacute;canos en el desierto">11. Pel&iacute;canos en el desierto</a><br>
+		<a href="./kipling.htm#12. Dos conmemoraciones canadienses">12. Dos conmemoraciones 
+		canadienses</a><br>
+		<a href="./kipling.htm#13. El favor">13. El favor</a><br>
+		<a href="./kipling.htm#14. El principiante">14. El principiante</a><br>
+		<a href="./kipling.htm#15. R.A.F. (De dieciocho a&ntilde;os)">15. R.A.F. (De dieciocho a&ntilde;os)</a><br>
+		<a href="./kipling.htm#16. El hombre refinado">16. El hombre refinado</a><br>
+		<a href="./kipling.htm#17. Nativo porteador de agua (M.E.F.)">17. Nativo porteador de 
+		agua (M.E.F.)</a><br>
+		<a href="./kipling.htm#18. El centinela dormido">18. El centinela dormido</a><br>
+		<a href="./kipling.htm#19. Bater&iacute;a sin munici&oacute;n">19. Bater&iacute;a sin munici&oacute;n</a><br>
+		<a href="./kipling.htm#20. Forma com&uacute;n">20. Forma com&uacute;n</a><br>
+		<a href="./kipling.htm#21. Un estadista muerto">21. Un estadista muerto</a><br>
+		<a href="./kipling.htm#22. El rebelde">22. El rebelde</a><br>
+		<a href="./kipling.htm#23. El obediente">23. El obediente</a><br>
+		<a href="./kipling.htm#24. Alguien que dej&oacute; Tarento">24. Alguien que dej&oacute; Tarento</a><br>
+		<a href="./kipling.htm#25. Destructores en colisi&oacute;n">25. Destructores en colisi&oacute;n</a><br>
+		<a href="./kipling.htm#26. Convoy de escolta">26. Convoy de escolta</a><br>
+		<a href="./kipling.htm#27. Desconocido cad&aacute;ver de mujer">27. Desconocido cad&aacute;ver de 
+		mujer</a><br>
+		<a href="./kipling.htm#28. Golpeada y vengada">28. Golpeada y vengada</a><br>
+		<a href="./kipling.htm#29. Tumba sal&oacute;nica">29. Tumba sal&oacute;nica</a><br>
+		<a href="./kipling.htm#30. El deposado">30. El deposado</a><br>
+		<a href="./kipling.htm#31. V.A.D. (Mediterr&aacute;neo)">31. V.A.D. (Mediterr&aacute;neo)</a><br>
+		<a href="./kipling.htm#32. Actores">32. Actores</a><br>
+		<a href="./kipling.htm#33. Periodistas">33. Periodistas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#Gehaz&iacute;">Gehaz&iacute;</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#Las mujeres">Las mujeres</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./kipling.htm#Si">Si</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./kipling.htm#Una canci&oacute;n en la tormenta">Una canci&oacute;n en la tormenta</a></font><br>
+		<br>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#C4CAD4">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font>
+</p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#D3D3CF"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="Canci&oacute;n de arpas para las mujeres danesas"></a></font>
+		<font color="#C4CAD4" face="Georgia">Canci&oacute;n de arpas para las mujeres 
+		danesas</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		<i>(El duende de la colina Pook)</i><br>
+		<br>
+		&iquest;En qu&eacute; queda una mujer si la abandonas,<br>
+		y el fuego del hogar, la tierra de la familia,<br>
+		para seguir al viejo y gris Hacedor de Viudas?<br>
+		<br>
+		No tiene casa en la que alojar un hu&eacute;sped:<br>
+		una cama fr&iacute;a s&oacute;lo en la que todos descansan,<br>
+		en la que soles p&aacute;lidos anidan, y monta&ntilde;as perdidas.<br>
+		<br>
+		No tiene blancos brazos fuertes con que envolverte,<br>
+		sino algas -diez dedos- que te sostienen-<br>
+		fuera, en las rocas, donde te ha empujado la marea.<br>
+		<br>
+		Sin embargo, cuando aparecen los signos del verano,<br>
+		y se rompe el hielo y las yemas de los abedules brotan,<br>
+		m&aacute;s cada a&ntilde;o, te alejas de nuestro lado, y enfermas...<br>
+		<br>
+		Otra vez enfermas con los gritos y las matanzas,<br>
+		te alejas sigilosamente hacia las aguas procelosas,<br>
+		y hacia tu barco miras en sus cuarteles de invierno.<br>
+		<br>
+		Olvidas nuestra alegr&iacute;a, y las tertulias junto a la mesa,<br>
+		las plantas en el cobertizo y el caballo en los establos-<br>
+		para embrear sus flancos y revisar sus riendas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Navegas 
+		as&iacute; hacia donde abunden nubes de tormenta,<br>
+		el sonido de los remos contra el agua<br>
+		es todo lo que queda, tras estos meses, para seguirte.<br>
+		<br>
+		&iexcl;Ah! &iquest;En qu&eacute; queda una mujer si la abandonas,<br>
+		y el fuego del hogar, la tierra de la familia,<br>
+		para seguir al viejo y gris Hacedor de Viudas?</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Luis Cremades</font></i></p>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</p>
+		<p align="left"><br>
+		<font face="Georgia" color="#C4CAD4"><a name="Canto pagano"></a>Canto 
+		pagano</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Yo que he estado donde 
+		he estado-<br>
+		Yo que he ido donde he ido-<br>
+		Yo que he visto lo que he visto-<br>
+		c&oacute;mo podr&iacute;a nunca competir<br>
+		otra vez con la terrible vieja Inglaterra,<br>
+		casas a ambos lados de la calle,<br>
+		cercas a los dos lados del camino,<br>
+		en medio el sacerdote y las gentes de buena familia,<br>
+		si nos encontramos, tocan mi sombrero-<br>
+		&iquest;Yo que he visto lo que he visto?<br>
+		<br>
+		Yo que he mirado medio mundo<br>
+		levantarse brillante entero con el roc&iacute;o,<br>
+		que pone un velo de lluvia al sol,<br>
+		y tan pronto como la niebla abre el paso<br>
+		nuestro helio parpadea y parece divertido-<br>
+		tres lados de una plaza de noventa millas,<br>
+		sobre valles tan grandes como un condado-<br>
+		<i>&laquo;&iquest;Est&aacute;is all&iacute;? Est&aacute;is all&iacute;? &iquest;Est&aacute;is all&iacute;?&raquo;</i><br>
+		Y el ritmo ciego entonces de nuestro fuego.<br>
+		ruedo por la grama en la Terratenencia,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;yo!<br>
+		<br>
+		Yo que he cabalgado a trav&eacute;s de la oscuridad<br>
+		con frecuencia, al final, cuarenta millas,<br>
+		por todo el Rancho Mahollisberg,<br>
+		con las estrellas s&oacute;lo como gu&iacute;a<br>
+		y s&oacute;lo la noche como amiga,<br>
+		y las cosas que huyen a mi paso,<br>
+		y cosas que entre la hierba saltan,<br>
+		y el silencio, el resplandor y el tama&ntilde;o<br>
+		de las alturas, indecibles cielos-<br>
+		estoy llevando algunas cartas casi<br>
+		tanto como a una milla de la posta,<br>
+		y &laquo;si no te importa regresa con el cambio&raquo;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;Yo!<br>
+		<br>
+		Yo que he visto a Barbeton cogido<br>
+		cuando ca&iacute;mos a trav&eacute;s de las nubes sobre su cabeza,<br>
+		tiraron los rev&oacute;lveres y huyeron-<br>
+		yo que cruzaba la Colina del Diamante,<br>
+		y Pieters y Springs y Belfast-<br>
+		desde Dundee y todo Vereeniging-<br>
+		yo que aguant&eacute; hasta el final<br>
+		(cinco galones relucen en mi pecho)-<br>
+		aprovecho mi domingo en la escuela,<br>
+		con la ayuda del Terrateniente y de su mujer<br>
+		(sin mencionar la criada y la cocinera),<br>
+		entrar y manos arriba y s&eacute; todav&iacute;a<br>
+		trabajar honestamente por mi pan,<br>
+		mi vida en este estado de vida<br>
+		que complacer&aacute; a Dios que habr&aacute; de llamarme<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;a m&iacute;!<br>
+		<br>
+		Yo que he seguido mi oficio<br>
+		all&iacute; donde los Rayos se fabrican;<br>
+		entre las Lluvias y el Sol y la Luna-<br>
+		yo que me he acostado y levantado<br>
+		tres a&ntilde;os con el cielo como tejado-<br>
+		que he soportado hambre y sed<br>
+		seis mil millas enteras a pie,<br>
+		con el Vaal y Orange como vaso,<br>
+		el Brandwater Basin era el plato-<br>
+		&iexcl;Oh! dif&iacute;cil es comportarse como ellos quieren<br>
+		(demasiado dif&iacute;cil, y tal vez demasiado pronto),<br>
+		tendr&eacute; antes que pensarlo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;yo!<br>
+		<br>
+		Aparecer&eacute; y de aqu&iacute; me ir&eacute;-<br>
+		viajar&eacute; al Sur y me asegurar&eacute;<br>
+		si son s&oacute;lo mis encantos o no<br>
+		que hace p&aacute;lida en Inglaterra la luz del sol,<br>
+		y estropea en Inglaterra las brisas,<br>
+		algo peque&ntilde;o se ha perdido,<br>
+		Yo que s&eacute; de un sol y de un viento,<br>
+		algunos llanos, detr&aacute;s una monta&ntilde;a,<br>
+		y algunas tumbas junto a cercas de espino,<br>
+		y un alem&aacute;n con quien me he pegado fuerte me da<br>
+		un trabajo donde me inclino<br>
+		a mirar en una silla y vivo<br>
+		donde no hay una carretera ni un &aacute;rbol-<br>
+		sino s&oacute;lo mi Hacedor y yo,<br>
+		esto -creo- ha de curarme o matarme,<br>
+		por eso creo que all&iacute; tendr&eacute; que ir a verlo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iexcl;Yo!</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El vampiro"></a>El 
+		vampiro</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">1897</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Un idiota hab&iacute;a que 
+		rezaba<br>
+		(igual que t&uacute; y yo)<br>
+		a un trapo y a un hueso y a un mech&oacute;n de pelo<br>
+		(le llam&aacute;bamos la mujer despreocupada)<br>
+		pero el idiota te llamaba su dama perfecta-<br>
+		(igual que t&uacute; y yo)<br>
+		<br>
+		<br>
+		<i>Oh, los a&ntilde;os perdidos. las l&aacute;grimas perdidas<br>
+		y el trabajo de nuestra cabeza y mano<br>
+		pertenece a la mujer que no sab&iacute;a<br>
+		(ahora sabemos que no pod&iacute;a nunca saber)<br>
+		y no comprend&iacute;amos.</i><br>
+		<br>
+		Un idiota hab&iacute;a que sus bienes gastaba<br>
+		(igual que t&uacute; y yo)<br>
+		honor, fe, una tentativa segura<br>
+		(y no s&oacute;lo era eso lo que la se&ntilde;ora quer&iacute;a decir)<br>
+		pero un idiota debe seguir su instinto natural<br>
+		(igual que t&uacute; y yo)<br>
+		<br>
+		<i>Oh, el trabajo perdido, los tesoros perdidos<br>
+		y las mejores cosas planeadas<br>
+		pertenecen a la mujer que no sab&iacute;a por qu&eacute;<br>
+		(ahora sabemos que no sab&iacute;a nunca por qu&eacute;)<br>
+		y no comprend&iacute;amos.<br>
+		</i><br>
+		El idiota reducido fue a su pellejo idiota<br>
+		(igual que t&uacute; y yo)<br>
+		lo que puede ella haber visto que le dej&oacute; de lado-<br>
+		(pero no recuerda nadie cuando la dama lo intent&oacute;)<br>
+		as&iacute; algunos de ellos vivieron, la mayor&iacute;a han muerto<br>
+		(igual que t&uacute; y yo)<br>
+		<br>
+		<i>Y no es la verg&uuml;enza ni la culpa<br>
+		que hiere como un tiz&oacute;n al rojo-<br>
+		se llega a saber que ella nunca supo por qu&eacute;<br>
+		(viendo, al fin, que no pudo nunca saber por qu&eacute;)<br>
+		y nunca pudimos comprender.</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Epitafios de la guerra"></a>Epitafios de la guerra</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">1914-18<br>
+		<br>
+		<a name="1. &laquo;Igualdad en el sacrificio&raquo;"></a>1. &laquo;Igualdad en el 
+		sacrificio&raquo;<br>
+		<br>
+		A. &laquo;Yo era un Tengo&raquo;. B. &laquo;Yo era un &quot;no-tengo&quot;.&raquo;<br>
+		(Juntos) &laquo;&iquest;Qu&eacute; hab&eacute;is dado que no haya dado yo?&raquo;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="2. Un sirviente"></a>2. Un sirviente<br>
+		<br>
+		Est&aacute;bamos juntos desde que la Guerra comenz&oacute;.<br>
+		El era mi sirviente -y el mejor de los dos-.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="3. Un hijo"></a>3. Un hijo<br>
+		<br>
+		Mataron a mi hijo mientras de alguna broma se re&iacute;a. Me hubiese gustado 
+		saber<br>
+		qu&eacute; era, pues tal vez pueda servirme el d&iacute;a en que las bromas falten.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="4. Un hijo &uacute;nico"></a>4. Un hijo &uacute;nico<br>
+		<br>
+		A nadie he matado salvo a mi madre. Ella<br>
+		(bendiciendo su asesinato) muri&oacute; de dolor por m&iacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="5. Ex-oficinista"></a>5. Ex-oficinista<br>
+		<br>
+		&iexcl;No haya tristeza! El Ej&eacute;rcito dio<br>
+		libertad a un t&iacute;mido esclavo:<br>
+		en el que la Libertad encontr&oacute;<br>
+		fuerza en el cuerpo, el alma y la voluntad:<br>
+		por esa fuerza lleg&oacute; a probar<br>
+		la Alegr&iacute;a, el Compa&ntilde;erismo y el Amor:<br>
+		por ese Amor a la Muerte parti&oacute;:<br>
+		y en esa Muerte yace contento.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="6. El milagro"></a>6. El milagro<br>
+		<br>
+		Cuerpo y Esp&iacute;ritu rend&iacute; enteros<br>
+		a los severos instructores -y recib&iacute; un alma...<br>
+		Si el hombre mortal puede cambiarme por completo<br>
+		de todo lo que era -&iquest;qu&eacute; no podr&aacute; el Creador hacer?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="7. Hind&uacute; cipayo en Francia"></a>7. Hind&uacute; cipayo en Francia<br>
+		<br>
+		Este hombre en su propia tierra rezaba no sabemos a qu&eacute; Poderes.<br>
+		Nosotros le rezamos para pagarle por su bravura en la nuestra.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="8. El cobarde"></a>8. El cobarde<br>
+		<br>
+		No pod&iacute;a mirar a la Muerte, cuando fue sabido,<br>
+		a ella los hombres me condujeron, solo y con los ojos vendados.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="9. Conmoci&oacute;n"></a>9. Conmoci&oacute;n<br>
+		<br>
+		Mi nombre, mis palabras, de m&iacute; me hab&iacute;a olvidado.<br>
+		Vinieron mi esposa e hijos -no los conoc&iacute;a-.<br>
+		Mor&iacute;. Mi Madre despu&eacute;s. A su llamada<br>
+		y entre sus pechos lo record&eacute; todo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="10. Una tumba cerca de El Cairo"></a>10. Una tumba cerca de El 
+		Cairo<br>
+		<br>
+		Dioses del Nilo, deber&iacute;a este joven fuerte<br>
+		irse -&iexcl;Irse!- No conoce el miedo o la verg&uuml;enza.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="11. Pel&iacute;canos en el desierto"></a>11. Pel&iacute;canos en el desierto<br>
+		<br>
+		<i>Una tumba cerca de Halfa</i><br>
+		La arena volada sobre m&iacute; se amontona, que no pueda saber nadie<br>
+		donde estoy tendido para que mis hijos se aflijan...<br>
+		Oh alas que baten al alba, devolved<br>
+		del desierto a vuestro joven en v&iacute;speras.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="12. Dos conmemoraciones canadienses"></a>12. Dos 
+		conmemoraciones canadienses<br>
+		<br>
+		I<br>
+		Damos todo lo que ganamos, todo.<br>
+		Nadie se lamenta por nosotros o se nos elogia.<br>
+		S&oacute;lo en todas las cosas recuerdan,<br>
+		es el Miedo, no la Muerte, lo que mata.<br>
+		II<br>
+		De peque&ntilde;as ciudades en tierras lejanas llegamos,<br>
+		a salvar nuestro honor y un mundo en llamas.<br>
+		En peque&ntilde;as ciudades de tierras lejanas dormirnos;<br>
+		y confiamos en el mundo que ganamos para que t&uacute; la mantengas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="13. El favor"></a>13. El favor<br>
+		<br>
+		La Muerte desde el principio me favorec&iacute;a, sabiendo bien que no podr&iacute;a 
+		aguantar<br>
+		esperarla d&iacute;a tras d&iacute;a. Abandon&oacute; mis superiores y vino<br>
+		silbando por los campos, y, despu&eacute;s de asegurarse bien,<br>
+		&laquo;A su final llega tu l&iacute;nea&raquo;, dijo, &laquo;pero he salvado, por lo menos, su<br>
+		nombre&raquo;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="14. El principiante"></a>14. El principiante<br>
+		<br>
+		En la primera hora de mi d&iacute;a primero<br>
+		en la trinchera del frente ca&iacute;.<br>
+		(Ni&ntilde;os que juegan sobre cajas<br>
+		se levantan para verlo bien.)</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="15. R.A.F. (De dieciocho a&ntilde;os)"></a>15. R.A.F. (De dieciocho 
+		a&ntilde;os)<br>
+		<br>
+		Riendo a trav&eacute;s de las nubes, todav&iacute;a sus dientes de leche sin caer,<br>
+		ciudades y hombres con violencia golpe&oacute; desde lo alto.<br>
+		Sus muertes salv&oacute;, ha vuelto al juego<br>
+		de los ni&ntilde;os, con cosas de ni&ntilde;os ahora abandonadas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="16. El hombre refinado"></a>16. El hombre refinado<br>
+		<br>
+		Era de esp&iacute;ritu delicado. Por mis necesidades me apart&eacute;<br>
+		desde&ntilde;ando los comunes oficios. Fui visto desde lejos y fui muerto...<br>
+		&iquest;C&oacute;mo entiende esto la alegr&iacute;a? Dejad que sea cada hombre juzgado por 
+		sus acciones.<br>
+		<i>He pagado el precio por vivir conmigo en los t&eacute;rminos que yo he 
+		querido.</i></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="17. Nativo porteador de agua (M.E.F.)"></a>17. Nativo porteador 
+		de agua (M.E.F.)<br>
+		<br>
+		Prometeo trajo el fuego al hombre.<br>
+		Este trajo el agua.<br>
+		Los Dioses est&aacute;n celosos -ahora, como entonces-,<br>
+		y no dan tregua.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="18. El centinela dormido"></a>18. El centinela dormido<br>
+		<br>
+		Descre&iacute;da la mirada que sostengo: ahora no tengo nada que guardar .<br>
+		Fui asesinado porque dorm&iacute;a: ahora muerto duermo.<br>
+		Que nadie me reproche de nuevo, lo que quiera que mire est&aacute; sin guardar-<br>
+		duermo porque estoy muerto. Porque dorm&iacute; me mataron.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="19. Bater&iacute;a sin munici&oacute;n"></a>19. Bater&iacute;a sin munici&oacute;n<br>
+		<br>
+		Si alguien en el taller nos llora, decid<br>
+		que estamos muertos porque el turno guard&oacute; fiesta.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="20. Forma com&uacute;n"></a>20. Forma com&uacute;n<br>
+		<br>
+		Si alguien pregunta por qu&eacute; hemos muerto,<br>
+		decidles, porque nuestros padres mintieron.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="21. Un estadista muerto"></a>21. Un estadista muerto<br>
+		<br>
+		No pod&iacute;a comprender: no me atrev&iacute;a a robar:<br>
+		Ment&iacute; por tanto para complacer a la multitud.<br>
+		Ahora mis mentiras se han descubierto todas<br>
+		y debo enfrentarme a los hombres que mat&eacute;.<br>
+		&iquest;Qu&eacute; cuento podr&aacute; servirme aqu&iacute;, en medio<br>
+		de mis j&oacute;venes enfurecidos, defraudados?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="22. El rebelde"></a>22. El rebelde<br>
+		<br>
+		Si hab&iacute;a reclamado ante Vuestra Puerta<br>
+		Vida sobre la Tierra,<br>
+		y, escondido entre las almas que esperan,<br>
+		fui arrojado de repente al nacimiento-<br>
+		incluso entonces, entonces incluso, con trampas y cepos<br>
+		en mi camino esparcidos,<br>
+		Se&ntilde;or, me he burlado de Vuestros atentos cuidados<br>
+		antes de unirme a la Muerte.<br>
+		&iquest;Pero ahora? ...Bajo Vuestra Mano estaba<br>
+		antes a&uacute;n de que los planetas se formaran.<br>
+		Y ahora -aunque los planetas pasen-, permanezco<br>
+		en donde s&eacute; de Vuestra verg&uuml;enza.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="23. El obediente"></a>23. El obediente<br>
+		<br>
+		Cada d&iacute;a, aunque ning&uacute;n o&iacute;do atendiese,<br>
+		mis oraciones surg&iacute;an.<br>
+		Cada d&iacute;a, aunque ning&uacute;n fuego descendiese,<br>
+		hice el sacrificio.<br>
+		Aunque no se desvaneciera en m&iacute; la oscuridad,<br>
+		aunque no enfrentase menores fuerzas,<br>
+		aunque no concediesen los Dioses regalo alguno, a pesar de todo,<br>
+		a pesar de todo, serv&iacute; a los Dioses.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="24. Alguien que dej&oacute; Tarento"></a>24. Alguien que dej&oacute; Tarento<br>
+		<br>
+		Desde el viento fr&iacute;o del Norte con barco y compa&ntilde;eros descendi&oacute;,<br>
+		en busca de los huevos de la muerte depositados en cascarones 
+		invisibles.<br>
+		Encontraron muchos que tomaron en su viaje y llevaron adelante. La<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pesquer&iacute;a de repente fue pasto<br>
+		de las llamas y un suspiro clamoroso llegaba alojo de las gaviotas 
+		hambrientas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="25. Destructores en colisi&oacute;n"></a>25. Destructores en colisi&oacute;n<br>
+		<br>
+		En la Niebla y el Destino ning&uacute;n hechizo se encuentra<br>
+		que ilumine o enmiende.<br>
+		Yo, corriendo hacia mi novia, fui ahogado-<br>
+		cortado por mi mejor amigo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="26. Convoy de escolta"></a>26. Convoy de escolta<br>
+		<br>
+		Un pastor era para los idiotas,<br>
+		sin motivo audaces o miedosos.<br>
+		No soportaban someterse a mis &oacute;rdenes.<br>
+		Todav&iacute;a escaparon. Por m&iacute; que permanec&iacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="27. Desconocido cad&aacute;ver de mujer"></a>27. Desconocido cad&aacute;ver 
+		de mujer<br>
+		<br>
+		Sin cabeza, me falta el pie y la mano,<br>
+		horrible llego a la tierra.<br>
+		Ruego a todos los hijos de mujer<br>
+		que sepan que yo fui madre una vez.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="28. Golpeada y vengada"></a>28. Golpeada y vengada<br>
+		<br>
+		Uno me utiliz&oacute; sanguinario: otro me espiaba<br>
+		rota -por esto un centenar murieron.<br>
+		As&iacute; entre las huestes salvajes fue aprendido<br>
+		cu&aacute;nto vale el favor de una mujer libremente nacida.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="29. Tumba sal&oacute;nica"></a>29. Tumba sal&oacute;nica<br>
+		<br>
+		Mil d&iacute;as les he mirado<br>
+		empujados hacia la noche y arrastrados<br>
+		lentamente como tortugas.<br>
+		Ahora yo, tambi&eacute;n, les sigo.<br>
+		Es la fiebre, y no la lucha-<br>
+		-el tiempo, no la batalla-, lo que mata.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="30. El deposado"></a>30. El deposado<br>
+		<br>
+		No me llames falso, amada,<br>
+		si, desde vuestro apenas conocido pecho<br>
+		hace tan poco tiempo apartado,<br>
+		en otros brazos descanso.<br>
+		<br>
+		Por esta novia m&aacute;s anciana,<br>
+		a quien fr&iacute;amente abrazo,<br>
+		constantemente a mi lado estaba<br>
+		antes a&uacute;n de reconocer sus rasgos.<br>
+		<br>
+		Nuestro matrimonio, a menudo fijado-<br>
+		por un milagro se demoraba-<br>
+		finalmente es consumado,<br>
+		y ya no puede ser deshecho.<br>
+		<br>
+		Vive, pues, que la Vida ha de sanarte,<br>
+		casi, de la Memoria,<br>
+		y d&eacute;janos perdurar<br>
+		su inmortalidad.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="31. V.A.D. (Mediterr&aacute;neo)"></a>31. V.A.D. (Mediterr&aacute;neo)<br>
+		<br>
+		Ah, podr&iacute;an no haber existido nunca barcos veloces, por entonces no<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los hab&iacute;amos encontrado,<br>
+		entre estas &aacute;speras rocas del Egeo, esta peque&ntilde;a virgen ahogada,<br>
+		a quien no desposa nadie, no habr&aacute; ni&ntilde;o que la llore sino los hombres<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que en el dolor ha criado<br>
+		y -ciertos barcos por cuyo retorno los nativos miran en vano.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="32. Actores"></a>32. Actores<br>
+		<br>
+		<i>En una l&aacute;pida conmemorativa en la Iglesia de la Sant&iacute;sima Trinidad,<br>
+		Stratford-on-A von.</i><br>
+		<br>
+		Una vez fingimos para deleite vuestro,<br>
+		alegr&iacute;a y tristeza de los hombres: pero nuestro d&iacute;a ha pasado.<br>
+		Rogamos sus disculptas dondequiera que en un momento hayamos ca&iacute;do-<br>
+		viendo que vuestros servidores hemos sido hasta este fin.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		<a name="33. Periodistas"></a>33. Periodistas<br>
+		<br>
+		<i>En un panel en el recibidor del Instituto de Periodistas</i><br>
+		<br>
+		Hemos servido a nuestro tiempo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#C4CAD4"><br>
+		<a name="Gehaz&iacute;"></a>Gehaz&iacute;</font></p>
+		<p><font face="Georgia" color="#C4CAD4" size="2">1915</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;De d&oacute;nde ven&iacute;s, 
+		Gehaz&iacute;,<br>
+		figura venerable,<br>
+		de escarlata y armi&ntilde;o<br>
+		y cadena de oro de Inglaterra?<br>
+		&laquo;De seguir a Naam&aacute;n<br>
+		y decirle que est&aacute; bien todo,<br>
+		por ello mi celo me ha nombrado<br>
+		Juez en Israel.&raquo;<br>
+		<br>
+		Bien hecho, bien hecho, Gehaz&iacute;.<br>
+		Extended vuestra mano atenta,<br>
+		escapado apenas del juicio,<br>
+		presta juramento para juzgar la tierra,<br>
+		inamovible ante regalos en dinero<br>
+		o el soborno secreto, m&aacute;s bajo,<br>
+		del conocimiento que es beneficio<br>
+		en cualquier plaza de mercado.<br>
+		<br>
+		Descubrid e investigad, Gehaz&iacute;,<br>
+		voz que entre todos pod&eacute;is juzgar,<br>
+		la respuesta cierta, medida,<br>
+		que revela las mentiras m&aacute;s negras-<br>
+		la virtud clara, dif&iacute;cil,<br>
+		la ira fingida a voluntad,<br>
+		para intimidar a un testigo<br>
+		y mantener en silencio al Tribunal.<br>
+		<br>
+		Cuidad ahora, Gehaz&iacute;,<br>
+		que -en un aparte-- nadie hable<br>
+		en secreto con sus jueces<br>
+		mientras se est&eacute; la vista celebrando.<br>
+		Pues puede mostrarles -razones<br>
+		para guardar en secreto alguna cosa<br>
+		y con sutileza conducir las preguntas<br>
+		lejos de aquello que hizo.<br>
+		<br>
+		Vos, espejo de rectitud,<br>
+		&iquest;qu&eacute; os aflige en vuestros votos,<br>
+		qu&eacute; significa el blanco que nace<br>
+		de la piel entre las cejas?<br>
+		Los quistes que brillan y se hunden,<br>
+		las llagas que se pelan y sangran-<br>
+		la lepra de Naam&aacute;n<br>
+		sobre vos y vuestra descendencia toda?<br>
+		Levantaos, levantaos, Gehazi,<br>
+		ajustaos la toga e id.<br>
+		Gehaz&Iacute;, Juez en Israel,<br>
+		leproso blanco como la nieve.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+		<br>
+&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Las mujeres"></a>Las 
+		mujeres</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		De donde la he encontrado mi diversi&oacute;n he tomado;<br>
+		granuja he sido y en mis tiempos he arrasado,<br>
+		he tenido mi bot&iacute;n de dulces corazones,<br>
+		y cuatro entre ellos de primera clase.<br>
+		Una era una viuda casi casta,<br>
+		otra, una mujer en Prome,<br>
+		otra, la mujer de un jefe de cuadras<br>
+		y es otra una muchacha en donde vivo.<br>
+		<br>
+		Nada tengo ahora que ver con las mujeres,<br>
+		pues, llev&aacute;ndolas contigo,<br>
+		nada puedes decir hasta que las pruebas,<br>
+		y es, por tanto, muy posible que te equivoques.<br>
+		Veces hay en que creer&aacute;s que no hubieses podido,<br>
+		veces hay en que sabr&aacute;s que hubieses podido;<br>
+		pero aquello que aprender&aacute;s de la Amarilla y de la Morena<br>
+		habr&aacute; de ayudarte mucho con la Blanca.<br>
+		<br>
+		Yo era un jovencito en Hoogli,<br>
+		t&iacute;mido como una ni&ntilde;a al comenzar;<br>
+		Aggie de Castrer me tom&oacute;,<br>
+		Aggie, lista como el pecado;<br>
+		mayor que yo, pero la primera-<br>
+		m&aacute;s parec&iacute;a una madre-<br>
+		me ense&ntilde;&oacute; el camino del ascenso y de la paga<br>
+		y de ella aprend&iacute; sobre mujeres.<br>
+		<br>
+		Me destinaron entonces a Burma,<br>
+		interino encargado del Bazar,<br>
+		y me consegu&iacute; una nativa peque&ntilde;a y vivaracha<br>
+		compr&aacute;ndole a su padre provisiones.<br>
+		Divertida, amarilla y fiel-<br>
+		una mu&ntilde;eca en una taza de t&eacute;-<br>
+		con honra vivimos, como un matrimonio de verdad,<br>
+		y de ella aprend&iacute; sobre mujeres.<br>
+		<br>
+		Nos enviaron entonces a Neemuch<br>
+		(si no hasta hoy la hubiese conservado),<br>
+		y me junt&eacute; con una deslumbradora diablesa,<br>
+		la mujer de un negro en Mhow;<br>
+		me ense&ntilde;&oacute; la jerga de los gitanos;<br>
+		era como un volc&aacute;n,<br>
+		me apu&ntilde;al&oacute; una noche por haber deseado que fuese blanca,<br>
+		y de ella aprend&iacute; sobre mujeres.<br>
+		<br>
+		Regres&eacute; entonces en barco a casa,<br>
+		me acompa&ntilde;aba una ni&ntilde;a de diecis&eacute;is-<br>
+		una chica de un convento en Meerut,<br>
+		a ninguna tan recta he visto.<br>
+		Su problema: el amor a primera vista,<br>
+		yo no hubiese hecho nada, pues me gustaba demasiado,<br>
+		pero de ella aprend&iacute; sobre mujeres.<br>
+		<br>
+		De donde la he encontrado mi diversi&oacute;n he tomado,<br>
+		y debo ahora pagar mi diversi&oacute;n,<br>
+		pues cuanto de otras mujeres m&aacute;s conoces,<br>
+		menos sientas con una cabeza;<br>
+		y el final de todo, sentado y pensando,<br>
+		y so&ntilde;ando con ver los Fuegos del Infierno;<br>
+		as&iacute; que daos por avisados (s&eacute; que no lo har&eacute;is)<br>
+		y de m&iacute; aprended sobre mujeres.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">&iquest;Qu&eacute; pens&oacute; la esposa 
+		del Coronel?<br>
+		Nadie lo supo nunca.<br>
+		Alguien pregunt&oacute; a la mujer del Sargento,<br>
+		y ella les dijo la verdad.<br>
+		Cuando llegan delante de un hombre.<br>
+		iguales se hacen como una fila de alfileres-<br>
+		pues Judy O'Grady y la esposa del Coronel<br>
+		hermanas son debajo de su piel.</font></i></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Si"></a>Si</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Si puedes mantener la cabeza cuando todo a tu alrededor<br>
+		pierde la suya y por ello te culpan,<br>
+		si puedes confiar en ti cuando de ti todos dudan,<br>
+		pero admites tambi&eacute;n sus dudas;<br>
+		si puedes esperar sin cansarte en la espera,<br>
+		o ser mentido, no pagues con mentiras,<br>
+		o ser odiado, no des lugar al odio,<br>
+		y -aun- no parezcas demasiado bueno, ni demasiado sabio.<br>
+		<br>
+		Si puedes so&ntilde;ar -y no hacer de los sue&ntilde;os tu maestro,<br>
+		si puedes pensar -y no hacer de las ideas tu objetivo,<br>
+		si puedes encontrarte con el Triunfo y el Desastre<br>
+		y tratar de la misma manera a los dos farsantes;<br>
+		si puedes admitir la verdad que has dicho<br>
+		enga&ntilde;ado por bribones que hacen trampas para tontos.<br>
+		O mirar las cosas que en tu vida has puesto, rotas,<br>
+		y agacharte y reconstruirlas con herramientas viejas.<br>
+		<br>
+		Si puedes arrinconar todas tus victorias<br>
+		y arriesgarlas por un golpe de suerte,<br>
+		y perder, y empezar de nuevo desde el principio<br>
+		y nunca decir nada de lo que has perdido;<br>
+		si puedes forzar tu coraz&oacute;n y nervios y tendones<br>
+		para jugar tu turno tiempo despu&eacute;s de que se hayan gastado.<br>
+		Y as&iacute; resistir cuando no te quede nada<br>
+		excepto la Voluntad que les dice: &laquo;Resistid&raquo;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Si puedes hablar con 
+		multitudes y mantener tu virtud,<br>
+		o pasear con reyes y no perder el sentido com&uacute;n,<br>
+		si los enemigos y los amigos no pueden herirte,<br>
+		si todos cuentan contigo, pero ninguno demasiado;<br>
+		si puedes llenar el minuto inolvidable<br>
+		con los sesenta segundos que lo recorren.<br>
+		Tuya es la Tierra y todo lo que en ella habita,<br>
+		y -lo que es m&aacute;s-, ser&aacute;s Hombre, hijo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Una canci&oacute;n en la tormenta"></a>Una canci&oacute;n en la tormenta</font><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		1914-18<br>
+		<br>
+		Aseg&uacute;rate bien de que a tu lado peleen<br>
+		los oc&eacute;anos eternos, aunque esta noche<br>
+		el viento en contra y las mareas<br>
+		nos hagan su juguete.<br>
+		A fuerza de tiempo, no de guerra,<br>
+		en medio del peligro nos guiamos:<br>
+		Sea bienvenida entonces la descortes&iacute;a del Destino<br>
+		dondequiera que aparezca<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en todo 
+		tiempo de angustia y tambi&eacute;n<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en el de 
+		nuestra salvaci&oacute;n,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el juego 
+		vence siempre al jugador<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y el barco a 
+		su tripulaci&oacute;n.<br>
+		<br>
+		De la niebla salen rumbo a la tiniebla<br>
+		las olas que brillan y se encrespan.<br>
+		Casi estas aguas sin conciencia se comportan<br>
+		como si tuviesen alma-<br>
+		casi como si hubieran pactado sumergir<br>
+		nuestra bandera debajo de sus aguas verdes:<br>
+		sea bienvenida entonces la descortes&iacute;a del Destino<br>
+		dondequiera que pueda verse, etc.<br>
+		<br>
+		Aseg&uacute;rate bien, a pesar de que las olas y el viento<br>
+		en reserva guardan r&aacute;fagas a&uacute;n m&aacute;s poderosas,<br>
+		que los que cumplimos las guardias asignadas<br>
+		ni por un instante descuidemos la vigilancia.<br>
+		Y mientras nuestra proa flotando rechaza<br>
+		cada carrera frustrada de las olas,<br>
+		canta, sea bienvenida la descortes&iacute;a del Destino<br>
+		dondequiera que se desvele, etc.<br>
+		<br>
+		No importa que sea barrida la cubierta<br>
+		y se rompan la arboladura, el maderamen-<br>
+		de cualquier p&eacute;rdida podremos sacar provecho<br>
+		salvo de la p&eacute;rdida del regreso.<br>
+		Por eso, entre estos Diablos y nuestra astucia<br>
+		deja que la cortes&iacute;a de las trompetas suene,<br>
+		y que sea bienvenida la descortes&iacute;a del Destino,<br>
+		dondequiera que se encuentre, etc.<br>
+		<br>
+		Aseg&uacute;rate bien, aunque en poder nuestro<br>
+		nada quede para dar<br>
+		salvo sitio y fecha para encontrar el fin,<br>
+		y deja de esforzarte por vivir,<br>
+		que hasta que &eacute;stos se disuelvan, nuestra Orden se mantiene,<br>
+		nuestro Servicio aqu&iacute; nos ata.<br>
+		Sea bienvenida entonces la descortes&iacute;a del Destino,<br>
+		dondequiera que aparezca,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en todo 
+		tiempo de angustia y tambi&eacute;n<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en el de 
+		nuestro triunfo,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; el juego 
+		vence siempre al jugador<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y el barco a 
+		su tripulaci&oacute;n.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Luis 
+		Cremades</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		
+		<p align="center">
+		&nbsp;</p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:05:22 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:20:56 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

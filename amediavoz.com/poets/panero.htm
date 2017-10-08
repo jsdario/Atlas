@@ -1,0 +1,953 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Leopoldo Panero</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Leopoldo Panero. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Leopoldo_Panero,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/panero.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/panero.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815181719" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./panero.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="3 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:17:19 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./panero.htm" title="5:06:13 May 3, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:17:19 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./panero.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:17:19 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./panero.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>68 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010001_2003:-1:010101010101_2004:-1:010101010101_2005:-1:011100000010_2006:-1:100011000200_2007:-1:010114131100_2008:-1:101221000001_2009:-1:201000100000_2010:-1:100000001110_2011:-1:000000001100_2012:-1:130111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./PANERO.jpg" width="379" height="51">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#89ABA2"><br>
+</font><font face="Arial" size="2" color="#9BC9BB">&quot;...Movido levemente por el 
+aire,<br>
+es como tu sonrisa que se acaba<br>
+dejando su hermosura entre los &aacute;rboles...&quot;<br>
+<br>
+<img src="./PANERO1.jpg" width="275" height="328"></font></p>
+
+<p align="center"><em><font face="Arial" size="2" color="#9BC9BB">&quot;Retrato de 
+mujer&quot;<br>
+<br>
+Carl Comijn<br>
+</font>
+</em><font face="Arial" size="2" color="#9BC9BB"><br>
+</font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a 
+		biogr&aacute;fica</font><font color="#9BC9BB"><br></font></p>
+		<p align="left"><font size="2" color="#9BC9BB"><br></font>
+		<font face="Georgia" size="2" color="#9BC9BB">Poeta espa&ntilde;ol nacido en 
+		Astorga, Le&oacute;n, en 1909.<br>Estudi&oacute; en la Universidad en Valladolid donde 
+		brill&oacute; por su talento, experimentando con el verso libre, <br>
+		el dada&iacute;smo, y el surrealismo.&nbsp;&nbsp; <br>En 1930, viaj&oacute; a Tours, 
+		Poitiers y Cambridge para estudiar literatura francesa e inglesa.
+		<br>De su obra po&eacute;tica se destacan: &laquo;La estancia vac&iacute;a&raquo; 1944, &laquo;Versos al 
+		Guadarrama&raquo; 1945, &laquo;Escrito a cada instante&raquo; <br>
+		en 1949 y &laquo;Canto personal&raquo; 1953. En 1960 public&oacute; &laquo;C&aacute;ndida&raquo; considerada 
+		como su obra maestra.<br>Entre los galardones recibidos se destacan el 
+		premio <i>Fastenrath</i> de la Real Academia Espa&ntilde;ola y 
+		<i>El Premio Nacional <br>
+		de Literatura</i> en 1949. <br>Muri&oacute; en Le&oacute;n en 1962.&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><br>
+		<font face="Georgia" size="3" color="#B0C6C1"><br>
+		</font><font face="Georgia" color="#B0C6C1">
+		<a href="./panero.htm#A MIS HERMANAS">A mis hermanas</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><font face="Georgia" size="3" color="#B0C6C1"><br>
+		<br></font><font face="Georgia" color="#A7BEB9">
+		<a href="./panero.htm#A UNA ENCINA SOLITARIA">A una encina solitaria</a><br><br><a href="./panero.htm#CANCI&Oacute;N CON TU HUMILDAD">
+		Canci&oacute;n con tu humildad</a><br>
+		<br><a href="./panero.htm#CANCI&Oacute;N CR&Eacute;DULA">Canci&oacute;n cr&eacute;dula de los ojos</a><br><br>
+		<a href="./panero.htm#CANCI&Oacute;N DE LA BELLEZA MEJOR">Canci&oacute;n de la belleza mejor</a><br>
+		<br><a href="./panero.htm#C&Aacute;NTICO">C&aacute;ntico</a><br><br>
+		<a href="./panero.htm#EN ESTA PAZ DEL CORAZ&Oacute;N ALADA">En esta paz del coraz&oacute;n 
+		alada...</a><br>
+		<br><a href="./panero.htm#EN TU SONRISA">En tu sonrisa</a><br><br>
+		<a href="./panero.htm#ESCRITO A CADA MOMENTO...">Escrito a cada momento...</a><br>
+		<br><a href="./panero.htm#FLUIR DE ESPA&Ntilde;A">Fluir de Espa&ntilde;a</a><br><br>
+		<a href="./panero.htm#HASTA MA&Ntilde;ANA">Hasta ma&ntilde;ana dices, y tu voz...</a><br>
+		<br><a href="./panero.htm#HIJO M&Iacute;O">Hijo m&iacute;o</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br><br><a href="./panero.htm#LA MELANCOL&Iacute;A">La melancol&iacute;a</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<br><a href="./panero.htm#LAS MANOS CIEGAS">Las manos ciegas</a><br><br>
+		<a href="./panero.htm#LEJANA COMO DIOS">Lejana como Dios, pero m&aacute;s cerca...</a><br><br>
+		<a href="./panero.htm#MADRIGAL LENTO">Madrigal lento</a><br><br>
+		<a href="./panero.htm#MATERIA TRANSPARENTE">Materia transparente</a><br><br>
+		<a href="./panero.htm#POR DONDE VAN LAS &Aacute;GUILAS">Por donde van las &aacute;guilas</a><br>
+		<br><a href="./panero.htm#POR LA TARDE">Por la tarde</a>&nbsp;<br><br>
+		<a href="./panero.htm#SOLA T&Uacute;">Sola t&uacute;</a>&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./panero.htm#SONETO">Soneto</a></font><font face="Georgia" size="2" color="#A7BEB9"><br><br> 
+		</font><font face="Georgia" size="2" color="#95B3AA">Volver a: </font>
+	<font face="Georgia" color="#95B3AA">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="A MIS HERMANAS"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		A mis hermanas</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Estamos siempre solos. Cae el viento<br>
+		entre los encinares y la vega.<br>
+		A nuestro coraz&oacute;n el ruido llega<br>
+		del campo silencioso y polvoriento.<br>
+		<br>
+		Alguien cuenta, sin voz, el viejo cuento<br>
+		de nuestra infancia, y nuestra sombra juega<br>
+		tr&aacute;gicamente a la gallina ciega;<br>
+		y una mano nos coge el pensamiento.<br>
+		<br>
+		&Aacute;ngel, Ricardo, Juan, abuelo, abuela,<br>
+		nos tocan levemente, y sin palabras<br>
+		nos hablan, nos tropiezan, les tocamos.<br>
+		<br>
+		&iexcl;Estamos siempre solo, siempre en vela,<br>
+		esperando, Se&ntilde;or, a que nos abras<br>
+		los ojos para ver, mientras jugamos!<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="A UNA ENCINA SOLITARIA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		A una encina solitaria</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">La gracia cenicienta de 
+		la encina, 
+		<br>hondamente celeste y castellana, <br>remansa su hermosura cotidiana<br>
+		en la paz oto&ntilde;al de la colina. 
+		<br><br>Como el silencio de la nieve fina, <br>vuela la abeja y el 
+		romero mana, 
+		<br>y empapa el coraz&oacute;n a la ma&ntilde;ana<br>de su secreta soledad divina. <br>
+		<br>La luz afirma la unidad del cielo<br>en el agua dorada del remanso<br>
+		y en la miel franciscana del aroma, 
+		<br><br>y asida a la esperanza por el vuelo<br>la verde encina de 
+		horizonte manso<br>siente el toque de Dios en la paloma. 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a name="CANCIÓN CON TU HUMILDAD"></a>Canci&oacute;n con tu humildad</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;C&oacute;mo apagas mi sed<br>
+		con tu humildad! &iexcl;Tu mano<br>estremece en mi pecho<br>la sombra del 
+		dolor, igual que un p&aacute;jaro<br>entre las ramas verdes, junto al cielo!<br>
+		&iexcl;C&oacute;mo traes a mis labios<br>con tu humildad la luz sobre tu frente<br>lo 
+		mismo que la nieve sobre el campo,<br>y me apagas la sed de haber 
+		llorado<br>de humildad, al tenerte,<br>dormida, como un ni&ntilde;o, entre mis 
+		brazos!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CANCIÓN CR&Eacute;DULA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Canci&oacute;n cr&eacute;dula de los ojos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Hoy te 
+		miro lentamente<br>como un camino al andar.<br>Te miro y pienso: ma&ntilde;ana<br>
+		caer&aacute; la noche en el mar.<br>
+		<br>Lentamente, poco a poco,<br>como se empa&ntilde;a el cristal,<br>te miro y 
+		pienso en las cosas<br>que no se acaban jam&aacute;s<br>porque Dios las ha 
+		mirado<br>y no las puede olvidar.<br>
+		<br>Fundiendo sue&ntilde;o y penumbra<br>mezclando el agua y el pan,<br>hoy 
+		somos fruto en semilla,<br>que se desprende al azar<br>de la mano que 
+		hace el siempre,<br>y el ma&ntilde;ana, y el quiz&aacute;.<br>
+		<br>Una noche cerraremos<br>nuestros ojos. Lo dem&aacute;s<br>es del viento y 
+		de la espuma.<br>Pero el amor vivir&aacute;.<br>Como el hombre que camina<br>y 
+		que el rostro vuelve atr&aacute;s,<br>al filo de una monta&ntilde;a<br>contemplando su 
+		honda paz,<br>mi coraz&oacute;n en el tiempo<br>sabe que va m&aacute;s all&aacute;,<br>
+		contigo, solo y contigo,<br>tras de la cumbre al mirar.<br>
+		<br>A trav&eacute;s de ti te veo<br>como un camino que est&aacute;<br>siempre en los 
+		pies empezando,<br>hecho por los pies detr&aacute;s,<br>con costumbre y lejan&iacute;a<br>
+		que es en los ojos piedad.<br>
+		<br>Limpia en los p&aacute;rpados tienes<br>la luz de los ojos, cual<br>si el 
+		coraz&oacute;n desde dentro<br>se alzara en pie, y al marchar,<br>como el 
+		b&aacute;culo a la mano,<br>diera apoyo a tu humildad,<br>y a tu cansancio 
+		hermosura<br>como el sol al descansar.<br>
+		<br>Y eres as&iacute;, lentamente,<br>como un paisaje al quedar<br>su historia 
+		en los ojos, suave,<br>desvivida, rota ya<br>del coraz&oacute;n, pero siempre<br>
+		con propia luz virginal<br>dando al recuerdo la forma<br>perpetuamente 
+		fugaz<br>del destino, y al instante<br>luz de suprema verdad.<br>
+		<br>Mientras los valles se cubren<br>de dudosa claridad,<br>hoy te 
+		contemplo, y mis ojos<br>tr&eacute;mulos de tiempo est&aacute;n,<br>dorados en tu 
+		belleza,<br>dulces en tu oscuridad<br>como en la sombra de un templo<br>
+		sagradamente mortal.<br>
+		<br>T&uacute; eres mi luz tenebrosa.<br>T&uacute; que la mano me das<br>hacia el 
+		origen viviente<br>de mi misma soledad.<br>T&uacute; y tu recuerdo. Te miro<br>
+		lejos ya del manantial,<br>y bajo el puente la oscura<br>corriente se ve 
+		temblar.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CANCIÓN DE LA BELLEZA MEJOR"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Canci&oacute;n de la belleza mejor</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iquest;Tan alegre est&aacute;s t&uacute; 
+		que te has quedado, <br>coraz&oacute;n, sin palabras? <br>&iquest;Ya no sabes decir? 
+		&iquest;Hablar no sabes 
+		<br>como ayer? &iquest;Est&aacute;s mudo <br>para siempre y en paz? &iquest;No ves los ojos 
+		<br>m&aacute;s dulces cada d&iacute;a que cantaste; <br>la frente un poco triste, 
+		levantada. 
+		<br>p&aacute;lidamente hacia el cabello leve <br>la cabeza de ni&ntilde;a...? <br>&iquest;No 
+		es mejor y m&aacute;s honda su belleza? 
+		<br>&iquest;Tan alegre est&aacute;s t&uacute; que te has quedado <br>ciego como al andar 
+		sobre la nieve? 
+		<br>&iquest;No ves ya su hermosura? &iquest;No la sabes <br>decir? &iquest;Est&aacute;s callado <br>
+		para mejor so&ntilde;ar lo que has vivido? 
+		<br>&iquest;No queda primavera entre tus huesos? <br>&iexcl;Oh vida retirada en lo 
+		m&aacute;s dulce!
+		<br>&iexcl;Oh l&iacute;mite en penumbra, casi el alma! </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="C&Aacute;NTICO"></a>C&aacute;ntico</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Es verdad tu hermosura. 
+		Es verdad. &iexcl;C&oacute;mo entra<br>la luz al coraz&oacute;n! &iexcl;C&oacute;mo aspira tu aroma<br>de 
+		tierra en primavera el alma que te encuentra!<br>Es verdad. Tu piel 
+		tiene penumbra de paloma.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Tus ojos tienen toda la 
+		dulzura que existe.<br>Como un ave remota sobre el mar tu alma vuela.<br>
+		Es m&aacute;s verdad lo di&aacute;fano desde que t&uacute; naciste.<br>Es verdad. Tu pie 
+		tiene costumbre de gacela.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Es verdad que la tierra 
+		es hermosa y que canta<br>el ruise&ntilde;or. La noche es m&aacute;s alta en tu 
+		frente.<br>Tu voz es la encendida mudez de tu garganta.<br>Tu palabra es 
+		tan honda, que apenas si se siente.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Es verdad el milagro. 
+		Todo cuanto ha nacido<br>descifra en tu hermosura su nombre verdadero.<br>
+		Tu cansancio es esp&iacute;ritu, y un proyecto de olvido<br>silencioso y 
+		viviente como todo sendero.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Tu amor une mis d&iacute;as y 
+		mis noches de abeja.<br>Hace de mi esperanza un clavel gota a gota.<br>
+		Desvela mis pisadas y en mi sue&ntilde;o se aleja,<br>mientras la tierra 
+		humilde de mi destino brota.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Gracias os doy, Dios 
+		m&iacute;o, por el amor que llena<br>mi soledad de p&aacute;jaros como una selva m&iacute;a!<br>
+		Gracias porque mi vida se siente como ajena,<br>porque es una promesa 
+		continua mi alegr&iacute;a,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">porque es de trigo 
+		alegre su cabello en mi mano,<br>porque igual que la orilla de un lago 
+		es su hermosura,<br>porque es como la escarcha del campo castellano<br>
+		el verde reci&eacute;n hecho de su mirada pura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">No s&eacute; la tierra fija de 
+		mi ser. no s&eacute; d&oacute;nde<br>empieza este sonido del alma y de la brisa,<br>
+		que en mi pecho golpea, y en mi pecho responde,<br>como el agua en la 
+		piedra, como el ni&ntilde;o en la risa.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">No s&eacute; si estoy ya 
+		muerto. No lo s&eacute;. No s&eacute;, cuando<br>te miro, si es la noche lo que miro 
+		sin verte.<br>No s&eacute; si es el silencio del coraz&oacute;n temblando<br>o si 
+		escucho la m&uacute;sica &iacute;ntima de la muerte.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Pero es verdad el 
+		tiempo que transcurre conmigo.<br>Es verdad que los ojos empapan el 
+		recuerdo<br>para siempre al mirarte, &iexcl;para siempre contigo,<br>en la 
+		muerte que alcanzo y en la vida que pierdo!<br>
+		<br>La esperanza es la sola verdad que el hombre inventa.<br>Y es verdad 
+		la esperanza, y es su l&iacute;mite anhelo<br>de juventud eterna, que aqu&iacute; se 
+		transparenta<br>igual que la ceniza de una sombra en el suelo.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">T&uacute; eres como una isla 
+		desconocida y triste,<br>mecida por las aguas, que suenan, noche y d&iacute;a,<br>
+		m&aacute;s lejos y m&aacute;s dulce de todo lo que existe,<br>en un rinc&oacute;n del alma 
+		con nombre de bah&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Lo m&aacute;s m&iacute;o que tengo 
+		eres t&uacute;. Tu palabra<br>va haciendo d&eacute;bilmente mi soledad m&aacute;s pura.<br>
+		&iexcl;Haz que la tierra antigua del coraz&oacute;n se abra<br>y que sientan cerca la 
+		muerte y la hermosura!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Haz de mi voluntad un 
+		v&iacute;nculo creciente.<br>Haz melliza del ni&ntilde;o la pureza del hombre.<br>haz 
+		la mano que tocas de nieve adolescente<br>y de espuma mis huesos al 
+		pronunciar tu nombre.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">El tiempo ya no existe. 
+		S&oacute;lo el alma respira.<br>S&oacute;lo la muerte tiene presencia y sacramento.<br>
+		Desnudo y retirado, mi coraz&oacute;n te mira.<br>Es verdad. Tu hermosura me 
+		borra el pensamiento.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Tengo aqu&iacute; mi ventura. 
+		Tengo la muerte sola.<br>Tengo en paz mi alegr&iacute;a y mi dolor en calma.<br>
+		A trav&eacute;s de mi pecho de var&oacute;n que se inmola<br>van corriendo las frescas 
+		acequias de tu alma.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">La presencia de Dios 
+		eres t&uacute;. Mi agon&iacute;a<br>empieza poco a poco como la sed. &iexcl;T&uacute; eres<br>la 
+		palabra que el &Aacute;ngel declaraba a Mar&iacute;a,<br>anunciando a la muerte la 
+		unidad de los seres!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p id="p2"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="EN ESTA PAZ DEL CORAZÓN ALADA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		En esta paz del coraz&oacute;n alada...</font></p>
+		<p id="p3"><font face="Georgia" size="2" color="#9BC9BB">En esta paz del 
+		coraz&oacute;n alada
+		<br>descansa el horizonte de Castilla, <br>y el vuelo de la nube sin 
+		orilla 
+		<br>azula mansamente la llanada. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Solas quedan la luz y 
+		la mirada 
+		<br>desposando la mutua maravilla <br>de la tierra caliente y amarilla 
+		<br>y el verdor de la encina sosegada. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Decir con el lenguaje 
+		la ventura 
+		<br>de nuestra doble infancia, hermano m&iacute;o, <br>y escuchar el silencio 
+		que te nombra! 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">La oraci&oacute;n escuchar del 
+		agua pura, 
+		<br>el susurro fragante del est&iacute;o <br>y el ala de los chopos en la 
+		sombra.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="EN TU SONRISA"></a></font><font face="Georgia" color="#9BC9BB">
+		En tu sonrisa</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Ya empieza tu sonrisa,<br>
+		como el son de la lluvia en los cristales.<br>La tarde vibra al fondo de 
+		frescura,<br>y brota de la tierra un olor suave,<br>un olor parecido a 
+		tu sonrisa,<br>y a mover tu sonrisa como un sauce<br>con el aura de 
+		abril; la lluvia roza<br>vagamente el paisaje,<br>y hacia adentro se 
+		pierde tu sonrisa,<br>y hacia dentro se borra y se deshace,<br>y hacia 
+		el alma me lleva,<br>desde el alma me trae,<br>at&oacute;nito, a tu lado.<br>Ya 
+		tu sonrisa entre mis labios arde,<br>y oliendo en ella estoy a tierra 
+		limpia,<br>y a luz, y a la frescura de la tarde<br>donde brilla de nuevo 
+		el sol, y el iris,<br>movido levemente por el aire,<br>es como tu 
+		sonrisa que se acaba<br>dejando su hermosura entre los &aacute;rboles...</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<pre><font face="Georgia" size="3" color="#9BC9BB"><a name="ESCRITO A CADA MOMENTO..."></a>Escrito a cada momento...</font></pre>
+		<pre><font face="Georgia" size="2" color="#9BC9BB">Para inventar a Dios, nuestra palabra
+busca, dentro del pecho,
+su propia semejanza y no lo encuentra,
+como las olas de la mar tranquila,
+una tras otra, iguales,
+quieren la exactitud de lo infinito
+medir, al par que cantan...
+Y su nombre sin letras,
+escrito a cada instante por la espuma,
+se borra a cada instante
+mecido por la m&uacute;sica del agua;
+y un eco queda solo en las orillas.
+&iquest;Qu&eacute; n&uacute;mero infinito
+nos cuenta el coraz&oacute;n?
+Cada latido,
+otra vez es m&aacute;s dulce, y otra y otra;
+otra vez ciegamente desde dentro
+va a pronunciar Su nombre.
+Y otra vez se ensombrece el pensamiento,
+y la voz no le encuentra.
+Dentro del pecho est&aacute;. 
+Tus hijos somos,
+aunque jam&aacute;s sepamos
+decirte la palabra exacta y tuya,
+que repite en el alma el dulce y fijo
+girar de las estrellas.</font></pre>
+		<p>&nbsp;</p>
+		<div align="center"><center>
+			<pre><font face="Georgia" size="2" color="#9BC9BB"><img
+border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></pre></center>
+		</div>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a name="FLUIR DE ESPA&Ntilde;A"></a>Fluir de Espa&ntilde;a</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Voy bebiendo en la luz, 
+		y desde dentro 
+		<br>de mi caliente amor, la tierra sola <br>que se entrega a mis pies 
+		como una ola 
+		<br>de c&aacute;rdena hermosura. En mi alma entro; </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">hundo mis ojos hasta el 
+		vivo centro 
+		<br>de piedad que sin l&iacute;mites se inmola <br>lo mismo que una madre. Y 
+		tornasola 
+		<br>la sombra del planeta nuestro encuentro. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Tras el l&iacute;mpido mar la 
+		estepa crece, 
+		<br>y el pardo risco, y la corriente quieta <br>al fondo del barranco 
+		repentino 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">que para el coraz&oacute;n y 
+		lo ensombrece, 
+		<br>como gota del tiempo ya completa <br>que hacia Dios se desprende en 
+		su camino.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="HASTA MA&Ntilde;ANA">
+		</a>Hasta ma&ntilde;ana dices, y tu voz ... </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Hasta ma&ntilde;ana dices, y 
+		tu voz <br>se apaga y se desprende <br>como la nieve. Lejos, poco a 
+		poco, <br>va cayendo, y se duerme, <br>tu coraz&oacute;n cansado, <br>donde el 
+		ma&ntilde;ana est&aacute;. Como otras veces, <br>hasta ma&ntilde;ana dices, y te pliegas <br>
+		al ma&ntilde;ana en que crees, <br>como el viento a la lluvia, <br>como la luz 
+		a las movibles mieses. <br>Hasta ma&ntilde;ana, piensas; y tus ojos <br>cierras 
+		hasta ma&ntilde;ana, y ensombreces, <br>y guardas. Tus dos brazos <br>cruzas, y 
+		el peso leve levantas, de tu pecho confiado. <br>Tras la penumbra de tu 
+		carne crece <br>la luz intacta de la orilla. Vuela <br>una paloma sola y 
+		pasa tenue <br>la luna acariciando las espigas <br>lejanas. Se oyen 
+		trenes <br>hundidos en la noche, entre el silencio <br>de las encinas y 
+		el trigal que vuelve <br>con la brisa. Te vas siempre <br>hasta ma&ntilde;ana, 
+		lejos. Tu sonrisa <br>se va durmiendo mientras Dios la mece <br>en tus 
+		labios, lo mismo <br>que el tallo de una flor en la corriente; <br>
+		mientras se queda ciega tu hermosura <br>como el viento al rodar sobre 
+		la nieve; <br>mientras te vas hasta ma&ntilde;ana, dulcemente <br>por esa senda 
+		pura que, alg&uacute;n d&iacute;a, <br>te llevar&aacute; dormida hacia la muerte. </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		</font><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="HIJO M&Iacute;O"></a> 
+		</font><font face="Georgia" color="#9BC9BB">Hijo m&iacute;o</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Desde mi vieja orilla, 
+		desde la fe que siento, <br>hacia la luz primera que toma el alma pura, <br>
+		voy contigo, hijo m&iacute;o, por el camino lento 
+		<br>de este amor que me crece como mansa locura. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Voy contigo, hijo m&iacute;o, 
+		frenes&iacute; so&ntilde;oliento <br>de mi carne, palabra de mi callada hondura, <br>
+		m&uacute;sica que alguien pulsa no s&eacute; d&oacute;nde, en el viento, 
+		<br>no s&eacute; d&oacute;nde, hijo m&iacute;o, desde mi orilla oscura. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Voy, me llevas, se 
+		torna cr&eacute;dula mi mirada, <br>me empujas levemente (ya casi siento el 
+		fr&iacute;o); <br>me invitas a la sombra que se hunde a mi pisada, 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">me arrastras de la 
+		mano... Y en tu ignorancia f&iacute;o, <br>y a tu amor me abandono sin que me 
+		queda nada, <br>terriblemente solo, no s&eacute; d&oacute;nde, hijo m&iacute;o. 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LA MELANCOL&Iacute;A"></a></font><font face="Georgia" color="#9BC9BB">
+		La melancol&iacute;a</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">El hombre coge en 
+		sue&ntilde;os la mano que le tiende<br>un &aacute;ngel, casi un &aacute;ngel. Toca su carne 
+		fr&iacute;a,<br>y hasta el fondo del alma. de rodillas, desciende.<br>El &eacute;l. Es 
+		el que espera llevarnos cada d&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Es el dulce fantasma 
+		del coraz&oacute;n, el duende<br>de nuestras pobres almas, es la melancol&iacute;a.<br>
+		&iexcl;Es el son de los bosques donde el viento se extiende<br>habl&aacute;ndonos lo 
+		mismo que Dios nos hablar&iacute;a!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Un &aacute;ngel, casi un 
+		&aacute;ngel. En nuestro pecho reza,<br>en nuestros ojos mira y en nuestra mano 
+		toca;<br>y todo es como niebla de una leve tristeza,<br>
+		<br>y todo es como un beso cerca de nuestra boca,<br>y todo es como un 
+		&aacute;ngel cansado de belleza,<br>&iexcl;que lleva a sus espaldas este peso de 
+		roca!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LAS MANOS CIEGAS"></a> 
+		</font><font face="Georgia" color="#9BC9BB">
+		Las manos ciegas</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Ignorando mi vida, 
+		<br>golpeado por la luz de las estrellas, <br>como un ciego que 
+		extiende, 
+		<br>al caminar, las manos en la sombra, <br>todo yo, Cristo m&iacute;o, <br>
+		todo mi coraz&oacute;n, sin mengua, entero, 
+		<br>virginal y encendido, se reclina <br>en la futura vida, como el 
+		&aacute;rbol 
+		<br>en la savia se apoya, que le nutre, <br>y le enflora y verdea. <br>
+		Todo mi coraz&oacute;n, ascua de hombre, 
+		<br>in&uacute;til sin Tu amor, sin Ti vac&iacute;o, <br>en la noche Te busca, <br>le 
+		siento que Te busca, como un ciego, 
+		<br>que extiende al caminar las manos llenas <br>de anchura y de 
+		alegr&iacute;a. 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a name="LEJANA COMO DIOS"></a>Lejana como Dios, pero m&aacute;s cerca...</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Lejana como Dios, pero m&aacute;s cerca,<br>m&aacute;s cerca, m&aacute;s dormida entre las 
+		horas<br>m&aacute;s alta tras la noche, como el viento<br>m&aacute;s concreta en el 
+		pecho o m&aacute;s remota<br>o m&aacute;s dulce en la orilla;<br>lejana como Dios, 
+		pero m&aacute;s cerca<br>dentro del coraz&oacute;n, pero m&aacute;s cerca<br>de mi voz al 
+		hablar cuando te nombra;<br>m&aacute;s secreta en mi sue&ntilde;o;<br>donde mi vida 
+		brota;<br>allegada a mi sangre de repente<br>con un inmenso aroma<br>de 
+		algo que est&aacute; en la noche todav&iacute;a,<br>tu pureza me arrastra hacia la 
+		honda<br>soledad imposible, donde el alma<br>es s&oacute;lo tuya, como Dios; es 
+		toda<br>un camino vehemente<br>de claridad, de sombra...</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="MADRIGAL LENTO"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Madrigal lento</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Te haces al deshacerte 
+		m&aacute;s hermosa, 
+		<br>lo mismo que en la nieve derretida, <br>bajo su tersa limpidez 
+		dormida, 
+		<br>el tiempo, vuelto esp&iacute;ritu, reposa. <br><br>Te haces tan dulcemente 
+		tenebrosa, 
+		<br>lago de mi monta&ntilde;a ensombrecida, <br>que en tu quietud recoges hoy 
+		mi vida; 
+		<br>mi ayer que a mi ma&ntilde;ana se desposa. <br><br>Igual que ayer cantaba a 
+		mi monta&ntilde;a, 
+		<br>hoy a ti, mi honda paz, mi nieve viva, <br>mi muerte atesorada en la 
+		costumbre<br>
+		<br>canto, mientras tu tiempo te acompa&ntilde;a, <br>oh, clara compa&ntilde;era 
+		fugitiva,
+		<br>hacia el desnudo mar desde la cumbre. </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="MATERIA TRANSPARENTE"></a>Materia transparente</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Otra vez como en sue&ntilde;os mi coraz&oacute;n se empa&ntilde;a<br>de haber vivido... &iexcl;Oh 
+		fresca materia transparente!<br>De nuevo como entonces siento a Dios en 
+		mi entra&ntilde;a.<br>Pero en mi pecho ahora es sed lo que era fuente.<br>
+		<br>En la ma&ntilde;ana limpia la luz de la monta&ntilde;a<br>remeje las ca&ntilde;adas 
+		azules de relente...<br>&iexcl;Otra vez como en sue&ntilde;os este rinc&oacute;n de Espa&ntilde;a,<br>
+		este olor de la nieve que mi memoria siente!<br>
+		<br>&iexcl;Oh pura y transparente materia, donde presos,<br>igual que entre la 
+		escarcha las flores, nos quedamos<br>un d&iacute;a, all&aacute; en la sombra de los 
+		bosques espesos<br>
+		<br>donde nacen los tallos que al vivir arrancamos!<br>&iexcl;Oh dulce 
+		primavera que corre por mis huesos<br>otra vez como en sue&ntilde;os...! Y otra 
+		vez despertamos.<br>
+		<br><i>Versos del Guadarrama&nbsp; 1930-1939</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="POR DONDE VAN LAS &Aacute;GUILAS"></a> </font>
+		<font face="Georgia" color="#9BC9BB">
+		Por donde van las &aacute;guilas </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Una luz vehemente y 
+		oscura, de tormenta, 
+		<br>flota sobre las cumbres del alto Guadarrama, <br>por donde van las 
+		&aacute;guilas. La tarde baja, lenta, 
+		<br>por los senderos verdes, calientes de retama. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Entre las piedras 
+		brilla la lumbre so&ntilde;olienta <br>del sol oculto y fr&iacute;o. La luz, de rama 
+		en rama, <br>como el vuelo de un p&aacute;jaro, tras la sombra se ahuyenta. 
+		<br>Bruscamente, el silencio crece como una llama. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Tengo miedo. Levanto 
+		los ojos. Dios azota
+      	<br>mi coraz&oacute;n. El vaho de la nieve se enfr&iacute;a <br>lo mismo que un 
+		recuerdo. Sobre los montes flota 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">la paz, y el alma sue&ntilde;a 
+		su propia lejan&iacute;a. <br>Una luz vehemente desde mi sue&ntilde;o brota <br>hacia 
+		el amor. La tarde duerme a mis pies, sombr&iacute;a.. 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="POR LA TARDE">
+		</a></font><font face="Georgia" color="#9BC9BB">Por la tarde</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Palabra vehemente de las cosas<br>inanimadas; roca, pino, cumbre<br>
+		solitaria de sol; silencio y lumbre;<br>quietud de las laderas 
+		rumorosas.<br>
+		<br>Intactas de mis manos silenciosas<br>entre el romero azul de 
+		mansedumbre,<br>transparentes de Dios y en su costumbre.<br>silencian el 
+		pinar mariposas.<br>
+		<br>Y el coraz&oacute;n silencia levemente<br>su palabra m&aacute;s pura, y su retama<br>
+		se alza en dorado vuelo, mientras arde,<br>
+		<br>al fresco soplo, en limpidez de fuente,<br>la profunda quietud del 
+		Guadarrama,<br>lento de mariposas, por la tarde.<br>
+		<br><i>Versos del Guadarrama&nbsp;&nbsp; 1930-1939</i><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		</font><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#9BC9BB"><a name="SOLA TÚ"></a>Sola t&uacute;</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Sola t&uacute; junto a m&iacute;, junto a mi pecho;<br>s&oacute;lo tu coraz&oacute;n, tu mano 
+		sola,<br>me lleva al caminar; tus ojos solos<br>traen un poco de luz 
+		hasta la sombra<br>del recuerdo; &iexcl;qu&eacute; dulce,<br>qu&eacute; alegre nuestro 
+		adi&oacute;s! El cielo es rosa<br>y es verde el encinar, y estamos muertos,<br>
+		juntos los dos, en mi memoria sola.<br>Sola t&uacute; junto a m&iacute;, junto al 
+		olvido,<br>all&aacute; donde la nieve silenciosa<br>del alto Guadarrama, entre 
+		los pinos,<br>de rodillas te toca.<br>Estamos solos para siempre; 
+		estamos<br>detr&aacute;s del coraz&oacute;n, de la memoria,<br>del viento, de la luz, 
+		de las palabras,<br>juntos los dos sobre la nieve sola.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="SONETO"></a>
+		</font><font face="Georgia" color="#9BC9BB">Soneto</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Se&ntilde;or, el viejo tronco 
+		se desgaja, <br>el recio amor nacido poco a poco, <br>se rompe. El 
+		coraz&oacute;n, el pobre loco, <br>est&aacute; llorando a solas en voz baja, </font>
+		</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">del viejo tronco 
+		haciendo pobre caja <br>mortal. Se&ntilde;or, la encina en huesos toco <br>
+		deshecha entre mis manos, y Te invoco <br>en la santa vejez que 
+		resquebraja </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">su noble fuerza. Cada 
+		rama, en nudo, <br>era hermandad de savia y todas juntas <br>daban 
+		sombra feliz, orillas buenas. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Se&ntilde;or, el hacha llama 
+		al tronco mudo, <br>golpe a golpe, y se llena de preguntas <br>el 
+		coraz&oacute;n del hombre donde suenas. </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<font face="Georgia" size="2" color="#8FABC2">
+	
+<p align="center"><p align="center">
+	<a href="http://www.ademails.com/estadisticas1059760860.htm"
+target="_blank" style="color: #84B0D6; text-decoration: none"><font color="#A6BCCE"><script type="text/javascript" language="JavaScript">
+<!--
+document.write("<img src=\"http://www.ademails.com/cgi-bin/contador.cgi?ID=1059760860");
+document.write("&referer=");
+document.write(escape(document.referrer));
+document.write("\" border=0 alt=\"Estadisticas\">");
+// -->
+      </script><noscript>
+<img src="http://www.ademails.com/cgi-bin/contador.cgi?ID=1059760860" border="0"
+alt="Estadisticas"></noscript> </font></a></p>
+
+
+
+</p>
+</blockquote>
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:17:19 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:23:28 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,1122 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jaime Siles</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jaime Siles. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jaime_Siles,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/siles.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/siles.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815181147" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./siles.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 Jun 2013"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:11:47 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./siles.htm" title="3:52:13 Jun 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:11:47 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./siles.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:11:47 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./siles.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>71 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000001101_2005:-1:011100000014_2006:-1:010011000200_2007:-1:010213131100_2008:-1:011101b11000_2009:-1:101000110000_2010:-1:100000001110_2011:-1:000000001030_2012:-1:301010001000_2013:7:101211010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./SILES.jpg" width="265" height="39">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<br>
+</p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&quot;Las dunas de su cuerpo y esas manos<br>
+que la luz difumina en el papel...&quot;</em></font></p>
+
+<p align="center"><font color="#84B0D6"><img src="./SILES1.jpg" width="250" height="312"><br>
+<br>
+</font>
+<font face="Arial" size="2" color="#84B0D6"><em>&quot;Music becomes her&quot;<br>
+<br>
+E. Arbe</em></font><font color="#84B0D6"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta 
+		espa&ntilde;ol nacido en Valencia en 1951.<br>Doctor en Filolog&iacute;a Cl&aacute;sica por 
+		la Universidad de Salamanca, fue becado por la Fundaci&oacute;n Juan March, 
+		ampliando <br>
+		sus estudios en la <em>Universidad de T&uuml;bingen</em>. Trabaj&oacute; luego como 
+		investigador contratado en el Departamento <br>
+		de Ling&uuml;&iacute;stica de la 
+		<em>Universidad de Colonia</em>. De 1976 a 1982 fue profesor de 
+		Filolog&iacute;a Latina en las 
+		<em>Universidades
+      <br>
+		de Salamanca </em>y<em> de Alcal&aacute; de Henares</em>. En 1983 obtuvo la 
+		c&aacute;tedra de Filolog&iacute;a Latina de la <em>Universidad de Laguna</em>,<br>
+		de Tenerife. Ese mismo a&ntilde;o fue nombrado Director del Instituto Espa&ntilde;ol 
+		de Cultura en Viena y Agregado Cultural 
+		<br>
+		en la Embajada de Espa&ntilde;a en Austria. <br>Catedr&aacute;tico Honorario de la <em>
+		Universidad de Viena</em>, ha impartido clases en las universidades de 
+		Graz, Salzburg, <br>
+		Madison-Wiscosin, B&eacute;rgamo, Berna y St. Gallen. Actualmente es 
+		Catedr&aacute;tico de Filolog&iacute;a Latina de la <em>Universidad de 
+		<br>
+		Valencia</em>. 
+		<br>En 1973 obtuvo el <em>Premio Ocnos</em>, en 1983, el <em>Premio de 
+		la Cr&iacute;tica</em> y en 1989 el <em>Premio Internacional Loewe de Poes&iacute;a</em>. <br>
+		Gan&oacute; adem&aacute;s la 1&ordf; edici&oacute;n del <em>Premio Generaci&oacute;n del 27</em>.<br>De 
+		sus libros de poes&iacute;a se destacan, entre otros: &laquo;Canon&raquo;1973, &laquo;Alegor&iacute;a&raquo; 
+		1977,&nbsp;&nbsp; &laquo;M&uacute;sica de Agua&raquo; 1983, <br>
+		&laquo;Poemas al rev&eacute;s&raquo; 1987, &laquo;La Realidad y el Lenguaje&raquo; 1989, &laquo;Sem&aacute;foros, 
+		Sem&aacute;foros&raquo; 1990, e &laquo;Himnos tard&iacute;os&raquo; en 1990. &copy;<br>
+		</font><font face="Georgia" size="2" color="#85A6BC"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+<p align="center"><br></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./siles.htm#ACIS Y GALATEA">Acis y Galatea</a><br><br><a href="./siles.htm#BIOGRAF&Iacute;A">
+		Biograf&iacute;a</a><br><br>
+		<a href="./siles.htm#CANCI&Oacute;N DE LOS ESP&Iacute;AS CULTOS...">Canci&oacute;n de los esp&iacute;as 
+		cultos...</a><br>
+		<br><a href="./siles.htm#COMISI&Oacute;N DE SERVICIOS">Comisi&oacute;n de servicios </a><br><br>
+		<a href="./siles.htm#CONVENTO DE LAS DUE&Ntilde;AS">Convento de las due&ntilde;as</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./siles.htm#DAIMON ATOPON">Daimon Atopon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./siles.htm#EL CORAZ&Oacute;N DEL AGUA">El coraz&oacute;n del agua</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./siles.htm#HIMNO A VENUS">Himno a Venus</a><br><br><a href="./siles.htm#INTERIORES">
+		Interiores</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./siles.htm#LA TIERRA DE LA NOCHE">La tierra de la noche</a><br>
+		<br><a href="./siles.htm#MAYO DEL 68">Mayo del&nbsp; 68</a><br><br>
+		<a href="./siles.htm#METAMORFOSIS">Metamorfosis</a><br><br>
+		<a href="./siles.htm#M&Uacute;SICA DE AGUA">M&uacute;sica de agua</a><br><br>
+		<a href="./siles.htm#NATURALEZA">Naturaleza</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./siles.htm#PAR&Aacute;BOLA DE ESTE MISMO LUGAR">Par&aacute;bola de este mismo 
+		lugar</a><br>
+		<br><a href="./siles.htm#RITORNELLO">Ritornello</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./siles.htm#SEM&Aacute;FOROS... SEM&Aacute;FOROS">Sem&aacute;foros... sem&aacute;foros</a><br>
+		<br><a href="./siles.htm#SILENCIO">Silencio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./siles.htm#SIN">Sin</a><br><br>
+		<a href="./siles.htm#VARIACI&Oacute;N BARROCA SOBRE UN TEMA DE LUCRECIO">Variaci&oacute;n barroca 
+		sobre un tema de Lucrecio</a> &nbsp;</font><font face="Georgia" size="2" color="#8FABC2">&nbsp;&nbsp;&nbsp; <br><br>
+		Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font size="3" color="#A6BCCE" face="Georgia"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br></p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+	</blockquote>
+	<blockquote>
+		<p><font face="Georgia" color="#84B0D6" size="2"><a name="ACIS Y GALATEA"></a>
+		Acis y Galatea<br><br>Ese cuerpo labrado como plata,<br>ese oro, esa 
+		t&uacute;nica, esa piel,<br>ese color que ti&ntilde;e la escarlata<br>corola del 
+		pistilo de un clavel;<br>
+		<br>ese cielo de c&aacute;rdenos espacios,<br>esa carne que tiembla en el 
+		vaiv&eacute;n<br>de las rodillas y de los topacios<br>nos dicen que este cuadro 
+		es de Poussin.<br>
+		<br>El resplandor del sol en los minutos<br>del gris del agua sobre el 
+		gouache del gres,<br>el c&eacute;sped de corales diminutos<br>que puntean las 
+		puntas de sus pies;<br>
+		<br>el placer de los vicios absolutos,<br>el maquillado estambre, el 
+		cascabel<br>de sus tacones, los ojos resolutos<br>disueltos en vidrieras 
+		de bisel;<br>
+		<br>las dunas de su cuerpo y esas manos<br>que la luz difumina en el 
+		papel<br>de este poema dicen que eran vanos<br>ese oro, esa t&uacute;nica, esa 
+		piel.<br>
+		<br>La chica que los mira aqu&iacute; a mi lado<br>es m&aacute;s real que el lienzo y 
+		que el pincel:<br>hace un gesto de geisha emocionado,<br>m&aacute;s certero, 
+		m&aacute;s cierto, m&aacute;s rimado<br>de rimmel que la estrofa del clavel.<br>
+		<br>El cuadro del museo que miramos<br>no est&aacute; en la sala, ni en el 
+		Louvre, ni en<br>la Tate Gallery, el Ermitage o Samos,<br>y no es -ni 
+		por asomo- de Poussin.<br>
+		<br>El cuadro del museo que miramos,<br><em>Acis y Galatea</em>, ella y 
+		&eacute;l,<br>somos nosotros mismos mientras vamos<br>-ojo, labio, boca, 
+		lengua, mano-<br>sobre la carne del amor humano<br>ensortijando flores, 
+		cuerpos, ramos<br>de un verano mejor que el del pincel.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;Sem&aacute;foros, 
+		sem&aacute;foros&quot; 1990</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="BIOGRAF&Iacute;A">
+		</a></font><font face="Georgia" color="#84B0D6">Biograf&iacute;a</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Mi ayer son algas de pasi&oacute;n,<br>luces de espuma.<br>Y una arena 
+		insaciable que devora<br>los cuerpos submarinos.<br>Un cielo blando 
+		donde beben<br>las palomas sin rumbo del est&iacute;o.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;Biograf&iacute;a sola&quot; 
+		1971</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="CANCIÓN DE LOS ESP&Iacute;AS CULTOS..."></a></font>
+		<font face="Georgia" color="#84B0D6">Canci&oacute;n de los esp&iacute;as cultos en el 
+		momento de envejecer</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Mi vida a cambio de dos o tres cerillas.<br>Mi vida a cambio de 
+		sorbos de cognac.<br>Mi vida a cambio de dos o tres colillas.<br>Mi vida 
+		a cambio de este cul-de-sac.<br>Mi vida a cambio de litros de bencina.<br>
+		Mi vida a cambio del c&oacute;nico coral.<br>Mi vida a cambio del tul de 
+		muselina.<br>Mi vida a cambio de c&oacute;dices de cal.<br>Mi vida a cambio de 
+		luces opalinas.<br>Mi vida a cambio del c&uacute;fico cristal.<br>Mi vida a 
+		cambio de sienes serpentinas.<br>Mi vida a cambio del fuego en un 
+		portal.<br>Mi vida a cambio de t&uacute;neles de mina.<br>Mi vida a cambio de 
+		c&aacute;maras de gas.<br>Mi vida a cambio del zinc de una bocina.<br>Mi vida a 
+		cambio del dado de este as.<br>Mi vida a cambio de nieve derretida.<br>
+		Mi vida a cambio del ritmo de un comp&aacute;s.<br>Mi vida a cambio de carne 
+		atardecida.<br>Mi vida a cambio del cine al que t&uacute; vas.<br>Mi vida es 
+		esta cifra de la vida.<br>Mi vida es esta clave y este im&aacute;n.<br>Mi vida 
+		es la pistola y es la herida<br>abierta por la ley de un alacr&aacute;n.<br>Mi 
+		vida es recorrer las avenidas,<br>pasar por las fronteras como sal<br>
+		disuelta en las mareas y crecidas<br>sin que una gota sienta el 
+		temporal.<br>Mi vida es un andar por las esquinas<br>y en los pasos de 
+		cebra atravesar<br>un sem&aacute;foro rojo entre bocinas<br>y uno a uno los 
+		coches sortear.<br>Mi vida son el metro y el tranv&iacute;a,<br>y el avi&oacute;n y el 
+		tren y el hurac&aacute;n: 
+		<br>son el paso a nivel sin guardav&iacute;a<br>y el lapilli que lanza su 
+		volc&aacute;n.<br>Mi vida es la partida de la luna<br>al p&oacute;ker de las lenguas y 
+		el disfraz<br>de todas las vocales y de alguna<br>consonante compuesta 
+		por el caz<br>de la garganta y de la galante<br>fonem&aacute;tica suma 
+		artificial 
+		<br>que los peligros ponen cimbreante<br>como un tallo de tersura 
+		vegetal.<br>
+		<br>Mi vida de despu&eacute;s es la de antes.<br>Mi vida son el mapa, el 
+		telefax,<br>el t&eacute;lex, la pistola y el vibrante<br>telegrama enviado por 
+		las FAS.<br>
+		<br>Ahora que no haya nadie aqu&iacute; delante,<br>ahora que me hago viejo 
+		nada m&aacute;s,<br>quiero tallar aqu&iacute; como un diamante<br>este informe un&iacute;voco 
+		y cambiante<br>cifrado en una copa de cognac.<br>El parte de mi vida s&iacute; 
+		con arte.<br>El arte de mi vida en el comp&aacute;s<br>del tiempo que me parte 
+		cuando parte<br>de mi vida en el dado no es el as.<br>Mi vida es la 
+		pel&iacute;cula de Marte<br>que ponen en el cine al que t&uacute; vas.<br>Mi vida es 
+		el punto del que parte<br>la &aacute;cida nada que deja el aguarr&aacute;s.<br>
+		<br>Hoy quiero recordar s&oacute;lo el diamante.<br>Hoy quiero recordar s&oacute;lo el 
+		final<br>de la mano que escribe con un guante<br>la plenitud total de 
+		aquel instante<br>borrado por la aurora boreal.<br>Que sus manos me 
+		digan el cuadrante;<br>el azimut, el cenit, el dial<br>del punto fijo e 
+		inm&oacute;vil con que Dante<br>pint&oacute; el tiempo en forma de sextante<br>el 
+		mismo d&iacute;a en que cumpli&oacute; mi edad.<br>Quiero creer que soy aquel instante<br>
+		que pintaba un poeta medieval.<br>Quiero creer que soy la consonante<br>
+		estrofa de la aurora boreal.<br>
+		<br>Ahora que la sangre forma parte<br>de la bala que veo bajo el chal<br>
+		y la camisa me ti&ntilde;e con el arte<br>de la flor que se extiende por mi 
+		ojal<br>quiero decir el mudo teorema<br>mi vida cifrada en el poema<br>
+		del esp&iacute;a que exp&iacute;a su final.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;M&uacute;sica de agua&quot; 
+		1983</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="COMISIÓN DE SERVICIOS"></a></font>
+		<font face="Georgia" color="#84B0D6">Comisi&oacute;n de servicios</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		En la orilla del Sena s&eacute; y no s&eacute;<br>si el autob&uacute;s me lleva o la ballena<br>
+		de Jon&aacute;s me conduce al Quai d'Orsay.<br>La arena de los mares suena, 
+		suena.<br>
+		<em>R&eacute;gates a Argenteuil</em> de ClaudeMonet<br>se mueven en mis ojos y 
+		la arena<br>que pinta en los desiertos Guillaumet:<br>Henri 
+		Fantin-Latour hizo su Breda<br>de Rimbaud, de Verlaine. De Baudelaire<br>
+		era el 
+		<em>foulard</em> sonoro de la seda<br>que bordaba en el aire aquel 
+		vaiv&eacute;n.<br>De todo aquel momento s6lo queda<br>lo que pienso sentado en 
+		el and&eacute;n<br>mientras el autob&uacute;s me dice que s&iacute; queda<br>
+		<em>El Oro de sus cuerpos</em> de Gauguin.<br>El oro de sus cuerpos en 
+		la acera<br>son balandros que flotan en mi sien.<br>Son un m&aacute;stil, las 
+		velas, la carena,<br>los veloces tacones de sus pies.<br>Los veloces 
+		tacones de sus pies<br>son las medias que suben, las caderas,<br>el 
+		collar en el cuello, las hombreras<br>con el bolso en el brazo como 
+		bies.<br>En un escaparate reverbera<br>una figura que es y que no es<br>
+		o de carne o de lienzo o de cera<br>o la Gala del pintor de Cadaqu&eacute;s.<br>
+		He de tomar un autob&uacute;s. Y un tren.<br>Y un avi&oacute;n. Y un barco, por el 
+		Sena, 
+		<br>deja en el agua escrita la carena<br>de las quillas que pasan por mi 
+		sien.<br>Soy el avi&oacute;n y el barco y soy el tren.<br>Soy esta sensaci&oacute;n 
+		que me encadena<br>con la cabeza llena, llena, llena<br>de im&aacute;genes y 
+		ritmos en vaiv&eacute;n.<br>Para que entiendas todo t&uacute; tambi&eacute;n<br>te escribo 
+		esta postal. T&uacute; no la leas.<br>Has de venir aqu&iacute; para que veas<br>con 
+		tus ojos mis ojos: note creas<br>que esta postal lo dice todo bien.<br>
+		Si lo dijera todo, toma el tren.<br>Y, si no dice nada, una primera.<br>
+		Y, si te dice algo, una litera.<br>Y, te diga o no diga, &iexcl;ven!, &iexcl;ven!, 
+		&iexcl;ven!<br>Cenar&eacute; en la Embajada con las damas<br>y no en Maxim's. Te 
+		comprar&eacute; Chanel.<br>No traigas camisones ni pijamas:<br>te cubrir&eacute; de 
+		tinta y de papel<br>Tengo en la mesa cinco telegramas,<br>dos despachos 
+		urgentes y, en la piel,<br>resueltos todos los crucigramas<br>del 
+		diluvio a la Torre de Babel.<br>Si me llamas, hazlo por la ma&ntilde;ana<br>de 
+		seis a siete, no de nueve a diez.<br>Estoy aqu&iacute; al pie de la ventana<br>
+		esperando el t&eacute;lex color grana<br>cifrado sobre el tacto de tu tez.<br>
+		No me digas la clave: s&eacute; que emana<br>de la combinaci&oacute;n del diorama<br>
+		de m&uacute;sica, de labios y de cama<br>con la carne inventada cada vez.<br>
+		Como las letras, si, del anagrama<br>del saturnio que somos, ama, ama<br>
+		estos signos que sobre las semanas<br>de tu cuerpo militan como grama<br>
+		de mi vegetaci&oacute;n sobre el cuartel<br>de la memoria, que tendr&aacute; sus canas<br>
+		-tu cintura, tu zinc, tu cronograma-<br>en las olas de todas las ma&ntilde;anas<br>
+		de la espuma que fui sobre tu piel.<br>Escrito por los d&iacute;as en las 
+		granas<br>pesta&ntilde;as y pistilos y ventanas<br>de la vidriera virgen del 
+		papel,<br>el oro de tu cuerpo se derrama<br>en tacto, en tinta, en 
+		texto, en tez, en trama<br>sobre la lengua l&iacute;quida que llama<br>con un 
+		rumor de r&iacute;os y de rama<br>la basa, el plinto, el fuste, el capitel<br>
+		del g&oacute;tico jinete que reclama<br>la ense&ntilde;a y la divisa de su dama,<br>
+		los colores, la cinta, la retama<br>para el torneo y justo redondel,<br>
+		combinaci&oacute;n de m&uacute;sica y de cama<br>con ese delicado diorama<br>que, bajo 
+		las ense&ntilde;as de la grama, 
+		<br><em>gleichzeitig langsam und gleichzeitig schnell,</em><br>ejecuta 
+		en nosotros -pentagramas, 
+		<br>hiperb&oacute;licas sumas, cronoramas-<br>el vidriado Bolero de Ravel.<br>
+		El ministro firm&oacute;. Una llamada<br>dice que el protocolo es de chaqu&eacute;.<br>
+		Toma el avi&oacute;n y tr&aacute;eme, planchada,<br>la camisa de seda y, RESERVADA,<br>
+		manda por la valija, bien lacrada,<br>la chequera, la Visa y tu cors&eacute;.<br>
+		Acaba de llegar un telegrama<br>que dice que decreta una semana<br>el 
+		gobierno de fiesta. &iexcl;Ven!, &iexcl;ven, &iexcl;ven!<br>
+		<em>El Oro de sus cuerpos</em> es un falso<br>engendro tahitiano de 
+		Gauguin.<br>El Oro de tu cuerpo -also, also!-<br>el oro de tu cuerpo y 
+		tu vaiv&eacute;n,<br>tu ritmo de amazona y tu melena<br>abierta porel aire en 
+		una E.<br>La arena de tus mares suena, suena.<br>
+		<em>R&eacute;gates a Argenteuil</em> de Claude Monet<br>se mueven en mis ojos y 
+		la arena<br>que pinta en los desiertos Guillaumet.<br>Son un m&aacute;stil, las 
+		velas, la carena,<br>los balandros que flotan en mi sien.<br>Con los 
+		ojos llenos de gasolina<br>y del vapor del Sena s&eacute; y no s&eacute;<br>si el 
+		autob&uacute;s me lleva o la ballena<br>de Jon&aacute;s me conduce al Quaid'Orsay.<br>
+		Navegar&eacute; al comp&aacute;s de la bolina,<br>gr&iacute;mpolas en los estayes izar&eacute;.<br>
+		Por tu carne -como una golosina,<br>un circuito de nata, un canap&eacute;-<br>
+		navegar&aacute; mi lengua submarina<br>las escotas, las jarcias, el baupr&eacute;s<br>
+		en el 
+		<em>cock-tail</em> de la carta marina<br>-entremeses, ahumados y 
+		terrina,<br>
+		<em>Gänsleber</em>, caviar, <em>Ch&aacute;teau Sauternes</em><br>y, de postre, 
+		tarta de mandarina, 
+		<br>Peras Duquesa con hojaldre y miel<br>polvorones de almendra y 
+		espumosa<br>Viuda servida en copa. Minu&eacute; 
+		<br>para ti, mandarina de la China.<br>Para ti, mi Duquesa, este proel<br>
+		ha trazado tu mapa turmalina<br>en la tenue tinta mortecina<br>de la luz 
+		que le pone en la retina<br>el oro de tu cuerpo y de tu piel.<br>En esta 
+		sala sola, sin salida,<br>donde la craquelada simetr&iacute;a<br>que veo 
+		dibujada en el pincel<br>del oro de tu cuerpo y no en la gu&iacute;a<br>del 
+		museo, ni en la idolatr&iacute;a<br>de los lejanos mares ni en Gauguin,<br>me 
+		hacen saber que la soberan&iacute;a<br>del territorio est&aacute; en la monarqu&iacute;a<br>
+		de la carne del cuerpo de la vida<br>y no en el bronce pensante de 
+		Rodin.<br>En el agua del Sena a mediod&iacute;a<br>los paquebotes abren una v&iacute;a<br>
+		a la que el tiempo pone un cascabel.<br>El sonido que huye deja herida<br>
+		no tanto el aire como s&iacute; la vida,<br>no tanto el agua como s&iacute; la piel<br>
+		de este caballo que se me desbrida<br>por el ra&iacute;l de la melancol&iacute;a<br>
+		que en un ritmo de im&aacute;genes desv&iacute;a<br>la cortina y la saca del riel.<br>
+		Ese gris&uacute; de gas de cada d&iacute;a<br>es el que quiero hoy para el pincel:<br>
+		no la nata montada ni la fr&iacute;a<br>ordenaci&oacute;n de la caballer&iacute;a<br>en un 
+		desfile militar. Plein air!<br>La dotaci&oacute;n de mi artiller&iacute;a<br>no 
+		dispara sus salvas, sino env&iacute;a<br>la munici&oacute;n contra la bater&iacute;a<br>del 
+		tiempo atrincherado en el cuartel<br>de la memoria y del mediod&iacute;a<br>que 
+		soy en este instante de mi vida<br>ante este cuadro. Junto al Quai 
+		D'Orsay<br>quiero que sepas que no s&eacute; si s&eacute;<br>si el autob&uacute;s me lleva o 
+		la ballena<br>de Jon&aacute;s me conduce. &iquest;Qui&eacute;n, cu&aacute;l, qu&eacute;<br>quedar&aacute; en la 
+		orilla junto al Sena:<br>si t&uacute;, si yo, si el barco o la sirena.<br>Pero 
+		esto -s&oacute;lo esto- s&iacute; lo s&eacute;:<br>tu ritmo de amazona, tu melena<br>abierta 
+		por el aire en una E.<br>La arena de tus mares suena, suena.<br>La arena 
+		de tus mares son los pies<br>que sostienen el ritmo del poema<br>con el 
+		mismo fulgor de diadema<br>que las manos sostuvieron el pincel.<br>&iquest;Qu&eacute; 
+		importa que Gauguin ya no lo vea,<br>si la imagen es centro de la idea<br>
+		y, en la idea, respira aquel vaiv&eacute;n?<br>El oro de sus cuerpos en la 
+		acera<br>es la inmovilidad de la tijera<br>que nos corta y recorta en el 
+		and&eacute;n.<br>Para inmovilizar esa sirena<br>que oigo en las m&aacute;rgenes del 
+		Sena,<br>quiero el oro de tu cuerpo yo tambi&eacute;n.<br>Ya ves que todo es 
+		una cadena<br>de s&iacute;mbolos, y suena, suena, suena<br>el codaste, la cofa, 
+		la carena<br>de la turgente urgencia de tu piel.<br>En este mediod&iacute;a 
+		junto al Sena<br>la tijera que corta la cadena<br>me ha dejado escrita 
+		en el papel<br>toda la carta que es este poema<br>y, en el aire, abierta 
+		la melena,<br>tu nombre resumido en una E.<br>Tu nombre como una diadema<br>
+		que destella en la ele de tu Ela<br>mientras no s&eacute; si viene o vuelve o 
+		vuela<br>este tan kilom&eacute;trico poema<br>pintado por un m&aacute;stil sin su vela<br>
+		en el agua del Sena en Quai D'Orsay.<br>Hazme caso: no quiero que lo 
+		leas.<br>Has de venir aqu&iacute; para que veas<br>con tus ojos mis ojos: no te 
+		creas<br>que este poema lo dice todo bien.<br>Si lo dijera todo, toma el 
+		tren.<br>Y, si no dice nada, una primera.<br>Y, si te dice algo, una 
+		litera.<br>Y, te diga o no diga, &iexcl;ven!, &iexcl;ven, &iexcl;ven!<br>Arroja al fuego 
+		esta postal-poema.<br>Yo s&eacute; que mis jazmines en tu gema<br>son el mejor 
+		sal&oacute;n que tiene el tren.<br>El tren es lo que corta la tijera.<br>Y el 
+		oro de tu cuerpo en la acera,<br>la &uacute;nica raz&oacute;n para mi espera<br>sobre 
+		el gres, gris de nieve, del and&eacute;n.<br>Por eso, mientras vienes, mientras 
+		llegas,<br>construyo este edificio, esta quimera<br>de palabras que 
+		trazan la frontera 
+		<br>en el tiempo que soy sobre el papel<br>con la tinta de tantas noches 
+		ciegas<br>de leer en tu cuerpo la primera<br>sombra de luz y p&aacute;gina de 
+		cera<br>del d&iacute;a que, en su d&iacute;a, vio Gauguin.<br>Sobre la margen g&eacute;lida 
+		del Sena,<br>tahitiana miniada, ni&ntilde;a buena, 
+		<br>bailaremos sin fin un minu&eacute;<br>antes de que la muerte -la tijera<br>
+		que recorta las sombras en la acera- 
+		<br>nos deje sin la la vida y sin vaiv&eacute;n.<br>Antes de que te hagan 
+		prisionera<br>los faros y la niebla y la fea<br>escala en el viaje a la 
+		vejez;<br>antes de que seamos anagrama<br>del telegrama que fuimos una 
+		vez;<br>antes de todo eso, ama, ama,<br>mandarina, duquesa, t&uacute;, mi dama,<br>
+		este vag&oacute;n que somos y este tren<br>que correr&aacute; por las ma&ntilde;anas granas,<br>
+		por los a&ntilde;os, los d&iacute;as, las semanas<br>y dejar&aacute;, en las estaciones 
+		canas,<br>grises gotas de grasa en el and&eacute;n.<br>Grises gotas de grasa 
+		dicen: &laquo;Ven, ven<br>por los a&ntilde;os, los d&iacute;as, las semanas,<br>Por el coral 
+		pez&oacute;n de las ma&ntilde;anas<br>y el traqueteo z&iacute;ngaro del tren&raquo;.<br>Tiene la 
+		luz vegetaci&oacute;n de alas,<br>cromatismo de olas, hilos, balas<br>
+		disparadas al aire. &iquest;Contra qui&eacute;n<br>nos herir&aacute;n los aros de las horas,<br>
+		los relojes de arena, las auroras<br>y el sonido del zinc en esta sien?<br>
+		En esta sien donde una caracola<br>la sucesi&oacute;n del mar tiene, y de ola<br>
+		que bate en nieve p&uacute;rpura tu piel.<br>Tu piel y tu clavel y tu corola<br>
+		que pinto sobre el lienzo solo, sola<br>mientras en la memoria la 
+		moviola<br>del Danubio como una pianola<br>de c&iacute;mbricos corales en 
+		vaiv&eacute;n<br>me deja en las esloras de las horas<br>las espuelas y espinas, 
+		amapolas<br>del oro de tu cuerpo y de tu piel<br>en una floraci&oacute;n del 
+		rompeolas<br>de las bombas, fusiles y pistolas<br>que el tiempo pone 
+		dentro de mi sien.<br>Contra esos misiles de las horas,<br>contra esos 
+		proyectiles, el proel<br>que he sido por el mar de las auroras<br>de la 
+		p&aacute;gina, la tinta y el papel,<br>dispara hoy las cargas niqueladas,<br>
+		los torpedos, obuses y granadas<br>que defienden tu carne cincelada,<br>
+		el oro de tu cuerpo y la nevada<br>acuarela de l&iacute;quenes pintada<br>que 
+		dejaron mis d&iacute;as sobre &eacute;l.<br>
+		<em>El Oro de sus cuerpos</em> de Gauguin<br>se resume en una pincelada:<br>
+		es el pigmento, el punto, la mirada<br>que inmoviliza el tiempo en el 
+		pincel.<br>Como &eacute;l, como t&uacute; y como cada<br>cuerpo que se termina y que 
+		resbala<br>por la p&aacute;gina que somos, el papel<br>de la vida devuelve, 
+		bronceada,<br>la trayectoria roja de la bala<br>y el recorrido terso de 
+		la piel<br>en fuego graneado que dispara<br>sobre la posici&oacute;n de nuestra 
+		nada<br>la memoria -el &uacute;nico cuartel<br>que, dentro de la luz erosionada<br>
+		por la ceniza del color, prepara<br>una ventana que no tiene dintel,<br>
+		una coma con&iacute;fera y un ala<br>donde la trayectoria de la bala<br>y el 
+		recorrido terso de la piel<br>se articulan en una sola sala<br>que la 
+		luz en instantes acristala<br>en un juego de espejos en vaiv&eacute;n,<br>donde 
+		la coma se convierte en ala,<br>el ala en bala, y la bala en<br>la 
+		munici&oacute;n que el tiempo nos dispara<br>en fuego graneado que no para<br>
+		de recorrer el oro de la piel.<br>El oro de la piel no para; para<br>el 
+		pintor, y la mano, y el pincel,<br>pero no la pintura ni el verano<br>ni 
+		la m&uacute;sica que es su carrusel.<br>Lo que detiene el tiempo de la mano,<br>
+		lo que detiene el cuadro de Gauguin<br>es el aire que pasa por el vano<br>
+		del instante que pasa por la piel.<br>La cordillera del amor humano<br>
+		est&aacute; sobre los l&iacute;mites del plano<br>que, en la aceleraci&oacute;n de su 
+		aeroplano,<br>nos inventa la carne cada vez.<br>El alt&iacute;metro que mide lo 
+		lejano<br>reduce al escorzo de este plano<br>la intensidad que fuimos 
+		una vez.<br>Veo c&uacute;pulas de todos los veranos,<br>br&uacute;julas, hemisferios, 
+		meridianos 
+		<br>escritos en el cuadro de Gauguin. <br>Y veo la distancia de mis 
+		manos<br>y siento la distancia del vaiv&eacute;n.<br>El que yo fui tiene color 
+		lejano,<br>ceniza encima, el cuerpo tatuado<br>por el color del oro de 
+		tu piel.<br>Lo que el tiempo me deja entre las manos<br>es el color de 
+		todos los veranos<br>en la 
+		<em>Gare Saint-Lazare</em> de Claude Monet.<br>En la <em>Gare 
+		Saint-Lazare</em> de Claude Monet<br>los colores resultan tan lejanos<br>
+		como lo son tambi&eacute;n los meridianos,<br>los hem!sferios y las mismas 
+		manos<br>en la distancia que divide al quien.<br>El quien es dividido 
+		por lejanos<br>colores de veranos y de planos<br>que vemos reunirse en 
+		el and&eacute;n<br>un d&iacute;a del oto&ntilde;o cuando vamos<br>al museo del mundo y lo 
+		miramos<br>como un viajero desde el tren<br>mira los puntos que le son 
+		lejanos<br>e imagina los montes y los llanos<br>y entra en un t&uacute;nel y 
+		sale a un terrapl&eacute;n.<br>As&iacute; tambi&eacute;n nosotros nos quedamos<br>con el olor 
+		de todos los veranos<br>disueltos en el oro de la piel<br>y tomamos 
+		aviones, hidroplanos,<br>globos-sondas, cohetes y llegamos<br>no al 
+		coraz&oacute;n de zinc de los veranos<br>disueltos en el oro de la piel,<br>
+		sino al falaz y turbio mecanismo<br>que devuelve las balas de uno mismo<br>
+		repetidas en salvas de papel,<br>en las que el frenes&iacute; de los se&iacute;smos<br>
+		se queda convertido en solipsismo<br>de la emoci&oacute;n que abre los abismos<br>
+		y nos deja a un lado del arc&eacute;n.<br>Por eso digo que nosotros mismos<br>
+		somos reflejos de los espejismos<br>como el poema lo es de este papel<br>
+		de este papel que me condena al istmo<br>de la pen&iacute;nsula de un silogismo<br>
+		de im&aacute;genes y ritmos en vaiv&eacute;n.<br>La arena de sus mares suena, suena.<br>
+		<em>R&eacute;gates a Argenteuil</em> de Claude Monet<br>se mueven en mis ojos y 
+		la arena<br>que pinta en los desiertos Guillaumet.<br>Son un m&aacute;stil las 
+		velas, la carena,<br>los balandros que flotan en mi sien.<br>En el agua 
+		del Sena a mediod&iacute;a<br>los paquebotes abren una v&iacute;a<br>a la que el 
+		tiempo pone un cascabel.<br>El sonido que huye deja herida<br>no tanto 
+		el aire como s&iacute; la vida,<br>no tanto el agua como s&iacute; la piel<br>de este 
+		caballo que se me desbrida<br>por el ra&iacute;l de la melancol&iacute;a<br>que, en un 
+		ritmo de im&aacute;genes, desv&iacute;a<br>la cortina, y la saca del riel.<br>Ahora 
+		que soy a&uacute;n mi todav&iacute;a,<br>ahora que soy a&uacute;n y que no s&eacute;<br>si el 
+		autob&uacute;s me lleva a la ballena<br>de Jon&aacute;s me conduce al Quai d'Orsay;<br>
+		ahora que soy a&uacute;n el que te mira,<br>ahora que soy a&uacute;n el que te ve,<br>
+		ahora que todav&iacute;a nos admira<br>
+		<em>El Oro de sus cuerpos</em> de Gauguin;<br>ahora que a&uacute;n ardemos en 
+		la pira,<br>ahora que a&uacute;n el v&eacute;rtigo es un bien,<br>ahora que la carne 
+		a&uacute;n delira,<br>imitemos al mundo en su vaiv&eacute;n.<br>Con el lujo de goces 
+		de la China, 
+		<br>con <em>El Oro de sus cuerpos</em> de Gauguin<br>he trazado una mapa 
+		turmalina<br>en la tenue tinta mortecina<br>de la luz que me pone en la 
+		retina<br>el oro de tu cuerpo y de tu piel.<br>Los dioses griegos y 
+		todos los latinos,<br>los de Acadia, Sumeria e Israel,<br>los hititas, 
+		egipcios y triestinos,<br>y el Atl&aacute;ntico, donde mojas tus pies,<br>dar&aacute;n 
+		su bendici&oacute;n a este poema<br>escrito en el estribo de la E<br>de tu 
+		nombre, tu piel y tu melena<br>por el aire que suena, suena, suena<br>
+		con im&aacute;genes y ritmos en vaiven<br>sobre la sucesi&oacute;n de la cadena<br>de 
+		s&iacute;mbolos que pasan por el Sena<br>como cuchillas pasan por mi sien.<br>
+		Como las quillas pasan por el quien,<br>as&iacute; tambi&eacute;n el t&uacute;nel nos espera<br>
+		en la cartograf&iacute;a que encadena<br>gotas grises de grasa en el and&eacute;n.<br>
+		Gotas grises de grasa dicen &laquo;&iexcl;ven!, &iexcl;ven!&raquo;<br>En carne o voz o p&aacute;gina de 
+		cera<br>quiero llegar hasta la noche ciega<br>que -mientras viene o va o 
+		vuelve o llega-<br>nos salva del metal de la tijera<br>y nos lleva, en 
+		tu gema, por el tren.<br>Para inmovilizar esa sirena<br>que oigo en las 
+		m&aacute;rgenes del Sena<br>quiero el oro de tu cuerpo yo tambi&eacute;n.<br>El oro de 
+		tu cuerpo es el tesoro<br>que bato cuando fundo, fijo, doro<br>el 
+		territorio todo de tu piel.<br>En la orilla del Sena s&eacute; y no s&eacute;<br>si el 
+		autob&uacute;s me lleva o la ballena<br>de Jon&aacute;s me conduce al Quai d'Orsily.<br>
+		La arena de tus mares suena, suena.<br>
+		<em>R&eacute;gates a Argenteuil</em> de Claude Monet<br>se mueven en mis ojos y 
+		la arena<br>que pinta en los desiertos Guillaumet.<br>Contra el tiempo 
+		que hace este poema<br>contra el tiempo que hace que no es,<br>ante ti, 
+		mandarina de la China,<br>ante ti, mi Duquesa, este proel<br>ha trazado 
+		el mapa turmalina<br>en la navegaci&oacute;n a la bolina<br>que disuelve la luz 
+		y difumina<br>sobre el texto del tacto de tu piel<br>la visi&oacute;n que se me 
+		rebobina<br>en la sesi&oacute;n de cine vespertina<br>con el l&aacute;piz de labios 
+		m&aacute;s cruel.<br>Con los ojos llenos de gasolina<br>he le&iacute;do el espacio: 
+		una Menina<br>de Vel&aacute;zquez. Y el tiempo -coronel<br>de la muerte- me 
+		dio, como propina,<br>el gimnosperma poema de tu piel.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;M&uacute;sica de agua&quot; 1983</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em><br>
+		</em><a name="CONVENTO DE LAS DUE&Ntilde;AS"></a></font>
+		<font face="Georgia" color="#84B0D6">Convento de las due&ntilde;as</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Federico Ordi&ntilde;ana</em><br>
+		<br>El oscuro silencio tallado sobre el tacto<br>golpea sin tocar la luz 
+		de esta materia,<br>de esta altura perdida persiguiendo<br>la eternidad 
+		donada a sus figuras.<br>
+		<br>Un sosiego perenne asciende hasta la m&uacute;sica.<br>difumina los ecos 
+		sonoros del espacio<br>y pulsa, impele, dome&ntilde;a, geometriza<br>la m&aacute;gica 
+		sorpresa del aire en surtidores.<br>
+		<br>Infiel al arbotante, a la jamba convexa,<br>al ritmo que la mano con 
+		claridad impone,<br>deja un aliento verde para llegar al sue&ntilde;o,<br>al 
+		&eacute;xtasis que crece desde la piedra en fuga.<br>
+		<br>Y queda un resplandor, una callada imagen,<br>un fragmento de tiempo 
+		que impreciso se ahonda<br>y nunca m&aacute;s se ha sido: se est&aacute; siendo<br>
+		porque en su dimensi&oacute;n la forma dura.<br>
+		<br><em>De &quot;Canon&quot; 1973</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="DAIMON ATOPON"></a></font><font face="Georgia" color="#84B0D6">
+		Daimon Atopon</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Marif&eacute; y Pepe Piera</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">I<br>Se te 
+		puede buscar bajo un cipr&eacute;s de espuma,<br>en los dedos del aire, 
+		met&aacute;lico del sue&ntilde;o,<br>en un volc&aacute;n de p&aacute;jaros incendiados de nieve<br>o 
+		en las olas sin voz de los peces de plata.<br>
+		<br>Te ocultas en los r&iacute;os,<br>en las hojas de piedra,<br>en las lunas 
+		heladas.<br>Vives tras de las venas,<br>al borde de los dientes,<br>
+		invisible en la sangre, desnuda, de la aurora.<br>
+		<br>Te he visto muchas veces arder en los cristales,<br>saltar en las 
+		pupilas,<br>consumirte en los ecos de un abismo innombrable.<br>
+		<br>Tu sombra me dio luz,<br>acarici&oacute; mi frente,<br>se hizo cuerpo en mi 
+		boca.<br>Y tu mirada quema, rel&aacute;mpago de hielo,<br>humo en las cejas,<br>
+		lava.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>II<br>
+		&Aacute;rbol de olvido, t&uacute;,<br>cuerpo incesante,<br>paloma suspendida sobre el 
+		v&eacute;rtigo.<br>Hay una sal azul tras de tus cejas,<br>un mar de abierto 
+		fuego en tus mejillas<br>y un tic-tac indecible que me lleva<br>hasta un 
+		profundo dios hecho de espuma.<br>
+		<br>Y es otear el aire,<br>ara&ntilde;ar el misterio,<br>acuchillar la sombra.<br>
+		<br>Y te voy descubriendo,<br>met&aacute;lica mujer, entre el espino:<br>un 
+		murmullo de sangre transparente<br>en el rostro perdido del silencio.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">III<br>Por 
+		ti la luz asciende a mediod&iacute;a, 
+		<br>arena prolongada hasta mis labios, <br>hilo de tierra ardiente y 
+		presurosa 
+		<br>donde el espacio brota mas intenso. <br><br>Es un g&eacute;iser de espuma,<br>
+		de interrumpida lava,<br>de paloma incompleta<br>que multiplica el aire 
+		en dimensi&oacute;n de voces.<br>
+		<br>Todo es m&uacute;sica, nota, diapas&oacute;n.<br>Hasta los cuerpos, en la nada, 
+		suenan.<br>
+		<br><em>De &quot;Canon&quot;&nbsp; 1973</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="EL CORAZÓN DEL AGUA"></a>El coraz&oacute;n del agua</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Remos, mareas, olas.<br>Un murmullo impreciso perpet&uacute;a<br>la oculta faz 
+		del imposible aliento.<br>
+		<br>Una gota de sal disuelta llama<br>sobre un pecho pret&eacute;rito<br>
+		busc&aacute;ndote.<br>
+		<br>Un p&aacute;rpado de luces diminutas<br>donde tus dedos tocan el azogue.<br>
+		<br>Un latido oxidado que penetra<br>y lame y teje y corta claridades.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">S&oacute;lo 
+		existir perdido<br>donde el agua<br>multiplica su rostro en otras ondas.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><em>De 
+		&quot;Canon&quot;&nbsp;&nbsp; 1973</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="HIMNO A VENUS"></a></font><font face="Georgia" color="#84B0D6">
+		Himno a Venus</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Amor bajo las jarcias de un velero,<br>amor en los jardines luminosos,<br>
+		amor en los andenes peligrosos<br>y amor en los crep&uacute;sculos de enero.<br>
+		<br>Amor a treinta grados bajo cero,<br>amor en terciopelos procelosos,<br>
+		amor en los expresos presurosos<br>y amor en los oc&eacute;anos de acero.<br>
+		<br>Amor en las cenizas de la noche,<br>amor en un combate de carmines,<br>
+		amor en los asientos de alg&uacute;n coche,<br>
+		<br>amor en las butacas de los cines.<br>Amor, en las hebillas de tu 
+		broche,<br>gimen gemas de jades y jazmines.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;Sem&aacute;foros, 
+		sem&aacute;foros&quot; 1990</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="INTERIORES">
+		</a>Interiores</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br>En el tacto interior de esas gaviotas<br>hay un eco de sombras que 
+		conduce<br>a una intemperie toda de cristal.<br>
+		<br>Lo que el aire levanta es su presencia<br>que, en un comp&aacute;s de 
+		luces, se diluye<br>hacia una abierta y sola identidad.<br>
+		<br>&iexcl;Qu&eacute; profundo interior &eacute;ste del aire, <br>cuyas formas modulan su no 
+		ser!<br>
+		<br>II<br>&iquest;Qu&eacute; puede al hombre cautivar, sino la m&uacute;sica<br>que en la 
+		quietud la arena en s&iacute; eterniza<br>y las olas tan s&oacute;lo que a lo lejos<br>
+		una a una, en su olvido, repite sin cesar?<br>
+		<br>Como su cuerpo son, tambi&eacute;n, de sombra<br>y entre su voz la sal es 
+		lo que dura<br>y ese rumor del eco en transparencia<br>de quien no sabe 
+		de otra eternidad.<br>
+		<br>&iquest;Puede la m&uacute;sica ser algo m&aacute;s que sombras<br>hechas a medida de una 
+		idea,<br>talladas en cristal por el que olvida<br>que hace surgir un 
+		dios de entre sus notas?<br>
+		<br>&iquest;O lo que aqu&iacute; llamamos m&uacute;sica pudiera<br>muy bien llamarse el ala 
+		de una duda<br>y el para&iacute;so firme que sostienen<br>interiores columnas 
+		de temblor?<br>
+		<br><em>De &quot;Alegor&iacute;a&quot; 1977</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="LA TIERRA DE LA NOCHE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		La tierra de la noche</font><font face="Georgia" size="2" color="#84B0D6"><br><br><br>
+		La noche te escribe,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;te transcribe,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;te inventa.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As&iacute;,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sobre el papel,<br>lienzo tan 
+		s&oacute;lo,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tiempo:<br>papel donde la noche<br>
+		abriera s&oacute;lo<br>la tierra de su efigie,<br>la figura,<br>el cuerpo del 
+		que brotan<br>los invisibles signos.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La Tierra <br>
+		de la noche<br>la Terra della Notte,<br>terracota o destino<br>o 
+		escritura que inventa<br>lo distante de ti,<br>lo m&aacute;s all&aacute; de ti:<br>
+		alfabeto nocturno de la nada.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="MAYO DEL 68"></a>
+		</font><font face="Georgia" color="#84B0D6">Mayo del&nbsp; 68</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		La falda resbalaba<br>por el fucsia frambuesa<br>de sus medias. La lava,<br>
+		por su tez de tigresa.<br>
+		<br>Nevaba, s&iacute;, nevaba<br>una canci&oacute;n francesa.<br>Por su boca marchaba<br>
+		la armada japonesa.<br>
+		<br>Era Par&iacute;s en mayo<br>Boticelli: la diosa<br>que surg&iacute;a del tallo.<br>
+		<br>Cimabu&eacute;. Cimarosa.<br>Libertad: aquel rayo<br>de pesta&ntilde;a furiosa.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="METAMORFOSIS">
+		</a></font><font face="Georgia" color="#84B0D6">Metamorfosis </font>
+		<font face="Georgia" size="2" color="#84B0D6"> <br><br>Indivisible voz <br>
+		de indivisibles gotas <br>el fuego llega a ti 
+		<br>en voz de agua. <br>M&aacute;rmoles, musgos, l&iacute;quenes <br>que fueron <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tu memoria de entonces <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en el agua. <br><br>Bajo formas de fuego <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que son luz <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las figuras del fuego <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que son agua.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" size="2" color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="MÚSICA DE AGUA"></a>M&uacute;sica del agua</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		El espacio<br>-debajo del espacio-<br>es la forma del agua<br>en 
+		Chantilly.<br>
+		<br>No t&uacute;, ni tu memoria.<br>S&oacute;lo el nombre<br>que tu lenguaje escribe<br>
+		en tu silencio:<br>
+		<br>un idioma de agua<br>m&aacute;s all&aacute; de los signos. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;M&uacute;sica de agua&quot; 
+		1983</em><br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="NATURALEZA">
+		</a></font><font face="Georgia" color="#84B0D6">Naturaleza</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Jos&eacute; M a Guelbenzu</em><br><br>Y si, de pronto, t&uacute;, naturaleza,<br>
+		entre pliegues de piedra me mirases<br>y no pudiera ser yo, sino 
+		tu.m&uacute;sica<br>en los mismos instantes que dura una verdad;<br>una verdad 
+		que pasa por un cuerpo<br>abri&eacute;ndole a los ojos todas sus superficies<br>
+		para dejar de ser lo sido cada d&iacute;a,<br>para dejar de ser una verdad,<br>
+		qu&eacute; transparencia en la quietud del fondo.<br>
+		<br><em>De &quot;M&uacute;sica de agua&quot; 1983</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PAR&Aacute;BOLA DE ESTE MISMO LUGAR"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Par&aacute;bola de este mismo lugar</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		El que camina y va<br>y el que regresa<br><br>El que est&aacute; en un lugar<br>
+		y el que ha venido<br>
+		<br>El que est&aacute; inm&oacute;vil<br>y aquel que no ha tornado<br><br>El que s&oacute;lo 
+		es el tiempo<br>de un espacio distinto<br>
+		<br>El que nunca es el tiempo<br>ni tampoco el lugar<br><br>El que es y 
+		no es<br>el que ser&aacute; y ha sido<br>
+		<br>El que era agua<br>y ahora es s&oacute;lo aire<br><br>El que era tierra<br>
+		y ahora es s&oacute;lo agua<br>
+		<br>El que era aire<br>y ahora es s&oacute;lo tierra<br><br>Informan la materia<br>
+		de este mismo lugar<br>
+		<br>donde el que es ya era<br>y el que ser&aacute; ya ha sido<br><br>porque son 
+		la materia<br>de este mismo lugar.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="RITORNELLO"></a></font><font face="Georgia" color="#84B0D6">
+		Ritornello</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Nada hay en m&iacute;, sino esos horizontes<br>que alguien dormido contempla 
+		desde un mar:<br>desde otro mar, que acaso ya no existe.<br>
+		<br><em>De &quot;Alegor&iacute;a&quot; 1977</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="SEM&Aacute;FOROS... SEM&Aacute;FOROS"></a></font>
+		<font face="Georgia" color="#84B0D6">Sem&aacute;foros... Sem&aacute;foros</font><font face="Georgia" size="2" color="#84B0D6"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a Pedro La&iacute;n Entralgo<br>
+		</em><br>La falda, los zapatos,<br>la blusa, la melena.<br>El cuello con 
+		sus rizos.<br>El seno con su almena.<br>
+		<br>El ne&oacute;n de los cines<br>en su piel, en sus piernas.<br>Y en los 
+		leves tobillos,<br>una luz violeta.<br>
+		<br>El claxon de los coches <br>se desangra por ella. <br>Anuncios 
+		luminosos<br>ven fundirse sus letras.<br>
+		<br>Cu&aacute;nta coma de rimmel<br>bajo sus cejas negras<br>taquigraf&iacute;a el 
+		aire<br>y el aire es una idea.<br>
+		<br>El cromo de las motos<br>gira a c&aacute;mara lenta.<br>Destellos, 
+		dioramas,<br>tacones, manos, medias.<br>
+		<br>Un solo parpadeo<br>y todo se acelera.<br>El carmIn es un punto<br>y 
+		es un ruido la seda.<br>La falda, los zapatos,<br>la blusa, la melena<br>
+		se han ido con la luz<br>verde que se la lleva.<br>
+		<br>En un paso de cebra<br>-la v&iacute; y dije: &iexcl;ella!<br>Y todos los motores<br>
+		me clavaron su espuela.<br>
+		<br>El sem&aacute;foro dijo<br>hola y adi&oacute;s. Y era<br>muy pronto para todo,<br>
+		muy tarde para verla.<br>
+		<br>El &aacute;mbar me mord&iacute;a<br>los ojos y las venas<br>y la calle ten&iacute;a<br>
+		resplandor de pantera.<br>
+		<br>En qu&eacute; esquina de yodo<br>su mirada bucea.<br>En qu&eacute; metro de n&iacute;quel<br>
+		o burbuja de menta.<br>
+		<br>Ning&uacute;n libro me dice<br>ni qui&eacute;n es ni qui&eacute;n era.<br>Ni su nombre ni 
+		el m&iacute;o<br>intercambian fonemas.<br>
+		<br>Lloran los diccionarios,<br>lloran las azoteas<br>y dicto mis 
+		mensajes<br>en una lengua muerta.<br>
+		<br>Ha llegado hasta junio<br>y estoy en las afueras.<br>La costura del 
+		cielo<br>tiene blondas de niebla.<br>
+		<br>Las boquitas pintadas <br>dejan polvo de estrellas<br>en el borde de 
+		un vaso<br>boreal de ginebra.<br>
+		<br>Escrito en cuneiforme<br>el perfil de sus ruedas<br>los taxis 
+		amarillos<br>tat&uacute;an la alameda.<br>
+		<br>La noche me maquilla<br>con su breve tormenta<br>de bares y de 
+		hoteles<br>son&aacute;mbulos que tiemblan.<br>
+		<br>Oto&ntilde;o de terrazas<br>vac&iacute;as y de mesas,<br>de toldos recogidos<br>y 
+		sillas genuflexas.<br>
+		<br>Los l&aacute;pices de labios<br>con la aurora despiertan.<br>Los espejos 
+		los miran<br>dibujar sus dos letras.<br>
+		<br>En un paso de cebra<br>la v&iacute; y dije: &iexcl;ella!<br>y todos los motores<br>
+		me clavaron su espuela.<br>
+		<br>&Eacute;sta es la misma calle.<br>&Eacute;sta, la misma acera.<br>Y la hora, la 
+		misma.<br>S&oacute;lo ella no es ella.<br>
+		<br>La falda, los zapatos,<br>la blusa, la melena.<br>El cuello con sus 
+		rizos.<br>El seno con su almena.<br>
+		<br>&iquest;Y la coma de rimmel<br>bajo sus cejas negras?<br>El aire me graf&iacute;a<br>
+		a&uacute;n su sil&uuml;eta.<br>
+		<br>Esculpida en el &aacute;mbar<br>-de alg&uacute;n paso de cebra<br>fosforece su 
+		piel,<br>fosforecen sus medias.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;Sem&aacute;foros, 
+		sem&aacute;foros&quot; 1990</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="SILENCIO"></a>Silencio</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Equilibrio de luz<br>en 
+		el sosiego.<br>M&iacute;nima tromba.<br>Enso&ntilde;aci&oacute;n. quietud.<br>Todo:<br>un 
+		espacio sin voz<br>hacia lo hondo oculto.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>De &quot;Biograf&iacute;a sola&quot; 
+		1971</em><br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br><br><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="SIN"></a>Sin</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Sin signos. <br>Sin idioma. <br>Sin final. 
+		<br>Tal cual a ti <br>en ti <br>nada te cambia. <br>Lo anterior a tu 
+		voz, 
+		<br>eso es el mundo.<br><br><em>De &quot;Biograf&iacute;a sola&quot; 1971</em><br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="VARIACIÓN BARROCA SOBRE UN TEMA DE LUCRECIO"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Variaci&oacute;n barroca sobre un tema de Lucrecio</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br><br>En una noche nos hacemos viejos<br>y, al despertar al mundo, la 
+		ma&ntilde;ana<br>en la luz del cristal de la ventana<br>nos clava, como 
+		insultos, sus reflejos.<br>
+		<br>Los ojos en el agua son espejos<br>de la memoria llena de gris grana<br>
+		y la palabra, para siempre cana,<br>nos deja sus acentos circunflejos.<br>
+		<br>En el lavabo de las horas lavo<br>el holl&iacute;n de los d&iacute;as. Las semanas<br>
+		dejan cal en el cuerpo; ladeada,<br>la sombra de los a&ntilde;os; ignorada,<br>
+		la inteligencia de las cosas vanas:<br>el grifo, el jab&oacute;n, este lavabo.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">II<br><br>El grifo, el 
+		jab&oacute;n, este lavabo<br>adelantan la ciencia soberana<br>del existir: 
+		mirar por la ventana,<br>ver cu&aacute;ntas cosas cada d&iacute;a lavo.<br>
+		<br>Un resplandor de rayas, rojos lagos,<br>una copa, un libro, una 
+		ma&ntilde;ana<br>de otro rostro mirando en la ventana<br>el mismo gris de sus 
+		contornos vagos<br>
+		<br>me hacen saber que acentos circunflejos,<br>auroras grises de los 
+		d&iacute;as, granas<br>sombras inmovilizan los espejos;<br>que somos el rumor 
+		de los reflejos<br>de las horas, los d&iacute;as, las semanas<br>y que una 
+		noche nos hacemos viejos.<br>
+		<br><br></font><br></p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:11:47 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:45 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

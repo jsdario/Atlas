@@ -1,0 +1,946 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Ezra Pound</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Ezra Pound."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Ezra Pound. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Ezra_Pound,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#DBDBDB">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/pound.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "30";
+var displayMonth = "Oct";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/pound.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131030174657" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pound.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:46:57 Oct 30, 2013">OCT</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pound.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="13 Apr 2014"><strong>APR</strong></a>
+		                
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./pound.htm" title="17:18:46 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:46:57 Oct 30, 2013">30</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./pound.htm" title="14:15:47 Apr 13, 2014" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0"/></a>
+		                
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./pound.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:46:57 Oct 30, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./pound.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>93 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Apr 03 - 13 Apr 14</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000100010101_2004:-1:010100100101_2005:-1:010100000000_2006:-1:210011000217_2007:-1:b30214240100_2008:-1:221321000001_2009:-1:021000110000_2010:-1:100000001110_2011:-1:000000012100_2012:-1:201011001000_2013:9:101210010100_2014:-1:000100000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./POUND.jpg" width="244" height="41"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./POUND1.jpg" width="297" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="700" height="341">
+  <tr>
+    <td valign="bottom" colspan="2" height="21" width="692"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="308" width="256" valign="top"><p align="left">
+	<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><img border="0" src="./POUND2.jpg" width="212" height="307"></td>
+    <td width="432" valign="top" height="308"><p align="left">
+	<u>
+	<font color="#C4CAD4" face="Georgia">Rese&ntilde;a biogr&aacute;fica</font></u><font size="2" color="#C4CAD4" face="Georgia"><br>
+    <br>
+    Poeta y ensayista norteamericano nacido en Hailey, Idaho, en 1885.<br>
+	A la edad de doce a&ntilde;os ingres&oacute; a Cheltenham, una escuela militar donde 
+	estudi&oacute; griego y lat&iacute;n. Luego ingres&oacute; a la Universidad de Pennsylvania para 
+	aprender otras lenguas, y a&nbsp; partir de 1906 se estableci&oacute; en Europa, 
+	principalmente en Italia e Inglaterra, desde donde promovi&oacute; dos grandes 
+	movimientos de vanguardia: el imaginismo y el vorticismo.<br>
+	A finales de la segunda guerra mundial fue acusado de alta traici&oacute;n y 
+	detenido por los aliados en Italia, y en 1946, tras ser declarado paranoico, 
+	fue internado en un sanatorio mental en Washington.<br>
+	De su obra po&eacute;tica merecen destacarse <i>&quot;Personae&quot;</i> en 1926, una 
+	recopilaci&oacute;n de poemas breves, y <i>&quot;Cantos&quot;</i> en 1970, considerada como 
+	una de las epopeyas en lengua inglesa m&aacute;s importantes del siglo XIX, y a la 
+	que dedic&oacute; cuarenta y cinco a&ntilde;os de su vida.<br>
+	Como cr&iacute;tico contribuy&oacute; a la renovaci&oacute;n de la poes&iacute;a y apoy&oacute; entre otros,&nbsp; 
+	a T.S. Eliot y James Joyce.<br>
+	Muri&oacute; en Venecia en 1972. &copy;</font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font face="Georgia"><font size="3" color="#FFFFFF"><br>
+<br>
+</font></font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4" face="Georgia">Poemas de Ezra Pound: </font><font size="3" color="#FFFFFF" face="Georgia"><br>
+</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><br>
+		<font color="#FFFFFF"><font face="Georgia"><a href="./pound.htm#A Dives">A Dives</a></font></font></p>
+		<p align="left"><font color="#FFFFFF"><font face="Georgia">
+		<a href="./pound.htm#Abanico para su Majestad la Emperatriz">Abanico para su 
+		Majestad la Emperatriz</a><br>
+		</font><br>
+		<font face="Georgia"><a href="./pound.htm#ALBA">Alba</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></font>
+		</p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#CANTAR XLV">Cantar XLV</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#CANTAR CXX">Cantar CXX</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#Causa">Causa</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#EL DESV&Aacute;N">El desv&aacute;n</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#EL ENCUENTRO">El encuentro</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#El jard&iacute;n">El jard&iacute;n</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./pound.htm#En una estaci&oacute;n del metro">En una estaci&oacute;n del metro</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#ENCARGO">Encargo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#Erat Hora">Erat Hora</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#FRANCESCA">Francesca</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#IMAGEN DE D'ORLEANS">Imagen D'Orleans</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#LA MUJER DEL MERCADER DEL R&Iacute;O: UNA CARTA">La mujer del 
+		mercader del r&iacute;o: una carta</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#La tumba de Akr Caar">La 
+		tumba de Akr Caar</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#LA ZAMBULLIDA">
+		La zambullida</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#Meditatio">Meditatio</a></font></p>
+		<p align="left"><a href="./pound.htm#N.Y."><font face="Georgia">
+		N.Y.</font></a></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#Portrait d une femme">
+		Portrait d'une femme</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./pound.htm#Un pacto">Un pacto</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./pound.htm#ZAPATILLAS NEGRAS: BELLOTTI">Zapatillas negras: Belloti</a>&nbsp;</font><font face="Georgia" size="2" color="#FFFFFF">&nbsp;</font><font
+      face="Georgia" color="#FFFFFF">&nbsp;&nbsp; </font></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF"> 
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF"> </font>
+		<font face="Georgia" color="#FFFFFF"> <a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia"><a href="mailto:poesia@amediavoz.com">
+poesia@amediavoz.com</a></font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p><br>
+		<font face="Georgia" color="#C4CAD4"><a name="A Dives"></a>A Dives</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Qui&eacute;n soy yo para 
+		condenarte, oh Dives,<br>
+		yo que estoy tan amargado<br>
+		por la pobreza<br>
+		como lo est&aacute;s t&uacute; por la in&uacute;til riqueza?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Abanico para su Majestad la Emperatriz"></a>Abanico para su 
+		Majestad la Emperatriz</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Oh, abanico de seda 
+		blanca,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p&aacute;lido como la escarcha 
+		en un tallo de hierba,<br>
+		a ti tambi&eacute;n te dejan de lado.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="ALBA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Alba</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Fresca como las p&aacute;lidas 
+		hojas h&uacute;medas<br>
+		de los lirios del valle<br>
+		al alba yace ella junto a m&iacute;.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="CANTAR XLV">
+		</a></font><font face="Georgia" color="#C4CAD4">Cantar XLV </font><font face="Georgia" size="2" color="#C4CAD4"> <br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Con usura </em><br><br>Con usura no tiene el hombre casa de buena piedra 
+		<br>Con bien cortados bloques y dispuestos <br>de modo que el dise&ntilde;o lo 
+		cobije, 
+		<br>con usura no hay para&iacute;so pintado para el hombre en los muros de su 
+		iglesia 
+		<br>harpes et lutz (arpas y la&uacute;des) <br>o lugar donde la virgen reciba 
+		el mensaje 
+		<br>y su halo se proyecte por la grieta, <br>con usura <br>no se ve el 
+		hombre Gonzaga,
+		<br>ni a su gente ni a sus concubinas <br>no se pinta un cuadro para que 
+		perdure ni para tenerlo en casa 
+		<br>sino para venderlo y pronto <br>con usura, <br>pecado contra la 
+		naturaleza, 
+		<br>es tu pan para siempre harapiento, <br>seco como papel, sin trigo de 
+		monta&ntilde;a, 
+		<br>sin la fuerte harina. <br>Con usura se hincha la l&iacute;nea <br>con usura 
+		nada est&aacute; en su sitio (no hay l&iacute;mites precisos) 
+		<br>y nadie encuentra un lugar para su casa. <br>El picapedrero es 
+		apartado de la piedra 
+		<br>el tejedor es apartado del telar <br>con usura <br>no llega lana al 
+		mercado 
+		<br>no vale nada la oveja con usura. <br>Usura es un par&aacute;sito <br>mella 
+		la aguja en manos de la doncella 
+		<br>y paraliza el talento del que hila. Pietro Lombardo <br>no vino por 
+		usura 
+		<br>Duccio no vino por usura <br>ni Pier della Francesca; no por usura 
+		Zuan Bellini
+		<br>ni se pint&oacute; &quot;La Calunnia&#8221; <br>No vino por usura Ang&eacute;lico; no vino 
+		Ambrogio Praedis,
+		<br>no hubo iglesia de piedra con la firma: Adamo me fecit. <br>No por 
+		usura St. Trophime
+		<br>no por usura St. Hilaire. <br>Usura oxida el cincel <br>Oxida la 
+		obra y al artesano 
+		<br>Corroe el hilo en el telar <br>Nadie hubiese aprendido a poner oro 
+		en su dise&ntilde;o; 
+		<br>Y el azur tiene una llaga con usura; <br>se queda sin bordar la 
+		tela. 
+		<br>No encuentra el esmeralda un Memling <br>Usura mata al ni&ntilde;o en el 
+		&uacute;tero 
+		<br>No deja que el joven corteje <br>Ha llevado la sequedad hasta la 
+		cama, y yace 
+		<br>entre la joven novia y su marido<br>Contra naturam <br>Ellos 
+		trajeron putas a Eleusis
+		<br>Sientan cad&aacute;veres a su banquete <br>por mandato de usura. <br><em>
+		<br>Versi&oacute;n de Javier Calvo<br><br>
+&nbsp;</em></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CANTAR CXX"></a></font><font face="Georgia" color="#C4CAD4">
+		Cantar CXX</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		He intentado escribir el Para&iacute;so.<br>Que no os mov&aacute;is.<br>Dejad hablar 
+		al viento<br>ese es el Para&iacute;so.<br>
+		<br>Que los dioses olviden<br>lo que he realizado.<br>A aquellos a 
+		quienes amo,<br>perdonen 
+		<br>lo que he realizado.<br><br><em>Versi&oacute;n de Javier Calvo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><em style="font-style: normal"><font face="Georgia" color="#C4CAD4">
+		<a name="Causa"></a>Causa</font></em></p>
+		<p><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4">Re&uacute;no estas palabras para 
+		cuatro personas,<br>
+		alguien m&aacute;s puede cazarlas al vuelo,<br>
+		oh mundo, lo siento por ti,<br>
+		no conoces a esas cuatro personas.</font></em></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Javier 
+		Calvo</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL DESV&Aacute;N"></a></font><font face="Georgia" color="#C4CAD4">
+		El desv&aacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Ven, apiad&eacute;monos de los que tienen m&aacute;s fortuna que nosotros.<br>Ven, 
+		amiga, y recuerda<br>&nbsp;&nbsp;&nbsp;&nbsp; que los ricos tienen 
+		mayordomos en vez de amigos,<br>y nosotros tenemos amigos en vez de 
+		mayordomos.<br>Ven, apiad&eacute;monos de los casados y de los solteros.<br>
+		<br>La aurora entra con sus pies diminutos<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		como una dorada Pavlova,<br>y yo estoy cerca de mi deseo.<br>Nada hay en 
+		la vida que sea mejor<br>que esta hora de limpia frescura,<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		la hora de despertarnos juntos.</font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Javier Calvo</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="EL ENCUENTRO">
+		</a></font><font face="Georgia" color="#C4CAD4">El encuentro</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Mientras ellos hablaban todo el tiempo de la nueva moral<br>ella me 
+		exploraba con sus ojos.<br>y cuando me levant&eacute; para marcharme<br>sus 
+		dedos fueron como el tejido<br>de una servilleta japonesa de papel.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El jard&iacute;n"></a>El 
+		jard&iacute;n</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>En robe de parade <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Samain <br>
+		</i><br>
+		Como un ovillo de hebras de seda estampado contra una pared <br>
+		ella bordea la tapia de un sendero en los jardines de Kensington <br>
+		y se va muriendo poco a poco <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de una especie de anemia emocional. <br>
+		<br>
+		Y por all&iacute; se pasea una chusma <br>
+		de hijos de la miseria, inmundos, vigorosos, inextinguibles. <br>
+		Ellos heredar&aacute;n la tierra. <br>
+		<br>
+		Ella es el final de la estirpe. <br>
+		Su aburrimiento es exquisito y excesivo. <br>
+		Le gustar&iacute;a que alguien fuese a hablarle, <br>
+		y casi tiene miedo de que yo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		cometa esa indiscreci&oacute;n. </font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="En una estaci&oacute;n del metro"></a>En una estaci&oacute;n del metro</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La aparici&oacute;n de estos 
+		rostros en la multitud;<br>
+		P&eacute;talos en una rama oscura y h&uacute;meda.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Covian </font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		</font><font color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="ENCARGO"></a></font>
+		<font face="Georgia" color="#C4CAD4">Encargo</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Id, canciones m&iacute;as, al 
+		solitario y al insatisfecho,<br>id tambi&eacute;n al desquiciado, al esclavo de 
+		las convenciones,<br>llevadles mi desprecio hacia sus opresores.<br>Id 
+		como una ola gigante de agua fr&iacute;a,<br>llevad mi desprecio por los 
+		opresores.<br>
+		<br>Hablad contra la opresi&oacute;n inconsciente,<br>hablad contra la tiran&iacute;a 
+		de los que no tienen imaginaci&oacute;n,<br>hablad contra las ataduras,<br>id a 
+		la burguesa que se est&aacute; muriendo de tedio,<br>id a las mujeres de los 
+		barrios residenciales,<br>id a las repugnantemente casadas,<br>id a 
+		aquellas cuyo fracaso est&aacute; oculto,<br>id a las emparejadas sin fortuna,<br>
+		id a la esposa comprada,<br>id a la mujer comprometida.<br>
+		<br>Id a los que tienen una lujuria exquisita,<br>id a aquellos cuyos 
+		deseos exquisitos son frustrados,<br>id como una plaga contra el 
+		aburrimiento del mundo;<br>id con vuestro filo contra esto,<br>reforzad 
+		los sutiles cordones,<br>traed confianza a las algas y tent&aacute;culos del 
+		alma.<br>
+		<br>Id de manera amistosa,<br>id con palabras sinceras.<br>Ansiad el 
+		hallazgo de males nuevos y de un nuevo bien,<br>oponeos a todas las 
+		formas de opresi&oacute;n.<br>Id a quienes la mediana edad ha engordado,<br>a 
+		los que han perdido el inter&eacute;s.<br>
+		<br>Id a los adolescentes a quienes les asfixia la familia...<br>&iexcl;Oh, 
+		qu&eacute; asqueroso resulta<br>ver tres generaciones reunidas bajo un mismo 
+		techo!<br>Es como un &aacute;rbol viejo con reto&ntilde;os<br>y con algunas ramas 
+		podridas y cay&eacute;ndose.<br>
+		<br>Salid y desafiad la opini&oacute;n,<br>Id contra este cautiverio vegetal de 
+		la sangre.<br>Id contra todas las clases de manos muertas.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Erat Hora"></a>Erat 
+		Hora<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		&quot;Gracias, venga lo que viniere&quot; y volvi&eacute;ndose, <br>
+		como un rayo de sol sobre flores colgantes<br>
+		ensombrece cuando el viento las alza a un lado.<br>
+		Me dej&oacute;. No, venga lo que viniere<br>
+		Hubo una hora iluminada por el sol, y los m&aacute;s altos dioses<br>
+		no pueden jactarse de nada mejor<br>
+		que de haber contemplado a su paso esa hora.<br>
+		<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="FRANCESCA">
+		</a></font><font face="Georgia" color="#C4CAD4">Francesca</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Saliste de la noche <br>Con flores en las manos. 
+		<br>Vas a salir ahora del tumulto del mundo, <br>De la babel de lenguas 
+		que te nombra.<br>
+		<br>Yo que te vi rodeada de hechos primordiales, <br>Mont&eacute; en c&oacute;lera 
+		cuando te mencionaron 
+		<br>En oscuros callejones. <br>&iexcl;C&oacute;mo me gustar&iacute;a que una ola fresca 
+		cubriera mi mente 
+		<br>Que el mundo se trocara en hoja seca, <br>O en un vilano al viento,
+		<br>Para que yo pudiera encontrarte de nuevo <br>Sola!<br><br>
+&nbsp;</font></p>
+
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center"><font color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="IMAGEN DE D'ORLEANS"></a>Imagen de D' Orleans</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Esos j&oacute;venes que cabalgan por la calle<br>en la rutilante estaci&oacute;n que 
+		empieza<br>clavan las espuelas sin raz&oacute;n alguna,<br>haciendo saltar a 
+		sus corceles.<br>
+		<br>Y al paso que van,<br>las pezu&ntilde;as herradas de sus caballos<br>hacen 
+		saltar chispas de los adoquines de la calle<br>en la rutilante estaci&oacute;n 
+		que empieza.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de Javier 
+		Calvo</em><br>
+		<br>
+&nbsp;</font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="LA MUJER DEL MERCADER DEL R&Iacute;O: UNA CARTA"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		La mujer del mercader del r&iacute;o: una carta</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Cuando yo 
+		todav&iacute;a llevaba el pelo cortado sobre la frente<br>jugaba en el portal 
+		delantero, recogiendo flores.<br>T&uacute; viniste con zancos de madera jugando 
+		a los caballos,<br>caminaste junto a mi asiento, jugando con ciruelas 
+		azules<br>y seguimos viviendo en el pueblo de Chokan:<br>dos ni&ntilde;os, sin 
+		aversi&oacute;n ni sospecha.<br>
+		<br>Con catorce a&ntilde;os me cas&eacute; con vos, mi se&ntilde;or.<br>Nunca me re&iacute;a porque 
+		era t&iacute;mida.<br>Bajaba la cabeza y miraba a la pared.<br>Aunque me 
+		llamaran mil veces, nunca volv&iacute;a la cabeza.<br>
+		<br>Con quince a&ntilde;os dej&eacute; de fruncir el ce&ntilde;o,<br>deseaba que mi polvo se 
+		mezclara con el tuyo<br>para siempre y para siempre y para siempre.<br>
+		&iquest;Para qu&eacute; seguir vigilando?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Te fuiste 
+		cuando yo ten&iacute;a dieciseis a&ntilde;os,<br>te fuiste a la lejana Ku-to-yen, 
+		junto al r&iacute;o de los remolinos,<br>y has estado fuera cinco meses.<br>Los 
+		monos hacen un ruido muy triste por ah&iacute; arriba.<br>Cuando te fuiste 
+		arrastrabas los pies.<br>En el portal ahora ha crecido el musgo, musgos<br>&nbsp;&nbsp;&nbsp;&nbsp; 
+		distintos,<br>&iexcl;demasiado profundos para limpiarlos!<br>Los hojas caen 
+		pronto este oto&ntilde;o, por culpa del viento.<br>Las mariposas emparejadas ya 
+		amarillean en el agosto<br>sobre la hierba del jard&iacute;n del oeste;<br>me 
+		duelen. Me hago vieja.<br>Si has de venir por los vados del r&iacute;o Kiang,<br>
+		por favor, h&aacute;zmelo saber de antemano<br>y yo saldr&eacute; a recibirte,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ir&eacute; hasta Cho-fu-sa.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Por Rihaku</font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Javier Calvo</font></em></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><br>
+		<font face="Georgia" color="#C4CAD4"><a name="La tumba de Akr Caar"></a>
+		La tumba de Akr Caar </font>
+		<font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		&quot;Yo soy tu alma, Nikoptis. He velado <br>
+		Estos cinco milenios y tus ojos muertos <br>
+		No se movieron ni nunca han respondido a mi deseo, <br>
+		Y tus miembros ligeros, que atraves&eacute; en llamas, <br>
+		No han ardido conmigo ni con azafranada cosa alguna. <br>
+		<br>
+		Mira, la hierba leve se levant&oacute; para hacer tu almohada <br>
+		Y te bes&oacute; con una mir&iacute;ada de lenguas vegetales; <br>
+		Mas t&uacute; no me besaste. <br>
+		De tanto leerlo gast&eacute; el oro de la pared <br>
+		Y fatigu&eacute; mi pensamiento en los signos. <br>
+		Y no hay nada nuevo en este sitio. <br>
+		<br>
+		He sido amable. Mira, he dejado los c&aacute;ntaros sellados <br>
+		Por si despertabas y murmurabas por tu vino. <br>
+		Y he mantenido suaves las t&uacute;nicas sobre tu cuerpo. <br>
+		<br>
+		&iexcl;Oh despreocupado! &iexcl;C&oacute;mo podr&iacute;a olvidar! <br>
+		-Hasta el r&iacute;o hace tanto tiempo, <br>
+		&iquest;El r&iacute;o? Eras menos que joven <br>
+		Y tres almas vinieron sobre Ti <br>
+		Y yo vine. <br>
+		Y vol&eacute; sobre ti, las hice huir; <br>
+		He sido &iacute;ntima contigo, te he conocido. <br>
+		&iquest;Acaso no he tocado tus palmas y las puntas de tus dedos? <br>
+		&iquest;Acaso no me he deslizado a trav&eacute;s tuyo hasta los talones? <br>
+		&iquest;C&oacute;mo entr&eacute;? &iquest;Acaso no soy yo t&uacute; y T&uacute;? <br>
+		<br>
+		Y ning&uacute;n sol viene a socorrerme en este lugar <br>
+		Y estoy desgarrada contra la oscuridad tenebrosa; <br>
+		Y ninguna luz me golpea y no dices<br>
+		Palabra, d&iacute;a tras d&iacute;a. <br>
+		&iexcl;Oh! podr&iacute;a salir, a pesar de las marcas <br>
+		Y toda su h&aacute;bil labor sobre la puerta, <br>
+		Salir a trav&eacute;s de los campos de verde cristal...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mas hay 
+		quietud aqu&iacute;.<br>
+		No me voy.&quot;&quot;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Marcelo Covian </i><br>
+&nbsp;<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br><br>&nbsp;</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="LA ZAMBULLIDA"></a></font><font color="#C4CAD4" face="Georgia">
+		La zambullida</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+    <br>
+    	Querr&iacute;a ba&ntilde;arme en extra&ntilde;eza:<br>
+    	estas comodidades amontonadas encima de m&iacute;, <br>
+    	me asfixian!<br>
+    	&iexcl;Me quemo, ardo en deseos de algo nuevo,<br>
+    	amigos nuevos, caras nuevas y lugares!<br>
+    	Oh, estar lejos de todo esto,<br>
+    	esto que es todo lo que quise...salvo lo nuevo.<br>
+    	&iexcl;Y t&uacute;, amor, la que mucho, la que m&aacute;s he deseado!<br>
+    	&iquest;Acaso no me repugnan todas las paredes, <br>
+    	las calles, las piedras,<br>
+    	todo el barro, la bruma, toda la niebla,<br>
+    	todas las clases de tr&aacute;fico?<br>
+    	A ti, yo te querr&iacute;a <br>
+    	fluyendo encima de m&iacute; como el agua,<br>
+    	&iexcl;oh, pero fuera de aqu&iacute;!<br>
+    	Hierba y praderas y colinas y sol<br>
+    	&iexcl;oh, suficiente sol!<br>
+    	&iexcl;Lejos y a solas, en medio de gente extra&ntilde;a!</font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Javier Calvo</font></em><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Meditatio"></a>Meditatio</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<br>
+		Cuando considero cuidadosamente los curiosos h&aacute;bitos de los perros <br>
+		Estoy obligado a concluir <br>
+		Que el hombre es un animal superior. <br>
+		Cuando considero los curiosos h&aacute;bitos del hombre, <br>
+		Le confieso, mi amigo, que me sorprendo.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Marcelo Covian</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Portrait d une femme"></a>Portrait d'une femme</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Vuestra 
+		mente y Usted son nuestro mar del Sargasso, <br>
+		Londres ha soplado sobre Usted esta veintena de a&ntilde;os <br>
+		Y barcos brillantes le han dejado esto o aquello en pago: <br>
+		Ideas, viejas habladur&iacute;as, sobrantes de todas layas, <br>
+		Extra&ntilde;os m&aacute;stiles del conocimiento y grises mercanc&iacute;as de valor. <br>
+		<br>
+		Grandes hombres la han buscado -extra&ntilde;ando a otra. <br>
+		Usted siempre ha sido segundona.&nbsp; &iquest;Tr&aacute;gico? <br>
+		No. Usted lo prefiri&oacute; a la cosa usual: <br>
+		Un hombre apagado, aburrido y galante, <br>
+		Una mente normal -con un pensamiento menos, cada a&ntilde;o. <br>
+		Oh, Usted ha sido paciente, la he visto sentada <br>
+		Por horas, en donde algo deber&iacute;a haber flotado. <br>
+		Y ahora Usted paga. S&iacute;, ricamente paga. <br>
+		Usted es una persona de alg&uacute;n inter&eacute;s, uno se acerca <br>
+		Y se lleva extra&ntilde;as semillas: <br>
+		Trofeos rescatados, alguna curiosa sugerencia; <br>
+		Hechos que no llevan a ninguna parte; un cuento o dos, <br>
+		Pre&ntilde;adas de mandr&aacute;goras, o con alguna otra cosa <br>
+		Que podr&iacute;a ser &uacute;til y sin embargo nunca lo es, <br>
+		Que jam&aacute;s encaja en un rinc&oacute;n o muestra utilidad, <br>
+		O se encuentra su hora sobre el tejar de los d&iacute;as: <br>
+		El trabajo deslustrado, cursi, maravilloso, viejo; <br>
+		&iacute;dolos y &aacute;mbar gris y los raros embutidos, <br>
+		&Eacute;stas son vuestras riquezas, vuestro gran dep&oacute;sito; y sin embargo,<br>
+		Por todo este tesoro hundido en cosas moment&aacute;neas, <br>
+		Exc&eacute;ntricas maderas casi empapadas y material nuevo y brillante: <br>
+		En el lento flotador de luz diferente y profunda: <br>
+		&iexcl;No! &iexcl;No hay nada! Al fin y al cabo, <br>
+		Nada es suficientemente vuestro. <br>
+		Y sin embargo es Usted.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Marcelo Covian </i><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="N.Y."></a>N.Y.<br>
+		<br>&iexcl;Ciudad m&iacute;a, mi amor, blanca m&iacute;a! &iexcl;ah, esbelta,<br>&oacute;yeme! Óyeme y un 
+		alma te infundir&aacute; mi soplo.<br>Suavemente en el caramillo, &iexcl;esc&uacute;chame!<br>
+		<br>Ciudad m&iacute;a, mi amada,<br>eras una doncella todav&iacute;a sin pechos,<br>
+		esbelta como un caramillo de plata.<br>&iexcl;Ahora &oacute;yeme, esc&uacute;chame&iexcl;<br>y un 
+		alma con mi soplo te dar&eacute;.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Javier 
+		Calvo</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><em style="font-style: normal"><font face="Georgia" color="#C4CAD4">
+		<a name="Un pacto"></a>Un pacto<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		Yo hago un pacto contigo, Walt Whitman. <br>
+		Ya te he detestado lo suficiente. <br>
+		Llego a ti como un ni&ntilde;o crecido <br>
+		<br>
+		Que ha tenido un padre testarudo; <br>
+		Ya tengo edad para hacer amigos. <br>
+		<br>
+		Fuiste t&uacute; el que parti&oacute; la nueva le&ntilde;a, <br>
+		Ahora es el tiempo de tallar. <br>
+		<br>
+		Nosotros tenemos la ra&iacute;z y la savia: <br>
+		Que haya intercambio entre nosotros.</font></em></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Covian <br>
+&nbsp;</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ZAPATILLAS NEGRAS: BELLOTTI"></a>
+		</font><font face="Georgia" color="#C4CAD4">
+		Zapatillas negras: Bellotti</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>En la mesa de m&aacute;s all&aacute;,<br>tras haberse quitado las zapatillas de 
+		ante,<br>con los pies enfundados en medias blancas<br>y cuidadosamente 
+		posados sobre una servilleta,<br>ella conversa:<br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&laquo;Connaissez-vous Ostende?&raquo;.<br><br><br>La gorjeante dama italiana en la 
+		otra punta del restaurante<br>replica con cierta altivez,<br>pero yo 
+		espero pacientemente<br>a ver c&oacute;mo Celestine vuelve a ponerse las 
+		zapatillas.<br>Se las pone con un gemido.</font></p>
+		<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">
+		Versi&oacute;n de Javier Calvo<br>
+		<br>
+&nbsp;</font></em></p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:46:57 Oct 30, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:15 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

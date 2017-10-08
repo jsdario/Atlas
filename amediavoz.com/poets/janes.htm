@@ -1,0 +1,859 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Clara Jan&eacute;s</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Clara Jan&eacute;s. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Clara_Janes,poesias,poetas,poemas,versos,biografias,traducciones,textos,poesia_contemporanea,poesia_visual,estrofas,voces,voz,prosa_poetica,declamadores,voz_de_los_poetas_voz_declamadores,audios,fonoteca,audios_de_poesia,poesia_surrealista,poetas_surrealistas,surrealismo,poesia_femenina,mujeres,poesia_modernista,poesia_actual,poetas_actuales,poesia_clasica,poesia_de_vanguardia,poesia_vanguardista,poesia_contemporanea,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,voz,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,escritores,escritoras,poetas_nuevos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/janes.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/janes.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164558" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./janes.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:45:58 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./janes.htm" title="23:21:38 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:45:58 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./janes.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:45:58 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./janes.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>61 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Apr 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000101010101_2005:-1:011100000025_2006:-1:110011000200_2007:-1:010102030100_2008:-1:001111001001_2009:-1:010000110000_2010:-1:100000001110_2011:-1:000000103100_2012:-1:510010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+  <blockquote>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><img border="0" src="./JANES.jpg" width="268" height="39"></p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center">&nbsp;</p>
+    <p align="center"><em style="font-style: normal">
+	<font face="Arial" size="2" color="#84B0D6">&quot;...Tuve un amante que ensalz&oacute; 
+	mis caderas<br>
+    y mi forma de amar intensa y silenciosa....&quot;</font></em></p>
+    <p align="center"><font color="#84B0D6"><img src="./JANES1.jpg" width="280" height="359"
+    alt="JANES1.jpg (13761 bytes)"></font></p>
+	<p align="center"><span style="font-weight: 400; font-style: normal">
+	<font face="Arial" color="#84b0d6" size="2">&quot;Aurora&quot;</font></span></p>
+	<p align="center"><span style="font-weight: 400; font-style: normal">
+	<font face="Arial" size="2" color="#84B0D6">Goya Dom&iacute;nguez</font></span><font face="Basil" size="5" color="#84B0D6"><br>
+    </font></p>
+    <p align="center">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="left">&nbsp;</p>
+    <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+	biogr&aacute;fica</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Poeta, novelista, ensayista 
+	y traductora espa&ntilde;ola nacida en Barcelona en 1940.<br>Hija del famoso editor 
+	y poeta Josep Jan&eacute;s, es licenciada en Filosof&iacute;a y Letras y Maître &egrave;s Lettres 
+	por la Universidad <br>
+	de la Sorbona en Literatura Comparada. <br>En 1997 obtuvo el 
+	<em>Premio Nacional de Traducci&oacute;n</em> por el conjunto de su obra. Su obra 
+	po&eacute;tica tambi&eacute;n ha sido <br>
+	galardonada con importantes premios entre los que se cuentan: <em>Premio 
+	Ciudad de Barcelona 1983 </em>por &laquo;Vivir&raquo;, <em><br>
+	Premio Ciudad de Melilla 1998&nbsp; 
+	</em>por &laquo;Arc&aacute;ngel de sombra&raquo; y <em>Premio de Poes&iacute;a Gil de Biedma 
+	</em>por &laquo;Los secretos del <br>
+	bosque&raquo;. Parte de su obra, traducida a m&aacute;s de veinte idiomas, est&aacute; contenida 
+	en los siguientes vol&uacute;menes: <br>
+	&laquo;Las estrellas vencidas&raquo; en 1964, &laquo;L&iacute;mite humano&raquo; en 1974, &laquo;En busca de 
+	Cordelia&raquo; y &laquo;Poemas rumanos&raquo; en 1975, 
+	<br>
+	&laquo;Antolog&iacute;a personal&raquo; en 1979, &laquo;Libro de alienaciones&raquo; en 1980, &laquo;Eros&raquo; en 
+	1981,&nbsp; &laquo;Kampa&raquo; en 1986, &laquo;F&oacute;siles&raquo; en 1987,
+      <br>
+	&laquo;Rosas de fuego&raquo; y &laquo;Div&aacute;n del &oacute;palo de fuego&raquo; en 1996, &laquo;La indetenible 
+	quietud&raquo; en 1998, &laquo;El libro de los p&aacute;jaros&raquo; <br>
+	en 1999 y &laquo;Paralajes&raquo; en el a&ntilde;o 2002.&nbsp; &copy;<br>
+	</font><font face="Georgia" size="2" color="#85A6BC"><br>
+	</font><br>
+	</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      size="3" color="#A6BCCE" face="Georgia"><br></font></p>
+	<p align="left"><br>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./janes.htm#AMIGA">Amiga</a><br><br><a href="./janes.htm#CAPAZ DE REVERBERO">Capaz de 
+	reverbero...</a><br>
+	<br><a href="./janes.htm#CARTA III">Carta III</a><br><br>
+	<a href="./janes.htm#EL BANQUETE QUE OS PROPONGO...">El banquete que os propongo es 
+	para el d&iacute;a de mi muerte...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./janes.htm#En el umbral oscuro la copa destell&oacute;...">En el umbral oscuro la 
+	copa destell&oacute;...</a><br>
+	<br><a href="./janes.htm#ESPERAR&Eacute; PACIENTE...">Esperar&eacute; paciente...</a><br><br>
+	<a href="./janes.htm#ESTUVE CON UN JOVEN...">Estuve con un joven...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2"><a href="./janes.htm#Eur&iacute;dice">
+	Eur&iacute;dice</a><br><br>
+	<a href="./janes.htm#FUE AL ALBA">Fue al alba...</a><br><br><a href="./janes.htm#HALOVA">Halova</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./janes.htm#HERIDO EL &Aacute;RBOL...">Herido el &aacute;rbol...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<br>
+	<br><a href="./janes.htm#IRREMEDIABLEMENTE">Irremediablemente</a><br><br>
+	<a href="./janes.htm#ISLA DEL SUICIDIO">Isla del suicidio...</a><br><br>
+	<a href="./janes.htm#LOS LATIDOS ESTALLAN EN MIS LABIOS...">Los latidos estallan en mis 
+	labios...</a><br>
+	<br><a href="./janes.htm#ME DEJAR&Eacute; MORIR EN TU SILENCIO...">Me dejar&eacute; morir en tu 
+	silencio...</a><br>
+	<br><a href="./janes.htm#ME HE DESPERTADO DE PRONTO...">Me he despertado de pronto...</a><br>
+	<br><a href="./janes.htm#NO S&Eacute;">No s&eacute;</a><br><br><a href="./janes.htm#NOTA II">Nota II</a><br><br>
+	<a href="./janes.htm#OJOS">Ojos</a><br><br><a href="./janes.htm#OYES ESA M&Uacute;SICA...">Oyes esa 
+	m&uacute;sica...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	<br><br><a href="./janes.htm#PASO A PASO">Paso a paso...</a><br><br><a href="./janes.htm#PIDO">
+	Pido</a><br>
+	<br><a href="./janes.htm#REVUELTA CON EL VIENTO...">Revuelta con el viento...</a><br>
+	<br><a href="./janes.htm#YA SE ACERCAN LAS MANOS...">Ya se acercan las manos...</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	<br>Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+	Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+	<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+	</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font
+      size="3" color="#A6BCCE" face="Georgia"><br></font></p>
+	<p align="center">
+	&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#85A6BC"><a name="AMIGA"></a></font>
+	<font face="Georgia" color="#84B0D6">Amiga</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Te brillaban dos l&aacute;grimas<br>por fin nos despedimos<br>sin poder 
+	compartir el aluvi&oacute;n de noche<br>
+	<br>pero t&uacute; me sab&iacute;as<br>rompi&eacute;ndome en aceras<br>recorriendo senderos sin 
+	gravedad deshechos<br>alej&aacute;ndome progresivamente<br>por el vasto universo de 
+	veloces esferas<br>desde aquel chorro negro en cuyo centro<br>el yo<br>se 
+	quedaba en la r&aacute;faga<br>el punto<br>donde nada ni nadie<br>s&oacute;lo el deseo con 
+	su vientre de lava<br>la muerte por los brazos cargando pesadez<br>cargando 
+	fr&iacute;o<br>dej&aacute;ndolos colgar desasi&eacute;ndose aplast&aacute;ndose<br>la cabeza tambi&eacute;n 
+	como un cometa dormido rodando<br>a miles de kil&oacute;metros ya la vez<br>en tus 
+	pupilas h&uacute;medas<br>brillantes como estrellas en el agua de la noche<br>de 
+	esa noche<br>cuando abierto y desnudo el coraz&oacute;n<br>como las rosas que 
+	desnudan su cr&aacute;ter<br>y el cuerpo les da vueltas<br>como fuego en racimos<br>
+	devorador de &oacute;rbitas el&iacute;pticas que ensanchan el espacio infinito<br>dejaba 
+	s&oacute;lo s&oacute;lo s&oacute;lo<br>ese punto<br>lejano y arraigado<br>negro insaciable pozo 
+	de tortura y destello<br>que reclama violento 
+	<br>m&aacute;s viento entre los sauces que lloran<br>m&aacute;s delirio en las cascadas 
+	irisadas<br>m&aacute;s cobijo en las manos de la lluvia<br>m&aacute;s temblor en el beso 
+	de la tierra<br>y ag&oacute;nico<br>encuentra nada m&aacute;s el p&aacute;nico<br>de miembros 
+	desarmados<br>y se entrega fieramente<br>al sue&ntilde;o extra&ntilde;o<br>en la ebriedad 
+	y veneno<br>de un instante de amor<br>propio<br>inasible<br>incomprensible 
+	<br>inexpresable<br>intransmisible<br>incomunicable<br>incompartible <br>a 
+	penas<br>un ahogo<br>perecer 
+	<br><br>y todo<br>en tu pupila<br>impregnada de infancia.<br><br><em>&quot;Libro 
+	de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="CAPAZ DE REVERBERO"></a>Capaz de reverbero...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Capaz de reverbero<br>el vac&iacute;o musita<br>e incisiva se inicia la vibraci&oacute;n<br>
+	como grieta en la nada.<br>En su alear asciende,<br>para a la llama, el 
+	verbo,<br>y fluye virginal lo tangible.<br>Oh forma que detiene sucesiones<br>
+	mas incesante mana. 
+	<br>Mece Orfeo la serpiente<br>y el veneno transmuda<br>de letal violencia<br>
+	en lasitud de uva,<br>melosa y apacible,<br>que oro solar anuncia<br>y 
+	rosijo encendido,<br>rubor de la espesura.<br>
+	<br>Cual fuego de artificio<br>se eleva la voz de la soprano<br>y en racimo 
+	se esparce<br>y destella cadencias que titilan<br>antes de que devore su 
+	fulgor la sombra.<br>Tambi&eacute;n existe un ave<br>que en arco esplendoroso<br>
+	m&aacute;s de doscientos p&aacute;jaros<br>remeda con su don.<br>Es mi amado el que 
+	siempre est&aacute; escondido,<br>el que no osa tomar cuerpo en este barro,<br>el 
+	que apenas esboza su existencia:<br>un asomo de ser que no se agota.<br>En 
+	mi tumba la alada madreselva<br>con su aliento susurra y resucito<br>virgen 
+	de cuerpo y de palabra.<br>
+	<br>II<br><br>Sin ver si tu invisible ser<br>en mis entra&ntilde;as:<br>tu voz en 
+	los celajes de mi noche.<br>Al hilo indescifrable de tu mente,<br>mi mente, 
+	ciega, sin error se adecua,<br>sabidur&iacute;a oculta:<br>n&uacute;mero de la llama.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Antolog&iacute;a personal&quot; 
+	1979</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="CARTA III"></a></font>
+	<font face="Georgia" color="#84B0D6">Carta&nbsp; III</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Nunca sabr&eacute; de ti,<br>y eso lo supe<br>desde el primer encuentro.<br>
+	<br>Esta certeza tiene tanta fuerza<br>que es<br>como si tuviera noticias 
+	tuyas<br>a cada momento.<br>
+	<em><br>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="EL BANQUETE QUE OS PROPONGO..."></a>El banquete&nbsp; que os 
+	propongo es para el d&iacute;a de mi muerte...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	El banquete que os propongo es para el d&iacute;a de mi muerte<br>y responde al 
+	amor que yo siento y deseo:<br>pido que se me coma,<br>que mi ser en no ser 
+	no se mude<br>sino en puro alimento;<br>comuni&oacute;n can&iacute;bal suplico,<br>g&eacute;nesis 
+	en el otro.<br>
+	<br>Nadie quiere comerme,<br>enferma estoy de amor.<br><em><br>&quot;Vivir&quot; 1983</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="En el umbral oscuro la copa destell&oacute;..."></a>En el umbral oscuro la 
+	copa destell&oacute;...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">En el umbral oscuro la copa 
+	destell&oacute;<br>
+	y en mi mirada se adentr&oacute;<br>
+	la filigrana de la plata.<br>
+	Bebe ,dijo su portador:<br>
+	Y beb&iacute; sus ojos en el vino.<br>
+	Y beb&iacute; el vino en sus labios.<br>
+	Y &eacute;l bebi&oacute; sus labios en los m&iacute;os.<br>
+	Y encend&iacute; las velas.<br>
+	<br>
+	Despleg&oacute; una s&aacute;bana azul<br>
+	que abarcaba los ocho cielos<br>
+	salpicados del oro de los astros<br>
+	y me envolvi&oacute; y a s&iacute; mismo, en ella.<br>
+	Y como el entero firmamento<br>
+	me abraz&oacute;.<br>
+	Y se adentr&oacute; en mi vida<br>
+	y en aquella noche<br>
+	la deshoj&oacute; hasta la tersura del alba.<br>
+	Con el tacto del m&aacute;s leve p&eacute;talo<br>
+	se dobl&oacute; su cabeza en mi cuello,<br>
+	sus bucles negros<br>
+	emit&iacute;an un aroma de abismo.<br>
+	<br>
+	Y por su boca<br>
+	bes&eacute; yo la muerte,<br>
+	y en torno a m&iacute;<br>
+	repleg&oacute; las alas.<br>
+	La luna se quebr&oacute;<br>
+	en vertientes de nieve.<br>
+	Los arrecidos astros desmayaron.<br>
+	La gravedad estall&oacute;.<br>
+	Un torbellino urente<br>
+	abri&oacute; su espiral<br>
+	a lo infinito.<br>
+	Lluvias de meteoros<br>
+	abrasaron los c&iacute;rculos<br>
+	de la oscuridad.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ESPERAR&Eacute; PACIENTE..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Esperar&eacute; paciente...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Esperar&eacute; paciente,<br>
+	acechando, como un perro, el momento.<br>O me ir&eacute; por la selva de tus versos<br>
+	abri&eacute;ndome camino lentamente<br>por ocultos senderos,<br>por peque&ntilde;os 
+	resquicios<br>que has dejado entreabiertos.<br>
+	<em><br>&quot;Kampa&quot; 1986</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ESTUVE CON UN JOVEN..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Estuve con un joven...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Estuve con un joven<br>y 
+	supe al fin lo que era<br>el violento arrebato, la agilidad vibr&aacute;til,<br>
+	cavidades melosas en la carnosa pulpa<br>suavemente entreabierta<br>hasta el 
+	linde dehiscente,<br>el perfecto engranaje,<br>la densidad precisa de jugos 
+	derramados,<br>la inclinaci&oacute;n debida,<br>la posici&oacute;n exacta,<br>y la 
+	sabidur&iacute;a del mutismo,<br>la belleza de un glande.<br>
+	<em><br>&quot;Eros&quot; 1981</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6"><a name="Eur&iacute;dice"></a>Eur&iacute;dice</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">La mano en el sa&uacute;co del 
+	leteo, <br>
+	la sombra sigue insomne <br>
+	de otra mano, <br>
+	una mano que nombra, <br>
+	que desbroza el camino, <br>
+	que pasa a limpio <br>
+	los nombres de las cosas. <br>
+	Pero el rostro, <br>
+	que nunca fue, <br>
+	que no hallar&aacute; reflejo <br>
+	en unos ojos <br>
+	fielmente vueltos ya <br>
+	para siempre hacia s&iacute; mismos, <br>
+	estalla por encima de los pasos <br>
+	y deja que la aurora <br>
+	con el sol lo arrebate y arrastre <br>
+	por la terrible orilla de los tiempos. <br>
+	<br>
+	Siga el pie, ciegamente, pues, la huella <br>
+	que ahuyenta <br>
+	toda la confusi&oacute;n, <br>
+	y t&uacute;, avanza, <br>
+	acosada cabeza a&uacute;n de los abismos, <br>
+	con el rostro encendido <br>
+	y el cabello derramado entre los vientos. <br>
+	Y los ojos en l&aacute;grimas, <br>
+	en la paz y el dolor, <br>
+	teje un lamento <br>
+	al malhadado y fiel Orfeo, <br>
+	&iexcl;oh pobre, despojada del infierno, <br>
+	delirante, <br>
+	ya para siempre solitaria <br>
+	Eur&iacute;dice!</font></p>
+	<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Antolog&iacute;a personal&quot; 
+	1979 </font></i></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="FUE AL ALBA"></a></font>
+	<font face="Georgia" color="#84B0D6">Fue al alba...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Fue al alba,<br>perdona por la hora.<br>Tus p&aacute;rpados del sue&ntilde;o callaban<br>
+	debajo de mi almohada<br>y al irrumpir la luz primera<br>se dibuj&oacute; en el 
+	blanco<br>tu entrecejo fruncido<br>y tu voz murmur&oacute; unas palabras.<br>En el 
+	candil<br>dejaste un gesto de fatiga<br>y luego<br>tu mirada me llam&oacute;<br>
+	desde las rosas.<br>Corr&iacute; a abrazarlas<br>y me sent&eacute; a la mesa<br>y en el 
+	papel vac&iacute;o<br>segu&iacute; los trazos<br>que tu mano deslizaba.<br>Desenred&oacute; del 
+	miedo<br>el oculto sentido,<br>del miedo a 
+	<em>ya no ser</em> para <em>ser con</em>,<br>del miedo a no saber<br>si uno 
+	podr&aacute; abarcar esa divina mutaci&oacute;n<br>de ser en uno dos,<br>siendo arrancado<br>
+	y arrancando as&iacute; al otro de la muerte.<br>Y en la p&aacute;gina<br>tom&oacute; vivo 
+	sentido<br>la palabra 
+	<em>resurrecci&oacute;n.</em><br><br><em>&quot;Kampa I - Antolog&iacute;a personal&quot; 1979<br>
+	<br>
+&nbsp;</em></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="HALOVA"></a></font>
+	<font face="Georgia" color="#84B0D6">Halova</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iexcl;Era una chica tan alegre!<br>
+	En clase se re&iacute;a sin parar.<br>Se equivocaba siempre en las declinaciones<br>
+	y sin embargo pod&iacute;a hablar de todo<br>e incluso pronunciaba bien la r .<br>
+	Ella me hizo leer a Nezval ya Jiri Orten<br>como quien no hace nada, 
+	<br>como si se tratara tan s&oacute;lo de un azar.<br>Yo sent&iacute;a verg&uuml;enza de m&iacute; 
+	misma<br>y de mi destino tr&aacute;gico,<br>y hubiera querido salir de mi 
+	desesperaci&oacute;n habitual<br>para acercarme a ella<br>y decirle, aunque fuera 
+	una vez:<br>s&iacute;, t&uacute; tienes raz&oacute;n.<br>Mas, cuando lo intentaba,<br>las 
+	palabras se negaban a salir...<br>
+	<br>Era como si yo, reuniendo mis fuerzas,<br>emergiera del pozo de las 
+	sombras,<br>pero a pesar de todo, el espacio que nos separaba<br>resultara 
+	irremediablemente infranqueable.<br>
+	<br><em>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><em style="font-style: normal">
+	<font face="Georgia" size="2" color="#84B0D6"><a name="HERIDO EL &Aacute;RBOL...">
+	</a></font>
+	<font face="Georgia" color="#84B0D6">Herido el &aacute;rbol...</font></em></p>
+	<p><em style="font-style: normal">
+	<font face="Georgia" size="2" color="#84B0D6">Herido el &aacute;rbol,<br>
+	su fragancia me cubre,<br>
+	&iexcl;oh amable delirar<br>
+	mientras giran los astros!<br>
+	Una llama seduce<br>
+	el humo de los sue&ntilde;os que me acunan.<br>
+	Vela mi coraz&oacute;n aunque yo duerma.</font></em></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="IRREMEDIABLEMENTE"></a>Irremediablemente</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mueren las rosas<br>a pesar 
+	de la lluvia.<br>Mi coraz&oacute;n doliente<br>poco alimento<br>puede cederles ya.<br>
+	Dame la mano.<br>Tu agon&iacute;a<br>en la m&iacute;a<br>lograr&aacute; ser m&aacute;s fuerte<br>que el 
+	agosto<br>y te&ntilde;ir con su sangre<br>ese desesperado<br>&uacute;ltimo aliento,<br>
+	cerrar el grito<br>que nos lanzan<br>desde el color marchito<br>que casi 
+	envuelto en oro<br>amenaza irremediablemente sus corolas.<br>
+	<em><br>&quot;Kampa&quot; 1986</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ISLA DEL SUICIDIO"></a></font><font face="Georgia" color="#84B0D6">
+	Isla del suicidio...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Isla del suicidio<br>en 
+	apariencia muda,<br>arranca la sonrisa<br>de tu cara.<br>Muestra la 
+	ambig&uuml;edad<br>de tus aromas,<br>de tus viejas<br>cuyos ojos vuelven la 
+	espalda,<br>de tus hermosos j&oacute;venes con la mueca drogada.<br>
+	<br>En tu silencio, isla,<br>hablas y hablas,<br>pero no se limita la opci&oacute;n<br>
+	a tu propuesta<br>entre el pasado la nada o la distancia<br>
+	<br>No,<br>no se puede salir, dice Holan,<br>por puertas<br>que en las 
+	paredes 
+	<br>est&aacute;n<br>s&oacute;lo<br>pintadas.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Libro de alienaciones&quot; 
+	1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a
+      name="LOS LATIDOS ESTALLAN EN MIS LABIOS..."></a>Los latidos estallan en 
+	mis labios...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Los latidos estallan en mis 
+	labios<br>que ya apenas murmuran:<br>
+	<em>come, death, and wellcome!</em><br>Sobre el ansia des&eacute;rtica<br>de tu 
+	carne de agraz arboladura<br>la luna se desmaya<br>cubriendo de pudor<br>
+	descuartizados miembros,<br>que en la sangre recogen<br>el aullido cortante,<br>
+	los amorosos restos de mi cuerpo.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Eros&quot; 1981</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="ME DEJAR&Eacute; MORIR EN TU SILENCIO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Me dejar&eacute; morir en tu silecio...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Me dejar&eacute; morir en tu 
+	silencio,<br>que de noche me diste de comer<br>los frutos del cerezo<br>en 
+	tu alcoba de sombras<br>sangrantes de perfume<br>y nada m&aacute;s deseo.<br>
+	<br>Me dejar&eacute; morir en tu silencio.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Kampa&quot; 1986</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ME HE DESPERTADO DE PRONTO..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Me he despertado de pronto...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Me he despertado de pronto,<br>
+	t&uacute; me estabas gritando enfurecido<br>destrozabas la noche,<br>romp&iacute;as en 
+	pedazos la materia.<br>He comprendido entonces<br>tu obsesi&oacute;n<br>por las 
+	manos manchadas de sangre<br>Tambi&eacute;n yo matar&iacute;a,<br>incluso a ti:<br>me 
+	haces so&ntilde;ar sin tregua,<br>no me dejas dormir.<br>
+	<em><br>&quot;Kampa&quot; 1986</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="NO S&Eacute;"></a></font>
+	<font face="Georgia" color="#84B0D6">No s&eacute;</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Soy hermosa y mi piel es suave<br>y el viento del mar me devuelve roc&iacute;o<br>
+	de tiernas tersuras.<br>Mi cabello perfumo y adorno de &aacute;urea madreselva<br>y 
+	mi pecho es redondo y casi virginal.<br>Tuve un amante que ensalz&oacute; mis 
+	caderas<br>y mi forma de amar intensa y silenciosa.<br>Podr&iacute;a ser a&uacute;n como 
+	un r&iacute;o de luz en tus brazos.<br>No s&eacute; qu&eacute; te retiene, si furtivo, he visto<br>
+	un destello de ardor en tu gesto al pasar.<br>
+	<br><em>Can I go forward when m y heart is here?</em><br><br>No conozco la 
+	astucia,<br>no soy como la hoja del chopo<br>que en oruga se oculta y 
+	arracima<br>antes de dar su tierno cuerpo al viento,<br>soy clara y sin 
+	pudor,<br>soy entera y tajante,<br>y no s&eacute; seducir.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Eros&quot; 1981</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="NOTA II"></a></font>
+	<font face="Georgia" color="#84B0D6">Nota II</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	sobre unos versos que nacieron<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	espont&aacute;neos</em></font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">A veces el poema es el 
+	objeto o don<br>y con m&aacute;s evidencia<br>pone de manifiesto ese prop&oacute;sito:<br>
+	dar luz a una palabra<br>sin quitarle su magia<br>o ser depositario<br>de 
+	una visi&oacute;n o de un sentir<br>que toma cuerpo<br>en s&iacute;labas contadas.<br>
+	<br><em>&quot;Vivir&quot; 1983</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="OJOS"></a></font>
+	<font face="Georgia" color="#84B0D6">Ojos</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Me has acorralado<br>y con 
+	odio agarrado mis solapas,<br>me has empujado hacia un rinc&oacute;n<br>y me has 
+	golpeado<br>hasta dejar tinto de sangre<br>el aire mismo,<br>y as&iacute; y todo,<br>
+	he aqu&iacute; que todav&iacute;a me levanto<br>y mir&aacute;ndote te digo:<br>ahora mismo,<br>en 
+	este momento lo decido,<br>har&eacute; donaci&oacute;n de mis ojos<br>aunque tenga que 
+	llevarlos<br>mi asesino.<br>
+	<em><br>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="OYES ESA MÚSICA..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Oyes esa m&uacute;sica...</font><font face="Georgia" size="2" color="#84B0D6"><br><em><br></em>
+	&iquest;Oyes esa m&uacute;sica <br>que cruza como luz la oscuridad 
+	<br>mientras la oscuridad gira <br>y yo con ella? <br>&iexcl;Con qu&eacute; fuerza <br>se 
+	abre paso 
+	<br>y llega incluso <br>a mi lugar m&aacute;s remoto <br>cercado tambi&eacute;n de 
+	sombras! 
+	<br>Pero el latido <br>que brota all&iacute; <br>nadie lo oye. <br>Nadie, como yo, 
+	sabe 
+	<br>que existo <br>y crecer&eacute; <br>y amar&eacute; <br>como aman estos brazos <br>que 
+	me sostienen 
+	<br>porque no s&eacute; andar a&uacute;n... <br>Pero escucha, escucha: <br>todos los 
+	&aacute;rboles se mecen 
+	<br>en la m&uacute;sica. <br>Y en mi interior, <br>donde un secreto sol <br>me hace 
+	adivinar 
+	<br>el sol secreto <br>de la oscuridad. <br><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="PASO A PASO"></a></font>
+	<font face="Georgia" color="#84B0D6">Paso a paso...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Paso a paso<br>Desconf&iacute;a de 
+	aquellos<br>que no han considerado nunca<br>el suicidio.<br>Van haciendo 
+	paso a paso el camino,<br>ceg&aacute;ndose al abismo que siempre acosa al hombre<br>
+	<br>Entran en la matem&aacute;tica rueda<br>de la materia.<br>Se hacen 
+	invulnerables a la desesperaci&oacute;n.<br>Cuentan incluso, fr&iacute;amente,<br>con el 
+	coraz&oacute;n.<br>
+	<em><br>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="PIDO"></a></font>
+	<font face="Georgia" color="#84B0D6">Pido</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Prisionera de un p&aacute;nico invencible,<br>y aunque s&eacute; de la inutilidad de 
+	todo sue&ntilde;o,<br>desde esa c&aacute;rcel torturante que es la vida,<br>pido la 
+	autonom&iacute;a total del hombre<br>y el derecho a no justificar para nada<br>su 
+	existencia.<br>
+	<em><br>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="REVUELTA CON EL VIENTO..."></a>Revuelta con el viento...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Revuelta con el viento<br>
+	mi alma has arrastrado<br>hasta la orilla de tu alma.<br>Mas mi cabeza<br>
+	anclada en ese cuerpo<br>se revela contra la distancia<br>y pose&iacute;da asedia 
+	tu aislamiento.<br>Te busca fieramente en tus palabras<br>con los ojos 
+	heridos<br>en medio de un incendio.<br>
+	<br><em>&quot;Kampa&quot; 1986</em><br><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="YA SE ACERCAN LAS MANOS..."></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Ya se acercan las manos...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Ya se acercan las manos,<br>innumerables manos,<br>negras manos,<br>a 
+	cegarme los ojos,<br>a detener mis piernas,<br>a secarme las venas,<br>a 
+	posarse insistentes<br>a lo largo del cuerpo<br>y dejarlo sumido en lo 
+	negro.<br>Har&aacute;n saltar la lengua,<br>los dientes,<br>coraz&oacute;n y ri&ntilde;ones,<br>
+	intestino y cerebro...<br>
+	<br>Amiga de la entra&ntilde;a, tan lejana,<br>ac&eacute;rcate un momento<br>y con tus 
+	juegos<br>distrae esta terrible oscuridad.<br>Dame un r&iacute;o de fuerza<br>desde 
+	el vientre,<br>como anta&ntilde;o.<br>
+	<br>Siquiera suficiente<br>para alejar<br>las manos.<br>Estas manos<br>que 
+	negras<br>e impert&eacute;rritas<br>me van cercando.<br>
+	<em><br>&quot;Libro de alienaciones&quot; 1980</em></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#85A6BC"><em><br></em>
+	</font></p>
+	<font size="4">
+	<p align="center"></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72"
+      height="7"></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+  </blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:45:58 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:20:25 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

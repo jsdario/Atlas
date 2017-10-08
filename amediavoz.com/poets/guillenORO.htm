@@ -1,0 +1,738 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jorge Guill&eacute;n</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jorge Guill&eacute;n. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.  Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Jorge_Guillen,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#4D5E5B">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/guillenORO.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/guillenORO.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163801" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./guillenORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:38:01 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./guillenORO.htm" title="21:32:37 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:38:01 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./guillenORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="25 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:38:01 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./guillenORO.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>70 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">28 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110101_2003:-1:010100010101_2004:-1:000100010101_2005:-1:011000000010_2006:-1:010031000200_2007:-1:010213130300_2008:-1:012221000003_2009:-1:000010110000_2010:-1:100000001211_2011:-1:000000101100_2012:-1:100011001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./GUILLENORO.jpg" width="221" height="37"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./GUILLENORO1.jpg" width="203" height="21"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<p align="center"><br>
+<br>
+</p>
+
+<blockquote>
+  <blockquote>
+	<p align="left"><strong><font color="#526462" face="Georgia">
+	<a href="./guillenORO.htm#AMOR A UNA MA&Ntilde;ANA">Amor a una ma&ntilde;ana</a><br><br>
+	Bajo lluvia de fuego<br>
+	<br>
+	<a href="./guillenORO.htm#BEATO SILL&Oacute;N">Beato sill&oacute;n</a><br><br>
+	<a href="./guillenORO.htm#DEL TRANSCURSO">Del transcurso</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./guillenORO.htm#EL PAN NUESTRO">El pan nuestro</a><br>
+	<br>
+	<a href="./guillenORO.htm#ESTATUA ECUESTRE">Estatua ecuestre</a><br><br>
+	<a href="./guillenORO.htm#LOS JARDINES">Los jardines</a><br>
+	<br>
+	<a href="./guillenORO.htm#M&Aacute;S VERDAD">M&aacute;s verdad</a><br><br>
+	<a href="./guillenORO.htm#MUERTE A LO LEJOS">Muerte a lo lejos</a>&nbsp;<br>
+	<br>
+	<a href="./guillenORO.htm#MUERTE DE UNOS ZAPATOS">Muerte de unos zapatos</a><br>
+	<br>
+	<a href="./guillenORO.htm#PASA EL TIEMPO...">Pasa el tiempo...</a><br><br>
+	<a href="./guillenORO.htm#PERFECCI&Oacute;N">Perfecci&oacute;n</a>&nbsp;&nbsp;<br>
+	<br>
+	<a href="./guillenORO.htm#PRIMAVERA DELGADA">Primavera delgada</a><br>
+	<br>
+	<a href="./guillenORO.htm#UNOS CABALLOS...">Unos caballos...</a><br>
+	<br>
+	<a href="./guillenORO.htm#VIDA COTIDIANA">Vida cotidiana</a><br><br>
+	<a href="./guillenORO.htm#VIRTUD">Virtud</a></font></strong></p>
+	<strong>
+
+<font size="2" color="#526462">
+	<p align="left"><font face="Georgia" size="2" color="#404D48">M&aacute;s poes&iacute;a de 
+	este autor en: </font></font>
+	<font color="#526462"><b><font face="Georgia">
+	<a target="_blank" href="./indice-A-K.htm" style="color: #43504C; text-decoration: none">
+	&Iacute;ndice A-K</a></font></b></font><br>
+
+</strong><font size="2" color="#526462"><strong>
+
+	<font face="Georgia" size="3" color="#526462"><br></font>
+	<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+	</font>
+
+</strong></font><strong>
+
+	<font face="Georgia" color="#526462">
+	<a
+      href="./" style="color: #43504C; text-decoration: none">
+	A media voz</a></font><font size="2" color="#526462"><font face="Georgia" size="2" color="#526462"><br>
+	</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462">
+	</font></font><font face="Georgia" color="#526462">
+	<a href="./poesiadeoro.htm" style="color: #43504C; text-decoration: none">
+	Poes&iacute;a de Oro</a><br>
+&nbsp;</p></font><font face="Georgia" size="2" color="#526462">
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462">
+	<a HREF="javascript:mailpage()" style="color: #43504C; text-decoration: none">
+	Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> &nbsp;&nbsp;</font>&nbsp;&nbsp; <br></p>
+	<p align="center"><font color="#404D48" size="2">Tus comentarios o 
+	sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo&nbsp;de esta p&aacute;gina. 
+	Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br></font><font size="4" color="#404D48"><br>
+	</font><font size="4">
+	<a href="mailto:poesia@amediavoz.com" style="color: #43504C; text-decoration: none">
+	poesia@amediavoz.com</a></font></p>
+	</font>
+
+</strong>
+	<p align="center">&nbsp;</p>
+	<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+	<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p><font face="Arial" size="2" color="#526462">
+		<a name="AMOR A UNA MA&Ntilde;ANA"></a></font>
+		<font color="#43504C" face="Georgia"><strong>Amor a una ma&ntilde;ana</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Ma&ntilde;ana, ma&ntilde;ana 
+		clara:<br>&iexcl;si fuese yo quien te amara!<br>Paso a paso en tu ribera,<br>
+		yo ser&eacute; quien m&aacute;s te quiera.<br>
+		<br>Hacia toda tu hermosura<br>mi palabra se apresura.<br>Henos sobre 
+		nuestra senda.<br>D&eacute;jame que yo te entienda.<br>
+		<br>&iexcl;Hermosura delicada<br>junto al filo de la nada!<br>Huele a mundo 
+		verdadero<br>la flor azul del romero.<br>
+		<br>&iquest;De tal lejan&iacute;a es due&ntilde;a<br>la malva sobre la pe&ntilde;a?<br>Vibra sin 
+		cesar el grillo<br>A su Paciencia me humillo.<br>
+		<br>&iexcl;Cu&aacute;nto gozo a la flor deja<br>Preciosamente la abeja!<br>Y se 
+		zambulle, se obstina<br>la abeja. &iexcl;Calor de mina!<br>
+		<br>El grillo ahora acelera<br>su canto. &iquest;M&aacute;s Primavera?<br>Se pierde 
+		quien se lo pierde.<br>&iexcl;Qu&eacute; m&iacute;o el campo tan verde!<br>
+		<br>Cielo insondable a la vista:<br>amor es quien te conquista.<br>&iquest;No 
+		merezco tal ma&ntilde;ana?<br>Mi coraz&oacute;n se la gana.<br>
+		<br>Claridad, potencia suma:<br>mi alma en ti se consuma.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia"><strong><font color="#43504C"><a name="BAJO LLUVIA DE FUEGO"></a>
+		Bajo lluvia de fuego</font><font size="2" color="#43504C"><br><br>Jam&aacute;s 
+		ces&oacute; ni ha de cesar la lluvia<br>que es fuego material para martirio<br>
+		del alma y de la carne rediviva.<br>Los pies del condenado nunca cesan<br>
+		de avanzar por su circulo arenoso<br>con movimiento que ha de ser 
+		eterno,<br>eterno en sucesiones temporales<br>de persistencia siempre 
+		tan mon&oacute;tona<br>como si fuese un tedio a&uacute;n terrestre.<br>Los condenados, 
+		mientras, descomponen<br>su eternidad en ademanes, gritos.<br>Tal 
+		pormenor alivia el inflexible<br>retorno: seca noria que no mueve<br>ya 
+		nada, nada, nada, nada, nada.<br>&iquest;Lograr&aacute;n conocerse aquellos hombres,<br>
+		diferenciarse con fisonom&iacute;as?<br>&iquest;Sabr&aacute;n que aquel antiguo, tan ilustre,<br>
+		es Brunetto Latini? Cae la lluvia,<br>quema, se queman cuerpos y 
+		memorias,<br>que resisten, persisten.<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Un reciente<br>fogueado -reciente en aquel tiempo<br>sin fechas, sin 
+		mudanzas, sin historia-<br>trae su novedad al territorio<br>del ardor. 
+		Le pregunta el compa&ntilde;ero<br>que con &eacute;l va avanzando. Sin pararse<br>
+		responde, se descarga. -Me es dif&iacute;cil<br>hablar as&iacute;. Me figur&eacute; en la 
+		Tierra<br>que la vida era s&oacute;lo mero objeto<br>de mi desd&eacute;n, muy superior 
+		al mundo.<br>Yo me cre&iacute;a preferible a todo,<br>a todos, menos... T&uacute; ya 
+		me comprendes.<br>Somos iguales en instinto y gusto<br>los acampados, 
+		ay, sobre esta arena.<br>&iquest;D&oacute;nde est&aacute;n Corid&oacute;n, Alexis, tantos<br>
+		perfiles juveniles de hermosura?<br>Pequ&eacute;. Pecamos. Yo no me arrepiento.<br>
+		(Y la lluvia arreciaba, sofocaba,<br>y dol&iacute;an quem&aacute;ndose los brazos,<br>
+		el rostro. Continu&oacute;.) Tal vez ahora<br>principio a ver con claridad mis 
+		l&iacute;mites,<br>y no de mi conducta, placentera,<br>s&iacute; de mis opiniones, 
+		falsas.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-&iquest;Falsas?<br>(El otro interrumpi&oacute;, casi irritado.)<br>-&iquest;Qu&eacute; supimos 
+		nosotros de la vida,<br>de su impulso esencial, de su profunda<br>
+		fluencia ? Ignoramos el gran acto<br>creador, que a s&iacute; mismo se 
+		trasciende.<br>Nada supimos de la criatura:<br>como la realidad m&aacute;s 
+		invasora<br>se impone a los viriles m&aacute;s viriles.<br>Cre&iacute;mos que esos 
+		v&iacute;nculos de sangre<br>no eran sino rid&iacute;culas y d&eacute;biles<br>flaquezas de 
+		burgu&eacute;s. Tambi&eacute;n el toro,<br>no has olvidado su esplendor, se afirma:<br>
+		m&oacute;vil paterno. -&iquest;Todos (dijo el otro)<br>hab&iacute;amos de ser fecundos? Para<br>
+		ciertos hombres es senda inconcebible.<br>-No entendimos el r&iacute;o bajo el 
+		sol,<br>y quedamos al margen, en la sombra<br>m&aacute;s exquisita, como 
+		estetas -dicen-<br>adictos a la imagen m&aacute;s que al bulto<br>real, por eso 
+		descalificado.<br>-&iquest;Fuiste sin duda artista?<br>
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-Melanc&oacute;lico,<br>perdido en los paseos laterales<br>de mi jard&iacute;n, y 
+		siempre disconforme<br>con orgullo que ahora se revela,<br>a esta 
+		distancia, vano. Siempre somos,<br>y con todo candor, adolescentes,<br>
+		On&aacute;n multiplicado por Narciso.<br>!Si se pudiese ahondar esa tercera<br>
+		dimensi&oacute;n del espejo: yo m&aacute;s yo!<br>El otro, juvenil, es uno mismo.<br>
+		-&iquest;Y te quejas? -De nada me arrepiento.<br>El placer y el dolor nos 
+		conduc&iacute;an<br>a la muerte. -Nos deleit&oacute; ese curso<br>de efusiones : una 
+		cruel delicia<br>con alusi&oacute;n a sangre derramada.<br>-San Sebasti&aacute;n, el 
+		bello adolescente<br>bajo flechas. -Por eso (dijo el otro)<br>se goza 
+		aqu&iacute; tambi&eacute;n entre las llamas.<br>Los compa&ntilde;eros sufren: espect&aacute;culo<br>
+		para auditorio c&oacute;mplice en tortura.<br>-No miro a los dem&aacute;s. Es una pena<br>
+		que no concluye nunca. No la entiendo.<br>-Ni t&uacute; ni nadie. Nuestra 
+		eternidad<br>de aflicci&oacute;n es congoja de la mente,<br>ay, quiz&aacute; la mayor 
+		sobre esta arena.<br>
+		<br>Y callaron los dos. Los condenados<br>segu&iacute;an presurosos y sin fines<br>
+		bajo flechas : las flechas de una lluvia<br>que jam&aacute;s cesar&iacute;a. &iquest;Fuego 
+		absurdo?<br>Iban los pecadores avanzando<br>con desesperaci&oacute;n ante el 
+		enigma.<br>-&iquest;Y para qu&eacute;, para qu&eacute;, para qu&eacute;?</font></strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="BEATO SILLÓN"></a></font><font color="#43504C" face="Georgia">
+		Beato sill&oacute;n</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		&iexcl;Beato sill&oacute;n! La casa 
+		<br>corrobora su presencia <br>con la vaga intermitencia <br>de su 
+		invocaci&oacute;n en masa 
+		<br>a la memoria. No pasa <br>nada. Los ojos no ven, <br>saben. El mundo 
+		est&aacute; bien 
+		<br>hecho. El instante lo exalta <br>a marea, de tan alta, <br>de tan 
+		alta, sin vaiv&eacute;n.</font></strong></p>
+  <blockquote>
+    <b>
+    <p align="center">&nbsp;</p>
+    <p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+    </b>
+  </blockquote>
+		<p>&nbsp;</p>
+		<p><font color="#43504C"><a name="DEL TRANSCURSO"></a>
+		</font>
+		<strong>
+		<font color="#43504C" face="Georgia">Del transcurso</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Miro hacia atr&aacute;s, hacia los a&ntilde;os, lejos, <br>Y se me ahonda tanta 
+		perspectiva 
+		<br>Que del conf&iacute;n apenas sigue viva <br>La vaga imagen sobre mis 
+		espejos. 
+		<br><br>Aun vuelan, sin embargo, los vencejos <br>En torno de unas 
+		torres, y all&aacute; arriba 
+		<br>Persiste mi ni&ntilde;ez contemplativa. <br>Ya son buen vino mis vi&ntilde;edos 
+		viejos. 
+		<br><br>Fortuna adversa o pr&oacute;spera no auguro. <br>Por ahora me ah&iacute;nco en 
+		mi presente, 
+		<br>Y aunque s&eacute; lo que s&eacute;, mi af&aacute;n no taso. <br><br>Ante los ojos, 
+		mientras, el futuro 
+		<br>Se me adelgaza delicadamente, <br>M&aacute;s dif&iacute;cil, m&aacute;s fr&aacute;gil, m&aacute;s 
+		escaso.<br>
+		<br><br></font></strong></p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#43504C" face="Georgia"><a name="EL PAN NUESTRO"></a>
+		<strong>El pan nuestro</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Hacia un 
+		posible mas all&aacute; del caos<br>van los d&iacute;as del hombre valeroso, <br>y 
+		emergiendo de brumas y de vahos 
+		<br>sue&ntilde;an, inventan en tensi&oacute;n de coso. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>El tiempo se 
+		enriquece, se desgasta, <br>y entre azar y desorden indomable <br>la 
+		mejor invenci&oacute;n ser&aacute; nefasta, 
+		<br>y el loco ser&aacute; entonces quien mas hable. </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Mientras, la 
+		realidad sin voz desea<br>ser en concierto perspectiva humana. <br>Si se 
+		logra ese quid, hasta la fea<br>visi&oacute;n da aire de triunfo a la ma&ntilde;ana. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Aqu&iacute; mismo, 
+		aqu&iacute; mismo est&aacute; el objeto<br>de la aventura extraordinaria. Salgo<br>de 
+		m&iacute;, conozco por amor, completo<br>mi pasaje mortal. Vivir ya es algo. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Una fuente 
+		incesante de energ&iacute;a<br>fundamenta el suceso: cada hora.<br>Prodigio es 
+		este pan de cada d&iacute;a.<br>Luz humana a mis ojos enamora.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="ESTATUA ECUESTRE"></a></font>
+		<font color="#43504C" face="Georgia">Estatua ecuestre</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Permanece el trote aqu&iacute;, 
+		<br>entre su arranque y mi mano. <br>Bien ce&ntilde;ida queda as&iacute; <br>su 
+		intenci&oacute;n de ser lejano. 
+		<br>Porque voy en un corcel <br>a la maravilla fiel: <br>inm&oacute;vil con 
+		todo br&iacute;o. 
+		<br>&iexcl;Y a fuerza de cu&aacute;nta calma <br>tengo en bronce toda el alma, <br>
+		clara en el cielo del fr&iacute;o!</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="LOS JARDINES"></a></font><font color="#43504C" face="Georgia">
+		Los jardines</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Tiempo en profundidad: est&aacute; en jardines.<br>Mira c&oacute;mo se posa. Ya se 
+		ahonda.<br>Ya es tuyo su interior. &iexcl;Qu&eacute; transparencia<br>de muchas 
+		tardes, para siempre juntas!<br>S&iacute;, tu ni&ntilde;ez, ya f&aacute;bula de fuentes.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#43504C" face="Georgia"><a name="M&Aacute;S VERDAD">
+		</a></font><strong><font color="#43504C" face="Georgia">M&aacute;s verdad</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		S&iacute;, m&aacute;s verdad, <br>objeto de mi gana. <br>Jam&aacute;s, jam&aacute;s enga&ntilde;os 
+		escogidos. 
+		<br><br>&iquest;Yo escojo? Yo recojo <br>la verdad impaciente, <br>esa verdad 
+		que espera a mi palabra. 
+		<br><br>&iquest;Cumbre? S&iacute;, cumbre <br>dulcemente continua hasta los valles: 
+		<br>un rugoso relieve entre relieves. <br>Todo me asombra junto. <br>
+		<br>Y la verdad <br>hacia m&iacute; se abalanza, me atropella. <br><br>M&aacute;s sol, 
+		<br>venga ese mundo soleado, <br>superior al deseo <br>del fuerte, <br>
+		venga m&aacute;s sol feroz. 
+		<br><br>&iexcl;M&aacute;s, m&aacute;s verdad!</font></strong></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="MUERTE A LO LEJOS"></a></font>
+		<font color="#43504C" face="Georgia">Muerte a lo lejos</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Alguna vez me angustia una certeza,<br>y ante m&iacute; se estremece mi futuro.<br>
+		Acech&aacute;ndolo est&aacute; de pronto un muro<br>del arrabal final en que tropieza<br>
+		<br>La luz del campo. &iquest;Mas habr&aacute; tristeza<br>si la desnuda el sol?. No, 
+		no hay apuro<br>todav&iacute;a. Lo urgente es el maduro 
+		<br>fruto. La mano ya lo descorteza.<br><br>... Y un d&iacute;a entre los d&iacute;as 
+		el m&aacute;s triste<br>ser&aacute;. Tenderse deber&aacute; la mano<br>sin af&aacute;n. Y acatando 
+		el inminente<br>
+		<br>poder dir&eacute; sin l&aacute;grimas: embiste,<br>justa fatalidad. El muro cano 
+		<br>va a imponerme su ley, no su accidente.</font></strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><font size="2" color="#43504C" face="Georgia">
+		<a name="MUERTE DE UNOS ZAPATOS"></a></font>
+		<font color="#43504C" face="Georgia">
+		<strong>Muerte de unos zapatos</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>&iexcl;Se me mueren! 
+		Han vivido<br>con fidelidad: cristianos<br>servidores que se honran<br>y 
+		disfrutan ayudando,<br>complaciendo a su se&ntilde;or,<br>un caminante cansado,<br>
+		a punto de preferir<br>la quietud de pies y &aacute;nimo.<br>Saben estas 
+		suelas. Saben<br>de andaduras palmo a palmo,<br>de intemperies 
+		descarriadas<br>entre barros y guijarros...<br>Languidece en este cuero<br>
+		triste su matiz, anta&ntilde;o<br>con sencillez el primor<br>de alg&uacute;n d&iacute;a 
+		engalanado<br>Todo me anuncia una ruina<br>que se me escapa. Quebranto<br>
+		mortal corroe el decoro.<br>Huyen. &iexcl;Espectros-zapatos!</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#43504C" face="Georgia">
+		<a name="PASA EL TIEMPO..."></a></font>
+		<font color="#43504C" face="Georgia">
+		<strong>Pasa el tiempo y suspiro porque paso...</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Pasa el tiempo 
+		y suspiro porque paso,<br>aunque yo quede en m&iacute;, que sabe y cuenta,<br>y 
+		no con el reloj, su marcha lenta<br>nunca es la m&iacute;a bajo el cielo raso.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Calculo, s&eacute;, 
+		suspiro, no soy caso<br>de excepci&oacute;n y a esta altura, los setenta,<br>mi 
+		af&aacute;n del d&iacute;a no se desalienta,<br>a pesar de ser fr&aacute;gil lo que amaso.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Ay, Dios m&iacute;o, 
+		me s&eacute; mortal de veras.<br>Pero mortalidad no es el instante<br>que al 
+		fin me privar&aacute; de mi corriente.</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Estas horas no 
+		son las postrimeras,<br>y mientras haya vida por delante,<br>ser&aacute;s mis 
+		sucesiones de viviente. 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><strong>
+		<font size="2" color="#43504C" face="Georgia">
+		<a name="PERFECCIÓN"></a></font><font color="#43504C" face="Georgia">
+		Perfecci&oacute;n</font><font size="2" color="#43504C" face="Georgia"><br><br>
+		Queda curvo el firmamento, 
+		<br>compacto azul, sobre el d&iacute;a. <br>Es el redondamiento <br>del 
+		esplendor: mediod&iacute;a. 
+		<br>Todo es c&uacute;pula. Reposa, <br>central sin querer, la rosa, <br>a un 
+		sol en cenit sujeta. 
+		<br>Y tanto se da el presente <br>que el pie caminante siente <br>la 
+		integridad del planeta. 
+		</font> 
+		</strong></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#43504C" face="Georgia">
+		<a name="PRIMAVERA DELGADA"></a><strong>Primavera delgada</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Cuando el 
+		espacio, sin perfil, resume<br>con una nube<br>su vasta indecisi&oacute;n a la 
+		deriva...<br>&iquest;D&oacute;nde la orilla?<br>Mientras el r&iacute;o con el rumbo en curva<br>
+		se perpet&uacute;a<br>buscando sesgo a sesgo, dibujante,<br>su desenlace,<br>
+		mientras el agua, duramente verde,<br>niega sus peces<br>bajo el 
+		profundo equ&iacute;voco reflejo<br>de un aire tr&eacute;mulo...<br>Cuando conduce la 
+		ma&ntilde;ana, lentas,<br>sus alamedas<br>gracias a las estrellas vibradoras<br>
+		entre las frondas,<br>a favor del avance sinuoso<br>que pone en coro<br>
+		la ondulaci&oacute;n suav&iacute;sima del cielo<br>sobre su viento<br>con el curso tan 
+		&aacute;gil de las pompas,<br>que agudas bogan...<br>&iexcl;Primavera delgada entre 
+		los remos<br>de los barqueros! 
+		</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font size="2" color="#43504C" face="Georgia">
+		<a name="UNOS CABALLOS..."></a></font>
+		<font color="#43504C" face="Georgia">
+		<strong>Unos cabellos...</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Pelados, 
+		tristemente naturales,<br>en inmovilidad de largas crines<br>
+		desgarbadas, sumisos a confines<br>abalanzados por los herbazales,<br>
+		unos caballos hay. No dan se&ntilde;ales<br>de asombro, pero van creciendo 
+		afines<br>a la hierba. Ni bridas ni trajines.<br>Se atienen a su paz: 
+		son vegetales.<br>Tanta acci&oacute;n de un destino acaba en alma.<br>Velan 
+		so&ntilde;ando sombras las pupilas,<br>y asisten, contribuyen a la calma<br>de 
+		los cielos -si a todo ser cercanos,<br>al cuadr&uacute;pedo ocultos- las 
+		tranquilas<br>orejas. Ah&iacute; est&aacute;n: ya sobrehumanos.</strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia"><font size="2" color="#43504C">
+		<a name="VIDA COTIDIANA"></a></font>
+		<font color="#43504C"><strong>Vida cotidiana</strong></font></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>&iexcl;Vida sin cesar 
+		cotidiana!<br>As&iacute; lo eres por fortuna,<br>y entre un renacer y un morir<br>
+		d&iacute;a a d&iacute;a te das y alumbras<br>lunes, martes, mi&eacute;rcoles, jueves<br>y 
+		viernes y... 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Todos ayudan<br>
+		a quien va a trav&eacute;s de las horas<br>problem&aacute;ticas pero juntas 
+		<br>en continuidad de rosario<br>&iexcl;dominio precario! </strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>Se lucha<br>por 
+		asentar los pies en tierra,<br>por ser punto real de la curva<br>que 
+		hacia los espacios arrastra<br>nuestra ambici&oacute;n de criaturas,<br>
+		anhelantes de hallar contacto<br>con los relieves, las arrugas<br>de la 
+		realidad inmediata,<br>por eso dif&iacute;cil y dura,<br>dura de su propio 
+		vigor,<br>que mis manos al fin subyugan<br>de costumbre en costumbre. 
+		</strong></font></p>
+		<p><font size="2" color="#43504C" face="Georgia"><strong>&iexcl;Vida tan 
+		cotidiana! Sin disculpa. </strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#43504C">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia"><font color="#43504C"><a name="VIRTUD"></a>
+		</font>
+		<strong>
+		<font color="#43504C">Virtud</font><font size="2" color="#43504C"><br><br>
+		Tendr&eacute; que ser mejor: me invade la ma&ntilde;ana.<br>Tr&aacute;nsito de ventura no, no 
+		pesa en el aire.<br>Gozoso a toda luz, &iquest;ad&oacute;nde me alzar&eacute;?<br>Tr&aacute;nsito de 
+		m&aacute;s alma no, no pesa en el aire.<br>Me invade mi alegr&iacute;a: debo de ser 
+		mejor.</font></strong></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:38:01 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:19:23 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

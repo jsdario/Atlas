@@ -1,0 +1,1139 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Filoteo Samaniego</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Filoteo Samaniego. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Filoteo_Samaniego,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/samaniegoFiloteo.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/samaniegoFiloteo.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161339" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./samaniegoFiloteo.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:13:39 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./samaniegoFiloteo.htm" title="15:28:00 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:13:39 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./samaniegoFiloteo.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:13:39 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./samaniegoFiloteo.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>35 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">20 May 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000010911000_2009:-1:001000100000_2010:-1:100000001211_2011:-1:000000001130_2012:-1:101010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+	<p align="center"><br>
+&nbsp; <br>
+	</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./SAMANIEGOFILOTEO.jpg" width="442" height="51"></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">
+	&quot;La am&eacute;, y s&oacute;lo despu&eacute;s de consumado el beso,<br>
+	me interrogu&eacute; sobre el significado de la entrega...&quot;</em></font></p>
+	<p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./SAMANIEGOFILOTEO1.jpg" width="300" height="304"></font></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">&quot;Ternura&quot;</font></em></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">Oswaldo Guayasam&iacute;n</font></em><i><font face="Basil" size="5" color="#84B0D6"><br>
+	</font></i></p>
+	<p align="center">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6">Poeta, novelista, 
+		ensayista, traductor e historiador ecuatoriano nacido en Quito en 1928.<br>
+		Estudi&oacute; durante un a&ntilde;o en la Pontificia Universidad Cat&oacute;lica del Ecuador 
+		y termin&oacute; en la Universidad de Par&iacute;s <br>
+		de 1947 a 1951. Es uno de los m&aacute;s destacados poetas contempor&aacute;neos de su 
+		pa&iacute;s. <br>
+		Traductor de poes&iacute;a francesa y colaborador de importantes medios 
+		literarios, ha sido catedr&aacute;tico de Historia <br>
+		de la Cultura y Literatura en la Pontificia Universidad Cat&oacute;lica del 
+		Ecuador y Embajador del Ecuador en Austria, 
+		<br>
+		Alemania, Rumania, y Egipto. Es <i>Miembro de la Academia Ecuatoriana de 
+		la Lengua, Premio Nacional de Cultura, <br>
+		Doctor Honoris Causa</i> por la Universidad Internacional del Ecuador y 
+		ganador del <i>Premio Eugenio Espejo</i> <br>
+		del Municipio de Quito en 2001.<br>
+		Su principal obra po&eacute;tica est&aacute; contenida en las siguientes 
+		publicaciones: <i>
+		&quot;Agraz&quot; </i>1956, <i>&quot;Relente&quot; </i>1958, <i>&quot;Umi&ntilde;a&quot; </i>1960, <i>
+		<br>
+		&quot;Signos II&quot;</i> 1966, <i>&quot;El cuerpo desnudo de la tierra&quot;</i> 1973, <i>
+		&quot;Los ni&ntilde;os sordos&quot;</i> 1978, <i>&quot;Oficios del r&iacute;o&quot;</i> 1983<i>, 
+		<br>
+		&quot;Los testimonios&quot;</i> 1992,&nbsp; y <i>&quot;La u&ntilde;a de dios&quot;</i> 1996.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#85A6BC">
+		<br>
+&nbsp;</font></p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font face="Georgia" color="#8FABC2">
+		<a href="./samaniegoFiloteo.htm#I. Vaiv&eacute;n">I. Vaiv&eacute;n</a><br>
+		<font size="2"><a href="./samaniegoFiloteo.htm#1. Lo que me interes&oacute; de ese amor...">1. Lo que 
+		me interes&oacute; de ese amor...</a></font><br>
+		<a href="./samaniegoFiloteo.htm#2.  Al iniciarse todo comienzo..."><font size="2">2.&nbsp; Al 
+		iniciarse todo comienzo...</font></a><font size="2"><br>
+		<a href="./samaniegoFiloteo.htm#3.  La am&eacute;, y s&oacute;lo despu&eacute;s de consumado el beso...">3.&nbsp; 
+		La am&eacute;, y s&oacute;lo despu&eacute;s de consumado el beso...</a><br>
+		<a href="./samaniegoFiloteo.htm#4.  La historia que relato...">4.&nbsp; La historia que 
+		relato...</a><br>
+		<a href="./samaniegoFiloteo.htm#5.   Una l&aacute;grima: la he buscado en el fondo de mi pupila...">
+		5.&nbsp;&nbsp; Una l&aacute;grima: la he buscado en el fondo de mi pupila...</a><br>
+		</font><a href="./samaniegoFiloteo.htm#6.   Mas si volviese..."><font size="2">6.&nbsp;&nbsp; 
+		Mas si volviese...</font></a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./samaniegoFiloteo.htm#II. Retorno">II. Retorno</a><br>
+		<a href="./samaniegoFiloteo.htm#1.  Hay una guillotina implacable"><font size="2">1.&nbsp; Hay 
+		una guillotina implacable...</font></a><font size="2"><br>
+		<a href="./samaniegoFiloteo.htm#2.   Del tiempo repartido al tiempo uniforme...">2.&nbsp;&nbsp; 
+		Del tiempo repartido al tiempo uniforme...</a><br>
+		<a href="./samaniegoFiloteo.htm#3.   El mar, pero el mar b&iacute;blico...">3.&nbsp;&nbsp; El mar, 
+		pero el mar b&iacute;blico...</a><br>
+		<a href="./samaniegoFiloteo.htm#4.   Era absurdo, mas necesario...">4.&nbsp;&nbsp; Era 
+		absurdo, mas necesario...</a><br>
+		<a href="./samaniegoFiloteo.htm#5.   Hablaba de una cuerda directora de mis actos...">5.&nbsp;&nbsp; 
+		Hablaba de una cuerda directora de mis actos...</a><br>
+		<a href="./samaniegoFiloteo.htm#6.   Salt&eacute; a tierra para vengar la distancia...">6.&nbsp;&nbsp; 
+		Salt&eacute; a tierra para vengar la distancia...</a><br>
+		</font>
+		<a href="./samaniegoFiloteo.htm#7.   Y estoy aqu&iacute;, de vuelta a las horas terminantes...">
+		<font size="2">7.&nbsp;&nbsp; Y estoy aqu&iacute;, de vuelta a las horas 
+		terminantes...</font></a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./samaniegoFiloteo.htm#III. La voz">III. La voz</a><br>
+		<a href="./samaniegoFiloteo.htm#1.   Hab&iacute;a entregado su noche a una calle..."><font size="2">
+		1.&nbsp;&nbsp; Hab&iacute;a entregado su noche a una calle...</font></a><font size="2"><br>
+		<a href="./samaniegoFiloteo.htm#2.   Comenzaba a definirse el perfil de la tarde...">2.&nbsp;&nbsp; 
+		Comenzaba a definirse el perfil de la tarde...</a><br>
+		<a href="./samaniegoFiloteo.htm#3.   Cierta memoria de las cosas que fueron...">3.&nbsp;&nbsp; 
+		Cierta memoria de las cosas que fueron...</a><br>
+		</font><a href="./samaniegoFiloteo.htm#4.    Quiso, pues, gritar, huir..."><font size="2">4.&nbsp;&nbsp;&nbsp; 
+		Quiso, pues, gritar, huir...</font></a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./samaniegoFiloteo.htm#IV. Relente">IV. Relente</a><br>
+		<a href="./samaniegoFiloteo.htm#1. Transito por mi v&iacute;a..."><font size="2">1. Transito por mi 
+		v&iacute;a...</font></a><font size="2"><br>
+		<a href="./samaniegoFiloteo.htm#2. Y si digo que la pienso...">2. Y si digo que la pienso...</a><br>
+		<a href="./samaniegoFiloteo.htm#3. T&uacute;, en la tela de m&uacute;sica...">3. T&uacute;, en la tela de m&uacute;sica...</a><br>
+		<a href="./samaniegoFiloteo.htm#4. Aflora a tu piel el tacto del esmeril...">4. Aflora a tu 
+		piel el tacto del esmeril...</a><br>
+		<a href="./samaniegoFiloteo.htm#5. Que te vuelvas nada o casi nada...">5. Que te vuelvas nada 
+		o casi nada...</a><br>
+		<a href="./samaniegoFiloteo.htm#6. Las manos, como s&uacute;plica, palpan el reflejo...">6. Las 
+		manos, como s&uacute;plica, palpan el reflejo...</a><br>
+		</font><a href="./samaniegoFiloteo.htm#7. Mas, &iquest;d&oacute;nde dej&eacute; lo esencial..."><font size="2">7. 
+		Mas, &iquest;d&oacute;nde dej&eacute; lo esencial...</font></a><br>
+		&nbsp;&nbsp;</font><font face="Georgia" size="2" color="#8FABC2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		</font><font face="Georgia" color="#8fabc2" size="2">Volver a: </font>
+		<font face="Georgia" color="#8fabc2"><a href="./">A 
+		media voz</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+		</font><font face="Georgia" color="#85a6bc" size="2">Volver a: </font>
+		<font face="Georgia" color="#85a6bc"><a href="./indice-A-K.htm">&Iacute;ndice A-K
+		</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+		Volver a: </font><font face="Georgia" color="#8fabc2">
+		<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p><br>
+		<font face="Georgia" color="#85A6BC"><a name="I. Vaiv&eacute;n"></a></font>
+		<font face="Georgia" color="#84B0D6">I. Vaiv&eacute;n</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="1. Lo que me interes&oacute; de ese amor..."></a>1. Lo que me interes&oacute; 
+		de ese amor, de ese largu&iacute;simo simulacro de amor, fue precisamente lo 
+		menos, lo simple, lo vulgar, <br>
+		lo aburrido.<br>
+		<br>
+&nbsp;&nbsp; Amor aburrido y cotidiano, tan sin sorpresas, que fue tal vez&nbsp; 
+		su ausencia de car&aacute;cter lo que lo volv&iacute;a sorprendente.<br>
+		<br>
+&nbsp;&nbsp; El comienzo, el fin, los intermedios, segu&iacute;an un itinerario 
+		preciso, cronom&eacute;trico; sin olvido de destino ni equivocaci&oacute;n <br>
+		de ruta, sin citas fallidas ni menos retardos a una cita. Lleg&aacute;bamos, 
+		salud&aacute;bamos, desfog&aacute;bamos nuestros deseos&nbsp; y part&iacute;amos <br>
+		tras prudentes&nbsp; y moderados reposos, luego de haber ordenado 
+		vestidos y ojeras y equilibrado la altura&nbsp; de los hombros y de la 
+		mirada.<br>
+		<br>
+&nbsp;&nbsp; Sorprendente amor, tan cotidiano. Jam&aacute;s el viento en el bosque 
+		sopl&oacute; m&aacute;s de lo debido. Los p&eacute;talos desflorados se empe&ntilde;aban <br>
+		en una afirmaci&oacute;n impertinente de pasi&oacute;n y siempre sobraron tr&eacute;boles 
+		sobrecargados de la mejor suerte.<br>
+		<br>
+&nbsp;&nbsp; Sorprendente amor tan repetido. Nunca, en la caricia, utilic&eacute; 
+		sendas diferentes: del cabello a los hombros; de la frente <br>
+		al corpi&ntilde;o, hasta que surg&iacute;a la p&uacute;dica protesta de su mano cancerbera...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="2.  Al iniciarse todo comienzo..."></a>2.&nbsp; Al iniciarse 
+		todo comienzo, innumerables razones, avatares, caminos y ra&iacute;ces surgen 
+		en estrecha red, se mezclan y entremezclan dando variedad a la angustia 
+		e impidiendo la monoton&iacute;a de la risa.<br>
+		<br>
+&nbsp;&nbsp; El horizonte del recuerdo se abre y se entrega sin reparos ni 
+		mezquindad. Nunca hay mayor aglomeraci&oacute;n de circunstancias <br>
+		ni m&aacute;s material descriptivo que en un comienzo. Todo se da aunque exista 
+		todav&iacute;a trecho por recorrer. All&iacute; nos est&aacute;n permitidos desafueros y 
+		exageraciones por pertenecer a la fantas&iacute;a y al cuento, &uacute;nicos tenedores 
+		leg&iacute;timos del derecho a la verdad y a la farsa.<br>
+		<br>
+&nbsp;&nbsp; Al iniciarse todo comienzo tropiezan desordenados los 
+		acontecimientos y se encadenan por infinitos eslabones hacia <br>
+		la trama del relato.<br>
+		<br>
+&nbsp;&nbsp; Pero el comienzo de este amor, abundante en tiempo y pobre en 
+		novedad, no permite un margen de invenci&oacute;n, me atropella <br>
+		en lila desbandada de hechos similares, en un pasar sin pasar de d&iacute;as, 
+		meses y a&ntilde;os. Aquello que autoriza la definici&oacute;n de ese m&aacute;gico nombre 
+		&quot;comienzo&quot;, no puede entrar en terreno de mi preocupaci&oacute;n, por la 
+		imposibilidad de descubrir un &aacute;ngulo, una ocasi&oacute;n propicia que permitan 
+		diferenciarlo de cualquier otro instante intermedio o final de este 
+		largu&iacute;simo amor.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * <br>
+		<br>
+		<a name="3.  La am&eacute;, y s&oacute;lo despu&eacute;s de consumado el beso..."></a>3.&nbsp; 
+		La am&eacute;, y s&oacute;lo despu&eacute;s de consumado el beso, me interrogu&eacute; sobre el 
+		significado de la entrega.<br>
+		Era el primer d&iacute;a y a&uacute;n no conoc&iacute;a el color de sus ojos. Me equivoqu&eacute; al 
+		alabarlos, porque fui directo al fondo de la mirada. <br>
+		De la misma manera que un d&iacute;a, el &uacute;ltimo, al caer de la noche y 
+		conociendo ya el sabor de sus ojos, me equivoqu&eacute; asimismo <br>
+		y para siempre por la &uacute;ltima vez. Claro que para entonces hab&iacute;a ya 
+		acostumbrado mis horas a ese error y amaba el error <br>
+		que era Ella toda y que la hac&iacute;a personal, incomparable, &uacute;nica.<br>
+		<br>
+&nbsp;&nbsp; No acierto a comprender cu&aacute;l fue su &uacute;ltima caricia: la de la noche 
+		primera o la que cronol&oacute;gicamente clausur&oacute; nuestro intento <br>
+		de amor. Pues si fue un beso de partida el saludo de sus labios, parti&oacute; 
+		lenta y dif&iacute;cilmente. Se despidi&oacute; sin quererlo desde la entrega inicial 
+		y retard&oacute; el desenlace de su definitiva desaparici&oacute;n. <br>
+		Presinti&oacute; la imposibilidad de fusi&oacute;n de labios y salivas y sufri&oacute; de la 
+		certeza del fin que entreve&iacute;a y al que no quer&iacute;a llegar <br>
+		ni apresurarlo por haberse encari&ntilde;ado, aquerenciado s&uacute;bitamente en la 
+		imposibilidad fatal. Y si el &uacute;ltimo lo fue en realidad 
+		<br>
+		&iquest;por qu&eacute; lo acort&oacute; y se ech&oacute;, llorando, a correr?</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * <br>
+		<br>
+		<br>
+		<a name="4.  La historia que relato..."></a>4.&nbsp; La historia que 
+		relato tiene en su actual realidad cariz y circunstancias id&eacute;nticas, 
+		aunque diferentes. &iexcl;Ahora estoy solo!<br>
+		<br>
+&nbsp;&nbsp; La costumbre de Ella estuvo tan enraizada, que me duelen las horas 
+		extra&iacute;das, los muebles abandonados, los gestos rutinarios: <br>
+		me hice a esa rutina y ahora me pesa la rutina degollada. <br>
+		&quot;No te equivoques, parece decirme alguien, sobre la causa de tus 
+		sufrimientos; los &uacute;nicos que sufren son los baldados: <br>
+		les duele el miembro que les falta&quot;. Compruebo la ausencia de 
+		innumerables minutos en el d&iacute;a y ya no puedo conformar <br>
+		ni ensamblar los instantes hasta completar las veinticuatro horas que 
+		eran p&eacute;ndulo y constancia de mi vida.<br>
+		<br>
+&nbsp;&nbsp; &iexcl;Y los muebles! Los otros, fuera del lecho. Los muebles, digo: la 
+		alfombra arrugada por los pasos imprecisos; la l&aacute;mpara de <br>
+		tres bombillas en la que nunca alumbr&oacute; m&aacute;s de una; la c&oacute;moda, el 
+		escritorio y la silla. <br>
+		&iexcl;Ah! la silla, que favorec&iacute;a tanto a la rigidez de su aparente dignidad. 
+		Y hoyno hay nadie en la silla. Desde arriba la mira 
+		<br>
+		un rayo de luz mas no encuentro la sombra que busco. El aire est&aacute; 
+		sentado en la silla, c&oacute;modo, tranquilo, cruzando <br>
+		las piernas sin gracia. Mas a &eacute;l no lo busco. Persigo una mirada algo 
+		m&aacute;s arriba del espaldar y cerca, muy cerca de mi anhelo. <br>
+		No me atrevo a aproximarme. Detesto palpar la ausencia. La silla 
+		permanece inm&oacute;vil como mi aliento. Detesto la quietud <br>
+		del mueble vetusto y el ruido que ya no est&aacute;: como cuando algo 
+		inquietaba su impaciencia. Era tarde; deb&iacute;a partir, <br>
+		y parti&oacute; a esta misma hora.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp; Y ahora me 
+		duele la sombra escapada del cuerpo de los d&iacute;as y a&ntilde;oro los repetidos 
+		gestos que me contrariaban; la voz que <br>
+		hablaba y golpeaba mis o&iacute;dos hasta exasperarlos. A&ntilde;oro la monoton&iacute;a, la 
+		exasperaci&oacute;n,&nbsp; la falta de incidentes, pues ahora estoy solo: 
+		comprobaci&oacute;n estricta y precisa.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * <br>
+		<br>
+		<a name="5.   Una l&aacute;grima: la he buscado en el fondo de mi pupila...">
+		</a>5.&nbsp;&nbsp; Una l&aacute;grima: la he buscado en el fondo de mi pupila 
+		como una s&uacute;plica, como una imposibilidad.<br>
+		<br>
+&nbsp;&nbsp; Incapaz de l&aacute;grimas, por tener y mantener esta clausura, esta vida 
+		y muerte del sentimiento ante la imperturbabilidad del gesto.<br>
+		<br>
+&nbsp;&nbsp; Me inclino ante la l&aacute;grima. La llamo. Intercedo su presencia. En 
+		esta insoportable soledad del esp&iacute;ritu y del cuerpo no puedo permanecer 
+		sin l&aacute;grimas.<br>
+		<br>
+&nbsp;&nbsp; Camino yermo el de mi angustia. Lo que cerca el camino no es 
+		precisamente la sensaci&oacute;n del fin pr&oacute;ximo o lejano. <br>
+		Es su preparaci&oacute;n. A fin dorado, a t&eacute;rmino feliz, bordes y veredas que 
+		fecunden esa preparaci&oacute;n del gozo, aunque nos duela <br>
+		tal proceso de fecundaci&oacute;n. Hacia la muerte y por ella, en cambio, rutas 
+		de sombra en las que las fronteras de la luz delimiten <br>
+		sombra y claridad y fijen la necesidad de sus existencias en lucha. Para 
+		Dios, la marcha desbordada noci&oacute;n de camino. <br>
+		Vamos a &Eacute;l plenos, indiferenciados. El camino corresponde a la infinita 
+		amplitud del fin: fatiga y reposo, llanto y melod&iacute;a <br>
+		se justifican y explican toda contradicci&oacute;n aparente. Vale la pena tan 
+		corto andar hacia ese motivo inconmensurable.<br>
+		<br>
+&nbsp;&nbsp; Pero hacia la soledad &iquest;cu&aacute;l puede ser la raz&oacute;n del camino? &iquest;D&oacute;nde y 
+		c&oacute;mo determinar el borde?<br>
+		&iquest; Qu&eacute; sensaci&oacute;n de fin pr&oacute;ximo o lejano es capaz de caracterizar el 
+		ruido de los pasos o su medida?<br>
+		<br>
+&nbsp;&nbsp; Y mis instantes se dirigen hacia la soledad. Caminan su soledad que 
+		no tiene domicilio ni orientaci&oacute;n, que es est&eacute;ril y absurda. <br>
+		De all&iacute; la ausencia de l&aacute;grimas a pesar de mi b&uacute;squeda cotidiana. <br>
+		De all&iacute; que mis p&aacute;rpados deban cubrir el reflejo de esta actual realidad 
+		y habituarse a la sinraz&oacute;n y al desasosiego <br>
+		provenientes de la ausencia de l&aacute;grimas.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * <br>
+		<br>
+		<a name="6.   Mas si volviese..."></a>6.&nbsp;&nbsp; Mas &iquest;si volviese? 
+		&iquest;Si un d&iacute;a la puerta cediera ante la voluntad del retorno y Ella se 
+		presentara en sombras, contraluz de un tiempo deslumbrante? &iquest;Si, 
+		inesperada y silente, despertara mi sue&ntilde;o? <br>
+		&iquest;Si viniera a inquietar mi apetito antiguo ya ofrecerme restaurar los 
+		d&iacute;as iguales vividos por serle imposible&nbsp; brind&aacute;rmelos
+		<br>
+		diferentes?<br>
+		<br>
+&nbsp;&nbsp; Encontrarme de nuevo en el comienzo y en el fin, frente a la cruel 
+		alternativa: con Ella, aburrido, o sin Ella, incompleto. <br>
+		Como si el vac&iacute;o y la angustia fuesen inevitables presencias l&oacute;gicas.<br>
+		<br>
+&nbsp;&nbsp; Tener que aburguesar la angustia y sujetarla a horarios. Perderme y 
+		encontrarme otra vez tan perdido con Ella y por Ella, <br>
+		ambos desconcertados que ya no somos lo mismo ni Ella ni yo ni ambos... 
+		&iquest;Si volviese? me digo... y callo.<br>
+		<br>
+&nbsp;&nbsp; Que tal como me comporto hoy que me acosan recuerdo y ausencias, 
+		que soy centro y blancode un doble destino, <br>
+		echando de menos una doble circunstancia dis&iacute;mil antecedente, in&uacute;til 
+		pretender puertas, que se me entregan cerradas, 
+		<br>
+		suprimidas llaves y hendijas.<br>
+		<br>
+&nbsp;&nbsp; Estoy circunscrito, atado. No porque tenga razones de clausura sino 
+		porque sobran motivos para temer la libertad: <br>
+		la de juicio, la de acci&oacute;n y movimiento; la de amor.<br>
+		<br>
+&nbsp;&nbsp; Cada una, persigui&eacute;ndola, me ha sometido.<br>
+		<br>
+&nbsp;&nbsp; Por todo esto olvido y repito lo ya dich0: si volviese?<br>
+		<br>
+&nbsp;&nbsp; No me queda un cuarto libre. Estoy repleto de mis trastos y mis 
+		cosas. Ofrecerle ese vac&iacute;o llam&aacute;ndola a llenarlo. <br>
+		Proponer eriales a quien imploro como agua de mi sed.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp; Y entre 
+		aquello y lo de all&aacute;, ni entusiasta ni sosegado, trato de que se me 
+		ense&ntilde;e el itinerario de mi angustia y acabo por convencerme que no es 
+		Ella, ni soy Yo sin Ella, o con Ella. Pues soy Yo solo, irreductible a 
+		la entrada de alguien m&aacute;s. <br>
+		Doli&eacute;ndome. Hastiado antes de nada y, despu&eacute;s de todo, inconforme, 
+		indeciso, insatisfecho.<br>
+		<br>
+&nbsp;&nbsp; &iquest;Si volviese?... &iexcl;que nunca estuvo, ni es ni estar&aacute;! Nos minti&oacute; el 
+		desierto y perecimos con la fuente en los ojos.<br>
+		<br>
+&nbsp;&nbsp; Y si entonces no fue Ella, aun cuando volviese no lo ser&iacute;a...<br>
+		<br>
+&nbsp;&nbsp; Llegar&iacute;a y me encontrar&iacute;a lejos. M&aacute;s all&aacute; de antes: cuando 
+		presentido, y, tal como entonces, Yo, nacido para nadie. <br>
+		Con mi propia vegetaci&oacute;n inadaptable a otros climas, mis aguas m&iacute;as y 
+		mis &iacute;ntimos cielos, y andando hacia mi muerte <br>
+		como Ella hacia la suya.<br>
+		<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="II. Retorno"></a>II. Retorno</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<a name="1.  Hay una guillotina implacable"></a>1.&nbsp; Hay una 
+		guillotina implacable que ha suspendido la vida, dividi&eacute;ndola. Y la vida 
+		en pedazos, est&aacute; destrozada y dispersa. &iquest;Rehacerla? Dej&eacute; de ser. Punto 
+		aparte.<br>
+		<br>
+&nbsp;&nbsp; Mas, queda incrustado en el instante actual un sinn&uacute;mero de briznas 
+		vitales, como ra&iacute;ces tan tenaces: paisajes de &aacute;lamos, <br>
+		mujeres, l&aacute;grimas, razones del alma y del juicio, las familias del 
+		h&aacute;bito y aquellas extra&ntilde;as de todos los d&iacute;as de siete a&ntilde;os.<br>
+		<br>
+&nbsp;&nbsp; Y los rostros, como arquitecturas, definitivos. La miel del pan y 
+		del crep&uacute;sculo. El gusto del habla que nos despierta <br>
+		o que nos duerme, manjar del lenguaje para delicia del sue&ntilde;o y la 
+		vigilia.<br>
+		<br>
+&nbsp;&nbsp; Herrumbre asida y prolongada en la piel del hierro, la he cultivado 
+		y favorecido. Musgos se ci&ntilde;eron a mi vida sin intenci&oacute;n precisa de 
+		arrasamiento. Son plantas saludables las adheridas a la base del 
+		recuerdo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="2.   Del tiempo repartido al tiempo uniforme..."></a>2.&nbsp;&nbsp; 
+		Del tiempo repartido al tiempo uniforme circula la sangre de los d&iacute;as, y 
+		hay concierto y<br>
+		consonancia en este entrevero de sistemas: el boj persiste en tierras de 
+		la orqu&iacute;dea; alientos g&oacute;ticos modelan el oro <br>
+		de mis templos; y encuentro dulzura en el seno de la amada lejana o 
+		presente. S&eacute; que es posible confundir la seda y el ardor <br>
+		de los ant&iacute;podas. Ambos donaron su excelencia al capricho de mi mano y 
+		de mi audacia.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp; 
+		Mi fuga fue de un anhelo a otro anhelo. De la encina y la l&oacute;gica al 
+		&aacute;gape y al amor sin puertas. <br>
+		&iquest;De qu&eacute; lado me inclinar&aacute; la cuerda? Me mata el equilibrio que he 
+		perdido y quisiera segregarme en dos personas.<br>
+		<br>
+&nbsp;&nbsp; Una voz ajena, de ultramar, me persigue: mensaje de niebla, &aacute;ngel 
+		en movimiento, saeta retardada por mi prisa, que me alcanza.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		<br>
+		<br>
+		<a name="3.   El mar, pero el mar b&iacute;blico..."></a>3.&nbsp;&nbsp; El mar, 
+		pero el mar b&iacute;blico, trat&oacute; de impedir el corte de mi vida. Golpe&oacute; al 
+		barco y a la d&aacute;rsenay dej&oacute; un muelle con sal <br>
+		de llanto y de ola, peces temblorosos y otros habitantes expatriados. 
+		Como a ellos, el destino me amenaz&oacute; sus distancias. <br>
+		La nave vol&oacute;, sumisa a los brandales, en busca de bah&iacute;as. Mi sed se 
+		nutri&oacute; de b&uacute;caros y salitre.<br>
+		<br>
+&nbsp;&nbsp; Medio mar, sin barcos, con mundos presumidos y escalas vencidas o 
+		que esperan: he aqu&iacute; la medida exacta de mi viaje. <br>
+		Medio mar: flor de acanto entre mis manos y buganvillas en el sue&ntilde;o; 
+		carb&oacute;n de casta&ntilde;as y de usinas en mis labios sedientos <br>
+		de ca&ntilde;a y de guajira. Sol de invierno, sol de la noche larga que a&uacute;n no 
+		encuentra sus cocuyos.<br>
+		<br>
+&nbsp;&nbsp; En medio mar me enlazaron los litorales, ambos, llam&aacute;ndome a un 
+		puerto de su antojo. Hubo en las jarcias m&aacute;s tiempo <br>
+		que el vivido, y me venc&iacute; entero al opuesto cargamento: de all&aacute; y de ac&aacute; 
+		me gritaron los instantes. Arranqu&eacute; mi &uacute;ltima garra <br>
+		al pasado y flot&eacute; sobre lo incierto hasta que la voluntad de la nave me 
+		avis&oacute; el color de le tierra de origen.<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * * *
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="4.   Era absurdo, mas necesario..."></a>4.&nbsp;&nbsp; Era 
+		absurdo, mas necesario, arrancarme un brazo y asirme mutilado a otra 
+		ribera. Anclado ya, siento un suelo en tremedal sobre el que marcho con 
+		los pies de la memoria. Entre mira y blanco describo mi propia 
+		trayectoria y la de todos en este mundo nuevo...<br>
+		<br>
+&nbsp;&nbsp; Vengo del &aacute;rbol. Voy al reto&ntilde;o. Traigo espigas entre mis dedos. 
+		Dejo al abuelo y muerdo el vientre que prohija. <br>
+		Tanta ola no me arregl&oacute; nada y hay dos lamentos que buscan mi presencia. 
+		Ni la encina ni el ceibo son capaces de entregarme 
+		<br>
+		una imparcial alternativa. Se me qued&oacute; una mano en el bolsillo que he 
+		dejado. Dolor vigente, suspendido entre dos labios. <br>
+		Nube que se pertenece tanto a la tierra como al horizonte.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="5.   Hablaba de una cuerda directora de mis actos..."></a>5.&nbsp;&nbsp; 
+		Hablaba de una cuerda directora de mis actos, en la que el alma en vilo 
+		aceptaba el riesgo; y de yacer entrelazadas <br>
+		las partes, en un lecho hueco, mezcladas en un mismo anhelo las dos 
+		garras, solas en medio del dolor que fermenta cada una.&nbsp; </font>
+		</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp; 
+		Abr&iacute; la puerta y mir&eacute;. Estaba erguida la costa de ultramar, atenta la 
+		solicitud. Acept&eacute; el tr&aacute;nsito, el desequilibrio y la falta. Consecuencia 
+		de dos muertes, avanc&eacute; hacia la nueva vida. La llaga qued&oacute; en medio, &iquest;en 
+		el tronco intacto y en el viento <br>
+		que azotaba los costados.<br>
+		<br>
+&nbsp;&nbsp; El retorno clausur&oacute; sus objetivos y consum&oacute; el proceso: la doble 
+		cuerda unida por el cuerpo en suspenso; el alma ah&iacute;ta...; <br>
+		el empe&ntilde;o por ser para ambos cabos igual voluntad; la fuerza y el 
+		contragolpe t&iacute;midos, sin vencerse.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		&nbsp;<br>
+		<br>
+		<a name="6.   Salt&eacute; a tierra para vengar la distancia..."></a>6.&nbsp;&nbsp; 
+		Salt&eacute; a tierra para vengar la distancia, para medir la edad de la 
+		distancia. Ped&iacute; agua al primer pozo y me supo a agua <br>
+		conocida. El reflejo no alter&oacute; en nada mi semblante. Me acost&eacute; en la 
+		arena y analic&eacute; todos los confines del horizonte: <br>
+		me eran familiares. Ni el cirro ni el azul me rechazaron y entonces 
+		comprend&iacute; que estaba en casa propia. El cerebro, <br>
+		en aire amigo, corri&oacute; a sus anchas: trat&oacute; de conciliar las dos verdades, 
+		los dos idiomas. Sin hacer escombros del pasado <br>
+		y requiriendo sus rezagos para fundirlos a la cal de ahora, hice una 
+		naci&oacute;n de dos afectos.<br>
+		<br>
+&nbsp;&nbsp; No me convino morder la almendra de la tierra baja por mucho 
+		tiempo. Quise salir ileso, sin que la hoja del tr&oacute;pico estropee <br>
+		mi mirar tranquilo. Y subir a la meseta recostada en un desv&aacute;n de los 
+		Andes. Los reba&ntilde;os me guiaron en el p&aacute;ramo. Su due&ntilde;o, <br>
+		el indio, reposaba junto al risco sin hablarme y reproch&aacute;ndome mi color 
+		y mi sonrisa. Todo entero el horizonte se le entraba <br>
+		por los ojos como cosa de su dominio. Las manos abarcaban maizales y 
+		ganados. A esa altitud, el mundo le pertenec&iacute;a <br>
+		por derecho de paciencia, por el fr&iacute;o que azotaba sus cachetes sin barba 
+		y por el l&eacute;gamo y el humus engastados en las u&ntilde;as. <br>
+		En cuclillas, su perfil bosquejaba la monta&ntilde;a a pesar de los saldos de 
+		violencia que la tierra permit&iacute;a a los picachos. Me advirti&oacute; <br>
+		que en la sierra era extra&ntilde;o el adjetivo y que hab&iacute;a que adaptarse a la 
+		frase sin rodeos.&nbsp; La lecci&oacute;n fue de provecho <br>
+		y la he aprendido.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="7.   Y estoy aqu&iacute;, de vuelta a las horas terminantes..."></a>7.&nbsp;&nbsp; 
+		Y estoy aqu&iacute;, de vuelta a las horas terminantes. Los lapsos de sue&ntilde;o han 
+		caducado. Me he situado en la base de los actos, <br>
+		una vez agotada la raz&oacute;n del tr&aacute;nsito. Retorno a las costumbres 
+		arraigadas y debo olvidar por un instante sorpresas de trayectos.<br>
+		<br>
+&nbsp;&nbsp; Estoy como si nada. Me andan los pies tan naturalmente que ni me 
+		canso. Y la vista, las ideas, las horas. Parece como si no hubiese 
+		partido. Como si siempre hubiera habitado en estas calles. No temo a la 
+		monta&ntilde;a. El horizonte no me depende ya de ella sino que se me ha entrado 
+		profundamente para adentro. Miro adentro y la vista se me pierde, sin 
+		obst&aacute;culos. <br>
+		&iexcl;Qu&eacute; segura amplitud he adquirido!<br>
+		<br>
+&nbsp;&nbsp; Esto, exactamente esto: la p&aacute;gina blanca se presenta en su nitidez 
+		para reclamar la acci&oacute;n de mi voluntad. El papel limpio guarda su 
+		secreto. Debo violar ese espejo de la idea y extraer el mosto de la 
+		novedad que correr&aacute; abundante y jugoso.&nbsp; Porque el sol 
+		<br>
+		me entrega una ma&ntilde;ana apta para el camino. Y el camino se abre.<br>
+		<br>
+&nbsp;&nbsp; Se trata, pues, de horizonte adentro. De mirarme porque no necesito 
+		el color de afuera. De marchar por ese ampl&iacute;simo destino<br>
+		que desconozco: mi propio destino.</font></p>
+		<p align="left"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="III. La voz"></a>III. La voz</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="1.   Hab&iacute;a entregado su noche a una calle..."></a>1.&nbsp;&nbsp; 
+		Hab&iacute;a entregado su noche a una calle. Propietario sin t&iacute;tulos del aire y 
+		las ventanas y de la ilusi&oacute;n que corre discretamente<br>
+		una persiana. Calle con baches y otros motivos de tropiezo. Detenida en 
+		el silencio, en el beso enmudecido, en el farol alrededor <br>
+		del que revolotean insectos ef&iacute;meros, en el grito del celof&aacute;n hollado 
+		por el caminante.&nbsp; Curvada, como las rutas de los hombres. Angosta 
+		-habitaci&oacute;n del eco-.<br>
+		<br>
+&nbsp;&nbsp; Pocos &aacute;rboles quedaban, restos de voluntad de la tierra. Agua que 
+		no habla, la de la fuente de peces mudos. Y el resto, ciudad: pavimento 
+		sin protesta bajo la rueda, p&aacute;jaros que huyen.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp; 
+		Debi&oacute; sofocarse de ruido su aliento campesino, cofre de horizontes, 
+		ra&iacute;ces y trigales. Su paso anhelante tej&iacute;a vaivenes de tantos 
+		pensamientos nacidos de la monoton&iacute;a urbana.<br>
+		<br>
+&nbsp;&nbsp; Ya el espacio lo hab&iacute;a definido por la marcha que hu&iacute;a de la risa, 
+		por la persistencia ausente de los ojos, por la charla que sosten&iacute;a con 
+		la sombra y que a veces sorprendi&oacute; a los ni&ntilde;os. Sombra escapada por 
+		instantes, mutilada en las aceras, torcida en sobresaltos ante el ruido 
+		s&uacute;bito.<br>
+		<br>
+&nbsp;&nbsp; En una esquina, ajeno a cosas inesperadas, quiso ampararse de una 
+		ternura. La persigui&oacute;, y como hu&iacute;a, grit&oacute;. Mas la voz le rod&oacute; 
+		&iacute;ntegramente por el cuerpo, le atraves&oacute; las manos, se desprendi&oacute; hasta 
+		el suelo y all&iacute;, los otros, la pisotearon, la empujaron, la alejaron. 
+		Qued&oacute; sin voz y sin ternura. Consumi&oacute; de rodillas su impaciencia y sus 
+		instantes. Fue en vano. Un cord&oacute;n de ecos le anunci&oacute; la distancia cada 
+		vez m&aacute;s cierta por culpa de la gente. Muchedumbre ladrona de la voz... 
+		la detestaba. &iexcl;Ciudad! Estaba de tr&aacute;nsito y ahora deb&iacute;a permanecer en la 
+		ciudad. Intolerable suplicio&nbsp; que le negaba la esperanza de arribar 
+		al puerto de su destino: el de la idea.<br>
+		<br>
+&nbsp;&nbsp; Tengo sed, y nadie me habla ni puedo hablar con nadie!<br>
+		<br>
+&nbsp;&nbsp; Habl&oacute;, pues, a solas -forma suya de silencio-. Palabra sin 
+		pendientes, sin abismos, atada al gesto. Trat&oacute; de buscar la voz que 
+		hab&iacute;a perdido, voz de soledad, su amiga y aire, su ruta hacia el puerto 
+		perseguido.<br>
+		<br>
+&nbsp;&nbsp; -All&aacute; llegar&eacute; por sobre todo, sin br&uacute;julas ni norte y contra la 
+		noche. Marino o nave seg&uacute;n la voluntad del llanto. Nunca el fin antes de 
+		hora, ni el labio trunco de otro labio. Tocar&eacute; la sonrisa. Encontrar&eacute; el 
+		&aacute;ngulo y la forma que me convengan. Recobrar&eacute; la voz...<br>
+		<br>
+&nbsp;&nbsp; Tanto pasar, transitar, preguntar por algo ajeno en adelante. Y 
+		todo al querer avanzar enga&ntilde;ado por la ruta o al labrar bordes de un 
+		deseo que ni trae ni lleva. &iquest;Intentar un murmullo fijo, una voz ajena? 
+		Imposible. Voz de soledad, quiso&nbsp; asirse de ella y amarla por amar 
+		algo, lejos del puerto de la idea.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * * </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="2.   Comenzaba a definirse el perfil de la tarde..."></a>2.&nbsp;&nbsp; 
+		Comenzaba a definirse el perfil de la tarde. En bocanadas de humo fugaba 
+		la ciudad y le&nbsp; nac&iacute;an ojos in&uacute;tiles. Muerte en el suburbio y en la 
+		calle. Ciudad ensayo de morada del silencio y defunci&oacute;n de la luz -la 
+		luz de la luna no lo es; es sue&ntilde;o de luz, y por eso el alba la sorprende 
+		y hace&nbsp; de ella una mancha m&aacute;s del horizonte.<br>
+		<br>
+&nbsp;&nbsp; El ruido de la noche fustig&oacute; los lares de su calma con 
+		impertinencia apenas perceptible. Se aproxim&oacute; al m&aacute;s absurdo antojo de 
+		quietud porque present&iacute;a la llegada de algo, ritmo marcado y cierto de 
+		innumerables brisas, sonsonete del grito de antes de la vida, grito 
+		previo y fatal.<br>
+		<br>
+&nbsp;&nbsp; Se pase&oacute; en sus penas para agotarlas y no encontr&oacute; salidas ni 
+		espacios en la sombra. Pidi&oacute; noches y gestos a la noche... y muri&oacute; de 
+		esperarlos. M&aacute;s, cuando abri&oacute; sus cofres, lav&oacute; las sombras y se puso 
+		&aacute;ngel en su piel de carne, la noche, discretamente, se uni&oacute; a &eacute;l, 
+		presencia fingida, casi junto a &eacute;l. Y &eacute;l, sin saberlo, perdido en la 
+		b&uacute;squeda y en la angustia, opt&oacute; por un gesto de ave entumecida. Su 
+		voluntad Se quebr&oacute; entonces en medio de los ojos y mir&oacute; largamente a 
+		nada.<br>
+		<br>
+		<br>
+		* * * * * </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="3.   Cierta memoria de las cosas que fueron..."></a>3.&nbsp;&nbsp; 
+		Cierta memoria de las cosas que fueron le devolvi&oacute; a la luz. Lo de la 
+		v&iacute;spera se confundi&oacute; en la niebla. El cielo amaneci&oacute;<br>
+		&nbsp;zarco. Ensay&oacute; la plegaria. Se sent&iacute;a in&uacute;til con sus manos, su pena y su 
+		silencio, retazos de alma que nadie pod&iacute;a ya zurcirlos.<br>
+		<br>
+&nbsp;&nbsp; -Amo esta ma&ntilde;ana como a mi viejo cofre. Mucho fue vivir con las 
+		ventanas abiertas y tener un paisaje a domicilio: paisaje de sonidos a 
+		donde tal vez habr&aacute; retornado mi voz perdida. Me azota la memoria un 
+		sabor de fuente, un eco de beso y una rosa. Y en la fuente la vida se 
+		humedece. Y en el beso el secreto se prolonga. Y en la rosa espero mis 
+		palabras...<br>
+		<br>
+&nbsp;&nbsp; &iexcl;Si la voz hubiera renacido en la plegaria o si al menos pudiesen 
+		escucharle la mirada! La&nbsp; mirada, alma y sustancia del grito en el 
+		mejor silencio, cuerpo del grito, transparencia. Torrentes y arrullo en 
+		el secreto de la pupila.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		<br>
+		<a name="4.    Quiso, pues, gritar, huir..."></a>4.&nbsp;&nbsp;&nbsp; 
+		Quiso, pues, gritar, huir. Precedi&oacute; a la fuga la violenta desaz&oacute;n del 
+		grito que hu&iacute;a del silencio de la fuga. Grito sin voz, como que llamaba 
+		desde siempre la nueva realidad de un gran silencio. La almeja en el 
+		o&iacute;do no le tra&iacute;a ya mar ni sabor de yodo. La piedra rodaba entre las 
+		piedras como arena&nbsp;&nbsp;&nbsp; El cauce abr&iacute;a su muda geograf&iacute;a. 
+		La sal del llanto nac&iacute;a sin gemidos. Era muerte de la voz, apogeo del 
+		gesto en un mundo de silencios: puertas canceladas, muros para hiedras, 
+		llaves sin objeto, aventuras del tiempo de la infancia, duendes del 
+		cuento entre los zarzales. Un mundo de silencios coreaba el grito 
+		enmudecido: proyectos de viaje, seda de las sienes sembrada para el 
+		tacto, comba del paladar y gustos de saliva de una noche con alguien; y 
+		el resto, sabido y cotidiano. <br>
+		El grito persegu&iacute;a a la raz&oacute;n de la fuga y en medio hablaba un eco 
+		cierto: el de nadie.<br>
+		<br>
+&nbsp;&nbsp; Si por lo menos supiera definir su muerte o limitar la vida. &iquest;Cu&aacute;l 
+		era el sendero y cu&aacute;l la&nbsp; encrucijada ? &iquest;En qu&eacute; se diferenciaban 
+		borde y abismo, grito y silencio?<br>
+		<br>
+&nbsp;&nbsp; -Qui&eacute;n vendr&aacute; junto a m&iacute; en la brega, en la tierra que he de 
+		romper, en el surco -vientre preparado a tantas siembras-. Un &aacute;ngel, una 
+		caricia, no nacieron en la noche pavorosa&nbsp;&nbsp;&nbsp;&nbsp; Muchos 
+		sue&ntilde;os se cortaron. Mueren ni&ntilde;os. En la calle de mi vida van verbenas, 
+		funerales, &aacute;rboles secos, fuentes. En la calle de mi muerte surge el 
+		cielo, postergado. Qui&eacute;n va a escucharme... Qui&eacute;n va a hablarme...&nbsp; 
+		De la noche de los sue&ntilde;os queda la resaca de un mar muerto en su orilla. 
+		Perd&iacute; tim&oacute;n cuando el cierzo arranc&oacute; a mi impertinencia&nbsp; su ra&iacute;z y 
+		la abandon&oacute;. Nada creci&oacute; de mi esfuerzo. Nada surti&oacute; de tanta fuente y 
+		en un lugar de ayer mi voz se ha extraviado sin mueca ni huella.<br>
+		<br>
+&nbsp;&nbsp; Y as&iacute; continu&oacute; por el alma de la urbe y entr&oacute; en ella. Anduvo sin 
+		ver ni o&iacute;r, como si se extrajera de la ruta se&ntilde;alada y explorara 
+		sorpresas y ca&iacute;das. Sus ojos se adher&iacute;an al recuerdo y hollaban 
+		pensamientos, sonidos y colores que ya no le pertenec&iacute;an.<br>
+		<br>
+&nbsp;&nbsp; El alma de la ciudad vino compasiva y penetr&oacute; en &eacute;l a escondidas. 
+		Pretend&iacute;a nacerle de nuevo, crep&uacute;sculo de diferente tarde, <br>
+		ra&iacute;z &iacute;ntima y distinta, tallo urbano sin forma de otro tallo.<br>
+		<br>
+&nbsp;&nbsp; Cambiaron almas la ciudad y &eacute;l. Quisieron transformarlas, mas fue 
+		in&uacute;til porque eran ya id&eacute;nticas. Y quedaron las mismas, aunque 
+		despojadas, almas forasteras luego del cambio, con algo m&aacute;s de angustia. 
+		Y &eacute;l debi&oacute; seguir sin ver, sin o&iacute;r, sin voz ni grito.<br>
+		<br>
+&nbsp;&nbsp; Pereci&oacute; as&iacute;, perdida la voz, no destruida. Hu&iacute;da y herida la voz, 
+		ra&iacute;z en sangre del grito.&nbsp; Fue muerte silenciosa, de todos los 
+		d&iacute;as, sin signos luctuosos. Muerte en los ojos, en la flor, en el paso; 
+		preparada, elaborada y latente, de esas que duelen sin doler, lo mat&oacute;. 
+		Falleci&oacute; el poeta en ese hombre y el hombre ha quedado all&iacute;, en medio de 
+		la ciudad, sin voz, y como si inquiriera la forma y la manera de su peso 
+		y de su espacio.<br>
+		<br>
+&nbsp;&nbsp; En el &uacute;ltimo instante, el hombre cre&iacute;a seguir viviendo, pues a&uacute;n 
+		sent&iacute;a la arteria y palpaba la memoria de la vida feneciente. Sospechaba 
+		que viv&iacute;a -a&ntilde;or&aacute;base brizna de esp&iacute;ritu y objeto de mirada-. Ahora ya 
+		nada dice. Ya ni la duda en la arteria, m&aacute;quina de su flamante muerte, 
+		ni el tacto del canto pret&eacute;rito. Es muerte total, irrevocable, 
+		irreparable en el hombre aqu&eacute;l que funciona, que circula, que ha 
+		extraviado sus l&aacute;grimas y, al perder mortalmente la voz, ha aniquilado 
+		al canto y al poeta.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="IV. Relente"></a>IV. Relente</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<a name="1. Transito por mi v&iacute;a..."></a>1. Transito por mi v&iacute;a, vereda 
+		que me lleva hacia un &uacute;nico mundo, el de mi adentro.<br>
+		<br>
+&nbsp;&nbsp; Recodos y tropiezos pervierten la intenci&oacute;n, la lastiman y causan 
+		sus ca&iacute;das. Pero llego y&nbsp; acontece la idea al d&iacute;a. <br>
+		En el tr&aacute;fago cruza a la contradicci&oacute;n, se enga&ntilde;a y desenga&ntilde;a.<br>
+		<br>
+&nbsp;&nbsp; La brisa tempera sus sudores. Pa&ntilde;uelo de viento perdido en el 
+		viento: la brisa se lleva tan bien con la idea. Toca lo esencial, 
+		acaricia el punto, precisa el n&uacute;mero. Sin violencias, llega y&nbsp; 
+		previene de su presencia; llega y no requiere impulso. Se da, subsiste 
+		<br>
+		y dura una eternidad de vida exacta.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<a name="2. Y si digo que la pienso..."></a>2. Y si digo que la pienso, 
+		que est&aacute; en la materia de mis actos, comprendo mi cadena. Nadie mencion&oacute; 
+		el color del tiempo. <br>
+		Pero es tiempo esclavo el del amor. Instrumento de mensura, me ha 
+		se&ntilde;alado la superficie del amor pensado, medida de m&iacute; mismo.<br>
+		<br>
+&nbsp;&nbsp; Naci&oacute; la idea de Ella. Como brisa, alent&oacute; la atenci&oacute;n. Envolvi&oacute; sin 
+		ruido la marcha de los actos. Dibuj&oacute; la forma del futuro <br>
+		y ya no pude expulsarme a otra mente.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		<br>
+		<br>
+&nbsp;&nbsp; <a name="3. T&uacute;, en la tela de m&uacute;sica..."></a>3. T&uacute;, en la tela de 
+		m&uacute;sica, buscas una voz y lastimas al tiempo para exigirle eso: tu nombre 
+		mismo en boca de &aacute;ngel. Hace mucho no exist&iacute;as porque nadie te llamaba o 
+		porque lo hac&iacute;an sin raz&oacute;n de amor. Tal vez por esa costumbre que se 
+		instala a veces en nuestros caminos de nombrar el agua sin gritarla o de 
+		mirar la aurora sin interrogarla, otros dijeron tu nombre, coincidieron 
+		con el nombre sin palparlo y sin sorpresas.<br>
+		<br>
+&nbsp;&nbsp; Yo llegu&eacute; y aspir&eacute;. Porque te present&iacute;a; porque un sin n&uacute;mero de 
+		brisas me advirti&oacute; que pod&iacute;amos pronunciar nuestro destino <br>
+		en un solo eco.<br>
+		<br>
+&nbsp;&nbsp; Ni la c&iacute;tara fue tan acorde en manos del juglar. Ni la nube tan 
+		muelle para la voz del &aacute;ngel.<br>
+		<br>
+&nbsp;&nbsp; &Aacute;ngel sin tropiezo y sin congoja, se ha aferrado a m&iacute; tu silencio 
+		de hoja ca&iacute;da, de mirada de mujer.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		<br>
+&nbsp;&nbsp; <a name="4. Aflora a tu piel el tacto del esmeril..."></a>4. Aflora 
+		a tu piel el tacto del esmeril y se amusga tu axila para mayor fasto de 
+		la noche que, sin aspavientos, se asoma a las pesta&ntilde;as. Ci&ntilde;es brazaletes 
+		de oro viejo, metal del alma.<br>
+		<br>
+&nbsp;&nbsp; Me pides que despierte a la vendimia. La ma&ntilde;ana me encuentra sin 
+		defensa. Tengo un miedo de aguas calmas, ajeno al corrent&iacute;o. Me entregas 
+		un amor de alga.<br>
+		<br>
+&nbsp;&nbsp; Te hab&iacute;a ofrecido alfalfares, frutas. cereales, viento y lluvia. Te 
+		he de amar sin ataduras, sin p&aacute;rpados, desvestido. Cuerpo en<br>
+		carne y alma en vilo.<br>
+		<br>
+&nbsp;&nbsp; Al comienzo hay abundancia de alicientes. Tal blandura facilita el 
+		correr del tiempo. Ajena a la calera y al yermo, te yergues en tu tallo 
+		de lib&eacute;lula mientras mi angustia no logra ni siquiera desmayar su 
+		intento.<br>
+		<br>
+&nbsp;&nbsp; El alba huele a toronjil. En la noche a&ntilde;oraba la alhucema. Pero es 
+		olor vegetal el de tu amor.<br>
+		Olor en que se place aguaitar la salamandra. Olor que persigue la 
+		tar&aacute;ntula con sus ojos de obsidiana. Olor vegetal de espera y de reto&ntilde;o. 
+		Olor de&nbsp; noche de amor que sobrelleva instantes hasta el j&uacute;bilo de 
+		la ma&ntilde;ana.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *<br>
+		<br>
+		<br>
+&nbsp;&nbsp; <a name="5. Que te vuelvas nada o casi nada..."></a>5. Que te 
+		vuelvas nada o casi nada para que no arda el rayo en tu horizonte.<br>
+		<br>
+&nbsp;&nbsp; Estar en ti, contigo, es infinito estar, tal es tu fuerza de amor.<br>
+		<br>
+&nbsp;&nbsp; Irme de ti, si ya no puedo m&aacute;s ir, llegado como estoy a mi 
+		frontera.<br>
+		<br>
+&nbsp;&nbsp; El l&iacute;mite prev&eacute; o est&aacute; previsto. Mas yo sobrepas&eacute; la puerta, estoy 
+		exento de nuevo querer, tanto he querido. Te he querido y ese pasado 
+		traspasa el presente, hasta la negaci&oacute;n.<br>
+		<br>
+&nbsp;&nbsp; Irme de ti, dejar tu &aacute;ngel y morir de sed sin tiempo de retorno, 
+		sin borde de esperanza. Agua traediza, me vino una edad contigo que 
+		embals&eacute; en mis campos, que acanal&eacute; en mis huertos.<br>
+		<br>
+&nbsp;&nbsp; Qu&eacute; regosto comparable al recuerdo de tu vena de agua. Tu presencia 
+		recal&oacute; mis secanos torn&aacute;ndolos f&eacute;rtiles. Generosa, llevaste los cauces 
+		de tu empe&ntilde;o hasta mi sed; fuiste fomento y azac&aacute;n de mis tierras.<br>
+		<br>
+&nbsp;&nbsp; Si vino flor fue por tu gracia y ella vivi&oacute; ya sin edades, flor sin 
+		tiempo.<br>
+		<br>
+&nbsp;&nbsp; Aun cuando te vuelvas aire, abrazar&eacute; la atm&oacute;sfera con la cuenca de 
+		mi mano y quemar&eacute; sin llanto mi audacia. Tal es tu fuerza de amor, flor 
+		de agua y fruto de torrente. -Y en ambos, pura la intenci&oacute;n de correr, 
+		de ser sin m&aacute;s, despose&iacute;da.<br>
+		<br>
+&nbsp;&nbsp; Baya o espiga, nuez o pez&oacute;n, a tu fruto lo vi en cierne. Y me hart&eacute; 
+		cuando revent&oacute; el gajo y se abrieron de hinchaz&oacute;n los escueznos.<br>
+		<br>
+&nbsp;&nbsp; Esencia propia y preservada, fuego y agua que andan sin vencerse. 
+		Ambos elementos y yo, cercano, para amarte.<br>
+		<br>
+&nbsp;&nbsp; Irme de ti, total querer, hacia mi nada...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<a name="6. Las manos, como s&uacute;plica, palpan el reflejo..."></a>6. Las 
+		manos, como s&uacute;plica, palpan el reflejo, enorme l&aacute;grima ca&iacute;da de la nube. 
+		Hay d&iacute;as con zumbido de nada y noches en que se lee el tiempo, en que 
+		hendijas de luz arriban a la frente, que las huye por motivos que tan 
+		s&oacute;lo la muerte sabe: gris del h&aacute;bito, trazado por huellas similares, 
+		vac&iacute;o de veredas.<br>
+		<br>
+&nbsp;&nbsp; Crin de potros de viento, formas de humo, tempestades a&uacute;n tiernas, 
+		os aguardo a un costado de la vida. Que las nubes, entonces, como manos, 
+		se unan, alto gris. Para amar la flor, fomento eriales, tierra gris. Y 
+		nado en tolvaneras que me ciegan y me impulsan. Mi camino quiere lluvia 
+		y amor en lluvia.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<a name="7. Mas, &iquest;d&oacute;nde dej&eacute; lo esencial..."></a>7. Mas, &iquest;d&oacute;nde dej&eacute; lo 
+		esencial -prescindencia de pasi&oacute;n, palabra pura clarividencia- ? Entr&eacute; 
+		en nueva claridad, flor de relente.<br>
+		<br>
+&nbsp;&nbsp; T&uacute; me diste la mesura de m&iacute; mismo: amor pensado, oasis sin olvido 
+		del desierto, con desierto presente y tangible. Lluvias me nazcan en mi 
+		sed. Soles mitiguen el exceso. Y t&uacute; y yo pongamos la simiente del verbo 
+		por venir, flor sin flor, fruto de amor y de idea.</font></p>
+
+<blockquote>
+  <blockquote>
+	<p align="left"><font face="Georgia" size="2" color="#85A6BC">
+	<br>
+	<br>&nbsp;</font></p>
+	<blockquote>
+      <p align="center"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+	</body>
+
+</html>
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:13:39 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:25 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

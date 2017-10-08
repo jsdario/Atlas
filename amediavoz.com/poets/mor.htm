@@ -1,0 +1,1091 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Dolan Mor</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Dolan Mor. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Dolan_Mor,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/mor.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "11";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/mor.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131211125042" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mor.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 12:50:42 Dec 11, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jan
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./mor.htm" title="15:56:22 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 12:50:42 Dec 11, 2013">11</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mor.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 12:50:42 Dec 11, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./mor.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>22 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">6 Sep 11 - 11 Dec 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000001130_2012:-1:601010001001_2013:11:101210010001_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./MOR.jpg" width="234" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Posado, como un p&aacute;jaro, s&oacute;lo quiero una rama<br>
+para cantar mis versos, tambi&eacute;n una ventana<br>
+para mirar el mundo...&quot;</em><br>
+<br>
+<img border="0" src="./MOR1.jpg" width="290" height="358"></font></p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em>&quot;Lacrimae&quot; 2006<br>
+<br>
+Dino Valls</em><i><br>
+</i></font><font color="#9BC9BB"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#9BC9BB"><br>
+			</font>
+			<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta y 
+		narrador cubano nacido en Pinar del R&iacute;o en 1968. <br>
+		Licenciado en Literatura y Espa&ntilde;ol, reside en Arag&oacute;n, Espa&ntilde;a, desde 
+		1999.<br>
+		Pertenece a la Asociaci&oacute;n de escritores aragoneses y colabora en 
+		diversas publicaciones de Espa&ntilde;a y Latinoam&eacute;rica.<br>
+		Nominado, por el conjunto de su obra, al International Grand Prize for 
+		Poetry 2010 de Rumania, ha sido incluido en varias antolog&iacute;as y parte de 
+		su trabajo ha sido traducido al ingl&eacute;s, franc&eacute;s y polaco.<br>
+		Su obra est&aacute; contenida en las siguientes publicaciones: <i>&quot;El plagio de 
+		Bosternag&quot;</i> 2004, <i>&quot;Las historias de Jonathan Cover&quot; </i>2005,<br>
+		<i>&quot;Seda para tu cuello&quot; </i>2006, <i>&quot;Nabokov&#8217;s Butterflies&quot;</i>, 
+		Premio de Poes&iacute;a de la Delegaci&oacute;n del Gobierno en Arag&oacute;n 2007;<br>
+		<i>&quot;Los poemas clonados de Anny Bould&quot;</i>, Premio Internacional Miguel 
+		Labordeta de Poes&iacute;a 2008;&nbsp; <i>&quot;El libro bipolar&quot;</i>, Premio <br>
+		Santa Isabel de Portugal 2009; <i>&quot;La novia de Wittgenstein&quot;</i>, Premio 
+		Internacional Barcarola de Poes&iacute;a 2010; <i>&quot;El idiota entre </i><br>
+		<i>las hierbas&quot;</i> 2010 y <i>&quot;La dispersi&oacute;n&quot;</i> 2010.<br>
+		<br>
+		</font><font face="Georgia" size="2" color="#95B3AA">
+		<br>
+&nbsp;</font></p>
+		<blockquote>
+			<p align="center">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></p>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Nos 
+		complace publicar y compartir con nuestros visitantes <br>
+		la siguiente selecci&oacute;n de poemas enviada por el poeta Dolan Mor:<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./mor.htm#A la sombra de un viol&iacute;n pienso que soy Anne Dophie Mutter">A 
+		la sombra de un viol&iacute;n pienso que soy Anne Sophie Mutter</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./mor.htm#Ahora la poes&iacute;a no menciona los sauces a orillas...">Ahora la 
+		poes&iacute;a no menciona los sauces a orillas...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Arte po&eacute;tica">Arte 
+		po&eacute;tica</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#C&aacute;mara de hielo">C&aacute;mara 
+		de hielo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Confesiones">Confesiones</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#El obrero">El obrero</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./mor.htm#En un viaje a Alemania me he convertido en Goethe">En un viaje 
+		a Alemania me he convertido en Goethe</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Imagen del estanque">
+		Imagen del estanque</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Las metas">Las metas</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./mor.htm#Pensando en Daedalus en un viaje a China">Pensando en Daedalus 
+		en un viaje a China</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Un rey en el exilio">Un 
+		rey en el exilio</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mor.htm#Un sitio que es tal vez">
+		Un sitio que es tal vez el fin del universo...</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">Puedes 
+		escuchar al poeta aqu&iacute;: </font><font face="Georgia" color="#95B3AA">
+		<a target="_blank" href="./poetas.htm">La voz de los poetas</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">Volver a:
+		</font><font face="Georgia" color="#95B3AA">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		</font><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+		<a href="./indice-L-Z.htm"><font face="Georgia">&Iacute;ndice L-Z</font></a></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#95B3AA">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a> &nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp;&nbsp;
+			</font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<p align="center">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></p>
+			</blockquote>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#95B3AA">
+		<a name="A la sombra de un viol&iacute;n pienso que soy Anne Dophie Mutter">
+		</a>
+		</font><font face="Georgia" color="#9BC9BB">
+		A la sombra de un viol&iacute;n pienso que soy Anne Sophie Mutter<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		1<br>
+		Veo una corneja que brilla sobre la rama de un abeto <br>
+		mientras pienso en tu apellido (oh Franz Kafka) y medito:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a) en tu familia sin dinero <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		b) en la empresa del cuervo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		hacia el negocio <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		c) en los alambres de tus cejas muertas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		d) en tu semblante enfermo taciturno<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		e) en tu cara de ave que me observa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		delante de un espejo <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		f) en tu nariz acaso el pico hundido <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		bajo la carne que destruye la vida. <br>
+		<br>
+		<br>
+		2<br>
+		&iquest;Cu&aacute;nta distancia existe entre tu muerte de escritor y un jard&iacute;n <br>
+		que florece con sus huesos o entre un bello cad&aacute;ver que se viste <br>
+		de lino y la palabra indescifrable &quot;corvus&quot;? <br>
+		&iquest;Cu&aacute;nto silencio <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		grumos en papel <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		libros <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		textos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		rosas portland <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		escritos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		maldiciones de tos en sanatorios <br>
+		para darnos al fuego sin sentido en misivas de amor <br>
+		porque ese ha sido, oh <i>corvus monedula</i>, nuestro oficio? <br>
+		<br>
+		<br>
+		3<br>
+		Escucho una canci&oacute;n en alem&aacute;n <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		es un viol&iacute;n con alas <br>
+		porque, sabes, yo soy Anne Sophie Mutter que me hablo a m&iacute; misma <br>
+		de unos lagos en los bosques de Viena, del sol que se refleja <br>
+		en el verano que buscamos, que huye como liebre <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		salta <br>
+		sobre las aguas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		se diluye como pez en el tiempo. <br>
+		<br>
+		<br>
+		4<br>
+		A esa liebre, como dijera Wittgenstein, la busco, la persigo <br>
+		en mis poemas, pero yo s&oacute;lo veo la corneja posada entre las ramas <br>
+		del abeto, aqu&iacute;, lejos, en Rusia, a miles de kil&oacute;metros de Cuba, <br>
+		a millones de polvos de tus huesos a cenizas de letras <br>
+		que me arrastran a contemplar la luna tu apellido posado <br>
+		en ese &aacute;rbol contra el cielo cubierto por la nieve.<br>
+		<br>
+		<br>
+		<br>
+		5<br>
+		Al pronunciar tu nombre como un cuervo, graznar <br>
+		hacia la noche tu apellido, salen las plumas negras de mi boca, <br>
+		se clavan como agujas en mis dedos, escribo y sale viento <br>
+		de mi mano, un aire que sacude las palabras te busco <br>
+		como un ni&ntilde;o que se pierde en un bosque de noche y s&oacute;lo escucha <br>
+		la corneja tatuada en el camino la corneja del Cid <br>
+		(que es la de Pound) el viento de la niebla, s&oacute;lo un ni&ntilde;o<br>
+		bajo un &aacute;rbol de noche es un desierto al que llaman Milena, <br>
+		un nombre sin sentido que no es nombre y vuela salta del suelo <br>
+		hacia la rama y te pronuncia&nbsp; &quot;Kafka&quot;. <br>
+		<br>
+		<br>
+		6<br>
+		Doy mi vida por amarte<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		junto a la chimenea<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a orillas de la estufa <br>
+		de esta noche en Mosc&uacute;, huyendo de la c&aacute;rcel, de los hierros, <br>
+		herido por la voz de la familia que llama por tel&eacute;fono, <br>
+		me encuentran siempre triste alguien dijo mi breve direcci&oacute;n:<br>
+		&quot;est&aacute; al norte del Volga, al sur del aeropuerto, lleg&oacute; bien, pero hay 
+		hielo <br>
+		de muerto en su mirada&quot;. Y las voces oh Kafka me recuerdan <br>
+		a ti entre la penumbra redactando tus obras <br>
+		para darlas con Brod al vano fuego.<br>
+		<br>
+		<br>
+		7<br>
+		Entonces la corneja que me mira y yo siento tu voz en su discurso, <br>
+		familia eres del cuervo y yo contigo arrodillado tiemblo en la cocina
+		<br>
+		de un mal apartamento aqu&iacute;, en Mosc&uacute;. Digo &quot;frambuesa&quot;, <br>
+		devoro una tostada sin caviar y aparece la rama despejada, <br>
+		el ave permut&oacute;, se ha ido lejos, hacia dentro, como yo de mi tierra, <br>
+		para siempre, perdido en unas fotos, en <i>flashes</i> de miradas <br>
+		que separan a un p&aacute;jaro de otro, una se&ntilde;al maligna <br>
+		en el camino del hombre hacia su muerte. <br>
+		<br>
+		8<br>
+		Puede que un d&iacute;a:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a) quemen tus relatos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		b) los tiempos ya no existan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		c) se confundan tus padres<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		d) familiares ya no estampen el sello <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de tu ilustre apellido en los paraguas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en membretes correos, <br>
+		pero t&uacute;, Franz Kafka, demonio de los cielos destruidos, <br>
+		siempre estar&aacute;s posado en la distancia, aunque a veces los ojos <br>
+		nos enga&ntilde;en y pensemos que vimos la corneja, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que te vimos a ti <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		brillar sobre el abeto.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB">
+		<a name="Ahora la poes&iacute;a no menciona los sauces a orillas..."></a>Ahora 
+		la poes&iacute;a no menciona los sauces a orillas...<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		Ahora la poes&iacute;a no menciona los sauces a orillas <br>
+		de la alberca, ni escribe cisne o dalia al pie de un cardenillo.<br>
+		S&oacute;lo habla de McDonalds, drogas, viajes a Europa, <br>
+		la pr&aacute;ctica promiscua del sexo en los hoteles.<br>
+		No est&aacute; bien ser poeta si no fumas cannabis, <br>
+		si no besas a un perro en su esfera de muerte.<br>
+		S&oacute;lo se necesita un coche en la cartera, un anillo <br>
+		en la oreja, un polvo en la nariz. No importa <br>
+		si eres hembra o macho en tus costumbres<br>
+		siempre que un vibrador descanse en tu bolsillo <br>
+		cual pez de silicona bajo un lago de escarcha.<br>
+		No debes olvidar las playas de nudismo o leer <br>
+		a Bukowski en medio de un spa (aunque ignores <br>
+		que Spa se llama un pueblo en B&eacute;lgica, <br>
+		o que <i>salut per aquam</i> proviene del lat&iacute;n).<br>
+		Lo importante es decir palabras en ingl&eacute;s e ignorar <br>
+		que Lezama vivi&oacute; dentro de un mulo asm&aacute;tico y rapsoda.<br>
+		Tambi&eacute;n que lleves gafas en medio de la noche, <br>
+		o que hagas como yo que me pongo una gorra <br>
+		hasta para ducharme en los meses de invierno.<br>
+		Un sello en el mercado, los enigmas del marketing <br>
+		en cada laberinto que construyen tus dedos <br>
+		mientras subes un d&iacute;a al tren, al ascensor que te lleve <br>
+		a ese suave destino que es el arte.<br>
+		Eso s&iacute;, nunca olvides borrar de tus poemas las hojas <br>
+		de los sauces o ir a un restaurante donde la carta ignore <br>
+		ese plato exquisito: el cisne de Dar&iacute;o <br>
+		(desplumado y enfermo) con la dalia en el pico.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Arte po&eacute;tica"></a>Arte 
+		po&eacute;tica</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		&quot;No hables en tus poemas del ruise&ntilde;or<br>
+		de Wilde, ni menciones <i>amor, perfume, labio o rosa&quot;</i><br>
+		&#8211;me dice en los manuales Ariel Rivadeneira&#8211;<br>
+		y yo evito poner en cada verso escrito<br>
+		un <i>ala,</i>&nbsp; alg&uacute;n <i>jard&iacute;n</i>, la <i>luna</i> de Virgilio,<br>
+		y hasta a veces me niego, sentado<br>
+		en el alf&eacute;izar, a mirar las heladas<br>
+		del invierno en Espa&ntilde;a, porque queman<br>
+		las ramas de los &aacute;rboles todos y la niebla<br>
+		me invita a escribir con nostalgia<br>
+		&quot;y ese signo, <i>nostalgia,</i> &#8211;me dicen<br>
+		los manuales&#8211; es se&ntilde;al del pasado,<br>
+		y se debe escribir sin alma, con estilo,<br>
+		igual que si torcieras el cuello<br>
+		de una garza con desprecio en tus dedos&quot;.<br>
+		<br>
+		&quot;Habla de cibern&eacute;tica y de f&iacute;sica cu&aacute;ntica,<br>
+		menciona blog, pantalla, correos<br>
+		electr&oacute;nicos&quot; &#8211;me aconsejan los cr&iacute;ticos&#8211;.<br>
+		Y yo sumo las cifras o despejo ecuaciones,<br>
+		digo leyes, neones, sistemas invisibles<br>
+		que arman genios, cient&iacute;ficos.<br>
+		Tambi&eacute;n menciono genes, v&iacute;deos,<br>
+		ordenadores, y hay instantes, incluso,<br>
+		que hablo sin meditar y construyo asonantes<br>
+		al decir aeropuertos, submarinos, aviones<br>
+		y alg&uacute;n laboratorio (&#8230;), m&oacute;viles, cines, clones.<br>
+		<br>
+		Pero aunque logre versos posmodernos<br>
+		siguiendo los consejos de sabios<br>
+		que hablan de poes&iacute;a como hablar<br>
+		de la historia, de mercados, teoremas<br>
+		que establecen los pliegues en las cuerdas<br>
+		del tiempo, no he logrado escribir<br>
+		el poema perfecto, e incluso<br>
+		cuando leo alguna l&iacute;nea aislada<br>
+		de Wilde entre las s&aacute;banas, y todos<br>
+		mis maestros (con diplomas de masters<br>
+		y perfil de doctores) se divierten<br>
+		en bares o en los <i>pubs</i> de internet,<br>
+		yo lloro como dama sin remedio<br>
+		y me jode el viejo de Quevedo,<br>
+		y me arriesgo, en la cama, a que digan<br>
+		los cr&iacute;ticos en los post o en revistas:<br>
+		&quot;&iexcl;qu&eacute; anticuado y qu&eacute; griego se volvi&oacute;<br>
+		Dolan Mor leyendo a los antiguos!,<br>
+		si hasta le creci&oacute; un d&iacute;a, encima<br>
+		de las cejas, (en lugar de la gorra<br>
+		ladeada sobre un <i>piercing</i>) un ramo<br>
+		de laurel&#8230;<br>
+		<br>
+		Pero logr&oacute; dos cosas: pasar<br>
+		imperceptible delante de los hombres,<br>
+		como dijo Epicuro, y escribir con la espalda<br>
+		inclinada en la hoja, sin cederle la mano<br>
+		al influjo variable del tiempo y de las modas&quot;.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="C&aacute;mara de hielo"></a>
+		C&aacute;mara de hielo</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Alguien ha colocado un ramillete de orqu&iacute;deas <br>
+		sobre la superficie de una c&aacute;mara de hielo. <br>
+		Se dir&iacute;a que crecen sin sentido esas flores <br>
+		silvestres en la estepa blindada de la muerte, <br>
+		sus p&eacute;talos de negro fuego, el perfume <br>
+		amarillo de una m&aacute;quina de aceites leves. <br>
+		<br>
+		*<br>
+		Es un contraste aqu&iacute;, sobre la piedra de un cuarto <br>
+		congelado, un almac&eacute;n abierto de metales <br>
+		con puertas donde s&oacute;lo se observan carnes <br>
+		de ciervo eldii, perniles desangrados, patas<br>
+		de nobles liebres, rostros de un fais&aacute;n hembra <br>
+		que mira sin maldad (sus ojos de un cristal asustado). <br>
+		<br>
+		*<br>
+		Las botas de los cazadores dejan huellas violetas <br>
+		sobre las charcas de sangre, el sudor que discurre <br>
+		debajo de sus cueros dibuja el invisible cu&ntilde;o de los mercurios.<br>
+		<br>
+		*<br>
+		As&iacute; y todo, no s&eacute;, alguien ha colocado, junto <br>
+		al ramo de orqu&iacute;deas, unos guantes azules <br>
+		de proteger sus manos a golpes de neveras <br>
+		y todo me seduce ahora entre ese humo <br>
+		que desprenden los cuerpos de muertos animales. <br>
+		<br>
+		*<br>
+		<br>
+		Veo a mi alrededor un jard&iacute;n que me invita <br>
+		a escribir un poema que mencione en sus versos <br>
+		esas flores de orqu&iacute;deas, esas gemas de luz <br>
+		que nombrara Teofastro como raros test&iacute;culos.<br>
+		<br>
+		*<br>
+		Pero no escribo nada, prefiero contemplar <br>
+		las orqu&iacute;deas (reales) de mi imaginaci&oacute;n, sobre la escarcha <br>
+		de la c&aacute;mara de hielo, como si fueran el &uacute;ltimo <br>
+		instante de eso que los hombres llaman &quot;vida&quot;.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Confesiones"></a>
+		Confesiones</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Al principio yo anhelaba ser el pr&iacute;ncipe<br>
+		de la poes&iacute;a, el rey de las palabras,<br>
+		un ministro de los poemas con una medalla<br>
+		sobre mi oscuro pecho, una corona de oro<br>
+		alumbrando con su dorada luz mi noble cabeza.<br>
+		Despu&eacute;s, baj&eacute; mis metas y me propuse ser<br>
+		un licenciado, un doctor en gram&aacute;tica,<br>
+		pol&iacute;glota, un James Joyce, usar barba,<br>
+		un abrigo negro hasta los tobillos, las gafas<br>
+		circulares, la pipa entre los labios<br>
+		recitando los versos de Charles Baudelaire.<br>
+		(Recuerdo que ten&iacute;a la foto de Vallejo<br>
+		debajo del cristal de mi mesa de noche<br>
+		y, mir&aacute;ndola, apoyaba mi rostro y mis manos<br>
+		cruzadas encima de un bast&oacute;n con el pu&ntilde;o<br>
+		de plata, en forma de le&oacute;n, para creer<br>
+		un instante que mi nombre era C&eacute;sar.<br>
+		&#8211;Incluso estuve preso por parecerme a &eacute;l.)<br>
+		Me dec&iacute;a a m&iacute; mismo frases de Kierkegaard:<br>
+		&quot;para el hombre que aspire a triunfar en la vida<br>
+		existen dos caminos: ser C&eacute;sar o ser Nada&quot;.<br>
+		Y yo lo repet&iacute;a con la convicci&oacute;n de que era<br>
+		(s&oacute;lo faltaba tiempo) un dios o hijo de un dios.<br>
+		Sin embargo, las cosas han cambiado y mi punto<br>
+		de vista se cay&oacute; en un abismo. Ya no aspiro<br>
+		a ser pr&iacute;ncipe, ni ministro, ni rey, ni pol&iacute;glota<br>
+		un d&iacute;a, mucho menos deseo ser Joyce o Baudelaire<br>
+		porque ambos est&aacute;n muertos, y un hombre,<br>
+		si est&aacute; muerto, vale menos que un perro.<br>
+		Ahora aspiro a las cosas sencillas de la vida.<br>
+		(Me lo dijo Ray Carver y nunca lo entend&iacute;.)<br>
+		Miro el agua de un r&iacute;o sin pensar qu&eacute; es el agua,<br>
+		me acuesto entre la hierba y disfruto del sol.<br>
+		Pienso, respiro, siento c&oacute;mo limpia el ox&iacute;geno<br>
+		mi sangre, mis pulmones, late en mi coraz&oacute;n.<br>
+		Soy feliz con vivir sencillo, aspiro a eso:<br>
+		Posado, como un p&aacute;jaro, s&oacute;lo quiero una rama<br>
+		para cantar mis versos, tambi&eacute;n una ventana<br>
+		para mirar el mundo, aunque no tenga un piso,<br>
+		ni un palacio, ni un templo. Un marco,<br>
+		una ventana para asomar mis ojos, humilde,<br>
+		con asombro, sabiendo que soy polvo,<br>
+		y, debajo del cielo, un animal o nada.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="El obrero"></a>El obrero<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		He tra&iacute;do un pico y una pala para cavar <br>
+		un poema en la hoja. Ya he pasado la primera <br>
+		capa de hielo que construye el silencio <br>
+		sobre el blanco papel. (Esa l&aacute;mina fina, <br>
+		inmaculada.) Ahora rompo las piedras, <br>
+		los gusanos que aparecen debajo de mis dedos.<br>
+		Golpeo duro, golpeo en cada sustantivo, <br>
+		gerundio o participio. Las palabras parecen <br>
+		las hijas sublimes del metal m&aacute;s propicio.<br>
+		Ya introduzco mis pies dentro del hoyo. <br>
+		Los zapatos se ensucian, pero sigo <br>
+		golpeando con las v&iacute;sceras, la sangre <br>
+		en cada movimiento que ejecuto. Golpeo <br>
+		fuerte, golpeo el sustantivo, adverbio, <br>
+		el adjetivo. Los minerales sangran debajo <br>
+		de mis suelas. Ya introduzco mis piernas, <br>
+		pantalones, hasta doy la cintura para abajo. <br>
+		Me quito la camisa, me desnudo. Se trabaja<br>
+		mejor en ese estado. Meto mi vientre, <br>
+		el pecho, los dos brazos para golpear <br>
+		con fuerza el agujero, perforar hasta <br>
+		el fondo del idioma, hasta el verbo del fango. <br>
+		Apenas veo hierbas, ya no hay &aacute;rboles, <br>
+		ni casas ni consuelos en un c&iacute;rculo. S&oacute;lo <br>
+		est&aacute;n mi yo y mi doble ego dentro <br>
+		de mi cabeza. Pero no me amilano, <br>
+		mi esp&iacute;ritu no tiembla, duro golpeo <br>
+		hasta dejarme el m&uacute;sculo y quedarme <br>
+		en los huesos bajo tierra. As&iacute;, ahora, sin cielo, <br>
+		la tierra como un techo me ha cubierto, <br>
+		se acuesta como un monstruo sobre m&iacute;. <br>
+		Pero yo no me canso, sigo, muerdo la muerte <br>
+		con mi pico y con mi pala, las paredes, las rocas. <br>
+		Y as&iacute;, s&oacute;lo, en el agujero sellado bajo tierra, <br>
+		esperar&eacute; a que venga otro poeta a golpear <br>
+		como yo la dura hoja, a enterrarse de nuevo <br>
+		en el poema. Tal vez encuentre mi cad&aacute;ver <br>
+		vivo que no para nunca (con el pico y la pala rotos) <br>
+		de golpear y golpear versos en vano.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB">
+		<a name="En un viaje a Alemania me he convertido en Goethe"></a>En un 
+		viaje a Alemania me he convertido en Goethe </font>
+		<font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		A orillas de tu pelo la nieve Margarita escribe una canci&oacute;n en mi fino
+		<br>
+		port&aacute;til que habla de un viaje en tren a Dresden Alemania / Su melod&iacute;a 
+		lleva <br>
+		un silbido de plata el humo que abrillanta la m&uacute;sica en mis dedos el 
+		sonido <br>
+		de plomo que se mueve en mis manos temblorosas las letras en mitad de la 
+		niebla <br>
+		<i>(porque tu nombre en lat&iacute;n significa &quot;perla&quot;)</i><br>
+		Los cristales ahumados en los meses de invierno inician este viaje que 
+		sale <br>
+		de Ginebra / tu rostro (porcelana) contra la ventanilla cenizas en el 
+		cielo <br>
+		las nubes pasajeras cucarachas azules tus ojos infinitos p&aacute;ginas de 
+		peri&oacute;dicos <br>
+		el polvo que se enquista mientras silba el metal en mis manos la nieve 
+		el viento <br>
+		de la tarde que ensucia la estaci&oacute;n los andenes repletos de bultos 
+		bancos suelas <br>
+		oficinas que venden en seis ordenadores mi viaje hacia Alemania desde 
+		Gare Cornavin<br>
+		M&aacute;s all&aacute; de un discurso te nombro Margarita porque tu origen (flor) 
+		suena <br>
+		<i>bellis perennis</i> entre los abedules que rodean el tren (son 
+		abedules secos pero en este poema <br>
+		son &aacute;rboles perfectos sembrados para ti) vuelo entre varias obras de 
+		escritoras que firman <br>
+		tu diadema de reina tu nombre de princesa en p&aacute;ginas de libros al salir 
+		de Ginebra<br>
+		<i>(porque tu nombre en mi memoria significa &quot;perla&quot;)</i><br>
+		Imagino la escena: vagones que se marchan el humo la distancia que 
+		abrillanta <br>
+		tu rostro posado en el and&eacute;n como una mariposa mortal oscurecido por la 
+		tela <br>
+		de ara&ntilde;a que deja su diamante tejido sus mil capas de aroma ese veneno 
+		vaporoso <br>
+		el invierno destilando su amor al salir con mis libros de la estaci&oacute;n 
+		Cornavin<br>
+		En l&aacute;piz azul-negro te escribo este poema para la eternidad (tal vez 
+		para la muerte) <br>
+		su magnitud (en bronce) el arte de lo bello la nieve que ahora reza 
+		detr&aacute;s de ese cristal <br>
+		el viaje hacia la noche de un tren que se diluye como letra en la hoja 
+		digital del port&aacute;til <br>
+		viajeros que se duermen no saben siempre ignoran hacia d&oacute;nde se mueve el 
+		reloj <br>
+		apagado que deja en estos versos tu perfume (Chanel) unos lagos quemados 
+		por la palabra <br>
+		tiempo y el amor ese tizne que sale de estas letras cual hilos de un 
+		gusano <br>
+		cansado de escribir con seda una canci&oacute;n invisible lejana que habla de 
+		tu belleza<br>
+		Sin embargo me ignoras pero yo te menciono al partir de Ginebra 
+		Margarete Margarita<br>
+		<i>(porque tu nombre en la distancia significa &quot;perla&quot;)</i><br>
+		Como si fuera un viaje dentro de una novela que escribiera Bulgakov a 
+		orillas <br>
+		de unos &aacute;rboles sin ramas (abedules) va el tren hacia Alemania el humo
+		<br>
+		que despide mi coraz&oacute;n del tuyo colillas de la tarde mientras pienso en 
+		Celan <br>
+		(&eacute;l escribi&oacute; un poema que hablaba de tu pelo tu cabello encendido como 
+		llamas <br>
+		de oro) estambres que se duermen me golpean tus labios la canci&oacute;n <br>
+		Margarita el silbido el amor que se agita en mis venas el viento entre 
+		mis dedos <br>
+		tus labios que se mueven me arrastran cucarachas azules son tus ojos la 
+		memoria <br>
+		y la niebla que pasa Margarita esta niebla el poema termina sin tu olor<br>
+		(por cierto tu cabello es marr&oacute;n no dorado se equivoc&oacute; Celan en su Fuga 
+		o poema)<br>
+		y te alejas no vuelves porque yo escribo ahora que est&aacute;s muerta tu 
+		nombre <br>
+		se borr&oacute; ya no existe la realidad se impone m&aacute;s all&aacute; de mi texto o es 
+		s&oacute;lo una met&aacute;fora <br>
+		de Google que Dar&iacute;o escribi&oacute; en su palacio de m&aacute;rmol hace un siglo con 
+		la luz de una vela.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Imagen del estanque"></a>
+		Imagen del estanque<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		El caballo y la trucha<br>
+		saltan en el estanque<br>
+		de la muerte.<br>
+		Uno a orillas del hilo<br>
+		de plata,<br>
+		el otro entre las costuras<br>
+		del tejido de acero.<br>
+		<br>
+		Son los factores<br>
+		del desamparo<br>
+		quienes me acompa&ntilde;an<br>
+		siempre (al azar),<br>
+		la v&aacute;lvula incluso<br>
+		de la rosa l&iacute;quida<br>
+		lo que permite observar<br>
+		el movimiento<br>
+		de los animales simb&oacute;licos,<br>
+		en acci&oacute;n.<br>
+		<br>
+		As&iacute; el caballo <br>
+		soy yo mismo<br>
+		reflejado en el agua<br>
+		del espejo,<br>
+		y la trucha es mi esp&iacute;ritu<br>
+		que labora y labora<br>
+		contra la perpetuidad<br>
+		de la Dama Violeta.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Las metas"></a>Las metas<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		Puedo dejar que pasen las metas<br>
+		como pasa el tranv&iacute;a<br>
+		bajo los cables hacia el <i>Renowned.</i><br>
+		Incluso puedo dejar que brille<br>
+		el rubor de un gladiolo bajo la lluvia<br>
+		o un estornino en la rama del abeto<br>
+		y no escribir, siquiera, una frase.<br>
+		Puedo acunar mi cuerpo sobre el c&eacute;sped<br>
+		reci&eacute;n cortado por la m&aacute;quina el&eacute;ctrica<br>
+		mientras me pudre con su manta<br>
+		el fr&iacute;o sol de estos cantones<br>
+		no definidos todav&iacute;a por la temprana luz.<br>
+		Dormido sobre la hierba reci&eacute;n cortada<br>
+		(sin leer el peri&oacute;dico que traen por las ma&ntilde;anas<br>
+		los muchachos en la furgoneta amarilla),<br>
+		puedo levantarme y salir de paseo<br>
+		a una librer&iacute;a en la ciudad de Berna<br>
+		para ver qu&eacute; nuevo libro de poemas<br>
+		adorna con su aroma los estantes.<br>
+		Y a&uacute;n all&iacute;, frente al estante de los poetas,<br>
+		puedo dejar que pase la ocasi&oacute;n<br>
+		m&aacute;s propicia para ejecutar mi suicidio,<br>
+		una vez que la meta est&eacute; cumplida.<br>
+		Pues si digo: &quot;esta soga es muy gruesa<br>
+		para ahorcarme / el fuego me da miedo /<br>
+		morir bajo el tranv&iacute;a no es mi causa&quot;,<br>
+		no por ello escapo a mi destino.<br>
+		Siento que nunca podr&eacute; ahuyentar los perros<br>
+		del deseo suicida de mi mente<br>
+		(los perros que me hincan los colmillos<br>
+		en el cerebro y fluyen por mis ideas<br>
+		como el bote de Caronte por un r&iacute;o).<br>
+		Hasta despu&eacute;s de la muerte, creo,<br>
+		fluir&aacute; ese bote del anhelo suicida<br>
+		por mi pensamiento, y esos deseos me atar&aacute;n,<br>
+		con enormes cuerdas, a sus perros.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Pensando en Daedalus en un viaje a China"></a>Pensando en 
+		Daedalus en un viaje a China</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a mi 
+		amigo Brueghel </i><br>
+		<br>
+		Subes una escalera de m&aacute;rmol<br>
+		que flota sobre un lago en China<br>
+		y a medida que te elevas sobre el agua<br>
+		piensas en el mecanismo del poema.<br>
+		Cada pelda&ntilde;o que ascienden tus pasos <br>
+		es igual al misterio que opera <br>
+		en el verso que construye tu mano.<br>
+		Cada instante de duda sobre las losas <br>
+		de piedra, equivale a pisar en el idioma <br>
+		un art&iacute;culo, un verbo, un sustantivo.<br>
+		No te debes fiar de las barandas, <br>
+		ni de los pasamanos, ni de los adjetivos.<br>
+		Nunca debes mirar a tus zapatos <br>
+		ni posar tus dos ojos como p&aacute;jaros<br>
+		en el punto de inicio hacia &quot;el arriba&quot;.<br>
+		(Apr&eacute;ndelo de Lot o de Bataille.)<br>
+		Una vez que comienzas no hay sentido<br>
+		que no lleve a escribir el vano oficio.<br>
+		O llegas a la meta y te deslizas<br>
+		como un ni&ntilde;o con alas sobre <br>
+		un nuevo pasillo, o te dejan caer <br>
+		con las palabras regadas como v&iacute;sceras, <br>
+		envueltas en la sangre que nadie limpiar&aacute; <br>
+		en tu ca&iacute;da, rodando en llamas<br>
+		hacia las oscuras aguas de la hoja.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Un rey en el exilio"></a>Un rey en el exilio</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-&iquest;Has le&iacute;do</i> Los reyes en el exilio <i>de Daudet?</i><br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-No, todav&iacute;a no he salido de mi biblioteca.<br>
+		</i><br>
+		Escribir no me salva de padecer el mundo <br>
+		cifrado bajo el hielo que ahora cubre mis manos, <br>
+		ni la hoja vac&iacute;a resuelve mi problema <br>
+		(seg&uacute;n me dijo Freud) de ser un animal <br>
+		que opera la mec&aacute;nica del texto a cinco patas. <br>
+		Donde los hombres tejen su discurso de sabios <br>
+		con corbatas o dictan sus riquezas de falsos <br>
+		crisantemos azules (brillos y teor&iacute;as de un jard&iacute;n <br>
+		posmoderno) yo me oculto entre hierbas. <br>
+		(Me gusta comer flores que sepan a ignorancia.)<br>
+		Donde la ciencia exhibe una cuerda abismal <br>
+		que va desde los monos al invisible Espacio, <br>
+		me siento a caminar (lo aprend&iacute; con Daudet).<br>
+		En mis manos no crecen los p&aacute;rrafos con lirios <br>
+		porque la flor de lis es un s&iacute;mbolo her&aacute;ldico <br>
+		y yo no pertenezco, a pesar de mis nombres,<br>
+		ni a Virginia ni a Francia. Tampoco la belleza <br>
+		me volver&aacute; a matar porque bast&oacute; en mi infancia<br>
+		la brisa de esa lana breve, de perfecci&oacute;n, <br>
+		que envolv&iacute;a mis ojos bajo un grifo de lluvia. <br>
+		No s&eacute; por qu&eacute; detesto tambi&eacute;n junto a mi oficio <br>
+		los puentes sobre el cielo, las ciudades de Europa, <br>
+		las marcas de las ropas, el s&iacute;mbolo del n&uacute;mero <br>
+		que cada movimiento, al caminar sin rumbo, <br>
+		deposita en el campo neuronal de mi mente...<br>
+		No me salva tampoco la vana arquitectura <br>
+		del genoma, los signos, los conceptos, los libros <br>
+		a orillas de una taza dorada de Murano.<br>
+		Ni museos, ni calles con trajes de difuntos <br>
+		adornando las plazas, los bares, los teatros. <br>
+		Tampoco las iglesias, ni mudas librer&iacute;as,<br>
+		ni el sal&oacute;n de los climas que adorna Copenhague. <br>
+		Un pu&ntilde;ado de arena en las manos me salva <br>
+		porque al mirarlo dice que soy una part&iacute;cula <br>
+		perdida entre millones de mol&eacute;culas Waals, <br>
+		y porque el universo que vemos es un hueco, <br>
+		un desierto, agujero, Gran Maya o espejismo <br>
+		que seg&uacute;n Schopenhauer dejar&aacute; de existir <br>
+		cuando se oiga el motor de la causa primaria <br>
+		anunciando en silencio, bajo el reino del fuego, <br>
+		que han muerto las galaxias, las rosas, las esferas.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<font color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Un sitio que es tal vez"></a>Un sitio que es tal vez el fin del 
+		universo...<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		Un sitio que es tal vez el fin del universo,<br>
+		donde escribo un poema sin l&oacute;gica ni esp&iacute;ritu.<br>
+		Un silencio muy breve, con versos construidos<br>
+		bajo golpes de Artaud, un magnolio en la orilla<br>
+		del ventanal izquierdo, las barandas<br>
+		repletas de azaleas marchitas, cubiertas<br>
+		de cristales, ahumadas mientras suena<br>
+		la m&uacute;sica de Mozart en el fondo del patio,<br>
+		a un lado del sal&oacute;n, incluso entre las plantas<br>
+		que crecen de los verbos, adjetivos con lluvia<br>
+		desfilan ante m&iacute;, me siento un bello f&aacute;mulo,<br>
+		levanto las cortinas del sujeto primario,<br>
+		voy al televisor, construyo ahora una tila,<br>
+		despu&eacute;s bebo la mesa, pero el poema sigue<br>
+		sin l&oacute;gica ni esp&iacute;ritu, se parece m&aacute;s bien<br>
+		a un hijo de este mundo: suele crecer con lujo,<br>
+		observa la belleza entre la fealdad,<br>
+		pero a la hora cero, a la hora de amar<br>
+		tambi&eacute;n el universo, ese sitio que dicen<br>
+		un d&iacute;a tendr&aacute; fin, entonces da la espalda,<br>
+		pronuncia un sustantivo, por ejemplo &quot;mudanza&quot;,<br>
+		y es entonces que empiezo a cambiar de lugar,<br>
+		de ciudad, de pa&iacute;s, pero siempre termino<br>
+		bajo el mismo elemento, en id&eacute;ntico espacio<br>
+		donde no cabe otro, donde la ceguedad<br>
+		pronuncia el mismo verso, el mismo<br>
+		desconsuelo, la misma capital de un sitio<br>
+		que es tal vez, de un tal vez que no existe<br>
+		a no ser en el punto final de este poema.</font></p>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+			<p align="center">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></p>
+			<font face="Georgia" size="2" color="#8FABC2">
+			<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+			<font color="#AAC0D5">
+			<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+			<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+			</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 12:50:42 Dec 11, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:28 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,926 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Mihai Eminescu</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Mihai Eminescu."
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Mihai Eminescu. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Mihai_Eminescu,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/eminescu.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/eminescu.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815155717" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./eminescu.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 15:57:17 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./eminescu.htm" title="10:14:12 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 15:57:17 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./eminescu.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 15:57:17 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./eminescu.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>25 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">29 Sep 09 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000001000_2010:-1:100000001110_2011:-1:000000101120_2012:-1:122111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p><script language="javascript" src="/web/20130815155717js_/http://127.0.0.1:1026/js.cgi?pca&amp;r=53"></script>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./EMINESCU.jpg" width="341" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./EMINESCU1.jpg" width="227" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="681" height="334">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="673">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="303" width="220" valign="top">
+			<p align="left">&nbsp;<img border="0" src="./EMINESCU2.jpg" width="200" height="300"></td>
+			<td width="449" valign="top" height="303">
+			<p align="left"><u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font size="2" color="#C4CAD4" face="Georgia"><br>
+			<br>
+			Seud&oacute;nimo de Mihail Eminovici, poeta y novelista rumano nacido en 
+			Ipote&#351;ti, Boto&#351;ani, en 1850.<br>
+			Las discrepancias ideol&oacute;gicas con sus padres lo obligaron a alejarse 
+			de su hogar, raz&oacute;n por la que no cont&oacute; con recursos econ&oacute;micos para 
+			terminar los estudios b&aacute;sicos. En 1869, gracias a su talento, fue 
+			admitido como estudiante de la Facultad de Filosof&iacute;a y Leyes de 
+			Viena; dos a&ntilde;os despu&eacute;s viaj&oacute; a Berl&iacute;n aprovechando el gran ambiente 
+			intelectual de la &eacute;poca, se relacion&oacute; con importantes maestros y 
+			autores y asimil&oacute; todo el desarrollo del romanticismo, 
+			convirti&eacute;ndose en el m&aacute;s grande poeta rumano de la segunda mitad del 
+			siglo XIX.<br>
+			En 1874 regres&oacute; a Rumania, trabaj&oacute; como director de la Biblioteca 
+			Regional de La&#351;i, y posteriormente en 1877, fue jefe editor del 
+			peri&oacute;dico &quot;Timpul&quot; de Bucarest. De esta &eacute;poca data la parte m&aacute;s 
+			brillante de su producci&oacute;n literaria, representada especialmente en 
+			los poemas <i><br>
+			&quot;Las ep&iacute;stolas&quot; </i>y <i>&quot;El lucero&quot;.<br>
+			</i>Gravemente enfermo, falleci&oacute; en junio de 1889. &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Mihai Eminescu:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#FFFFFF"><br>
+		<br>
+		</font><font face="Georgia">
+		<a href="./eminescu.htm#Amada, cada vez que yo pienso en nosotros...">Amada, cada vez 
+		que yo pienso en nosotros...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Atardecer en la colina">
+		Atardecer en la colina</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Flor azul">Flor azul</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#La oraci&oacute;n de un Dacio">
+		La oraci&oacute;n de un Dacio</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Melancol&iacute;a">Melancol&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#&iexcl;Oh, madre!...">&iexcl;Oh, 
+		madre!...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Separaci&oacute;n">Separaci&oacute;n</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#S&oacute;lo tengo un deseo">S&oacute;lo 
+		tengo un deseo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Venus y Madona">Venus y 
+		Madona</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./eminescu.htm#Yo quisiera dormirme...">
+		Yo quisiera dormirme...</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#C4CAD4">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#D3D3CF"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+		</font><font color="#C4CAD4" face="Georgia">
+		<a name="Amada, cada vez que yo pienso en nosotros..."></a>Amada, cada 
+		vez que yo pienso en nosotros...</font><font color="#C4CAD4" face="Georgia" size="2"><br>
+		<br>
+		Amada, cada vez que yo pienso en nosotros,<br>
+		un oc&eacute;ano de hielo aparece ante m&iacute;:<br>
+		sobre la blanca b&oacute;veda no hay ya ninguna estrella,<br>
+		la luna es una mancha amarilla a lo lejos.<br>
+		Sobre miles de t&eacute;mpanos que las olas se llevan,<br>
+		un p&aacute;jaro planea, las alas fatigadas,<br>
+		mientras su compa&ntilde;era ha seguido adelante,<br>
+		unida a la bandada que se pierde al poniente.<br>
+		Hacia donde ella vuela mira desesperado.<br>
+		Ya no siente ni pena ni alegr&iacute;a. ..Se muere,<br>
+		so&ntilde;ando en un instante todo el tiempo pasado.<br>
+		. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+		. . . . . <br>
+		M&aacute;s lejos uno de otro cada vez nos sentimos,<br>
+		cada vez me hundo m&aacute;s en la sombra y el hielo,<br>
+		mientras desapareces en la eterna ma&ntilde;ana.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Atardecer en la colina"></a>Atardecer en la colina<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		El cuerno quejoso suena en la colina, <br>
+		suben los reba&ntilde;os, brillan las estrellas, <br>
+		las aguas responden, gimiendo en las fuentes; <br>
+		bajo las acacias, querida, me esperas. <br>
+		<br>
+		La luna atraviesa clara y santa el cielo, <br>
+		tus ojos contemplan el raro follaje, <br>
+		las estrellas h&uacute;medas nacen en lo alto, <br>
+		t&uacute; est&aacute;s de ansias llena y de amor tu seno. <br>
+		<br>
+		Las nubes resbalan, sus rayos se estr&iacute;an, <br>
+		levantan las casas sus techos vetustos, <br>
+		la roldana al viento chirr&iacute;a en el pozo, <br>
+		el valle es de humo, las flautas murmuran. <br>
+		<br>
+		Hombres fatigados, la hoz sobre el hombro, <br>
+		vuelven de los campos; la toica* resuena, <br>
+		la campana llena con su voz la noche, <br>
+		y mi alma se quema de amor en tu fuego. <br>
+		<br>
+		&iexcl;Ah!, pronto en el valle el pueblo se duerme, <br>
+		&iexcl;ah!, pronto mis pasos hacia ti me llevan. <br>
+		Cerca de la acacia pasar&eacute; la noche <br>
+		e incansablemente te dir&eacute;: te quiero. <br>
+		<br>
+		Las cabezas juntas, una contra otra, <br>
+		bajo la alta acacia nos adormiremos <br>
+		&iquest;Quien la vida entera no la entregar&iacute;a <br>
+		por una tan bella, tan dichosa noche? </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>* Toica es un trozo 
+		de madera o metal que se golpea para llamar a la oraci&oacute;n</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Flor azul"></a>Flor 
+		azul</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&quot;&iquest;De nuevo hundido en 
+		los astros,<br>
+		en las nubes, en los cielos?<br>
+		Por lo menos, no me olvides,<br>
+		alma y vida de mi vida.<br>
+		<br>
+		En vano los arroyuelos<br>
+		juntas en tu pensamiento<br>
+		y las campi&ntilde;as asirias<br>
+		y la tenebrosa mar;<br>
+		<br>
+		las pir&aacute;mides vetustas<br>
+		que alzan sus puntas al cielo.<br>
+		&iexcl;Para qu&eacute; buscar tan lejos<br>
+		tu dicha, querido m&iacute;o! &quot;<br>
+		<br>
+		As&iacute; mi ni&ntilde;a me hablaba,<br>
+		dulcemente acarici&aacute;ndome.<br>
+		&iexcl;Ella ten&iacute;a raz&oacute;n!<br>
+		Yo re&iacute;a, sin embargo.<br>
+		<br>
+		&quot;V&aacute;monos al bosque verde,<br>
+		donde las fuentes del valle<br>
+		lloran y la roca puede<br>
+		precipitarse al abismo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">All&iacute;, en lo claro del 
+		bosque,<br>
+		cerca del junco tranquilo,<br>
+		bajo la serena b&oacute;veda<br>
+		del moral nos sentaremos.<br>
+		<br>
+		Y me contar&aacute;s los cuentos<br>
+		y me dir&aacute;s las mentiras;<br>
+		yo, con una margarita<br>
+		comprobar&eacute; si me quieres.<br>
+		<br>
+		Y bajo el calor del sol,<br>
+		roja como una manzana,<br>
+		tender&eacute; mi cabellera<br>
+		para cerrarte la boca.<br>
+		<br>
+		Si t&uacute; acaso me besaras,<br>
+		nunca nadie lo sabr&iacute;a,<br>
+		pues debajo del sombrero,<br>
+		&iexcl;eso a qui&eacute;n puede importarle!<br>
+		<br>
+		Cuando a trav&eacute;s de las ramas<br>
+		salga la luna de est&iacute;o,<br>
+		t&uacute; me enlazar&aacute;s del talle,<br>
+		yo me prender&eacute; a tu cuello.<br>
+		<br>
+		Bajo el techo de las ramas,<br>
+		al descender hacia el valle,<br>
+		caminando cambiaremos<br>
+		nuestros besos como flores.<br>
+		<br>
+		Luego, al llegar a la puerta,<br>
+		hablaremos en lo oscuro;<br>
+		que nadie de esto se ocupe;<br>
+		si te quiero, &iquest;a qui&eacute;n le importa? &quot;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Un beso m&aacute;s... y se ha 
+		ido.<br>
+		&iexcl;Yo quedo bajo la luna!<br>
+		&iexcl;Qu&eacute; hermosa es y qu&eacute; loca<br>
+		es mi azul, mi dulce flor!<br>
+		<br>
+		. . . . . . . . . . . . . . . . . . . . . . . . . . . </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">T&uacute;, maravilla, te 
+		fuiste,<br>
+		y as&iacute; muri&oacute; nuestro amor .<br>
+		&iexcl;Flor azul, oh flor azul!...<br>
+		&iexcl;Qu&eacute; triste que es este mundo!</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="La oraci&oacute;n de un Dacio"></a>La oraci&oacute;n de un Dacio</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Cuando a&uacute;n no exist&iacute;an 
+		ni muertos ni inmortales<br>
+		ni manantial hab&iacute;a ni almendra de la luz,<br>
+		ni nacido ma&ntilde;ana, ni hoy ni luego ni siempre,<br>
+		porque todas las cosas eran tan s&oacute;lo una;<br>
+		cuando la tierra, el cielo, el aire y este mundo<br>
+		estaban en el n&uacute;mero de lo que no exist&iacute;a,<br>
+		entonces T&uacute; eras solo, por eso me pregunto:<br>
+		&iquest;A qu&eacute; Dios entregamos, humilde, el coraz&oacute;n?<br>
+		<br>
+		&Eacute;l s&oacute;lo ya exist&iacute;a primero que otros dioses<br>
+		y del profundo oc&eacute;ano dio las fuerzas al rayo,<br>
+		a los dioses el alma, a los hombres la dicha,<br>
+		y es para los humanos manantial de salud.<br>
+		&iexcl;Levantad vuestro coro! &iexcl;Glorificadle en cantos<br>
+		al que es fin de la muerte, resurrecci&oacute;n y vida!<br>
+		<br>
+		Para que la luz viera, &Eacute;l me ha dado los ojos<br>
+		y me ha llenado el alma de la suma piedad.<br>
+		Puedo escuchar su paso entre el clamor del viento<br>
+		y en una voz que canta reconocer su voz.<br>
+		Mas siempre le mendigo algo de a&ntilde;adidura:<br>
+		&iexcl;Que me permita entrar en el reposo eterno!<br>
+		<br>
+		Que maldiga a quien piense tener piedad de m&iacute;,<br>
+		que bendiga clemente a quien me est&aacute; oprimiendo,<br>
+		que escuche complacido a quien de m&iacute; se burle<br>
+		y d&eacute; fuerzas al brazo que querr&iacute;a matarme,<br>
+		permitiendo que triunfe sobre todos los otros<br>
+		el malvado que quite hasta el pan de mi boca.<br>
+		<br>
+		Rechazado por todos atravieso los a&ntilde;os,<br>
+		hasta que ya sin l&aacute;grimas vea secos mis ojos.<br>
+		Cuando todos los hombres se yergan enemigos,<br>
+		cuando yo no consiga casi reconocerme,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">cuando los sufrimientos 
+		mi bondad petrifiquen<br>
+		y llegue a maldecir la madre que he adorado,<br>
+		cuando la ira cruel me parezca el amor...<br>
+		el dolor olvidando, ya me podr&eacute; morir.<br>
+		<br>
+		Y si extranjero muero fuera de ley, entonces<br>
+		este indigno cad&aacute;ver tirad lo en la calleja,<br>
+		y yo te ruego, Padre, desde el premio m&aacute;s alto<br>
+		a quien mande a los perros rasgar mi coraz&oacute;n.<br>
+		Y si alguien me apedrea golpe&aacute;ndome el rostro,<br>
+		&iexcl;dale la vida eterna, Se&ntilde;or, tenle piedad!<br>
+		<br>
+		S&oacute;lo de esta manera, Padre, te dar&eacute; gracias<br>
+		por la dicha que tuve de vivir en el mundo.<br>
+		Para pedirte bienes no dobl&eacute; la rodilla,<br>
+		para la maldici&oacute;n quisiera conmoverte<br>
+		y sentir que a tu soplo mi aliento se evapora<br>
+		y en la extinci&oacute;n eterna me diluyo sin rastro.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Melancol&iacute;a"></a>
+		Melancol&iacute;a</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Es como si una puerta 
+		se abriera entre las nubes,<br>
+		para que pase muerta la reina de la noche.<br>
+		&iexcl;Oh, duerme, duerme en paz entre miles de antorchas,<br>
+		bajo tu tumba azul y el sudario de plata,<br>
+		en tu gran mausoleo, b&oacute;veda de los cielos,<br>
+		t&uacute;, dulce y adorada soberana nocturna!<br>
+		El mundo en su extensi&oacute;n yace bajo la escarcha,<br>
+		que reviste de un velo de luz pueblos y campos;<br>
+		el aire centellea y albos como la cal<br>
+		brillan los edificios, las ruinas solitarias.<br>
+		El cementerio, mudo, de cruces rotas, vela;<br>
+		sobre una cruz, parada, hay, gris, una lechuza,<br>
+		el campanario cruje, los pilares resuenan,<br>
+		y el demonio, di&aacute;fano, atravesando el aire,<br>
+		roza muy tenuemente el bronce con sus alas,<br>
+		arrancando un gemido, una ola de dolor.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La iglesia desplomada<br>
+		se mantiene piadosa y triste y muda y vieja,<br>
+		y a trav&eacute;s de sus vidrios rotos el viento silba;<br>
+		se dijera un ensalmo del que se oyen palabras.<br>
+		Dentro, sobre los muros antes llenos de iconos,<br>
+		apenas los contornos de su sombra han quedado,<br>
+		y como sacerdote, un grillo va tejiendo<br>
+		su idea oscura mientras una polilla dobla.<br>
+		. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+		. . . . . . .&nbsp; <br>
+		Fue la fe quien pint&oacute; de iconos las iglesias,<br>
+		ella quien a mi alma llen&oacute; de cuentos m&aacute;gicos,<br>
+		pero la tempestad y el vaiv&eacute;n de la vida<br>
+		apenas me dejaron huellas tristes y sombras.<br>
+		En vano busco hoy mi mundo en mi cerebro<br>
+		porque herrumbroso y viejo s&oacute;lo en &eacute;l canta un grillo;<br>
+		bate mi coraz&oacute;n debajo de mi mano<br>
+		igual que una carcoma mordiendo un ata&uacute;d.<br>
+		Cuando pienso en mi vida, la veo que resbala<br>
+		lentamente contada por labios extranjeros,<br>
+		como si no fue m&iacute;a, como si no he existido.<br>
+		&iquest;Qui&eacute;n es este que cuenta de memoria mi vida<br>
+		tan bien que hasta lo escucho y r&iacute;o del dolor<br>
+		como si fuese ajeno?... Hace tiempo estoy muerto.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="&iexcl;Oh, madre!..."></a>
+		&iexcl;Oh, madre!...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		&iexcl;Oh, madre, dulce madre, del fondo de los tiempos<br>
+		siento que entre el murmullo de las hojas me llamas!<br>
+		Sobre la cripta negra de la sagrada tumba,<br>
+		se deshoja la acacia al soplo del oto&ntilde;o<br>
+		y sus ramas agita, tu voz acompa&ntilde;ando...<br>
+		Ellas se mecer&aacute;n y t&uacute; dormir&aacute;s siempre.<br>
+		<br>
+		Cuando muera, querida, no llores a mi lado;<br>
+		pero al sagrado tilo arr&aacute;ncale una rama,<br>
+		ponla en mi cabecera y enti&eacute;rrala conmigo<br>
+		y que sobre ella corra el llanto de tus ojos;<br>
+		un d&iacute;a llegar&aacute; a dar sombra a mi tumba...<br>
+		La sombra crecer&aacute; y yo dormir&eacute; siempre.<br>
+		<br>
+		Y si acaso ocurriese que muri&eacute;ramos juntos,<br>
+		que no nos lleven nunca al triste cementerio,<br>
+		que caven nuestra tumba al borde de un arroyo,<br>
+		que nos coloquen juntos en un mismo ata&uacute;d;<br>
+		as&iacute; te quedar&aacute;s apoyada en mi hombro...<br>
+		Siempre llorar&aacute; el agua y dormiremos siempre.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Separaci&oacute;n"></a>
+		Separaci&oacute;n</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Pedirte yo un recuerdo 
+		para que no te olvide?<br>
+		S&oacute;lo a ti te quisiera, mas no te perteneces;<br>
+		ni esa flor ya sin vida entre tu pelo rubio,<br>
+		pues que s&oacute;lo deseo que me eches al olvido.<br>
+		<br>
+		&iquest;De qu&eacute; sirve sentir la dicha ya apagada,<br>
+		que no se extingue y sigue igual eternamente?<br>
+		El mismo r&iacute;o canta con diferentes ondas:<br>
+		&iquest;de qu&eacute; puede servir la persistente pena<br>
+		si a trav&eacute;s de este mundo est&aacute; escrito pasamos<br>
+		cual sue&ntilde;o de una sombra y sombra de un ensue&ntilde;o?<br>
+		&iquest;Para qu&eacute; preocuparte de m&iacute; m&aacute;s adelante?<br>
+		&iquest;Por qu&eacute; contar los a&ntilde;os que vuelan con los muertos?<br>
+		Lo mismo da que muera hoy d&iacute;a que ma&ntilde;ana,<br>
+		ya que borrar deseo el rastro de mi paso,<br>
+		ya que quiero que olvides nuestro sue&ntilde;o feliz.<br>
+		No vuelvas, vida m&iacute;a, a los a&ntilde;os pasados,<br>
+		en una sombra negra queda desvanecida,<br>
+		como si jam&aacute;s juntos hubi&eacute;semos estado,<br>
+		como si aquellos a&ntilde;os de amor se vaciasen.<br>
+		&iquest;De tanto haberte amado me podr&aacute;s perdonar?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">D&eacute;jame entre 
+		extranjeros la cara contra el muro,<br>
+		que en mis ojos se hiele la luz de mis pupilas,<br>
+		y as&iacute;, cuando este barro a la tierra retorne,<br>
+		&iquest;qui&eacute;n sabr&aacute; ya qui&eacute;n soy, qui&eacute;n ya de d&oacute;nde vengo?<br>
+		y mis lamentaciones, atravesando el muro,<br>
+		pedir&aacute;n para m&iacute; el eterno reposo.<br>
+		S&oacute;lo desear&iacute;a que alguien cerca de m&iacute;<br>
+		pronunciase tu nombre sobre mis ojos ciegos,<br>
+		y despu&eacute;s-si as&iacute; quieren-que me echen al camino...<br>
+		M&aacute;s dicha yo tendr&eacute; que la que tengo ahora.<br>
+		Del horizonte llega la bandada de cuervos,<br>
+		oscureciendo el cielo sobre mis turbios ojos;<br>
+		que la tormenta estalle sobre el haz de la tierra,<br>
+		mi barro al polvo vuelva, mi coraz&oacute;n, al viento...<br>
+		<br>
+		Pero t&uacute; sigue en flor como luna de abril,<br>
+		con tus ojos violeta, tu sonrisa de ni&ntilde;a,<br>
+		pues aunque seas joven siempre lo ser&aacute;s m&aacute;s,<br>
+		pero no me recuerdes, pues de m&iacute; yo me olvido.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="S&oacute;lo tengo un deseo">
+		</a>S&oacute;lo tengo un deseo</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">S&oacute;lo tengo un deseo:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; que en la paz de la tarde<br>
+		me permit&aacute;is morir<br>
+&nbsp;&nbsp;&nbsp;&nbsp; a la orilla del mar;<br>
+		me sea dulce el sue&ntilde;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp; y el bosque est&eacute; cercano,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; que en la extensi&oacute;n del agua<br>
+		reine un cielo sereno.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Oriflamas no quiero,<br>
+		ni un lujoso ata&uacute;d,<br>
+		hacedme s&oacute;lo un lecho<br>
+&nbsp;&nbsp;&nbsp;&nbsp; con las j&oacute;venes ramas.<br>
+		<br>
+		Y nadie junto a m&iacute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; llore en mi cabecera,<br>
+		nada m&aacute;s que el oto&ntilde;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp; hable en las hojas secas.<br>
+		Mientras corren las fuentes<br>
+&nbsp;&nbsp;&nbsp;&nbsp; cayendo rumorosas,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; se deslice la luna<br>
+		sobre los altos pinos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Que las esquilas suenen<br>
+		al viento de la tarde,<br>
+		que sobre m&iacute; el sagrado<br>
+&nbsp;&nbsp;&nbsp;&nbsp; tilo vuelque sus ramas.<br>
+		<br>
+		Como ya no andar&eacute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; nunca m&aacute;s errabundo,<br>
+		tiernamente mi tumba<br>
+&nbsp;&nbsp;&nbsp;&nbsp; cubrir&aacute;n los recuerdos.<br>
+		Los astros, que se elevan -<br>
+&nbsp;&nbsp;&nbsp;&nbsp; de la enramada en sombra,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; ser&aacute;n para m&iacute; amigos,<br>
+		sonriendo de nuevo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Gemir&aacute; apasionado<br>
+		el canto del mar &aacute;spero...<br>
+		y me volver&eacute; tierra<br>
+&nbsp;&nbsp;&nbsp;&nbsp; en mi honda soledad.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Venus y Madona"></a>
+		Venus y Madona</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Ideal ido en la noche 
+		de un 11Jundo que ya no existe.<br>
+		mundo que pensaba en cuentos y que hablaba en Poes&iacute;a<br>
+		&iexcl;oh te veo, pienso y oigo, joven y tierno mensaje<br>
+		de un cielo con otros astros, para&iacute;sos y otros dioses!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Venus, blanco m&aacute;rmol 
+		c&aacute;lido, ojo de piedra que brilla,<br>
+		blandos brazos como un rey poeta hubiera so&ntilde;ado,<br>
+		t&uacute; divinizaste un d&iacute;a la gracia de la mujer,<br>
+		de la mujer que yo sigo viendo cada vez m&aacute;s bella.<br>
+		<br>
+		Rafael, entre los sue&ntilde;os de su noche constelada,<br>
+		alma ebria de esplendores y de eternas primaveras,<br>
+		te vio y so&ntilde;&oacute; en para&iacute;sos y embalsamados jardines, <br>
+		te vio reinando sobre ellos, soberana de los &aacute;ngeles.<br>
+		<br>
+		Y sobre el lienzo desnudo cre&oacute; a la Virgen Divina<br>
+		con su diadema de estrellas, su sonrisa virginal,<br>
+		p&aacute;lido rostro cercado de rayos rubios, ang&eacute;lica<br>
+		imagen, pues la mujer es figura de los &aacute;ngeles.<br>
+		<br>
+		As&iacute; yo, hundido en la noche de mi vida de poeta,<br>
+		te he visto, mujer est&eacute;ril, mujer sin llama ni fuego,<br>
+		he transformado en &aacute;ngel, dulce como un d&iacute;a claro<br>
+		oscura vida a nuestra dicha concede.<br>
+		<br>
+		Yo he visto tu rostro l&iacute;vido por una embriaguez malsana,<br>
+		tus labios amoratados por los mordiscos del vicio<br>
+		y ech&eacute; en ti, cruel, el velo blanco de la poes&iacute;a<br>
+		y prest&eacute; a tu palidez el rayo de la inocencia.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Te di las p&aacute;lidas luces 
+		que cercan m&aacute;gicamente<br>
+		la frente del &aacute;ngel-genio y del &aacute;ngel poes&iacute;a.<br>
+		De un demonio hice una santa, de una carcajada, m&uacute;sica,<br>
+		y de tus miradas sucias la mirada de la aurora.<br>
+		<br>
+		Mas hoy, cruel, cay&oacute; el velo. Desembriagada de sue&ntilde;os,<br>
+		mi frente se aclara bajo tus labios fr&iacute;os, helados<br>
+		y te contemplo, demonio, y mi amor, ceniza yerta,<br>
+		me ense&ntilde;a a considerarte con un profundo desprecio.<br>
+		<br>
+		Ya me apareces como una bacante que hubiera hurtado<br>
+		de la frente de una virgen el mirto de su martirio,<br>
+		de una virgen con el alma santa como una plegaria<br>
+		mientras tiene el coraz6n lleno de espasmo y locura.<br>
+		<br>
+		Y as&iacute; como Rafael cre&oacute; a la Virgen Divina,<br>
+		con su diadema de estrellas, su sonrisa virginal,<br>
+		yo hice para m&iacute; una diosa de una mujer ya marchita,<br>
+		de coraz&oacute;n fr&iacute;o, est&eacute;ril, de alma llena de veneno,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">. . . . . . . . . . . . 
+		. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+		. . . <br>
+		<br>
+		&iquest;Lloras, ni&ntilde;a? &iquest; Una mirada humedecida de llanto<br>
+		pretende romper de nuevo un coraz&oacute;n dolorido?<br>
+		A tus pies caigo y suplico a tus ojos, mar profundo,<br>
+		y les imploro perd&oacute;n, mientras te beso la mano.<br>
+		<br>
+		Enjuga tus ojos, calla. La acusaci&oacute;n fue cruel,<br>
+		fue cruel, injusta, dura, sin causa ni fundamento.<br>
+		&iexcl;Alma!, aunque fueses demonio, eres santa por amor,<br>
+		y yo adoro a este demonio rubio de los ojos grandes.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Yo quisiera dormirme..."></a>Yo quisiera dormirme...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		(Variante)<br>
+		<br>
+		Yo quisiera dormirme,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; perdido en la noche.<br>
+		Cond&uacute;ceme en silencio<br>
+&nbsp;&nbsp;&nbsp;&nbsp; al borde del mar.<br>
+		<br>
+		No quiero ata&uacute;d rico,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; luces ni oriflamas,<br>
+		tr&eacute;nzame s&oacute;lo un lecho<br>
+&nbsp;&nbsp;&nbsp;&nbsp; de j&oacute;venes ramos.<br>
+		<br>
+		Que el sue&ntilde;o me sea dulce<br>
+&nbsp;&nbsp;&nbsp;&nbsp; y el bosque cercano,<br>
+		que brille un cielo limpio<br>
+&nbsp;&nbsp;&nbsp;&nbsp; en las hondas aguas.<br>
+		<br>
+		Que del dolor brotando<br>
+&nbsp;&nbsp;&nbsp;&nbsp; suban a la orilla,<br>
+		que a las rocas se abracen<br>
+&nbsp;&nbsp;&nbsp;&nbsp; sus brazos de olas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Se levantan y caen<br>
+&nbsp;&nbsp;&nbsp;&nbsp; murmurando siempre, <br>
+		mientras sobre los pinos <br>
+&nbsp;&nbsp;&nbsp;&nbsp; resbala la luna.<br>
+		<br>
+		Que nadie junto a m&iacute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; llore en mi almohada,<br>
+		que la muerte haga hablar<br>
+&nbsp;&nbsp;&nbsp;&nbsp; las hojas resecas.<br>
+		<br>
+		Que el todopoderoso<br>
+&nbsp;&nbsp;&nbsp;&nbsp; en el viento pase,<br>
+		que en m&iacute; el sagrado tilo<br>
+&nbsp;&nbsp;&nbsp;&nbsp; sacuda su flor.<br>
+		<br>
+		Y como no andar&eacute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; nunca m&aacute;s errante,<br>
+		caer&aacute;n sobre m&iacute;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; los tiernos recuerdos<br>
+		<br>
+		que no sabr&aacute;n que miro<br>
+&nbsp;&nbsp;&nbsp;&nbsp; la inquietud del mundo<br>
+		mientras que las lianas<br>
+&nbsp;&nbsp;&nbsp;&nbsp; mi soledad cubren.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Rafael 
+		Alberti y Mar&iacute;a Teresa Le&oacute;n<br>
+		&nbsp;Ed. Seix Barral S.A. 1973</font></i></p>
+		<p>&nbsp;</p>
+		<blockquote>
+			<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 15:57:17 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:17:49 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

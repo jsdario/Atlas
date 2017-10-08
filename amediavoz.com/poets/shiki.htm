@@ -1,0 +1,644 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Masaoka Shiki</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Masaoka Shiki."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Masaoka Shiki. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Masaoka_Shiki,poesias,poetas,poemas,versos,traducciones,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/shiki.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/shiki.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164602" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./shiki.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:46:02 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./shiki.htm" title="23:23:09 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:46:02 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./shiki.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:46:02 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./shiki.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>19 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">17 Sep 10 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000001110_2011:-1:000000102120_2012:-1:101010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p><script language="javascript" src="/web/20130815164602js_/http://127.0.0.1:1026/js.cgi?pca&amp;r=53"></script>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SHIKI.jpg" width="325" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SHIKI1.jpg" width="195" height="23"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="657" height="301">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="649">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="270" width="277" valign="top">
+			<p align="left">
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="./SHIKI2.jpg" width="235" height="266"></td>
+			<td width="368" valign="top" height="270">
+			<p align="left"><u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font size="2" color="#C4CAD4" face="Georgia"><br>
+			<br>
+			Poeta, novelista y cr&iacute;tico japon&eacute;s cuyo nombre real fue Masaoka 
+			Tsunenori.<br>
+			Nacido en Matsuyama en 1867, perteneci&oacute; a una familia modesta de 
+			Samurais.<br>
+			Empez&oacute; a escribir prosa y poes&iacute;a desde muy joven, convirti&eacute;ndose en 
+			un firme partidario de la modernizaci&oacute;n de la poes&iacute;a japonesa, 
+			introduciendo el t&eacute;rmino <i>&quot;tanka&quot;</i> para reemplazar los poemas
+			<i>&quot;mora-waka&quot;</i>. <br>
+			Sufri&oacute; la mayor parte de su vida de tuberculosis, condici&oacute;n agravada 
+			cuando prest&oacute; servicios como corresponsal de guerra con el Ej&eacute;rcito 
+			imperial japon&eacute;s durante la primera guerra chino-japonesa.<br>
+			Durante sus &uacute;ltimos d&iacute;as escribi&oacute; numerosos poemas haiku y tankas. 
+			Falleci&oacute; en Tokio en 1902.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Masaoka Shiki:</font></p>
+<p align="center"><font face="Georgia" color="#C4CAD4" size="2">Versiones de 
+Tsutomu Takagi y Alberto Manzano</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#FFFFFF"><br>
+		&nbsp;</font></p>
+		<p align="left"><font face="Georgia"><a href="./shiki.htm#A campo traviesa">A campo 
+		traviesa</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./shiki.htm#Primavera">Primavera</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./shiki.htm#Verano">Verano</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./shiki.htm#Oto&ntilde;o">Oto&ntilde;o</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./shiki.htm#Invierno">Invierno</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#C4CAD4">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#D3D3CF"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p><font color="#C4CAD4" face="Georgia" size="2"><br>
+		</font><font color="#C4CAD4" face="Georgia"><a name="A campo traviesa">
+		</a>A campo traviesa</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Fue un sue&ntilde;o incre&iacute;ble,<br>
+		dijeron<br>
+		que me lo hab&iacute;a inventado.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La gran ma&ntilde;ana:<br>
+		vientos de anta&ntilde;o<br>
+		soplan a trav&eacute;s de los pinos.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">El d&iacute;a es largo;<br>
+		mis ojos est&aacute;n cansados<br>
+		de mirar al mar.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Cuando cae a tierra<br>
+		la cometa<br>
+		no tiene alma.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La alondra cantando<br>
+		ondula<br>
+		las nubes.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">En la brisa de la 
+		ma&ntilde;ana<br>
+		se alzan las alondras<br>
+		de todo coraz&oacute;n.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">El caracol se arrastra<br>
+		dos o tres pasos<br>
+		y se acaba el d&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La mariposa,<br>
+		ni siquiera cuando la persiguen<br>
+		parece tener prisa.<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Primavera"></a>
+		Primavera</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Siguiendo el r&iacute;o,<br>
+		Ning&uacute;n puente aparece;<br>
+		&iexcl;Qu&eacute; largo es el d&iacute;a!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		El Gran Buda.<br>
+		Durmiendo, durmiendo,<br>
+		Todo el d&iacute;a de primavera.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		En la arena de la playa.<br>
+		Huellas de pasos:<br>
+		Largo es el d&iacute;a de primavera.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Una noche de primavera;<br>
+		&iquest;Qu&eacute; lee<br>
+		El soltero?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Cruzando a una chica<br>
+		Al otro lado del r&iacute;o;<br>
+		La luna brumosa.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Olas de calor;<br>
+		Los p&eacute;talos del ciruelo flotan<br>
+		Hasta las piedras.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Las olas<br>
+		Funden<br>
+		El hielo del lago.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		&quot;Cuando mir&eacute; atr&aacute;s,<br>
+		El hombre con el que me cruc&eacute;<br>
+		Se hab&iacute;a perdido en la niebla.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Examinando<br>
+		Tres mil haikus, <br>
+		Dos n&iacute;speros.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Un d&iacute;a entero<br>
+		Labrando el campo<br>
+		En el mismo lugar.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		P&aacute;jaros cantando,<br>
+		Haciendo caer<br>
+		Bayas rojas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Gente que viene, gente que va<br>
+		Sobre el p&aacute;ramo primaveral, <br>
+		&iquest;Para qu&eacute;, me pregunto?</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Verano"></a>Verano</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Una azada abandonada,<br>
+		No se ve a nadie, -<br>
+		&iexcl;El calor!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Nubes altas<br>
+		Sobre un pantano seco<br>
+		Donde mora una pit&oacute;n.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		El destello de un rel&aacute;mpago;<br>
+		Entre los &aacute;rboles del bosque,<br>
+		Aparece el agua.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">El r&iacute;o en verano;<br>
+		Hay un puente,<br>
+		Pero el caballo va por el agua.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Los ricos <br>
+		Vienen a beber de esta agua clara,<br>
+		Y osos.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Veinte mil personas<br>
+		Sin casa;<br>
+		La luna de verano.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La flaqueza del verano;
+		<br>
+		Mi vida salvada <br>
+		En los huesos. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Quiero dormir; <br>
+		Mata las moscas <br>
+		Suavemente, por favor.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * * <br>
+		<br>
+		La luci&eacute;rnaga, <br>
+		Su brillo<br>
+		Es fr&iacute;o en la mano. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La quietud:<br>
+		Un mart&iacute;n pescador vuela<br>
+		Sobre el lago de la monta&ntilde;a.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		La blanca peon&iacute;a;<br>
+		Cuando sali&oacute; la luna,<br>
+		Se deshizo y cay&oacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Sale lp luna, <br>
+		Corre un viento por la hierba;<br>
+		Un hototogisu canta.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Con qu&eacute; rapidez el r&iacute;o 
+		Mogami<br>
+		Se lleva<br>
+		El verano.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Oto&ntilde;o"></a>Oto&ntilde;o</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Aumenta el fr&iacute;o;<br>
+		Ning&uacute;n insecto<br>
+		Se acerca a la l&aacute;mpara.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Sopla el viento del oto&ntilde;o;<br>
+		Estamos vivos y podemos mirarnos,<br>
+		T&uacute; y yo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		A la entrada del oto&ntilde;o,<br>
+		Pintar plantas en flor,<br>
+		Una tarea diaria.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Encontrar a alguien,
+		<br>
+		&iexcl;Qu&eacute; espantosas<br>
+		Las monta&ntilde;as de oto&ntilde;o!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Una aldea de pescadores;<br>
+		Bailando bajo la luna<br>
+		Al olor del pescado crudo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Soledad;<br>
+		Despu&eacute;s de los fuegos artificiales, <br>
+		Una estrella fugaz.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Moribundas,<br>
+		Haciendo todo el ruido posible,<br>
+		Las cigarras de oto&ntilde;o.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Las manzanas robadas<br>
+		Que com&iacute;,<br>
+		Me dieron dolor de est&oacute;mago.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Pelando una pera,<br>
+		Dulces gotas corren<br>
+		Por el cuchillo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Recu&eacute;rdame<br>
+		como alguien que amaba la poes&iacute;a<br>
+		Y los n&iacute;speros.</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Invierno"></a>Invierno</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Un ni&ntilde;o menor de diez 
+		a&ntilde;os<br>
+		Va a ser entregado al templo:<br>
+		&iexcl;Cruel fr&iacute;o!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		La desolaci&oacute;n del invierno;<br>
+		Atravesando una peque&ntilde;a aldea,<br>
+		Ladra un perro.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		El aire es fr&iacute;o;<br>
+		Aplasto a la ni&ntilde;a contra m&iacute;,<br>
+		Es tan hermosa.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La primera nevada;<br>
+		Al otro lado del mar,<br>
+		&iquest;Qu&eacute; monta&ntilde;as son aqu&eacute;llas?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Retiro invernal;<br>
+		Hay algo que me gustar&iacute;a preguntar<br>
+		A Sakyamuni.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Crisantemos marchitos;<br>
+		Calcetines sec&aacute;ndose en la cerca;<br>
+		Un d&iacute;a de sol.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Sin hacer nada<br>
+		La babosa de mar ha vivido<br>
+		Dieciocho mil a&ntilde;os.<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<blockquote>
+			<p align="center">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:46:02 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:43 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

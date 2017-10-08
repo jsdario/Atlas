@@ -1,0 +1,833 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Paul Val&eacute;ry</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Paul Val&eacute;ry."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Paul Val&eacute;ry. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Paul_V&aacute;lery,poesias,poetas,poemas,traducciones,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#626262">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app14.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/valery.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/valery.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815154852" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./valery.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="5 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 15:48:52 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./valery.htm" title="15:44:27 May 5, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 15:48:52 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./valery.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 15:48:52 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./valery.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>121 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010101010101_2004:-1:010001010112_2005:-1:011100000000_2006:-1:200131000200_2007:-1:532333341100_2008:-1:201331f78000_2009:-1:020000110000_2010:-1:100000001110_2011:-1:000000002211_2012:-1:001111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./VALERY.jpg" width="244" height="51"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./VALERY1.jpg" width="210" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="725" height="298">
+  <tr>
+    <td valign="bottom" colspan="3" width="717"></td>
+  </tr>
+  <tr>
+    <td width="276"></td>
+    <td width="12"></td>
+    <td width="421"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="276"><p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./VALERY2.jpg" width="211" height="280"></td>
+    <td width="12"></td>
+    <td valign="top" width="421"><u><font color="#C4CAD4" face="Georgia">Rese&ntilde;a 
+	biogr&aacute;fica<br>
+	<br>
+	</font></u><font face="Georgia" size="2" color="#C4CAD4">
+		Poeta, ensayista y fil&oacute;sofo franc&eacute;s nacido en S&eacute;te en 1871.<br>
+	Al terminar la escuela b&aacute;sica ingres&oacute; a la Facultad de Leyes de la 
+	Universidad de Montpellier, estudios que interrumpi&oacute; poco tiempo despu&eacute;s 
+	para viajar a Paris donde inici&oacute; la carrera literaria. Interesado en el 
+	movimiento simbolista, fue miembro regular de las tertulias de St&eacute;phane 
+	Mallarm&eacute;, alternando su vocaci&oacute;n po&eacute;tica con un trabajo como redactor en el 
+	Ministerio de Guerra. Public&oacute; en 1917 su primer libro de poemas bajo el 
+	t&iacute;tulo de <i>&quot;La Joven Parca&quot;</i>, seguido de&nbsp; <i>&quot;Cementerio Marino&quot; </i>
+	en 1920 y <i>&quot;Album de versos antiguos&quot;</i> en 1921. <br>
+	En 1925 fue elegido miembro de la Academia Francesa, y a pesar de su 
+	aclamaci&oacute;n por parte de la cr&iacute;tica, decidi&oacute; dejar la poes&iacute;a para dedicarse 
+	por completo al ensayo, las matem&aacute;ticas y la pintura, condensados en una 
+	publicaci&oacute;n de veinte vol&uacute;menes en 1945.<br>
+	Falleci&oacute; en Paris en 1945.&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font color="#C4CAD4" face="Georgia">Poemas de Paul Val&eacute;ry:</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br></font><font color="#FFFFFF" face="Georgia">
+		<a href="./valery.htm#EL BOSQUE AMIGO">El bosque amigo</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./valery.htm#EL CEMENTERIO MARINO">El cementerio marino</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./valery.htm#ENCANTAMIENTO">Encantamiento</a></font></p>
+		<p align="left"><font face="Georgia" color="#DBDBDB">
+		<a href="./valery.htm#ESBOZO DE UNA SERPIENTE">Esbozo de una serpiente</a><font color="#FFFFFF" face="Georgia">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br><br>
+		<a href="./valery.htm#HELENA">Helena</a></font></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./valery.htm#LA DORMEUSE">La dormeuse</a></font></p>
+		<p align="left"><a href="./valery.htm#LOS PASOS 1"><font face="Georgia">Los pasos</font><font face="Georgia" size="2"> </font> </a></p>
+		<p align="left"><a href="./valery.htm#LOS PASOS"><font face="Georgia">Los pasos</font><font face="Georgia" size="2"> 
+		( otra versi&oacute;n)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+		</a><font color="#FFFFFF" face="Georgia" size="2">
+		<a href="./valery.htm#LA DORMEUSE">&nbsp;&nbsp;</a></font><font color="#FFFFFF" face="Georgia" size="2"><a href="./valery.htm#LA DORMEUSE">&nbsp;</a></font></p>
+		<p align="left"><font color="#FFFFFF" face="Georgia">
+		<a href="./valery.htm#POES&Iacute;A">Poes&iacute;a</a></font></p>
+		<p align="left"><font color="#FFFFFF"><font face="Georgia">
+		<a href="./valery.htm#UNA TARDE ADORNADA DE PALOMAS SUBLIMES...">Una tarde adornada 
+		de palomas sublimes...</a></font><br></font>
+		<font size="3" color="#FFFFFF" face="Georgia">
+		<br> </font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia"><a href="mailto:poesia@amediavoz.com">
+poesia@amediavoz.com</a></font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#C4CAD4"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="EL BOSQUE AMIGO"></a>El bosque amigo</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		En las sendas pensamos cosas puras,<br>uno al lado del otro, fugitivos,<br>
+		cogidos de la mano, y pensativos<br>en medio de las flores m&aacute;s oscuras.<br>
+		<br>&Iacute;bamos solos, como enamorados,<br>entre la verde noche del sendero,<br>
+		compartiendo el fugaz fruto hechicero<br>del astro que aman los 
+		enajenados.<br>
+		<br>Despu&eacute;s, muy lejos, en la sombra densa<br>de aquel &iacute;ntimo bosque 
+		rumoroso,<br>morimos -solos!- sobre el c&eacute;sped blando.<br>
+		<br>Y arriba, en medio de la luz inmensa,<br>&iexcl;oh, amigo del silencio m&aacute;s 
+		hermoso,<br>nos encontramos otra vez, llorando!<br>
+		<br><em>Versi&oacute;n de Andr&eacute;s Holgu&iacute;n<br>
+		&nbsp;</em></font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL CEMENTERIO MARINO"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		El cementerio marino</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&iexcl;Oh alma m&iacute;a, no aspires a la vida inmortal,
+		<br>pero agota toda la extensi&oacute;n de lo posible.<br>Pindaro, P&iacute;ticas III.<br>
+		<br>Calmo techo surcado de palomas, <br>palpita entre los pinos y las 
+		tumbas; 
+		<br>mediod&iacute;a puntual arma sus fuegos <br>&iexcl;El mar, el mar siempre 
+		recomenzado! 
+		<br>&iexcl;Qu&eacute; regalo despu&eacute;s de un pensamiento <br>ver moroso la calma de los 
+		dioses!<br>
+		<br>&iexcl;Qu&eacute; obra pura consume de rel&aacute;mpagos <br>vario diamante de invisible 
+		espuma, 
+		<br>y cu&aacute;nta paz parece concebirse!<br>Cuando sobre el abismo un sol 
+		reposa, 
+		<br>trabajos puros de una eterna causa, <br>el Tiempo riela y es Sue&ntilde;o 
+		la ciencia.<br>
+		<br>Tesoro estable, templo de Minerva, <br>quietud masiva y visible 
+		reserva; 
+		<br>agua parpadeante, Ojo que en ti guardas <br>tanto sue&ntilde;o bajo un velo 
+		de llamas, 
+		<br>&iexcl;silencio m&iacute;o!... &iexcl;Edificio en el alma, <br>mas lleno de mil tejas 
+		de oro. Techo!<br>
+		<br>Templo del Tiempo, que un suspiro cifra, <br>subo a ese punto puro y 
+		me acostumbro 
+		<br>de mi mirar marino todo envuelto;<br>tal a los dioses mi suprema 
+		ofrenda, 
+		<br>el destellar sereno va sembrando <br>soberano desd&eacute;n sobre la 
+		altura.<br>
+		<br>Como en deleite el fruto se desl&iacute;e, <br>como en delicia tru&eacute;case su 
+		ausencia
+		<br>en una boca en que su forma muere, <br>mi futura humareda aqu&iacute; yo 
+		sorbo, 
+		<br>y al alma consumida el cielo canta <br>la mudanza en rumor de las 
+		orillas.<br>
+		<br>&iexcl;Bello cielo real, m&iacute;rame que cambio! <br>Despu&eacute;s de tanto orgullo, 
+		y de tanto 
+		<br>extra&ntilde;o ocio, mas pleno de poderes, <br>a ese brillante espacio me 
+		abandono, 
+		<br>sobre casas de muertos va mi sombra <br>que a su fr&aacute;gil moverse me 
+		acostumbra. 
+		<br>A teas del solsticio expuesta el alma, <br>sosteni&eacute;ndote estoy, &iexcl;oh 
+		admirable
+		<br>justicia de la luz de crudas armas! <br>Pura te tomo a tu lugar 
+		primero: 
+		<br>&iexcl;m&iacute;rate!... Devolver la luz supone <br>taciturna mitad sumida en 
+		sombra.<br>
+		<br>Para m&iacute; solo, a m&iacute; solo, en m&iacute; mismo, <br>un coraz&oacute;n, en fuentes del 
+		poema, 
+		<br>entre el vac&iacute;o y el suceso puro,<br>de mi &iacute;ntima grandeza el eco 
+		aguardo,<br>cisterna amarga, oscura y resonante,<br>&iexcl;hueco en el alma, 
+		son siempre futuro!<br>
+		<br>Sabes, falso cautivo de follajes,<br>golfo devorador de enjutas 
+		rejas,<br>en mis cerrados ojos, deslumbrantes<br>secretos, &iquest;qu&eacute; cuerpo 
+		h&aacute;lame a su t&eacute;rmino<br>y qu&eacute; frente lo gana a esta tierra &oacute;sea?<br>Una 
+		chispa all&iacute; pienso en mis ausentes.<br>
+		<br>Sacro, pleno de un fuego sin materia;<br>ofrecido a la luz terrestre 
+		trozo,<br>me place este lugar alto de teas,<br>hecho de oro, piedra, 
+		&aacute;rboles oscuros,<br>m&aacute;rmol temblando sobre tantas sombras;<br>&iexcl;all&iacute; la 
+		mar leal duerme en mis tumbas!<br>
+		<br>&iexcl;Al id&oacute;latra aparta, perra espl&eacute;ndida!<br>Cuando con sonrisa de 
+		pastor, solo,<br>apaciento carneros misteriosos,<br>reba&ntilde;o blanco de mis 
+		quietas tumbas,<br>&iexcl;las discretas palomas de all&iacute; al&eacute;jalas,<br>los vanos 
+		sue&ntilde;os y &aacute;ngeles curiosos!<br>
+		<br>Llegado aqu&iacute; pereza es el futuro,<br>rasca la sequedad n&iacute;tido 
+		insecto;<br>todo ardido, deshecho, recibido<br>en qui&eacute;n sabe qu&eacute; esencia 
+		rigurosa...<br>La vida es vasta estando ebrio de ausencia,<br>y dulce el 
+		amargor, claro el esp&iacute;ritu.<br>
+		<br>Los muertos se hallan bien en esta tierra<br>cuyo misterio seca y 
+		los abriga.<br>Encima el Mediod&iacute;a reposando<br>se piensa y a s&iacute; mismo se 
+		concilia...<br>Testa cabal, diadema irreprochable,<br>yo soy en tu 
+		interior secreto cambio.<br>
+		<br>&iexcl;A tus temores, s&oacute;lo yo domino!<br>Mis arrepentimientos y mis dudas,<br>
+		son el efecto de tu gran diamante...<br>Pero en su noche gr&aacute;vida de 
+		m&aacute;rmoles,<br>en la ra&iacute;z del &aacute;rbol, vago pueblo<br>ha asumido tu causa 
+		lentamente.<br>
+		<br>En una densa ausencia se han disuelto,<br>roja arcilla absorbi&oacute; la 
+		blanca especie,<br>&iexcl;la gracia de vivir pas&oacute; a las flores!<br>&iquest;D&oacute;nde del 
+		muerto frases familiares,<br>el arte personal, el alma propia?<br>En la 
+		fuente del llanto larvas hilan.<br>
+		<br>Agudo gritos de exaltadas j&oacute;venes,<br>ojos, dientes, humedecidos 
+		p&aacute;rpados,<br>el hechicero seno que se arriesga,<br>la sangre viva en 
+		labios que se rinden,<br>los dedos que defienden dones &uacute;ltimos,<br>&iexcl;va 
+		todo bajo tierra y entra al juego!<br>
+		<br>Y t&uacute;, gran alma, &iquest;un sue&ntilde;o acaso esperas <br>libre ya de colores del 
+		enga&ntilde;o 
+		<br>que al ojo camal fingen onda y oro?<br>&iquest;Cuando seas vapor tendr&aacute;s el 
+		canto? 
+		<br>&iexcl;Ve! &iexcl;Todo huye! Mi presencia es porosa, <br>&iexcl;la sagrada impaciencia 
+		tambi&eacute;n muere!<br>
+		<br>&iexcl;Magra inmortalidad negra y dorada, <br>consoladora de horroroso 
+		lauro 
+		<br>que maternal seno haces de la muerte, <br>el bello enga&ntilde;o y la 
+		piadosa argucia! 
+		<br>&iexcl;Qui&eacute;n no conoce, qui&eacute;n no los rechaza, <br>al hueco cr&aacute;neo y a la 
+		risa eterna!<br>
+		<br>deshabitadas testas, hondos padres, <br>que bajo el peso de tantas 
+		paladas, 
+		<br>sois la tierra y mezcl&aacute;is nuestras pisadas,<br>el roedor gusano 
+		irrebatible 
+		<br>para vosotros no es que bajo tablas <br>dorm&iacute;s, &iexcl;de vida vive y no 
+		me deja!<br>
+		<br>&iquest;Amor quiz&aacute;s u odio de m&iacute; mismo? <br>&iexcl;Tan cerca tengo su secreto 
+		diente 
+		<br>que cualquier nombre puede convenirle! <br>&iexcl;Qu&eacute; importa! &iexcl;Mira, 
+		quiere, piensa, toca! 
+		<br>&iexcl;Agr&aacute;dale mi carne, aun en mi lecho, <br>de este viviente vivo de 
+		ser suyo!<br>
+		<br>&iexcl;Zen&oacute;n! &iexcl;Cruel Zen&oacute;n! &iexcl;Zen&oacute;n de Elea!<br>&iexcl;Me has traspasado con tu 
+		flecha alada
+		<br>que vibra, vuela y no obstante no vuela! <br>&iexcl;Su son me engendra y 
+		m&aacute;tame la flecha! 
+		<br>&iexcl;Ah! el sol... &iexcl;Y qu&eacute; sombra de tortuga <br>para el alma, veloz y 
+		quieto Aquiles!<br>
+		<br>&iexcl;No! &iexcl;No!... &iexcl;De pie! &iexcl;En la era sucesiva! <br>&iexcl;Cuerpo m&iacute;o, esta 
+		forma absorta quiebra! 
+		<br>&iexcl;Pecho m&iacute;o, el naciente viento bebe!<br>Una frescura que la mar 
+		exhala, 
+		<br>r&iacute;ndeme el alma... &iexcl;Oh vigor salado! <br>&iexcl;Ganemos la onda en rebotar 
+		viviente!<br>
+		<br>&iexcl;S&iacute;! Inmenso mar dotado de delirios, <br>piel de pantera, cl&aacute;mide 
+		horadada 
+		<br>por los mil y mil &iacute;dolos solares, <br>hidra absoluta, ebria de carne 
+		azul, 
+		<br>que te muerdes la cola destellante <br>en un tumulto s&iacute;mil al 
+		silencio.<br>
+		<br>&iexcl;Se alza el viento!... &iexcl;Tratemos de vivir! <br>&iexcl;,Cierra y abre mi 
+		libro el aire inmenso, 
+		<br>brota audaz la ola en polvo de las rocas! <br>&iexcl;Volad p&aacute;ginas todas 
+		deslumbradas! 
+		<br>&iexcl;Olas, romped con vuestra agua gozosa <br>calmo techo que foques 
+		merodean!<br>
+		<br><em>Versi&oacute;n de Javier Sologuren</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ENCANTAMIENTO"></a></font><font face="Georgia" color="#C4CAD4">
+		Encantamiento</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Vierte la luna d&eacute;bil sus albores sagrados<br>como una basqui&ntilde;a ,de 
+		vaporoso argento<br>sobre moles de m&aacute;rmol que cruza el so&ntilde;oliento<br>
+		paso de alguna virgen en velos nacarados.<br>
+		<br>A los cisnes sede&ntilde;os que abren los juncales<br>con su quilla de 
+		pluma donde la luz reposa<br>les deshoja su mano la m&aacute;s nevada rosa,<br>
+		y en el agua los p&eacute;talos difunden espirales.<br>
+		<br>Soledad extasiada, dulcificante duna,<br>cuando el agua hervorosa 
+		bru&ntilde;ida por la luna<br>sus voces cristalinas sin t&eacute;rmino propaga,<br>
+		<br>-&iquest;qu&eacute; alma padeciera la magia inexorable<br>de la r&uacute;tila noche con 
+		su cielo implacable<br>sin exhalar un grito puro como una daga?<br>
+		<br><em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p>
+		<em style="font-style: normal"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ESBOZO DE UNA SERPIENTE"></a>
+		</font><font face="Georgia" color="#C4CAD4">
+		Esbozo de una serpiente</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		</font>
+		</em><font face="Georgia" size="2" color="#C4CAD4">
+		<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Henry Gh&eacute;on</em><em style="font-style: normal"><br>
+		<br>
+		Sobre aquel &aacute;rbol la brisa acuna <br>
+		A la v&iacute;bora que yo vest&iacute;;<br>
+		Una sonrisa le horada el diente<br>
+		Y nos aclara sus apetitos<br>
+		En el Jard&iacute;n donde arriesga y ronda,<br>
+		Y en el tri&aacute;ngulo m&iacute;o de esmeralda<br>
+		Saca su lengua de doble filo...<br>
+		Bestia soy, pero bestia aguda<br>
+		De quien el veneno, aunque vil,<br>
+		Domina al de la cauta cicuta.<br>
+		<br>
+		Cu&aacute;n suave aquel tiempo de placer!<br>
+		Temblad mortales! Yo soy muy fuerte<br>
+		Cuando consigo con mi descaro,<br>
+		&iexcl;En un bostezo quebrar la fuerza!<br>
+		El esplendor del Cielo perfila<br>
+		Este blas&oacute;n de sierpe que oculta<br>
+		Bajo su animal simplicidad;<br>
+		&iexcl;Venid a m&iacute;, raza atolondrada!<br>
+		&iexcl;Estoy de pie, atenta y proterva,<br>
+		Semejante a la necesidad!<br>
+		<br>
+		&iexcl;Sol, Sol!... &iexcl;Mentira resplandeciente!<br>
+		T&uacute;, Sol que a la muerte la enmascaras<br>
+		Bajo el azul y oro de una tienda<br>
+		do celebran consejo las flores<br>
+		Por entre impenetrables placeres,<br>
+		&iexcl;T&uacute;, el m&aacute;s fiero de mis c&oacute;mplices<br>
+		Y de mis trampas, la m&aacute;s aguda,<br>
+		Protege a los corazones para<br>
+		Que nunca sepan que el Universo<br>
+		Es un defecto, all&iacute; en la pureza<br>
+		Del No-Ser!<br>
+		<br>
+		Gran Sol que haces reti&ntilde;ir la alarma<br>
+		Para el ser y le compa&ntilde;as fuegos,<br>
+		T&uacute;, que entre los sue&ntilde;os lo encarcelas<br>
+		Y muy tramposamente le pintas,<br>
+		Campi&ntilde;as, oh hacedor de fantasmas<br>
+		Felices que propenden los ojos<br>
+		A la presencia oscura del alma,<br>
+		Siempre me ha gustado la mentira<br>
+		Que t&uacute; expandes en el absoluto,<br>
+		&iexcl;Oh rey de las sombras vuelto lumbre!<br>
+		<br>
+		Vierte sobre m&iacute; tu calor basto<br>
+		Donde surge mi pereza g&eacute;lida<br>
+		Y desvar&iacute;a alg&uacute;n mal que le es<br>
+		Propio a mi naturaleza rea...<br>
+		Lugar feliz donde vive la carne,<br>
+		Donde escoger y acoplarse es grato,<br>
+		Donde mi furor se vuelve maduro,<br>
+		Y lo recorro entre mis circuitos<br>
+		Donde mi meditaci&oacute;n murmura.<br>
+		<br>
+		&iexcl;Oh Vanidad, Causa Primera! <br>
+		Aquella que reina en los Cielos,<br>
+		Y que hizo a la luz que nos abra<br>
+		Al Universo espacioso exhausto<br>
+		De su propio espect&aacute;culo pur&iacute;simo.<br>
+		Dios mismo nos ha roto el obst&aacute;culo <br>
+		De su Perfecta Eternidad; <br>
+		El se nos volvi&oacute; Quien nos disipa <br>
+		En consecuencias a su Principio, <br>
+		En estrellas su Unidad.</em></font></p>
+		<p><em style="font-style: normal">
+		<font face="Georgia" size="2" color="#C4CAD4">&iexcl;Cielos, su error! 
+		&iexcl;Tiempo, su ruina!<br>
+		Y el abismo animal, boquiabierto...<br>
+		&iexcl;Qu&eacute; ca&iacute;da en el origen, una<br>
+		Centella en el lugar de la nada!...<br>
+		Pero en el primer vocablo en su Verbo:<br>
+		YO... El m&aacute;s soberbio de los astros<br>
+		Dicho por el loco creador,<br>
+		&iexcl;Yo soy... Yo ser&eacute;... Yo os ilumino<br>
+		La disminuci&oacute;n divina<br>
+		De todo el fuego del Seductor!</font></em></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+		Guillermo Trejo</font></em><font face="Georgia" size="2" color="#C4CAD4"><em style="font-style: normal"><br>
+		<br>
+		&nbsp;</em></font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="HELENA"></a>Helena</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&iexcl;Azul! Soy yo. Regreso de l&uacute;gubres canteras<br>a ver el mar lanzando 
+		sus escalas sonoras,<br>y al filo de los remos de oro, en las auroras,<br>
+		zarpando de su rada nocturna las galeras.<br>
+		<br>Mis manos solitarias invocan los monarcas<br>-yo hund&iacute;a entre su 
+		barba de sal mis dedos puros-.<br>Llorando he visto, al eco de sus 
+		himnos oscuros,<br>huir los golfos ante la popa de sus barcas.<br>
+		<br>Oigo las caracolas hondas, los helicones<br>marciales en las 
+		r&iacute;tmicas alas de los timones;<br>claros cantos remeros encadenan 
+		rugidos.<br>
+		<br>Y en las heroicas proas, los dioses exaltados,<br>con sus pl&aacute;cidos 
+		rostros de la espuma azotados,<br>me tienden indulgentes sus brazos 
+		esculpidos.<br>
+		<br><em>Versi&oacute;n de Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="LA DORMEUSE &nbsp;&nbsp;&nbsp;"></a>
+		La dormeuse &nbsp;&nbsp;&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Qu&eacute; secreto mi amiga 
+		quema bajo tu pecho?<br>&iquest;A trav&eacute;s de tu rostro huele el alma de una 
+		flor?<br>&iquest;De qu&eacute; vano alimento tu c&aacute;ndido calor<br>hace aquel puro 
+		brillo que te alumbra en tu lecho?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Sue&ntilde;os, respiraci&oacute;n, 
+		abolido despecho...<br>M&aacute;s fuerte eres que el llanto sosiego vencedor<br>
+		cuando en tu pleno sue&ntilde;o redondez y temblor<br>de ese seno enemigo se 
+		alzan en acecho.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Mujer, mont&oacute;n dorado de 
+		sombras y de mimos<br>tu temible reposo tales dones retrata<br>l&aacute;nguida 
+		cervatilla buscando los racimos.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Que a pesar de tu alma 
+		que el infierno encarcela<br>tu forma el vientre puro con el brazo 
+		recata<br>y mis ojos se abren mientras tu forma vela.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Jorge 
+		Rojas</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<font size="2" color="#C4CAD4" face="Georgia"><a name="LOS PASOS 1"></a></font>
+		<font color="#C4CAD4" face="Georgia">Los pasos</font><p>
+	<font size="2" color="#C4CAD4" face="Georgia">Pasos nacidos de un silencio<br>
+    tenue, sagradamente dados,<br>
+    hacia el recinto de mis sue&ntilde;os<br>
+    vienen tranquilos, apagados.</font></p>
+    <p><font size="2" color="#C4CAD4" face="Georgia">Rumores puros y divinos,<br>
+    todos los dones que descubro<br>
+    -&iexcl;oh blandos pasos reprimidos!-<br>
+    llegan desde tus pies desnudos.</font></p>
+    <p><font size="2" color="#C4CAD4" face="Georgia">Si en el convite de tus 
+	labios<br>
+    recoge para su sosiego<br>
+    mi pensamiento -hu&eacute;sped &aacute;vido- <br>
+    el vivo manjar de tu beso.</font></p>
+    <p><font size="2" color="#C4CAD4" face="Georgia">Avanza con dulzura lenta,<br>
+    con ternura de ritmos vagos:<br>
+    como ha vivido de tu espera,<br>
+    mi coraz&oacute;n marcha en tus pasos.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="LOS PASOS">
+		</a></font><font face="Georgia" color="#C4CAD4">Los pasos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		(otra versi&oacute;n)</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Tus pasos,<br>
+		por el silencio creados,<br>
+		avanzan santa, lentamente,<br>
+		hacia el lecho de mi impaciente vigilar,<br>
+		fr&iacute;os, callados.<br>
+		<br>
+		Queridos,<br>
+		adorados pasos mudos,<br>
+		que sin o&iacute;r mis ansias adivinan,<br>
+		&iexcl;Qu&eacute; regalos celestes se encaminan<br>
+		hacia mi lecho<br>
+		en unos pies desnudos.<br>
+		<br>
+		Si, para mi sue&ntilde;o obseso,<br>
+		tu bocas haces avanzar<br>
+		yo preparo el paladar<br>
+		al alimento de un beso.<br>
+		<br>
+		No lo apresures,<br>
+		ten calma,<br>
+		dulzura de ser no siendo,<br>
+		que de esperar voy viviendo<br>
+		y son tus pasos<br>
+		mi alma.<br>
+		<br>
+		<i>Versi&oacute;n de Charles Dampierre</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="POES&Iacute;A"></a></font>
+		<font face="Georgia" color="#C4CAD4">Poes&iacute;a</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Con sorpresa y emoci&oacute;n,<br>una boca que beb&iacute;a<br>del seno de la 
+		Poes&iacute;a<br>dijo, apartando el plum&oacute;n:<br>
+		<br>&iexcl;Oh mi madre Inteligencia<br>de quien el dulzor fluy&oacute;!<br>&iquest;Cu&aacute;l 
+		extra&ntilde;a negligencia<br>ahora tu seno sec&oacute;?<br>
+		<br>Sobre tu pecho divino<br>apenas pon&iacute;a mi sien,<br>sent&iacute;a el mecer 
+		marino<br>de tu coraz&oacute;n de bien;<br>
+		<br>reci&eacute;n, en la obscura niebla<br>que baj&oacute; hasta tu beldad,<br>sent&iacute;a, 
+		al beber tiniebla<br>llenarme de claridad.<br>
+		<br>Dios diluido en tu esencia,<br>Lleno de felicidad<br>y d&oacute;cil a la 
+		conciencia<br>De la gran tranquilidad,<br>
+		<br>Alcanc&eacute; la noche pura<br>y olvid&eacute;me del no ser,<br>pues, un r&iacute;o de 
+		ventura<br>por m&iacute; parec&iacute;a correr. .<br>
+		<br>&iquest;Qu&eacute; escr&uacute;pulo temeroso,<br>qu&eacute; despecho te asalt&oacute;,<br>que tu fluir 
+		milagroso<br>en mis labios se cort&oacute;?<br>
+		<br>&iexcl;Oh rigor! Yo bien recelo<br>que tu alma se ofendi&oacute;<br>el silencio, 
+		cisne en vuelo,<br>ya no reina entre t&uacute; y yo.<br>
+		<br>&iexcl;Oh Inmortal! Ya no me informa<br>de tesoros tu mirar<br>y se hizo 
+		piedra la forma<br>que yo sent&iacute; palpitar<br>
+		<br>Me han privado tus agravios<br>hasta del cielo el claror.<br>&iquest;Qu&eacute; 
+		ser&aacute;s t&uacute; sin mis labios?<br>&iquest;Qu&eacute; ser&eacute; yo sin tu amor?<br>
+		<br>Pero la fuente ya inerte<br>Le respondi&oacute; sin pasi&oacute;n:<br>-&iexcl;Ay, me has 
+		mordido muy fuerte!<br>No late mi coraz&oacute;n.</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Edmundo 
+		Bianchi</font></em></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="UNA TARDE ADORNADA DE PALOMAS SUBLIMES..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Una tarde adornada de palomas sublimes...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		Una tarde adornada de palomas sublimes<br>la doncella suavemente se 
+		peina al sol.<br>Roza en la onda al nen&uacute;far con su pie de arrebol<br>y 
+		entibia sus dos manos errantes y morosas<br>tendiendo hacia el ocaso sus 
+		transparentes rosas.<br>Una onda inocente recorre en emoci&oacute;n<br>su piel: 
+		es que una flauta toca un absurdo son.<br>El m&uacute;sico, que tiene dientes 
+		de pedrer&iacute;a,<br>lanza una f&uacute;til brisa de sombra y fantas&iacute;a<br>con el 
+		oculto beso que arriesga entre las flores.<br>Fr&iacute;a, ante el dulce juego 
+		de llantos y de amores,<br>ni haci&eacute;ndose divina con una frase sola<br>de 
+		rosa, la belleza, gracias a su aureola,<br>en suelta cabellera de mirra 
+		perfumada<br>mira, con ojo augusto entre la crencha dorada<br>la luz que 
+		antes pas&oacute; entre sus manos abiertas.<br>Sobre su espalda h&uacute;meda cae una 
+		hoja muerta.<br>De la flauta, hasta el agua, cae una gota suave<br>y el 
+		pie puro se asusta como una bella ave<br>ebria de sombra...</font></p>
+		<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Edmundo 
+		Bianchi</font></em></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <p align="center">&nbsp;</p>
+  <p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 15:48:52 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:39 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

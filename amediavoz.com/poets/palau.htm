@@ -1,0 +1,773 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Josep Palau i Fabre</title>
+<meta NAME="Manuel Altolaguirre"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Josep Palau i Fabre. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Josep_Palau_i_Fabre,poesias,poetas,poemas,textos,poesia_visual,prosa_poetica,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/palau.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/palau.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172423" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./palau.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:24:23 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./palau.htm" title="7:50:25 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:24:23 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./palau.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:24:23 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./palau.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>20 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">27 Jul 11 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000201120_2012:-1:501010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+	<blockquote>
+		<p align="center"><br>
+		<br>
+		</p>
+		<p align="center">&nbsp;</p>
+		<p align="center"><br>
+		<img border="0" src="./PALAU.jpg" width="467" height="52">&nbsp;&nbsp;<em><strong><font face="Arial" size="2" color="#C0CFDE"><br>
+		</font></strong></em></p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="center"><font face="Arial" size="2" color="#84B0D6">
+		<em style="font-style: normal">&quot;</em>Te escribo palabras de 
+		fuego con l&aacute;piz rojo.<br>
+		Si te hablo del beso es ya besarte un poco.<em style="font-style: normal"> 
+		&quot;</em></font></p>
+		<p align="center">
+		<img border="0" src="./PALAU1.jpg" width="270" height="359"></p>
+		<p align="center"><font face="Arial" size="2" color="#84B0D6"><em>&quot;Femmes 
+		aux boîtes de sardines, 1949&quot;</em></font></p>
+		<p align="center"><em><font face="Arial" size="2" color="#84B0D6">
+		Oscar Dom&iacute;nguez</font></em><font color="#84B0D6"><i><br>
+		</i></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<p align="center">&nbsp;</p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="4" color="#84B0D6">
+			Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p><font face="Georgia" size="2" color="#84B0D6">Poeta, narrador, 
+		ensayista y traductor espa&ntilde;ol nacido en Barcelona en 1917. <br>
+		Es una de las grandes figuras de la
+		cultura catalana del siglo xx. Public&oacute; sus
+		primeros textos en 1935 en <i>La Humanitat </i> <br>
+		y luego en <i>La Publicitat</i>. <br>
+		Tuvo un papel
+		relevante durante los primeros a&ntilde;os de la 
+		resistencia cultural al franquismo.<br>
+		Fund&oacute; clandestinamente la revista Poes&iacute;a&nbsp; entre 1944 y 1945, a&ntilde;o en 
+		que viaj&oacute; a Paris con una beca del Instituto <br>
+		Franc&eacute;s. All&iacute; trab&oacute; amistad con&nbsp; Picasso, Artaud,
+		Camus, Cocteau, Malraux, 
+		Octavio Paz, Juan Goytisolo y <br>
+		Mar&iacute;a Zambrano. Una vez agotada la beca de un a&ntilde;o, se exili&oacute; 
+		voluntariamente
+		trabajando en los oficios m&aacute;s diversos.<br>
+		Regres&oacute; a Catalu&ntilde;a en 1961.
+		<br>
+		Escribi&oacute; toda su
+		poes&iacute;a entre 1936 y 1950, a&ntilde;o en que, con 
+		una certeza sorprendente, dio por cerrada su
+		obra po&eacute;tica, <br>
+		bajo el nombre de <i>&quot;Poemas del
+		Alquimista&quot;</i>. Algunos apartados del volumen se publicaron, en su momento, como libros independientes: 
+		<i>&quot;Balades
+		amargues&quot;</i> en 1943 y <i>&quot;Eaprenent de poeta&quot; </i>en 1943. Adem&aacute;s 
+		escribi&oacute; obras de teatro, <br>
+		narrativa y ensayos, g&eacute;nero en el que destacan especialmente los 
+		elaborados sobre Picasso, del que fue un especialista. <br>
+		Tradujo al catal&aacute;n obras de Antonin Artaud, Arthur Rimbaud y Honor&eacute; de 
+		Balzac, entre otros.<br>
+		Falleci&oacute; en febrero de 2008.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font></p>
+		<blockquote>
+			<p align="justify">&nbsp;</p>
+			<p align="center"><font face="Georgia" size="2" color="#8FABC2"><br>
+			<br>
+			<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+			</font></p>
+		</blockquote>
+		<p align="left"><br>
+		<br>
+		<br>
+		<font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#De Epigramas dorados Oto&ntilde;o de 1936">De &quot;Epigramas dorados 
+		Oto&ntilde;o&quot; de 1936</a></font><br>
+		<font face="Georgia" size="2"><a href="./palau.htm#Cuello de dama">Cuello de dama</a><br>
+		<a href="./palau.htm#El primer amor">El primer amor</a><br>
+		<a href="./palau.htm#Pierna desnuda">Pierna desnuda</a><br>
+		<a href="./palau.htm#Pierna vestida">Pierna vestida</a></font><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#De Los grandes poemas del Emperador Iang-Po-Tzu 1942">De &quot;Los 
+		grandes poemas del Emperador Iang-Po-Tzu&quot; 1942</a></font><br>
+		<font face="Georgia"><a href="./palau.htm#2. Dibuja el agua..."><font size="2">2. 
+		Dibuja el agua...</font></a><font size="2"><br>
+		<a href="./palau.htm#4. &iexcl;Cu-c&uacute;! &iexcl;Cu-c&uacute;!...">4. &iexcl;Cu-c&uacute;! &iexcl;Cu-c&uacute;!...</a><br>
+		<a href="./palau.htm#5. Melancol&iacute;a...">5. Melancol&iacute;a...</a><br>
+		<a href="./palau.htm#6. Pasa tus dedos...">6. Pasa tus dedos...</a><br>
+		<a href="./palau.htm#8. La dulce amiga...">8. La dulce amiga...</a><br>
+		</font><a href="./palau.htm#...Un coraz&oacute;n..."><font size="2">9. ...Un coraz&oacute;n...</font></a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#De Poemas epigram&aacute;ticos 1940-1942">De &quot;Poemas epigram&aacute;ticos&quot; 
+		1940-1942</a></font><br>
+		<font face="Georgia" size="2"><a href="./palau.htm#La mujer">La mujer</a><br>
+		<a href="./palau.htm#Misiva">Misiva</a><br>
+		<a href="./palau.htm#Nocturno">Nocturno</a><br>
+		<a href="./palau.htm#Piedra">Piedra</a><br>
+		<a href="./palau.htm#Poeta-Narciso">Poeta-Narciso</a><br>
+		<a href="./palau.htm#Retrato">Retrato</a></font><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#Despedida">Despedida</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#El imposible">El imposible</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2"><a href="./palau.htm#Lorelei">
+		Lorelei</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2"><a href="./palau.htm#Lullaby">
+		Lullaby</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#Sombra de Ana">Sombra de Ana</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#Soneto intrauterino">Soneto intrauterino</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./palau.htm#Triunfo de alta locura">Triunfo de alta locura</a>&nbsp;&nbsp;&nbsp;&nbsp;</font><font face="Georgia" size="2" color="#8FABC2">&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		Volver a: </font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+		</font><font face="Georgia" size="2" color="#85A6BC">Volver a: </font>
+		<font face="Georgia"><a target="_blank" href="./indice-A-K.htm">&Iacute;ndice A-K</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+		Volver a: </font><font face="Georgia" color="#8FABC2">
+		<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<blockquote>
+			<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br>
+			<font face="Georgia" size="3" color="#89A7BE">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+			</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+			<br>
+			<br>
+			</p>
+			<p align="left">&nbsp;</p>
+			<p align="center">
+			<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+			<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br>
+			</font></p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De Epigramas dorados Oto&ntilde;o de 1936"></a>De &quot;Epigramas dorados&quot; 
+		Oto&ntilde;o de 1936</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="Cuello de dama"></a>Cuello de dama</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Un cuello arqueado, terso,<br>
+		acucia mi deseo<br>
+		de abrirle una ancha boca<br>
+		con mi estilete, hendiendo.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="El primer amor"></a>El primer amor</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Estoy enamorado de mi 
+		primer amor.<br>
+		Fieles al coraz&oacute;n, los ojos, su imagen ha tatuado.<br>
+		Las lluvias del invierno a ella me han llevado:<br>
+		bello abrigo nocturno en pleno resplandor.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="Pierna desnuda"></a>Pierna desnuda</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Quisiera destejer<br>
+		tu epidermis de seda<br>
+		para hacerme un cobijo<br>
+		de ensue&ntilde;o, en noche fr&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="Pierna vestida"></a>Pierna vestida</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">La seda junto a ti,<br>
+		ara&ntilde;a mis diez dedos,<br>
+		que se abren, desvelados,<br>
+		para adorar su due&ntilde;o.</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De Los grandes poemas del Emperador Iang-Po-Tzu 1942"></a>De 
+		&quot;Los grandes poemas del Emperador Iang-Po-Tzu&quot; 1942</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="2. Dibuja el agua..."></a>2. Dibuja el agua<br>
+		caricias en la orilla.<br>
+		El sue&ntilde;o fina,<br>
+		retrocede a su origen.<br>
+		La vida es ya la vida.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="4. &iexcl;Cu-c&uacute;! &iexcl;Cu-c&uacute;!..."></a>4. &iexcl;Cu-c&uacute;! &iexcl;Cu-c&uacute;!<br>
+		Solamente dos notas<br>
+		y todo a punto.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="5. Melancol&iacute;a..."></a>5. Melancol&iacute;a<br>
+		hila una seda fina,<br>
+		llanto de amiga,<br>
+		y teje, en mis adentros,<br>
+		velos de muselina.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="6. Pasa tus dedos..."></a>6. Pasa tus dedos<br>
+		por las sedas del lago.<br>
+		Es ella, s&iacute;,<br>
+		tan cercana al Ensue&ntilde;o,<br>
+		Madama Fantas&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="8. La dulce amiga..."></a>8. La dulce amiga<br>
+		mecida est&aacute; en el sue&ntilde;o<br>
+		que la dorm&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="...Un coraz&oacute;n..."></a>9. ...Un coraz&oacute;n<br>
+		lo tengo todav&iacute;a.<br>
+		Coraz&oacute;n con su llanto<br>
+		y su alegr&iacute;a.<br>
+		Coraz&oacute;n, demas&iacute;a.</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De Poemas epigram&aacute;ticos 1940-1942"></a>De &quot;Poemas 
+		epigram&aacute;ticos&quot; 1940-1942</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="La mujer"></a>
+		La mujer</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Cu&aacute;ntas mujeres duermen<br>
+		en mis versos, ah,<br>
+		para siempre...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="Misiva"></a>
+		Misiva</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Te escribo palabras de 
+		fuego con l&aacute;piz rojo.<br>
+		Si te hablo del beso es ya besarte un poco.<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Barcelona, 1940</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="Nocturno"></a>
+		Nocturno</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">He luchado contra el 
+		alba.<br>
+		El alba me ha repelido<br>
+		y en ella me he dormido.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="Piedra"></a>
+		Piedra <br>
+		<i><br>
+		</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>A Xavier Zubiri </i><br>
+		<br>
+		Dura como agua dura. <br>
+		Ra&iacute;z es de s&iacute; misma. <br>
+		En &eacute;xtasis perenne <br>
+		la piedra perpet&uacute;a <br>
+		la piedra, imagen pura, <br>
+		y la idea de piedra <br>
+		se nos torna madura. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		1942</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="Poeta-Narciso"></a>Poeta-Narciso</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Verso: s&eacute; t&uacute; mi igual.<br>
+		Me veo en ti si t&uacute; me ves.<br>
+		&iquest;Somos dos voces a la vez?<br>
+		&iquest;Pero cu&aacute;l es de qui&eacute;n? &iquest;Cu&aacute;l?</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="Retrato"></a>
+		Retrato</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">El m&aacute;s fino fango <br>
+		del para&iacute;so <br>
+		helo ante m&iacute;. <br>
+		<br>
+		A m&iacute; me place <br>
+		sentirla as&iacute;, <br>
+		como un coj&iacute;n <br>
+		para mirarla. <br>
+		<br>
+		Y nada m&aacute;s, <br>
+		salvo alg&uacute;n beso, <br>
+		o alg&uacute;n desm&aacute;n. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		7 de diciembre de 1941</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Despedida"></a>
+		Despedida</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Ya no s&eacute; escribir, ya 
+		no s&eacute; escribir m&aacute;s. <br>
+		La tinta me embadurna los dedos, las venas... <br>
+		-en el papel dej&eacute; toda mi sangre. <br>
+		<br>
+		&iquest;D&oacute;nde decir, d&oacute;nde dejar dicho, d&oacute;nde inscribir <br>
+		la pulpa del &aacute;ureo fruto sino en el fruto, <br>
+		la tempestad en la sangre sino en la sangre, <br>
+		el &aacute;rbol y el viento sino en el viento de un &aacute;rbol? <br>
+		&iquest;D&oacute;nde podr&eacute; decir la muerte sino en mi muerte, <br>
+		muri&eacute;ndome? <br>
+		Lo dem&aacute;s son palabras... <br>
+		Ya no sabr&eacute; escribir nada mejor. <br>
+		Demasiado cerca de la vida vivo. <br>
+		Las palabras se me mueren adentro <br>
+		y yo vivo en las cosas. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Par&iacute;s, 6 de mayo de 1946</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i><font face="Georgia" size="2" color="#84B0D6">
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p><br>
+		<font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6"><a name="El imposible"></a>
+		El imposible </font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Si fueses esp&iacute;ritu, amor, yo te amar&iacute;a. <br>
+		Abr&aacute;zame fuerte, que tus brazos son d&eacute;biles, <br>
+		no llegan a mi cuerpo, tan rec&oacute;ndito en m&iacute;, <br>
+		y mis brazos son d&eacute;biles para atraerte all&iacute;. <br>
+		<br>
+		Si pudiera tan s&oacute;lo amarte, amor, yo te amar&iacute;a. <br>
+		Fueses rostro y fuese yo rostro, tan s&oacute;lo, <br>
+		podr&iacute;amos adoramos el uno al otro, <br>
+		dejar tus labios y besar tu sonrisa, <br>
+		mirarme en tu mirada para hallar mejor vida. <br>
+		<br>
+		Fueses reposo y sue&ntilde;o y ensue&ntilde;o que abriga, <br>
+		ser&iacute;as para siempre, amor, mi &uacute;nica amiga.</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Lorelei"></a>Lorelei</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">La m&uacute;sica del agua <br>
+		como blanca mujer. <br>
+		&iquest;Por qu&eacute; mi barca ahora <br>
+		surca tales parajes? <br>
+		No existe madrugada <br>
+		en m&iacute;, ni aire bastante <br>
+		para hacerme liviana <br>
+		esta canci&oacute;n extra&ntilde;a. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		23 de enero de 1943</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Lullaby"></a>Lullaby</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Du&eacute;rmete, coraz&oacute;n m&iacute;o, 
+		duerme. <br>
+		<br>
+		Llora, si quieres, un poco, <br>
+		que yo estoy a tu lado. <br>
+		No tengas miedo. Olvida. <br>
+		Cierra los ojos a medida <br>
+		que yo los cierre. Vente. <br>
+		Medita, coraz&oacute;n m&iacute;o, ni&ntilde;o, <br>
+		con aquel meditar de lluvia fina <br>
+		de las postrimer&iacute;as. <br>
+		El sue&ntilde;o te reclama. Vente. <br>
+		<br>
+		Du&eacute;rmete, coraz&oacute;n m&iacute;o, duerme. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		15 de abril de 1943</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Sombra de Ana"></a>
+		Sombra de Ana</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>A Blanca </i><br>
+		<br>
+		Pasa tu mano por mis cabellos, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pasa tu mano. <br>
+		Ser&eacute; un muchacho a tus consejos, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		un anciano. <br>
+		Mira la nieve te&ntilde;ir mi frente, Ana <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-los desenga&ntilde;os. <br>
+		Vivir me pesa en este mundo, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tengo mil a&ntilde;os. <br>
+		La llama viva que me consume, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		no me da tregua. <br>
+		Y nada veo porque soy luz, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		vivo sin cuerpo. <br>
+		Pasa tu mano por mis cabellos, Ana, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pasa tu mano, <br>
+		sin decir nada dame consejos, ya, <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; que 
+		estoy cansado. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		13 de febrero de 1943</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Soneto intrauterino">
+		</a>Soneto intrauterino</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Desde tu mal, desde tus 
+		entra&ntilde;as, desde tus l&aacute;grimas, quiero ser <br>
+		una voz -germinal. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Pensarte desde ti, desde tu centro decirte, desde la 
+		flor suprema de tus ojos. <br>
+		Quiero en ti desnacer. Todo hombre quiere desnacer en un amor, una 
+		entra&ntilde;a. <br>
+&nbsp;&nbsp;&nbsp;&nbsp; Hazme m&aacute;s y m&aacute;s peque&ntilde;o, hasta que yo sea polvo 
+		estremecido, polen de tu vientre.</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="Triunfo de alta locura"></a>Triunfo de alta locura </font>
+		<font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>A Joan Perucho </i><br>
+		<br>
+		Me yergo en lo m&aacute;s alto de m&iacute; mismo <br>
+		y miro: <br>
+		y me veo m&aacute;s transparente. <br>
+		Yo no sab&iacute;a, no, que el viento <br>
+		pudiera tener mi cabellera <br>
+		y gozarse con ello. <br>
+		Ahora todo instante me enardece <br>
+		y me lanzo, desde m&iacute;, <br>
+		a cielos, abismos, rutas sin fin. <br>
+		No tengo tiempo para amar: no tengo el brazo lo bastante largo <br>
+		-Clara, B&aacute;rbara, amigas- <br>
+		para poderos apresar, <br>
+		para alcanzar la vida. <br>
+		Y, para que lo sep&aacute;is, aprendo a escribir en prosa <br>
+		la rosa. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		15 de enero de 1943</font></p>
+		<p><i><font face="Georgia" size="2" color="#84B0D6">De &quot;Poemas del 
+		alquimista&quot;<br>
+		Galaxia Gutemberg 2002</font></i><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;
+		<br>
+&nbsp; </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:24:23 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:23:24 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

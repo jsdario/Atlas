@@ -1,0 +1,691 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Philippe Soupault</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Philippe Soupault."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Philippe Soupault. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Philippe_Soupault,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/soupault.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/soupault.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164451" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./soupault.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:44:51 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./soupault.htm" title="23:07:21 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:44:51 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./soupault.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:44:51 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./soupault.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>41 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Aug 07 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000011100_2008:-1:202211000001_2009:-1:011000100100_2010:-1:100000001110_2011:-1:000000101130_2012:-1:421010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SOUPAULT.jpg" width="390" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SOUPAULT1.jpg" width="211" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="664" height="320">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="656">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="289" width="269" valign="top">
+			<p align="left">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="./SOUPAULT2.jpg" width="200" height="286"> </td>
+			<td width="383" valign="top" height="289">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u></p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Poeta, 
+			ensayista, periodista y novelista, nacido en Chaville, cerca de 
+			Par&iacute;s, el 2 de agosto de 1897.<br>
+			Public&oacute; con Breton,&nbsp; los primeros ensayos de escritura 
+			autom&aacute;tica en un libro con el nombre de
+			<i>Ch&aacute;mps Magn&eacute;tiques</i>. <br>
+			Colabor&oacute; inicialmente en <i>&quot;La R&eacute;volution surr&eacute;aliste</i>&quot; de la 
+			cual se distanci&oacute; con Artaud, en noviembre de 1926.&nbsp; Viajero 
+			incansable, en la &eacute;poca del desembarco aliado en &Aacute;frica del Norte, 
+			logr&oacute; escapar de T&uacute;nez a Argelia donde inici&oacute; su actividad como 
+			periodista. <br>
+			En 1943 viaj&oacute; por Estados Unidos y casi toda Am&eacute;rica Latina. De 
+			vuelta a Francia, pronto reinici&oacute; sus viajes de 1948&nbsp; a 1950 
+			por Oriente y &Aacute;frica.<br>
+			Por su edad, y retirado de toda actividad literaria, falleci&oacute; <br>
+			en Paris en el a&ntilde;o de 1990. &copy;</font></td>
+		</tr>
+	</table>
+	<p align="left">&nbsp;</p>
+	<p><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</p>
+	</center></div>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#C4CAD4">Obra po&eacute;tica:<br>
+		</font><font size="2" face="Georgia" color="#C4CAD4"><i>&quot;Aquarium&quot; 
+		</i>1917, <i><br>
+		&quot;Rose des vents&quot; </i>1920,<i><br>
+		&quot;Westwego&quot;</i>1922, <i><br>
+		&quot;Il y a un oc&eacute;an&quot;</i> 1936, <br>
+		<i>&quot;Po&eacute;sies compl&egrave;tes&quot;</i> 1937, <i><br>
+		&quot;L'arme Secr&egrave;te&quot;</i> 1946, <i><br>
+		&quot;Odes&quot; </i>1946, <i><br>
+		&quot;Chansons du jour et de la nuit&quot;</i> 1949, <i><br>
+		&quot;Chansons, Po&egrave;mes&quot; </i>1949, <i><br>
+		&quot;Sans Phrases&quot;</i> 1953.</font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Philippe 
+Soupault:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="3" color="#FFFFFF" face="Georgia"><br>
+		</font><font face="Georgia" color="#FFFFFF"><br>
+		</font>
+		<font face="Georgia"><a href="./soupault.htm#CREP&Uacute;SCULO">Crep&uacute;sculo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./soupault.htm#GEORGIA">Georgia</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./soupault.htm#HACIA LA NOCHE">
+		Hacia la noche</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./soupault.htm#LAS F&Aacute;BRICAS">
+		Las f&aacute;bricas</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./soupault.htm#&Uacute;LTIMOS CARTUCHOS">Últimos cartuchos</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./soupault.htm#UNO, DOS O TRES">Uno, dos o tres</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./soupault.htm#WESTWEGO">
+		Westwego</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#C4CAD4">
+		</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#C4CAD4">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#D3D3CF"><br>
+				</font><a href="./georgia.zip"><font color="#D3D3CF">Georgia</font></a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="CREPÚSCULO">
+		</a></font><font face="Georgia" color="#C4CAD4">Crep&uacute;sculo</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Un elefante en su ba&ntilde;era<br>
+		y tres ni&ntilde;os que duermen<br>
+		singular singular historia<br>
+		historia de sol poniente<br>
+		<br>
+		<i>De &quot;Georgia&quot;&nbsp;&nbsp; <br>
+		Versi&oacute;n de Aldo Pellegrini<br>
+&nbsp;</i></font></p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="GEORGIA"></a>
+		</font><font face="Georgia" color="#C4CAD4">Georgia</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		No duermo Georgia<br>
+		Lanzo flechas en la noche Georgia<br>
+		espero Georgia<br>
+		pienso Georgia<br>
+		el fuego es como la nieve Georgia<br>
+		la noche es mi vecina Georgia<br>
+		oigo todos los ruidos sin excepci&oacute;n Georgia<br>
+		veo el humo que sube y huye Georgia<br>
+		camino a paso de lobo en la sombra Georgia<br>
+		corro aqu&iacute; est&aacute; la calle aqu&iacute; est&aacute;n los barrios Georgia<br>
+		Aqu&iacute; est&aacute; una ciudad siempre igual<br>
+		y que yo no conozco Georgia<br>
+		Me apresuro aqu&iacute; est&aacute; el viento Georgia<br>
+		y el fr&iacute;o y el silencio y el miedo Georgia<br>
+		me escapo Georgia<br>
+		corro Georgia<br>
+		las nubes est&aacute;n bajas est&aacute;n por caerse Georgia<br>
+		extiendo el brazo Georgia<br>
+		no cierro los ojos Georgia<br>
+		llamo Georgia<br>
+		grito Georgia<br>
+		llamo Georgia<br>
+		yo te llamo Georgia<br>
+		quiz&aacute; vengas Georgia<br>
+		pronto Georgia<br>
+		Georgia Georgia Georgia<br>
+		Georgia<br>
+		no puedo dormir Georgia<br>
+		espero Georgia<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<i>De &quot;Georgia&quot;&nbsp;&nbsp; <br>
+		Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="HACIA LA NOCHE"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Hacia la noche</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Es tarde<br>
+		en la sombra y en el viento<br>
+		un grito asciende con la noche<br>
+		No espero a nadie<br>
+		a nadie<br>
+		ni siquiera a un recuerdo<br>
+		Hace ya tiempo que pas&oacute; la hora<br>
+		pero ese grito que lleva el viento<br>
+		y empuja hacia adelante<br>
+		viene de un lugar que est&aacute; m&aacute;s all&aacute;<br>
+		por encima del sue&ntilde;o<br>
+		No espero a nadie<br>
+		pero aqu&iacute; est&aacute; la noche<br>
+		coronada por el fuego<br>
+		de los ojos de todos los muertos<br>
+		silenciosos<br>
+		Y todo lo que deb&iacute;a desaparecer<br>
+		todo lo perdido<br>
+		hay que volver a encontrarlo<br>
+		por encima del sue&ntilde;o<br>
+		hacia la noche.<br>
+		<br>
+		<i>De &quot;Po&eacute;sies completes&quot;<br>
+		Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="LAS F&Aacute;BRICAS">
+		</a>Las f&aacute;bricas</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>En colaboraci&oacute;n con 
+		Andr&eacute; Breton</i><br>
+		<br>
+		Los animales extranjeros y los industriales generosos pertenecen al 
+		mismo c&iacute;rculo<br>
+		La avenida de los besos<br>
+		Enfermedad de los j&oacute;venes<br>
+		Los papeles de la pared de los techos de las jaulas y de los circos<br>
+		Talleres de las salvaciones<br>
+		Una danza r&aacute;pido una danza<br>
+		La qu&iacute;mica delicada<br>
+		Tirad los dados<br>
+		Un hombre al mar<br>
+		Un hombre pasa quiero verlo<br>
+		Corre azul m&aacute;s azul que mis dedos helados mancha de los rieles<br>
+		Los ferrocarriles las usinas<br>
+		El hierro arde<br>
+		La madera<br>
+		El tabaco de las prisiones madre de los sue&ntilde;os<br>
+		Un bar plazoleta galanter&iacute;a enfermiza<br>
+		Jueves jueves<br>
+		Tomad vuestra mano la cabeza de los &aacute;rboles<br>
+		Calma de los soles<br>
+		Cuerpos compuestos sales<br>
+		Camiones traednos los resultados<br>
+		Las sombras nuestras amigas<br>
+		Un general manda sobre algunas manos<br>
+		Los bellos relojes<br>
+		<br>
+		<i>Les Champs Magn&eacute;tiques<br>
+		Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><i><br>
+		<br>
+&nbsp;</i></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="ÚLTIMOS CARTUCHOS"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Últimos cartuchos</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		La noche tiene ojos sin pupilas<br>
+		y largas manos<br>
+		Qu&eacute; buen tiempo hace<br>
+		Hay una estrella roja<br>
+		y largas serpientes nocturnas<br>
+		Hace buen tiempo<br>
+		Es necesario gritar para no estar triste<br>
+		las horas danzan<br>
+		Es necesario rugir para no matar<br>
+		para no morir cantando<br>
+		para no enrojecer de verg&uuml;enza<br>
+		y de rabia<br>
+		Nada mejor que irse<br>
+		tomar el bast&oacute;n<br>
+		y caminar<br>
+		Cuando uno agota los nervios<br>
+		y se enfurece<br>
+		Qu&eacute; buen tiempo hace<br>
+		las campanas repican a difuntos<br>
+		y por la gloria de las armas<br>
+		todo tiene que volver a empezar<br>
+		Pese a la oscuridad veo<br>
+		c&oacute;mo caen cabezas en el cesto<br>
+		bajo el golpe de la guillotina<br>
+		diviso ahogados que flotan<br>
+		y ahorcados que se balancean<br>
+		Se oyen gritos en los hospitales<br>
+		Qu&eacute; buen tiempo hace<br>
+		Uno se mira en el espejo<br>
+		por placer<br>
+		y se encuentra realmente feo<br>
+		pero uno piensa en otra cosa<br>
+		para no desesperar<br>
+		Qu&eacute; se ve<br>
+		realmente<br>
+		qu&eacute; se ve<br>
+		El cementerio es encantador<br>
+		hay flores coronas<br>
+		cruces e inscripciones<br>
+		Qu&eacute; buen tiempo hace<br>
+		Qu&eacute; se oye<br>
+		el sol toca el clar&iacute;n<br>
+		en las puertas de los caf&eacute;s<br>
+		es la batalla definitiva<br>
+		la ciudad muere al son de las ranas<br>
+		y las flores caen<br>
+		severamente<br>
+		como &aacute;rboles desarraigados<br>
+		Aqu&iacute; est&aacute;n los hombres<br>
+		est&aacute;n tan p&aacute;lidos como los vivos<br>
+		llevan corbatas rojas<br>
+		bastones con punteras de plomo<br>
+		y diarios de todos los colores<br>
+		Se detienen<br>
+		y juegan<br>
+		a cara o cruz<br>
+		Cada vez hace mejor tiempo<br>
+		Banderas y m&uacute;sica al frente<br>
+		inclinamos la cabeza<br>
+		porque cada vez estamos m&aacute;s<br>
+		solos<br>
+		p&aacute;lidos<br>
+		feos<br>
+		Tenemos que reiniciar la marcha<br>
+		a cara o cruz a risa de vino y licores<br>
+		Los caf&eacute;s est&aacute;n empavesados<br>
+		como las sonrisas de las damiselas<br>
+		avancemos siempre<br>
+		pronto sabremos lo que ha de venir<br>
+		Realmente hace muy buen tiempo<br>
+		<br>
+		<i>De &quot;Po&eacute;sies completes&quot;<br>
+		Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="UNO, DOS O TRES"></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Uno, dos o tres</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Busquemos los hijos<br>
+		los padres de los hijos <br>
+		los hijos de los hijos<br>
+		las campanas de la primavera<br>
+		las fuentes del verano<br>
+		las penas del oto&ntilde;o<br>
+		el silencio del invierno</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Georgia&quot;&nbsp;&nbsp;
+		<br>
+		Versi&oacute;n de Aldo Pellegrini</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;<a name="WESTWEGO"></a></font><font face="Georgia" color="#C4CAD4">Westwego</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<i>(fragmento)</i><br>
+		<br>
+		Hace calor y hoy es domingo<br>
+		hay tristeza<br>
+		el r&iacute;o es muy desgraciado<br>
+		y los habitantes se han quedado en casa<br>
+		Me paseo por la orilla del T&aacute;mesis<br>
+		una &uacute;nica barca se desliza para alcanzar el cielo<br>
+		un cielo inm&oacute;vil<br>
+		porque es domingo<br>
+		y el viento a&uacute;n no se ha levantado<br>
+		es mediod&iacute;a ahora son las cinco<br>
+		uno no sabe ad&oacute;nde ir<br>
+		un hombre canta sin saber por qu&eacute;<br>
+		as&iacute; marcho yo<br>
+		cuando uno es joven lo es para toda la vida<br>
+		mi ni&ntilde;ez enjaulada<br>
+		en ese museo sonoro<br>
+		de Madame Tusseaud<br>
+		ah&iacute; est&aacute; Nick Carter con su sombrero hongo<br>
+		tiene en el bolsillo toda una colecci&oacute;n de rev&oacute;lveres<br>
+		y grilletes brillantes como blasfemias<br>
+		a su lado el caballero Bayardo<br>
+		que se le parece como un hermano<br>
+		ah&iacute; est&aacute; la historia sagrada y la historia de Inglaterra<br>
+		al lado de los grandes criminales que han perdido sus nombres<br>
+		<br>
+		Cuando sal&iacute; en ninguna parte<br>
+		se encuentran caf&eacute;s<br>
+		ni luces que espanten las palabras<br>
+		ni mesa en que apoyarse<br>
+		para no ver nada para no mirar nada<br>
+		ni vasos<br>
+		ni humo<br>
+		solamente aceras tan largas como los a&ntilde;os<br>
+		donde por la tarde florecen manchas de sangre<br>
+		. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+		. . . . . .<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Westwego</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Georgia&quot;&nbsp;&nbsp;
+		<br>
+		Versi&oacute;n de Aldo Pellegrini </font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:44:51 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:01 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,696 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Francisco Hern&aacute;ndez</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Francisco Hern&aacute;ndez. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Francisco_Hernandez,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#C0CFDE" vlink="#C0CFDE" alink="#C0CFDE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/hernandezF.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/hernandezF.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172943" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./hernandezF.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:29:43 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./hernandezF.htm" title="12:05:10 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:29:43 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./hernandezF.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="12 Jul 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:29:43 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./hernandezF.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>70 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">24 Jun 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000002010101_2004:-1:000101110101_2005:-1:111100010004_2006:-1:010211000100_2007:-1:010013020300_2008:-1:011211000000_2009:-1:101000110100_2010:-1:000000001211_2011:-1:000000002100_2012:-1:500011101000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+<br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./HERNANDEZF.jpg" width="482" height="40">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<font face="Times New Roman" size="3" color="#A6BCCE"><br>
+<br>
+</font><font face="Arial" size="2" color="#84B0D6">
+&quot;...Mis ojos, encandilados por tu desnudez,<br>
+tienen toda la noche por delante...&quot;</font></p>
+
+<p align="center">
+<font color="#84B0D6">
+<img border="0" src="./HERNANDEZF1.jpg" width="270" height="320"></font></p>
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<span style="font-weight: 400">&quot;Renaissance&quot;</span></font></p>
+<p align="center"><span style="font-weight: 400">
+<font face="Arial" size="2" color="#84B0D6">Gary Benfield</font></span><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta 
+		mexicano nacido en San Andr&eacute;s Tuxtla, Veracruz, en 1946.<br>Es una de 
+		las voces representativas de la nueva poes&iacute;a mexicana. 
+		<br>Su poes&iacute;a es muy vers&aacute;til y maneja con igual vigor los temas 
+		sensuales, el humor negro y la a&ntilde;oranza.<br>En 1982 obtuvo el <em>Premio 
+		Nacional de Poes&iacute;a de Aguascalientes</em>, en 1993 el 
+		<em>Premio Carlos Pellicer</em> por su obra <br>
+		publicada, y en 1994 el <em>Premio Xavier Villaurrutia</em>. Actualmente 
+		es becario del sistema nacional de Creadores <br>
+		de Arte del FONCA.<br>&laquo;Gritar es cosa de mudos&raquo; en 1974, 
+		&laquo;Portarretratos&raquo; en 1976, &laquo;Textos criminales&raquo; en 1980, &laquo;Mar de fondo&raquo; en 
+		1982, <br>
+		&laquo;Oscura coincidencia&raquo; en 1986, &laquo;El ala del tigre&raquo; en 1991 y &laquo;Antojo de 
+		Trampa&raquo; -selecci&oacute;n de su obra- en 1999, <br>
+		son sus obras m&aacute;s significativas. &copy;<br></font><font face="Georgia" size="2" color="#8FABC2">
+		<br></font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br></p>
+<p align="center"><br></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./hernandezF.htm#A ESTAS PALABRAS MENUDAS...">A estas palabras menudas...</a><br>
+		<br><a href="./hernandezF.htm#AHORA, ROJO ES EL LENGUAJE...">Ahora, rojo es el 
+		lenguaje...</a><br>
+		<br><a href="./hernandezF.htm#DESNUDA">Desnuda eres como una calle...</a><br><br>
+		<a href="./hernandezF.htm#EL AMOR, RODEADO CASI SIEMPRE POR UN ANTOJO...">El amor, 
+		rodeado casi siempre por un antojo...</a><br><br><a href="./hernandezF.htm#EN LAS TRAMPAS DE LOS OJOS...">
+		En las trampas de los ojos...</a><br>
+		<br><a href="./hernandezF.htm#EXTRA&Ntilde;O TU SEXO...">Extra&ntilde;o tu sexo...</a><br><br>
+		<a href="./hernandezF.htm#FANTASMA">Fantasma</a><br><br><a href="./hernandezF.htm#GOTA">Gota</a><br><br>
+		<a href="./hernandezF.htm#HABLA SCARDANELLI">Habla Scardanelli</a><br><br>
+		<a href="./hernandezF.htm#LA PRIMERA MUJER QUE RECORRI&Oacute; MI CUERPO...">La primera mujer 
+		que recorri&oacute; mi cuerpo...</a><br><br><a href="./hernandezF.htm#LAS GASTADAS PALABRAS DE SIEMPRE">
+		Las gastadas palabras de siempre</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./hernandezF.htm#Mariposa">Mariposa</a><br>
+		<br> </font><font face="Georgia" color="#8FABC2">
+		<a href="./hernandezF.htm#MAYO SE HIZO PRESENTE Y LAS NUBES ENTRARON...">Mayo se hizo 
+		presente y las nubes entraron...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./hernandezF.htm#MIS MANOS EN TU ESPALDA...">
+		Mis manos en tu espalda...</a><br>
+		<br><a href="./hernandezF.htm#MUERO POR DESLIZAR, VERTICALMENTE MI LENGUA...">Muero por 
+		deslizar, verticalmente...</a><br><br><a href="./hernandezF.htm#NUBES A LO LEJOS...">
+		Nubes a lo lejos...</a><br>
+		<br><a href="./hernandezF.htm#OTRO D&Iacute;A SIN VERTE, SIN PONER MIS PUPILAS...">Otro d&iacute;a sin 
+		verte, sin poner mis pupilas...</a><br><br><a href="./hernandezF.htm#PALABRAS DE LA GRIEGA">
+		Palabras de la griega</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+		<br>Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="center"><font size="3" color="#A6BCCE" face="Georgia"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<p align="center">&nbsp;</p>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#A6BCCE" face="Georgia"><br></font>
+		<font size="2" color="#85A6BC" face="Georgia">
+		<a name="A ESTAS PALABRAS MENUDAS..."></a></font>
+		<font color="#84B0D6" face="Georgia">
+		A estas palabras menudas...</font><font size="2" color="#84B0D6" face="Georgia"><br>
+		<br>-A estas palabras menudas se las va a llevar<br>la trampa, me 
+		aseguras.<br>Y a&ntilde;ades en voz baja:<br>-Ojo con el hoyo hirviente<br>de 
+		las bellas bailarinas tramposas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br><br>
+		</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="AHORA, ROJO ES EL LENGUAJE..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Ahora, rojo es el lenguaje...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Ahora, rojo es el lenguaje,<br>rojo como mi lengua cuando pasa<br>sobre 
+		la flor labiodental del flamboy&aacute;n.<br>Ahora, tu cara es roja,<br>roja 
+		como cuando se enfrenta<br>a la rubicundez arrugada de mi cara.<br>
+		Ahora, m&aacute;s que nunca,<br>rojo antojo de tus grandes ojos.<br>
+		<br>(Sobre una llave de agua, canta un gallo<br>blanco a punto de 
+		enrojecer.)</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="DESNUDA"></a></font>
+		<font face="Georgia" color="#84B0D6">Desnuda eres como una calle...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Desnuda eres como una calle<br>subes, te abres, serpeas, te 
+		angostas,<br>doblas, sigues mis pasos y desembocas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a
+      name="EL AMOR, RODEADO CASI SIEMPRE POR UN ANTOJO..."></a>El amor, rodeado 
+		casi siempre por un antojo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">El amor, rodeado casi 
+		siempre por un antojo<br>de olvido, avanza resuelto hacia las trampas<br>
+		creadas para cazar osos con piel de leopardo<br>y serpientes con plumaje 
+		de c&oacute;ndor.<br>
+		<br>Y el amor sobrevive a las heridas y ruge,<br>voladora, la envidia de 
+		los venenosos.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EN LAS TRAMPAS DE LOS OJOS..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		En las trampas de los ojos...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		En las trampas de los ojos<br>el paisaje y su escritura verde,<br>la 
+		tierra y su amor calizo,<br>la luz y sus remolinos amarillos.<br>
+		<br>El tr&aacute;nsito hacia los escalofr&iacute;os,<br>hacia el vestido recto de la 
+		noche,<br>hacia el agua embriagante de la cercan&iacute;a.<br>
+		<br>La plenitud de tu flor abierta<br>en el espejo, de tu cintura 
+		encerrada entre mis manos,<br>de tus labios en el lugar com&uacute;n<br>de mi 
+		nombre completo.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="EXTRA&Ntilde;O TU SEXO..."></a></font>
+		<font face="Georgia" color="#84B0D6">Extra&ntilde;o tu sexo. Piso flores al 
+		caminar y extra&ntilde;o tu sexo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Extra&ntilde;o tu sexo. Piso 
+		flores rosadas al caminar y extra&ntilde;o<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tu sexo.<br>En mis labios tu sexo se abre como fruta viva, como voraz<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		molusco agonizante.<br>Piso flores negras al caminar y recuerdo el olor 
+		de tu sexo,<br>sus violentas marejadas de aroma, su coralina humedad<br>
+		entre los carnosos crep&uacute;sculos del est&iacute;o.<br>Piso flores transl&uacute;cidas 
+		ca&iacute;das de &aacute;rboles sin corteza 
+		<br>y extra&ntilde;o tu sexo ci&ntilde;&eacute;ndose a mi lengua.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><br><a name="FANTASMA"></a></font>
+		<font face="Georgia" color="#84B0D6">Fantasma</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Amo las l&iacute;neas nebulosas de tu cara,<br>tu voz que no recuerdo,<br>tu 
+		racimo de aromas olvidados.<br>Amo tus pasos que a nadie te conducen<br>
+		y el s&oacute;tano que pueblas con mi ausencia.<br>Amo entra&ntilde;ablemente tu carne 
+		de fantasma.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="GOTA"></a></font>
+		<font face="Georgia" color="#84B0D6">Gota</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Una gota de an&iacute;s<br>resbala por tus muslos<br>con la indiferencia 
+		<br>de un barco que se aleja.<br>Suena el color dorado en las orillas 
+		del ojo,<br>del mar del ojo, del mal de ojo.<br>Sue&ntilde;a una imagen color 
+		naranja<br>con ser, eternamente,<br>una perseguidora quintaesencia.<br>
+		<br>Por eso, a las trampas del ojo<br>me encomiendo.<br>Y me inflamo, 
+		por si llegan a tiempo<br>las pesadillas del cristalino.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="HABLA SCARDANELLI"></a></font>
+		<font face="Georgia" color="#84B0D6">Habla Scardanelli</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		I<br>C&oacute;mo cantarte, Di&oacute;tima, sin vino<br>y con el piano mudo que a se&ntilde;as 
+		me congela.<br>C&oacute;mo describir, en su cadencia, tus lentas ceremonias<br>
+		si no puedo beberte de mi vaso,<br>si no te me atragantas rumorosa,<br>
+		si la botella rota no conserva tu ardor<br>ni los reflejos.<br>No hay 
+		alcohol, amant&iacute;sima Griega de voz noble,<br>comparable a tus claras 
+		humedades:<br>las de tus ojos grandes y en destierro,<br>las de tus 
+		frescas l&aacute;grimas fingidas,<br>las de tu vientre ajeno que humea bajo la 
+		lluvia.<br>C&oacute;mo cantarte con la garganta seca,<br>c&oacute;mo vivir si no puedo 
+		beberte devor&aacute;ndote,<br>c&oacute;mo sorber tus m&uacute;sculos tirantes<br>de alta 
+		mujer bandera entre los hombres<br>si ya no est&aacute;s emparedada en vidrio, 
+		<br>si resulta imposible pulverizar tus huesos. <br>Brilla perfecto el 
+		sol de los nocturnos.<br>El veneno en silencio merodea.<br>La quietud 
+		con sus fauces me rodea.</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">II<br>C&oacute;mo nombrarte, 
+		Di&oacute;tima, sin vino en la mar alta.<br>Se resecan los vocablos innobles,<br>
+		se agrieta la faringe bajo esta<br>sobriedad de hachazos, 
+		<br>no soportan tus l&oacute;bulos carnosos<br>mis huecas oraciones ca&iacute;das del 
+		fermento. 
+		<br>Qu&eacute; soledad m&aacute;s triste la del sobrio.<br>De la luz amarilla se 
+		desprende un tropel<br>de gnomos enyesados.<br>Abro la boca para que mis 
+		gritos<br>se adornen con v&oacute;mitos o maldiciones<br>y las enc&iacute;as supuran<br>
+		una dulce canci&oacute;n por la embriaguez perdida.<br>C&oacute;mo nombrarte, Di&oacute;tima, 
+		si no soy el ahogado<br>amanecido en el centro de tu calma.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="LA PRIMERA MUJER QUE RECORRIÓ MI CUERPO..."></a></font>
+		<font face="Georgia" color="#84B0D6">La primera mujer que recorri&oacute; mi 
+		cuerpo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">La primera mujer que 
+		recorri&oacute; mi cuerpo 
+		<br>ten&iacute;a labios de maga: labios verdes y azules, <br>con sabor a fruto 
+		silvestre,<br>con se&ntilde;ales indescifrables como la miel o el aire.<br>
+		Muchas veces incendi&oacute; mis cabellos con siete granos y<br>siete aguas, 
+		con ensalmos que sonaban a campanillas 
+		<br>de barro, con nubes de copal que se mezclaban al embri&oacute;n<br>que 
+		recorr&iacute;a mi frente coronada por ramos de albahaca.<br>Toda la noche 
+		ard&iacute;a la p&oacute;cima bajo mi cama.<br>Al d&iacute;a siguiente, un ni&ntilde;o nacido 
+		despu&eacute;s de mellizos 
+		<br>la arrojaba al r&iacute;o, de espaldas, para no ver el sitio <br>donde ca&iacute;a 
+		ni el vuelo repentino de los zopilotes.<br>Entre tanto, mi madre me 
+		contaba 
+		<br>lo que Colmillo Blanco no sab&iacute;a de la nieve <br>y el recuerdo del 
+		mar era un espejismo bajo la s&aacute;banas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="LAS GASTADAS PALABRAS DE SIEMPRE"></a>Las gastadas palabras de 
+		siempre</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>D&eacute;jame recordarte las gastadas palabras de siempre,<br>los armarios 
+		que encierran la humedad de los puertos<br>y el sabor a betel que dejas 
+		en mis labios<br>cuando desapareces en el aire.<br>D&eacute;jame tender tu 
+		cabello a la sombra<br>para que la penumbra madure como el d&iacute;a.<br>
+		D&eacute;jame ser una ciudad inmensa, un bote de cerveza<br>o el fruto 
+		desollado ante la espiga.<br>D&eacute;jame recordarte d&oacute;nde me ahogu&eacute; de ni&ntilde;o<br>
+		y por qu&eacute; hace brillar mi sangre la tristeza.<br>O d&eacute;jame tirado en la 
+		banqueta, cubierto de peri&oacute;dicos,<br>mientras la nave de los locos zarpa<br>
+		hacia las islas griegas.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		</font><font face="Georgia" color="#84B0D6"><a name="Mariposa"></a>
+		Mariposa</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Tu 
+		sexo, <br>una mariposa negra.<br>Y no hay met&aacute;fora:<br>entr&oacute; por la 
+		ventana<br>y fue a posarse<br>entre tus piernas.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="MAYO SE HIZO PRESENTE Y LAS NUBES ENTRARON..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Mayo se hizo presente y las nubes entraron...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Mayo se hizo presente y 
+		las nubes entraron<br>a la casa tomando posesi&oacute;n de los floreros.<br>Te 
+		imagino con la cara lavada en una mecedora, puliendo<br>monedas de oro. 
+		El escaso viento pal&uacute;dico<br>me trae un olor a camarones vivos, a 
+		tehuanas<br>con frialdad de cerveza en los aretes.<br>Un perro iluminado 
+		por Toledo trata de morder<br>tus tobillos. Las monedas de oro caen 
+		sobre el 
+		<br>mosaico y dan con el canto en el origen de<br>los ladridos.<br>Todo 
+		se dispersa. Mayo se deja encadenar por el<br>pintor, y el artista y el 
+		mes se van con sus<br>resplandores a otra parte.<br>Junio se hace 
+		presente con sus altaner&iacute;as.<br>Es decir, con sus fechas de muerte, 
+		rabia y nacimiento.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="MIS MANOS EN TU ESPALDA..."></a>Mis manos en tu espalda...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Mis manos en tu espalda<br>
+		desconocen la artritis<br>y las sombras de la deformaci&oacute;n.<br>
+		<br>Mis manos, en tus muslos,<br>no piensan en un r&iacute;o<br>ni en la 
+		inconsciencia de la navegaci&oacute;n.<br>
+		<br>Mis manos, en tus manos,<br>no extra&ntilde;an cuello alguno<br>ni se 
+		averg&uuml;enzan<br>de un antojo de trampa,<br>de una esperanza de 
+		mutilaci&oacute;n.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		<br><a name="MUERO POR DESLIZAR, VERTICALMENTE MI LENGUA..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Muero por deslizar, verticalmente...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Muero por deslizar, verticalmente,<br>mi lengua entre tus labios.<br>Por 
+		humedecer, horizontalmente,<br>el imposible rencor de tus enc&iacute;as.<br>
+		<br>Se me antojan tus ojos cuando,<br>repletos de placer, miran 
+		empavesados<br>espejismos.<br>
+		<br>Desn&uacute;date. Blanquea la oscuridad.<br>Ya crecieron mis u&ntilde;as.<br>Ya 
+		encaminadas van hacia tus labios.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<br><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="NUBES A LO LEJOS..."></a>Nubes a lo lejos...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Nubes a lo lejos,<br>sobre el hilo tenso de la carretera.<br>
+		<br>Frente a nosotros,<br>manos azules desanudando<br>el hilo tenso de 
+		la carretera.<br>
+		<br>Puestos a secar,<br>tus deseos cuelgan<br>del hilo tenso de la 
+		carretera.<br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<br><a name="OTRO D&Iacute;A SIN VERTE, SIN PONER MIS PUPILAS..."></a></font>
+		<font face="Georgia" color="#84B0D6">Otro d&iacute;a sin verte, sin poner mis 
+		pupilas...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Otro d&iacute;a sin verte, sin poner mis pupilas<br>encima de tus trampas.<br>
+		Quiero decir: encima de tus rodillas sin cicatrices,<br>de tus labios 
+		amameyados, de tus afiladas<br>rencillas rojas, de tus palabras claves<br>
+		que continuamente preguntan si te entiendo.<br>Otro d&iacute;a sin verte, otras 
+		horas<br>de amarte a cielo abierto,<br>de acariciarte en un aire ya 
+		sujeto<br>por mi collar de u&ntilde;as enterradas.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="PALABRAS DE LA GRIEGA"></a>
+		</font><font face="Georgia" color="#84B0D6">
+		Palabras de la griega</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		No me guardes en tu imaginaci&oacute;n.<br>No me pienses.<br>Tus ojos est&aacute;n 
+		llenos de espl&eacute;ndida ponzo&ntilde;a.<br>No me mires.<br>Que mi saliva te inunde 
+		la garganta.<br>No me asfixies.<br>Deja de agusanar mi mente confundida.<br>
+		No me pudras.<br>Guarda mis incisivos en una caja de plata<br>pero no te 
+		arrodilles ante sus resplandores.<br>No me reces.<br>Que mis ropajes no 
+		sirvan de velamen<br>a los nav&iacute;os sin patria.<br>No me rasgues.<br>Que 
+		mis co&aacute;gulos no vivan en tus u&ntilde;as<br>ni en los nudillos que derriban 
+		templos.<br>No me maldigas.<br>En la herida la sal halle su suerte.<br>
+		<br></p>
+		<p align="center"><br><br>
+		</font><font face="Georgia" size="2" color="#8FABC2">
+		<br>
+		<img src="./SENSUBARRAINI.jpg" width="80" height="9" alt="SENSUBARRAINI.jpg (1743 bytes)"></p>
+		<blockquote>
+			<blockquote>
+				<blockquote>
+					<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+					<font color="#AAC0D5">
+					<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+					<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+					</p>
+				</blockquote>
+			</blockquote>
+		</blockquote></font>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:29:43 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:19:44 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

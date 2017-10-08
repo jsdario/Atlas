@@ -1,0 +1,788 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Mar&iacute;a Eugenia Vaz Ferreira</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Mar&iacute;a Eugenia Vaz Ferreira. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Maria_Eugenia_Vaz_Ferreira,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#8FABC2" vlink="#8FABC2" alink="#8FABC2">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/vazferreira.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/vazferreira.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162442" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./vazferreira.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:24:42 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./vazferreira.htm" title="19:32:51 May 29, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:24:42 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./vazferreira.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:24:42 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./vazferreira.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>79 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jan 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:130011000200_2007:-1:311344391400_2008:-1:101221432001_2009:-1:011000110000_2010:-1:100000001110_2011:-1:000000011101_2012:-1:100010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./VAZFERREIRA.jpg" width="637" height="51"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">
+<br>
+</p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&quot;M&aacute;s de una vez las manos me tendieron<br>
+m&aacute;s de una vez ri&eacute;ronme los labios...&quot;</em></font></p>
+
+<p align="center"><font color="#84B0D6"><img src="./VAZFERREIRA1.jpg" width="250" height="330"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6"><em>&quot;The birdy has 
+got&quot;</em></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6"><em>Vladimir 
+Hudobko</em></font></p>
+
+<p align="center"><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica<br>
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta 
+		uruguaya nacida en Montevideo en 1874. <br>Contempor&aacute;nea de Delmira&nbsp; 
+		Agustini y de Herrera Reisig, es considerada como una poeta metaf&iacute;sica, <br>
+		con rasgos del romanticismo y simbolismo.<br>Dedicada por alg&uacute;n tiempo a 
+		la docencia, fue designada para dictar la C&aacute;tedra de Literatura en la 
+		Universidad <br>
+		de Mujeres. Sin embargo, su precaria salud la oblig&oacute; a abandonar su 
+		trabajo, falleciendo en 1924, antes de ver <br>
+		publicada su obra.<br>Su producci&oacute;n literaria est&aacute; compuesta por 
+		cuarenta poemas contenidos en su &laquo;Isla de los C&aacute;nticos&raquo;, <br>
+		publicada por su hermano Carlos en 1925. &copy;<br><br></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+<img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./vazferreira.htm#CANTO VERBAL">Canto verbal</a><br><br>
+		<a href="./vazferreira.htm#EL ATA&Uacute;D FLOTANTE">El ata&uacute;d flotante</a><br><br>
+		<a href="./vazferreira.htm#ELEG&Iacute;A CREPUSCULAR">Eleg&iacute;a crepuscular</a><br><br>
+		<a href="./vazferreira.htm#HACIA LA NOCHE">Hacia la noche</a><br><br><a href="./vazferreira.htm#HEROICA">
+		Heroica</a><br>
+		<br><a href="./vazferreira.htm#HISTORIA P&Oacute;STUMA">Historia p&oacute;stuma</a><br><br>
+		<a href="./vazferreira.htm#HOLOCAUSTO">Holocausto</a><br><br><a href="./vazferreira.htm#INVOCACI&Oacute;N">
+		Invocaci&oacute;n</a><br>
+		<br><a href="./vazferreira.htm#LA ESTRELLA MISTERIOSA">La estrella misteriosa</a><br><br>
+		<a href="./vazferreira.htm#LA RIMA VACUA">La rima vacua</a><br>
+		<br>
+		<a href="./vazferreira.htm#LAS QUIMERAS">Las quimeras</a><br><br>
+		<a href="./vazferreira.htm#ODA A LA BELLEZA">Oda a la belleza</a><br><br>
+		<a href="./vazferreira.htm#REGRESO">Regreso</a><br><br><a href="./vazferreira.htm#TU ROSA Y MI CORAZ&Oacute;N">Tu 
+		rosa y mi coraz&oacute;n</a><br>
+		<br><a href="./vazferreira.htm#VASO FURTIVO">Vaso furtivo</a><br><br>
+		<a href="./vazferreira.htm#VOZ DEL RETORNO">Voz del retorno</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">Volver a: 
+	</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><br>
+	<font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice 
+		L-Z</a></font><br>
+	<font face="Georgia" size="2" color="#8FABC2">
+		Volver a: 
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#89A7BE"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a></font><font
+      face="Georgia" size="4" color="#8FABC2"> </font>
+		<font face="Georgia" size="4"
+      color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; <br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p align="left"><font color="#84B0D6"><a name="CANTO VERBAL"></a></font>
+		<font face="Georgia" color="#84B0D6">Canto verbal</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		A ti, palabra mi suprema dea,<br>tiende sus alas la esperanza m&iacute;a<br>
+		&aacute;guila errante del desierto humano<br>sin altas cumbres donde reposar<br>
+		el tedio de las rutas infinitas...<br>Tiende sus alas como a excelsa 
+		fuente<br>pr&oacute;diga de belleza y de armon&iacute;a;<br>quiere beber en tu copa de 
+		oro,<br>quiere ba&ntilde;arse en el agua sonante,<br>mudable en sus ritmos, 
+		diversa en sus glosas<br>y cuyo oleaje ya<br>sacudido por v&eacute;rtigos 
+		fecundos<br>o melodioso de serenidad...<br>A ti, palabra que tienes la 
+		magia<br>de sabiamente transmutar tu forma<br>y ajustarla a la loca 
+		trashumancia<br>de la maravillosa &aacute;nima viva....<br>Oh profunda, 
+		variante y fugaz,<br>que floreces en vetas luminosas<br>perfumadas de 
+		esencia espiritual...<br>&Aacute;nfora<br>de caudalosas perlas en murmurio,<br>
+		de blancas nieves y de rojas flamas.<br>&Aacute;nfora<br>de tempestades y 
+		constelaciones,<br>de suaves lluvias y silbantes rachas...<br>&Aacute;nfora<br>
+		de sonoras cadencias,<br>de crujiente espuma, cascabel marino,<br>de 
+		m&iacute;sticas hostias y de miel pagana...<br>No hay un tesoro que supere al 
+		tuyo<br>en abundancia de oportunas galas<br>para quimeras y 
+		revelaciones,<br>grandes historias y leyendas magnas<br>no hay un tesoro 
+		que supere al tuyo,<br>vertiginoso para la elocuencia,<br>inagotable 
+		para la ilusi&oacute;n,<br>l&iacute;rico para el numen romancesco<br>y musical para el 
+		divino amor...<br>Por tu vocero el invisible esp&iacute;ritu<br>se glorifica en 
+		vividas ofrendas,<br>su lira ta&ntilde;en las carnales fibras<br>y el coraz&oacute;n 
+		henchido se desborda<br>en sublimes poemas...<br>Por ti<br>sobre el 
+		bronce triunfal de los escudos<br>brotaron rosas tr&aacute;gicas,<br>cuyo 
+		fragante olor de sangre noble<br>blason&oacute; las estirpes y las razas.<br>
+		Por ti<br>en las verdes pupilas de las fieras<br>las sombras de los 
+		&iacute;mpetus salvajes<br>se trocaron en. h&uacute;medas estrellas.<br>Por ti se 
+		abri&oacute; de muchas rocas duras<br>el regazo feraz<br>en el dulce licor de 
+		sus vertientes<br>se confort&oacute; la esperanza mortal.<br>Yo no s&eacute; en qu&eacute; 
+		fant&aacute;stica materia<br>al escultor de la progenie humana<br>le plugo 
+		modelar la estatua m&iacute;a,<br>que no ablanda la luz de las auroras<br>ni el 
+		oscuro crep&uacute;sculo marchita;<br>pero si alguna vez mi coraz&oacute;n<br>abre a 
+		la vida su raudal interno,<br>s&iacute; se doran mis &aacute;ridas llanuras<br>y se 
+		pueblan de esquifes mis oc&eacute;anos,<br>si se viste de estelas fulgurantes<br>
+		la. nebulosa noche de mis pi&eacute;lagos<br>y las alas sin sol de mis pendones<br>
+		en raudas ondas flotan a los vientos,<br>si gorjean mis p&aacute;jaros ser&aacute;<br>
+		cuando en la entra&ntilde;a de un sacro silencio<br>sobre la losa de mi tumba 
+		viva<br>choque su llama tu rayo de fuego.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="EL ATAÚD FLOTANTE"></a></font>
+		<font face="Georgia" color="#84B0D6">El ata&uacute;d flotante</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		M&iacute; esperanza, yo s&eacute; que t&uacute; est&aacute;s muerta.<br>No tienes de los vivos<br>
+		m&aacute;s que la instable fluctuaci&oacute;n perpetua;<br>no s&eacute; si un tiempo vigorosa 
+		fuiste,<br>ahora, est&aacute;s muerta.<br>Te han ro&iacute;do qui&eacute;n sabe<br>qu&eacute; larvas 
+		metaf&iacute;sicas que hicieron<br>entre tu dulce carne su cosecha.<br>En vano<br>
+		el m&aacute;gico abanico de tus alas<br>con irisadas r&aacute;fagas me orea<br>
+		soltando al aire turbadoras chispas. 
+		<br>Yo s&eacute; que t&uacute; eres de esas<br>que vuelven redivivas en la noche<br>a 
+		decir otra vez su &uacute;ltima verba...<br>Ya te he visto venir<br>blanca y 
+		piadosa como un santo esp&iacute;ritu<br>sobre el vaiv&eacute;n de las marinas ondas;<br>
+		te he visto en el fulgor de las estrellas,<br>y hasta&nbsp; los bordes 
+		de mi quieta planta<br>danzan tus llamas en festivas rondas.<br>Pero si 
+		al interior vuelvo los ojos<br>Veo la sombra de tu mancha negra,<br>miro 
+		tu nebulosa en el vac&iacute;o<br>dar poco a poco su visi&oacute;n suspensa;<br>sin el 
+		miraje de los fueros fatuos<br>veo la sombra de tu mancha negra.<br>No 
+		llores porque s&eacute; los ojos m&iacute;os<br>saben vivir en lontananzas huecas;<br>
+		m&iacute;ralos secos y tranquilos; m&aacute;rchate<br>y el flotante ata&uacute;d reposar deja<br>
+		hasta que junto a ti tambi&eacute;n tendida<br>nos abracemos como hermanas 
+		buenas<br>y otra vez enlazadas nos durmamos<br>en el sepulcro vivo de la 
+		tierra.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#84B0D6"><a name="ELEG&Iacute;A CREPUSCULAR"></a>
+		</font><font face="Georgia"
+      color="#84B0D6">Eleg&iacute;a crepuscular</font><font face="Georgia" size="2"
+      color="#84B0D6"><br><br>Viento suave del crep&uacute;sculo,<br>viento de las 
+		leves alas,<br>azulmente silenciosas<br>y azulmente solitarias,<br>
+		an&oacute;nimo pasajero<br>fugaz en todas las patrias,<br>en las misteriosas 
+		selvas<br>y en las grutas oce&aacute;nicas,<br>viento suave del crep&uacute;sculo,<br>
+		viento de las leves alas...<br>Tu roce sobre mi frente<br>tiene la misma 
+		eficacia<br>de la luna entre las ruinas,<br>de los &oacute;leos en las llagas<br>
+		y de las claves que aflojan<br>el cordaje de las arpas...<br>Tu fresco 
+		soplo serena<br>la exaltaci&oacute;n de mi alma<br>fosca de llamar sin nombre<br>
+		y esperar sin esperanza<br>por haber nacido p&oacute;stuma<br>dentro de su 
+		propia l&aacute;pida...<br>Viento suave del crep&uacute;sculo<br>que cruzas sin decir 
+		nada<br>el transitorio par&eacute;ntesis<br>suspenso en la sombra vaga,<br>
+		cuando enmudecen las cosas<br>o todav&iacute;a no cantan,<br>cuando de los 
+		rojos soles<br>palidecieron las flamas<br>y las nocturnas estrellas<br>
+		est&aacute;n todav&iacute;a p&aacute;lidas...<br>Si yo supiera estar triste<br>yo me deshar&iacute;a 
+		en l&aacute;grimas<br>para que as&iacute; me bebieran<br>las caricias de tus r&aacute;fagas<br>
+		&iexcl;Qu&eacute; lindo renunciamiento!<br>&iexcl;Qu&eacute; liberaci&oacute;n beata!<br>Viento suave del 
+		crep&uacute;sculo<br>si tus brisas me acabaran,<br>azulmente silenciosas<br>y 
+		azulmente solitarias,<br>viento suave del crep&uacute;sculo,<br>viento de las 
+		leves alas.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		<a name="HACIA LA NOCHE"></a></font>
+		<font face="Georgia" color="#84B0D6">Hacia la noche</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Oh noche, yo tendr&iacute;a<br>una palma futura, desplegada<br>sobre el gran 
+		desierto,<br>si t&uacute; me das por una sola noche<br>tu coraz&oacute;n de terciopelo 
+		negro,<br>y yo, al comp&aacute;s de su morena sangre,<br>canto con las ondas 
+		beatas el sacro silencio.<br>
+		<br>Mi canto ser&aacute; vivo<br>s&oacute;lo por el deseo<br>de serenar la cuotidiana 
+		angustia...&nbsp;&nbsp;&nbsp; 
+		<br><br>Oh noche, yo te quiero<br>sin el fulgor de luminosos astros,<br>
+		sin marinos clamores<br>y sin la voz que finge<br>en los cr&aacute;neos sonoros 
+		el rumor de los vientos.<br>
+		<br>Oh dulce noche m&iacute;a, oh dulce noche!<br>Aunque el glorioso p&aacute;jaro del 
+		alba.<br>rompa despu&eacute;s mi lapidario ensue&ntilde;o,<br>un polvo de inquietud 
+		arda en mis ojos,<br>y me seas de nuevo<br>s&oacute;lo una palma antigua, 
+		replegada<br>sobre el gran desierto.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font color="#84B0D6"><a name="HEROICA"></a></font>
+		<font face="Georgia" color="#84B0D6">Heroica</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Yo quiero un vencedor de toda cosa,<br>invulnerable, universal, 
+		sapiente,<br>inaccesible y &uacute;nico.<br>
+		<br>En cuya gr&aacute;cil mano<br>se quebrante el acero,<br>el oro se diluya<br>
+		y el bronce en que se funden las corazas,<br>el s&oacute;lido granito de los 
+		muros,<br>las rocas y las piedras<br>los troncos y los m&aacute;rmoles<br>como 
+		la arcilla modelables sean,<br>A cuyo pie sin valla y sin obst&aacute;culo<br>
+		las murallas ameng&uuml;en,<br>se nivelen los pozos,<br>las columnas se 
+		trunquen<br>y se abran de par en par los p&oacute;rticos.<br>
+		<br>Que posea la copa de sus labios<br>el licor de la vida,<br>el virus 
+		de la muerte,<br>la miel de la esperanza,<br>las beatas obleas del 
+		olvido,<br>y del divino amor las hostias sacras.<br>
+		<br>Que al er&oacute;tico influjo de sus ojos<br>se empa&ntilde;en los cristales,<br>
+		la nieve se calcine,<br>se combustione el seno<br>virginal de las selvas<br>
+		y se empenache con ardientes ascuas<br>el coraz&oacute;n de la rebelde f&eacute;mina.<br>
+		<br>Que al rayar de su testa iluminada<br>resbalen de las frentes<br>las 
+		m&aacute;s bellas coronas,<br>los l&aacute;baros se borren,<br>repliegue sus insignias<br>
+		la faz del estandarte<br>y vacilen los s&iacute;mbolos ilustres<br>sobre sus 
+		pedestales.<br>
+		<br>Yo quiero un vencedor de toda cosa,<br>domador de serpientes, 
+		encendedor de astros<br>transponedor de abismos...<br>
+		<br>Y que rompa una c&oacute;smica fon&iacute;a<br>como el derrumbe de una inmensa 
+		torre<br>con sus cien mil almenas de cristales<br>quebrados en la b&oacute;veda 
+		infinita,<br>cuando el gran vencedor doble y deponga<br>cabe mi planta 
+		sus rodillas &iacute;nclitas.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="HISTORIA PÓSTUMA"></a></font>
+		<font face="Georgia" color="#84B0D6">Historia p&oacute;stuma</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Todo me lo diste, todo:<br>el ritmo azul de las cunas<br>en cuentos 
+		maravillosos<br>glosados de suaves m&uacute;sicas...<br>
+		<br>Las palabras melodiosas<br>divinas como el silencio,<br>las rosas de 
+		nieve y oro<br>perfumadas de secretos...<br>
+		<br>Las albas anunciadoras<br>de los venturosos d&iacute;as<br>henchidos de 
+		primaveras<br>refulgentes de sonrisas...<br>
+		<br>Las p&aacute;lidas nebulosas<br>de los cielos taciturnos,<br>la soledad, el 
+		olvido<br>y la paz de los sepulcros.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="HOLOCAUSTO"></a>Holocausto</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Quebrantar&eacute; en tu honra mi vieja rebeld&iacute;a<br>si sabe combatirme la 
+		ciencia de tu mano,<br>si tienes la grandeza de un templo soberano<br>
+		ofrendar&eacute; mi sangre para tu idolatr&iacute;a.<br>Naufragar&aacute; en tus brazos la 
+		prepotencia m&iacute;a<br>si tienes la profunda fruici&oacute;n del oce&aacute;no,<br>y si 
+		sabes el ritmo de un canto sobrehumano<br>silenciar&aacute;n mis arpas su 
+		eterna melod&iacute;a.<br>
+		<br>Me volver&eacute; paloma si tu soberbia siente<br>la garra vencedora del 
+		&aacute;guila potente;<br>si sabes ser fecundo ser&eacute; tu floraci&oacute;n,<br>y brotar&eacute; 
+		una selva de c&oacute;smicas entra&ntilde;as,<br>cuyas salvajes frondas rom&aacute;nticas y 
+		hura&ntilde;as<br>conquistar&aacute; tu imperio si sabes ser le&oacute;n.<br>
+		<br></font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="INVOCACIÓN"></a>Invocaci&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Oh noche embriagadora<br>hecha de soledad y de desesperanza,<br>que 
+		brindas en tu copa de azabache y de estrellas<br>sobre la tierra 
+		ardiente en quietud derramada.<br>
+		<br>Noche de las delicias mudas y negativas<br>de que gozan los muertos 
+		vivos como fantasmas,<br>abrochando en la sombra su carnal vestidura<br>
+		marchita de enflorar la fiesta meridiana.<br>
+		<br>Noche, noche infinita, rinc&oacute;n de los olvidos,<br>perd&oacute;n de 
+		penitentes que nunca hicieron nada<br>m&aacute;s que cargar a solas el pesado 
+		madero<br>sobre la ligereza cautiva de sus alas...<br>
+		<br>Te espero d&iacute;a a d&iacute;a<br>para esconder mis horas en la paz de tu 
+		l&aacute;pida,<br>cuando las ondas vivas su vibraci&oacute;n aquietan<br>bajo la 
+		fuerza ignota de at&aacute;vicos nirvanas,<br>
+		<br>y en invisibles soplos<br>el numen secular su inspiraci6n levanta<br>
+		del fondo de los tiempos para siempre extinguidos,<br>aunque la rueda 
+		c&oacute;smica traiga sus a&ntilde;oranzas.<br>
+		<br>Yo no s&eacute; lo que dice tu boca abierta y muda<br>al que dor&oacute; su tienda 
+		con oro de esperanza,<br>pero yo s&eacute; que sabes con amorosa ciencia<br>
+		tenderte suavemente sobre el alma cansada!<br>
+		<br>Tu voz dice en silencio tu eternidad futura;<br>la r&uacute;brica del &quot;Fin&quot; 
+		est&aacute; en tu obscura mancha,<br>aunque a besarte vengan en sus carros 
+		sonoros<br>con sus aureolas rubias las doncellas del alba.<br>
+		<br>Todav&iacute;a los mundos<br>relucen en la b&oacute;veda de tu urna sagrada;<br>un 
+		viejo tesorero se ha dormido en los tiempos<br>y ha olvidado en tu fondo 
+		sus &uacute;ltimas alhajas...<br>
+		<br>Dale a los benditos que todav&iacute;a sue&ntilde;an,<br>tus &aacute;ureas lentejuelas y 
+		tu hostia de plata,<br>y a m&iacute;, que te deseo inextinguible y &uacute;nica,<br>
+		dame la eternidad de tu silencio, oh Hermana.<br>
+		<br></font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br><a name="LA ESTRELLA MISTERIOSA"></a></font>
+		<font face="Georgia" color="#84B0D6">La estrella misteriosa</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Yo no s&eacute; d&oacute;nde est&aacute;, pero su luz me llama,<br>&iexcl;oh misteriosa estrella de 
+		un inmutable sino!...<br>Me nombra con el eco de un silencio divino<br>y 
+		el luminar oculto de una invisible llama.<br>Si alguna vez acaso me 
+		aparto del camino,<br>con una fuerza ignota de nuevo me reclama:<br>
+		gloria, quimera, f&eacute;nix, fant&aacute;stico oriflama<br>o un imposible amor 
+		extra&ntilde;o y peregrino...<br>
+		<br>Y sigo eternamente por la desierta v&iacute;a<br>tras la fatal estrella 
+		cuya atracci&oacute;n me gu&iacute;a,<br>mas nunca, nunca, nunca a revelarse llega!<br>
+		Pero su luz me llama, su silencio me nombra,<br>mientras mis torpes 
+		brazos rastrean en la sombra<br>con la desolaci&oacute;n de una esperanza 
+		ciega...<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#84B0D6"><a name="LA RIMA VACUA"></a>
+		</font><font face="Georgia" color="#84B0D6">La rima vacua</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Grito de sapo<br>llega hasta m&iacute; de las nocturnas charcas...<br>la tierra 
+		est&aacute; borrosa y las estrellas<br>me han vuelto las espaldas.<br>
+		<br>Grito de sapo, mueca<br>de la armon&iacute;a, sin tono, sin eco,<br>llega 
+		hasta m&iacute; de las nocturnas charcas...<br>
+		<br>La vaciedad de mi profundo hast&iacute;o<br>rima con &eacute;l el d&uacute;o de la nada.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="LAS QUIMERAS"></a></font><font face="Georgia" color="#84B0D6">
+		Las quimeras</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Sangre bullente de las bocas rojas,<br>sangre que brilla<br>y en 
+		rec&oacute;nditos vasos se retrae<br>cuando fervientes labios se avecinan...<br>
+		<br>Paladar calcinado,<br>lengua de fuego<br>que lleva el peregrino<br>
+		bajo el sol meridiano del desierto<br>y cuya sed no aplacan<br>el 
+		l&iacute;mpido raudal de los oasis<br>y el dulce jugo de los cocoteros...<br>
+		<br>Collares desatados,<br>lacias guirnaldas de los brazos quietos,<br>
+		ce&ntilde;idores de amor nunca prendidos<br>para estrechar los cuellos 
+		ofrendarios<br>y los torsos sol&iacute;citos...<br>
+		<br>Cuencas de las pupilas<br>curiosas de figuras,<br>ebrias de 
+		perspectivas deslumbrantes,<br>conturbadas por blondos espejismos<br>
+		adonde f&aacute;cilmente<br>se borran los mirajes<br>como en el mar la curva de 
+		las olas<br>y la fugaz estela de las naves...<br>
+		<br>Placa de oro para el son propicia,<br>fibras de ac&uacute;stica sonora<br>
+		por donde ruedan todas las palabras<br>sin imprimir sus l&iacute;ricas 
+		rapsodias...<br>
+		<br>Campanas mudas de los corazones,<br>cosas rebeldes,<br>tambi&eacute;n como 
+		a vosotros<br>m&aacute;s de una vez las manos me tendieron<br>m&aacute;s de una vez 
+		ri&eacute;ronme los labios<br>y se deshizo en c&aacute;lidos aromas<br>la brasa de sus 
+		rojos incensarios.....<br>
+		<br>Tambi&eacute;n como a vosotros<br>mir&aacute;ronme gozosas las pupilas,<br>que 
+		rayaron en t&oacute;rridos incendios<br>con brillo de fulgentes pedrer&iacute;as...<br>
+		<br>Mas segu&iacute; torvamente y tristemente<br>porque tambi&eacute;n me ungieron en 
+		mal hora<br>con sedes y ambiciones sobrehumanas,<br>con deseos profundos 
+		e imposibles,<br>y voy como vosotros<br>tambi&eacute;n inaccesible e impotente,<br>
+		cargando con la cruz de la quimera,<br>ajustada a la sien ardua corona,<br>
+		sin poder claudicar<br>y sin tocar la carne de la vida<br>jam&aacute;s, jam&aacute;s, 
+		jam&aacute;s.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="ODA A LA BELLEZA"></a></font>
+		<font face="Georgia" color="#84B0D6">Oda a la belleza</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Oh Belleza, que t&uacute; seas bendita,<br>ya que eres absolutamente pura,<br>
+		ya que eres inviolada,<br>l&iacute;mpida, firme, sana e impoluta.<br>Fuente de 
+		la divina complacencia,<br>Oasis infinito<br>que prodigas los &eacute;xtasis 
+		beatos<br>y las rom&aacute;nticas contemplaciones...<br>
+		<br>Adonde quiera que tu signo luzca,<br>adonde quiera que la esencia 
+		encarnes,<br>emerge de tu gaya fantas&iacute;a<br>una gloria serena y luminosa<br>
+		una fruici&oacute;n profunda e inefable...<br>
+		<br>Eres el cauce pr&oacute;digo<br>surtidor de armon&iacute;a,<br>crisol de m&iacute;sticas 
+		depuraciones,<br>la veta que colora y que sublima<br>el eterno miraje;<br>
+		eres la gema augusta<br>prendida sobre el arca<br>f&eacute;rtil del universo.<br>
+		<br>Aunque el ciego te ignore,<br>el profano te niegue<br>y el infiel te 
+		repudie,<br>eres eternamente triunfadora<br>sobre la indiferencia de los 
+		necios<br>y la conjuraci&oacute;n de los ap&oacute;statas&#8230;<br>Aunque los pecadores<br>
+		te inculpen sus pecados,<br>y te acusen los r&eacute;probos<br>de atributos 
+		malditos,<br>eres inmaculada e inocente;<br>no te corrompes con la hiel 
+		del odio<br>ni la ponzo&ntilde;a del amor sacr&iacute;lego.<br>
+		<br>Eres inaccesible,<br>Eres pasiva y sola,<br>sencilla y sobrehumana;<br>
+		no inspiras, no padeces<br>el dominio imperial de la materia<br>ni la 
+		sensible turbaci&oacute;n del alma...<br>
+		<br>Entre todos los acontecimientos<br>evoluciones, mitos y teor&iacute;as,<br>
+		entre la suficiencia que te alaba<br>y la diversidad que te interroga,<br>
+		t&uacute; te levantas religiosamente<br>dentro la urna d&uacute;ctil de tu forma<br>
+		como en la alada prez del incensario<br>la inmunidad de la sagrada 
+		hostia.<br>
+		<br>Oh Belleza, que t&uacute; seas bendita,<br>m&aacute;s la sabia legi&oacute;n de tus 
+		ap&oacute;stoles,<br>la entra&ntilde;a que te crea,<br>el sol que te ilumina,<br>el 
+		prisma que te agranda,<br>la plancha que te copia,<br>el &aacute;ureo pedestal 
+		que te enaltece<br>y el soberano lis que te corona.<br>
+		<br>Por eso sobre el plinto de tu imagen,<br>sobre la majestad de tu 
+		hermosura,<br>sobre el fulgor joyante de tus iris,<br>sobre la egregia 
+		l&iacute;nea de tus curvas<br>pongo la rendici&oacute;n del canto m&iacute;o...<br>a tu 
+		gracia inmortal loa fecunda.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font color="#84B0D6"><a name="REGRESO"></a></font>
+		<font face="Georgia" color="#84B0D6">Regreso</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		He de volver a ti, propicia tierra<br>como una vez surg&iacute; de tus 
+		entra&ntilde;as;<br>con un sacro dolor de carne viva<br>y la pasividad de las 
+		estatuas.<br>He de volver a ti gloriosamente,<br>triste de orgullos 
+		arduos e infecundos<br>con la ofrenda vital inmaculada.<br>No s&eacute;, cuando 
+		labraste el signo m&iacute;o,<br>el crisol armonioso de tus gestas<br>d&oacute;nde 
+		estaba...<br>d&oacute;nde la proporci&oacute;n de tus designios...<br>T&uacute; me brotaste 
+		fant&aacute;sticamente<br>con la quietud de la serena sombra<br>y el tr&aacute;gico 
+		fulgor de las borrascas...<br>T&uacute; me brotaste caprichosamente<br>alguna 
+		vez en que se confundieron<br>tus potencias en una sola r&aacute;faga...:<br>Y 
+		no tengo camino;<br>mis pasos van por la salvaje selva<br>en un perpetuo 
+		af&aacute;n contradictorio,<br>la voluntad incierta se deshace<br>para 
+		tornasolar la fantas&iacute;a;<br>con luz y sombra, con silencio y canto<br>el 
+		miraje interior dora sus prismas;<br>mientras que siento desgranarse 
+		afuera<br>con llanto musical los surtidores,<br>siento crujir los 
+		extendidos brazos<br>que hacia el materno tronco se repliegan,<br>temor, 
+		fatiga. solitaria angustia,<br>y en un perpetuo af&aacute;n contradictorio<br>
+		mis pasos van por la salvaje selva.<br>Ah, si pudiera desatar un d&iacute;a<br>
+		la unidad integral que me aprisiona<br>Tirar los ojos con los astros 
+		quietos<br>de un lago azul en la nocturna onda...<br>Tirar la boca muda 
+		entre los c&aacute;lices<br>cuyo ferviente aroma sin destino<br>disipa el 
+		viento en sus alas flotantes<br>Darle el &uacute;ltimo adi&oacute;s<br>al insondable 
+		enigma del deseo,<br>cerrar el pensamiento atormentado<br>y dejarlo 
+		dormir un largo sue&ntilde;o<br>sin clave y sin fulgor de redenciones<br>Alguna 
+		vez me llamar&aacute;s de nuevo<br>Y he de volver a ti, tierra propicia,<br>con 
+		la ofrenda vital inmaculada,<br>en su sayal mortuorio toda envuelta<br>
+		como en una bandera libertaria.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="TU ROSA Y MI CORAZÓN"></a>
+		</font><font face="Georgia" color="#84B0D6">Tu rosa y mi coraz&oacute;n</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Antes que entre tus labios y mi o&iacute;do<br>el cipr&eacute;s del silencio, largo y 
+		mudo,<br>alce su quieta cima,<br>de tu palabra en el cristal sonoro<br>
+		dame una roja rosa, que ser&aacute;<br>por tu lirismo y tu carne fragante<br>
+		rosa de amor humano y rosa m&iacute;stica.<br>
+		<br>La prender&eacute; en mi pecho<br>sobre la palpitante rosa m&iacute;a,<br>y del 
+		perpetuo beso el tibio roce<br>esparcir&aacute; sus perfumadas ondas...<br>
+		<br>Hoy,<br>ebria de aroma me ser&aacute; brindada<br>la belleza infinita...<br>
+		y en mi larva fugaz cuando se apaguen<br>los armoniosos &eacute;xtasis<br>me 
+		envolver&aacute;n las perfumadas ondas<br>en su mortaja amante y siempreviva.<br>
+		<br>Dame una rosa, antes<br>que el cipr&eacute;s largo y mudo, entre nosotros<br>
+		alce su quieta cima...<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="VASO FURTIVO"></a>Vaso furtivo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Por todo lo breve y fr&aacute;gil,<br>superficial, fugitivo,<br>por lo que no 
+		tiene bases,<br>argumentos ni principios;<br>por todo lo que es liviano,<br>
+		veloz, mudable y finito;<br>por las volutas del humo,<br>por las rosas 
+		de los tirsos,<br>por la espuma de las olas<br>y las brumas del 
+		olvido...<br>por lo que les carga poco<br>a los pobres peregrinos<br>de 
+		esta trashumante tierra<br>grave y lun&aacute;tica, brindo<br>con palabras 
+		transitorias<br>y con vaporosos vinos<br>de burbujas centelleantes<br>en 
+		cristales quebradizos...</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="VOZ DEL RETORNO"></a>
+		</font><font face="Georgia" color="#84B0D6">Voz del retorno</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Nada le queda al n&aacute;ufrago; ya nada: ni siquiera<br>la dulce remembranza 
+		de un viejo sue&ntilde;o vano,<br>ni la marchita y fr&aacute;gil ala de una quimera<br>
+		que al estrecharse deja su polvo entre la mano.<br>La media noche es 
+		tarde y el alba fue temprano,<br>y el orgulloso d&iacute;a le dijo al sol: 
+		&#8220;Espera&#8221;;<br>quien sin besarla aspira la flor de Primavera,<br>pasa como 
+		una sombra por el jard&iacute;n humano.<br>
+		<br>Violetas de los prados en el solar fragante,<br>rosas de los 
+		pensiles rojas y perfumadas<br>que al pasajero abrieron su misterioso 
+		broche;<br>el n&aacute;ufrago retorna como una sombra errante,<br>sin una sola 
+		estrella de fl&aacute;mulas doradas<br>con que alumbrar el fondo de su infinita 
+		noche.<br>
+		</font></p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<font face="Georgia" size="2" color="#8FABC2">
+	<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+	<font color="#AAC0D5">
+	<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+	<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+	</p>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:24:42 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:44 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

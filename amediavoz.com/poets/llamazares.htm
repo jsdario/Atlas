@@ -1,0 +1,723 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Julio Llamazares</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Julio Llamazares. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Julio_Llamazares,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/llamazares.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/llamazares.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815181111" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./llamazares.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:11:11 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./llamazares.htm" title="23:33:33 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:11:11 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./llamazares.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="6 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:11:11 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./llamazares.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>26 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">20 Jun 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000001020100_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000101020_2012:-1:101120001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+	<p align="center"><br>
+&nbsp; <br>
+	</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./LLAMAZARES.jpg" width="385" height="39"></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">
+	&quot;&iquest;Qui&eacute;n atardece junto a mi coraz&oacute;n helado?&quot;</em></font></p>
+	<p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./LLAMAZARES1.jpg" width="277" height="334"></font></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">&quot;Le'Homme au chapeau&quot;</font></em></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">Ren&eacute; Magritte</font></em><font face="Basil" size="5" color="#84B0D6"><br>
+	</font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6">Poeta, novelista y 
+		narrador espa&ntilde;ol, nacido en Vegami&aacute;n, pueblo desaparecido de Le&oacute;n, en el 
+		a&ntilde;o de 1955.<br>
+		Inclinado desde muy joven por el ejercicio literario, fue fundador de 
+		los Cuadernos Leoneses de Poes&iacute;a <br>
+		y obtuvo el <i>Premio Nacional de Poes&iacute;a Universitaria</i> en 1976. Se 
+		licenci&oacute; en Derecho y muy pronto abandon&oacute; <br>
+		la profesi&oacute;n para dedicarse al periodismo escrito y radial en la ciudad 
+		de Madrid.<br>
+		Por la publicaci&oacute;n de los poemarios <i>&quot;La lentitud de los bueyes&quot;</i>&nbsp; 
+		en 1979 y <i>&quot;Memoria de la nieve&quot;</i> en 1982, <br>
+		obtuvo los premios&nbsp;
+		<i>Antonio Gonz&aacute;lez de Lama&nbsp; </i>y<i>&nbsp; Jorge Guill&eacute;n. </i>Es 
+		autor de importantes novelas y relatos <br>
+		entre los que se cuentan, <i>&quot;Luna de lobos&quot;</i> 1985, 
+		<i>&quot;La lluvia amarilla&quot;</i> 1988, <i>&quot;Escenas de cine mudo&quot;</i> 1993, <i>
+		<br>
+		&quot;En mitad de ninguna parte&quot;</i> 1995, <i>&quot;Los viajeros de</i> <i>Madrid&quot;</i> 
+		1998, <i>&quot;Cuaderno del Duero&quot;</i> 1999 <br>
+		y <i>&quot;El cielo de Madrid&quot; </i>
+		2005.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+		<p align="center">
+		<font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./llamazares.htm#De La lentitud de los bueyes 1979">De &quot;La lentitud de los 
+		bueyes&quot; 1979</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2" size="2">
+		<a href="./llamazares.htm#1.  Nuestra quietud es dulce y azul y torturada en esta hora...">
+		1.&nbsp;&nbsp;&nbsp;&nbsp; Nuestra quietud es dulce y azul y torturada 
+		en esta hora...</a><br>
+		<a href="./llamazares.htm#3. Nada trasciende la densa mansedumbre de esta tarde...">3.&nbsp;&nbsp;&nbsp;&nbsp; 
+		Nada trasciende la densa mansedumbre de esta tarde...</a><br>
+		<a href="./llamazares.htm#7. Hay racimos de soledad en tus manos...">7.&nbsp;&nbsp;&nbsp;&nbsp; 
+		Hay racimos de soledad en tus manos...</a><br>
+		<a href="./llamazares.htm#11. Si te pusiera copos de tierra sobre la boca...">11.&nbsp;&nbsp; 
+		Si te pusiera copos de tierra sobre la boca...</a><br>
+		<a href="./llamazares.htm#13. Yo no recuerdo sino el sabor de la duda...">13.&nbsp; Yo 
+		no recuerdo sino el sabor de la duda...</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia">
+		<a href="./llamazares.htm#De Memoria de la nieve 1982">De &quot;Memoria de la nieve&quot; 1982</a></font></p>
+		<p align="left"><font face="Georgia" size="2">
+		<a href="./llamazares.htm#1. Mi memoria es la memoria de la nieve...">1.&nbsp;&nbsp;&nbsp;&nbsp; 
+		Mi memoria es la memoria de la nieve...</a></font><br>
+		<font face="Georgia" size="2">
+		<a href="./llamazares.htm#7.  El r&iacute;o tra&iacute;a a veces zapatos de mujeres...">7.&nbsp;&nbsp;&nbsp; 
+		El r&iacute;o tra&iacute;a a veces zapatos de mujeres...</a><br>
+		<a href="./llamazares.htm#9.De nuevo llega el mes de las avellanas y el silencio...">9.&nbsp;&nbsp;&nbsp; 
+		De nuevo llega el mes de las avellanas y el silencio...</a><br>
+		<a href="./llamazares.htm#10.  Todo lo aprend&iacute; de quien nunca fue amado...">10.&nbsp; 
+		Todo lo aprend&iacute; de quien nunca fue amado...</a><br>
+		<a href="./llamazares.htm#12. En llamas va la leyenda creciendo...">12.&nbsp; En llamas 
+		va la leyenda creciendo...</a><br>
+		<a href="./llamazares.htm#21. In&uacute;til es volver a los lugares olvidados y perdidos...">
+		21.&nbsp; In&uacute;til es volver a los lugares olvidados y perdidos...</a><br>
+		<a href="./llamazares.htm#30.  &iquest;Qu&eacute; espero a&uacute;n de la espiral del tiempo...">30. &iquest;Qu&eacute; 
+		espero a&uacute;n de la espiral del tiempo...</a></font></p>
+		<p align="left"><br>
+		<font face="Georgia" color="#8fabc2" size="2">Volver a: </font>
+		<font face="Georgia" color="#8fabc2"><a href="./">A 
+		media voz</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+		</font><font face="Georgia" color="#85a6bc" size="2">Volver a: </font>
+		<font face="Georgia" color="#85a6bc"><a href="./indice-A-K.htm">&Iacute;ndice A-K
+		</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+&nbsp;</font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p><br>
+		<font face="Georgia" color="#84B0D6">
+		<a name="De La lentitud de los bueyes 1979"></a>De &quot;La lentitud de los 
+		bueyes&quot; 1979</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="1.  Nuestra quietud es dulce y azul y torturada en esta hora...">
+		</a>1.&nbsp; Nuestra quietud es dulce y azul y torturada en esta hora...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		&nbsp;Nuestra quietud es dulce y azul y torturada en esta hora.<br>
+		<br>
+		Todo es tan lento como el pasar de un buey sobre la nieve. Todo tan 
+		blando <br>
+		como las bayas rojas del acebo.<br>
+		<br>
+		Nuestro abandono es grande como la existencia, profundo como el sabor <br>
+		de las frutas machacadas. Nuestro abandono no termina con el cansancio.<br>
+		<br>
+		No es un error la lentitud, ni habitan nuestra alma las oquedades del 
+		conocimiento.<br>
+		<br>
+		En alg&uacute;n zarzal lejano anida un p&aacute;jaro de aceite que nace con el d&iacute;a. 
+		Siento su sed <br>
+		granate algunas veces. Su abandono es tan dulce como el nuestro.<br>
+		<br>
+		Su lentitud no est&aacute; despose&iacute;da de costumbre.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="3. Nada trasciende la densa mansedumbre de esta tarde..."></a>
+		3. Nada trasciende la densa mansedumbre de esta tarde...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Nada trasciende la 
+		densa mansedumbre de esta tarde.<br>
+		<br>
+		Todo est&aacute; en calma delante de mis ojos: las cig&uuml;e&ntilde;as varadas <br>
+		sobre el silencio, y los frutales florecidos m&aacute;s all&aacute; del tendido del 
+		ferrocarril.<br>
+		<br>
+		En odres muy antiguos, tan antiguos que ni siquiera el dolor <br>
+		puede alcanzarles, est&aacute; guardado el tiempo. Y su costumbre deja posos
+		<br>
+		m&aacute;s &aacute;cidos y azules que el olvido.<br>
+		<br>
+		Como hierba crecida entre ruinas, la soledad es su &uacute;nico alimento y, <br>
+		sin embargo, su sustancia es tan dulce como nata crecida.<br>
+		<br>
+		Absten&eacute;os, no obstante, de ponerle interrogantes amarillas <br>
+		o de buscar dioses de trapo all&iacute; donde existen solamente aguas absurdas.<br>
+		<br>
+		De todos es sabido que el tiempo no posee otra grandeza
+		<br>
+		que su propia mansedumbre.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><br>
+		<a name="7. Hay racimos de soledad en tus manos..."></a>7. Hay racimos 
+		de soledad en tus manos...&nbsp; </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Hay racimos de soledad 
+		en tus manos, desposesiones m&aacute;s antiguas <br>
+		que la sangre.<br>
+		<br>
+		Huyen los a&ntilde;os de tus ojos como bandadas de cometas por las plazas 
+		maduras. <br>
+		(S&oacute;lo quedan los bueyes rumiando su tristeza.)<br>
+		<br>
+		Has conocido, entre gavillas de silencio, el sabor amarillo de mis 
+		pasos, <br>
+		el humo indescifrable de las brasas sin tiempo.<br>
+		<br>
+		Nunca mi lejan&iacute;a se amas&oacute; con barro, pero puse en tu boca las yemas m&aacute;s <br>
+		quemadas y los besos m&aacute;s lentos. Nunca mi lejan&iacute;a se espes&oacute; hasta tu 
+		cuerpo.<br>
+		<br>
+		Como una fuente vieja, azul desde su olvido, arrinconaste el miedo <br>
+		en arcas inviolables.<br>
+		<br>
+		Ni siquiera el dolor estalla entre tus labios. Ni siquiera la antigua, <br>
+		la salada tristeza de mis besos.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * * </font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6"><br>
+		<a name="11. Si te pusiera copos de tierra sobre la boca..."></a>11. Si 
+		te pusiera copos de tierra sobre la boca... </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Si te pusiera copos de 
+		tierra sobre la boca, sabr&iacute;as la acidez que me posee.<br>
+		<br>
+		Si apoyase mis preguntas en tus hombros, te desmoronar&iacute;as como una <br>
+		estatua de sal.<br>
+		<br>
+		(&iquest;O acaso puede alguien soportar el equilibrio de los &aacute;rboles m&aacute;s 
+		altos?)<br>
+		<br>
+		Pero no quiero condenarte a ser cuenco de nieve o roca muda.<br>
+		<br>
+		Advierto en tus andenes una espera infinita y tus silencios me son 
+		agrios <br>
+		como bruma.<br>
+		<br>
+		Los mercaderes montan sus puestos de mentiras y perfumes a tu paso. <br>
+		Tus recuerdos esperan, apostados como perros, el momento en que se 
+		incendie <br>
+		la nostalgia.<br>
+		<br>
+		Reconozco que mis preguntas aumentar&iacute;an tu indefensi&oacute;n.</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * *</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="13. Yo no recuerdo sino el sabor de la duda..."></a>13. Yo no 
+		recuerdo sino el sabor de la duda...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Yo no recuerdo sino el sabor de la duda como un alud de fresas <br>
+		sobre las blandas escamas de mi boca.<br>
+		<br>
+		He olvidado el lugar donde las nieves m&aacute;s azules consiguen resistirse <br>
+		a su abandono.<br>
+		<br>
+		He olvidado ya hace tiempo la d&oacute;cil lentitud de los molinos.<br>
+		<br>
+		Mucho antes de la hora de los vagabundos, y a trav&eacute;s de arboledas 
+		heladas, <br>
+		camin&eacute; largamente hacia la mansedumbre. Busqu&eacute; los prados donde pastan
+		<br>
+		los bueyes m&aacute;s antiguos.<br>
+		<br>
+		Rocas m&aacute;s amarillas que el silencio puse sobre mi incertidumbre. <br>
+		Rocas m&aacute;s dilatadas que algod&oacute;n.<br>
+		<br>
+		Y no qued&oacute; otra cosa que la duda fluyendo dulcemente, como nata 
+		derretida.<br>
+		<br>
+		Yo no s&eacute; si, despu&eacute;s de la muerte, alguien vendr&aacute; a dormirme con 
+		leyendas <br>
+		aprendidas en lugares lejanos.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Yo no s&eacute; si el aguacero 
+		de la nada apagar&aacute; los hornos de la mendicidad.<br>
+		<br>
+		Pero es seguro que palabras absolutas, m&aacute;s absolutas que vasijas de 
+		aceite <br>
+		derramadas, me estar&aacute;n esperando al otro lado del olvido.<br>
+		<br>
+		Y entre esas voces acu&ntilde;adas sobre moldes de arcilla y certidumbre, <br>
+		mi voz sonar&aacute; extra&ntilde;a como tomillo arraigado en las cuestas del amor.<br>
+		<br>
+		Mi voz ser&aacute; como un par&eacute;ntesis de duda.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De Memoria de la nieve 1982"></a>De &quot; Memoria de la nieve&quot; 1982
+		</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="1. Mi memoria es la memoria de la nieve..."></a>1. Mi memoria 
+		es la memoria de la nieve...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Mi memoria es la memoria de la nieve. Mi coraz&oacute;n est&aacute; blanco <br>
+		como un campo de urces.<br>
+		<br>
+		En labios amarillos la negaci&oacute;n florece. Pero existe un nogal <br>
+		donde habita el invierno.<br>
+		<br>
+		Un lejano nogal, doblado sobre el agua, a donde acuden a morir <br>
+		los guerreros m&aacute;s viejos.<br>
+		<br>
+		En un mismo exterior se deshacen los d&iacute;as y la desolaci&oacute;n corroe <br>
+		los signos del suicidio:<br>
+		<br>
+		globos entre las ramas del silencio y un animal sin nombre <br>
+		que se espesa en mi rostro.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="7.  El r&iacute;o tra&iacute;a a veces zapatos de mujeres..."></a>7.&nbsp; El 
+		r&iacute;o tra&iacute;a a veces zapatos de mujeres...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">El r&iacute;o tra&iacute;a a veces 
+		zapatos de mujeres entre las hojas tiernas <br>
+		y los troncos muertos.<br>
+		<br>
+		Pero nosotros cruz&aacute;bamos los puentes con canciones y pa&ntilde;uelos de 
+		azafr&aacute;n.<br>
+		<br>
+		Y, en el verano, colg&aacute;bamos pendientes de cerezas en las orejas de la 
+		amada.<br>
+		<br>
+		M&aacute;s all&aacute;, en su memoria, los ciervos se incendiaban como flechas de 
+		sangre:<br>
+		<br>
+		veloces en sus ojos azules y lejanos; rojos en sus cabellos heridos por 
+		la bruma.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="9.De nuevo llega el mes de las avellanas y el silencio..."></a>
+		9.De nuevo llega el mes de las avellanas y el silencio...
+		</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">De nuevo llega el mes 
+		de las avellanas y<br>
+		el silencio.<br>
+		<br>
+		Otra vez se alargan las sombras de las torres<br>
+		la plenitud azul del huerto familiar.<br>
+		<br>
+		Y en la noche se escucha el grito desolado<br>
+		de las frutas silvestres.<br>
+		<br>
+		S&eacute; muy bien que &eacute;ste es el mes de<br>
+		la desesperanza.<br>
+		<br>
+		S&eacute; muy bien que, tras los mimbres l&aacute;nguidos<br>
+		del r&iacute;o, acecha un animal de nieve.<br>
+		<br>
+		Pero era en este mes cuando busc&aacute;bamos or&eacute;gano<br>
+		y genciana, flores moradas para aliviar<br>
+		las piernas abrasadas de las madres.<br>
+		<br>
+		Y recibo el recuerdo como una lenta lluvia<br>
+		de avellanas y silencio.<br>
+		<br>
+		<br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="10.  Todo lo aprend&iacute; de quien nunca fue amado..."></a>10.&nbsp; 
+		Todo lo aprend&iacute; de quien nunca fue amado...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Todo lo aprend&iacute; de 
+		quien nunca fue amado: la nieve y el silencio <br>
+		y el grito de los bosques cuando muere el verano.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">O aquella canci&oacute;n celta 
+		que Kerstin me cantaba:<br>
+		<br>
+		&iquest;Qui&eacute;n puede navegar sin velas? &iquest;Qui&eacute;n puede remar sin remos? <br>
+		&iquest;Qui&eacute;n puede despedirse de su amor sin llorar?<br>
+		<br>
+		Pero ahora ya la nieve sustenta mi memoria. Y el silencio se espesa <br>
+		tras los bosques doloridos y profundos del invierno.<br>
+		<br>
+		Por eso puedo navegar sin velas. Por eso puedo remar sin remos.<br>
+		<br>
+		Por eso puedo despedirme de mi amor sin llorar.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="12. En llamas va la leyenda creciendo..."></a>12. En llamas va 
+		la leyenda creciendo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">En llamas va la leyenda 
+		creciendo, en<br>
+		la espiral del humo y las uvas de hierro.<br>
+		<br>
+		Los ojos de la anciana son blancos como<br>
+		nieve: cien a&ntilde;os hace ya que no nos mira.<br>
+		<br>
+		S&oacute;lo por no olvidar el viejo r&iacute;o<br>
+		de los muertos.<br>
+		<br>
+		S&oacute;lo por no olvidar su cuajada esperanza.<br>
+		<br>
+		S&oacute;lo por no olvidar las l&aacute;nguidas riberas<br>
+		del pa&iacute;s de las abejas.<br>
+		<br>
+		S&oacute;lo por no olvidar, cien a&ntilde;os hace ya<br>
+		que no nos mira.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="21. In&uacute;til es volver a los lugares olvidados y perdidos...">
+		</a>21. In&uacute;til es volver a los lugares olvidados y perdidos...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">In&uacute;til es volver a los 
+		lugares olvidados y perdidos, a los paisajes <br>
+		y s&iacute;mbolos sin due&ntilde;o.<br>
+		<br>
+		No hay all&iacute; ya liturgias milenarias. Ni aceite fermentado en &aacute;nforas de 
+		barro.<br>
+		<br>
+		Los ancianos han muerto. Los animales vagan bajo la lluvia negra.<br>
+		<br>
+		No hay all&iacute; sino la lenta elipsis del r&iacute;o de los muertos,<br>
+		<br>
+		la mansedumbre helada del mu&eacute;rdago cortado, de los paisajes abrasados <br>
+		por el tiempo.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		* * * * *</font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" color="#84B0D6">
+		<a name="30.  &iquest;Qu&eacute; espero a&uacute;n de la espiral del tiempo..."></a>30.&nbsp; 
+		&iquest;Qu&eacute; espero a&uacute;n de la espiral del tiempo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Qu&eacute; espero a&uacute;n de la 
+		espiral del tiempo, de esos cuernos ep&iacute;logos <br>
+		que suenan en los bosques? <br>
+		<br>
+		&iquest;Qui&eacute;n atardece junto a mi coraz&oacute;n helado?<br>
+		<br>
+		Por el paisaje gris de mi memoria, cruzan arrieros sin retorno, pastores 
+		y alfareros <br>
+		olvidados, bardos ahogados en el miedo lacustre de sus propias leyendas.<br>
+		<br>
+		Solo estoy, en esta noche &uacute;ltima, coronado de cierzo y flores muertas.<br>
+		<br>
+		Solo estoy, en esta noche &uacute;ltima, como un toro de nieve que brama a las 
+		estrellas.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+		</font>
+	</blockquote>
+</blockquote>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:11:11 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:18 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,746 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jean Arp</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Jean Arp." 
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Jean Arp. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jean_Arp,poesias,poetas,poemas,poesia_contemporanea,poesia_visual,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app16.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/arp.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/arp.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172654" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./arp.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:26:54 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./arp.htm" title="11:03:12 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:26:54 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./arp.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:26:54 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./arp.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>45 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">14 Jun 06 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000001000210_2007:-1:010102010100_2008:-1:100221000001_2009:-1:011000110000_2010:-1:100000001110_2011:-1:000000001020_2012:-1:701010001001_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./ARP.jpg" width="197" height="53"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./ARP1.jpg" width="211" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="706" height="309">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="698">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="278" width="230" valign="top">
+			<p align="left"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</font><img border="0" src="./ARP2.jpg" width="188" height="275"></td>
+			<td width="464" valign="top" height="278">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u></p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+			Escultor, pintor y poeta franc&eacute;s nacido en Estrasburgo en 1887. <br>
+			Estudi&oacute; arte en la academia Julian de Paris. En 1915, durante la 
+			guerra, se refugi&oacute; en Z&uuml;rich donde&nbsp; particip&oacute; en la creaci&oacute;n 
+			del movimiento <i>Dada</i> junto a&nbsp; Hall, Huelsenbeck&nbsp; y 
+			Tzara entre otros. En la d&eacute;cada de 1920, radicado de nuevo en Paris,&nbsp; 
+			trabaj&oacute; intensamente en su obra pl&aacute;stica y public&oacute; los poemas&nbsp; <i>
+			&quot;El p&aacute;jaro entre los tres&quot; </i>en 1920<i>,</i>&nbsp; <i>&quot;La chaqueta 
+			de pir&aacute;mides&quot;</i> en 1924 y <i>&quot;Configuraci&oacute;n&quot; </i>en 1930, todos de 
+			corte surrealista.<br>
+			Durante la posguerra su obra pl&aacute;stica alcanz&oacute; grandes dimensiones, 
+			culminando obras monumentales como los murales de la Unesco en Paris 
+			y la Universidad de Harvard&nbsp; en USA y obteniendo el&nbsp; 
+			premio de la Bienal de Venecia en 1954.<br>
+			Su aporte al arte abstracto y a las escuelas dada&iacute;sta y surrealista, 
+			marcaron la gran influencia que ejerci&oacute; en el desarrollo del arte y 
+			la literatura en el siglo XX. <br>
+			Falleci&oacute; en Basilea en 1966. &copy;</font></p></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Jean Arp:</font><font face="Georgia" size="3" color="#FFFFFF"><br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><br><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#CANTA CANTA">Canta canta</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./arp.htm#COLMENA DE SUE&Ntilde;OS">Colmena de sue&ntilde;os</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#DE CARNE Y HUESO">De carne y hueso</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./arp.htm#EL AIRE ES UNA RA&Iacute;Z">El 
+		aire es una ra&iacute;z</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#EL PADRE, LA MADRE, EL HIJO, LA HIJA">El padre, la madre, el 
+		hijo, la hija</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#LA PIEDRA DEL UNIVERSO CON CABELLOS DE SANDWICHES">La piedra 
+		del universo con cabellos de sandwiches</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#LAS PIEDRAS DOM&Eacute;STICAS">Las piedras dom&eacute;sticas</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#MANCHAS EN EL VAC&Iacute;O">Manchas en el vac&iacute;o</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./arp.htm#PLAZA BLANCA">Plaza blanca</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./arp.htm#SOPHIE SO&Ntilde;ABA SOPHIE PINTABA SOPHIE DANZABA">Sophie so&ntilde;aba 
+		Sophie pintaba Sophie danzaba</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><font face="Georgia" color="#8FABC2">&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF"><a href="./arp.htm#SOF&Iacute;A 2">
+		Sof&iacute;a 2</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./arp.htm#Y GOLPEA Y GOLPEA Y GOLPEA">Y golpea y golpea y golpea</a></font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+	<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+	<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+	&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br></font></p>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo de 
+		esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+	<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>&nbsp;</font></p>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: 
+		<br>Windows/Fonts: <br></font><font color="#EEEEEE"><br></font>
+		<a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" color="#EEEEEE"><br>&nbsp;</font></p>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#FFFFFF"><br></font>
+		<font face="Georgia" size="2" color="#C4CAD4"><a name="CANTA CANTA"></a>
+		</font><font face="Georgia" color="#C4CAD4">Canta canta</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Arriba en lo alto<br>arriba arriba en lo alto<br>el rojo canta una 
+		canci&oacute;n<br>canta canta<br>y el tiempo pasa<br>
+		<br>Yo sue&ntilde;o y escribo<br>hete aqu&iacute; que me acuerdo de los pintores y los 
+		escultores<br>que vi hace veinte a&ntilde;os<br>en zurich en el caf&eacute; ode&oacute;n<br>
+		como le&ntilde;os<br>como pesados troncos<br>como bloques<br>como montones 
+		groseros y macizos<br>est&aacute;n acuclillados en bancos<br>y se entregan al 
+		desagradable proceso de la sublimaci&oacute;n<br>luchan y gru&ntilde;en contra s&iacute; 
+		mismos<br>pero hete aqu&iacute; que estos se&ntilde;ores desaparecen<br>se evaporan<br>
+		desaparecen<br>y en sus sitios se encuentra huevos humeantes<br>
+		<br>El rojo canta<br>canta canta<br>yo sue&ntilde;o y escribo<br>yo bebo y 
+		canto<br>y el tiempo pasa<br>
+		<br>El rojo canta<br>canta canta<br>todo canta y flota<br>en la luz<br>
+		<br>Un d&iacute;a desaparecemos con un leve roce<br>como hojas muertas<br>y nos 
+		transformamos en polvo<br>y nos convertimos en chispas de estrellas<br>y 
+		cantamos y flotamos<br>felices con abrigos de fuego<br>
+		<br>Arriba en lo alto<br>arriba arriba en lo alto<br>el rojo canta una 
+		canci&oacute;n<br>canta canta<br>
+		<br><i>De &quot;D&iacute;as deshojados&quot;</i></font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Jes&uacute;s Mun&aacute;rriz </font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="COLMENA DE SUE&Ntilde;OS"></a></font>
+		<font face="Georgia" color="#C4CAD4">Colmena de sue&ntilde;os</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>las flores se visten con rel&aacute;mpagos<br>en el plumaje de la estrella 
+		duerme el sue&ntilde;o de carne<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		guarnecido de senos<br>el sue&ntilde;o tiene en la boca una estrella como el 
+		gato tiene en la<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		boca un rat&oacute;n<br>las flores de carne tienen lengua de sue&ntilde;o<br>estrella 
+		de bruma<br>
+		<br>la estrella de carne bajo la b&oacute;veda del tiempo<br>el tiempo ronronea 
+		como un sue&ntilde;o<br>alrededor de los senos alrededor de las colmenas de 
+		sue&ntilde;os<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		duermen las estrellas<br>bruma de flor<br>plumaje de estrella<br>las 
+		flores ronronean<br>
+		<br>las estrellas ronronean frente a la colmena de los rel&aacute;mpagos<br>
+		rat&oacute;n de bruma<br>rat&oacute;n de estrella<br>rat&oacute;n de flor<br>el sue&ntilde;o es un 
+		gato su lengua es una flor<br>
+		<br>la carne ronronea en el plumaje del tiempo<br>los ratones y los 
+		gatos duermen sobre la lengua del tiempo<br>el rel&aacute;mpago duerme bajo la 
+		b&oacute;veda de bruma<br>las estrellas se visten con senos<br>la lengua de 
+		bruma en la boca de flor<br>la boca de bruma bajo la b&oacute;veda de carne<br>
+		<br><br><i>De &quot;Le si&egrave;ge de l'air&quot;<br><br>Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p><font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4"><br>&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="DE CARNE Y HUESO"></a></font>
+		<font face="Georgia" color="#C4CAD4">De carne y hueso</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Un p&eacute;ndulo de carne y hueso<br>toca el abecedario.<br>Las nubes 
+		respiran en los cajones.<br>Una escalera de mano sube por una escalera<br>
+		de mano y lleva a la espalda<br>a la mujer escalera.<br>
+		<br>El espacio est&aacute; sobre aviso.<br>Ya no duerme como la leche.<br>Se 
+		columpia en la lengua<br>de un recuerdo piadoso.<br>El espacio est&aacute; bien 
+		lavado.<br>La desnudez de una cruz<br>la descripci&oacute;n de una l&aacute;grima<br>
+		la descripci&oacute;n de una gota de sangre<br>en una gruta de carne y hueso.<br>
+		<br>En el plano ruidoso de nuestro siglo<br>un cordelito perdido<br>se 
+		pone a contarnos<br>que sirvi&oacute; para hacer bailar<br>pir&aacute;mides de carne y 
+		hueso<br>sobre sus v&eacute;rtices<br>como peonzas.<br>
+		<br>Dame de tus montes,<br>tienes m&aacute;s de mil.<br>Yo te dar&eacute; a cambio<br>
+		viento y porcelana de viento.<br>Te dar&eacute; &aacute;rboles mutilados<br>con manos 
+		de puntillas.<br>
+		<br>Te dar&eacute; una corona de carne y hueso<br>y un gran sombrero lleno de 
+		miel.<br>Te dar&eacute; adem&aacute;s<br>uno de mis jardineros<br>que me riega de d&iacute;a 
+		y de noche.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;D&iacute;as Deshojados&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br><br>Versi&oacute;n de Jes&uacute;s Mun&aacute;rriz</i></font></p>
+		<p><font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL AIRE ES UNA RA&Iacute;Z"></a></font>
+		<font face="Georgia" color="#C4CAD4">El aire es una ra&iacute;z</font></p>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">las 
+		piedras est&aacute;n llenas de entra&ntilde;as.&nbsp;&nbsp; bravo.&nbsp;&nbsp; bravo. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las piedras est&aacute;n llenas de aire.<br>las piedras son ramas de agua.<br><br>
+		En la piedra que ocupa el lugar de la boca brota 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; una hoja espinosa.&nbsp;&nbsp; 
+		bravo.<br>una voz de piedra est&aacute; mano a mano y pie a pie <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con una mirada de piedra.<br>
+		<br>las piedras son atormentadas como la carne.<br>las piedras son nubes 
+		porque su segunda naturaleza 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; les baila en su 
+		tercera nariz.&nbsp;&nbsp; bravo.&nbsp;&nbsp; bravo.<br><br>cuando las 
+		piedras se rascan les crecen u&ntilde;as en las ra&iacute;ces.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		bravo.&nbsp;&nbsp; bravo.<br>las piedras tienen orejas para comer la 
+		hora exacta.</font><p align="left">
+		<i><font size="2" color="#C4CAD4" face="Georgia">De &quot;D&iacute;as Deshojados&quot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+		Versi&oacute;n de Jes&uacute;s Mun&aacute;rriz</font></i><p align="left"><font color="#C4CAD4">
+		<br>&nbsp;</font><p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br><br>&nbsp;</font><p>
+		<font face="Georgia" size="2" color="#C4CAD4">
+		<a name="EL PADRE, LA MADRE, EL HIJO, LA HIJA"></a></font>
+		<font face="Georgia" color="#C4CAD4">El padre, la madre, el hijo, la 
+		hija</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>El padre se ha colgado<br>en el lugar del p&eacute;ndulo.<br>La madre est&aacute; 
+		muda.<br>La hija est&aacute; muda.<br>El hijo est&aacute; mudo.<br>Los tres siguen<br>
+		el tic tac del padre.<br>
+		<br>La madre es aire.<br>El padre vuela a trav&eacute;s de la madre.<br>El hijo 
+		es uno de los cuervos<br>de la plaza San Marcos de Venecia.<br>La hija 
+		es una paloma mensajera.<br>
+		<br>La hija es dulce.<br>El padre come a la hija.<br>La madre corta al 
+		padre en dos<br>come una mitad<br>y ofrece la otra a su hijo.<br>
+		<br>El hijo es una coma.<br>La hija no tiene cola ni cabeza.<br>La madre 
+		es un huevo espoleado.<br>De la boca del padre<br>penden colas de 
+		palabras.<br>
+		<br>El hijo es una pala rota.<br>Por eso el padre se ve obligado<br>a 
+		trabajar la tierra<br>con la lengua.<br>La madre sigue el ejemplo de 
+		Crist&oacute;bal Col&oacute;n.<br>Camina sobre sus manos desnudas<br>y atrapa con sus 
+		pies desnudos<br>un huevo de aire tras otro.<br>La hija repara el 
+		desgaste de un eco.<br>
+		<br>La madre es un cielo gris<br>y abajo muy abajo se arrastra<br>un 
+		padre de papel secante<br>cubierto de manchas de tinta,<br>El hijo es 
+		una nube.<br>Cuando llora llueve.<br>La hija es una l&aacute;grima imberbe.<br>
+		<br><i>De &quot;Le Voilier dans la for&eacute;t&quot;<br></i></font><i>
+		<font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Aldo Pellegrini</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		<a name="LA PIEDRA DEL UNIVERSO CON CABELLOS DE SANDWICHES"></a></font>
+		<font face="Georgia" color="#C4CAD4">La piedra del universo con cabellos 
+		de sandwiches</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		los cabellos blancos de las piedras.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los cabellos negros de las aguas. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los cabellos verdes de los ni&ntilde;os.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los cabellos azules de los ojos.<br>las aguas cierran los ojos pues del 
+		cielo caen piedras y ni&ntilde;os.<br>a las piedras a las aguas a los ni&ntilde;os y a 
+		los ojos se les caen los cabellos.<br>las piedras tienen mantequilla en 
+		el bolsillo derecho y pan en el izquierdo <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y todos las toman con gran seriedad por sandwiches.<br>los sandwiches de 
+		piedra llevan la raya a la derecha los sandwiches de agua <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la raya a la izquierda y los sandwiches de ni&ntilde;o llevan la raya al medio.<br>
+		las piedras son mudas e ignorantes el agua no tiene car&aacute;cter<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y para qu&eacute; sirve a los ni&ntilde;os un clamor de pulga y a las miradas <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		un trueno de piojos<br>conscientes de su fuerza los cabellos se sientan 
+		a la mesa dispuestos a devorarlo todo.<br>blanco negro verde y azul son 
+		los colores del universo.&nbsp;&nbsp;&nbsp;&nbsp; hoy se usa llevar 
+		prados verdes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con calzado negro y cabellos azules<br><br>prados verdes.&nbsp;&nbsp; 
+		cielos azules.&nbsp;&nbsp;&nbsp; zapatos negros.&nbsp;&nbsp;&nbsp; 
+		cabellos blancos.<br>zapatos negros de labios azules y botones azules.<br>
+		barbas de cuatro colores en una sola persona como los cabellos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		vivos de nuestro tiempo.<br>espacios azules de picos verdes y calzado 
+		verde.<br>la fuerza del le&oacute;n es blanca.<br>
+		<br>la fuerza del fuego es blanca.<br>los ojos fieles de la fuerza son 
+		negros.<br>el negro es s&iacute;mbolo para el blanco.<br>el blanco es s&iacute;mbolo 
+		para el blanco.&nbsp;&nbsp;&nbsp; blanco significa lo mismo que hasta la 
+		vista <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		o cu&aacute;ndo me despertar&eacute; como flor con anteojeras<br>las campanas blancas 
+		responden con su carill&oacute;n verde a las preguntas de los labios <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		o a las preguntas de los picos<br>la cobard&iacute;a de la fuerza es negra como 
+		los ojos fieles de la fuerza.<br>los cuatro colores de las barbas son 
+		blanco negro verde y azul.<br>la velocidad de las piedras es azul.<br>la 
+		falta de car&aacute;cter del agua es verde.<br>la carne de los ni&ntilde;os es negra.<br>
+		<br>el agua cierra los ojos pues del cielo caen piedras.&nbsp;&nbsp;&nbsp;&nbsp; 
+		las piedras caen sobre la cabeza <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ni&ntilde;os.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; los ojos caen del rostro de 
+		los ni&ntilde;os.&nbsp;&nbsp;&nbsp; ahora los ni&ntilde;os ya no<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		encuentran el camino del techo a la boca y de la boca al est&oacute;mago <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y del est&oacute;mago a la bacinilla.<br>los cabellos blancos de las piedras 
+		est&aacute;n peinados.&nbsp;&nbsp;&nbsp;&nbsp; los cabellos negros del agua <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		caen en la sopa.<br>las piedras se dedicaron en seguida al trabajo 
+		negro.&nbsp;&nbsp;&nbsp;&nbsp; el sudor verde chorreaba <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en cascada desde sus relojes azules y como daban las doce se hizo la 
+		limpieza <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los prados verdes y los cielos azules.<br>los zapatos negros est&aacute;n 
+		lustrados.<br>los cabellos blancos est&aacute;n peinados.<br>las piedras 
+		lavaron las salpicaduras de sangre con el agua sin car&aacute;cter y as&iacute; todo 
+		se olvid&oacute; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		muy pronto y todo pudo recomenzar.<br>los cabellos blancos de las 
+		piedras.&nbsp;&nbsp;&nbsp; los cabellos negros de las aguas.&nbsp;&nbsp; 
+		los cabellos verdes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ni&ntilde;os.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; los cabellos azules de los 
+		ojos.<br><br>los cabellos blancos de las piedras.&nbsp;&nbsp;&nbsp; los 
+		cabellos negros de las aguas.&nbsp;&nbsp;&nbsp; los cabellos verdes <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ni&ntilde;os.&nbsp;&nbsp; los cabellos azules de los ojos.<br>los 
+		cabellos blancos.&nbsp;&nbsp; los cabellos negros.&nbsp;&nbsp;&nbsp; los 
+		cabellos verdes.&nbsp;&nbsp;&nbsp;&nbsp; los cabellos azules.<br>las 
+		piedras.&nbsp;&nbsp;&nbsp; las aguas.&nbsp;&nbsp;&nbsp;&nbsp; los ni&ntilde;os.&nbsp;&nbsp;&nbsp;&nbsp; 
+		los ojos.<br>cabellos de piedra.&nbsp;&nbsp;&nbsp; cabellos de agua.&nbsp;&nbsp;&nbsp; 
+		cabellos de ni&ntilde;o. cabellos de ojos.<br>los prados verdes.&nbsp;&nbsp;&nbsp; 
+		los cielos azules.&nbsp;&nbsp;&nbsp; los zapatos negros.&nbsp;&nbsp;&nbsp;&nbsp; 
+		los cabellos blancos.<br>azul.&nbsp;&nbsp;&nbsp; verde.&nbsp;&nbsp;&nbsp;&nbsp; 
+		negro.&nbsp;&nbsp;&nbsp; cobarde y fiel.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Le si&egrave;ge de 
+		l'air<br>Versi&oacute;n de Aldo Pellegrini</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="LAS PIEDRAS DOM&Eacute;STICAS"></a></font>
+		<font face="Georgia" color="#C4CAD4">Las piedras dom&eacute;sticas</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">las piedras son 
+		entra&ntilde;as<br>bravo bravo<br>las piedras son troncos de aire<br>las 
+		piedras son ramas de agua<br>sobre la piedra que ocupa el lugar de la 
+		boca<br>brota una espina<br>bravo<br>una voz de piedra<br>est&aacute; frente a 
+		frente<br>y codo a codo<br>con una mirada de piedra<br>las piedras 
+		sufren los tormentos de la carne<br>las piedras son nubes<br>pues su 
+		segunda naturaleza<br>baila sobre su tercera nariz<br>bravo bravo<br>
+		cuando las piedras se rascan<br>las u&ntilde;as brotan en las ra&iacute;ces<br>las 
+		piedras tienen orejas<br>para comer la hora exacta.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Le si&egrave;ge de 
+		l'air&quot;<br>Versi&oacute;n de Aldo Pellegrini</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="MANCHAS EN EL VAC&Iacute;O"></a></font>
+		<font face="Georgia" color="#C4CAD4">Manchas en el vac&iacute;o</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">(fragmento)<br><br>la 
+		edad vive de cabello en cabello<br>a trav&eacute;s del aire que ha quedado 
+		hu&eacute;rfano<br>vive como un huevo<br>que empolla frutas<br>sobre una cuerda 
+		tendida entre dos alas<br>el aire tiene la edad de las alas<br>las 
+		frutas nacen de las alas<br>las hojas de las alas sangran<br>sobre las 
+		colas del aire<br>
+		<br>*</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">cabezas de muertos<br>
+		que brillan como soles<br>ruedan sedientas hacia la fuente del vac&iacute;o<br>
+		desde&ntilde;adas por los patos avaros<br>los mamones glotones<br>y los y 
+		etc&eacute;tera<br>
+		<br>*</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">las paredes son de 
+		carne humana<br>los hongos tienen voz de trueno<br>y enarbolan espadas 
+		enormes<br>contra los ratones ancestrales<br>que tienen dientes de 
+		elefantes<br>
+		<br>*<br><br>las tetas de porcelana se balancean<br>sobre algunos 
+		trapecios<br>entre ramas de corbatas<br>mientras las estrellas 
+		cuchichean<br>y vuelan de fruta en fruta<br>
+		<br>*</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">el fin del aire<br>y el 
+		fin del mundo<br>son redondos como globos<br>pero mientras el fin del 
+		mundo<br>est&aacute; sentado en su silla plegadiza<br>el fin del aire salta<br>
+		desde un &aacute;rbol de torneos<br>hasta una jaula vac&iacute;a<br>que revolotea en 
+		lo blanco<br>
+		<br><i>De &quot;Taches dans le vide&quot;<br></i></font><i>
+		<font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Aldo Pellegrini</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="PLAZA BLANCA">
+		</a></font><font face="Georgia" color="#C4CAD4">Plaza blanca</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>esta ma&ntilde;ana coloca en mi camino<br>s&oacute;lo los bibelots de la muerte<br>
+		las campanas tocan a&ntilde;os en cada minuto<br>pasan a&ntilde;os que tienen abanicos 
+		de hormigas en las cabezas<br>pasan a&ntilde;os que tienen hocicos vegetales<br>
+		y aletas de genio<br>pasan a&ntilde;os que ahuyentan a peque&ntilde;os a&ntilde;os<br>
+		<br>la luz del arte habla del suicidio delicioso<br>cierro los ojos y me 
+		encuentro en la plaza blanca<br>el agua de la plaza est&aacute; agitada<br>olas 
+		enormes se precipitan sobre las casas<br>y arrancan los labios<br>que 
+		los p&aacute;jaros han colocado en las ventanas<br>abro los ojos<br>las blancas 
+		crines echan a volar<br>so&ntilde;adores tomados de la mano como los ciegos<br>
+		atraviesan la plaza<br>el viento acaricia las plantas domesticadas<br>
+		cierro los ojos<br>es de noche<br>de pronto me despierto en la noche<br>
+		los p&aacute;jaros cantan<br>es de d&iacute;a<br>monta&ntilde;as l&iacute;quidas flotan en el aire<br>
+		abro los ojos y me duermo de pie, en medio de la plaza blanca<br>la 
+		umbela de las estrellas se cubre de labios<br>
+		<br><i>De &quot;Le si&egrave;ge de l'air&quot;<br>Versi&oacute;n de Aldo Pellegrini</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SOPHIE SO&Ntilde;ABA SOPHIE PINTABA SOPHIE DANZABA"></a>S</font><font face="Georgia" color="#C4CAD4">ophie 
+		so&ntilde;aba Sophie pintaba Sophie danzaba</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>So&ntilde;abas con estrellas aladas,<br>con flores que miman a flores<br>en 
+		los labios del infinito,<br>con fuentes de luz que se abren,<br>con 
+		eclosiones sim&eacute;tricas,<br>con sedas que respiran,<br>con ciencias 
+		serenas,<br>lejos de las casas de los mil dardos<br>de las 
+		prosternaciones de desiertos ingenuos,<br>entre mil milagros 
+		desordenados.<br>So&ntilde;abas con lo que reposa en la inmutable morada<br>de 
+		la claridad.<br>Pintabas una rosa desvelada,<br>un ramo de ondas,<br>un 
+		cristal vivo.<br>
+		<br>Pintabas las conchas<br>que recog&iacute;as a la orilla del mar<br>y que 
+		colocabas en la mesa de dibujo<br>en torno a una concha grande<br>como 
+		un reba&ntilde;o en torno a su pastor.<br>pintabas una l&aacute;grima entre el roc&iacute;o,<br>
+		una l&aacute;grima entre perlas.<br>Pintabas la claridad que hace latir el 
+		coraz&oacute;n,<br>la dulzura que hace mover los labios.<br>Pintabas la noche 
+		que tiende las estrellas,<br>el sue&ntilde;o claro,<br>el buen placer de las 
+		flores.<br>
+		<br>Danzabas la aurora que desborda a la tierra.<br>Danzabas el jard&iacute;n 
+		estremecido al alba.<br>
+		<br>Danzabas en el paisaje enguantado de la luna<br>con los gnomos 
+		traviesos de la sombra.<br>Danzabas el desnudo que pierde su juguete de 
+		aire,<br>el placer que solloza despose&iacute;do.<br>Danzabas las seis butacas 
+		bermejas<br>m&aacute;s perspicaz que seis cerebros de fil&oacute;sofos,<br>mientras el 
+		pat&iacute;bulo de marfil sombreaba en la lava<br>de lo oscuro,<br>la risa del 
+		polvo,<br>la noche del mediod&iacute;a y sus canciones de grillos.<br>Danzabas 
+		el adi&oacute;s.<br>
+		<br><i>De &quot;D&iacute;as deshojados&quot; 1887<br><br>&nbsp;</i></font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br><a name="SOF&Iacute;A 2">
+		</a></font><font face="Georgia" color="#C4CAD4">Sof&iacute;aA 2</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&iquest;Cu&aacute;l era tu sue&ntilde;o<br>cuando dejaste esta orilla?<br>&iquest;So&ntilde;abas con 
+		una balsa de estrellas a la deriva,<br>so&ntilde;abas con abismos de candor?<br>
+		<br>Separaste las esferas intransigentes<br>para tomar una flor.<br>Eras 
+		el eco de un mundo de luz.<br>
+		<br>Las mariposas representan una escena de tu vida<br>que muestra el 
+		despertar de la aurora en tus labios.<br>Una estrella se forma siguiendo 
+		tu dise&ntilde;o.<br>
+		<br>La cortina del d&iacute;a cae para ocultar los sue&ntilde;os.<br>Eres una estrella 
+		que se transforma en flor<br>La luz se desliza bajo tus pies<br>y alas 
+		radiantes te rodean como un cerco.<br>
+		<br>La flor se balancea en sus alas.<br>Ostenta una joya de roc&iacute;o.<br>
+		Sue&ntilde;a con una l&aacute;grima de sutileza.<br>Sus besos son perlas.<br>
+		<br>Ella desaparece, desaparece<br>en su propia luz.<br>Ella desaparece, 
+		desaparece<br>en su pureza, en su dulzura.<br>
+		<br>So&ntilde;aste sobre el &iacute;ndice del cielo<br>entre los &uacute;ltimos copos de la 
+		noche.<br>La tierra se cubri&oacute; de l&aacute;grimas de gozo.<br>El d&iacute;a se despert&oacute; 
+		en una mano de cristal.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;On my way&quot;<br>
+		Versi&oacute;n de Aldo Pellegrini<br><br>&nbsp;</font></i></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Y GOLPEA Y GOLPEA Y GOLPEA"></a>Y golpea y golpea y golpea</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>y sigue golpeando y otra vez<br>y as&iacute; a continuaci&oacute;n<br>y una vez 
+		dos veces tres veces hasta mil<br>y vuelve a empezar con m&aacute;s fuerza<br>y 
+		golpea la gran tabla de multiplicar y la peque&ntilde;a tabla<br>de multiplicar<br>
+		y golpea y golpea y golpea<br>p&aacute;gina 222 p&aacute;gina 223 p&aacute;gina 224 y as&iacute; a 
+		continuaci&oacute;n hasta la p&aacute;gina 299 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pasa la p&aacute;gina 300 y contin&uacute;a por la p&aacute;gina 301 hasta la p&aacute;gina 400 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y golpea &eacute;sta una vez hacia delante dos veces hacia atr&aacute;s tres veces <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		hacia arriba y cuatro veces hacia abajo<br>y golpea los doce meses<br>y 
+		las cuatro estaciones<br>y los siete d&iacute;as de la semana<br>y los siete 
+		tonos de la escala<br>y los seis pies de los yambos<br>y los n&uacute;meros 
+		pares de las casas<br>y golpea<br>y golp&eacute;alo todo junto<br>y la cuenta 
+		est&aacute; hecha<br>y da uno.<br>
+		<br><i>De &#8220;D&iacute;as deshojados&#8221;<br></i></font><i>
+		<font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n&nbsp; de Jes&uacute;s 
+		Mun&aacute;rriz<br></font></i>
+		<font face="Georgia" color="#C4CAD4" size="2"><br>&nbsp;</font></p>
+	</blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:26:54 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:00 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

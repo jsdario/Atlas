@@ -1,0 +1,857 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Andr&eacute;s Neuman</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Andr&eacute;s Neuman. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Andr&eacute;s_Neuman,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/neuman.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/neuman.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162515" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./neuman.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:25:15 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./neuman.htm" title="18:04:26 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:25:15 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./neuman.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:25:15 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./neuman.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>16 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">22 May 11 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000010001120_2012:-1:101010002000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<blockquote>
+	<p align="center"><br>
+&nbsp; <br>
+	</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./NEUMAN.jpg" width="371" height="41"></p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">
+	&quot;De ti depende el viaje o la zozobra,<br>
+	su pesca o su destino, la distancia que logre...&quot;</em></font></p>
+	<p align="center">
+	<font color="#84B0D6">
+	<img border="0" src="./NEUMAN1.jpg" width="310" height="239"></font></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">&quot;Sphinx Embedded in the Sand&quot;</font></em></p>
+	<p align="center"><em>
+	<font face="Arial" size="2" color="#84B0D6">Salvador Dal&iacute;</font></em><i><font face="Basil" size="5" color="#84B0D6"><br>
+	</font></i></p>
+	<p align="center">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#84B0D6">Poeta, ensayista y 
+		novelista &nbsp;hispano-argentino nacido en Buenos Aires en 1977. <br>
+		Licenciado en Filolog&iacute;a Hisp&aacute;nica por la Universidad de Granada, ha 
+		impartido clases de literatura hispanoamericana<br>
+		en la misma universidad, es columnista de importantes diarios espa&ntilde;oles 
+		y latinoamericanos, y autor de guiones para <br>
+		tiras c&oacute;micas del peri&oacute;dico Ideal. Es tambi&eacute;n autor del libro de 
+		aforismos <i>El equilibrista</i> 2005, y de la colecci&oacute;n<br>
+		de haikus: <i>&quot;Alfileres de luz&quot;</i> 1999, <i>Premio Garc&iacute;a Lorca</i>, 
+		en colaboraci&oacute;n con Ram&oacute;n Repiso.<br>
+		Su obra po&eacute;tica est&aacute; contenida en los siguientes vol&uacute;menes: <i>&quot;M&eacute;todos 
+		de la noche&quot; </i>1998, <i>Premio Antonio Carvajal</i>; <br>
+		<i>&quot;El jugador de billar&quot;</i> 2000; <i>&quot;El tobog&aacute;n&quot; </i>2002, <i>Premio 
+		Hiperi&oacute;n</i>; <i>&quot;La canci&oacute;n del ant&iacute;lope&quot; </i>2003, <i>&quot;Gotas negras&quot;</i> 
+		2003; <br>
+		<i>&quot;Sonetos del extra&ntilde;o&quot;</i> 2007; <i>&quot;M&iacute;stica abajo&quot;</i> 2008 y <i>
+		&quot;D&eacute;cada&quot;</i>, poes&iacute;a 1997-2007.<br>
+		Entre los premios obtenidos, sobresalen el Premio Alfaguara y el Premio 
+		Nacional de la Cr&iacute;tica en 2010.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&copy;</font><font face="Georgia" size="3" color="#84B0D6"><br>
+		</font><font face="Georgia" size="2" color="#85A6BC"><br>
+		</font></p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia">
+		<a href="./neuman.htm#De M&eacute;todos de la noche 1997-1998">De &quot;M&eacute;todos de la noche&quot; 
+		1997-1998</a></font><br>
+		<font face="Georgia" size="2"><a href="./neuman.htm#Canci&oacute;n del insomne">Canci&oacute;n del 
+		insomne</a><br>
+		<a href="./neuman.htm#La noche entre par&eacute;ntesis">La noche entre par&eacute;ntesis</a><br>
+		<a href="./neuman.htm#Mon&oacute;logo a dos voces">Mon&oacute;logo a dos voces</a><br>
+		<a href="./neuman.htm#Ropajes">Ropajes</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./neuman.htm#De El tobog&aacute;n 1998-2001">
+		De &quot;El tobog&aacute;n&quot; 1998-2001</a></font><br>
+		<font face="Georgia" size="2"><a href="./neuman.htm#Claudia en la Biblioteca">
+		Claudia en la Biblioteca</a><br>
+		<a href="./neuman.htm#Las orillas">Las orillas</a><br>
+		<a href="./neuman.htm#L&iacute;neas a&eacute;reas">L&iacute;neas a&eacute;reas</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./neuman.htm#De M&iacute;stica abajo 2001-2007">De &quot;M&iacute;stica abajo&quot; 2001-2007</a></font><font face="Georgia" size="2"><br>
+		<a href="./neuman.htm#Casa fugaz">Casa fugaz</a><br>
+		<a href="./neuman.htm#Elogio del minuto">Elogio del minuto</a><br>
+		<a href="./neuman.htm#Principio de la carne">Principio de la carne</a><br>
+		<a href="./neuman.htm#Reloj de mar">Reloj de mar</a><br>
+		<a href="./neuman.htm#Vaiv&eacute;n de gracias">Vaiv&eacute;n de gracias</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./neuman.htm#Otros poemas">Otros 
+		poemas</a></font><font face="Georgia" size="2"><br>
+		<a href="./neuman.htm#Ahora que no estoy...">Ahora que no estoy...</a><br>
+		<a href="./neuman.htm#Aquellos dedos tuyos...">Aquellos dedos tuyos...</a><br>
+		<a href="./neuman.htm#En la l&iacute;nea lejana del deseo...">En la l&iacute;nea lejana del 
+		deseo...</a><br>
+		<a href="./neuman.htm#Se parece a bucear, no tengas miedo...">Se parece a bucear, no 
+		tengas miedo...</a><br>
+		<a href="./neuman.htm#Te pesan las costillas y la nuca...">Te pesan las costillas y 
+		la nuca...</a><br>
+		<a href="./neuman.htm#Y que r&aacute;pido vamos...">Y que r&aacute;pido vamos...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./neuman.htm#Haikus">Haikus</a></font></p>
+		<p align="left"><font face="Georgia" color="#8fabc2" size="2">Volver a:
+		</font><font face="Georgia" color="#8fabc2">
+		<a href="./">A media voz</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+		</font><font face="Georgia" color="#85a6bc" size="2">Volver a: </font>
+		<font face="Georgia" color="#85a6bc"><a href="./indice-A-K.htm">&Iacute;ndice A-K
+		</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+		Volver a: </font><font face="Georgia" color="#8fabc2">
+		<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#89A7BE">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"><font face="Georgia" size="3" color="#A6BCCE"><br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#85A6BC"><br>
+		</font><font face="Georgia" color="#85A6BC">
+		<a name="De M&eacute;todos de la noche 1997-1998"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		De &quot;M&eacute;todos de la noche&quot; 1997-1998</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Canci&oacute;n del insomne">
+		</a>Canci&oacute;n del insomne</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Todo se vuelve oscuro
+		<br>
+		y es mentira la luz que nadie ve. <br>
+		Nos deslumbran, nos ciegan. <br>
+		Un caf&eacute;. <br>
+		Es lo que necesito. <br>
+		No es la sed. <br>
+		Podr&eacute; tocar la noche <br>
+		y no temer su beso de una vez. <br>
+		Que acudan otros h&eacute;roes a los sue&ntilde;os: <br>
+		yo prefiero quemar la lucidez <br>
+		mientras duren mis p&aacute;rpados. Caf&eacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * * </font></p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="La noche entre par&eacute;ntesis"></a>La noche entre par&eacute;ntesis</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>Para Bur </i></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">La noche entre 
+		par&eacute;ntesis <br>
+		y su adictivo roce <br>
+		bastaron para hacerme conocer <br>
+		el ansia elemental, <br>
+		latidos de unas ropas, <br>
+		la r&aacute;pida tristeza de una vela, <br>
+		m&uacute;sica c&oacute;mplice, un rinc&oacute;n, <br>
+		el peso y la medida del olvido. <br>
+		<br>
+		<br>
+		* * * * * <br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="Mon&oacute;logo a dos voces"></a>Mon&oacute;logo a dos voces</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><i>-Como un lento 
+		jarabe <br>
+		que calienta la b&oacute;veda celeste, <br>
+		la luz trama su incendio <br>
+		y vuelven los colores a mis ojos. <br>
+		&iexcl;Amanece! &Eacute;ste es el primer d&iacute;a. </i><br>
+		<br>
+		-Pero, idiota, qu&eacute; asombro va a quedarnos <br>
+		siendo el d&iacute;a que es: el siglo de los siglos, <br>
+		ya se sabe, final de un gran banquete. <br>
+		Miro por la ventana <br>
+		y desde mi sensata finitud <br>
+		no veo m&aacute;s que el sol <br>
+		reemplazando a la noche, como siempre. <br>
+		<br>
+		<i>-&iexcl;Esa inmensa naranja <br>
+		ser&aacute; lim&oacute;n despu&eacute;s en las alturas.' <br>
+		Puedo oler el roc&iacute;o evaporarse, <br>
+		los p&aacute;jaros lo absorben mientras vuelan. <br>
+		Me parece que estoy viendo un milagro. <br>
+		Ha llegado el momento de dejarse morir <br>
+		para nacer. </i><br>
+		<br>
+		-Tranquilo, por favor, no desvariemos. <br>
+		A poco que se estudie el curso de las cosas <br>
+		se entiende que el milagro es una farsa. <br>
+		En cuanto a la belleza, <br>
+		hay un amanecer-digamos que sin nubes-<br>
+		y nada en absoluto. Salvo morirse, claro.<br>
+		Mejor sigamos con los pajaritos.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><i>-&iquest; No tiene el alba 
+		un gesto <br>
+		de diosa empedernida, muda, virgen? <br>
+		En cuanto se fecunden sus resquicios <br>
+		el mundo quedar&aacute; alumbrado <br>
+		y un ritmo nuevo empezar&aacute; a estirar <br>
+		sus versos como m&uacute;sculos. </i><br>
+		<br>
+		-&iexcl;Hay que soltar los cirios, <br>
+		la luz es un asunto de la tierra! <br>
+		y de paso templemos un poco ese lenguaje: <br>
+		bastante nos cost&oacute; vestido de paisano. <br>
+		<br>
+		<i>-Como un jarabe hirviendo, <br>
+		como el milagro de un poema... </i><br>
+		<br>
+		-En fin...&nbsp; </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Ropajes"></a>Ropajes<br>
+		</font><font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		Decirte que te amo es una historia <br>
+		de mustias obviedades. <br>
+		Ser&iacute;a preferible que leyeses <br>
+		amores novedosos, <br>
+		canciones que mitiguen por las noches <br>
+		tus raptos de inocencia. <br>
+		<br>
+		Mis trajes de soldado no son m&aacute;s <br>
+		que miedo a la batalla. <br>
+		Y peores mis trajes de turista, <br>
+		como si la aventura de las calles <br>
+		pudiera seducirme. <br>
+		Por si no lo sab&iacute;as nunca logr&eacute; emigrar, <br>
+		sigo habitando en s&aacute;banas, las mismas <br>
+		que humedec&iacute; de ni&ntilde;o <br>
+		cuando a&uacute;n no te amaba y todav&iacute;a <br>
+		no hab&iacute;a mojado tus s&aacute;banas. <br>
+		Mi &uacute;nica destreza es protegerme. <br>
+		<br>
+		Decirte que me ames es un pleito <br>
+		de lenguajes m&aacute;s h&aacute;biles que el m&iacute;o. <br>
+		No s&eacute; nada de espejos, <br>
+		no entiendo una sonata, <br>
+		callar es la virtud que no merezco. <br>
+		Ojal&aacute; te bastasen las delicias <br>
+		de los mundos y las tardes <br>
+		que no me pertenecen. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Decir te amo suele ser 
+		asunto<br>
+		de obvias melancol&iacute;as.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De El tobog&aacute;n 1998-2001"></a>De &quot;El tobog&aacute;n&quot; 1998-2001</font></p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="Claudia en la Biblioteca"></a>Claudia en la Biblioteca</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<i>Para Rafael Espejo</i></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Rebuscas en los libros
+		<br>
+		con un extra&ntilde;o af&aacute;n de jardinera. <br>
+		Delicada y ansiosa, de perfil me pareces <br>
+		distinta cuando curvas las rodillas <br>
+		y se tensan tus muslos <br>
+		debajo del vaquero. Muerte lenta <br>
+		contemplar, sin tocado, <br>
+		el peque&ntilde;o tatuaje en tu cintura. <br>
+		Ser&aacute; mejor sufrir que describir los pechos: <br>
+		&iquest;qui&eacute;n se atreve a cruzar los toboganes <br>
+		que unen la palabra con su tema? <br>
+		<br>
+		As&iacute; que huyo <br>
+		y finjo distracci&oacute;n. <br>
+		Si volvieras la vista a quien te escribe <br>
+		desaparecer&iacute;as, y es demasiado pronto. <br>
+		Sigue leyendo, Claudia. <br>
+		Haces bien en amarte. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * * </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Iluminaci&oacute;n</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">El alma existe.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Y huele<br>
+		a sales y calor,<br>
+		lleva un silbido impuro,<br>
+		arde como la menta<br>
+		y se pliega y se ci&ntilde;e<br>
+		a tu vientre.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Las orillas"></a>Las 
+		orillas</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>&nbsp;Para Leopoldo Brizuela </i><br>
+		<br>
+		Me es hermoso el desgarro porque une las orillas, <br>
+		nos concentra <br>
+		en desdoblamos siempre para poder ser uno. <br>
+		(Es un n&uacute;mero, el uno, que traiciona <br>
+		cuando finge ser punto de partida). <br>
+		Necesario el desgarro, <br>
+		porque renuncia a hundirse <br>
+		pero ama los pozos <br>
+		y nos tiende sus manos como dos hemisferios. <br>
+		<br>
+		Con el pulso ambidiestro <br>
+		navego celebrando los puntos cardinales <br>
+		que mudar&aacute;n mi origen, <br>
+		y sucede el naufragio porque debe <br>
+		y la vida es el barco <br>
+		y yo soy el ahogado y el mismo que me salva.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="L&iacute;neas a&eacute;reas"></a>
+		L&iacute;neas a&eacute;reas</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Igual que cada vez al 
+		tocar tierra <br>
+		confirmamos la vida <br>
+		as&iacute;, cuando te toco, <br>
+		recomienza el amor. <br>
+		<br>
+		Y as&iacute;, tocando un l&aacute;piz, me son nuevos <br>
+		el amar, la existencia, <br>
+		las l&iacute;neas en el cielo de una p&aacute;gina, <br>
+		el suave aterrizaje sobre un nombre.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="De M&iacute;stica abajo 2001-2007"></a>De &quot;M&iacute;stica abajo&quot; 2001-2007</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<i>Para Delia, mi madre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Erika, mi suelo</i></font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Casa fugaz"></a>Casa 
+		fugaz</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Somos iguales, tienes
+		<br>
+		la exacta fortaleza <br>
+		que me hace en parte d&eacute;bil. <br>
+		Sigue siendo dif&iacute;cil <br>
+		en la casa terrena desnudarse. <br>
+		&iquest;Trascender? Eso intentan los solemnes, <br>
+		como si dominasen el misterio <br>
+		de habitar hasta el fondo este lugar <br>
+		sin cederle terreno a las alturas. <br>
+		<br>
+		Si te toco, artesana, <br>
+		&iquest;querr&aacute;s estar aqu&iacute; enteramente? <br>
+		Durando en lo fugaz, <br>
+		as&iacute; transcurrir&iacute;a nuestra entrega. <br>
+		Desconociendo c&oacute;mo, <br>
+		as&iacute; nos buscar&iacute;amos. <br>
+		Iguales en la duda. Enamorados <br>
+		de la fragilidad de estas paredes. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Elogio del minuto"></a>
+		Elogio del minuto</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Aqu&iacute; <br>
+		por fin <br>
+		descanso, <br>
+		mi atenci&oacute;n <br>
+		no debe disiparse. <br>
+		Un poco de distancia <br>
+		tal&nbsp;&nbsp;&nbsp; vez&nbsp;&nbsp;&nbsp; la&nbsp;&nbsp;&nbsp; 
+		estirar&iacute;a, <br>
+		pero si apreso el pasmo <br>
+		y fuerzo demasiado las poleas <br>
+		la emoci&oacute;n&nbsp; dejar&aacute;&nbsp; de trasladar <br>
+		estas peque&ntilde;as cajas con visiones. <br>
+		<br>
+		Miro el p&aacute;jaro pr&oacute;ximo a la casa: <br>
+		tembloroso en la fuente recomienda <br>
+		beber con &eacute;l sin vuelo.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">* * * * * <br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="Principio de la carne"></a>Principio de la carne</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Necesito la carne para 
+		amarte, <br>
+		la carne enamorada, pero no <br>
+		m&aacute;s all&aacute; de la tumba sino contra la tumba. <br>
+		Tendido entre nosotros el temor <br>
+		ha vencido su insomnio y se remansa. <br>
+		&iquest;Qu&eacute; pensar&aacute; la muerte ante la fiesta? <br>
+		&iquest;Pierde la compostura, suspende sus trabajos? <br>
+		<br>
+		&iexcl;Ant&iacute;doto, entusiasmo, derr&iacute;bale las leyes, <br>
+		ofr&eacute;cele estos pechos de artesana <br>
+		que se&ntilde;alan el norte y piden viaje! <br>
+		Es l&oacute;gico perderse, los gu&iacute;as se equivocan. <br>
+		A veces el destino es blando y tibio y mueve <br>
+		dos remos terrenales <br>
+		que remontan la risa hasta el principio, <br>
+		hasta el punto final de los comienzos. </font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Reloj de mar"></a>Reloj 
+		de mar</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Rotas horas, las olas.<br>
+		Se anticipan,<br>
+		se empujan,<br>
+		se disgregan.<br>
+		Recomienzan el cielo permanente.<br>
+		En su justo engranaje nos emulan:<br>
+		detr&aacute;s alguien<br>
+		siempre mira morir a alguien que mira.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#84B0D6"><a name="Vaiv&eacute;n de gracias"></a>
+		Vaiv&eacute;n de gracias</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">&iexcl;Estar a&uacute;n aqu&iacute; <br>
+		tan pegado a este suelo y respirando! <br>
+		&iquest;C&oacute;mo corresponder <br>
+		la generosidad de los instantes? <br>
+		Es posible que nunca alcance el don <br>
+		de habitados sin m&aacute;s, ligeramente, <br>
+		pero apenas el borde <br>
+		&iexcl;qu&eacute; dichoso me insiste, c&oacute;mo, inmenso! <br>
+		No he sabido llorar cuanto deb&iacute;a <br>
+		y as&iacute; voy viendo este vaiv&eacute;n de horas <br>
+		sin saber dar las gracias, siempre en vilo.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="Otros poemas"></a>Otros poemas</font></p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="Ahora que no estoy..."></a>Ahora que no estoy...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Ahora que 
+		no estoy <br>
+		me gusta m&aacute;s el viento cuando late <br>
+		y la savia transcurre por los surcos, <br>
+		me llega su apetito, <br>
+		sus ondas abultadas <br>
+		por cada objeto hermoso que atraviesan, <br>
+		esos t&iacute;midos cuerpos musicales. <br>
+		Pero no es m&aacute;s que un eco, <br>
+		el eco en los jardines posteriores. <br>
+		Har&aacute; falta alegrar esta canci&oacute;n, <br>
+		por eso quiero fiesta en vuestro lado. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* * * * *<br>
+		<br>
+		</font><font face="Georgia" color="#84B0D6">
+		<a name="Aquellos dedos tuyos..."></a>Aquellos dedos tuyos...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Aquellos 
+		dedos tuyos, <br>
+		dormidos como en lana, <br>
+		urd&iacute;an la caricia y sus efectos. <br>
+		&iexcl;Tocar era tan f&aacute;cil <br>
+		y tanto me abrigaba <br>
+		desnudar esos dedos <br>
+		para tejer mu&ntilde;ecos temporales! <br>
+		Ahora tejo tu sombra, <br>
+		que no es poco tejer cuando se ha amado. <br>
+		<br>
+		<br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="En la l&iacute;nea lejana del deseo..."></a>En la l&iacute;nea lejana del 
+		deseo...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">En la 
+		l&iacute;nea lejana del deseo, <br>
+		superficie de luces y corrientes, <br>
+		se mantiene un velero a la deriva. <br>
+		De ti depende el viaje o la zozobra, <br>
+		su pesca o su destino, <br>
+		la distancia que logre. <br>
+		<br>
+		Izada, interrog&aacute;ndote, habr&aacute; siempre <br>
+		una vela aguardando a que la mires. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="Se parece a bucear, no tengas miedo..."></a>Se parece a bucear, 
+		no tengas miedo...<br>
+		</font><font face="Georgia" size="2" color="#84B0D6">
+		<br>
+		Se parece a bucear, no tengas miedo. <br>
+		Al fondo de las olas transparentes <br>
+		hallar&aacute;s m&aacute;s descanso que dolores. <br>
+		Vibrar&aacute;s en la nota de las aguas <br>
+		y, como el diapas&oacute;n de tu minuto, <br>
+		podr&aacute;s enumerar cada concepto. <br>
+		Ver&aacute;s lo que no has hecho y s&iacute; deseaste <br>
+		yeso perturbar&aacute; la traves&iacute;a. <br>
+		Ver&aacute;s cuanto ofreciste o te ofrecieron <br>
+		y todo volver&aacute; a dormir despacio <br>
+		como el mar que te invade y se retira, <br>
+		como el mar que se mueve y nunca pasa. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="Te pesan las costillas y la nuca..."></a>Te pesan las costillas 
+		y la nuca...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Te pesan 
+		las costillas y la nuca <br>
+		y te pesan las horas, el aire trepa y cae por tu pecho, <br>
+		se enreda en espirales, tu mano imprime surcos en la piel arenosa. <br>
+		&iexcl;No te est&aacute;s extinguiendo! Est&aacute;s tan vivo <br>
+		que has comprendido el hueco de la p&eacute;rdida. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Igual que un casco <br>
+		volcado por el gesto repentino de un soldado al que asombra <br>
+		la m&uacute;sica de sangre de su propia metralla, <br>
+		as&iacute; pierdes el odio y queda a tus espaldas entre el fango. <br>
+		Tus costillas, ant&iacute;lope, esconden un reloj: <br>
+		te preguntas qui&eacute;n pudo darle cuerda.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		* * * * *</font></p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="Y que r&aacute;pido vamos..."></a>Y que r&aacute;pido vamos...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Y que 
+		r&aacute;pido vamos,<br>
+		ligera recompensa,<br>
+		qu&eacute; prisa iluminada.<br>
+		El pen&uacute;ltimo paso es el m&aacute;s dulce.<br>
+		Ojal&aacute; todos fueran el pen&uacute;ltimo.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6"><a name="Haikus">
+		</a>Haikus</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">De dos en 
+		dos<br>
+		me rodean los faros.<br>
+		Perplejidad.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* </font>
+		</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Redonda, 
+		quieta<br>
+		en el ra&iacute;l del metro<br>
+		una paloma.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">En el 
+		cristal <br>
+		del coche, gotas fr&aacute;giles.<br>
+		Nunca entrar&aacute;n.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Abrazo 
+		in&uacute;til<br>
+		busca la joven hiedra<br>
+		en el cemento.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Hoja ca&iacute;da<br>
+		sobre el cristal del coche.<br>
+		Envejecer.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* </font>
+		</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Abandonado<br>
+		zapato de tac&oacute;n.<br>
+		Ma&ntilde;ana fr&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Un m&oacute;vil 
+		suena<br>
+		y nadie en la avenida.<br>
+		Un m&oacute;vil suena.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Breve 
+		llovizna.<br>
+		El pavimento nuevo<br>
+		abre pulmones.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* </font>
+		</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Luna 
+		rodando<br>
+		entre las azoteas.<br>
+		&iexcl;Una ranura!</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Una 
+		rodilla<br>
+		se agita, descubierta.<br>
+		Invitaci&oacute;n.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">* </font>
+		</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		Persecuci&oacute;n.<br>
+		En el retrovisor<br>
+		la luna llena.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">*</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Aqu&iacute; y 
+		all&aacute;<br>
+		luz de ma&ntilde;ana azul.<br>
+		Son varios mares.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#85A6BC">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<font face="Georgia" size="2" color="#8FABC2">
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+		<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+		</font>
+	</blockquote>
+</blockquote>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:25:15 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:54 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

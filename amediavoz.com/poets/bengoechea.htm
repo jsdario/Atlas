@@ -1,0 +1,689 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Javier de Bengoechea</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Javier de Bengoechea. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Javier_de_Bengoechea,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bengoechea.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bengoechea.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815173132" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bengoechea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:31:32 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bengoechea.htm" title="12:40:01 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:31:32 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bengoechea.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:31:32 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bengoechea.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>73 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">6 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010001_2003:-1:010002010100_2004:-1:000101010001_2005:-1:011000000004_2006:-1:210211000100_2007:-1:010101011100_2008:-1:101111911000_2009:-1:000000210000_2010:-1:100000001110_2011:-1:000001102100_2012:-1:410010001000_2013:7:101220010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&gt; </p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BENGOECHEA.jpg" width="528" height="51">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font size="3" color="#A6BCCE" face="Saintgermain Sans Italic"><br>
+</font><font face="Arial" size="2" color="#84B0D6">
+&quot;&iquest;Y qui&eacute;n me ha de olvidar, si t&uacute; me amas?<br>
+Seguramente, t&uacute;... seguramente...&quot;</font></p>
+
+<p align="center"><font color="#84B0D6"><img src="./BENGOECHEA1.jpg" width="270" height="320"></font></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#84B0D6">&quot;Sophistication&quot;</font></em></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#84B0D6">Harry Wilson</font></em></p>
+<blockquote>
+  <blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+	biogr&aacute;fica</font></p>
+	<p align="left"><font face="Georgia"
+      size="3" color="#85A6BC"><br></font>
+	<font face="Georgia" size="2" color="#84B0D6">Poeta espa&ntilde;ol nacido en Bilbao 
+	en 1919.<br>Licenciado en Derecho por la Universidad de Deusto, ha dedicado 
+	gran parte de su vida a la literatura <br>
+	destac&aacute;ndose como cr&iacute;tico de arte y de teatro en la prensa y revistas 
+	importantes de su pa&iacute;s. Dirigi&oacute; el Museo <br>
+	de Bellas Artes de Bilbao, y fue reconocido como uno los grandes poetas 
+	bilba&iacute;nos. <br>Obtuvo inicialmente el acc&eacute;sit del <em>Premio Adonais</em> en 
+	1950 y luego el mismo premio en el a&ntilde;o de 1955 <br>
+	por su obra <i>&quot;Hombre en forma de eleg&iacute;a&quot;.</i><br>De su obra po&eacute;tica se 
+	destacan, adem&aacute;s, <i>&quot;Habitada claridad&quot;</i> en 1951, <i>&quot;Fiesta nacional&quot;</i> 
+	en 1951, y<i> <br>
+	&quot;Pinturas y escrituras&quot;&nbsp; </i>en 1994.<br>
+	Falleci&oacute; en agosto de 2009. &copy;</font></p>
+	<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+<img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./bengoechea.htm#A UNA MEJILLA BLANCA">A una mejilla blanca</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#AHORA, S&Iacute;">Ahora, s&iacute;</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#BESO">Beso</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a
+      href="./bengoechea.htm#EL SONETO DE LA VOZ M&Aacute;S SUAVE">El soneto de la voz m&aacute;s suave</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#EPITAFIO">Epitafio</a><br><br><a href="./bengoechea.htm#ESTOY">Estoy</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		</font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#M. E.">M. E</a></font><br>
+		<br>
+		<font face="Georgia"><a href="./bengoechea.htm#MALA ES MI SOMBRA, MALA...">Mala es mi 
+		sombra, mala...</a>&nbsp;<br>
+		<br>
+		<a href="./bengoechea.htm#MI EDAD MEDIA">Mi edad media</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#MUCHACHA">Muchacha</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#NADA">Nada</a></font></p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./bengoechea.htm#SEGURAMENTE">Seguramente</a><br><br><a href="./bengoechea.htm#SEGURO OTO&Ntilde;O">
+		Seguro oto&ntilde;o</a><br>
+		<br>
+		<a href="./bengoechea.htm#SESI&Oacute;N CONTINUA">Sesi&oacute;n continua</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br>
+		<br><a href="./bengoechea.htm#VIDA">Vida</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+		Volver a:  
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#85A6BC">
+		<a name="A UNA MEJILLA BLANCA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		A una mejilla blanca</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		( Madrigal p&oacute;stumo )</em></font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Lento el carm&iacute;n, cay&oacute; 
+		de su mejilla.<br>Ya se apag&oacute; ese p&eacute;talo de fuego.<br>Ya no es la sangre 
+		m&aacute;s desasosiego<br>que el de saberse quieta y amarilla.<br>
+		<br>Aquella de antes, &aacute;gil y sencilla,<br>es esta dura realidad de 
+		luego.<br>Jug&oacute; la rosa a terminar. Yo juego<br>a lamentar su lenta 
+		maravilla.<br>
+		<br>Ahora todo es igual de diferente:<br>la llamar&aacute;n como antes la 
+		llamaban,<br>la olvidar&aacute;n inolvidablemente...<br>
+		<br>En un principio fue lo que se acaba.<br>Sigue siendo lo mismo. 
+		Solamente<br>que ya no est&aacute; una rosa donde estaba.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="2" color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="AHORA, S&Iacute;"></a></font><font face="Georgia" color="#84B0D6">
+		Ahora, s&iacute;</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Ejercicios de amor, los que ahora hago,<br>y los que hacen conmigo. 
+		Sacrificios<br>sin duda, y de dudosos beneficios.<br>Hoy, m&eacute;rito es 
+		amar. Ayer, halago.<br>
+		<br>Antes, cuando los cisnes sobre el lago,<br>amante era el mejor de 
+		los oficios.<br>La humanidad, delicias y delicios<br>pag&aacute;ndose con 
+		besos. No era pago.<br>
+		<br>Dichosa aquella edad, pero se acaba,<br>y el aquel -nunca m&aacute;s-- de 
+		todo ello...<br>Se amaba, &iquest;de verdad?, pero se amaba.<br>
+		<br>Porque el labio era rojo y era bello,<br>deseaba, buscaba, y lo 
+		besaba.<br>&iexcl;Y amor, Dios m&iacute;o, amor llamaba a aquello...!</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="2" color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br><a name="BESO"></a>
+		</font><font face="Georgia" color="#84B0D6">Beso</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Aquel clavel que abri&oacute; tu llamarada...<br>Aquella inolvidable 
+		quemadura...<br>Aquella doble y &uacute;nica locura,<br>&iexcl;ay!, maravilla fue, 
+		mas ser&aacute; nada.<br>
+		<br>Recordar&eacute; el clamor de tu mirada.<br>Recordar&aacute; tu voz mi mordedura,<br>
+		mas se deshojar&aacute; mi dentadura<br>sobre el oto&ntilde;o de mi boca helada.<br>
+		<br>Ese beso me pesa gravemente.<br>Ha de caer a tierra por mi peso,<br>
+		pero puedo y te amo todav&iacute;a.<br>
+		<br>Y en los alrededores de mi frente<br>tendr&aacute; la maravilla de aquel 
+		beso<br>su consulado de melancol&iacute;a.<br>
+		</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center"><font color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EL SONETO DE LA VOZ M&Aacute;S SUAVE"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		El soneto de la voz m&aacute;s suave</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>( Madrigal 
+		decadente )</em><br>
+		<br>Esa garganta en que su voz habita,<br>adelgazada, amor en lo que 
+		cabe,<br>ni es comparable a nada ni se sabe<br>con qu&eacute; vecinos p&aacute;jaros 
+		limita.<br>
+		<br>Y si, a tal perfecci&oacute;n, trino imita,<br>podr&iacute;a tutearse con el ave<br>
+		este soneto de la voz m&aacute;s suave.<br>si su m&aacute;s suave voz me lo recita.<br>
+		<br>Su voz tan suave apenas si se siente.<br>Como suelen so&ntilde;ar los 
+		aburridos,<br>sue&ntilde;o un morir po&eacute;tico y consciente.<br>
+		<br>Primero han de morir otros sentidos.<br>Yo bien lo s&eacute;: 
+		definitivamente<br>la muerte me arrastrar&aacute; por sus o&iacute;dos.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left"><font size="2" color="#84B0D6"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EPITAFIO"></a></font><font face="Georgia" color="#84B0D6">
+		Epitafio</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Dos 
+		perfiles, son dos, en el inerte<br>yacer del afilado caballero,<br>pero 
+		un solo perfil, el verdadero,<br>haciendo la moneda de su muerte.<br>
+		<br>Moneda del vivir -azar y suerte-<br>ya jug&oacute; su caer triste y 
+		austero,<br>y ah&iacute; est&aacute; el amante m&aacute;s sincero<br>esperando un amor que lo 
+		despierte.<br>
+		<br>Ya en l&iacute;nea y trazos fieles se resume<br>su en&eacute;rgico morir tan 
+		delicado,<br>de amante que en olvidos se consume.<br>
+		<br>Qu&eacute; fragancia de besos que no ha dado.<br>Oh valeroso y &uacute;nico 
+		perfume.<br>Oh, el morir en olor de enamorado.<br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="ESTOY"></a>
+		Estoy<br>
+		<br>La escalera del viento hacia Tu altura,<br>se deshace en mis pies, y 
+		yo no puedo<br>subir, oh Dios, y sin subir, me quedo<br>flotando como 
+		pluma a la ventura. 
+		<br><br>&iquest;En d&oacute;nde estoy, oh Dios, o en qu&eacute; postura<br>pondr&eacute; mi vida, o 
+		c&oacute;mo desenredo<br>los hilos de mi ansia, y me hallo, y cedo<br>-a qui&eacute;n, 
+		mi Dios- mi peso de amargura?<br>
+		<br>As&iacute; impaciente, por llegar, me estiro,<br>y me rompo la vida, y m&aacute;s 
+		me afano,<br>y arriba voy volando en un suspiro...<br>
+		<br>Mas Tu cielo es un velo tan lejano...<br>&iquest;En d&oacute;nde estoy, mi Dios, 
+		en d&oacute;nde? Y miro,<br>y estoy sobre 1a palma de Tu mano.<br>
+		<br></font></p>
+	<p align="center">
+	<font size="2" color="#84B0D6">
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="M. E."></a>M. 
+		E. 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Querid&iacute;sima y diestra 
+		profesora<br>de mi dif&iacute;cil coraz&oacute;n inquieto, 
+		<br>&iquest;podr&iacute;as restaurarme este soneto<br>que, amarillento, tu atenci&oacute;n 
+		implora? 
+		<br><br>Mira c&oacute;mo mi voz se decolora, <br>c&oacute;mo se ha oscurecido este 
+		cuarteto. 
+		<br>Un tratamiento m&aacute;gico y discreto<br>recompondr&iacute;a su esbeltez sonora. 
+		<br><br>Discret&iacute;sima, docta criatura, <br>pasas como una tenue veladura<br>
+		sobre mi coraz&oacute;n y sus pesares... 
+		<br><br>Pasas tus manos sabias, cuidadosas. <br>Imperceptibles, 
+		diminutas rosas, 
+		<br>yo beso en m&iacute; tus huellas dactilares.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="MALA ES MI SOMBRA, MALA..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Mala es mi sombra, mala...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Mala es mi sombra, 
+		mala. &iquest;Me convino<br>
+		nacer? Pero nac&iacute;. O as&iacute; lo cuentan.<br>
+		Y si me busco en m&iacute;, mis manos tientan<br>
+		una pared al fondo de un camino.<br>
+		<br>
+		Yo soy un ser nacido a contra sino.<br>
+		Los hombres formidables me lamentan.<br>
+		Aumentan segur&iacute;simos, y aumentan<br>
+		mis posibilidades de asesino.<br>
+		<br>
+		Soy una soluci&oacute;n que siempre yerra.<br>
+		(Siguen en pie la muerte y sus baluartes.)<br>
+		Un hospital en medio de una guerra.<br>
+		<br>
+		Me llamo trece, y me apellido martes.<br>
+		Pero s&eacute; lo que soy: algo de tierra<br>
+		rodeada de Dios por todas partes.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="MI EDAD MEDIA"></a></font><font face="Georgia" color="#84B0D6">
+		Mi edad media</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Esos rostros rom&aacute;nicos inm&oacute;viles, iguales<br>
+		en sus ojos redondos, &iquest;sabemos lo que vieron?<br>
+		Telara&ntilde;as de siglos hasta que aparecieron<br>
+		los rostros delicados de cejas ojivales.<br>
+		<br>
+		Considero mi vida, repaso sus anales.<br>
+		Pregunt&eacute; a los tomistas y no me respondieron.<br>
+		&iquest;Cu&aacute;l fue el aquel de aquellas matanzas que se hicieron<br>
+		hasta que se inventaron las muertes naturales?<br>
+		<br>
+		Piadosamente olvido mis siglos infantiles,<br>
+		aquel cumplir diciembres pero jam&aacute;s abriles,<br>
+		aquel ir a la guerra tan triste de Mambr&uacute;.<br>
+		<br>
+		Amor cort&eacute;s, el m&iacute;o, aunque en mis escrituras<br>
+		se me hayan prolongado las edades oscuras:<br>
+		hasta mi siglo veinte, no apareciste</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font><font size="2" color="#84B0D6"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="MUCHACHA"></a></font>
+		<font face="Georgia" color="#84B0D6">Muchacha</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Esa boca despu&eacute;s, esa burbuja<br>de una sangre que hoy hierve 
+		alborotada...<br>Esos ojos despu&eacute;s, esa mirada<br>que ha incendiado al 
+		clavel, y lo dibuja...<br>
+		<br>Y el coraz&oacute;n despu&eacute;s, que hoy late y puja...<br>La mariposa de su 
+		vida... Nada...<br>Despu&eacute;s la muerte, digo, despiadada,<br>la clavar&aacute; a 
+		la nada con su aguja.<br>
+		<br>Esa boca, esa voz... Aquel invento<br>de clavar mariposas al olvido,<br>
+		es as&iacute; de feroz como lo cuento.<br>
+		<br>Y contar&eacute; lo hermosa que hayas sido,<br>que parec&iacute;as t&uacute;, que fue un 
+		momento,<br>muchacha fr&iacute;a ya y sin parecido.<br>
+		<br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center"><font size="2" color="#84B0D6">
+		<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="NADA"></a></font>
+		<font face="Georgia" color="#84B0D6">Nada</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Tambi&eacute;n en los supuestos de la nada,<br>el amor se presiente en la 
+		querella<br>de una futura creaci&oacute;n: doncella<br>sabi&eacute;ndose fecunda, 
+		recreada.<br>
+		<br>Antes de ser mi vida inaugurada,<br>fui barro enamorado de una 
+		huella,<br>de un talle vegetal, de alguna estrella...<br>Yo estoy hecho 
+		de tierra enamorada.<br>
+		<br>Y enamorado estoy de ti, y sustento<br>este amor enraizado y 
+		presentido<br>m&aacute;s all&aacute; de la vida y el momento.<br>
+		<br>Enamorado sin haber nacido,<br>y ahora tan muerto y nada, que 
+		presiento<br>la tierra enamorada que ya he sido.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="SEGURAMENTE"></a>Seguramente</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Seguramente t&uacute; porque t&uacute; eres<br>una nube que pasa, un puro r&iacute;o,<br>y yo 
+		tengo una sed, y un cielo fr&iacute;o,<br>seguramente como t&uacute; prefieres.<br><br>
+		Como los quieres t&uacute;, como los hieres,<br>seguramente es cierto que te 
+		ans&iacute;o,<br>y es todo cierto, s&iacute;, &iquest; verdad, bien m&iacute;o?<br>seguramente, 
+		cuando t&uacute; me quieres.<br>
+		<br>Cuando en mi vida -r&iacute;o- te derramas,<br>seguramente s&eacute; -adi&oacute;s 
+		torrente-<br>que alguien me ha de olvidar. Y t&uacute; me llamas,<br><br>y me 
+		has de amar apasionadamente.<br>&iquest;Y qui&eacute;n me ha de olvidar, si t&uacute; me 
+		amas?<br>Seguramente, t&uacute;, seguramente.<br></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="SEGURO OTO&Ntilde;O"></a></font><font face="Georgia" color="#84B0D6">
+		Seguro oto&ntilde;o</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		&iquest;Qu&eacute; ser&aacute; del amor, cuando estas manos<br>que acariciaron, vivas, la 
+		belleza,<br>no sean m&aacute;s que hierba en la maleza<br>de la muerte y la 
+		nada?... Gestos vanos<br>
+		<br>con que mi muerte avise a los humanos<br>que la vida termina cuando 
+		empieza...<br>Oh aquella breve y c&aacute;lida pereza<br>con que toqu&eacute; sus 
+		frutos m&aacute;s lozanos.<br>
+		<br>Esas caricias son pecado grave.<br>Pero hombre impertinente soy, lo 
+		sabe<br>el coraz&oacute;n, notario de mis besos.<br>
+		<br>La carne en flor a&uacute;n, y en esperanza...<br>Y la tormenta de la 
+		muerte avanza<br>a punto ya de deshojar mis huesos.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#84B0D6">
+		<a name="SESIÓN CONTINUA"></a>Sesi&oacute;n continua</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		Volveremos al Roxy y al Astoria,<br>
+		a los ingenuos nombres del pasado.<br>
+		En la sesi&oacute;n vermuth est&aacute; atrapado<br>
+		el final -no lo cuentes- de mi historia.<br>
+		<br>
+		Hoy estrena recuerdos la memoria.<br>
+		De cine es y ser&aacute; c&oacute;mo te he amado.<br>
+		Por el deseo estoy enca&ntilde;onado<br>
+		junto a ti. No ten&iacute;a escapatoria.<br>
+		<br>
+		No ten&iacute;a raz&oacute;n estar a oscuras,<br>
+		estar luchando nuestras calenturas<br>
+		en una fr&iacute;a y desigual batalla.<br>
+		<br>
+		Sinceros de tan puros insinceros,<br>
+		pues &eacute;ramos los labios verdaderos<br>
+		del beso que tapaba la pantalla.<br>
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><br></font>
+		<font face="Georgia" color="#84B0D6"><a name="VIDA"></a>Vida</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Yo no s&eacute; ya si soy, ni s&eacute; si era<br>el hombre que no amaba, ni si he 
+		sido<br>sin amor, como un muerto que ha vivido<br>esperando nacer cuando 
+		se muera. 
+		<br><br>No s&eacute; si estaba en m&iacute;, si estaba fuera,<br>ni de d&oacute;nde ni c&oacute;mo 
+		me ha venido,<br>pero s&eacute; que est&aacute; aqu&iacute;, que me ha nacido<br>la muerte de 
+		vivir porque te quiera.<br>
+		<br>Oh muerte en el amor, oh vida nueva,<br>oh moribunda flor definitiva<br>
+		que el ritmo de mi pulso me comprueba.<br>
+		<br>Oh vida de esta muerte decisiva<br>que yo s&eacute; que me arrastra, que me 
+		lleva,<br>que llevar&eacute; esta muerte mientras viva.</font></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:31:32 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:46 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

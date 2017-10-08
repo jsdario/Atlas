@@ -1,0 +1,735 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Rafael Courtoisie</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Rafael Courtoisie. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Rafael Courtoisie,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app10.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/courtoisie.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/courtoisie.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815180552" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./courtoisie.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:05:52 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./courtoisie.htm" title="21:48:45 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:05:52 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./courtoisie.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:05:52 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./courtoisie.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>27 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">11 Jun 08 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000001000101_2009:-1:010000200000_2010:-1:100000001110_2011:-1:000000100121_2012:-1:121010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./COURTOISIE.jpg" width="377" height="40"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Para las almas los cuerpos valen oro.<br>
+Pero es un oro carnal, de ruido tibio...&quot;</em><br>
+<br>
+<img border="0" src="./COURTOISIE1.jpg" width="234" height="350"></font></p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em>&quot;Sin t&iacute;tulo&quot;<br>
+<br>
+Jos&eacute; Gurvich</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font color="#9BC9BB"><br>
+			</font>
+			<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+		narrador&nbsp; y ensayista uruguayo nacido en Montevideo en 1958. <br>
+		Es uno de los escritores m&aacute;s destacados de su pa&iacute;s en las &uacute;ltimas 
+		d&eacute;cadas. Inici&oacute; la carrera literaria durante 
+		<br>
+		la dictadura militar de 1973. Fue profesor invitado en Florida State 
+		University, Birmingham University y Universidad <br>
+		de Uruguay. Ha formado parte y dirigido varias antolog&iacute;as de poes&iacute;a y ha 
+		actuado como jurado en numerosos concursos. <br>
+		Es adem&aacute;s de conferencista y periodista cultural, un brillante 
+		representante de la literatura latinoamericana. <br>
+		Viajero incesante, ha recorrido lugares tan diversos como la selva 
+		amaz&oacute;nica y el desierto del N&eacute;guev. En los &uacute;ltimos a&ntilde;os <br>
+		ha sido galardonado con&nbsp; premios destacados como el <i>Premio de la</i> <i>
+		Fundaci&oacute;n Loewe</i>, el <i>Premio de</i> <i>Poes&iacute;a del Ministerio <br>
+		de Cultura</i> <i>Uruguayo</i>, el
+		<i>Premio Fraternidad</i> de Jerusal&eacute;n, el <i>Premio Morosoli</i> 
+		auspiciado por la C&aacute;tedra Unesco, <br>
+		el <i>Premio Internacional de Poes&iacute;a Jaime Sabines</i>, el <i>Premio 
+		Plural de Poes&iacute;a </i>de M&eacute;xico y el <i>
+		Premio Blas de Otero</i> en Espa&ntilde;a. <br>
+		Parte de su obra est&aacute; contenida en los siguientes vol&uacute;menes: <i>
+		&quot;Contrabando de auroras&quot;</i> 1977, 
+		<i>&quot;Tiro de gracia&quot;</i> 1981, <i><br>
+		&quot;Tarea&quot;</i> 1982, <i>&quot;Orden de cosas&quot;</i> 1986, 
+		<i>&quot;Trovar clus&quot;&nbsp; </i>1987<i>, &quot;Cambio de estado&quot;</i> 1990, <i>
+		&quot;Textura&quot;</i> 
+		1994, <i>&quot;Estado s&oacute;lido&quot;</i> 1996, <i><br>
+		&quot;Umbr&iacute;a&quot;</i> 1999, <i>&quot;Fronteras de Umbr&iacute;a&quot;</i>&nbsp; y <i>&quot;M&uacute;sica para 
+		sordos&quot;</i> en 2002, <i>&quot;Jaula abierta&quot;</i>&nbsp; y <i>&quot;Todo es poco&quot; </i>
+		&nbsp;en 2004.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		</blockquote>
+		<p align="left"><br>
+		<font face="Georgia"><a href="./courtoisie.htm#El amor de los locos">El amor de los 
+		locos</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Estado s&oacute;lido">Estado 
+		s&oacute;lido</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Las piedras de amar">Las 
+		piedras de amar</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Los que no est&aacute;n">Los que 
+		no est&aacute;n</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Mujeres">Mujeres</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Q  habla del Ed&eacute;n">Q&nbsp; 
+		habla del Ed&eacute;n</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Una mujer ha muerto">Una 
+		mujer ha muerto</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Voces">Voces</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Voces 2">Voces 2*</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Voces 3">Voces 3*</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Voces 4">Voces 4*</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./courtoisie.htm#Y el fondo">Y el fondo</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA">Volver a:
+		</font><font face="Georgia" color="#95B3AA">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		</font><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+		<a href="./indice-L-Z.htm"><font face="Georgia">&Iacute;ndice L-Z</font></a></p>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#95B3AA"><script
+      language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#95B3AA">
+			<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta 
+			p&aacute;gina</a> &nbsp;&nbsp;</font><font face="Georgia" size="2" color="#95B3AA">&nbsp;&nbsp;
+			</font></p>
+			<p align="center">&nbsp;</p>
+		</blockquote>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+				<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="El amor de los locos"></a>El amor de los locos</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp; 
+		Un loco es alguien que est&aacute; desnudo de la mente. Se ha despojado de sus
+		<br>
+		ropas invisibles, de esas que hacen que la realidad se vele y se desv&iacute;e.
+		<br>
+		Los locos tienen esa impudicia que deviene fragilidad y, en ocasiones, 
+		belleza. <br>
+		Andan solos, como cualquier desnudo, y con frecuencia tambi&eacute;n hablan<br>
+		solos (&laquo;Quien habla solo espera hablar con Dios un d&iacute;a&raquo;).<br>
+&nbsp;&nbsp;&nbsp;&nbsp; M&aacute;s dif&iacute;cil que abrigar un cuerpo desnudo es abrigar un 
+		pensamiento. Los locos <br>
+		tienen pensamientos que tiritan, pensamientos &oacute;seos, duros como la 
+		piedra <br>
+		en torno a la que dan vueltas, como si se mantuvieran atados a ella por 
+		una<br>
+		cadena de hierro de ideas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; El cerebro de un p&aacute;jaro no pesa m&aacute;s que algunos gramos, 
+		y la parte que modula <br>
+		el canto es de un tama&ntilde;o mucho menor que una cabeza de alfiler, un 
+		infinit&eacute;simo <br>
+		trocillo de tejido, de materia biol&oacute;gica que, con cierto aburrimiento, 
+		los sabios <br>
+		escrutan&nbsp; al microscopio para descifrar de qu&eacute; manera, en tan 
+		exiguo retazo, <br>
+		est&aacute; escrita la partitura.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Pero desde mucho antes, y sin necesidad de microscopio 
+		ni de tinciones, <br>
+		el loco sabe que el canto del p&aacute;jaro es inmenso y pesado, plomo puro que 
+		taladra <br>
+		huesos, que se mete en el sue&ntilde;o, que desfonda cualquier techo y no hay 
+		cemento ni <br>
+		viga que pueda sostener su hartura, su tama&ntilde;o posible. Por eso algunos 
+		locos <br>
+		despiertan antes de que amanezca y se tapan los o&iacute;dos con su propia voz, 
+		con voces <br>
+		que sudan de adentro, de la cabeza.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Los pensamientos del loco son carne viva, carne sin 
+		piel. En el desierto del <br>
+		pensamiento del loco el p&aacute;jaro es un sol implacable. El canto cae como 
+		una luz y un <br>
+		calor que le picara al loco en la carne misma de la desnudez.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Pero la desnudez del loco es &iacute;ntima: de tanto exhibirla 
+		queda dentro. Es condici&oacute;n <br>
+		interior, pasa desapercibida a las legiones de cuerdos cuya &aacute;nima est&aacute; 
+		cubierta por <br>
+		completo de tela basta, gruesa, trenzada por hilos de la costumbre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; El &uacute;nico instrumento posible para el loco, para 
+		defender su desnudez, es el amor. <br>
+		El amor de los locos es una vestimenta transparente. Esos ojos 
+		vidriosos, ese hilo <br>
+		ambarino que orinan por las noches, ese fragor y ese sentimiento copioso 
+		y m&uacute;ltiple <br>
+		que no alteran las <i>benzodiazepinas</i>, que no disminuye el <i>Valium</i>, 
+		permanecen intactos <br>
+		en el loco por arte del amor.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Es un martillo, y una cuchara, y un punz&oacute;n. Es todo 
+		menos un vestido, no cubre <br>
+		sino que atraviesa, no mitiga sino que exalta. El amor de los locos 
+		tiene una textura, <br>
+		un porte y una sustancia.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; La sustancia se parece al vidrio, pero es el vidrio de 
+		una botella rota.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Estado s&oacute;lido&quot; 1996<br>
+		Premio de la Fundaci&oacute;n Loewe</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Estado s&oacute;lido"></a>Estado 
+		s&oacute;lido</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp; 
+		La soledad, esa piedra masculina que reposa en una habitaci&oacute;n sin horas<br>
+		como un planeta hermoso y advertido.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp; 
+		Una fruta de hierro.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Estado s&oacute;lido&quot; 1996<br>
+		Premio de la Fundaci&oacute;n Loewe</i></font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Las piedras de amar"></a>Las piedras de amar</font><font face="Georgia" color="#9BC9BB" size="2"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Los hijos de los Grises 
+		le arrebatan el gozo a las mujeres, <br>
+		justo en el &uacute;ltimo momento, justo cuando est&aacute;n por acabar. Los hijos de 
+		los Grises, <br>
+		en el &uacute;ltimo instante, se llevan esa gema invisible del sexo de las 
+		mujeres <br>
+		y hacen un collar de maravilla.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; En las noches c&aacute;lidas, el 
+		collar hecho con los guijarros del gozo humedecido, <br>
+		palpita en la penumbra inm&oacute;vil, sin que nadie se adue&ntilde;e del temblor. Los 
+		Grises<br>
+		ponen esos collares en las vitrinas de los museos, y quedan tontamente 
+		alegres <br>
+		por haberles quitado el gozo a las mujeres.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Las perlas, algunas 
+		oscuras y otras claras, producen un latido inm&oacute;vil y conc&eacute;ntrico, <br>
+		un espasmo transl&uacute;cido que se pierde en el espacio silencioso. Pero las 
+		mujeres de los hijos <br>
+		de los Grises van, cada vez que pueden, a la aldea vecina, donde los 
+		hombres saben <br>
+		desprenderles del vientre esos cantos rodados, esas perlas opalinas y 
+		latientes, <br>
+		y las dejan flotando en la entrepierna, h&uacute;medas y tibias todo el tiempo,
+		<br>
+		durante la eternidad que dura el acto.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Los que no est&aacute;n"></a>Los que no est&aacute;n<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Para las almas los 
+		cuerpos valen oro. Pero es un oro carnal, <br>
+		de ruido tibio, un oro en trazos y fibras, oscuro, m&aacute;s oscuro que la 
+		muerte <br>
+		que lleva y devuelve las almas a su origen, la muerte como un mar que 
+		las devora.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Los cuerpos flotan.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sin la muerte, un cuerpo 
+		es m&aacute;s grave que su sombra. La muerte los levanta, <br>
+		los madura, hace de los cuerpos un sue&ntilde;o irrepetible en el que el deseo 
+		encuentra<br>
+		materias claras para hacer la casa.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La casa se levanta y se 
+		derrumba, pero los trozos esparcidos son duras gotas <br>
+		del agua del deseo, humedecen la vida que les falta.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Mujeres">
+		</a>Mujeres</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Algunas mujeres se 
+		consuelan con dedos que arrancan de las estatuas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Un lago tibio les crece 
+		entre las piernas y en el fondo del lago <br>
+		colean pececillos y se escurre en lo profundo su rojez partida en dos.
+		<br>
+		El pulpo, como una estrella blanda sumergida, recibe al anular y provoca
+		<br>
+		una estampida de puntas de peces y arenas del temblor que desmoronan.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Las mujeres acaban 
+		exhaustas y en los l&uacute;bricos dedos de m&aacute;rmol, <br>
+		brillantes de humedad del lago, se entibian y boquean, hasta morir, <br>
+		algunos pececillos adheridos.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Q  habla del Ed&eacute;n"></a>Q&nbsp; habla del Ed&eacute;n</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &laquo;Un pez de hule envuelve 
+		la comida diaria. Las escamas de nylon <br>
+		se deshacen pero no logran pudrirse en la boca del desierto: <br>
+		bolsas, jirones y retazos de pl&aacute;stico, trozos de c&aacute;rmica y latas como 
+		joyas oxidadas. <br>
+		Cada cosa es un tesoro y tiende a la aridez. Las ra&iacute;ces de los vegetales 
+		esperan <br>
+		entre vidrios y coronas de caucho, los &oacute;xidos de plomo y el agua del 
+		cadmio <br>
+		entre los dientes de un cero gordo, el mar envenenado de sulfito <br>
+		en la gran concha del mar, en la raja del mar, en el co&ntilde;o del mar, en la 
+		vira del<br>
+		mar con aguavivas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Un temblor de hilo en las 
+		vocales: n-a-d-a.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Estos son los huesos de 
+		Dios. Las ramas despojadas por el viento enfurecido, <br>
+		los ojos cubiertos por los labios de los ojos, la Mosca Reina con su 
+		s&eacute;quito <br>
+		en el sexo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chatarra, chatarra y m&aacute;s 
+		chatarra. <i>Junk.</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; La savia retrocede en las 
+		palabras cuando voy a hablar del &aacute;rbol. <br>
+		Un sarcoma voraz seca la rama. El aire me respira y se envenena. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lo que amo se vuelve 
+		arena.&raquo;</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Una mujer ha muerto"></a>Una mujer ha muerto</font><font face="Georgia" color="#9BC9BB" size="2"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Antes de dormir,&nbsp; Z&nbsp; 
+		macera ra&iacute;ces y pasa los jugos <br>
+		sobre los ojos de las piedras. Las estatuas brillan serenas, <br>
+		con una humedad oscura y un derroche de luz y lava s&oacute;lida. <br>
+		As&iacute; apacigua la noche su custodia.<br>
+		<br>
+		* * *<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Una carta llega a destino 
+		antes de ser escrita.<br>
+		<br>
+		* * *<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Una mujer ha muerto en 
+		alg&uacute;n sitio.&nbsp; Q&nbsp; sale a cielo descubierto, <br>
+		apoya el o&iacute;do en tierra y escucha c&oacute;mo las orugas <br>
+		despedazan un castillo subterr&aacute;neo.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Voces">
+		</a>Voces</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Un idioma de polvo se 
+		escucha en las calles.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Q&nbsp; transporta una 
+		vasija y las gentes se apartan.<br>
+		Lleva una carraca para anunciar su paso y un ni&ntilde;o se adelanta <br>
+		moviendo los brazos, anunciando el peligro.<br>
+		Alguien, desde una azotea, tira una piedra. La vasija se rompe <br>
+		y deja ver el interior. Hay fuego maduro que comienza a derramarse. <br>
+		Q corre despavorido y tira la carraca, que enmudece al caer. Umbr&iacute;a se 
+		aparta y, <br>
+		en el centro de la columna de fuego, crece un hueco.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Una ni&ntilde;a llega corriendo 
+		desde lejos, se acerca a mirar y se apaga en la ceniza. <br>
+		Nadie alcanz&oacute; a advertir el peligro, nadie grit&oacute; a tiempo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comienza a lloviznar. Las 
+		bocas est&aacute;n llenas de polvo.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De 
+		&quot;Umbr&iacute;a&quot; 1999</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Voces 2">
+		</a>Voces 2*</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Un hijo de palabras, 
+		hecho de co&aacute;gulos, hecho de fragmentos <br>
+		de cosas que dije o que no dije. Es un minuto y una boca de vidrio 
+		picado, <br>
+		es una sombra y a su costado crece el r&iacute;o de otra sombra que lo sigue
+		<br>
+		y que dice y que no dice.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Umbr&iacute;a&quot; 1999<br>
+		</i>*La numeraci&oacute;n es nuestra</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Voces 3">
+		</a>Voces 3*</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Una mano de tierra 
+		edifica ciudades y rel&aacute;mpagos oscuros. <br>
+		En el cuerpo de un &aacute;rbol, un nervio de humedad siente la brisa.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Umbr&iacute;a&quot; 1999<br>
+		</i>*La numeraci&oacute;n es nuestra</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Voces 4">
+		</a>Voces 4*<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Un hijo hecho de co&aacute;gulos 
+		entre la maravilla de la m&uacute;sica, <br>
+		en los oboes, en las guitarras, en la palabra &laquo;piano&raquo; con sus dientes 
+		flojos, <br>
+		y una luna de trapos enjuga los sonidos. Es la canci&oacute;n de la infecci&oacute;n
+		<br>
+		con sus arpas tisulares, el agua del contagio llevada por la brisa. 
+		M&uacute;sica<br>
+		de piedras y jugo de metales, ag&uuml;itas virulentas acompa&ntilde;an la canci&oacute;n 
+		del mudo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Umbr&iacute;a&quot; 1999<br>
+		</i>*La numeraci&oacute;n es nuestra</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Y el fondo"></a>Y el fondo</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Cuando la forma comienza a declinar aparece el fondo. 
+		Se adelgazan las paredes, <br>
+		se afina la membrana, la noche extensa, sencilla o intrincada de la 
+		forma. El fondo <br>
+		se opaca entonces, comparece.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Hay un instante de atraso, de desfasaje entre la forma 
+		y el fondo y es all&iacute; donde <br>
+		se ve su orilla, su materia dispersa, su l&iacute;quido sin continente. 
+		Espesura, densidad <br>
+		opaca.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Un punto. El punto concentra el fondo, el fondo 
+		despojado.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; La intemperie como una precipitaci&oacute;n en el seno de un 
+		l&iacute;quido, como un cuerpo <br>
+		extra&ntilde;o. Pero el fondo siempre estuvo en la forma, la pulpa en la fruta, 
+		el agua en el <br>
+		vaso, la carne con sus linfas en el cuerpo. El cuerpo dentro del mundo. 
+		El mundo <br>
+		dentro del cuerpo.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Pues abandonada la forma queda una circularidad, una 
+		huella.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; <i>Cuando fa forma comienza a declinar, aparece el 
+		fondo.</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Estado s&oacute;lido&quot; 1996<br>
+		Premio de la Fundaci&oacute;n Loewe</i></font></p>
+		<blockquote>
+			<p align="left"><font face="Georgia" size="3" color="#A7BEB9"><br>
+			</font></p>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+			<font face="Georgia" size="2" color="#8FABC2">
+			<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+			<font color="#AAC0D5">
+			<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+			<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+			</p>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:05:52 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:16:58 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,659 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jos&eacute; Saramago</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Jos&eacute; Saramago."
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jos&eacute; Saramago. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jose_Saramago,poesias,poetas,poemas,traducciones,textos,poesia_visual,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app11.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/saramago.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "14";
+var displayMonth = "Dec";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/saramago.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20131214001232" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./saramago.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="15 Aug 2013"><strong>AUG</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 0:12:32 Dec 14, 2013">DEC</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Jan
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./saramago.htm" title="16:38:55 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 0:12:32 Dec 14, 2013">14</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./saramago.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="19 Sep 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 0:12:32 Dec 14, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./saramago.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>19 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">26 Jul 11 - 14 Dec 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000201120_2012:-1:101111001000_2013:11:101210010001_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SARAMAGO.jpg" width="348" height="52"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./SARAMAGO1.jpg" width="216" height="24"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="673" height="331">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="665">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="300" width="229" valign="top">
+			<p align="left"><font color="#FFFFFF">&nbsp;&nbsp;<img border="0" src="./SARAMAGO2.jpg" width="200" height="306"></font>&nbsp;&nbsp;&nbsp;</td>
+			<td width="432" valign="top" height="300">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta, novelista, periodista&nbsp; y dramaturgo&nbsp; portugu&eacute;s,&nbsp; 
+			nacido en Azinhaga, Santar&eacute;m, el 16 de noviembre de 1922.<br>
+			Perteneciente a una familia de extracci&oacute;n humilde, inici&oacute; 
+			tard&iacute;amente la educaci&oacute;n primaria debido a los escasos recursos 
+			econ&oacute;micos de su padre. Super&oacute; con gran actitud diversas 
+			contingencias familiares, y a pesar de que debi&oacute; suspender los 
+			estudios por&nbsp; falta de dinero, siempre mantuvo el inter&eacute;s por 
+			la lectura de los cl&aacute;sicos. A partir de 1944, despu&eacute;s de contraer 
+			matrimonio, escribi&oacute; dos novelas no publicadas,&nbsp; colabor&oacute; como 
+			cr&iacute;tico literario y form&oacute; parte de la primera Asociaci&oacute;n de 
+			escritores&nbsp; portugueses. Tradujo autores como Tolstoi, 
+			Maupassant y&nbsp; Baudelaire, y public&oacute; su primer libro de poemas 
+			en 1966 bajo el t&iacute;tulo <i>&quot;Os poemas poss&iacute;veis&quot;.</i><br>
+			En 1969 se afili&oacute; al Partido Comunista Portugu&eacute;s, dedic&aacute;ndose por 
+			completo al ejercicio literario como escritor y cr&iacute;tico.<br>
+			Obtuvo numerosos galardones y doctorados Honoris Causa, entre los 
+			que sobresale el <i>Premio Nobel de Literatura</i> en 1998.<br>
+			Falleci&oacute; en T&iacute;as, Lanzarote, Espa&ntilde;a, en el a&ntilde;o 2010.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Jos&eacute; Saramago:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./saramago.htm#Catorce de junio">Catorce de junio</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#El beso">El beso</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#En el coraz&oacute;n, quiz&aacute;">&laquo;En 
+		el coraz&oacute;n, quiz&aacute;&raquo;</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Estudio de desnudo">
+		Estudio de desnudo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Hasta la carne">Hasta la 
+		carne</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Intimidad">Intimidad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Inventario">Inventario</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Laberinto">Laberinto</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Signo de escorpi&oacute;n">Signo 
+		de escorpi&oacute;n</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Vengo de lejos, lejos">
+		&laquo;Vengo de lejos, lejos&raquo;</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./saramago.htm#Virginidad">Virginidad</a></font><font color="#FFFFFF" face="Georgia"><a href="./saramago.htm#A LA CIUDAD DE PUSHKIN"> </a>
+		</font><font face="Georgia" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><br>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#EEEEEE"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		</font><font color="#C4CAD4" face="Georgia"><a name="Catorce de junio">
+		</a>Catorce de junio </font><font size="2" color="#C4CAD4" face="Georgia"> <br>
+		<br>
+		Cerremos esta puerta. <br>
+		Lentas, despacio, que nuestras ropas caigan <br>
+		Como de s&iacute; mismos se desnudar&iacute;an dioses. <br>
+		Y nosotros lo somos, aunque humanos. <br>
+		Es nada lo que nos ha sido dado. <br>
+		No hablemos pues, s&oacute;lo suspiremos <br>
+		Porque el tiempo nos mira. <br>
+		Alguien habr&aacute; creado antes de ti el sol, <br>
+		Y la luna, y el cometa, el espacio negro, <br>
+		Las estrellas infinitas. <br>
+		Ahora juntos, &iquest;qu&eacute; haremos? Sea el mundo <br>
+		Como barco en el mar, o pan en la mesa, <br>
+		O el rumoroso lecho. <br>
+		No se alej&oacute; el tiempo, no se fue. Asiste y quiere. <br>
+		Su mirada aguda ya era una pregunta <br>
+		A la primera palabra que decimos: <br>
+		Todo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de Pilar del R&iacute;o</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="El beso"></a>El beso</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Hoy, no s&eacute; por qu&eacute;, el viento ha tenido un <br>
+&nbsp;&nbsp;&nbsp;&nbsp; hermoso gesto de renuncia, y los &aacute;rboles han <br>
+&nbsp;&nbsp;&nbsp;&nbsp; aceptado su quietud. <br>
+		Sin embargo (y es bueno que as&iacute; sea) una guitarra <br>
+&nbsp;&nbsp;&nbsp;&nbsp; organiza obstinadamente el espacio de la soledad. <br>
+		Acabamos sabiendo que las flores se alimentan en <br>
+&nbsp;&nbsp;&nbsp;&nbsp; la f&eacute;rtil humedad. <br>
+		&Eacute;sa es la verdad de la saliva.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"> </font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="En el coraz&oacute;n, quiz&aacute;">
+		</a>&laquo;En el coraz&oacute;n, quiz&aacute;&raquo; </font>
+		<font size="2" color="#C4CAD4" face="Georgia">
+		<br>
+		<br>
+		En el coraz&oacute;n, quiz&aacute;, o m&aacute;s exacto: <br>
+		Una herida rasgada con navaja, <br>
+		Por donde se va la vida mal gastada, <br>
+		Con total conciencia nos apu&ntilde;ala. <br>
+		El desear, el querer, el no bastar, <br>
+		Equivocada b&uacute;squeda de la raz&oacute;n <br>
+		Que el azar de ser nos justifique, <br>
+		Es eso lo que duele, quiz&aacute; en el coraz&oacute;n.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Estudio de desnudo">
+		</a>Estudio de desnudo</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Esa l&iacute;nea que nace de tus hombros, <br>
+		Que se prolonga en brazos, despu&eacute;s mano, <br>
+		Esos c&iacute;rculos tangentes, geminados, <br>
+		Cuyo centro en cono se resuelve, <br>
+		Agudamente erguidos hacia los labios <br>
+		Que ansiosos de los tuyos se desprenden. <br>
+		<br>
+		Esas dos par&aacute;bolas que te encierran <br>
+		En el quebrar ondulado de cintura, <br>
+		Las calipigias cicloides superpuestas <br>
+		Al trazo de las columnas invertidas: <br>
+		Tibios muslos de l&iacute;neas envolventes, <br>
+		Torneada espiral que no se extingue. <br>
+		<br>
+		Esa curva tan suave que dibuja <br>
+		Sobre tu vientre un arco reposado, <br>
+		Ese tri&aacute;ngulo oscuro que fulgura, <br>
+		Camino y sello de la puerta de tu cuerpo, <br>
+		Donde el estudio que de desnudo hago <br>
+		Se transforma en cuadro terminado.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><br>
+&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Hasta la carne"></a>Hasta la carne</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Otros dir&aacute;n en verso otras razones, <br>
+		Qui&eacute;n sabe si m&aacute;s &uacute;tiles, m&aacute;s urgentes. <br>
+		&Eacute;ste no cambi&oacute; su naturaleza, <br>
+		Suspendida entre dos negaciones. <br>
+		Ahora, inventar arte y manera <br>
+		De juntar el azar y la certeza, <br>
+		Se lleve en eso, o no, la vida entera. <br>
+		<br>
+		Como quien se muerde las u&ntilde;as cercenadas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"> </font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Intimidad"></a>Intimidad</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">En el coraz&oacute;n de la 
+		mina m&aacute;s secreta, <br>
+		En el interior del fruto m&aacute;s distante, <br>
+		En la vibraci&oacute;n de la nota m&aacute;s discreta, <br>
+		En la caracola espiral y resonante, <br>
+		<br>
+		En la capa m&aacute;s densa de pintura, <br>
+		En la vena que en el cuerpo m&aacute;s nos sonde, <br>
+		En la palabra que diga m&aacute;s blandura, <br>
+		En la ra&iacute;z que m&aacute;s baje, m&aacute;s esconda, <br>
+		<br>
+		En el silencio m&aacute;s hondo de esta pausa, <br>
+		Donde la vida se hizo eternidad, <br>
+		Busco tu mano y descifro la causa <br>
+		De querer y no creer, final, intimidad.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Inventario"></a>Inventario</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">De qu&eacute; sedas est&aacute;n 
+		hechos tus dedos, <br>
+		De qu&eacute; marfil tus muslos lisos, <br>
+		De qu&eacute; alturas lleg&oacute; a tu andar <br>
+		La gracia de gamuza con que pisas. <br>
+		<br>
+		De qu&eacute; moras maduras se extrajo <br>
+		El sabor acidulado de tu seno, <br>
+		De qu&eacute; Indias el bamb&uacute; de tu cintura. <br>
+		El oro de tus ojos, de d&oacute;nde vino. <br>
+		<br>
+		A qu&eacute; mecer de ola vas a buscar <br>
+		La l&iacute;nea serpentina de tus caderas, <br>
+		De d&oacute;nde nace la frescura de esa fuente <br>
+		Que sale de tu boca cuando r&iacute;es. <br>
+		<br>
+		De qu&eacute; bosques marinos se solt&oacute; <br>
+		La hoja de coral de tus puertas, <br>
+		Qu&eacute; perfume te anuncia cuando vienes <br>
+		A rodearme de deseo las horas muertas.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Laberinto"></a>Laberinto</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		En m&iacute; te pierdo, aparici&oacute;n nocturna, <br>
+		En este bosque de enga&ntilde;os, en esta ausencia, <br>
+		En la neblina gris de la distancia, <br>
+		En el largo pasillo de puertas falsas. <br>
+		<br>
+		De todo se hace nada, y esa nada <br>
+		De un cuerpo vivo enseguida se puebla, <br>
+		Como islas del sue&ntilde;o que entre la bruma <br>
+		Flotan, en la memoria que regresa. <br>
+		<br>
+		En m&iacute; te pierdo, digo, cuando la noche <br>
+		Sobre la boca viene a colocar el sello <br>
+		Del enigma que, dicho, resucita <br>
+		Y se envuelve en los humos del secreto. <br>
+		<br>
+		En vueltas y revueltas que me ensombrecen, <br>
+		En el ciego palpar con los ojos abiertos, <br>
+		&iquest;Cu&aacute;l es del laberinto la gran puerta, <br>
+		D&oacute;nde el haz de sol, los pasos justos? <br>
+		<br>
+		En m&iacute; te pierdo, insisto, en m&iacute; te huyo, <br>
+		En m&iacute; el cristal se funde, se hace pedazos, <br>
+		Mas cuando el cuerpo cansado se quiebra <br>
+		En ti me venzo y salvo, en ti me encuentro.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"> <br>
+&nbsp;<br>
+&nbsp;</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Signo de escorpi&oacute;n">
+		</a>Signo de escorpi&oacute;n</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Sabr&aacute;s que para ti no 
+		habr&aacute; descanso, <br>
+		La paz no est&aacute; contigo, tampoco la fortuna: <br>
+		El signo as&iacute; lo ordena. <br>
+		Te pagan bien los astros esta guerra: <br>
+		Por m&aacute;s breve que sea la cuenta de tu vida, <br>
+		Peque&ntilde;a no ser&aacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Vengo de lejos, lejos">
+		</a>&laquo;Vengo de lejos, lejos&raquo;
+		</font><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+		<br>
+		Vengo de lejos, lejos, y canto sordamente <br>
+		Esta vieja, tan vieja, canci&oacute;n de rimas tuertas, <br>
+		Y dices que la cant&eacute; a otra gente, <br>
+		Que otras manos me abrieron otras puertas: <br>
+		<br>
+		Pero, amor m&iacute;o, yo vengo a este paso <br>
+		Y grito, desde la lejan&iacute;a de los caminos, <br>
+		Desde el polvo mordido y el temblor <br>
+		De las carnes maltratadas, <br>
+		Esta nueva canci&oacute;n con que renazco.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i> </font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Virginidad"></a>Virginidad</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">No es esa que el pudor 
+		un d&iacute;a deja,<br>
+		No es esa que fue espejismo y es enga&ntilde;o.<br>
+		La &uacute;ltima puerta es la que importa:<br>
+		Cazador que porf&iacute;a, caza alcanza.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>De &quot;Poes&iacute;a completa&quot; 
+		Alfaguara Editores, 2005<br>
+		Versi&oacute;n de &Aacute;ngel Campos P&aacute;mpano</i> <br>
+		<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 0:12:32 Dec 14, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:34 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

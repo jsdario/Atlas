@@ -1,0 +1,1118 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Bob Dylan</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Bob Dylan." 
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Bob Dylan. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Bob_Dylan,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/dylan.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/dylan.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815163724" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./dylan.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="30 Jun 2013"><strong>JUN</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:37:24 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./dylan.htm" title="8:31:34 Jun 30, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:37:24 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./dylan.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:37:24 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./dylan.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>18 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">27 Jul 11 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000102120_2012:-1:201010001000_2013:7:101211010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./DYLAN.jpg" width="227" height="52"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./DYLAN1.jpg" width="210" height="18"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="613" height="331">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="605">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="300" width="221" valign="top">
+			<p align="left">
+			<img border="0" src="./DYLAN2.jpg" width="237" height="320">&nbsp;&nbsp;&nbsp;
+			</td>
+			<td width="380" valign="top" height="300">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Nacido bajo el nombre de&nbsp; Robert Allen Zimmerman el 24 de mayo 
+			de 1941 en Duluth, Minnesota, opt&oacute; por el nombre de Bob Dylan desde 
+			muy joven, en honor al poeta gal&eacute;s Dylan Thomas.<br>
+			Desde la d&eacute;cada del sesenta, cuando empez&oacute; a escribir canciones 
+			sobre temas sociales y filos&oacute;ficos con un hondo fondo po&eacute;tico, se 
+			convirti&oacute; en uno de los artistas m&aacute;s influyentes de la cultura norteamericana.<br>
+			Galardonado con innumerables premios por su trayectoria musical, ha 
+			sido distinguido adem&aacute;s, con doctorados honorarios en m&uacute;sica por las 
+			Universidades de Princeton, New Jersey, y St. Andrews, Scotland, en 
+			1970 y 2004 respectivamente; Orden de las Artes y las Letras de 
+			Francia en 1990; Premio Pr&iacute;ncipe de Asturias de las Artes en 2007; 
+			Premio Pulitzer Special Citation en 2008, y National Medal of Arts 
+			de EE.UU. en 2009.<br>
+			Actualmente contin&uacute;a vigente ofreciendo conciertos en diferentes 
+			partes del mundo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Bob 
+Dylan:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./dylan.htm#Blues hablados de la tercera guerra mundial">Blues 
+		hablados de la tercera guerra mundial</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./dylan.htm#Dama de los ojos tristes de las tierras bajas">Dama de los 
+		ojos tristes de las tierras bajas</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./dylan.htm#Flotando en el viento">
+		Flotando en el viento</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./dylan.htm#George Jackson">George 
+		Jackson</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./dylan.htm#Hace mucho tiempo, muy lejos...">Hace mucho tiempo, muy 
+		lejos...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./dylan.htm#La huida del vagabundo">
+		La huida del vagabundo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./dylan.htm#S&oacute;lo un vagabundo">S&oacute;lo 
+		un vagabundo</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./dylan.htm#So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n">So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./dylan.htm#Soy un vagabundo solitario...">Soy un vagabundo solitario...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./dylan.htm#Tren viajero">Tren 
+		viajero</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./dylan.htm#Una fuerte lluvia va a caer">Una fuerte lluvia va a caer</a></font></p>
+		<p align="left">
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#EEEEEE"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		<br>
+		</font><font color="#C4CAD4" face="Georgia">
+		<a name="Blues hablados de la tercera guerra mundial"></a>Blues hablados de la tercera 
+		guerra mundial<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		Hace tiempo tuve un sue&ntilde;o desconcertante <br>
+		So&ntilde;&eacute; que me hab&iacute;a metido en la Tercera Guerra Mundial. <br>
+		Al mism&iacute;simo d&iacute;a siguiente fui a ver al m&eacute;dico <br>
+		Para ver qu&eacute; me pod&iacute;a decir. <br>
+		Me dijo que hab&iacute;a sido un mal sue&ntilde;o. <br>
+		De todas formas yo no estaba preocupado en absoluto. <br>
+		Eran mis propios sue&ntilde;os y s&oacute;lo exist&iacute;an en mi cabeza. <br>
+		<br>
+		Dije yo: &laquo;Un momento nada m&aacute;s, doctor, me ha pasado una guerra mundial 
+		por la cabeza&raquo;<br>
+		Dijo &eacute;l: &laquo;Enfermera, coja su libreta; este chico est&aacute; demente&raquo;<br>
+		Me cogi&oacute; por el brazo. Yo dije &iexcl;ay! <br>
+		Seg&uacute;n aterrizaba en el div&aacute;n del siquiatra. <br>
+		Me dijo: &laquo;Cu&eacute;ntamelo todo&raquo;.<br>
+		<br>
+		Bueno, pues todo empez&oacute; a las tres en punto de la madrugada, <br>
+		Y al dar y cuarto ya hab&iacute;a terminado. <br>
+		Yo estaba en una alcantarilla con alguna amiguita, <br>
+		Cuando decid&iacute; echar un vistazo por una tapadera <br>
+		Para ver qui&eacute;n pod&iacute;a haber encendido las luces. <br>
+		Me levant&eacute; a dar una vuelta <br>
+		Y recorr&iacute; la ciudad vac&iacute;a, <br>
+		Me pregunt&eacute; d&oacute;nde podr&iacute;a ir, <br>
+		Encend&iacute; un cigarrillo en un parqu&iacute;metro <br>
+		Y segu&iacute; carretera abajo. <br>
+		Era un d&iacute;a normal. <br>
+		<br>
+		Toqu&eacute; el timbre de un refugio contra la lluvia radiactiva, <br>
+		Asom&eacute; la cabeza y pegu&eacute; un grito, <br>
+		&laquo;Dadme una jud&iacute;a verde, soy un hombre hambriento&raquo;. <br>
+		Una escopeta dispar&oacute; y yo sal&iacute; huyendo. <br>
+		No les culpo demasiado de todas formas, <br>
+		El no me conoc&iacute;a. <br>
+		<br>
+		En la esquina de abajo, junto a un puesto de perritos calientes, <br>
+		Vi a un hombre, le dije: &laquo;Hola, t&uacute;, amigo&raquo;, <br>
+		Y supongo que algo de aquello deb&iacute;a haber, <br>
+		Grit&oacute; s&oacute;lo un poquito y sali&oacute; escapado. <br>
+		Pens&oacute; que yo era un comunista. <br>
+		<br>
+		Localic&eacute; a una moza y antes de que se pudiera ir, <br>
+		Le dije: &laquo;Juguemos a Ad&aacute;n y Eva&raquo;<br>
+		La cog&iacute; de la mano y tuve un ataque de palpitaciones, <br>
+		Pero ella me dijo: &laquo;S&iacute;, hombre, &iquest;est&aacute;s loco o qu&eacute;?&raquo;<br>
+		&laquo;&iquest;No has visto lo que pas&oacute; la &uacute;ltima vez que empezaron?&raquo;<br>
+		<br>
+		Vi la ventana de tu Cadillac all&aacute; en la ciudad. <br>
+		No hab&iacute;a nadie por all&iacute;. <br>
+		Me sent&eacute; al volante <br>
+		Y tir&eacute; por la calle cuarenta y dos abajo <br>
+		En mi Cadillac. <br>
+		Buen coche &eacute;se para conducir despu&eacute;s de una guerra. <br>
+		<br>
+		Bueno, pues como recordaba haber visto alg&uacute;n anuncio, <br>
+		Puse la emisora de emergencia <br>
+		Pero no hab&iacute;a pagado la factura, <br>
+		Y aquello no funcionaba ni medio bien. <br>
+		Puse en marcha mi tocadiscos, <br>
+		Era <b>Rock A Day</b> y Johnny cantaba, <br>
+		&laquo;Dile a tu Pa, dile a tu Ma, <br>
+		Que nuestros amores van en aumento, Ooh-wah, Doh-wah .&raquo;<br>
+		<br>
+		Me sent&iacute; as&iacute; como solitario y triste, <br>
+		Necesitaba hablar con alguien, <br>
+		As&iacute; que llam&eacute; al reloj de la Telef&oacute;nica <br>
+		Aunque s&oacute;lo fuera por o&iacute;r a alguien. <br>
+		&laquo;Al o&iacute;r la tercera se&ntilde;al <br>
+		Ser&aacute;n las tres en punto&raquo;.<br>
+		Lo estuvo diciendo durante m&aacute;s de una hora <br>
+		Y luego colgu&eacute;. <br>
+		<br>
+		Bueno, pues el doctor me interrumpi&oacute; como por aqu&iacute; <br>
+		Diciendo: &laquo;&iexcl;Eh! Yo tambi&eacute;n he estado so&ntilde;ando eso mismo &uacute;ltimamente&raquo; <br>
+		&laquo;Pero mi sue&ntilde;o era algo distinto, ver&aacute;s <br>
+		Yo so&ntilde;aba que el &uacute;nico que quedaba despu&eacute;s de la guerra era yo, <br>
+		Y no te ve&iacute;a por all&iacute;&raquo;. <br>
+		<br>
+		El tiempo pas&oacute; y ahora parece <br>
+		Que todo el mundo sue&ntilde;a lo mismo. <br>
+		Todos se ven paseando por ah&iacute; y no ven a nadie m&aacute;s. <br>
+		La mitad de la gente puede estar a medias en lo cierto continuamente <br>
+		Unos cuantos pueden estar en lo cierto alguna vez, <br>
+		Pero nadie puede estar en lo cierto todo el tiempo. <br>
+		Me parece que esto lo dijo Abraham Lincoln. <br>
+		Os dejar&eacute; aparecer en mis sue&ntilde;os si me dej&aacute;is que aparezca en los 
+		vuestros. <br>
+		Esto lo he dicho yo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Dama de los ojos tristes de las tierras bajas"></a>Dama de los ojos tristes de las 
+		tierras bajas</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Con tu boca de mercurio en la era de los misioneros. <br>
+		Y tus ojos como de humo y tus rezos que parecen rimas, <br>
+		Y tu cruz de plata, y tu voz de campanillas <br>
+		&iquest;Qui&eacute;n creen que podr&iacute;a enterrarte? <br>
+		Con tu bolsillos por fin bien protegidos <br>
+		Y tus visiones de tranv&iacute;as que dejas sobre la hierba <br>
+		Y tu piel de seda, y tu cara como el cristal <br>
+		&iquest;A qui&eacute;n crees que podr&iacute;an convencer para que te llevara a cuestas? <br>
+		<br>
+		Dama de los ojos tristes de las tierras bajas, <br>
+		De donde dice el profeta de los ojos tristes que no viene nadie, <br>
+		Mis ojos de almac&eacute;n, mis tambores &aacute;rabes <br>
+		&iquest;Deber&iacute;a tal vez dejarlos junto a la verja? <br>
+		O, Dama de los ojos tristes, &iquest;deber&iacute;a acaso esperar? <br>
+		<br>
+		Con tus s&aacute;banas como el metal y tu cintur&oacute;n de encaje, <br>
+		Y tu mazo de cartas sin la sota ni el as, <br>
+		Y tus vestidos de s&oacute;tano, y tu cara hueca, <br>
+		&iquest;Qui&eacute;n de ellos pudo pensar que podr&iacute;a adivinar lo que har&iacute;as? <br>
+		Con tu silueta cuando la luz del sol se va apagando <br>
+		En tus ojos, donde nada la luz de la luna, <br>
+		Y tus canciones de caja de cerillas y tus himnos gitanos, <br>
+		&iquest;Qui&eacute;n de ellos querr&iacute;a intentar impresionarte?<br>
+		<br>
+		Dama de los ojos tristes de las tierras bajas, <br>
+		De donde dice el profeta de los ojos tristes que no viene nadie, <br>
+		Mis ojos de almac&eacute;n, mis tambores &aacute;rabes <br>
+		&iquest;Deber&iacute;a tal vez dejarlos junto a la verja? <br>
+		O, Dama de los ojos tristes, &iquest;deber&iacute;a acaso esperar? <br>
+		<br>
+		Los reyes de Tiro, con su lista de presos, <br>
+		Esperan en fila sus besos de geranio. <br>
+		Y t&uacute; no pod&iacute;as saber que ocurrir&iacute;a as&iacute; <br>
+		Pero, &iquest;qui&eacute;n de entre todos ellos desea realmente besarte? <br>
+		Con las llamas de tu infancia en tu manta de medianoche. <br>
+		Y tus modales a la espa&ntilde;ola y las drogas de tu madre. <br>
+		Y tu boca de vaquero, y tus elogios de toque de queda. <br>
+		&iquest;Qui&eacute;n de ellos crees que se te podr&iacute;a resistir? <br>
+		<br>
+		Dama de los ojos tristes de las tierras bajas, <br>
+		De donde dice el profeta de los ojos tristes que no viene nadie, <br>
+		Mis ojos de almac&eacute;n, mis tambores &aacute;rabes <br>
+		&iquest;Deber&iacute;a tal vez dejarlos junto a la verja? <br>
+		O, Dama de los ojos tristes, &iquest;deber&iacute;a acaso esperar? <br>
+		<br>
+		Los granjeros y los negociantes decidieron entre todos <br>
+		Ense&ntilde;arte que lo que sol&iacute;an esconder eran los &aacute;ngeles muertos. <br>
+		Pero, &iquest;por qu&eacute; tuvieron que elegirte a ti para que te pusieras de su 
+		lado? <br>
+		&iquest;C&oacute;mo pudieron equivocarse contigo de ese modo? <br>
+		Hubieran querido que cargaras con las culpas de lo de la granja, <br>
+		Pero con el mar a tus pies y la fingida falsa alarma, <br>
+		Y con el hijo de un maleante recogido en tus brazos, <br>
+		&iquest;C&oacute;mo iban a poder convencerte? <br>
+		<br>
+		Dama de los ojos tristes de las tierras bajas, <br>
+		De donde dice el profeta de los ojos tristes que no viene nadie, <br>
+		Mis ojos de almac&eacute;n, mis tambores &aacute;rabes <br>
+		&iquest;Deber&iacute;a tal vez dejarlos junto a la verja? <br>
+		O, Dama de los ojos tristes, &iquest;deber&iacute;a acaso esperar? <br>
+		<br>
+		Con tus recuerdos de la calle de los enlatadores como l&aacute;minas de metal,
+		<br>
+		Y tu marido de revista que ten&iacute;a que irse alg&uacute;n d&iacute;a, <br>
+		Y tu delicadeza de ahora, que no puedes ocultar, <br>
+		&iquest;Qui&eacute;n de ellos crees que te dar&iacute;a empleo? <br>
+		Ahora est&aacute;s con tu ladr&oacute;n, est&aacute;s en su libertad bajo palabra <br>
+		Con el medall&oacute;n sagrado que acabas de doblar con tus propios dedos. <br>
+		Y tu cara de santa, y tu alma de fantasma, <br>
+		&iquest;Qui&eacute;n de entre todos ellos pudo jam&aacute;s pensar que te podr&iacute;an destruir?
+		<br>
+		<br>
+		Dama de los ojos tristes de las tierras bajas, <br>
+		De donde dice el profeta de los ojos tristes que no viene nadie, <br>
+		Mis ojos de almac&eacute;n, mis tambores &aacute;rabes <br>
+		&iquest;Deber&iacute;a tal vez dejarlos junto a la verja? <br>
+		O, Dama de los ojos tristes, &iquest;deber&iacute;a acaso esperar?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Flotando en el viento">
+		</a>Flotando en el viento<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		&iquest;Cu&aacute;ntos caminos debe recorrer un hombre<br>
+		Antes de que le llam&eacute;is hombre?<br>
+		&iquest;Cu&aacute;ntos mares debe surcar la blanca paloma<br>
+		Antes de dormir sobre la arena?<br>
+		&iquest;Cu&aacute;ntas veces deben volar las balas de ca&ntilde;&oacute;n<br>
+		Antes de ser prohibidas para siempre?<br>
+		La respuesta, amigo m&iacute;o, est&aacute; flotando en el viento,<br>
+		La respuesta est&aacute; flotando en el viento,<br>
+		<br>
+		&iquest;Cu&aacute;ntas veces debe un hombre mirar hacia arriba<br>
+		Para poder ver el cielo?<br>
+		&iquest;Cu&aacute;ntos o&iacute;dos debe tener un hombre<br>
+		Para poder o&iacute;r a la gente llorar?<br>
+		&iquest;Cu&aacute;ntas muertes ser&aacute;n necesarias para que comprenda<br>
+		Que ya ha habido demasiados muertos?<br>
+		La respuesta, amigo m&iacute;o, est&aacute; flotando en el viento,<br>
+		La respuesta est&aacute; flotando en el viento,<br>
+		<br>
+		&iquest;Cu&aacute;ntos a&ntilde;os puede permanecer una monta&ntilde;a<br>
+		Antes de ser arrastrada al mar?<br>
+		&iquest;Cu&aacute;ntos a&ntilde;os pueden algunas gentes vivir<br>
+		Antes de conocer la libertad?<br>
+		&iquest;Cu&aacute;ntas veces puede un hombre volver la cabeza<br>
+		fingiendo no ver nada?<br>
+		La respuesta, amigo m&iacute;o, est&aacute; flotando en el viento,<br>
+		La respuesta est&aacute; flotando en el viento. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de Marcelo 
+		Covian</i></font></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4"><i><br>
+&nbsp;</i></font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="George Jackson"></a>George Jackson</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Cuando me despert&eacute; esta ma&ntilde;ana <br>
+		Mi cama estaba empapada de l&aacute;grimas <br>
+		Han matado a un hombre al que amaba de verdad <br>
+		Le han pegado un tiro en la cabeza. <br>
+		<br>
+		Dios, Dios, han matado a George Jackson <br>
+		Dios, Dios, le han tumbado por tierra <br>
+		<br>
+		Le metieron en la c&aacute;rcel <br>
+		Por un robo de treinta d&oacute;lares <br>
+		Cerraron la puerta tras &eacute;l <br>
+		Y tiraron la llave <br>
+		<br>
+		Dios, Dios, han matado a George Jackson <br>
+		Dios, Dios, le han tumbado por tierra <br>
+		<br>
+		Nunca acept&oacute; la mierda de nadie <br>
+		Nunca agach&oacute; la cabeza ni se arrodill&oacute; <br>
+		Las autoridades le odiaban <br>
+		Porque era demasiado real. <br>
+		<br>
+		Dios, Dios, han matado a George Jackson <br>
+		Dios, Dios, le han tumbado por tierra. <br>
+		<br>
+		Los guardianes de la prisi&oacute;n le maldec&iacute;an <br>
+		Mientras le vigilaban desde lo alto <br>
+		Pero ten&iacute;an miedo de su poder <br>
+		Estaban asustados de su amor. <br>
+		<br>
+		Dios, Dios, han matado a George Jackson <br>
+		Dios, Dios, le han tumbado por tierra <br>
+		<br>
+		A veces pienso que este mundo <br>
+		No es m&aacute;s que un gran patio de prisi&oacute;n <br>
+		Algunos somos presos <br>
+		Los otros somos guardianes. <br>
+		<br>
+		Dios, Dios, han matado a George Jackson <br>
+		Dios, Dios, le han tumbado por tierra.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia">&nbsp; <br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Hace mucho tiempo, muy lejos..."></a>Hace mucho tiempo, muy lejos...
+		<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		Predicar sobre la paz y la hermandad <br>
+		&iexcl;Oh!, &iexcl;cu&aacute;l puede llegar a ser el precio! <br>
+		Un hombre lo hizo hace ya mucho tiempo <br>
+		y le colgaron de una cruz. <br>
+		<br>
+		Hace mucho tiempo, muy lejos, <br>
+		Estas cosas ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Las cadenas de esclavos <br>
+		Se arrastraban por el suelo <br>
+		Con las cabezas y los corazones agachados <br>
+		Pero esto fue en tiempos de Lincoln <br>
+		Y eso fue hace mucho tiempo. <br>
+		<br>
+		Hace mucho tiempo, muy lejos <br>
+		Cosas como &eacute;sta ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Las armas de guerra se dispararon salvajemente <br>
+		El mundo entero sangr&oacute; <br>
+		Los cuerpos de los hombres flotaron en las orillas <br>
+		De oc&eacute;anos de barro. <br>
+		<br>
+		Hace mucho tiempo, muy lejos, <br>
+		Cosas como &eacute;sta ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Un hombre ten&iacute;a mucho dinero <br>
+		Otro no ten&iacute;a ni para comer <br>
+		Un hombre viv&iacute;a como un rey <br>
+		El otro mendigaba en la calle <br>
+		<br>
+		Hace mucho tiempo, muy lejos <br>
+		Estas cosas ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Un hombre muri&oacute; por un cuchillo muy afilado <br>
+		Un hombre muri&oacute; por la bala de un rifle <br>
+		Un hombre muri&oacute; de tristeza <br>
+		Al ver el linchamiento de su hijo <br>
+		<br>
+		Hace mucho tiempo, muy lejos <br>
+		Cosas como &eacute;sta ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Los gladiadores se mataban los unos a los otros <br>
+		Esto fue en tiempos de los romanos <br>
+		La gente les vitoreaba con los ojos inyectados en sangre <br>
+		Mientras los ojos y la mente se cegaban <br>
+		<br>
+		Hace mucho tiempo, muy lejos <br>
+		Cosas como &eacute;sta ya no pasan hoy en d&iacute;a. <br>
+		<br>
+		Y hablar de paz y hermandad <br>
+		&iexcl;Cu&aacute;l puede llegar a ser el precio! <br>
+		Un hombre lo hizo hace mucho tiempo <br>
+		y le colgaron de una cruz. <br>
+		<br>
+		Hace mucho tiempo, muy lejos <br>
+		Cosas como &eacute;sta ya no pasan hoy en d&iacute;a. &iquest;No?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p><br>
+&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"> <br>
+		<br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="La huida del vagabundo"></a>La huida del vagabundo</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Ayudadme en mi miseria <br>
+		O&iacute; al vagabundo decir <br>
+		Cuando le sacaban del tribunal <br>
+		Y se lo llevaban <br>
+		&laquo;Mi camino no ha sido agradable <br>
+		Y me queda poco tiempo, <br>
+		<br>
+		Y sigo sin saber <br>
+		Qu&eacute; mal le he hecho yo a nadie&raquo;<br>
+		<br>
+		El juez se quit&oacute; la toga, <br>
+		Sus ojos se llenaron de l&aacute;grimas <br>
+		&laquo;Jam&aacute;s lo comprender&iacute;as&raquo;, le dijo, <br>
+		<br>
+		&laquo;&iquest;Por qu&eacute; tienes que intentarlo?&raquo; , <br>
+		Fuera el p&uacute;blico alborotaba, <br>
+		Se le pod&iacute;a o&iacute;r desde la puerta, <br>
+		Dentro el juez bajaba del estrado <br>
+		Mientras el jurado clamaba pidiendo m&aacute;s. <br>
+		<br>
+		&laquo;&iexcl;Oh!, callen ya a ese maldito jurado&raquo;, <br>
+		Gritaron el asistente y la enfermera. <br>
+		El juicio ya fue bastante malo, <br>
+		Pero esto es diez veces peor. <br>
+		Justo entonces, un rayo, <br>
+		Revent&oacute; el Juzgado, <br>
+		Y mientras todo el mundo ca&iacute;a de rodillas a rezar, <br>
+		El vagabundo escap&oacute;. 
+		</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left"><br>
+		<font size="2" color="#C4CAD4" face="Georgia">
+		<br>
+		</font><font color="#C4CAD4" face="Georgia"><a name="S&oacute;lo un vagabundo">
+		</a>S&oacute;lo un vagabundo<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		Al ir caminando un d&iacute;a, en un rinc&oacute;n <br>
+		Vi a un viejo vagabundo tumbado en un portal <br>
+		Su cara se apretaba contra el fr&iacute;o suelo de la acera <br>
+		Y calcul&eacute; que deb&iacute;a llevar all&iacute; toda la noche o m&aacute;s. <br>
+		<br>
+		Era s&oacute;lo un vagabundo, pero ya falta uno m&aacute;s <br>
+		No deja atr&aacute;s a nadie que cante su triste canci&oacute;n <br>
+		No deja atr&aacute;s a nadie que le lleve a casa <br>
+		S&oacute;lo un vagabundo, pero ya falta uno m&aacute;s. <br>
+		<br>
+		Una manta de papeles de peri&oacute;dico cubr&iacute;a su cabeza. <br>
+		El escal&oacute;n era su almohada, la calle era su cama <br>
+		Una mirada a su cara permit&iacute;a ver el largo camino que hab&iacute;a recorrido
+		<br>
+		Y un pu&ntilde;ado de dinero dejaba ver las monedas que hab&iacute;a mendigado. <br>
+		<br>
+		Era s&oacute;lo un vagabundo, pero ya falta uno m&aacute;s <br>
+		No deja atr&aacute;s a nadie que cante su triste canci&oacute;n <br>
+		No deja atr&aacute;s a nadie que le lleve a casa <br>
+		S&oacute;lo un vagabundo, pero ya falta uno m&aacute;s. <br>
+		<br>
+		&iquest;Hace falta acaso ser muy hombre para ver toda la vida derrumbarse? <br>
+		&iquest;Para mirar al mundo desde un agujero en el suelo? <br>
+		&iquest;Para esperar el futuro como un caballo que se ha quedado cojo? <br>
+		&iquest;Para yacer en el arroyo y morir sin un nombre? </font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">
+		Colecci&oacute;n Visor de poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n"></a>So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n <br>
+		Tan vivo como t&uacute; y yo, <br>
+		Atravesando a toda velocidad estos cuartos <br>
+		En la m&aacute;s absoluta de las miserias. <br>
+		Con una manta bajo el brazo <br>
+		Y un abrigo de oro macizo <br>
+		Buscando precisamente las almas <br>
+		Que ya hab&iacute;an sido vendidas. <br>
+		<br>
+		&laquo;Despertad, despertad&raquo;, grit&oacute; con fuerza, <br>
+		Con voces desmesuradas <br>
+		&laquo;Salid talentudos reyes y reinas <br>
+		Y escuchad mi triste queja. <br>
+		No hay un solo m&aacute;rtir entre vosotros <br>
+		Al que pod&aacute;is llamar vuestro, <br>
+		Pero seguid vuestro camino con conformidad, <br>
+		y sabed que no est&aacute;is solos&quot;. <br>
+		<br>
+		So&ntilde;&eacute; que ve&iacute;a a San Agust&iacute;n, <br>
+		Vivo y echando fuego por la boca <br>
+		Y que yo era uno de los que <br>
+		Le echaron a morir a la calle. <br>
+		Y me despert&eacute; encolerizado <br>
+		Tan solo y aterrorizado, <br>
+		Que apoy&eacute; los dedos contra el cristal, <br>
+		Y agach&eacute; la cabeza y llor&eacute;. </font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Soy un vagabundo solitario..."></a>Soy un vagabundo solitario...</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Soy un vagabundo solitario <br>
+		Sin familia ni amigos. <br>
+		All&iacute; donde podr&iacute;a empezar la vida de cualquiera, <br>
+		Es exactamente donde acaba la m&iacute;a. <br>
+		He probado suerte en el soborno, <br>
+		El chantaje y el fraude, <br>
+		Y he cumplido condenas por todo <br>
+		Menos por pedir en la calle. <br>
+		<br>
+		Hubo un tiempo en que yo era un hombre pr&oacute;spero, <br>
+		No me faltaba de nada, <br>
+		Ten&iacute;a oro de catorce quilates en la boca <br>
+		Y seda en mis espaldas, <br>
+		Pero no confi&eacute; en mi hermano, <br>
+		Le hice caer en desgracia, <br>
+		Y esa fue la causa de mis desdichas. <br>
+		Lo que me llev&oacute; a desaparecer deshonrado. <br>
+		<br>
+		Amables se&ntilde;ores y amables caballeros, <br>
+		Pronto me habr&eacute; ido, <br>
+		Pero s&oacute;lo d&eacute;jenme que les advierta una cosa <br>
+		Antes de seguir mi camino, <br>
+		Cuiden de estar libres de mezquinas envidias <br>
+		Y no se gu&iacute;en por el c&oacute;digo de nadie, <br>
+		Y gu&aacute;rdense sus juicios para ustedes mismos <br>
+		O acabar&aacute;n donde yo. 
+		</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font size="2" color="#C4CAD4" face="Georgia"><br>
+		&nbsp;</font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#C4CAD4" face="Georgia">
+		<a name="Tren viajero"></a>Tren viajero</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		Hay un tren de hierro, que ha estado rodando a lo largo de los a&ntilde;os <br>
+		Con una caja de combustible llena de odio y un horno lleno de temores
+		<br>
+		Si alguna vez le hab&eacute;is o&iacute;do, o hab&eacute;is visto su carcasa rota de color de 
+		sangre. <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. <br>
+		<br>
+		&iquest;Os hab&eacute;is parado alguna vez a pensar en todo el odio que lleva? <br>
+		&iquest;Hab&eacute;is visto alguna vez a sus pasajeros, a sus pobres almas confusas y 
+		enloquecidas? <br>
+		&iquest;Hab&eacute;is empezado a pensar que ten&eacute;is que detener ese tren? <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. <br>
+		<br>
+		&iquest;Os cans&aacute;is alguna vez de los sonidos sermoneantes del miedo <br>
+		Cuando han golpeado vuestra cabeza y martilleado en vuestros o&iacute;dos? <br>
+		&iquest;Hab&eacute;is preguntado sobre ello y no os han contestado? <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. <br>
+		<br>
+		Me pregunto si los l&iacute;deres de las naciones son conscientes <br>
+		De este mundo asesino que me dejan en las manos <br>
+		&iquest;Os hab&eacute;is quedado despiertos alguna noche pregunt&aacute;ndooslo? <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. <br>
+		<br>
+		&iquest;No hab&eacute;is estado nunca a punto de decir, o hab&eacute;is dicho para vosotros 
+		mismos <br>
+		Que la persona que est&aacute; a vuestro lado puede estar equivocada? <br>
+		&iquest;Acaso el delirio de los locos hace enloquecer vuestras tripas? <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. <br>
+		<br>
+		&iquest;Os deprimen acaso los mani&aacute;ticos asesinos y los que odian? <br>
+		&iquest;Os marean la pol&iacute;tica y los sermones? <br>
+		&iquest;Os duele el coraz&oacute;n con los incendios de autobuses? <br>
+		Entonces hab&eacute;is o&iacute;do mi voz cantando y sab&eacute;is c&oacute;mo me llamo. </font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Colecci&oacute;n Visor de 
+		poes&iacute;a 1972<br>
+		Versi&oacute;n de Antonio 
+		Rasines<br>
+&nbsp;</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Una fuerte lluvia va a caer"></a>Una fuerte lluvia va a caer
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;D&oacute;nde has estado hijo m&iacute;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ojos azules ? <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;D&oacute;nde has estado mi peque&ntilde;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		querido? <br>
+		He tropezado en el costado de doce <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		monta&ntilde;as nubladas <br>
+		He caminado y gateado en seis <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		autopistas inclinadas <br>
+		Me he parado en el medio de siete <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		forestas tristes <br>
+		He estado afuera de frente a una docena <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de oc&eacute;anos muertos <br>
+		He estado diez mil millas en la boca <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de una tumba <br>
+		Y es una fuerte, fuerte, fuerte, fuerte <br>
+		Y es una fuerte lluvia la que va a caer. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;Qu&eacute; has visto hijo m&iacute;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ojos azules? <br>
+		&iquest;Qu&eacute; has visto mi peque&ntilde;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		querido? <br>
+		Vi un ni&ntilde;o reci&eacute;n nacido con lobos salvajes <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a su alrededor; <br>
+		Vi una carretera de oro sin nadie <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en ella <br>
+		Vi una rama negra con sangre <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que segu&iacute;a cayendo <br>
+		Vi un cuarto lleno de hombres <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con martillos ensangrentados<br>
+		Vi una blanca escala toda cubierta <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de agua <br>
+		Vi diez mil conversadores con las lenguas <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		todas rotas <br>
+		Vi rev&oacute;lveres y espadas filosas en las manos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de peque&ntilde;uelos <br>
+		Y es una fuerte, fuerte, fuerte, fuerte, <br>
+		Y es una fuerte lluvia la que va a caer <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;Qu&eacute; escuchaste hijo m&iacute;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ojos azules? <br>
+		&iquest;Qu&eacute; escuchaste mi peque&ntilde;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		querido? <br>
+		Escuch&eacute; el sonido del rel&aacute;mpago <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que bramaba advertencias <br>
+		Escuch&eacute; el rugido de una ola capaz <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de inundar al mundo entero <br>
+		Escuch&eacute; a cien tarn-tarns cuyas manos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		estaban incendiadas <br>
+		Escuch&eacute; a diez mil murmurando <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y nadie escuchaba <br>
+		Escuch&eacute; a una persona morir de hambre <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y a muchos re&iacute;rse <br>
+		Escuch&eacute; la canci&oacute;n de un poeta que muri&oacute; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en el arroyo <br>
+		Escuch&eacute; los sonidos de un payaso que lloraba <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		en el callej&oacute;n <br>
+		Escuch&eacute; el sonido de una persona que clamaba <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ser humano <br>
+		Y es una fuerte, fuerte, fuerte, fuerte <br>
+		Y es una fuerte lluvia la que va a caer. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;A qui&eacute;n encontraste&nbsp; hijo m&iacute;o<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ojos azules? <br>
+		&iquest;A qui&eacute;n encontraste mi peque&ntilde;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		querido? <br>
+		Encontr&eacute; a un chico al lado de un pony muerto <br>
+		Encontr&eacute; a un blanco arrastrando a un perro negro <br>
+		Encontr&eacute; a una joven cuyo cuerpo se quemaba <br>
+		Encontr&eacute; a un joven que me dio un arco iris <br>
+		Encontr&eacute; a un joven que estaba herido de amor <br>
+		Encontr&eacute; otro hombre herido de odio <br>
+		Y es una fuerte, fuerte, fuerte, fuerte, <br>
+		Y es una fuerte lluvia la que va a caer. <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&iquest;Que har&aacute;s ahora hijo m&iacute;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de los ojos azules? <br>
+		&iquest;Qu&eacute; har&aacute;s ahora mi peque&ntilde;o <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		querido? <br>
+		Me voy afuera antes que la lluvia <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		comience a caer <br>
+		Caminar&eacute; hacia las profundidades de la foresta <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		oscura m&aacute;s profunda <br>
+		Donde la gente es numerosa y sus manos <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		est&aacute;n vac&iacute;as <br>
+		Donde las p&iacute;ldoras de veneno est&aacute;n inundando <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		sus aguas <br>
+		Donde la casa del valle encuentra <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la prisi&oacute;n h&uacute;meda y sucia <br>
+		Donde el rostro del verdugo est&aacute; siempre <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		bien escondido <br>
+		Donde el hambre es feo, donde las almas <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		son olvidadas <br>
+		Donde el color es negro, donde nada <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		es el n&uacute;mero <br>
+		Y yo dir&eacute; y lo hablar&eacute; y lo pensar&eacute; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		y lo respirar&eacute; <br>
+		Y lo reflejar&eacute; desde la monta&ntilde;a para que todas <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las almas lo puedan ver <br>
+		Entonces me parar&eacute; sobre el oc&eacute;ano hasta <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		empezar a hundirme <br>
+		Pero sabr&eacute; bien mi canci&oacute;n antes de empezar <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		a cantar <br>
+		Y es una fuerte, fuerte, fuerte, fuerte,<br>
+		Y es una fuerte lluvia la que va a caer. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Covian</font></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:37:24 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:17:40 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

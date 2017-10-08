@@ -1,0 +1,820 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Renato Leduc</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Renato Leduc. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Rafael_Alberti,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/leduc.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/leduc.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815180957" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./leduc.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:09:57 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./leduc.htm" title="23:15:47 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:09:57 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./leduc.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:09:57 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./leduc.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>92 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000002101_2005:-1:011001000000_2006:-1:10201100020a_2007:-1:c40414231100_2008:-1:011111000000_2009:-1:110000100100_2010:-1:100000001110_2011:-1:000001112130_2012:-1:311110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./LEDUC.jpg" width="299" height="40">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><em style="font-style: normal">
+<font face="Arial" size="2" color="#9BC9BB">&quot;...Todo es ahora luz desvanecida,<br>
+tibieza, soledad, &uacute;ltimo amor...&quot;</font></em><font face="Arial" size="2"
+color="#9BC9BB"><br>
+<br>
+</font><font color="#9BC9BB"><img src="./LEDUC1.jpg" width="230" height="284"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Diego y yo&quot;<br>
+<br>
+Frida Kahlo</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<blockquote>
+  <blockquote>
+	<p align="center"><font color="#9BC9BB"><br></font>
+	<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta, 
+	escritor y periodista mexicano nacido en Tlalpan en 1895.<br>Estudi&oacute; 
+	Jurisprudencia en la Universidad Nacional de M&eacute;xico. 
+	<br>Colaboro en peri&oacute;dicos y revistas culturales escribiendo poes&iacute;a, cuentos 
+	y cr&oacute;nicas. En 1935, apoyado <br>
+	por la Secretar&iacute;a de Hacienda, viaj&oacute; a Par&iacute;s donde se dedic&oacute; a perfeccionar 
+	su estilo literario entablando <br>
+	amistad con varios escritores surrealistas.&nbsp;&nbsp; <br>Entre sus 
+	principales obras po&eacute;ticas se encuentran &laquo;El aula&raquo; en 1929, &laquo;Algunos poemas 
+	deliberadamente <br>
+	rom&aacute;nticos y un pr&oacute;logo en cierto modo innecesario&raquo; en 1933, &laquo;Breve glosa al 
+	Libro de Buen Amor&raquo; en 1939, <br>
+	&laquo;Desde Par&iacute;s&raquo; en 1942, &laquo;XV fabulillas de animales, ni&ntilde;os y espantos&raquo; en 1957 
+	y &laquo;Catorce poemas burocr&aacute;ticos <br>
+	y un corrido reaccionario, para solaz y esparcimiento de las clases 
+	econ&oacute;micamente d&eacute;biles&raquo; en 1963.
+	<br>Muri&oacute; en Ciudad de M&eacute;xico en 1986. &copy;<br></font>
+	<font face="Georgia" size="3" color="#ABC2BD"><br></font><br></p>
+	<p align="center"><font face="Georgia">
+	<img border="0" src="./PERDUBARRA.jpg" width="77"
+      height="9"></font></p>
+	<p align="left"><font face="Georgia" color="#B0C6C1"><br></font>
+	<font face="Georgia" size="2" color="#B0C6C1"><br></font>
+	<font face="Georgia" color="#A7BEB9">
+	<a
+      href="./leduc.htm#ALUSI&Oacute;N A LOS CABELLOS CASTA&Ntilde;OS">Alusi&oacute;n a los cabellos casta&ntilde;os</a><br>
+	<br>
+	<a href="./leduc.htm#AQU&Iacute; SE HABLA DEL TIEMPO PERDIDO QUE COMO DICE EL DICHO, LOS SANTOS LO LLORAN">
+	Aqu&iacute; se habla del tiempo perdido que como dice el dicho, los santos lo 
+	lloran</a><br>
+	<br><a href="./leduc.htm#AQU&Iacute; SE TRANSCRIBE LA COPLA QUE MIS O&Iacute;DOS OYERON">Aqu&iacute; se 
+	transcribe la copla que mis o&iacute;dos oyeron</a><br><br><a href="./leduc.htm#DEDICATORIA">
+	Dedicatoria</a><br>
+	<br><a href="./leduc.htm#&Eacute;GLOGA IV">&Eacute;gloga IV</a><br><br>
+	<a href="./leduc.htm#ESTROFAS EN TORNO DE UN AMOR MENGUANTE">Estrofas en torno de un 
+	amor menguante</a><br>
+	<br><a href="./leduc.htm#INELUDIBLE POEMA DEL ADI&Oacute;S">Ineludible poema del adi&oacute;s</a><br>
+	<br><a href="./leduc.htm#IN&Uacute;TIL DIVAGACI&Oacute;N SOBRE EL RETORNO">In&uacute;til divagaci&oacute;n sobre el 
+	retorno</a><br>
+	<br><a href="./leduc.htm#LA CONVERSI&Oacute;N">La conversi&oacute;n</a><br><br><a href="./leduc.htm#LA ESQUINA">
+	La esquina</a><br>
+	<br>
+	<a
+      href="./leduc.htm#MORALEJA DE TODO ESTO O S&Eacute;ASE LA MANERA COMO, A JUICIO DEL AUTOR, HA DE ESTARSE EL HOMBRE DE BUEN VIVIR Y SAVOIR FAIRE...">
+	Moraleja de todo esto o s&eacute;ase la manera como, a juicio del autor, </a><br>
+	<a
+      href="./leduc.htm#MORALEJA DE TODO ESTO O S&Eacute;ASE LA MANERA COMO, A JUICIO DEL AUTOR, HA DE ESTARSE EL HOMBRE DE BUEN VIVIR Y SAVOIR FAIRE...">
+	ha de estarse el hombre de buen vivir y savoir faire...</a><br><br><a href="./leduc.htm#OTRA CANCI&Oacute;N DE OTO&Ntilde;O">
+	Otra canci&oacute;n de oto&ntilde;o</a><br>
+	<br><a href="./leduc.htm#ROMANCE DEL EMIGRANTE">Romance del emigrante</a><br><br>
+	<a href="./leduc.htm#TEMAS">Temas</a></font><font face="Georgia" size="2" color="#A7BEB9"><br><br> 
+	</font><font face="Georgia" size="2" color="#95B3AA">Volver a: </font>
+	<font face="Georgia" color="#95B3AA">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+	esta p&aacute;gina</a>
+	</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br><br></p>
+	<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0"
+        src="./PERDUBARRA.jpg" width="77" height="9"></font><br></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="3" color="#B0C6C1"><br><br>
+		</font><font face="Georgia" color="#9BC9BB">
+		<a
+      name="ALUSIÓN A LOS CABELLOS CASTA&Ntilde;OS"></a>Alusi&oacute;n a los cabellos casta&ntilde;os</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>As&iacute; como fui yo, as&iacute; como eras t&uacute;, <br>en la penumbra inocua de 
+		nuestra juventud 
+		<br>as&iacute; quisiera ser, <br>mas ya no puede ser. <br><br>Como ya no 
+		seremos como fuimos entonces, 
+		<br>cuando l&iacute;mpida el alma trasmutaba en pecado <br>al m&aacute;s leve placer, 
+		<br>Cuando el mundo y t&uacute; eran sonrosaba sorpresa. <br>Cuando hablaba yo 
+		solo dialogando contigo, 
+		<br>es decir, con tu sombra, <br>por las calles desiertas, <br>y la luna 
+		bermeja era dulce incentivo 
+		<br>para idilios de gatos, fechor&iacute;as de ladrones <br>y so&ntilde;ar de poetas. 
+		<br><br>Cuando el orbe rodaba sin que yo lo sintiera, <br>cuando yo te 
+		adoraba sin que t&uacute; lo supieras 
+		<br>-aunque siempre lo sabes, aunque siempre lo sepas- <br>y el invierno 
+		era un tropo y eras t&uacute; primavera 
+		<br>y el rom&aacute;ntico oto&ntilde;o corretear de hojas secas. <br><br>T&uacute; que nunca 
+		cuidaste del rigor de los a&ntilde;os 
+		<br>ni supiste el castigo de un marchito ropaje; <br>t&uacute; que siempre 
+		tuviste los cabellos casta&ntilde;os 
+		<br>y la tersa epidermis, satinado follaje. <br><br>Tus cabellos 
+		casta&ntilde;os, tus casta&ntilde;os cabellos 
+		<br>por volver a besarlos con el viejo fervor, <br>vendr&iacute;a yo la ciencia 
+		que compr&eacute; con dolor 
+		<br>y la tela de ara&ntilde;a que tej&iacute; en sue&ntilde;os. <br>As&iacute; como fui yo, as&iacute; como 
+		eras t&uacute;, 
+		<br>en la inconciencia t&oacute;rrida de nuestra juventud, <br>as&iacute; quisiera 
+		ser, 
+		<br>mas ya no puede ser... </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo en cierto 
+		modo innecesario&quot; 1933 
+		</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="AQU&Iacute; SE HABLA DEL TIEMPO PERDIDO QUE COMO DICE EL DICHO, LOS SANTOS LO LLORAN">
+		</a></font><font face="Georgia" color="#9BC9BB">
+		Aqu&iacute; se habla del tiempo perdido que como dice el dicho, los santos 
+		lloran</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Sabia virtud de conocer el tiempo; <br>a tiempo amar y desatarse a 
+		tiempo; 
+		<br>como dice el refr&aacute;n: dar tiempo al tiempo... <br>que de amor y dolor 
+		alivia el tiempo.<br>
+		<br>Aquel amor a quien am&eacute; a destiempo<br>martiriz&oacute;me tanto y tanto 
+		tiempo<br>que no sent&iacute; jam&aacute;s correr el tiempo, 
+		<br>tan acremente como en ese tiempo.<br><br>Amar queriendo como en otro 
+		tiempo<br>-ignoraba yo a&uacute;n que el tiempo es oro-<br>cu&aacute;nto tiempo perd&iacute; 
+		-ay- cu&aacute;nto tiempo.<br>
+		<br>Y hoy que de amores ya no tengo tiempo, <br>amor de aquellos 
+		tiempos, c&oacute;mo a&ntilde;oro<br>la dicha inicua de perder el tiempo... 
+		<br><br><em>De &quot;Breve glosa al Libro de buen amor&quot; 1939</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="AQU&Iacute; SE TRANSCRIBE LA COPLA QUE MIS O&Iacute;DOS OYERON"></a>Aqu&iacute; se 
+		transcribe la copla que mis o&iacute;dos oyeron</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Acre sabor de las tardes<br>en que fuimos<br>bizarramente cobardes.<br>
+		Primer amor... &iquest;la quisimos?...<br>Tiempo de ensue&ntilde;os opimos<br>y de 
+		alardes.<br>
+		<br>Tiempo de aplicar el llanto<br>como lubricante, as&iacute;<br>como el 
+		aceite del ajonjol&iacute;<br>a las muchachas p&aacute;lidas de espanto,<br>al 
+		patriotismo, al arte, al desencanto<br>exacerbados hasta el frenes&iacute;.<br>
+		<br>Cansancio de haber nacido<br>cuando ya todo est&aacute; hecho,<br>dicho, 
+		mirado y o&iacute;do;<br>la semilla en el barbecho<br>y el sentimiento ra&iacute;do<br>
+		que lleva el hombre en el pecho.<br>
+		<br>Cansancio de todas esas <br>cosas: <br>de las lunas, los azules y 
+		las rosas<br>y de las blondas cabezas.<br>Hondo anhelo de asperezas<br>
+		ominosas.<br>
+		<br>Cansancio de haber nacido<br>en este<br>gran siglo empeque&ntilde;ecido,<br>
+		sin pasi&oacute;n torva o celeste.<br>Cueste, oh Dios, lo que cueste<br>m&aacute;rtir 
+		mejor, o bandido.<br>
+		<br>Vivir con la vista fija<br>en algo<br>que fijeza rauda exija:<br>la 
+		locura de un hidalgo,<br>la reputaci&oacute;n de una hija<br>o la carrera de un 
+		galgo.<br>
+		<br>Vivir consagrado a una<br>gran pasi&oacute;n;<br>no caer en tentaci&oacute;n,<br>
+		pintar de verde la luna,<br>desbancar a la fortuna<br>o querer sin 
+		coraz&oacute;n.<br>
+		<br>Quisiera yo que siquiera<br>al final<br>el arduo camino fuera<br>
+		para bien o para mal,<br>&aacute;rbol no de ciencia artera,<br>s&iacute;, pecado 
+		original.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Breve glosa al Libro de buen amor&quot; 1939</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br><br>
+		<br><a name="DEDICATORIA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Dedicatoria</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Cada d&iacute;a m&aacute;s, del mundo exorbitado,<br>en solitario claustro pulo el 
+		verso<br>que he de ofrecerte.<br>Eludo la estridente paradoja<br>y la 
+		luz inhumana de los cohetes<br>-digo- tropos que pueden ofenderte.<br>
+		<br>Que tus tersas pesta&ntilde;as no se abajen <br>a luz ninguna; <br>que si 
+		l&aacute;grimas viertes, las recoja .<br>pa&ntilde;uelo gris, el pa&ntilde;o de la bruma. 
+		<br><br>Cada d&iacute;a m&aacute;s, del mundo exorbitado,<br>te doy mi vida en cada 
+		verso m&iacute;o.<br>Al verte dije: Par&eacute;ceme ya tiempo<br>de ser rom&aacute;ntico...<br>
+		Y a la saz&oacute;n callaron las alondras<br>del huerto consabido,<br>y en el 
+		sucio corral de mi convento<br>un gallo ilustre profiri&oacute; su grito.<br>
+		<br>Calzo la espuela y me armo caballero<br>deliberadamente;<br>porque 
+		pie a tierra he pretendido en vano<br>usufructuar el predio<br>que va 
+		desde tus pies hasta tu frente.<br>
+		<br>Naciste en la planicie donde una<br>nube plateada te sirvi&oacute; de cuna,<br>
+		&iquest;qu&eacute; tienes t&uacute; que ver con pedrer&iacute;as<br>y figuras ret&oacute;ricas?<br>
+		<br>Beata virtud: perm&iacute;teme que aluda<br>al n&aacute;car de tu carne.<br>&iquest;Qu&eacute; 
+		tienes t&uacute; que ver con pedrer&iacute;as?<br>Beata virtud,<br>mejor vestida 
+		cuanto m&aacute;s desnuda...<br>
+		<br><em>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="&Eacute;GLOGA IV"></a>&Eacute;gloga IV</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Muchacha: Ya son&oacute; el despertador.<br>Parece<br>que amanece. <br>Tu 
+		marido no tardar&aacute; en llegar<br>y si me encuentra...<br>
+		<br>Ya -terrones de az&uacute;car- las estrellas<br>disu&eacute;lvense en la leche 
+		matinal;
+		<br>ya renace la vida pueblerina;<br>ya los gallos comienzan a cantar...<br>
+		<br>Oigo mugir un buey en la barranca.<br><br>Muchacha, tu marido<br>no 
+		tardar&aacute; en llegar...<br>
+		<br><em>De &quot;El aula&quot; 1929</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="ESTROFAS EN TORNO DE UN AMOR MENGUANTE"></a></font>
+		<font face="Georgia" color="#9BC9BB">Estrofas en torno de un amor 
+		menguante</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Luna impoluta que mir&eacute; de ni&ntilde;o<br>rodar entre el verdor de la arboleda;<br>
+		verso primero escrito sin ali&ntilde;o<br>amor primero del que nada queda.<br>
+		<br>Sue&ntilde;os de gloria y esperanza incierta,<br>viajes absurdos de la 
+		fantas&iacute;a<br>y penetrar al cielo por la puerta<br>estrecha del dolor, sin 
+		alegr&iacute;a.<br>
+		<br>Conf&iacute;n viol&aacute;ceo del venusto monte,<br>fogata temblorosa que agoniza,<br>
+		neblina que confiere al horizonte,<br>grises de perla o grises de 
+		ceniza.<br>
+		<br>Turbia serenidad que otrora tuve,<br>perdida ya para fortuna m&iacute;a.<br>
+		Desgarradora condici&oacute;n de nube<br>ardida al rojo blanco, pero fr&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Marino 
+		af&aacute;n de corregir el rumbo<br>que Dios imprime a la perdida barca,<br>y 
+		quedar a merced de viento y tumbo<br>sobre la inmensa superficie zarca.<br>
+		<br>C&aacute;ndida confesi&oacute;n que no hice nunca,<br>amor buscado y nunca 
+		conseguido,<br>poema nunca escrito, vida trunca,<br>vuelo en el acto de 
+		arrancar, fallido.<br>
+		<br>Discreta como usted, como usted blonda,<br>la media luz de los 
+		atardeceres.<br>Menguante amor prendido de la honda<br>noche con 
+		diamantinos almeres.<br>
+		<br>Todo el candor que nos quit&oacute; la vida,<br>toda la fuerza que nos dio 
+		el dolor,<br>todo es ahora luz desvanecida,<br>tibieza, soledad, &uacute;ltimo 
+		amor...<br>
+		<em><br>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em></font><font face="Georgia" color="#9BC9BB"><a name="INELUDIBLE POEMA DEL ADIÓS"></a>
+		Ineludible poema del adi&oacute;s</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>S&oacute;lo un occiduo sol que disemina<br>en tintas jaldes la silueta 
+		tuya,<br>extraviada en los riesgos de una esquina,<br>sin quien a mi 
+		fervor la restituya.<br>
+		<br>Blanco pa&ntilde;uelo<br>que tremolaste con enhiesto brazo,<br>signo ser&aacute; 
+		de adi&oacute;s y desconsuelo<br>cuando se vuelva a presentar el caso.<br>
+		<br>Rueda la noche y en la noche el tren,<br>el uno y la otra por 
+		distinta v&iacute;a;<br>alguien habr&aacute; que en el desierto and&eacute;n<br>consigne 
+		fardos de melancol&iacute;a.<br>
+		<br>Di&aacute;fano cielo<br>con un errante coraz&oacute;n de plata;<br>cu&aacute;ntas 
+		muchachas llorar&aacute;n en celo.<br>Oh, gemebundo amor de gato y gata.<br>
+		<br>El agrio viento que en Paris y en otros<br>turbios pa&iacute;ses torna la 
+		veleta,<br>por falta de veleta entre nosotros<br>a transportar suspiros 
+		se concreta.<br>
+		<br>Luces, fugaces luces<br>de una casa perdida en la llanura;<br>
+		cu&aacute;ntas doncellas beber&aacute;n de bruces<br>sue&ntilde;os, que el sol amargo 
+		desfigura.<br>
+		<br>Viento del mar que con hinchado aliento<br>al viento avienta 
+		iridiscente espuma;<br>al cruzar tu recuerdo amarillento,<br>olor de 
+		viaje y de marisco exhuma.<br>
+		<br>Estos gajos lun&aacute;ticos de luna<br>saben a menta;<br>cu&aacute;ntas muchachas 
+		llorar&aacute;n a una<br>dicha, perdida por error de imprenta.<br>
+		<br>Brumoso viento que nos cuenta el cuento<br>del viejo Valdemar<br>y 
+		sus hijas, que en modo truculento<br>sucumbieron, cansadas de esperar.<br>
+		<br>A viajero veloz, senda florida.<br>Oh, muchachas de amable 
+		contextura,<br>hay que decir adi&oacute;s porque la vida<br>es menos dura 
+		cuanto menos dura.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Estrella, 
+		estrella<br>que contemplas cien mundos a la vez,<br>&iquest;d&oacute;nde est&aacute;, di, la 
+		postrimer doncella?<br>d&oacute;nde est&aacute;, pues...<br>
+		<br><em>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a
+      name="INÚTIL DIVAGACIÓN SOBRE EL RETORNO"></a>In&uacute;til divagaci&oacute;n sobre el 
+		retorno</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>M&aacute;s adoradas cuanto m&aacute;s nos hieren<br>van rodando las horas, <br>van 
+		rodando las horas porque quieren.<br>
+		<br>Yo vivo de lo poco que a&uacute;n me queda de usted, <br>su perfume, su 
+		acento, 
+		<br>una l&aacute;grima suya que mitig&oacute; mi sed.<br><br>El oro del presente 
+		cambi&eacute; por el de ayer, 
+		<br>la espuma... el humo... el viento... <br>Angustia de las cosas que 
+		son para no ser.<br>
+		<br>Vivo de una sonrisa que usted no supo cu&aacute;ndo<br>me don&oacute;. Vivo de su 
+		presencia<br>que ya se va borrando.<br>
+		<br>Ahora tiendo los brazos al invisible azar; <br>ahora buscan mis ojos 
+		con &aacute;spera vehemencia<br>un pr&oacute;fugo contorno que nunca he de alcanzar.<br>
+		<br>Su perfume, su acento, <br>una l&aacute;grima suya que mitig&oacute; mi sed. <br>
+		&iexcl;Oh, si el humo fincara, si retornara el viento,
+		<br>si usted, una vez m&aacute;s, volviera a ser usted!<br><br><em>De &quot;Algunos 
+		poemas deliberadamente rom&aacute;nticos 
+		<br>y un pr&oacute;logo en cierto modo innecesario&quot; 1933 </em><br></font>
+		</p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="LA CONVERSIÓN"></a></font><font face="Georgia" color="#9BC9BB">
+		La conversi&oacute;n</font><font face="Georgia" size="2" color="#9BC9BB"><br><br><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pr&oacute;logo</em><br>
+		<br>Pensamos que ya era tiempo de ser rom&aacute;nticos,<br>y entonces<br>
+		confeccionamos un paisaje 
+		<em>ad-hoc,</em><br>saturado del m&aacute;s puro idealismo,<br>y barnizamos la 
+		luna 
+		<br>de melanc&oacute;lico color.<br><br>Adquirimos tambi&eacute;n<br>una patria y un 
+		dios<br>para los usos puramente externos<br>del culto y del honor.<br>
+		<br>(Vertimos por la patria<br>medio litro de sangre;<br>comulgamos con 
+		ruedas de molino<br>por el amor de Dios.)<br>
+		<br>&iexcl;Ah!... y ten&iacute;amos una dama<br>propia para el coraz&oacute;n.<br>Usaba las 
+		manos blancas,<br>un albo cuello de cisne<br>y los ojos insolubles<br>a 
+		la temperatura del alcohol.<br>Era una dama Capuleta,<br>h&aacute;bil para 
+		charlar en el balc&oacute;n.<br>
+		<br>Naturalmente, Chopin<br>y algunas otras cosas similares,<br>nos 
+		hicieron llorar m&aacute;s de una vez,<br>pero justificamos nuestro llanto<br>
+		con el capcioso: &iquest;Qui&eacute;n que es, no es? 
+		<br><br>Y otras veces <br>llor&aacute;bamos tambi&eacute;n por la exquisita<br>
+		banalidad de nuestra vida<br>ida.<br>Cuando<br>vicios, virtudes y 
+		personas notables<br>bailoteaban<br>sobre la cuerda de nuestra iron&iacute;a,<br>
+		como muchachos locos, en la escuela,<br>o como tiples en la pasarela.<br>
+		<br>Y al fin fuimos cristianos<br>por esnobismo.<br>Necesit&aacute;bamos 
+		precisamente<br>alg&uacute;n egregio sembrador de dudas<br>y en un baile de 
+		m&aacute;scaras<br>la rubia Magdalena nos present&oacute; a Jes&uacute;s.<br>
+		<br>Y sucedi&oacute;, porque al atardecer<br>las pasiones jocundas acallaron<br>
+		su estent&oacute;reo fulgor de dinamita.<br>&Eacute;ramos mansos de coraz&oacute;n<br>y la 
+		carne del Cosmos era de una<br>estupenda belleza hermanfrodita.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo en cierto 
+		modo innecesario&quot; 1933 
+		</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="LA ESQUINA"></a></font>
+		<font face="Georgia" color="#9BC9BB">La esquina</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Cu&aacute;nto tiempo esper&eacute; contra la esquina<br>de mi perplejidad un grande 
+		amor;<br>cu&aacute;nto tiempo esper&eacute; y cuando lleg&oacute;<br>apenas pude caminar tras 
+		&eacute;l.<br>
+		<br>La pantalla plat&oacute;nica -la esquina-<br>nos arroja la sombra torturada<br>
+		de las cosas<br>que la raz&oacute;n glacial estratifica.<br>
+		<br>El silbato de tr&aacute;nsito es un geiser<br>glutinoso.<br>El amor se 
+		bifurca en esperanzas<br>que alambique cer&uacute;leo cristaliza,<br>y esa 
+		mujer que va pasando deja<br>glaucas estalactitas de sonrisa.<br>
+		<br>Dram&aacute;tica figura del que espera<br>un aleatorio amor en cada 
+		esquina.<br>Blanco de las potencias enemigas;<br>de los perros que 
+		orinan,<br>de los dioses acu&aacute;ticos<br>y del cami&oacute;n fecundo en tropel&iacute;as.<br>
+		Triste figura m&iacute;a<br>que abjuraste de todo movimiento<br>esperando en la 
+		esquina<br>cosas como el amor, tardas, ambiguas.<br>
+		<em><br>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em>
+		<a
+      name="MORALEJA DE TODO ESTO O S&Eacute;ASE LA MANERA COMO, A JUICIO DEL AUTOR, HA DE ESTARSE EL HOMBRE DE BUEN VIVIR Y SAVOIR FAIRE...">
+		</a></font><font face="Georgia" color="#9BC9BB">Moraleja de todo esto o 
+		s&eacute;ase la manera como, a juicio del autor, <br>
+		ha de estarse el hombre de buen vivir y savoir faire...</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Como el se&ntilde;or,<br>como el se&ntilde;or del Buen Despacho que era<br>un 
+		amigable y buen componedor<br>en los tumultos de la primavera.<br>
+		<br>Como el cine que afoca<br>a los novios penumbra placentera<br>
+		mientras chicle permutan boca a boca<br>y les tiemblan las piernas, en 
+		tijera.<br>
+		<br>Como la dulce, la plateada luna<br>que perdi&oacute; sus virtudes de 
+		planeta<br>una por una<br>en abyectos oficios de alcahueta.<br>
+		<br>Como la madre de la bailarina<br>que da a pr&oacute;cer rufi&aacute;n p&uacute;blica y 
+		quieta<br>posesi&oacute;n; y da la esquina<br>al insolvente amor de hija 
+		coqueta.<br>
+		<br>Como aquellos que salga lo que salga<br>quieren a todas luces 
+		explicar<br>la condici&oacute;n sede&ntilde;a de una nalga,<br>de Dios la esencia y el 
+		color del mar...<br>
+		<br>Vender la vida en m&aacute;s de lo que valga<br>&iquest;polvo de oro...? 
+		&iquest;colmillos de elefantes...?<br>y la ra&iacute;da indumentaria hidalga<br>vender 
+		cuanto antes...<br>
+		<br>Como el se&ntilde;or honrado, aunque cabr&oacute;n<br>que por haber merced o 
+		cualquier cosa,<br>dona al patr&oacute;n<br>el usufructo de la casta esposa.<br>
+		<br>Como el se&ntilde;or de convicciones que<br>al triunfador en ortodoxo posa,<br>
+		y va -olvidadizo de lo que antes fue-<br>de flor en flor, como la 
+		mariposa.<br>
+		<br>Como el joven altivo pero bajo<br>cuya bifronte idiosincrasia 
+		estriba<br>en darle por detr&aacute;s a los de abajo<br>y ofrecer el trasero a 
+		los de arriba.<br>
+		<br>O como el jubiloso campanero<br>que con igual fervor mueve el badajo<br>
+		en la boda, el bautizo y el postrero<br>instante en que nos vamos al 
+		carajo.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Un ojo al 
+		gato y otro al garabato<br>armado el brinco y las pisadas lentas<br>
+		cuando nos llegue el doloroso rato<br>de hacer las cuentas...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Pues el 
+		que canta sin firmar contrato<br>ay de &eacute;l...<br>y, ay&nbsp; del que 
+		tiene que vender barato<br>la tibia leche y la dorada miel...<br>
+		<em><br>De &quot;Breve glosa al Libro de buen amor&quot; 1939</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<a name="OTRA CANCIÓN DE OTO&Ntilde;O"></a></font>
+		<font face="Georgia" color="#9BC9BB">Otra canci&oacute;n de oto&ntilde;o</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Todos cantan a tiempo su canto postrimero. 
+		<br>Con la barba en la mano o de otro modo, <br>al llegar el invierno,<br>
+		todos modulan su canci&oacute;n de oto&ntilde;o. 
+		<br><br>Cuando llora la carne,<br>cuando el aire es tan puro que nos 
+		ahoga,<br>y es tan l&uacute;cido el cielo que nos deslumbra,<br>descendemos 
+		cantando de las monta&ntilde;as<br>a beber agua turbia de la laguna.<br>
+		<br>Cuando llora la carne:<br>eres aquella misma que contemplamos<br>
+		desnuda bajo el triunfo de un d&iacute;a de sol.<br>Eres aquella misma, con la 
+		cabeza<br>cenicienta y vejada por el dolor.<br>
+		<br>Con la barba en la mano o de otro modo,<br>todos modulan su canci&oacute;n 
+		de oto&ntilde;o.<br>Dispendiosa elegancia de los crep&uacute;sculos.<br>Dispendiosa 
+		elegancia de las ma&ntilde;anas,<br>muy de ma&ntilde;ana.<br>
+		<br>Ya nos pesa en el alma la formidable<br>castidad -roca y nieve- de 
+		la monta&ntilde;a,<br>y aceptamos tan s&oacute;lo la luz de V&eacute;sper<br>porque tiembla y 
+		cintila como una l&aacute;grima.<br>
+		<br>Todos cantan a tiempo su canto postrimero,<br>muy pocos en verano, 
+		muy muchos en invierno.<br>
+		<br>La severa prestancia de los cipreses,<br>coloridos de sepia 
+		crepuscular,<br>edifica el cansancio de nuestra casa 
+		<br>y exornamos de rojo nuestra tristeza, <br>y seguimos cantando, que 
+		todo pasa. 
+		<br><br>Y en la margen fangosa de la laguna<br>h&uacute;ndese sollozando la 
+		carne infausta,<br>trunca y convaleciente como la luna.<br>
+		<br><em>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="ROMANCE DEL EMIGRANTE"></a></font>
+		<font face="Georgia" color="#9BC9BB">Romance del emigrante</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Nublado sol de estas horas<br>en que no te puedo ver.<br>Sol azul como 
+		tus ojos,<br>el de ayer.<br>
+		<br>Postes... alambres... alambres<br>hasta el infinito y m&aacute;s.<br>
+		Postes, alambres y p&aacute;jaros<br>fatigados de volar.<br>
+		<br>Luz amarilla del sol,<br>sesgando sobre un trigal<br>-tu cabello y 
+		las ventanas<br>abiertas de par en par-<br>
+		<br>Postes... alambres... amor<br>vislumbrado al transitar:<br><br>furia 
+		de macho cabr&iacute;o,<br>candidez de recental<br>y un pobre muchacho absorto<br>
+		ante el milagro carnal.<br>
+		<br><em>De &quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo 
+		en cierto modo innecesario&quot; 1933</em><br>
+		<br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="TEMAS"></a>Temas</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pre&aacute;mbulo inevitable a 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		&quot;Algunos poemas deliberadamente rom&aacute;nticos&quot;</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Mario Mariscal</em><br>
+		<br>No haremos obra perdurable. No<br>tenemos de la mosca la voluntad 
+		tenaz.<br>
+		<br>Mientras haya vigor<br>pasaremos revista<br>a cuanta ni&ntilde;a vista<br>y 
+		calce regular...<br>
+		<br>Como Ner&oacute;n, emperador<br>y m&aacute;rtir de moralistas cursis, <br>
+		coronados de rosas<br>o cualquier otra flor de la estaci&oacute;n, 
+		<br>miraremos las cosas<br>detr&aacute;s de una esmeralda de ilusi&oacute;n...<br><br>
+		Va pasando de moda meditar. 
+		<br>Oh, sabios, aprended un oficio. <br>Los temas trascendentes han 
+		quedado, 
+		<br>como Dios, retirados de servicio. <br>La ciencia... los salarios... 
+		<br>el arte... la mujer... <br>Problemas didasc&aacute;licos, se tratan<br>
+		cuando m&aacute;s, a la hora del 
+		<em>cocktail.</em><br><br>&iquest;Y el dolor?, &iquest;y la muerte ineluctable?... <br>
+		Asuntos de farmacia y notar&iacute;a. 
+		<br>Una noche -la noche es m&aacute;s propicia-<br>vendr&aacute;n con aspavientos de 
+		pariente, 
+		<br>pero ya nuestra tr&eacute;mula vejez<br>enconger&aacute;se de hombros, y si acaso,
+		<br>murmurar&aacute; cristianamente... <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Pues...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Algunos poemas deliberadamente rom&aacute;nticos <br>y un pr&oacute;logo en cierto 
+		modo innecesario&quot; 1933 
+		</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:09:57 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:21:08 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

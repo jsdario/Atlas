@@ -1,0 +1,849 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Ram&oacute;n de Garc&iacute;asol</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Ram&oacute;n Garc&iacute;asol. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Ramon_de Garciasol,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app19.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/garciasol.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/garciasol.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815172514" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./garciasol.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:25:14 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./garciasol.htm" title="9:45:43 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:25:14 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./garciasol.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:25:14 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./garciasol.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>55 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">16 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010000010101_2004:-1:000001010101_2005:-1:011100010010_2006:-1:100011000200_2007:-1:010102010100_2008:-1:101102100000_2009:-1:100010100000_2010:-1:100000001110_2011:-1:000000011100_2012:-1:120110001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<img border="0" src="./GARCIASOL.jpg" width="451" height="41">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;...Habla o calla, mujer, pero a mi lado,<br>
+pero a tu sombra, amor, pero a tu o&iacute;do...&quot;</em><br>
+<br>
+<img src="./GARCIASOL1.jpg" width="280" height="321"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;Head of 
+woman&quot;</em></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>Luini 
+Bernardino<br>
+</em><br>
+</font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><br>
+</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font color="#9BC9BB"><br></font>
+		<font face="Georgia" size="4" color="#9BC9BB">
+		Rese&ntilde;a biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta y 
+		cr&iacute;tico literario espa&ntilde;ol nacido en Guadalajara el 29 de septiembre de 
+		1913. <br>Licenciado en Derecho por la Universidad de Madrid, prefiri&oacute; 
+		dedicar todo su tiempo a las letras, <br>
+		destac&aacute;ndose como bi&oacute;grafo, ensayista y poeta. En todos sus trabajos 
+		dej&oacute; entrever la influencia que en &eacute;l ejercieran <br>
+		Quevedo y Unamuno.<br>Por su libro &laquo;Lecci&oacute;n de Rub&eacute;n Dar&iacute;o&raquo;, obtuvo los 
+		premios Henr&iacute;quez Ure&ntilde;a en 1955 y Fastenrath en 1962. <br>
+		Obtuvo adem&aacute;s el premio Esc&aacute;lamo en 1954.<br>Entre sus obras, se 
+		destacan adem&aacute;s,&nbsp; &laquo;Del amor a cada d&iacute;a&raquo; en 1956, &laquo;Fuente serena&laquo; 
+		1965, y &laquo;Antolog&iacute;a provisional.<br>
+		Falleci&oacute; en Madrid en mayo de 1994. &copy;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left"><br>
+		<font face="Georgia" size="3" color="#B0C6C1"><br>
+		</font><font face="Georgia" color="#A7BEB9">
+		<a href="./garciasol.htm#ARENGA A LAS ROSAS">Arenga de las rosas</a><br><br><a href="./garciasol.htm#CANCI&Oacute;N DEL SILENCIO DE CASTILLA">
+		Canci&oacute;n del silencio de Castilla</a><br>
+		<br><a href="./garciasol.htm#CANCIONCILLA DE LA ESPOSA">Cancioncilla de la esposa</a><br>
+		<br><a href="./garciasol.htm#CANCIONCILLA DE LA INVITACI&Oacute;N A LA SERENIDAD">Cancioncilla 
+		de la invitaci&oacute;n a la serenidad</a><br><br><a href="./garciasol.htm#DEHESA DE LA VILLA">
+		Dehesa de la villa</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./garciasol.htm#DEL AMOR DE CADA D&Iacute;A">Del amor de cada d&iacute;a</a><br><br>
+		<a href="./garciasol.htm#DESAF&Iacute;O DE AMOR FRENTE A LAS SOMBRAS">Desaf&iacute;o de amor frente a 
+		las sombras</a><br>
+		<br><a href="./garciasol.htm#FE">Fe</a><br><br><a href="./garciasol.htm#GRACIAS HERMANOS">Gracias 
+		hermanos</a><br>
+		<br><a href="./garciasol.htm#NADIE ME CANTAR&Aacute; COMO TE CANTO">Nadie me cantar&aacute; como te 
+		canto...</a>&nbsp;&nbsp;<br>
+		<br><a href="./garciasol.htm#PERO A TU SOMBRA, AMOR">Pero a tu sombra, amor</a><br><br>
+		<a href="./garciasol.htm#PROCLAMACI&Oacute;N DE LA ESPERANZA">Proclamaci&oacute;n de la esperanza</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./garciasol.htm#TREN DE LA FRONTERA">Tren de la frontera</a><br><br>
+		<a href="./garciasol.htm#Y DEBEMOS ANDAR DE OTRA MANERA...">Y debemos andar de otras 
+		manera...</a></font><font face="Georgia" size="2" color="#A7BEB9"><br>
+		<br> 
+		</font><font face="Georgia" size="2" color="#95B3AA">Volver a: </font>
+	<font face="Georgia" color="#95B3AA">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#95B3AA"><br>
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+		</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" color="#95B3AA">
+		<a name="ARENGA A LAS ROSAS"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Arenga a las rosas</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Rosas, creced, pujad, 
+		multiplicaos 
+		<br>hasta invadir las cajas de caudales,&nbsp; <br>hasta impedir las 
+		ametralladoras,&nbsp; 
+		<br>hasta sembrar la p&oacute;lvora y el hierro <br>de luz y primavera,&nbsp; 
+		<br>hasta ocupar el odio y las entra&ntilde;as <br>de obuses, bombas, balas y 
+		morteros. 
+		</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Creced, rosas, creced! 
+		&iexcl;Pujad sin tregua! <br>Llenad los ojos de los tocineros, <br>floreced 
+		los cerebros belicosos,&nbsp; 
+		<br>corroed de esperanza a los podridos, <br>iluminad la mente de las 
+		bestias,&nbsp; 
+		<br>que se alimentan de oro, y sangre, y l&aacute;grimas;&nbsp; <br>que son 
+		capaces de matar la vida 
+		<br>porque palpita y brilla en nuestras manos. <br>&Aacute;rboles, aguas, 
+		p&aacute;jaros, frutales, 
+		<br>mieses, vides, obreros, plantas, madres, <br>&oacute;leos, m&uacute;sicas, 
+		m&aacute;quinas, ideas, 
+		<br>vamos a proclamar la resistencia <br>de amor contra la guerra.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Est&aacute;n sembrando el aire 
+		de temores 
+		<br>para amargarnos la alegr&iacute;a, <br>para que nos matemos t&uacute; y yo, 
+		hermano, 
+		<br>ahora que ya maduran los dolores, y el sentido <br>va a revelarse al 
+		mundo. 
+		<br>Trabajad <br>de espaldas al temor. Abrid los ojos, <br>Rosas, 
+		hombres, al bien y a la belleza. 
+		<br>&iexcl;Creced! &iexcl;Cantad! La vida es nuestra. <br>La tierra es nuestra, y 
+		nuestro es el futuro. 
+		<br>Trabajos, pensamientos, esperanzas,&nbsp; <br>vuestros y nuestros, 
+		rosas, hombres. 
+		<br>Nosotros encendemos las estrellas <br>y traemos el d&iacute;a,&nbsp; <br>y 
+		por nosotros se har&aacute; la paz. 
+		<br>Estamos en peligro, rosas, hombres,&nbsp; <br>perfume, sol, materia, 
+		inteligencia,&nbsp; 
+		<br>ciencia, fe, muerte, piedra, gracia, Dios. </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Ahoguemos a los 
+		b&aacute;rbaros en luces! 
+		<br>&iexcl;Avanzad, rosas, hombres! &iexcl;Ocupad el mundo! <br>&nbsp; </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="CANCIÓN DEL SILENCIO DE CASTILLA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Canci&oacute;n del silencio de Castilla</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">A cortar silencio, 
+		esposa.<br>Est&aacute; Castilla crecida<br>de silencio y sonorosa<br>paz, oreo 
+		por la herida</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">melanc&oacute;lica. Qu&eacute; olores<br>
+		tiene el campo que amanece.<br>Alamillos reidores<br>con el viento que 
+		les mece</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">est&aacute;n cribando en sus 
+		hojas<br>sol y sombra por el suelo.<br>Coge silencio sin duelo,<br>que 
+		se viertan las congojas.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Huele el campo que 
+		alimenta<br>de serenidad, y canta<br>un sabor en la garganta<br>que va 
+		de romero a menta.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Disuelve el terr&oacute;n 
+		reseco,<br>silencio, y dale a la tierra<br>arada. Rellena el hueco<br>de 
+		sombra con luz de sierra,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">y ponme a cantar a coro<br>
+		con el color de la jara,<br>con el arbolillo de oro<br>-cuatro hojicas 
+		en la vara-,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">con el arroyo serrano<br>
+		y el p&aacute;jaro que gotea<br>uvas de armon&iacute;a. Sea<br>grano de trigo en 
+		verano</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">y buche de agua 
+		marcera,<br>y carm&iacute;n en el poniente,<br>sagrada sombra de higuera<br>y 
+		diamante en el relente.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">F&uacute;ndeme a tu ritmo 
+		eterno,<br>silencio del campo m&iacute;o.<br>El pensamiento hace invierno<br>y 
+		metaf&iacute;sico fr&iacute;o.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Corta la invisible 
+		rosa.<br>Est&aacute; crecida Castilla<br>de silencio para trilla<br>de 
+		corazones, esposa.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="CANCIONCILLA DE LA ESPOSA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Cancioncilla de la esposa</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Mariuca, esposica, 
+		madre:<br>Dios te salve<br>en este d&iacute;a y siempre.<br>dios te guarde,<br>
+		y mi coraz&oacute;n de rabia y trigo<br>y sangre,<br>esta luz amorosa que en el 
+		filo<br>de las palabras arde.<br>&iexcl;Cu&aacute;nta pasi&oacute;n, que s&oacute;lo sabe<br>
+		morder, callar, rugir,<br>ponerse grave<br>o ni&ntilde;a, desesperarse<br>
+		porque no puede saltar la carne<br>y fundirse contigo eternamente,<br>
+		Mariuca, esposica, madre!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Que calle<br>ese tener 
+		que ir a las cosas,<br>este dejarse<br>los ojos entre las ideas,<br>el 
+		oleaje<br>que rompe contra las cuartillas!<br>&iexcl;Hoy es todo Mariuca, 
+		esposa, madre!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Reza por m&iacute;, Mariuca, 
+		esposa.<br>Yo te rezo a mi modo. Sale<br>el coraz&oacute;n en ritmo por la 
+		boca, me renace<br>tanto amor que no s&eacute; decirte,<br>y me resuena dentro 
+		en los panales<br>del sentimiento y en los huesos. Dame<br>la palabra 
+		sencilla, la sonrisa<br>Ingenua de la infancia, madre,<br>Mariuca, 
+		esposica, amor.<br>T&uacute; me salves.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="CANCIONCILLA DE LA INVITACIÓN A LA SERENIDAD"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Cancioncilla de la invitaci&oacute;n a la serenidad</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Dulce te quiero, 
+		serena-<br>mente profunda te quiero.<br>Un silencio colmenero<br>
+		melifica la colmena</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">que no quiere ser 
+		locura,<br>sino luz medida. Mira<br>y di con los ojos. Tira<br>esa 
+		prisa, criatura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Moneditas atesora<br>de 
+		sol y tiempo. Se ve<br>mejor el paisaje a pie,<br>como manda Dios. Ahora</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">nace la palabra, brilla<br>
+		con la hoja, con la nube.<br>Savia, sangre, sabe, sube<br>al &aacute;rbol, a la 
+		mejilla.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Ven a recoger dulzura<br>
+		para el invierno y la pena.<br>El secreto de la vena<br>va aclarando su 
+		escritura.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="DEHESA DE LA VILLA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Dehesa de la villa</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		( Madrid )</em></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Dehesa de la villa!<br>
+		Desde esa hora,<br>el azul se te espesa,<br>se te enamora.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Qu&eacute; maravilla!<br>En 
+		tu hierba, Dehesa,<br>fue su mejilla.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Fue tu mejilla, 
+		esposa!<br>C&oacute;mo luc&iacute;a<br>en el aire la rosa<br>de tu alegr&iacute;a.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Viva mi suerte!<br>
+		Sobre la hierba un d&iacute;a, 
+		<br>volver&eacute; a verte.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="DEL AMOR DE CADA D&Iacute;A"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Del amor de cada d&iacute;a</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Es posible que se haya 
+		dicho todo<br>y que hayamos nacido tal vez tarde.<br>Mas esta gloria que 
+		en mis venas arde,<br>nadie -&iexcl;nadie!- la vive de este modo.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Todo es posible. Todo 
+		ha sido en nombre:<br>todo. Pero este beso tuyo y m&iacute;o,<br>esta luz, esta 
+		flor, este roc&iacute;o,<br>son nuestros nada m&aacute;s, mujer y hombre.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Mujer y hombre &uacute;nicos, 
+		primeros,<br>-t&uacute; y yo, yo y t&uacute;- con nombres y apellidos<br>que no se han 
+		de dar m&aacute;s en criatura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Empezamos la Historia, 
+		verdaderos<br>primer hombre y mujer reconocidos,<br>proclamando el amor 
+		y su aventura.<br>
+		<br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="DESAF&Iacute;O DE AMOR FRENTE A LAS SOMBRAS"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Desaf&iacute;o de amor frente a las sombras</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Otro doce de octubre, 
+		compa&ntilde;era,<br>con la serena flor de la alegr&iacute;a<br>y m&aacute;s luz en los ojos. 
+		Se dir&iacute;a,<br>coraje renaciente, que te espera</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">nuevo &laquo;milagro de la 
+		primavera&raquo;.<br>seria la hora, dura la sangr&iacute;a,<br>el aire temeroso, 
+		esposa m&iacute;a,<br>atormentado el ce&ntilde;o, sementera</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">de tiempo anubarrado. 
+		&iquest;habr&aacute; ma&ntilde;ana<br>con plazuelas y ni&ntilde;os juguetones,<br>espigas candeales 
+		la besana,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">mozas de arracimado 
+		amor, parejas<br>como t&uacute; y como yo, los corazones<br>empavesados, dime? 
+		S&iacute;: de tejas</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">abajo est&aacute; muy grave la 
+		esperanza,<br>y de tejas arriba silenciosos,<br>mudos los astros, tan 
+		majestuosos<br>como siempre en sus &oacute;rbitas. alcanza</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">el terror con la mano 
+		el hombre, avanza<br>entre fuerzas hostiles, tormentosos<br>los pulsos, 
+		con espanto los sabrosos<br>frutos sobre la mesa. la balanza</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">no est&aacute; en el fiel de 
+		la justicia, pesa<br>espanto y m&aacute;s espanto. &iquest;Qu&eacute; nos trae<br>a la 
+		espalda el futuro? Niebla espesa,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">perdidiza y cobarde, 
+		sin agallas<br>el verbo imb&eacute;cil. El vigor decae.<br>Y t&uacute; Dios, &iquest;por qu&eacute; 
+		duermes, por qu&eacute; callas?</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Mas frente al miedo, 
+		mientras viva, digo<br>que no a las sombras. Trae la mano, esposa,<br>y 
+		avancemos. &iexcl;Atr&aacute;s los monstruos! &iexcl;Rosa,<br>florece contra el hielo! 
+		&iexcl;Sube, trigo,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">m&aacute;s gallardo que nunca! 
+		&iexcl;Ven, amigo,<br>a cantar con nosotros la gloriosa<br>salud trabajadora, 
+		la grandiosa<br>coral voz del Oc&eacute;ano! &iexcl;Conmigo</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">los vientres y las 
+		tiernas labrant&iacute;as,<br>la rabia y el honor de los talleres<br>forjadores 
+		de panes y de d&iacute;as!</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">&iexcl;Adelante, a la vida 
+		sin fracaso!<br>si todos desertores, s&eacute; que eres,<br>Mariuca, la bandera 
+		de mi paso.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><a name="FE"></a></font>
+		<font face="Georgia" color="#9BC9BB">Fe</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Dulcinea del Toboso es la m&aacute;s hermosa<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		mujer del mundo...<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Quijote, 2 LXIV</em></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Has de matarme sin 
+		lograr que ceda,<br>y ni entonces podr&aacute;s decir que dudo.<br>Si tu fuerza 
+		mi cuerpo vencer pudo,<br>nunca lleg&oacute; a mi fe, ni habr&aacute; quien pueda.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Derribado, no esperes 
+		que conceda<br>un s&iacute; para tu gloria. Muerto y mudo,<br>por m&iacute; hablar&aacute;n 
+		mis hechos m&aacute;s agudo<br>lenguaje que en palabra humana queda.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Aprieta m&aacute;s la lanza, 
+		caballero:<br>no puedo confesar a mi se&ntilde;ora<br>segundona de nadie en 
+		hermosura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">A tu merced y en tierra 
+		vine, pero<br>tengo intacto el esfuerzo, y la ventura<br>no siempre de 
+		lo justo se enamora.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="GRACIAS HERMANOS"></a> </font>
+		<font face="Georgia" color="#9BC9BB">
+		Gracias hermanos </font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Gabriel Celaya 
+		</em></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Sois tan buenos y 
+		desdichados, 
+		<br>tan sobrehumanos, <br>que me ten&eacute;is en algo. <br>Y voy apuntalado 
+		<br>Por vosotros, por vuestras manos <br>trabajadoras, vuestros labios 
+		<br>sonre&iacute;dos del alba, brazos <br>sostenedores, respaldado. <br>Tan 
+		solitario 
+		<br>estoy que apenas valgo <br>con mi sombra. &iexcl;Cu&aacute;nto <br>en lo m&iacute;o es 
+		vuestro, y proclamo, 
+		<br>en mi trabajo! <br>Y no me caigo <br>del todo, que ser&iacute;a malo <br>
+		para vuestras creencias. Y me canso 
+		<br>tanto <br>que no quisiera haberme despertado <br>una ma&ntilde;ana m&aacute;s al 
+		tajo, 
+		<br>llamo <br>a la materna muerte, a su regazo <br>acunador, me pongo a 
+		vuestro lado
+		<br>y procuro mostraros <br>lo m&aacute;s sano <br>de mi palabra, el rel&aacute;mpago 
+		<br>que dignifique el barro <br>original, lo claro <br>de mis 
+		oscuridades, hago 
+		<br>el papel asignado <br>por el azar en el teatro <br>del mundo amargo 
+		<br>a ratos, <br>fascinante, entreclaro <br>y terrible, a&uacute;n no 
+		descifrado, 
+		<br>criaturas de fe, de canto, <br>que no sab&eacute;is -&iexcl;ay, risas!- el 
+		milagro 
+		<br>diariamente renovado <br>que sois. Os amo, <br>gentes del pueblo 
+		llano, 
+		<br>de mis ra&iacute;ces, campo <br>pegujalero de mi sangre, &aacute;rbol <br>de luz y 
+		fruto de mi llanto. 
+		<br>Y me callo, falto <br>y sin verbo adecuado <br>para rezarlo, <br>
+		hermanos. 
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="NADIE ME CANTAR&Aacute; COMO TE CANTO"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Nadie me cantar&aacute; como te canto...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Nadie me cantar&aacute; como 
+		te canto,<br>madre, con una llama que se enciende<br>en ti y en mi 
+		termina. Nadie entiende<br>la sangre de su fin y de mi llanto.<br>
+		<br>Yo no tengo semilla que me cante<br>en hijos de consuelo, 
+		salvadores,<br>por el tiempo y los hombres, labradores<br>que vuelvan a 
+		sembrar para adelante<br>
+		<br>la vida en criatura, y a&uacute;n en pena,<br>pasajera, que luego se 
+		enardece<br>en la flor sin memoria ni condena<br>
+		<br>de la santa alegr&iacute;a. Aqu&iacute; se apaga<br>el agua que se agota en s&iacute;, 
+		perece<br>sin salir a la mar que la propaga.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="PERO A TU SOMBRA, AMOR"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Pero a tu sombra, amor</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Rompe el tabique, trae 
+		a la ceguera<br>el di&aacute;logo, tu m&uacute;sica. Me llenas<br>de otra luz esta 
+		carne donde penas,<br>recuerdos van. T&uacute; sigue, compa&ntilde;era,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">cogida de mi mano. Me 
+		redime<br>esa voz tan alzada de romero,<br>de campo con simienza y 
+		caminero<br>paso. Veo en tu verbo, creo. Dime</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">por qu&eacute; este olor -&iquest;es 
+		mayo?-, c&oacute;mo ha sido.<br>Habla o calla, mujer, pero a mi lado,<br>pero a 
+		tu sombra, amor, pero a tu o&iacute;do,</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">pero a tus brazos. 
+		Habla o calla, esposa,<br>pero ah&iacute;. &iexcl;No me sienta abandonado<br>sobre la 
+		Tierra inmensa, silenciosa!</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a name="PROCLAMACIÓN DE LA ESPERANZA"></a>Proclamaci&oacute;n de la esperanza</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>El aire se enrarece, adensa, espesa<br>hasta hacerse de plomo en los 
+		pulmones,<br>porque se est&aacute; matando al hombre.<br>
+		<br>La sangre se entontece y aguachirla<br>de no salir al mundo y 
+		propagarse,<br>porque se est&aacute; matando al hombre.<br>
+		<br>La luz de las estrellas palidece<br>y no consuela como en nuestra 
+		infancia,<br>porque se est&aacute; matando al hombre.<br>
+		<br>La risa se deshoja, mustia, pasa<br>sin que nadie la coja y la 
+		disfrute,<br>porque se est&aacute; matando al hombre.<br>
+		<br>El beso y el amor no tienen gusto,<br>agusanados de preocupaciones,<br>
+		porque se est&aacute; matando al hombre.<br>
+		<br>La selva est&aacute; cercando nuestras casas,<br>y a&uacute;lla, brama y hoza en 
+		los umbrales,<br>porque se est&aacute; matando al hombre.<br>
+		<br>Porque se est&aacute; matando al hombre arde mi canto<br>tal un diluvio de 
+		oro por los trigos;<br>porque se est&aacute; matando al hombre y nadie grita<br>
+		quiero clamar hasta tirar las sombras;<br>porque se est&aacute; matando al 
+		hombre mis palabras<br>quieren clavarse como pu&ntilde;aladas,<br>quieren 
+		herir, buscar ra&iacute;ces nobles,<br>dar coletazos que despierten siglos.<br>
+		<br>Le est&aacute; doliendo su dolor al hombre,<br>un dolor que ya no es 
+		literatura<br>ni puede ser espanto y madamismo,<br>porque no quedar&aacute; 
+		vivo quien cante<br>el naufragio indecente de las ratas:<br>porque los 
+		que se salven no tendr&aacute;n memoria.<br>
+		<br>Est&aacute; el hombre ante s&iacute;, tr&aacute;gicamente solo,<br>mientras las aguas 
+		crecen sin espera<br>ahogando justamente, santamente<br>lo que debe 
+		morir.<br>
+		<br>Perecer&aacute; quien deba perecer.<br>El hombre,<br>desnudo, hacia el 
+		ma&ntilde;ana, sobre el miedo.<br>
+		<br>Por eso est&aacute; mi canto repicando<br>sobre el fuego, la muerte, y os 
+		convoca,<br>hombres, para que proclamemos la esperanza<br>
+		</font><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="TREN DE LA FRONTERA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Tren de la frontera</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Assis parten unos d'otros
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como la u&ntilde;a de la carne. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Poema de Mio Cid, v. 375</em></font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">A medida que avanza a 
+		la frontera 
+		<br>el tren, hay m&aacute;s silencio dolorido. <br>Llega un instante en que 
+		parecen muertos 
+		<br>los viajeros, desterrados hijos <br>de Espa&ntilde;a, que se van echados de 
+		hambre. 
+		<br>Esos rostros serenos, tan llovidos <br>de l&aacute;grimas, &iquest;qu&eacute; buscan en 
+		la niebla, 
+		<br>en el azar, en lo desconocido? <br>&iquest;Un pan sin alegr&iacute;a que les niega 
+		<br>una Patria madrastra? Y esos ni&ntilde;os <br>que duermen mientras lloran 
+		esas madres, 
+		<br>&iquest;d&oacute;nde tendr&aacute;n conciencia, qu&eacute; destino <br>les aguarda, qu&eacute; s&aacute;banas, 
+		banderas? 
+		<br>Debajo del buen ce&ntilde;o sin testigo <br>de ese trabajador, &iquest;qu&eacute; pasa 
+		ahora, 
+		<br>qu&eacute; cantares, qu&eacute; d&iacute;as, qu&eacute; designios <br>para desarraigarse del 
+		terru&ntilde;o 
+		<br>donde quedan sus muertos y sus vivos, <br>la infancia, a&uacute;n cantando 
+		su moneda? 
+		<br>&iquest;Qu&eacute; verdades no dichas van consigo, <br>les barren, tal papeles de 
+		merienda, 
+		<br>tal polvo de un camino a otro camino, <br>mordidos por hombr&iacute;a con 
+		los dientes 
+		<br>enclavijados, porque uno mismo <br>se desintegrar&iacute;a si dijera? <br>
+		&iquest;Qu&eacute; viejos lloran por el campesino 
+		<br>que cecea guitarras andaluzas? <br>&iquest;En qu&eacute; pueblo se rompen los 
+		martillos 
+		<br>artesanos, se callan los talleres, <br>se queda la aceituna en el 
+		olivo, 
+		<br>da miedo el campo tan abandonado, <br>da mal consejo un solitario 
+		vino 
+		<br>so&ntilde;ado para fiesta y compa&ntilde;&iacute;a? <br>Me despueblan Espa&ntilde;a, sin amigos, 
+		<br>desarbolan mis bosques para le&ntilde;a, <br>ponen ascuas de pena en mis 
+		escritos. 
+		<br>Enceniza pisadas y salivas <br>un calendario negro sin domingos. <br>
+		Palidece la luz, duelen los ojos 
+		<br>de no ver lo que vio. Se empoza el r&iacute;o <br>que rumorea al fondo de 
+		esa frente 
+		<br>anubarrada de hombre pensativo. <br>Soy palabra en la noche. Nadie 
+		escucha, 
+		<br>aunque comparten el acedo m&iacute;o <br>tantas gentes dispersas. De uno en 
+		uno, 
+		<br>mujeres y varones, pobres cr&iacute;os <br>que se me van, el verso de 
+		rodillas 
+		<br>va besando por caras y suspiros, <br>que se alejan merm&aacute;ndome el 
+		coraje, 
+		<br>enlut&aacute;ndome el aire que respiro. <br>Estoy en un anden llorando, 
+		solo. 
+		<br>Al lado, la maleta con los libros <br>que pensaba leer, por si 
+		val&iacute;a, 
+		<br>y debiera tirar aqu&iacute;; tan fr&iacute;o <br>se me ha quedado el coraz&oacute;n de 
+		pronto. 
+		<br>Huele en la sombra el mar. Se apaga el ruido <br>del tren que ya ha 
+		pasado la frontera. 
+		<br>Dicen manos adi&oacute;, en tanto sigo <br>lloroso por mi vida en esos 
+		hombres 
+		<br>donde la sangre se me va al exilio. </font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#9BC9BB">
+		<a
+      name="Y DEBEMOS ANDAR DE OTRA MANERA..."></a>Y debemos andar de otra 
+		manera...</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Y debemos andar de otra 
+		manera<br>por los caminos de la Mancha, hermano,<br>por si, fecunda 
+		tierra de secano, 
+		<br>diese trigo su augusta calavera.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Ay, huesos, donde ardi&oacute; 
+		la sed m&aacute;s pura,<br>sustentando con m&aacute;s viril coraje<br>el &iexcl;no! en pie y 
+		de cara al oleaje<br>que rompe contra el hombre y su figura.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Comed el pan despacio, 
+		andad a besos<br>por los lagares y por los molinos,<br>que ya todo es 
+		Quevedo derramado.</font></p>
+		<p><font face="Georgia" size="2" color="#9BC9BB">Polvo de humano polvo 
+		son sus huesos,<br>mas aunque sean polvo en los caminos,<br>polvo ser&aacute;n 
+		de Espa&ntilde;a enamorado.</font></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#95B3AA">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<blockquote>
+			<blockquote>
+				<blockquote><font face="Georgia" size="2" color="#8FABC2">
+					<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+					<font color="#AAC0D5">
+					<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+					<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+					</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:25:14 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:18:41 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

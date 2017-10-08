@@ -1,0 +1,1005 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jes&uacute;s Mun&aacute;rriz</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jes&uacute;s Mun&aacute;rriz. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jesus_Munarriz,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/munarriz.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/munarriz.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164307" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./munarriz.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:43:07 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./munarriz.htm" title="4:16:39 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:43:07 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./munarriz.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:43:07 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./munarriz.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>59 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">8 Jun 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000001010101_2005:-1:011100000024_2006:-1:020011000100_2007:-1:010103021200_2008:-1:001101200111_2009:-1:000000210000_2010:-1:100000001110_2011:-1:000000011100_2012:-1:400010001000_2013:7:101220010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+<br>
+</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./MUNARRIZ.jpg" width="347" height="41">&nbsp;&nbsp;<br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><em style="font-style: normal">
+<font face="Arial" size="2" color="#84B0D6">&quot;Voy a engarzar mi historia en tu 
+recuerdo <br>
+para un proyecto alegre de renovadas simetr&iacute;as&quot;</font></em></p>
+
+<p align="center"><font color="#84B0D6"><img border="0" src="./MUNARRIZ1.jpg" width="300" height="256"></font></p>
+<p align="center"><span style="font-weight: 400; font-style:italic">
+<font face="Arial" size="2" color="#84B0D6">&quot;Leontine reader&quot;</font></span></p>
+<p align="center"><span style="font-weight: 400; font-style: italic">
+<font face="Arial" size="2" color="#84B0D6">Pierre Auguste Renoir</font></span><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta, 
+		traductor y ensayista espa&ntilde;ol nacido en San Sebasti&aacute;n en&nbsp; 1940.<br>
+		Reside en Madrid desde los 17 a&ntilde;os. Suspendi&oacute; sus estudios de 
+		arquitectura para licenciarse en Filolog&iacute;a Germ&aacute;nica <br>
+		por la Universidad Complutense de Madrid, especializ&aacute;ndose luego en la 
+		Universidad de Jena, en Weimar.<br>Fue co-fundador y director de la 
+		editorial Ciencia Nueva desde su fundaci&oacute;n&nbsp; hasta su cierre 
+		administrativo en 1969, <br>
+		co-director de la colecci&oacute;n de poes&iacute;a
+		<em>Saco roto</em>
+      	de la editorial Helios, director de publicaciones de la editorial Siglo 
+		XXI
+		<br>
+		de Espa&ntilde;a, y fundador y director actual, de Ediciones Hiperi&oacute;n.<br>Ha 
+		traducido al espa&ntilde;ol, entre otros, a H&ouml;lderlin, Rilke, Celan, Aragon, 
+		Wilde, Shakespeare y Pessoa.<br>De su obra po&eacute;tica se destacan, &laquo;Viajes 
+		y estancias&raquo; 1975, &laquo;Cuarentena&raquo; 1977, &laquo;Esos tus ojos&raquo; 1981, <br>
+		&laquo;Otros labios me sue&ntilde;an&raquo; 1992, &laquo;Coraz&oacute;n independiente&raquo; 1998, &laquo;Peaje para 
+		el alba&raquo; 1972-2000, &laquo;Disparatario&raquo; <br>
+		en 2001 y &laquo;S&oacute;lo amor&laquo; 2008. &copy;</font><font face="Georgia"
+      size="3" color="#84B0D6"><br></font>
+		<font face="Georgia"
+      size="3" color="#85A6BC"><br><br></font>
+		</p>
+	</blockquote>
+</blockquote>
+<p align="center"><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+<blockquote>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#8FABC2">
+		<a href="./munarriz.htm#AQUEL FULGOR">Aquel fulgor</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./munarriz.htm#CUANDO EL VIENTO ABALANZA SUS MASTINES">Cuando el 
+		viento abalanza sus mastines...</a><br>
+		<br><a href="./munarriz.htm#DE POETA A POETA">De poeta a poeta</a><br><br>
+		<a href="./munarriz.htm#DE TU PRESENCIA GUARDO, SOBRE TODO...">De tu presencia guardo, 
+		sobre todo...</a><br>
+		<br><a href="./munarriz.htm#EL CARRO">El carro</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./munarriz.htm#EL DESEO">El deseo</a><br><br>
+		<a href="./munarriz.htm#EL QUE NUNCA TRASPASA CIERTOS L&Iacute;MITES">El que nunca traspasa 
+		ciertos l&iacute;mites...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+		<a href="./munarriz.htm#EN CASA AJENA SIEMPRE...">En casa ajena siempre, camino del 
+		destierro...</a><br><br>
+		<a href="./munarriz.htm#EN UN ARRANQUE DE MORAL...">En un arranque de moral...</a><br>
+		<br><a href="./munarriz.htm#FUGAZ RETORNO">Fugaz retorno</a><br><br><a href="./munarriz.htm#GRITO">
+		Grito</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./munarriz.htm#HAZ LO QUE QUIERAS, PERO...">Haz lo que quieras, 
+		pero...</a><br>
+		<br><a href="./munarriz.htm#HEMOS VIAJADO JUNTOS...">Hemos viajado juntos...</a><br>
+		<br><a href="./munarriz.htm#LA VERDAD SE ESCOND&Iacute;A...">La verdad se escond&iacute;a...</a><br>
+		<br><a href="./munarriz.htm#LAS LUCES DEL AMANECER">Las luces del amanecer...</a><br><br>
+		<a href="./munarriz.htm#MANIFIESTO">Manifiesto</a><br><br>
+		<a href="./munarriz.htm#ME HAS DADO TU DULZURA A BORBOTONES...">Me has dado tu dulzura 
+		a borbotones...</a><br>
+		<br><a href="./munarriz.htm#MON&Oacute;LOGO DE ZIMMER">Mon&oacute;logo de Zimmer</a><br><br>
+		<a href="./munarriz.htm#PERO, LA LEY DE LA ESPECIE...">Pero, la ley de la especie...</a><br>
+		<br><a href="./munarriz.htm#PERSPECTIVA">Perspectiva</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br><a href="./munarriz.htm#POR ESO ESTOY EN LAS PALABRAS...">Por eso estoy en las 
+		palabras...</a><br>
+		<br><a href="./munarriz.htm#QU&Eacute; VA A QUEDAR DE ESTOS D&Iacute;AS?">Qu&eacute; va a quedar de estos 
+		d&iacute;as...</a><br>
+		<br><a href="./munarriz.htm#QUEDAR">Quedar</a><br><br><a href="./munarriz.htm#SER&Aacute; MEJOR AS&Iacute;...">
+		Ser&aacute; mejor as&iacute;...</a><br>
+		<br><a href="./munarriz.htm#SURGI&Oacute; DEL LLANTO TU PRESENCIA...">Surgi&oacute; del llanto tu 
+		presencia...</a></font><br>
+		<br>
+		<font face="Georgia">
+		<a href="./munarriz.htm#TRAS HABER HOLGADO CON PR&Oacute;CULA, PRISCILIANO MEDITA">Tras haber 
+		holgado con Pr&oacute;cula, Prisciliano medita</a></font><font face="Georgia" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#8FABC2">Puedes 
+		escuchar al poeta en:
+      	</font><font face="Georgia" color="#8FABC2">
+	<a href="./poetas.htm" target="_blank">La voz de los 
+		poetas</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+		<br>Volver a: 
+		</font><font face="Georgia" color="#8FABC2">
+		<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+		Volver a: </font>
+		<font face="Georgia" color="#85A6BC">
+		<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+		<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br><font face="Georgia" size="3" color="#89A7BE">
+		<a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2">
+		</font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+		<br><br></p>
+	</blockquote>
+	<p align="center"><font size="3" color="#A6BCCE" face="Georgia"><br></font>
+	<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#85A6BC">
+		<a name="AQUEL FULGOR"></a></font><font face="Georgia" color="#84B0D6">
+		Aquel fulgor</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Saikaku</em></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#84B0D6">Soy una 
+		prostituta japonesa<br>del siglo diecisiete,<br>joven, bella<br>
+		<br>Hago el amor a un comerciante<br>para quien quemo &aacute;loe, templo sake<br>
+		y samic&eacute;n, y desci&ntilde;o mi faja<br>lentamente<br>
+		<br>El fulgor en la noche<br><br>De amanecida pedir&aacute; papel,<br>pincel, 
+		le har&eacute; la tinta,<br>y esbozar&aacute; unos signos<br>elegantes<br>
+		<br>Hallar&eacute; aquella noche varios siglos m&aacute;s tarde<br>leyendo a Saikaku<br>
+		<br>Aquel fulgor</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="CUANDO EL VIENTO ABALANZA SUS MASTINES"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Cuando el viento abalanza sus mastines...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Cuando el viento abalanza sus mastines<br>por las encrucijadas del 
+		olvido<br>y levanta las hojas del recuerdo<br>que cubr&iacute;an las huellas 
+		del camino,<br>se ve un paisaje desolado y yerto,<br>la sombra de los 
+		d&iacute;as que se han ido,<br>borrando con su paso la esperanza<br>de alg&uacute;n 
+		inencontrable para&iacute;so,<br>cuando el viento abalanza sus mastines<br>por 
+		las encrucijadas del olvido.<br>
+		<br>Cuando la noche trae su misterio<br>y se mira a los ojos al destino,<br>
+		cuando la soledad se precipita<br>por nuestra confusi&oacute;n y sus abismos,<br>
+		de no se sabe d&oacute;nde, la tristeza<br>aparece de pronto con su fr&iacute;o<br>
+		dejando un esqueleto de verdades<br>olvidado a la puerta del vac&iacute;o,<br>
+		cuando la noche trae su misterio<br>y se mira a los ojos al destino.<br>
+		<br>Cuando la nada crece en las macetas<br>y se esconde en el fondo del 
+		pasillo,<br>cuando nos despertamos con su cuerpo<br>pegado a nuestro 
+		nombre y apellido,<br>olas de sal golpean las paredes,<br>se arremolinan 
+		ante el precipicio<br>y nos va arrebatando su blancura<br>hasta el 
+		&uacute;ltimo sue&ntilde;o del sentido,<br>cuando la nada crece en las macetas<br>y se 
+		esconde en el fondo del pasillo.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="DE POETA A POETA"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		De poeta a poeta</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Sabes -y sueles- hacer 
+		el amor<br>como el poeta construye sus versos:<br>con acordada mezcla<br>
+		de pasi&oacute;n y sistema<br>(y no digo artificio),<br>de m&uacute;sica, entusiasmo,<br>
+		intuici&oacute;n y saber.<br>Precisas emociones<br>las transformas en ri tmo<br>
+		y melodiosa fantas&iacute;a<br>enriquece tus gestos;<br>sabrosa perversi&oacute;n<br>
+		los enloquece.<br>Cuando est&aacute;s inspirada, que es bastante a menudo,<br>
+		me transportas a l&iacute;mites nunca antes alcanzados.<br>De poeta a poeta:<br>
+		enhorabuena.<br>&iquest;C&oacute;mo podr&iacute;a hacerme<br>con tus obras completas?<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="DE TU PRESENCIA GUARDO, SOBRE TODO..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		De tu presencia guardo, sobre todo...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">De tu presencia guardo, 
+		sobre todo,<br>las huellas que dejaron<br>tus primeras sonrisas<br>en la 
+		confusa sombra<br>de mi melancol&iacute;a.<br>
+		<br><em>&quot;De aquel amor me quedan estos versos&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em><br></em>
+		<a name="EL CARRO"></a></font><font face="Georgia" color="#84B0D6">El 
+		carro</font><font face="Georgia" size="2" color="#84B0D6"><br><br>Los 
+		que tiran del carro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-larga recua<br>los que gu&iacute;an el carro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-como pueden<br>los que trepan al carro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-tontos listos<br>loS que van tras el carro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-no lo alcanzan<br><br>los que miran el carro<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		-con envidia<br>los que son de otro carro<br><br>y los que van a pie, 
+		campo a trav&eacute;s.</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="EL DESEO"></a></font>
+		<font face="Georgia" color="#84B0D6">El deseo</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Si algo ha marcado el 
+		rumbo de mi vida<br>es, sin duda, el deseo,<br>esa imposible b&uacute;squeda de 
+		todo<br>lo que est&aacute; m&aacute;s all&aacute;<br>a la que debo cuanto de valioso,<br>
+		hermoso o placentero<br>encontr&eacute; m&aacute;s ac&aacute;<br>-&iexcl;oh cuerpos memorables, 
+		volved a mis sentidos!<br>Mi obediencia ha tenido cuanto al placer me 
+		lleva,<br>aunque cierta mesura<br>sabe imponerme la sabidur&iacute;a<br>-no 
+		echar al fuego toda la madera,<br>que hay que construir mesas y sillas,<br>
+		y escaleras.<br>
+		<br>Un cerdo de la piara de Epicuro<br>supongo que habr&eacute; sido,<br>-cosa 
+		que, por supuesto, me parece estupenda,<br>porque creo que somos<br>una 
+		larga pandilla de implicados<br>los que hemos preferido el amor al 
+		poder,<br>al robo o a la guerra<br>a lo largo del tiempo,<br>y que no lo 
+		hemos hecho nada mal, francamente.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EL QUE NUNCA TRASPASA CIERTOS L&Iacute;MITES"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		El que nunca traspasa ciertos l&iacute;mites...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		El que nunca traspasa ciertos l&iacute;mites<br><br>ni incurre<br>ni comete<br>
+		ni transgrede<br>ni encubre<br>ni viola<br>ni vulnera<br>ni delinque<br>
+		ni incumple<br>
+		<br>El que nunca traspasa ciertos l&iacute;mites<br><br>ni cruza<br>ni penetra<br>
+		ni se interna<br>ni explora<br>ni alcanza<br>ni consigue<br>ni descubre<br>
+		ni llega<br>
+		<br>El que nunca traspasa ciertos l&iacute;mites.<br><em><br></em></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EN CASA AJENA SIEMPRE..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		En casa ajena siempre, camino del destierro...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		En casa ajena siempre, camino del destierro,<br>al filo de terribles 
+		madrugadas,<br>huyendo de lugares y gentes conocidas,<br>rumbo a la 
+		incomprensi&oacute;n,<br>de cara a lo imposible,<br>roturar los calveros del 
+		silencio<br>y el luto amenazantes,<br>abrir los brazos a lo imprevisible<br>
+		y en v&eacute;rtices y aristas del poliedro del d&iacute;a<br>encontrar esa luz que 
+		transfigura<br>en sue&ntilde;o el reto de lo cotidiano<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="EN UN ARRANQUE DE MORAL..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		En un arranque de moral...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">en un arranque de 
+		moral,<br>se suprimieron por decreto<br>los prost&iacute;bulos del pa&iacute;s.<br>y 
+		desde entonces no tenemos putas.<br>
+		<em><br>&quot;Cuarentena&quot; 1977</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="FUGAZ RETORNO"></a></font><font face="Georgia" color="#84B0D6">
+		Fugaz retorno</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Volver a la ciudad lejana de la infancia,<br>par entre pares otra vez,<br>
+		recobrar aquel puesto hace tiempo perdido,<br>&aacute;mbito acogedor en d&iacute;as 
+		fr&iacute;os,<br>tejido de costumbres y de complicidades.<br>Rememorar rincones 
+		olvidados,<br>rostros desdibujados, calles, nombres,<br>maneras y 
+		expresiones.<br>Borrar tanta distancia en unas horas<br>de feliz 
+		reencuentro.<br>Pasear por aceras familiares<br>y jardines que siguen<br>
+		alzando aquellos &aacute;rboles<br>que la memoria guarda en dulces entresijos.<br>
+		Ser otra vez aquel que fue, que fuiste,<br>p&aacute;gina ya pasada de una 
+		historia<br>que te trajo hasta aqu&iacute;,<br>hasta este d&iacute;a,<br>ni&ntilde;o por unas 
+		horas<br>en tu vieja ciudad,<br>en el fondo la misma, pero tan 
+		diferente,<br>y partir, partir pronto,<br>recobrar los quehaceres de 
+		otro mundo<br>lejos de estos paisajes que evidencian<br>con su presencia 
+		brusca<br>su diario desgaste, el paso de los a&ntilde;os,<br>al tiempo que tu 
+		propio deterioro.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="GRITO"></a>Grito</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<em><br></em>Vive la corrupci&oacute;n; lo intacto, nunca.<br>Perdura lo 
+		perenne, pero no es. Aguanta<br>su pesado vado sin sustancia<br>los 
+		siglos, no el instante.<br>
+		<br>Lo ef&iacute;mero s&iacute; existe. Cruza su resplandor<br>entre lo negro. Y 
+		grita.<br>
+		<br>Nadie ser&aacute; testigo del triunfo del silencio.<br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="HAZ LO QUE QUIERAS, PERO..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Haz lo que quieras, pero...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Haz lo que quieras, 
+		pinta como quieras,<br>el impoluto lienzo<br>pasivamente aceptar&aacute; tus 
+		huellas.<br>Hi&eacute;ndelo libremente, sin prejuicios.<br>
+		<br>Pero no te abandones a las facilidades,<br>no desmayes la guardia,<br>
+		s&eacute; siempre muy exacto.<br>Que lo que digas surja desde dentro,<br>que 
+		las cosas se nombren a s&iacute; mismas,<br>que las palabras jueguen<br>a 
+		juegos de palabras, si les gusta,<br>y que tu propia vida<br>vaya 
+		manchando el verso con sus botas gastadas.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="HEMOS VIAJADO JUNTOS..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Hemos viajado juntos... </font>
+		<font face="Georgia" size="2" color="#84B0D6">
+		<br><br>Hemos viajado juntos<br>a toda vela,<br>hemos andado siempre<br>
+		las mismas sendas.<br>
+		<br>Caminos del cerebro<br>y los sentidos,<br>rutas de tus ensue&ntilde;os<br>y 
+		de los m&iacute;os.<br>
+		<br>Mano a mano<br>t&uacute; y yo<br>codo con codo,<br>viajeros por iguales<br>
+		pieles y poros.<br>
+		<br>Pensamientos perdidos<br>labios sedientos,<br>deseos en la sombra,<br>
+		so&ntilde;ar despiertos.<br>
+		<br>T&uacute; me has dado la mano:<br>no me la sueltes,<br>sabes que cualquier 
+		d&iacute;a<br>vendr&aacute; la muerte.<br>
+		<br>Mano a mano<br>t&uacute; y yo<br>codo con codo,<br>viajeros por iguales<br>
+		pieles y poros.<br>
+		<br><em>&quot;Viajes y estancias&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="LA VERDAD SE ESCOND&Iacute;A..."></a>La verdad se escond&iacute;a...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">la verdad se escond&iacute;a<br>
+		diariamente entre las l&iacute;neas del peri&oacute;dico<br>y la esperanza hurgaba<br>
+		in&uacute;tilmente por los vertederos.<br>todo era gris, de un gris tirando a 
+		negro.<br>y los supervivientes<br>segu&iacute;an existiendo<br>casi s&oacute;lo por no 
+		romper con la costumbre.<br>
+		<br><em>&quot;Cuarentena&quot; 1977</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="LAS LUCES DEL AMANECER"></a>Las luces del amanecer...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Las luces del amanecer<br>
+		abren caminos que cruzan la noche,<br>se acerca un nuevo d&iacute;a y t&uacute;<br>vas 
+		a tener que abandonarme.<br>
+		<br>Ahora descansas junto a m&iacute;,<br>sue&ntilde;as que te has quedado para 
+		siempre,<br>sonr&iacute;es con la placidez<br>de quien no tiene recovecos,<br>
+		<br>pero la luz est&aacute; ya ah&iacute;,<br>ya han despertado los gorriones,<br>se 
+		oye la vida que aletea<br>y anuncia nuestra despedida.<br>
+		<br>Porque te tienes que marchar<br>aunque ni t&uacute; ni yo lo deseamos,<br>
+		vas a dejar un hueco en m&iacute;<br>de dimensi&oacute;n aterradora,<br>
+		<br>porque te vas de este pa&iacute;s<br>y de este cuerpo m&iacute;o, y de estos 
+		besos,<br>y no s&eacute; qu&eacute; va a ser de ti<br>ni si alguna vez nos veremos.<br>
+		<br>Llega la luz, te digo adi&oacute;s<br>sin despertarte, dulcemente,<br>luego 
+		me inclino hasta tu o&iacute;do<br>para darte los buenos d&iacute;as.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6"><a name="MANIFIESTO">
+		</a>Manifiesto</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">En defensa del cardo y 
+		de la ortiga,<br>en defensa del burro y su rebuzno<br>y de su condici&oacute;n 
+		intrascendente,<br>
+		<br>a favor de los bosques y su antiguo<br>modo de ser, a favor de la 
+		piedra<br>que el invierno cubri&oacute; de oscuro musgo,<br>
+		<br>para que vivan peces en las aguas,<br>p&aacute;jaros en el aire, 
+		rododendros<br>en los jardines, luces en la noche,<br>
+		<br>y los hombres se olviden de la prisa<br>con que van a la nada y no 
+		se enteran,<br>v&iacute;ctimas de un progreso establecido,<br>
+		<br>para que todo cobre otro sentido<br>una vez asumido el sinsentido<br>
+		que es todo, y concentrados en su paso<br>
+		<br>veamos sin dolor pasar el tiempo<br>y vivamos minutos, horas, d&iacute;as,<br>
+		bocanadas de ser, riqueza &uacute;nica,<br>
+		<br>para que todo vuelva a ser s&iacute; mismo,<br>lo que pas&oacute;, lo que es, lo 
+		que perdura,<br>lo que no deja huella de su paso,<br>
+		<br>para que no d&eacute; miedo tener hijos<br>ni dejar de tenerlos, y el amor<br>
+		vuelva a ser verdadero, a ser inmenso,<br>
+		<br>para poder tomar el sol y el aire<br>y sentarse en la hierba con la 
+		gente<br>y ponerse a charlar largo y tendido,<br>
+		<br>a favor del cansancio y del descanso,<br>a favor de los ciclos 
+		naturales<br>y de la rebeld&iacute;a ante los ciclos,<br>
+		<br>por los colores y por los sonidos,<br>por los gustos, los tactos, 
+		los olores,<br>por el juego y el sue&ntilde;o, y los amigos,<br>
+		<br>en defensa de lo que se ha perdido,<br>de la paz verdadera, del 
+		sosiego,<br>de la palabra limpia y del silencio.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em><br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="ME HAS DADO TU DULZURA A BORBOTONES..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Me has dado tu dulzura a borbotones...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Me has dado tu dulzura 
+		a borbotones<br>en d&iacute;as desolados,<br>me has regalado el beso y el saber<br>
+		secreto de tus labios,<br>has sabido calmar entre tus dedos<br>mi guerra 
+		y mi pasado<br>e interpretar mis gestos de n&aacute;ufrago<br>y ofrecerme tus 
+		brazos;<br>has puesto espliego y la&uacute;dano en mis d&iacute;as<br>y jengibre en 
+		mis noches,<br>me has regalado sensatez, locura,<br>justo medio y 
+		derroche,<br>has abierto tu historia a mi designio<br>y tu esfuerzo a mi 
+		goce<br>y la melancol&iacute;a de tus p&aacute;rpados<br>a mi dolor de hombre.<br>Por 
+		eso, aunque el futuro sea incierto<br>como incierta es la lucha,<br>
+		aunque el tiempo c&iacute;nicamente exhiba<br>su condici&oacute;n de nutria<br>y las 
+		procacidades alardeen<br>de la desenvoltura<br>con que han urdido 
+		inmemorablemente<br>la historia, esa gran puta,<br>lo que me has dado 
+		t&uacute;, pese a quien pese,<br>que, es y ser&aacute; m&iacute;o,<br>y lo que yo te di, 
+		caiga quien caiga,<br>t&uacute; lo llevas contigo,<br>y tiene un nombre, que es 
+		amor, y hoy dejo<br>constancia por escrito<br>de lo hermoso que fue, 
+		profundo y tierno<br>haberte conocido.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;De aquel amor me 
+		quedan estos versos&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p><font color="#84B0D6"><br>
+		</font>
+		<font face="Georgia" size="2" color="#84B0D6"><br>
+		<a name="MONÓLOGO DE ZIMMER"></a></font>
+		<font face="Georgia" color="#84B0D6">Mon&oacute;logo de Zimmer</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		No es un hu&eacute;sped molesto, pese a todo.<br>S&oacute;lo es un ni&ntilde;o grande. Los 
+		ni&ntilde;os, ya se sabe,<br>dan a veces disgustos, tabarras; tambi&eacute;n &eacute;l.<br>
+		Pero si est&aacute; tranquilo es agradable:<br>charla, improvisa versos, se 
+		vuelve muy locuaz<br>o disfruta de la naturaleza, sonriente.<br>
+		<br>En el buen tiempo me acompa&ntilde;a al huerto<br>o a la vi&ntilde;a y mientras yo 
+		trabajo &eacute;l coge flores,<br>que luego olvida. El sol le hace feliz<br>y 
+		se abandona a su calor, sobre la hierba,<br>y se le va ese fr&iacute;o que le 
+		atrista por dentro.<br>
+		<br>Es un hombre tranquilo si se le deja en paz,<br>pero los cr&iacute;os, a 
+		veces, le importunan<br>y vuelve a casa de mal genio, y no hay qui&eacute;n 
+		pare<br>pasea por su cuarto como fiera enjaulada<br>o nos saca de quicio 
+		con el piano,<br>machacando las mismas teclas siempre.<br>
+		<br>Le ocurre, sobre todo, en el mal tiempo,<br>con el fr&iacute;o, la lluvia, 
+		el cielo gris,<br>d&iacute;as y d&iacute;as sin salir de la buhardilla,<br>sin 
+		cortarse las u&ntilde;as ni el pelo, ni la barba,<br>sin asearse,<br>asomado al 
+		cristal con ojos idos,<br>perdidos en el Neckar,<br>taconeando el suelo 
+		horas y horas.<br>
+		<br>Pero por qu&eacute; insistir en estas cosas:<br>todos tenemos d&iacute;as malos.<br>
+		En general, se porta bien. Y me hace compa&ntilde;&iacute;a.<br>Adem&aacute;s, es muy 
+		entretenido<br>la gente que conoce. De otros tiempos.<br>A veces le 
+		visitan -no mucho, es la verdad-<br>y pasan por mi casa se&ntilde;orones, o 
+		escritores famosos,<br>o se&ntilde;oritas interesant&iacute;simas<br>que le contemplan 
+		con respeto<br>y le piden poemas dedicados.<br>
+		<br>Yo les ofrezco vino, o agua fresca,<br>o frutas en verano,<br>y 
+		ellos me hablan de &eacute;l, de lo importante<br>que pod&iacute;a haber sido, de su 
+		talento<br>extra&ntilde;amente roto, de su hermosura<br>y de la de sus versos.<br>
+		<br>Yo les cuento diabluras que me hace<br>y les divierten o les ponen 
+		tristes, depende,<br>y al despedirse, algunos, dejan unas monedas<br>
+		para comprarle dulces, que le gustan much&iacute;simo.<br>
+		<br>Cuando se van, a &eacute;l le cambia la cara<br>y se queda pensando, 
+		ensimismado,<br>y est&aacute; as&iacute; varios d&iacute;as, como d&aacute;ndole vueltas,<br>
+		rumi&aacute;ndolo, y entonces<br>yo lo observo sin que &eacute;l se d&eacute; cuenta<br>y 
+		siempre pienso: no est&aacute; loco,<br>s&oacute;lo hace lo que quiere,<br>libre, en 
+		paz.<br>
+		<br>De pronto, cualquier cosa,<br>un gorri&oacute;n, unos mirlos, una 
+		insignificancia<br>le vuelve a su mirar de ni&ntilde;o grande<br>y sonr&iacute;e otra 
+		vez, no se sabe, como a las musara&ntilde;as,<br>y a m&iacute; me desconcierta porque 
+		lo veo ido<br>y tambi&eacute;n me lo creo.<br>
+		<br>De ella, no habla nunca. Si la nombran<br>en su presencia o le 
+		preguntan<br>por aquella se&ntilde;ora,<br>finge no recordar o les responde<br>
+		que le dio nueve hijos,<br>todos de altos destinos: papa, rey...<br>
+		Luego, a solas, cuando no le ve nadie,<br>sube a su torre y llora. Yo le 
+		he o&iacute;do<br>a trav&eacute;s de la puerta. y me part&iacute;a el alma.<br>
+		<br>En fin se&ntilde;ores, ahora me parece<br>que he charlado de m&aacute;s<br>y les 
+		estoy cansando.<br>Como les dije, no es un hu&eacute;ped molesto<br>y estoy muy 
+		orgulloso de tenerlo en mi casa<br>de sencillo ebanista.<br>As&iacute; que 
+		vuelvan cuando quieran,<br>ya ven que ha sido muy correcto con ustedes<br>
+		y que no le ha aburrido su visita.<br>Mucho me alegra haberles conocido.<br>
+		Adi&oacute;n, se&ntilde;ores.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Zimmer.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A sus pies.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Pliegos de poes&iacute;a 
+		Hiperi&oacute;n&quot; N&ordm; 3</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="PERO, LA LEY DE LA ESPECIE..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Pero, la ley de la especie...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">pero, ley de la 
+		especie,<br>inevitable,<br>los que vivimos en aquellos a&ntilde;os<br>hemos de 
+		recordarlos<br>con nostalgia.<br>con nostalgia y con rabia.<br>
+		<br><em>&quot;Cuarentena&quot; 1977</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br>
+&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em><br></em>
+		<a name="PERSPECTIVA"></a></font><font face="Georgia" color="#84B0D6">
+		Perspectiva</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Hay d&iacute;as que parecen bodegones cubistas:<br>todo tiene joroba<br>o se 
+		parte en mitades<br>desiguales,<br>todo est&aacute; lleno de &aacute;ngulos,<br>todo 
+		cae revuelto como torre de naipes<br>derrumb&aacute;ndose,<br>o revuelto se 
+		escapa como mazo<br>de globos dispers&aacute;ndose,<br>todo es en blanco y 
+		negro,<br>en ocre y gris,<br>todo es plano, replano,<br>todo se 
+		despedaza-<br>
+		<br>Y sin embargo,<br>en su conjunto<br>algo<br>liga los elementos, los 
+		interrelaciona,<br>el desconcierto<br>cobra un sentido nuevo<br>y el 
+		efecto final<br>acaba siendo arm&oacute;nico-<br>
+		<br>aunque s&oacute;lo se ve,<br>apagada la luz,<br>desde la cama.<br><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a
+      name="POR ESO ESTOY EN LAS PALABRAS..."></a>Por eso estoy en las 
+		palabras...</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Por eso estoy en las 
+		palabras.<br>
+		<br>Porque el silencio vive si la palabra calla<br>y el olvido se 
+		extiende donde el amor deserta,<br>y de las mordeduras gozosas o crueles<br>
+		s&oacute;lo queda la huella que arrancan a las prensas.<br>
+		<br>Por eso estoy en las palabras.<br><br>Porque el cerezo da sus frutos 
+		sin saberlo<br>y sin saberlo el c&aacute;&ntilde;amo presagia las banderas,<br>pero el 
+		hombre conoce que entre nada y la nada<br>s&oacute;lo puede dejar unos vocablos 
+		limpios.<br>
+		<br>Unos vocablos limpios o una voz iracunda<br>que arranque el velo 
+		hirsuto donde se oculta el sue&ntilde;o,<br>porque s&oacute;lo la voz, las palabras 
+		perduran<br>cuando embebe la helada la luz de los tejidos.<br>
+		<br>Por eso estoy en las palabras.<br><br>Porque a pesar de todo, contra 
+		raz&oacute;n, salvado<br>queda el que dijo. Y nada,<br>contra raz&oacute;n tambi&eacute;n, 
+		queda del que call&oacute;,<br>sino el molde vac&iacute;o de su materia muda.<br>
+		<br>Por eso estoy con las palabras y por eso<br>redescubro un sentido al 
+		sinsentido en ellas<br>y repito sonidos que hered&eacute; sin quererlo<br>y es 
+		mi roce en su uso mi paso por la historia.<br>
+		<br><em>&quot;Viajes y estancias&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="QU&Eacute; VA A QUEDAR DE ESTOS D&Iacute;AS?"></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Qu&eacute; va a quedar de estos d&iacute;as...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>&iquest;Qu&eacute; va a quedar de estos d&iacute;as<br>borrachos de tu presencia<br>
+		cuando t&uacute; seas ausencia<br>y yo mi melancol&iacute;a?<br>&iquest;Qu&eacute; va a quedar de 
+		estos d&iacute;as?<br>
+		<br>&iquest;Qu&eacute; apetencia tuya y m&iacute;a<br>arrastrar&aacute; el viento loco<br>cuando le 
+		sepan a poco<br>tu soledad y la m&iacute;a?<br>&iquest;Qu&eacute; apetencia tuya y m&iacute;a?<br>
+		<br>La huella de tu aliento<br>ser&aacute; mi aliento,<br>la huella de tus 
+		labios<br>ser&aacute;n mis labios,<br>la huella de tu cuerpo<br>ser&aacute; mi cuerpo,<br>
+		la huella de tus manos<br>ser&aacute;n mis manos.<br>
+		<br>&iquest;Qu&eacute; va a quedarle a la noche<br>rond&aacute;ndole por lo oscuro<br>cuando 
+		sea s&oacute;lo un puro<br>e interminable derroche?<br>&iquest;Qu&eacute; va a quedarle a la 
+		noche?<br>
+		<br>&iquest;Qu&eacute; rinc&oacute;n de qu&eacute; jard&iacute;n<br>va a acordarse de nosotros<br>al ver 
+		felices a otros<br>donde nos vio a ti y a m&iacute;?<br>
+		<br>La huella de tu aliento<br>ser&aacute; mi aliento,<br>la huella de tus 
+		labios<br>ser&aacute;n mis labios, 
+		<br>la huella de tu cuerpo<br>ser&aacute; mi cuerpo,<br>la huella de tus manos<br>
+		ser&aacute;n mis manos.</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><em>&quot;Viajes y 
+		estancias&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6"><a name="QUEDAR"></a></font>
+		<font face="Georgia" color="#84B0D6">Quedar</font></p>
+		<p><font face="Georgia" size="2" color="#84B0D6">Quedar, quedar, quedar, 
+		como enterrados<br>vivos a los que va faltando el aire,<br>esta &uacute;nica 
+		obsesi&oacute;n: sobrevivir<br>cuando la nada acabe con nosotros.<br>
+		<br>Quedar, quedar, quedar, dejar un rastro<br>de que un d&iacute;a existimos, 
+		fuimos alguien,<br>vengarnos del callar definitivo<br>con este grito que 
+		llamamos arte.<br>
+		<br>Quedar, quedar, quedar, sobrevivir<br>aunque sea tan s&oacute;lo unos 
+		segundos,<br>como enterrados vivos cuyas huellas<br>ara&ntilde;an la madera de 
+		la caja en que yacen.<br>
+		<br><em>&quot;Esos tus ojos&quot; 1981</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a name="SER&Aacute; MEJOR AS&Iacute;..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Ser&aacute; mejor as&iacute;...</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+		Ser&aacute; mejor as&iacute;.<br>Tu rostro eternamente trenzar&aacute; entre mi pecho<br>
+		in&eacute;ditos cordajes,<br>se mantendr&aacute;n tus manos taumaturgas,<br>y en tu 
+		ritmo no habr&aacute; jam&aacute;s monoton&iacute;a.<br>El color de tus ojos siempre ser&aacute; 
+		distinto,<br>y el sabor de tu piel,<br>y el de tu boca.<br>Jam&aacute;s ser&aacute; 
+		rutina desnudarte<br>ni ver c&oacute;mo te ocultas.<br>Porque no te atreviste<br>
+		a romper con tu mundo cotidiano,<br>no ser&aacute; nunca el nuestro cotidiano,<br>
+		rutinario y mon&oacute;tono.<br>Cada cual vivir&aacute; a solas su jornada<br>y en vez 
+		de soportarnos mansamente,<br>yo har&eacute; literatura entre otras cosas,<br>y 
+		t&uacute; no s&eacute; qu&eacute; har&aacute;s, fuera de mi memoria.<br>
+		<br><em>&quot;De aquel amor me quedan estos versos&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+		<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#84B0D6">
+		<a
+      name="SURGIÓ DEL LLANTO TU PRESENCIA..."></a></font>
+		<font face="Georgia" color="#84B0D6">
+		Surgi&oacute; del llanto tu presencia...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>Surgi&oacute; del llanto tu presencia y trastroc&oacute; el pretil del sufrimiento 
+		sin ambages. Volaron desde entonces albos designios <br>
+		por la ma&ntilde;ana de mi soledad. Amanec&iacute;a a tu lado diariamente un gris m&aacute;s 
+		p&aacute;lido que su predecesor y desde &eacute;l levant&aacute;bamos,&nbsp;
+		<br>
+		acordes, escalones de pulso y de futuro. Lentos cimientos. Voluntad 
+		un&aacute;nime, recelos desvelados.<br>Han echado ra&iacute;ces poderosas aquellas 
+		horas y mis c&eacute;lulas trenzan s&oacute;lo mensajes que han de vivir las tuyas y 
+		de las tuyas <br>
+		recibo yo tambi&eacute;n estas felices transmisiones que me nutren y animan. 
+		Soy carne de tu labio y beso de tu boca. <br>
+		Llevo la marca de tus dedos en mi pelo y mi costado a&ntilde;ora tu nariz. 
+		Hasta el cerebro, a menudo pospuesto en estos tr&aacute;mites, <br>te anhela en 
+		m&iacute; sin freno. Has sabido, de un vac&iacute;o agrietado y sin l&iacute;mites, convocar 
+		las m&aacute;s sutiles concreciones para con ellas <br>
+		ir hilando espacios habitables. Has recompuesto esta desmenuzada s&aacute;bana 
+		laborable con una mano m&aacute;gica. <br>
+		Has dado aire al pincel, que por &eacute;l se enarbola, y lucro a las palabras, 
+		ya incontinentes por tu ausencia.<br>Nadie supo jam&aacute;s horadar este bote, 
+		dar voz a esta hojalata como t&uacute;. Han reca&iacute;do en tu esqueleto 
+		impaciencias de siglos. <br>
+		Has abierto un cancel oculto y por el patinillo a que da paso irrumpe, 
+		renovada, mi triple geograf&iacute;a.<br>He de viajarte ausente y renovarte 
+		misteriosa y di&aacute;fana. He de pisarte, uva madura, y destilarte, orujo, y 
+		aprovisionar&eacute; a mi descendencia de la bebida de tu cuerpo. Voy a 
+		engarzar mi historia en tu recuerdo para un proyecto alegre de renovadas 
+		<br>
+		simetr&iacute;as. Voy a so&ntilde;arte en cada vida. Voy a vivirte en cada sue&ntilde;o.<br><br><em>
+		&quot;De aquel amor me quedan estos versos&quot; 1975</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#84B0D6">
+		<a name="TRAS HABER HOLGADO CON PRÓCULA, PRISCILIANO MEDITA"></a>Tras 
+		haber holgado con Pr&oacute;cula, Prisciliano medita</font><font face="Georgia" size="2" color="#84B0D6"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		A Fernando y Gonzalo Torrente Ballester<br>
+		</i><br>
+		-Llaman a esto pecado los fan&aacute;ticos.<br>
+		A esta explosi&oacute;n que lenta se alabea,<br>
+		a este sentir con cada poro, vibrar en cada vello,<br>
+		a este ser piel,<br>
+		a esta dulzura derramada en carne viva,<br>
+		a este glot&oacute;n enjambre de alegr&iacute;a,<br>
+		a estos nervios sabi&eacute;ndose universo gozoso,<br>
+		al coraz&oacute;n alardeando de su mejor humor,<br>
+		al milagroso encaje en la sonrisa,<br>
+		a la satisfacci&oacute;n ardiendo en ojos,<br>
+		a la felicidad<br>
+		llaman pecado.<br>
+		<br>
+		Pero es Dios quien se ama en nuestros cuerpos<br>
+		-nuestros cuerpos dispuestos para el &eacute;xtasis<br>
+		por Su sabidur&iacute;a-<br>
+		y su goce es el nuestro. Amemos, Pr&oacute;cula.<br>
+&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:43:07 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:44 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

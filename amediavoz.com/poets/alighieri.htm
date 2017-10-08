@@ -1,0 +1,697 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Dante Alighieri</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Dante Alighieri."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Dante Alighieri. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Dante_Alighieri,poesias,poetas,poemas,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#DBDBDB">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/alighieri.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/alighieri.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161944" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./alighieri.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:19:44 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./alighieri.htm" title="16:54:06 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:19:44 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./alighieri.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:19:44 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./alighieri.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>90 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">9 Jun 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000001010101_2004:-1:010001010101_2005:-1:011110020000_2006:-1:000021010210_2007:-1:022254370800_2008:-1:112321000000_2009:-1:110000110000_2010:-1:100000001110_2011:-1:000000001111_2012:-1:400011001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ALIGHIERI.jpg" width="324" height="53"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ALIGHIERI1.jpg" width="184" height="19"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><br>
+</p>
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="750" height="358">
+  <tr>
+    <td valign="bottom" colspan="2" height="19" width="742"><p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="327" width="293" valign="top"><p align="left">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./ALIGHIERI2.jpg" width="208" height="328"></td>
+    <td width="446" valign="top" height="327"><p align="left">
+	<u>
+	<font face="Georgia"
+    color="#C4CAD4">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+	<p align="left">
+	<font face="Georgia" size="2" color="#C4CAD4">Poeta y fil&oacute;sofo italiano 
+	nacido en Florencia en&nbsp; 1265.<br>
+	Muy joven perdi&oacute; a sus padres y en 1281 combati&oacute; por la liga g&uuml;elfa contra 
+	los gibelinos toscanos.<br>
+	Alrededor de 1285 se cas&oacute; con Gemma Donati con quien tuvo tres hijos. Sin 
+	embargo, su verdadera musa fue Beatrice, hija de Folco Portinari y casada 
+	con Sim&oacute;n de' Enjaeza. De esa &eacute;poca data parte de su<i> &quot;Vita nuova&quot;.<br>
+	</i>Despu&eacute;s de la muerte de Beatrice&nbsp;, en 1290, se dedic&oacute; al estudio de la 
+	Teolog&iacute;a y Filosof&iacute;a, particip&oacute; en pol&iacute;tica y form&oacute; parte de los Priores de 
+	Florencia. En 1301 fue embajador en Roma. Durante su ausencia, Florencia fue 
+	tomada por Carlo di Valois, su casa fue saqueada y a &eacute;l le fue impuesta una 
+	fuerte multa conmutada luego por la pena de muerte en 1302.<br>
+	Residi&oacute; en Par&iacute;s entre 1307 y 1309. La mayor parte de su destierro la pas&oacute; 
+	en algunas ciudades del norte italiano y nuevamente en&nbsp; Verona, donde 
+	empez&oacute; a escribir su m&aacute;xima obra, <i>&quot;La divina Comedia&quot;</i> en 1309.<br>
+	Finalmente encontr&oacute; la paz en R&aacute;vena, termin&oacute; all&iacute; su obra y poco despu&eacute;s de 
+	publicarla, falleci&oacute; el 14 de septiembre de 1321. &copy;</font></p></td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Dante 
+Alighieri:</font><font face="Georgia" size="2" color="#FFFFFF"><br>
+</font></p>
+
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#FFFFFF"><br>
+		</font><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#AMOR E'L COR GENTIL.">Amor e'l cor gentil</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#CANTO I&deg; DE LA DIVINA COMEDIA">Canto 1&deg; de la Divina Comedia</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#CANTO III DE LA DIVINA COMEDIA">Canto 3&deg; de la Divina Comedia</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./alighieri.htm#CON LALTRE DONNE">Con 
+		l'altre donne</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#LA VIDA NUEVA     (fragmento)">La vida nueva&nbsp;&nbsp;&nbsp;&nbsp; 
+		(fragmento)</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#OLTRE LA SPERA...">Oltre la spera...</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF"><a href="./alighieri.htm#SONETO">
+		Soneto</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#SONETO XL">Soneto&nbsp; XL</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#TANTO GENTILE">Tanto gentile</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#TUTTI LI MIEI PENSER...">Tutti li miei penser...</a></font></p>
+		<p align="left"><font face="Georgia" color="#FFFFFF">
+		<a href="./alighieri.htm#VEDE PERFETTAMENTE...">Vede perfettamente...</a></font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br></font>
+		<font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+	<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+	<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+	&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br></font></p>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+			comentarios o sugerencias ser&aacute;n de gran ayuda <br>para el desarrollo 
+			de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+		</blockquote>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+	<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>&nbsp;</font></p>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+			p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+			b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: 
+			<br>Windows/Fonts: <br></font><font color="#C4CAD4"><br></font>
+			<a href="./georgia.zip">Georgia</a></font></p>
+		</blockquote>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		<a
+      name="AMOR E'L COR GENTIL."></a></font>
+		<font face="Georgia" color="#C4CAD4">Amor e'l cor gentil</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Coraz&oacute;n y el Amor son una cosa<br>sola y gentil -el sabio lo ha 
+		dictado.<br>Ninguno sin el otro ha palpitado,<br>que la raz&oacute;n no puede 
+		estar ociosa.<br>
+		<br>Falla natura cuando est&aacute; amorosa,<br>y Amor o el Coraz&oacute;n por un 
+		cuidado;<br>transcurra el tiempo breve o dilatado,<br>lo mismo en 
+		inquietud que si reposa.<br>
+		<br>Si a la Bella se suma la Discreta, <br>y nuestra vista bebe su 
+		dulzura<br>colmando el coraz&oacute;n de ansia secreta,<br>
+		<br>del Amor al asedio que perdura<br>pidiendo estadio la Beldad nos 
+		reta<br>como bravo adalid en su armadura.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de: Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="CANTO I&deg; DE LA DIVINA COMEDIA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Canto I&deg; de la Divina Comedia</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>(Fragmento)<br><br>Del camino a mitad de nuestra vida<br>encontr&eacute;me 
+		por una selva oscura,<br>que de derecha senda era perdida.<br>&iexcl;Y cu&aacute;nto 
+		en el decir es cosa dura<br>esta selva salvaje, &aacute;spera y fuerte,<br>que 
+		en el pensar renueva la pavura!<br>Tanto es amarga que es poco m&aacute;s 
+		muerte:<br>m&aacute;s, para hablar del bien que all&iacute; encontrara<br>dir&eacute; otras 
+		cosas de que fui vidente.<br>Yo no se bien decir c&oacute;mo all&iacute; entrara;<br>
+		tan lleno era de sue&ntilde;o en aquel punto<br>que el derecho camino 
+		abandonara.<br>Mas luego, al ser al pie de un monte junto<br>en donde 
+		daba t&eacute;rmino aquel valle<br>que aflicto en miedo el coraz&oacute;n me tuvo,<br>
+		mir&eacute; a lo alto, y vi que era en su talle<br>vestido ya de rayos del 
+		planeta<br>que nos gu&iacute;a derecho en cualquier calle.<br>Fue entonces la 
+		pavura un poco quieta,<br>que en el lago del pecho a&uacute;n me duraba<br>la 
+		noche, que pasara tanto inquieta.<br>Y como aquel que con cansadas 
+		ansias,<br>salido ya del pi&eacute;lago a la riba,<br>se vuelve a ver las 
+		peligrosas aguas,<br>as&iacute; el &aacute;nima m&iacute;a, a&uacute;n fugitiva,<br>se volvi&oacute; atr&aacute;s 
+		a remirar el paso<br>que no dej&oacute; jam&aacute;s persona viva.<br>Cuando di alg&uacute;n 
+		reposo al cuerpo laso<br>aquella prosegu&iacute; playa desierta,<br>tal que el 
+		pie firme siempre era el m&aacute;s bajo.<br>Y he aqu&iacute;, casi al comenzar la 
+		cuesta<br>una onza ligera y presta pronto,<br>que de pie maculada era 
+		cubierta:<br>y no se me apartaba de ante el rostro,<br>as&iacute; tanto imped&iacute;a 
+		mi camino<br>que muchas veces intent&eacute; el retorno.<br>Tiempo era el 
+		principio matutino,<br>y remontaba el sol con las estrellas<br>que eran 
+		con &eacute;l, cuando el amor divino<br>movi&oacute; al principio aquellas cosas 
+		bellas;<br>tal que de esperar bien me dio ocasi&oacute;n,<br>de la fiera de 
+		piel pintada aquella,<br>la hora del tiempo y dulce la estaci&oacute;n:<br>mas 
+		no sin que temor no me infundiese<br>la aparecida vista de un le&oacute;n.<br>
+		Este semblaba contra mi viniese<br>con la testa alta y apetito fiero,<br>
+		que el aire parec&iacute;a le temiese;<br>mas una loba, que de todo anhelo<br>
+		parec&iacute;a cargada en su magrura,<br>y vivir mucha gente hizo con duelo,<br>
+		esta causome turbaci&oacute;n tan dura<br>con el temor, nacido de su vista,<br>
+		que perd&iacute; la esperanza de la altura.<br>Y como aquel, que con placer 
+		aquista,<br>y llega el tiempo que perder le haga,<br>que en todo su 
+		pensar llora y se atrista,<br>tal me hiciera la fiera de paz falta,<br>
+		que, viniendo a mi encuentro, poco a poco,<br>me rechazaba all&iacute; donde el 
+		sol falla.<br>Mientras retroced&iacute;a al lugar hondo<br>ante mi vista se 
+		hizo descubierto<br>quien mudo pareci&oacute; en lo silencioso.<br>Cuando yo le 
+		mir&eacute; en el gran desierto,<br>&quot;Api&aacute;date de mi -le grit&eacute; al mismo-,<br>
+		quienquiera seas, sombra u hombre cierto.&quot;<br>Respondiome: &quot;Hombre no; 
+		hombre ya he sido,<br>los que di&eacute;ronme el ser fueron lombardos,<br>y 
+		ambos por patria a Mantua la han tenido.<br>Nac&iacute; sub Julio, bien que un 
+		poco tardo<br>y viv&iacute; en Roma, bajo el buen Augusto,<br>en tiempos de 
+		enga&ntilde;osos dioses falsos.<br>Poeta he sido, y yo cant&eacute; del justo<br>hijo 
+		de Anquises, que volvi&oacute; de Troya<br>despu&eacute;s que fuese el soberbio Ili&oacute;n 
+		combusto.<br>Mas, &iquest;por qu&eacute; a tanta pena tu retornas?<br>&iquest;por qu&eacute; no vas 
+		al deleitoso monte<br>que es principio y raz&oacute;n de dicha toda?&quot;<br>&quot;&iquest;Eres 
+		tu aquel Virgilio, aquella fuente<br>que tan gran r&iacute;o en el hablar 
+		difunde?<br>-le respond&iacute; con vergonzosa frente-.<br>&iexcl;Oh, de los otros 
+		poetas honra y lumbre!<br>v&aacute;lgame el largo estudio y grande amor,<br>que 
+		a m&iacute; buscar me han hecho tu volumen.<br>Eres tu mi maestro, eres mi 
+		autor:<br>eres tu solo aquel, de quien yo hurto<br>el bello estilo, que 
+		me ha dado honor.<br>Mira la bestia por la cual yo huyo:<br>de ella, 
+		famoso sabio, has de ayudarme,<br>que me hace estremecer venas y pulso.&quot;<br>
+		Te conviene seguir distinto viaje,<br>-dijo, despu&eacute;s de ver que yo 
+		lloraba-,<br>si quieres huir de este lugar salvaje:<br>porque esta 
+		bestia, por la qual tu clamas,<br>no deja que otro pase por su v&iacute;a,<br>
+		mas tanto se lo impide que lo mata;<br>y es su natura tan malvada e 
+		imp&iacute;a<br>que su rabiosa gana nunca llena,<br>y ha m&aacute;s hambre al comer 
+		que antes ten&iacute;a.<br>Con muchos animales se empareja,<br>y a&uacute;n ser&aacute;n 
+		muchos m&aacute;s, hasta que el Veltro<br>vendr&aacute;, y har&aacute; que con dolor se 
+		muera.<br>Este no comer&aacute; tierra ni peltro,<br>pero si amor, virtud, 
+		sabidur&iacute;a,<br>y su patria estar&aacute; entre Feltro y Feltro;<br>ser&aacute; salud de 
+		aquella humilde Italia,<br>por quien muri&oacute; la virginal Camila,<br>
+		Eur&iacute;alo y Turno y Niso en la batalla.<br>Este la cazara por cada villa,<br>
+		hasta arrojarla dentro del infierno,<br>del que al principio la sac&oacute; la 
+		envidia.<br>Mas ahora por tu bien pienso y discierno<br>que tu me sigas, 
+		yo ser&eacute; tu gu&iacute;a:<br>te sacar&eacute; de aqu&iacute; a un lugar eterno,<br>donde oir&aacute;s 
+		espantosa griter&iacute;a:<br>ver&aacute;s viejos esp&iacute;ritus en duelo,<br>que todos la 
+		segunda muerte ans&iacute;an;<br>luego aquellos ver&aacute;s, que est&aacute;n contentos<br>
+		en fuego, porque esperan la llegada<br>entre los alabados, a su tiempo:<br>
+		a los cuales, si tu ascender desearas,<br>otra alma te quiara que yo m&aacute;s 
+		digna,<br>te dejar&eacute; con ella cuando parta:<br>que aquel Emperador, que 
+		reina arriba,<br>porque yo con su ley rebelde me hice,<br>no quiere a su 
+		cuidad por mi la ida.<br>En toda parte impera y all&iacute; rige,<br>all&iacute; est&aacute; 
+		su ciudad y su alto asiento:<br>&iexcl;dichoso aquel, que al lado suyo elige!&quot;<br>
+		Yo le dije: &quot;Poeta, te requiero<br>por ese Dios que tu no conociste,<br>
+		para huir de este mal o m&aacute;s adverso,<br>que me lleves all&aacute; donde 
+		dijiste,<br>tal que yo vea la puerta de San Pedro<br>y aquellos que tu 
+		dices ser tan tristes.&quot;<br>Anduvo entonces, y segu&iacute; postrero.<br>
+		<br><em>Versi&oacute;n de: Carlos L&oacute;pez Narv&aacute;ez</em></font><font color="#C4CAD4"><br>&nbsp;</font></p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+			<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		<a name="CANTO III DE LA DIVINA COMEDIA"></a></font>
+		<font face="Georgia" color="#C4CAD4">Canto III de la Divina Comedia</font><font face="Georgia" size="2" color="#C4CAD4"> 
+		( fragmento )</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+		Inscripci&oacute;n</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Por m&iacute; se 
+		llega a la ciudad doliente.<br>Por m&iacute; se avanza hacia la eterna pena.<br>
+		Por m&iacute; se va tras la perdida gente.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Dios al 
+		pecado se&ntilde;al&oacute; condena<br>y surg&iacute; entonces cual suprema alianza<br>del 
+		poder sumo y la justicia plena.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Y no 
+		existiendo en m&iacute; fin ni mudanza<br>nada me precedi&oacute; sino Dios mismo.<br>
+		Los que entr&aacute;steis perded toda esperanza.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de: Nicol&aacute;s Bayona Posada</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2"
+    color="#C4CAD4"><a name="CON LALTRE DONNE"></a></font>
+		<font face="Georgia"
+    color="#C4CAD4">Con l'altre donne</font><font face="Georgia" size="2"
+    color="#C4CAD4"><br><br>Otra ninguna mis pupilas llena;<br>y si las miro, no 
+		dud&eacute;is, Se&ntilde;ora:<br>lo que disperso en otras enamora<br>vuestra beldad lo 
+		junta en gracia plena.<br>
+		<br>La vuestra duda no ser&aacute; condena,<br>ni raz&oacute;n contra m&iacute; torturadora:<br>
+		por tanta gallard&iacute;a seductora,<br>tan fija a vuestro ser va mi cadena,<br>
+		<br>que a cuanto no es lo vuestro, fenecidos,<br>s&oacute;lo en Vos mi pensar y 
+		mis sentidos<br>saben vivir su esclavitud gozosos.<br>
+		<br>Y si en otras mudara alma y figura,<br>nuevo Luzbel ser&iacute;a, de la 
+		Altura<br>cayendo a los abismos tenebrosos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><em>
+		Versi&oacute;n de: Carlos L&oacute;pez Narv&aacute;ez<br><br>&nbsp;</em></font><p align="center">
+		<font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a
+      name="LA VIDA NUEVA     (fragmento)"></a>La vida nueva&nbsp;&nbsp;&nbsp;</font><font face="Georgia" size="2" color="#C4CAD4">
+		(fragmento)<br><br>Muchas veces me vienen a la cabeza<br>la oscura 
+		cualidad que me da el Amor<br>y me tengo l&aacute;stima y as&iacute; me digo:<br>
+		<br>&iexcl;Ay de m&iacute;!, &iquest;les pasa esto a otros?;<br>porque tan h&aacute;bilmente me 
+		asalta el amor<br>que la vida casi me abandona:<br>s&oacute;lo un hilo de 
+		esp&iacute;ritu deja medio vivo,<br>uno que s&oacute;lo por ti vive y razona.<br>
+		<br>Luego me esfuerzo, yo deseo salvarme,<br>y casi muerto, sin ning&uacute;n 
+		valor,<br>vengo a verte, creyendo as&iacute; curarme:<br>
+		<br>y cuando alzo los ojos para observarte<br>en mi coraz&oacute;n se inicia un 
+		terremoto<br>que suspende en mi alma todos los latidos.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>&nbsp;</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="OLTRE LA SPERA..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Oltre la spera...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Allende el orbe de rodar m&aacute;s lento<br>llega el suspiro que mi pecho 
+		exhala:<br>nuevo intelecto con que Amor escala<br>c&eacute;lica altura en alas 
+		del lamento.<br>
+		<br>Cuando alcanza la cima de su intento<br>ve la Mujer que otra ninguna 
+		iguala<br>por su esplendor: a quien todo se&ntilde;ala<br>de Amor para el m&aacute;s 
+		alto rendimiento.<br>
+		<br>Vi&eacute;ndola as&iacute;, con voz sutil, ardiente,<br>Amor le habla al coraz&oacute;n 
+		doliente<br>que lo interroga y no comprende nada.<br>
+		<br>Soy yo quien me hablo a m&iacute; y ante la bella<br>membranza de Beatriz, 
+		todo destella<br>y lo entiende mi mente iluminada.<br>
+		<br><em>Versi&oacute;n de: Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="SONETO"></a>
+		</font><font face="Georgia" color="#C4CAD4">Soneto</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Amor brilla en los ojos 
+		de mi amada,<br>y se torna gentil cuando ella mira:<br>donde pasa, todo 
+		hombre a verla gira<br>y a quien ve tiembla el alma enamorada.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Anochece si esconde su 
+		mirada,<br>y por volverla a ver todo suspira:<br>ante ella la soberbia 
+		huye y la ira;<br>bellas, honrad conmigo a mi adorada.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Feliz mil veces quien 
+		la ve y la siente;<br>al nacerle el alma al punto empieza<br>todo 
+		humilde pensar, toda dulzura,</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">y no sabe, almirarla 
+		sonriente,<br>si en ella se excedi&oacute; naturaleza,<br>o el milagro gentil 
+		tanta hermosura.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de: 
+		Alejandro Araoz Frazer</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><a name="SONETO XL">
+		</a></font><font face="Georgia" color="#C4CAD4">Soneto XL</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Peregrinos que vais meditabundos<br>talvez en algo que no veis 
+		presente:<br>&iquest;Venis desde una tan remota gente<br>que os miro, con 
+		agobios tan profundos</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">y sin llanto en los 
+		ojos errabundos,<br>ir a trav&eacute;s de la ciudad doliente,<br>como si ciego, 
+		sordo, indiferente,<br>la viera vuestro ser desde otros mundos?</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Me dice el coraz&oacute;n 
+		entre lamentos<br>-parad por escucharlo unos momentos-<br>que al salir 
+		d'ella os seguir&aacute; el quebranto.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Ya su BEATRIZ s&oacute;lo es 
+		celeste sombra,<br>y de toda palabra que la nombra<br>fluye un acerbo 
+		manantial de llanto.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de: Carlos 
+		L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TANTO GENTILE"></a></font><font face="Georgia" color="#C4CAD4">
+		Tanto gentile</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tanto es gentil el 
+		porte de mi amada,<br>tanto digna de amor cuando saluda,<br>que toda 
+		lengua permanece muda<br>y a todos avasalla su mirada.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Rauda se aleja oy&eacute;ndose 
+		ensalzada<br>-humildad que la viste y que la escuda-,<br>y es a la 
+		tierra cual celeste ayuda<br>en humano prodigio transformada.<br>
+		<br>Tanto embeleso el contemplarla inspira,<br>que al coraz&oacute;n embriaga 
+		de ternura:<br>lo siente y lo comprende quien la mira.<br>
+		<br>Y en sus labios, cual signo de ventura,<br>vagar parece un rizo de 
+		dulzura<br>que el alma va dici&eacute;ndole: &iexcl;Suspira!</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de: Carlos 
+		L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TUTTI LI MIEI PENSER..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Tutti li miei penser...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Sabe s&oacute;lo de Amor mi pensamiento;<br>por &eacute;l y en &eacute;l lo tengo tan 
+		cambiante:<br>de Amor la potestad lo lleva amante,<br>o a loco razonar, 
+		su valimiento.<br>
+		<br>Me infunde en la esperanza dulce aliento,<br>o acerbo lloro en onda 
+		desbordante;<br>tan s&oacute;lo se unifica si tremante<br>mi alma de pavor se 
+		ve un momento. 
+		<br><br>Y as&iacute; mi suerte ignoro en la contienda, <br>y no querer decirlo 
+		y que lo diga: 
+		<br>vagando voy en amorosa erranza...<br><br>Y si con todos he de hacer 
+		alianza<br>vano ser&aacute; clamarle a mi enemiga<br>-la insensible Piedad- que 
+		me defienda.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><em>Versi&oacute;n de: Carlos 
+		L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p><font color="#C4CAD4"><br>&nbsp;</font></p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="VEDE PERFETTAMENTE..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Vede perfettamente...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>Bien sabe a cu&aacute;l saluda y reverencia<br>el que vea entre damas a la 
+		m&iacute;a;<br>todas ellas hacerle compa&ntilde;&iacute;a<br>tienen de Dios como gentil 
+		clemencia.<br>
+		<br>De su beldad es t&aacute;nta la excelencia<br>que envidias no despierta ni 
+		fals&iacute;a:<br>bien antes, galanura y ufan&iacute;a<br>-dones de Amor- afinca su 
+		presencia.<br>
+		<br>De su redor dimana mansedumbre<br>y as&iacute; vestidas de su misma lumbre,<br>
+		cada una, sinti&eacute;ndolo, se honora.<br>
+		<br>Fue siempre todo en Ella tan luciente,<br>que nadie, suspirando 
+		dulcemente,<br>podr&aacute; olvidar su gracia arrobadora.<br>
+		<br><em>Versi&oacute;n de: Carlos L&oacute;pez Narv&aacute;ez</em></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font size="3" color="#FFFFFF" face="Basil">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:19:44 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:13:34 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

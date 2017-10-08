@@ -1,0 +1,782 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>&Aacute;lvaro Valverde</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de &Aacute;lvaro Valverde. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Alvaro_Valverde,poesias,poetas,poemas,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app3.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/valverde.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/valverde.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815160558" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./valverde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="29 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:05:58 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./valverde.htm" title="16:32:11 May 29, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:05:58 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./valverde.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:05:58 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./valverde.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>60 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">1 Sep 04 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000001101_2005:-1:011100000000_2006:-1:100011000200_2007:-1:010102010200_2008:-1:010121090001_2009:-1:000000200000_2010:-1:100000002110_2011:-1:000000002130_2012:-1:501010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./VALVERDE.jpg" width="351" height="49">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+<font face="Arial" size="2" color="#9BC9BB">&quot;A tu lado, aunque lejos, tan en ti 
+como ausente, <br>
+reconstruyo velado tu otro rostro invisible...&quot;<br>
+<br>
+</font><font color="#9BC9BB"><img src="./VALVERDE1.jpg" width="330" height="201"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB"><em>&quot;The kiss&quot; 
+(detalle)<br>
+<br>
+Gustav Klimt</em><br>
+</font><font color="#9BC9BB"><br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+	<p align="center"><font color="#9BC9BB"><br></font>
+	<font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta espa&ntilde;ol 
+	nacido en Plasencia en 1959. <br>Fue director&nbsp; durante ocho a&ntilde;os del 
+	Aula de Literatura 
+	<em>Jos&eacute; Antonio Gabriel y Gal&aacute;n</em> junto al novelista&nbsp; <br>
+	Gonzalo Hidalgo Bayal, y cofundador de la revista <i>Espacio/Espaço</i> 
+	escrito. Actualmente dirige la <i>Editora <br>
+	Regional de Extremadura</i>.<br>Ha recibido los premios <em>Ciudad de 
+	Badajoz</em>&nbsp; en 1984, <em>Loewe</em> en 1991, el <em>Ciudad de C&oacute;rdoba</em> 
+	en 1993 y fue finalista <br>
+	en el&nbsp; <em>Premio Caf&eacute; Gij&oacute;n</em>,
+      <em>Tigre Juan</em> y <em>Premio Extremadura a la Creaci&oacute;n</em> por su 
+	primera novela &laquo;Las murallas <br>
+	del mundo&raquo; en el a&ntilde;o 2001.<br>Su &uacute;ltima novela, &laquo; Alguien que no existe&raquo;&nbsp; 
+	fue editada en 2005 por Seix Barral.
+	<br>De su obra po&eacute;tica se destacan: &laquo;Territorio&raquo; 1985, &laquo;Las aguas detenidas&raquo; 
+	1989, &laquo;Una oculta raz&oacute;n&raquo; 1991, <br>
+	&laquo;A debida distancia&raquo; 1993, &laquo;Ensayando c&iacute;rculos&raquo; 1995, &laquo;El reino oscuro&raquo; 1999 
+	y &laquo;Mec&aacute;nica terrestre&raquo; 2002. &copy;<br><br></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia">
+	<img border="0" src="./PERDUBARRA.jpg" width="77"
+      height="9"></font></p>
+	<p align="left"><br></p>
+	<p align="left"><font face="Georgia" color="#B0C6C1"><br></font>
+	<font face="Georgia" color="#96B4AC"><a href="./valverde.htm#CIUDAD DE CENIZA">Ciudad de 
+	ceniza</a><br><br><a href="./valverde.htm#DE UN VIAJERO">De un viajero</a></font></p>
+	<p align="left"><font face="Georgia" color="#96B4AC"><a href="./valverde.htm#Desde fuera">
+	Desde fuera</a><br><br>
+	<a href="./valverde.htm#ESCRITO AL ALBA">Escrito al alba</a><br><br>
+	<a href="./valverde.htm#HE TEMIDO EL ENCUENTRO...">He temido el encuentro...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br>
+	<a href="./valverde.htm#HE LLEGADO...">He llegado. Me acerco...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><br><a href="./valverde.htm#LA SOMBRA DORADA">
+	La sombra dorada</a><br>
+	<br><a href="./valverde.htm#LA SOMBRA FUGITIVA">La sombra fugitiva</a><br><br>
+	<a href="./valverde.htm#MEC&Aacute;NICA TERRESTRE">Mec&aacute;nica terrestre</a><br><br>
+	<a href="./valverde.htm#MEDITACI&Oacute;N EN LONDRES">Meditaci&oacute;n en Londres</a><br><br>
+	<a href="./valverde.htm#POEMA DE AMOR">Poema de amor</a><br><br>
+	<a href="./valverde.htm#SOBRE UN TEMA ROM&Aacute;NTICO">Sobre un tema rom&aacute;ntico</a><br><br>
+	<a href="./valverde.htm#TRENES EN LA NOCHE">Trenes en la noche</a><br><br>
+	<a href="./valverde.htm#UNA ANTIGUA CERTEZA">Una antigua certeza</a><br><br>
+	<a href="./valverde.htm#UNA OCULTA RAZ&Oacute;N">Una oculta raz&oacute;n</a></font><font face="Georgia" size="2" color="#96B4AC"><br><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">Volver a:</font><font face="Georgia" size="2" color="#A7BEB9"> </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font></p>
+	<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+	esta p&aacute;gina</a>
+	</font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; 
+	<br>&nbsp;</p>
+	</blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+			<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+			<img border="0"
+        src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		</blockquote>
+		<p align="left"><font face="Georgia" size="3" color="#B0C6C1"><br>
+		</font><font face="Georgia" size="3" color="#9BC9BB">
+		<a name="CIUDAD DE CENIZA"></a></font>
+		<font face="Georgia" color="#9BC9BB">Ciudad de ceniza 
+		</font>
+		<font face="Georgia" size="2" color="#9BC9BB"> <br><br>Una ciudad es 
+		todas las ciudades. <br><br>Cruzas el mismo and&eacute;n, las avenidas 
+		<br>iguales y lejanas, tan inh&oacute;spitas <br>como esos edificios que 
+		proyectan 
+		<br>su luz v&iacute;trea y opaca en el asfalto. <br><br>Una ciudad es s&oacute;lo un 
+		sentimiento 
+		<br>de euforia o de cat&aacute;strofe, un c&iacute;rculo <br>que es suma de otros 
+		c&iacute;rculos 
+		<br>igual de fantasmales. <br><br>Es un azar, una ciudad; un tramo <br>
+		entre dos direcciones de ida y vuelta, 
+		<br>y un id&eacute;ntico fin y un mismo origen. <br><br>Con la mirada hundida, 
+		el paso r&aacute;pido, 
+		<br>recorres sin cesar las mismas calles <br>que desoladas cercan tu 
+		destino. 
+		</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Mec&aacute;nica terrestre&quot; 2002</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="DE UN VIAJERO"></a> </font>
+		<font face="Georgia" color="#9BC9BB">
+		De un viajero</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Quise volver de donde no se vuelve.<br><br>Si el viaje dur&oacute; lo que dura 
+		una vida,<br>fue el destino culpable.<br>Nada hice que hoy me recuerde 
+		el pasado.<br>
+		<br>Una bruma extrav&iacute;a los mares que cruzara<br>y en el puerto se cubren 
+		las balizas de sal.<br>De las ciudades guardo la nostalgia del l&iacute;mite<br>
+		y ning&uacute;n barco lleva el nombre de mi reino.<br>
+		<br>Demor&eacute; la llegada sin saber que perd&iacute;a<br>esa clave dudosa que 
+		dibujan los atlas.<br>S&oacute;lo s&eacute; que fue in&uacute;til. 
+		<br>Vivir&eacute; de olvidarme. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Una oculta raz&oacute;n&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><em style="font-style: normal">
+		<font face="Georgia" color="#9BC9BB"><a name="Desde fuera"></a>Desde 
+		fuera</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Vivir es deslizarse, repetiste,<br>
+		captar nuestra existencia de soslayo<br>
+		o verla desde lejos, en lo alto,<br>
+		con la perplejidad del que contempla.<br>
+		Los que te conocieron aseguran<br>
+		que tu viviste as&iacute;, que no hubo nada<br>
+		ni nadie que pudiera desviarte<br>
+		ni un &aacute;pice siquiera de ese trazo<br>
+		que le diste por fin a tu camino.<br>
+		Esa senda emboscada conduc&iacute;a<br>
+		a una casa perdida entre los p&aacute;ramos.<br>
+		Sobre aquel pedregal erosionado,<br>
+		bajo la ardiente luz de los veranos,<br>
+		una sombra precisa dibujaba<br>
+		el estupor final de tu extrav&iacute;o.<br>
+		En ese santuario estableciste<br>
+		una visi&oacute;n del mundo peligrosa.<br>
+		Rogabas a los dioses con frecuencia<br>
+		que no nos castigaran con desgracias<br>
+		(capaces en su ardor de destruirnos)<br>
+		sin antes ense&ntilde;arnos lo importante:<br>
+		la fr&aacute;gil transparencia de la vida.<br>
+		<br>
+&nbsp;</font></em></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="ESCRITO AL ALBA"></a>Escrito al alba</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Habr&aacute; estado esperando que la noche<br>cumpliera su sentencia contra el 
+		tiempo,<br>el terco maleficio que la habita<br>y que a solas padece<br>
+		cada vez que en el sue&ntilde;o le despierta el temor<br>y, despu&eacute;s, la vigilia 
+		se establece imponiendo<br>una extra&ntilde;a alianza de excepci&oacute;n y costumbre.<br>
+		Habr&aacute; intentado acaso explicar el porqu&eacute;<br>de aceptar sin ceder esa 
+		ciega amenaza<br>que le cerca y, no obstante, &eacute;l espera implacable.<br>
+		En la primera claridad tras la penumbra<br>que agota de la noche el 
+		cauce oscuro,<br>la realidad ordena en sus contornos<br>la tregua en que 
+		apagar otra conciencia.<br>
+		<br><em>De &quot;Una oculta raz&oacute;n&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB"><a name="HE LLEGADO..."></a>
+		</font><font face="Georgia" color="#9BC9BB">He llegado. Me acerco...</font><font face="Georgia" size="2" color="#9BC9BB"><em><br><br></em>
+		He llegado. Me acerco<br>con cautela a la orilla y distingo en las aguas<br>
+		una suerte de antigua y fugaz transparencia.<br>Queda al lado un 
+		<em>desierto</em>, un lugar retirado<br>que una puerta franquea 
+		preservando el destino<br>de los hombres que huyen. Una breve vereda<br>
+		que coronan cipreses nos conduce a la senda<br>reiterada, a los pasos<br>
+		que se llegan a Yuste -el oto&ntilde;o dorado<br>de la hiedra rojiza y el 
+		estanque en penumbra-,<br>al jard&iacute;n de Abad&iacute;a -ruinas, m&aacute;rmol, canales,<br>
+		Lope, acantos y olivos-.<br>Es dif&iacute;cil saber<br>sobre qu&eacute; edificamos<br>
+		la virtud. Qu&eacute; lugares<br>-evocados o vistos- nos contienen.<br>Paredes,<br>
+		tapias, huertos, bancales,<br>muros hechos de piedras<br>colocadas 
+		siguiendo cumplimientos id&eacute;nticos.<br>Minuciosos remiten<br>a un estado 
+		de cosas que se pierde.<br>Ense&ntilde;anzas<br>de la edad sometidas<br>a un 
+		complejo sistema en precario equilibrio.<br>Su presencia anticipa la 
+		verdad de la historia.<br>No es extra&ntilde;o volver, sorprendido, la vista<br>
+		y caer en la cuenta: somos agua, y aun piedra;<br>&aacute;rbol, r&iacute;o, retamas. 
+		Somos tierra. Hago m&iacute;as<br>las razones de Anteo.<br>
+		<br>Arrancada a la roca la ruindad de los huertos,<br>empe&ntilde;ados en darle 
+		a las aguas su cauce,<br>embalsando su fuerza en los largos est&iacute;os,<br>
+		aguardando la nieve transformada en torrente,<br>afinando en la viga la 
+		bondad de los troncos,<br>observando en las nubes la promesa de lluvia,<br>
+		&iquest;no cumplirnos un ciclo necesario e id&eacute;ntico?<br>
+		<br><em>De &quot;El reino oscuro&quot; 1999</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#9BC9BB">
+		<a name="HE TEMIDO EL ENCUENTRO..."></a></font>
+		<font face="Georgia"
+      color="#9BC9BB">He temido el encuentro. S&iacute;, supuse probado...</font><font face="Georgia" size="2"
+      color="#9BC9BB"><br><em><br></em>He temido el encuentro. S&iacute;, supuse 
+		probado<br>que esa ignota comarca encerraba secretos<br>que eran m&iacute;os de 
+		antiguo.<br>Que su mito era fruto de una aciaga mentira.<br>Sus leyendas 
+		tejieron una red de emboscadas.<br>Cuando apenas conozco, hago m&iacute;as las 
+		huellas<br>de esos pasos que ahora<br>asimila la sombra.<br>Cada casa o 
+		iglesia, cada muro o sendero,<br>participan del tr&aacute;nsito.<br>Suspendidos 
+		proponen su ficci&oacute;n de promesas.<br>Junto al r&iacute;o, sentado, al pasar de 
+		la noche,<br>he entendido lo in&uacute;til de ofrecerles batalla.<br>Paralelos 
+		discurren dos viajes. A un tiempo,<br>retrocedo y avanzo. Peregrino a 
+		las fuentes<br>y aun as&iacute; permanezco.<br>Voy de paso. &iquest;Hacia d&oacute;nde?<br>&iquest; 
+		Qu&eacute; remoto espejismo me depara el presente ?<br>&iquest;Por qu&eacute; yendo, regreso? 
+		Trazo c&iacute;rculos, lanzo<br>-piedras planas al agua. En sus ondas intento<br>
+		apresar el que sea, para m&iacute;, convincente.<br>Con paciencia, persisto. 
+		Fijo el pulso. Procedo.<br>Son ensayos fallidos. Dar&aacute;n cuenta alg&uacute;n d&iacute;a<br>
+		de la vida de un hombre: solo, ajeno, consigo.<em><br>
+		<br>
+&nbsp;</em></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LA SOMBRA DORADA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		La sombra dorada</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Abro la verja del jard&iacute;n sin nadie.<br>Espera mi llegada el viejo 
+		limonero<br>y al verlo me parece<br>que no hubiera pasado en parte 
+		alguna<br>todo este largo tiempo,<br>que siempre hubiera estado 
+		<br>sentado en esta sombra, silencioso,<br>viendo pasar los d&iacute;as<br>con 
+		la mirada turbia de los que nada esperan,<br>pero al fin sobreviven.<br>
+		Con tanta asiduidad he recordado<br>este mismo lugar<br>que no es 
+		extra&ntilde;o<br>sentir la vuelta a casa<br>como un hecho casual como si ahora<br>
+		volviera una vez m&aacute;s y simplemente<br>cerrara una vez m&aacute;s la misma 
+		puerta.<br>La casa es hacia dentro el laberinto<br>que siempre he 
+		perseguido. Permanece 
+		<br>sitiada por los muros <br>azules de la infancia,<br>por ecos de una 
+		edad sobrevenida.<br>En la azotea, 
+		<br>el puerto sigue siendo un sue&ntilde;o antiguo<br>y arriba en las estrellas<br>
+		leo de nuevo<br>el rumbo del viaje que comienza.<br>
+		<br><em>De &quot;Una oculta raz&oacute;n&quot; 1991<br></em><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="LA SOMBRA FUGITIVA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		La sombra fugitiva</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>Este viento tan c&aacute;lido que recompone ahora<br>un verano tard&iacute;o; la 
+		luz anaranjada<br>del cuarto y la penumbra<br>de los libros que aguardan 
+		<br>al lector del invierno.<br>Las breves y oscilantes l&iacute;neas de sol<br>
+		dispuestas, la desdichada espera<br>de quien cifr&oacute; en la huida<br>la 
+		raz&oacute;n y el principio<br>y reconoce apenas que una ciudad le acecha<br>y 
+		&eacute;sta ser&aacute; la &uacute;nica.<br>Aqu&eacute;l que en la distancia quiso amar lo rec&oacute;ndito<br>
+		y el tiempo le devuelve la certeza del sitio.<br>Aqu&eacute;l &eacute;ste que ahora 
+		-ya dec&iacute;a-<br>se empe&ntilde;a, y recupera en vano<br>lo que nunca ha existido,<br>
+		y en el viento que entra, cuando atardece, observa,<br>toma papel y 
+		escribe. 
+		<br>Yo mismo, el que contempla<br>el r&iacute;o entre las hojas, cierra la 
+		puerta y vuelve<br>a ocupar su costumbre.<br>Aqu&eacute;l al que le basta la 
+		sombra fugitiva, 
+		<br>el instante, esa ef&iacute;mera raz&oacute;n de permanencia. <br><br><em>De &quot;Una 
+		oculta raz&oacute;n&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="MEC&Aacute;NICA TERRESTRE"></a> </font>
+		<font face="Georgia" color="#9BC9BB">Mec&aacute;nica terrestre</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Lo mismo que una imagen 
+		<br>recuerda a alguna an&aacute;loga <br>y una sombra a la fresca <br>humedad 
+		de otra estancia 
+		<br>y un olor a una escena <br>cercana por remota <br>y esta ciudad a 
+		aqu&eacute;lla 
+		<br>habitable y distante, <br>as&iacute;, cuando la tarde <br>se hace eterna y 
+		es julio 
+		<br>todo expresa una m&uacute;ltiple, <br>inasible presencia, <br>y el agua es 
+		m&aacute;s que el filtro 
+		<br>de lo que fluye y pasa <br>y la luz m&aacute;s que el velo <br>que ilumina 
+		las cosas 
+		<br>y el viento m&aacute;s que el nombre <br>de una oscura noticia. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Mec&aacute;nica terrestre&quot; 2002</em><br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="MEDITACIÓN EN LONDRES"></a></font>
+		<font face="Georgia" color="#9BC9BB">Meditaci&oacute;n en Londres</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Escucho en la sumisa soledad de la tarde<br>el rumor de las sombras 
+		cuando llega la noche<br>y en la ventana, oblicua, la luz se ha 
+		detenido.<br>
+		<br>Lo que est&aacute; al otro lado,<br>&iquest;no son, acaso, id&eacute;nticas visiones<br>
+		de ciudades distintas<br>unidas por su sola sucesi&oacute;n en el tiempo?<br>
+		<br>Las ramas de Hyde Park que hoy oscurecen<br>la mesa donde escribo,<br>
+		&iquest;no son en su quietud las contempladas<br>alg&uacute;n lejano d&iacute;a que regresa?<br>
+		<br>Se dibuja un perfil, la vaga imagen<br>de un paisaje que agota su 
+		presencia<br>como demora de su ser inm&oacute;vil.<br>
+		<br>El caer de las hojas reconoce <br>su tr&aacute;nsito fugaz en la distancia<br>
+		que separa la vida de su muerte.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De 
+		&quot;Una oculta raz&oacute;n&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="POEMA DE AMOR"></a></font>
+		<font face="Georgia" color="#9BC9BB">Poema de amor</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		De verdad es ahora 
+		<br>cuando te reconozco. <br>S&oacute;lo a trav&eacute;s del sue&ntilde;o <br>tus contornos 
+		son n&iacute;tidos, 
+		<br>oigo clara tu voz, <br>recupero tus gestos <br>y tu lenta presencia 
+		<br>como el lento mecerse <br>de las aspas que giran <br>sobre nuestras 
+		cabezas. 
+		<br>Con la misma demora <br>con que tomas un ba&ntilde;o <br>al final de la 
+		tarde. 
+		<br><br>Te conozco en la oscura raz&oacute;n <br>que sucede a la noche, <br>en 
+		la fr&aacute;gil frontera 
+		<br>de la luz, cuando el tiempo <br>es m&aacute;s real que nunca <br>o eso, 
+		acaso, parece. 
+		<br><br>A tu lado, aunque lejos, <br>tan en ti como ausente, <br>
+		reconstruyo velado 
+		<br>tu otro rostro invisible, <br>el que en la edad d&eacute; forma <br>a la 
+		que en sue&ntilde;os eres.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em>De &quot;A 
+		debida distancia&quot; 1993 </em><br><br></font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em><a name="SOBRE UN TEMA ROM&Aacute;NTICO"></a></font>
+		<font face="Georgia" color="#9BC9BB">Sobre un tema rom&aacute;ntico </font>
+		<font face="Georgia" size="2" color="#9BC9BB"> <br>
+		<br>Cada d&iacute;a visitaba la casa.<br>Las palabras dispuestas,<br>la 
+		estancia en la penumbra<br>de las horas m&aacute;s c&oacute;mplices,<br>ambos sentados 
+		en el coraz&oacute;n de la noche<br>desvelando al un&iacute;sono<br>la dudosa frontera 
+		de la luz y la sombra.<br>Fuera, el verano encend&iacute;a la isla.<br>Los ecos 
+		llegaban apagados y oscuros<br>como nos llega aquello que sabemos 
+		cercano<br>y, adem&aacute;s, conocemos.<br>Le&iacute;amos de nuevo -renovando aquel 
+		rito-<br>la vida imaginada que enfrent&aacute;bamos juntos,<br>la com&uacute;n 
+		experiencia: nuestros viejos deseos,<br>las lecturas amadas, los 
+		paisajes que fueron<br>nuestra propia mirada,<br>lo que perteneci&eacute;ndonos 
+		era rev&eacute;s y causa,<br>el final y el principio.<br>Vivir era m&aacute;s f&aacute;cil 
+		parec&iacute;a sencillo.<br>Nos bastaba sentir nuestra voz encendida<br>y la 
+		muda presencia de las altas estrellas.<br>Al alba, de regreso, cada cual 
+		conservaba 
+		<br>la secreta esperanza de iniciar nuevamente<br>el texto abandonado, 
+		el libro perseguido,<br>por siempre inalcanzable.<br>
+		<em><br>De &quot;Una oculta raz&oacute;n&quot; 1991</em></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><em><br>
+		</em></font><font face="Georgia" color="#9BC9BB"><a name="TRENES EN LA NOCHE"></a>
+		Trenes en la noche</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Imagina dos trenes, 
+		<br>rodando en la alta noche, <br>que se cruzan de golpe, <br>camino 
+		cada cual de su destino.<br>
+		<br>En cualquier parte, <br>en medio de un empalme en ning&uacute;n sitio,<br>
+		por v&iacute;as oxidadas, los vagones, 
+		<br>de pronto, se detienen.<br><br>Miras por el cristal y all&iacute;,<br>en lo 
+		negro, 
+		<br>se ilumina una cara justo enfrente.<br><br>De momento has pensado 
+		que es la tuya<br>reflejando tu insomnio y tu cansancio.<br>Es una 
+		sensaci&oacute;n. Dura un instante.<br>
+		<br>Te fijas con cuidado en la ventana<br>y el rostro que se enciende al 
+		otro lado<br>es, sin duda, de otro. 
+		<br>De una oscura mujer, para m&aacute;s se&ntilde;as.<br>Es hermosa, te dices, 
+		mientras miras<br>sus ojos en los tuyos duplicados.<br>
+		<br>La escena es moment&aacute;nea. <br>Tras un ruido met&aacute;lico <br>y muy seco, 
+		el movimiento<br>empieza a separaros para siempre.<br>
+		<br>Ninguno de los dos hac&eacute;is ya nada<br>que impida lo que es 
+		inevitable.<br>
+		<br>Con el ruido del tren y el traqueteo<br>supones que pensabais en lo 
+		mismo:<br>que fue un vano espejismo, 
+		<br>que fue un sue&ntilde;o.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a
+      name="UNA ANTIGUA CERTEZA"></a></font>
+		<font face="Georgia" color="#9BC9BB">
+		Una antigua certeza</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		La flama de la siesta socava las paredes<br>y agota en su fulgor esa 
+		mirada<br>de lo que siendo escapa a la raz&oacute;n. Preguntas<br>si habr&aacute; de 
+		sucedernos la edad en que perviva<br>todo lo que merece la presencia:<br>
+		el rosal inflamado, las aguas repetidas<br>en ese &uacute;nico r&iacute;o que vive 
+		para siempre,<br>la rueda de molino de apariencia inmutable<br>y la casa 
+		erigida sobre una red de arena.<br>Acaso la respuesta est&eacute; en el arco<br>
+		y su umbral desgastado,<br>en esa enredadera sometida a la forma,<br>en 
+		el denso dolor de este manso silencio.<br>Anticipa la tarde una antigua 
+		certeza<br>de la que s&oacute;lo es c&oacute;mplice la sombra:<br>el ocaso ser&aacute; la 
+		nueva aurora. 
+		<br><br><em>De &quot;Una oculta raz&oacute;n&quot; 1991</em><br><br></font>
+		</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"><br>
+		<br>&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="UNA OCULTA RAZÓN"></a>Una oculta raz&oacute;n</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+		Miro la hiedra que a mi puerta muestra<br>la verde lluvia sucesiva y 
+		ciega;<br>traspaso un nuevo umbral, piso sus losas,<br>me s&eacute; en otro 
+		recinto que conozco.<br>Entro, y en la costumbre de la luz mis ojos<br>
+		penetran el silencio, en vano se preguntan.<br>Se saben de paso, se 
+		contentan<br>con su p&aacute;lida atm&oacute;sfera, se funden<br>con el olor que el 
+		tiempo ha reposado<br>en sus estancias h&uacute;medas.<br>Su oscuridad se 
+		puebla de palabras<br>repetidas al ritmo de la asfixia,<br>entre 
+		alacenas y humo.<br>
+		<br>Esta casa es ahora mi morada,<br>el territorio inh&oacute;spito que aloja<br>
+		las aguas placentarias<br>donde el canto construye 
+		<br>su forma hacia lo hondo.<br>Donde torna la rosa subterr&aacute;nea<br>(que 
+		urge material, que hermosa emerge)<br>en lengua poderosa.<br>Me interno 
+		en los rincones que rodean el patio.<br>Conservan sus enseres<br>la 
+		apariencia observada por los viejos objetos:<br>la urna, el astrolabio, 
+		la m&aacute;scara, el espejo.<br>De su interior destilan la tensi&oacute;n que no 
+		dicen.<br>
+		<br>Compone su armon&iacute;a una vasta intemperie,<br>un interior que oculta 
+		un dios oscuro.<br>Me encuentro a gusto entre su accidental presencia<br>
+		de gastadas im&aacute;genes, de inscripciones caducas.<br>Lo que supuse, ellos, 
+		desva&iacute;dos asertan.<br>La penumbra de las cosas que habito<br>es el dulce 
+		lugar donde halla el asombro 
+		<br>la alta luz del encuentro,<br>la velada noticia de su origen m&aacute;s 
+		claro.<br>
+		<br>El cristal ha adoptado una distancia equ&iacute;voca.<br>Lo que fui, lo que 
+		he sido, no lo sabe mi mano<br>(que desconoce el pulso de mi centro, 
+		<br>que yerra al calcular mi edad perfecta).<br>La mano desconoce el 
+		atributo<br>de quien alza y perece, se levanta,<br>y es hueco su 
+		cimiento, y es de aire. 
+		<br>&iquest;Es derrota silencio? <br>Acaso este horizonte conocido <br>en el 
+		recuerdo de la Habana Vieja<br>sea la salvaci&oacute;n, la piedra, el sue&ntilde;o.<br>
+		Acaso ya mi nada.<br>
+		<br>En el blanco, la huella<br>que recorre el pasado,<br>la niebla de 
+		febrero sobre el lago 
+		<br>y la velocidad ajena<br>con que los coches cruzan sus orillas.<br>
+		Sobre el papel los claros de un bosque<br>a las afueras<br>de una ciudad 
+		que ignoro,<br>la vegetal sabidur&iacute;a de la sombra,<br>el oquedal 
+		sol&iacute;cito.<br>En estas letras, tinta del fondo de la noche.<br>El espacio 
+		se torna fragmentario, difuso.<br>He recogido restos de un discurso 
+		arrasado,<br>de un canto ya abolido.<br>
+		<br>Me detengo en el vidrio<br>que mi h&aacute;lito empa&ntilde;a.<br>S&uacute;bitamente 
+		sopla el sirocco de Roma<br>(hace tanto. ..), la tarde 
+		<em>(via Ges&uacute; e Mar&iacute;a)</em><br>en que quiso la muerte<br>aventar sus 
+		cenizas.<br>(La palabra 
+		<em>nada</em> es hermosa, dijiste.)<br>No acepta la costumbre la sombra 
+		que tuvimos:<br>es pura argucia el tiempo.<br>
+		<br>La mirada se fija en las llamas azules.<br>Ya nublada, se vence.<br>
+		Es in&uacute;til saber d&oacute;nde me encuentro.<br>&iquest;Son acaso estas aguas un fiel 
+		eco del T&iacute;ber?<br>
+		<br>Ha cesado la lluvia: La ciudad ahora altera<br>la visi&oacute;n de su 
+		herrumbre.<br>
+		<br><em>De &quot;Una oculta raz&oacute;n&quot; 1991</em><br><br><br><br>
+		</font></p>
+		<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+		<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+		<font color="#AAC0D5">
+		<a
+      href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" target="_blank">
+		<img
+      src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0"
+      alt="AddFreeStats.com Free Web Stats in real-time !"></a></font></noscript> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+		</p>
+	</blockquote>
+</blockquote>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:05:58 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:26:41 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

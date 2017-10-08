@@ -1,0 +1,658 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Vicente Aleixandre</title>
+<meta
+NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Vicente Aleixandre. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros. Viaje de quinientos a&ntilde;os a trav&eacute;s de la poes&iacute;a, desde el siglo XIV hasta nuestros d&iacute;as."
+CONTENT="Poetas cl&aacute;sicos con sus poemas, sonetos, romances y canciones desde el siglo XIV hasta el siglo XX.">
+<meta NAME="keywords"
+CONTENT="Vicente_Aleixandre,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#43504C;text-decoration : none;}
+a:active {color : #43504C;text-decoration : none;}
+a:visited {color :#43504C;text-decoration : none;}
+a:hover {color:#700808}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./OROFONDO1.jpg" link="#526462" vlink="#526462" alink="#526462">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app18.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/aleixandreORO.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/aleixandreORO.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815161758" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./aleixandreORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:17:58 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./aleixandreORO.htm" title="16:22:39 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:17:58 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./aleixandreORO.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:17:58 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./aleixandreORO.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>71 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">6 Jul 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000110101_2003:-1:010101010001_2004:-1:010101010201_2005:-1:010100000010_2006:-1:010021000200_2007:-1:510112020100_2008:-1:111121000102_2009:-1:101000100000_2010:-1:100000001211_2011:-1:000000001111_2012:-1:020010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center"><br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+<img border="0" src="./ALEIXANDREORO.jpg" width="309" height="29"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+<img border="0" src="./ALEIXANDREORO1.jpg" width="203" height="21"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+
+<p align="center"><br>
+</p>
+
+<blockquote>
+  <blockquote>
+    <p align="left"><strong><font face="Arial" size="2" color="#526462"><br>
+	</font><font face="Georgia" color="#526462"><a href="./aleixandreORO.htm#BESO ALEGRE">Beso 
+	alegre</a><br>
+	<br>
+	<a href="./aleixandreORO.htm#CABELLERA NEGRA">Cabellera negra</a></font></strong></p>
+	<p align="left"><strong><font face="Georgia" color="#526462">
+	<a href="./aleixandreORO.htm#Como el vilano">Como el vilano</a><br><br>
+	<a href="./aleixandreORO.htm#EL PERFUME">El perfume</a><br>
+	<br>
+	<a href="./aleixandreORO.htm#EL SUE&Ntilde;O">El sue&ntilde;o</a><br><br>
+	<a href="./aleixandreORO.htm#ESP&Iacute;RITUS DE LA AURORA">Esp&iacute;ritus de la aurora</a><br>
+	<br>
+	<a href="./aleixandreORO.htm#LA PLAZA">La plaza</a><br>
+	<br>
+	<a href="./aleixandreORO.htm#LOS BESOS">Los besos ( 2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</a><br><br>
+	<a href="./aleixandreORO.htm#MIRADA FINAL">Mirada final</a>&nbsp;&nbsp;&nbsp; 
+	<br><br>
+	<a href="./aleixandreORO.htm#SOMBRA FINAL">Sombra final</a><br>
+	<br>
+	<a href="./aleixandreORO.htm#YO TE HE QUERIDO COMO NUNC">Yo te he querido como nunca...</a>&nbsp;&nbsp;&nbsp; 
+	</font></strong></p>
+	<p align="left"><strong><font face="Georgia" size="2" color="#404D48">M&aacute;s 
+	poes&iacute;a de este autor en: </font></strong><b><font face="Georgia">
+	<a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></b><strong><font face="Georgia" size="2" color="#526462"><br> 
+	</font><font face="Georgia" size="2" color="#404D48">Puedes escuchar al 
+	poeta en: </font><font face="Georgia" color="#526462"> 
+	<a href="./poetas.htm">La voz de los poetas</a></font><font face="Georgia" size="3" color="#526462"><br><br>
+	</font><font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462"> </font>
+	<font face="Georgia" color="#526462"> 
+	<a
+      href="./">A media voz</a></font><font face="Georgia" size="2" color="#526462"><br></font>
+	<font face="Georgia" size="2" color="#404D48">Volver a:</font><font face="Georgia" size="2" color="#526462"> </font>
+	<font face="Georgia" color="#526462"> 
+	<a href="./poesiadeoro.htm">Poes&iacute;a de Oro</a></p>
+    </font><font face="Georgia" size="2" color="#526462">
+    <blockquote>
+      <p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#526462"><strong><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para 
+		recomendar esta p&aacute;gina</a> </strong>&nbsp;&nbsp;</font>&nbsp;&nbsp; <br>
+      </p>
+      <p align="center"><font color="#404D48" size="2">Tus comentarios o 
+		sugerencias ser&aacute;n de gran ayuda <br>
+      para el desarrollo&nbsp;de esta p&aacute;gina. Escr&iacute;benos a:</font><font
+      size="3" color="#404D48"><br>
+      </font><font size="4" color="#404D48"><br>
+      </font><font size="4"><a href="mailto:poesia@amediavoz.com">
+		poesia@amediavoz.com</a></font></p>
+      <p align="center">&nbsp;</p>
+      </font>
+      <p></strong></p>
+      <p align="center">
+		<img border="0" src="./OROBARRA.jpg" width="79" height="8"></p>
+      <p align="center">&nbsp;</p>
+    </blockquote>
+	<p align="left"><strong><font color="#43504C" face="Georgia"><a name="BESO ALEGRE"></a>
+	Beso alegre</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">Beso 
+	alegre, descuidada paloma,<br>blancura entre las manos, sol o nube;<br>
+	coraz&oacute;n que no intenta volar porque basta el calor,<br>basta el ala peinada 
+	por los labios ya vivos.<br>El d&iacute;a se sienta hacia afuera; s&oacute;lo existe el 
+	amor.<br>T&uacute; y yo en la boca sentimos nacer lo que no vive,<br>lo que es el 
+	beso indestructible 
+	<br>cuando la boca son alas, alas que nos ahogan mientras los ojos se 
+	cierran,<br>mientras la luz dorada est&aacute; dentro de los p&aacute;rpados.<br>Ven, ven, 
+	huyamos quietos como el amor;<br>vida como el calor que es todo el mundo 
+	solo,<br>que es esa m&uacute;sica suave que tiembla bajo los pies,<br>mundo que 
+	vuela &uacute;nico, con luz de estrella viva,<br>como un cuerpo o dos almas, como 
+	un &uacute;ltimo p&aacute;jaro.</font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><strong><font color="#43504C" face="Georgia"><a name="CABELLERA NEGRA"></a>
+	Cabellera negra</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">&iquest;Por 
+	qu&eacute; te miro, con tus ojos oscuros,<br>terciopelo viviente en que mi vida 
+	lastimo?<br>Cabello negro, luto donde entierro mi boca,<br>oleaje doloroso 
+	donde mueren mis besos,<br>orilla en fin donde mi voz al cabo se extingue y 
+	moja<br>tu majestad, oh cabellera que en una almohada<br>derramada reinas.</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">En tu 
+	borde se rompen,<br>como en una playa oscura, mis deseos continuos.<br>&iexcl;Oh 
+	inundada: a&uacute;n existes, sobrevives, imperas!<br>Toda t&uacute; victoriosa como un 
+	pico e los mares.</font></strong></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><strong><font face="Georgia" color="#43504C">
+	<a name="Como el vilano"></a>Como el vilano</font></strong></p>
+	<p align="left"><strong><font face="Georgia" size="2" color="#43504C">
+	Hermoso es el reino del amor,<br>
+	pero triste es tambi&eacute;n.<br>
+	Porque el coraz&oacute;n del amante<br>
+	triste es en las horas de la soledad,<br>
+	cuando mira los ojos amados<br>
+	que inaccesibles se posan en las nubes ligeras.<br>
+	Naci&oacute; el amante para la dicha,<br>
+	para la eterna propagaci&oacute;n del amor,<br>
+	que de su coraz&oacute;n se expande<br>
+	para verterse sin t&eacute;rmino<br>
+	en el puro coraz&oacute;n de la amada entregada.<br>
+	Pero la realidad de la vida,<br>
+	la solicitaci&oacute;n de las diarias horas,<br>
+	la misma nube lejana, los sue&ntilde;os, el corto vuelo inspirado del juvenil 
+	coraz&oacute;n que &eacute;l ama,<br>
+	todo conspira contra la perduraci&oacute;n sin descanso de la llama imp0sible.<br>
+	Aqu&iacute; el amante contempla<br>
+	el rostro joven<br>
+	el adorado perfil rubio,<br>
+	el gracioso cuerpo que reposado un instante en sus brazos descansa.<br>
+	Viene de lejos y pasa, <br>
+	y pasa siempre,<br>
+	y mientras ese cuerpo duerme o gime de amor en los brazos amados,<br>
+	el amante sabe que pasa, <br>
+	que el amor mismo pasa,<br>
+	y que este fuego generoso que en &eacute;l no pasa<br>
+	presencia puro el tr&aacute;nsito dulc&iacute;simo de lo que eternamente pasa.<br>
+	Por eso el amante sabe<br>
+	que su amada le ama<br>
+	una hora, mientras otra hora sus ojos<br>
+	leves discurren<br>
+	en la nube falaz que pasa y se aleja.<br>
+	Y sabe que todo el fuego que com&uacute;n se ha elevado<br>
+	s&oacute;lo en &eacute;l dura. Porque ligera y transitoria es la muchacha<br>
+	que se entrega y se reh&uacute;sa,<br>
+	que gime y sonr&iacute;e.<br>
+	Y el amante la mira<br>
+	con el infinito amor de lo que se sabe instant&aacute;neo.<br>
+	Dulce es, acaso m&aacute;s dulce, m&aacute;s trist&iacute;simamente dulce,<br>
+	verla en los brazos<br>
+	en su ef&iacute;mera entrega.<br>
+	&laquo;Tuyo soy-dice el cuerpo armonioso-.<br>
+	pero s&oacute;lo un instante.<br>
+	Ma&ntilde;ana,<br>
+	ahora mismo,<br>
+	despierto de este beso y contemplo<br>
+	el pa&iacute;s, este r&iacute;o, esa rama, aquel p&aacute;jaro.&raquo;<br>
+	Y el amante la mira<br>
+	infinitamente pesaroso -g]orioso y cargado-.<br>
+	Mientras ella ligera se exime,<br>
+	adorada y dorada<br>
+	y leve discurre.<br>
+	Y pasa, y se queda. Y se alza y vuelve.<br>
+	Siempre leve, siempre aqu&iacute;, siempre ,all&iacute;; siempre.<br>
+	Como el vilano.</font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><strong><font color="#43504C" face="Georgia"><a name="EL PERFUME"></a>
+	El perfume</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">Chupar 
+	tu vida sobre los labios,<br>no es quererte en la muerte.<br>Chupar tu vida, 
+	amante,<br>para que lenta mueras<br>de m&iacute;, de m&iacute; que mato.<br>para agotar tu 
+	vida<br>como una rosa exhausta.<br>color, olor: mis venas<br>saben a ti: 
+	all&iacute; te abres.<br>Ebriamente encendido,<br>t&uacute; me recorres. toda,<br>toda mi 
+	sangre es s&oacute;lo<br>perfume. T&uacute; me habitas,<br>aroma arrebatado<br>que por m&iacute; 
+	te despliegas,<br>que como sangre corres<br>por m&iacute;: &iexcl;que a m&iacute; me pueblas!</font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><strong><font face="Georgia"><font color="#43504C"><a name="EL SUE&Ntilde;O"></a>
+	El sue&ntilde;o</font><font size="2" color="#43504C"><br><br>Hay momentos de 
+	soledad en que el coraz&oacute;n reconoce, at&oacute;nito, que no ama.&nbsp;<br>Acabamos de 
+	incorporarnos, cansados: el d&iacute;a oscuro.<br>Alguien duerme, inocente, todav&iacute;a 
+	sobre ese lecho.<br>Pero quiz&aacute; nosotros dormimos... 
+	<br>Ah, no: nos movemos.<br>Y estamos tristes, callados. La lluvia, all&iacute; 
+	insiste.<br>Ma&ntilde;ana de bruma lenta, impiadosa. &iexcl;Cu&aacute;n solos!<br>Miramos por 
+	los cristales. Las ropas, ca&iacute;das;<br>el aire, pesado; el agua, sonando. Y el 
+	cuarto,<br>helado en este duro invierno que, fuera, es distinto.<br>
+	<br>As&iacute; te quedas callado, tu rostro en tu palma.<br>Tu codo sobre la mesa. 
+	La silla, en silencio.<br>Y s&oacute;lo suena el pausado respiro de alguien,<br>de 
+	aquella que all&iacute;, serena, bell&iacute;sima, duerme<br>y sue&ntilde;a que no la quieres, y 
+	t&uacute; eres su sue&ntilde;o.</font></font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p><font class="cuerpo"><font color="#43504C">&nbsp;</font></p>
+	<p></font><strong><font face="Georgia"><font color="#43504C"><a name="ESP&Iacute;RITUS DE LA AURORA"></a>
+	</font>
+	<font
+      class="cuerpo" color="#43504C">Esp&iacute;ritus de la aurora</font></font></strong></p>
+	<p><strong><font class="cuerpo" size="2" color="#43504C" face="Georgia">No, 
+	no es la ahora cuando la noche va cayendo, <br>tambi&eacute;n con la misma dulzura <br>
+	pero con un lev&iacute;simo vapor de ceniza,
+	<br>cuando yo correr&eacute; tras vuestras sombras amadas. <br><br>Lejos est&aacute;n las 
+	inmarchitas horas matinales,
+	<br>imagen feliz de la aurora impaciente, <br>tierno nacimiento de la dicha 
+	en los labios, 
+	<br>en los seres que yo am&eacute; en vuestras m&aacute;rgenes. <br><br>El placer no 
+	tomaba el temeroso nombre de placer, 
+	<br>ni el turbio espesor de los bosques hendidos, <br>sino la embriagadora 
+	nitidez de las ca&ntilde;adas abiertas 
+	<br>donde la luz se desliza con sencillez de p&aacute;jaro. <br><br>Por eso os amo, 
+	inocentes, amorosos seres mortales 
+	<br>de un mundo virginal que diariamente se repet&iacute;a <br>cuando la vida 
+	sonaba en las gargantas felices 
+	<br>de las aves, los r&iacute;os, los aires y los hombres. </font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p><font class="cuerpo"><font color="#43504C">&nbsp;</font></p>
+	<p></font><strong><font face="Georgia"><font color="#43504C"><a name="LA PLAZA"></a>
+	</font>
+	<font class="cuerpo" color="#43504C">L</font></font><font face="Georgia" color="#43504C">a 
+	plaza</font></strong></p>
+	<p><strong><font face="Georgia">
+	<font class="cuerpo" size="2" color="#43504C">Era una gran plaza abierta, y 
+	hab&iacute;a olor de existencia. <br>Un olor a gran sol descubierto, a viento 
+	riz&aacute;ndolo, 
+	<br>un gran viento que sobre las cabezas pasaba su mano, <br>su gran mano 
+	que rozaba las frentes unidas 
+	<br>y las reconfortaba. <br><br>Y era el serpear que se mov&iacute;a <br>como &uacute;nico 
+	ser, no s&eacute; si desvalido, no s&eacute; si poderoso, 
+	<br>pero existente y perceptible, pero cubridor de la tierra. <br><br>All&iacute; 
+	cada uno puede mirarse y puede alegrarse 
+	<br>y puede reconocerse. <br>Cuando en la tarde caldeada, solo en tu 
+	gabinete, 
+	<br>con los ojos extra&ntilde;os y la interrogaci&oacute;n en la boca, <br>quisieras&nbsp; 
+	preguntar algo a tu imagen, 
+	<br><br>no te busques en el espejo, <br>en un extinto di&aacute;logo en que no te 
+	oyes. 
+	<br>Baja, baja despacio y b&uacute;scate entre los otros. <br>All&iacute; est&aacute;n todos, y 
+	t&uacute; entre ellos. 
+	<br>Oh, desn&uacute;date y f&uacute;ndete, y recon&oacute;cete.</font></font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p>&nbsp;</p>
+	<p><strong><font face="Georgia" size="2" color="#43504C">
+	<a name="LOS BESOS"></a> </font><font face="Georgia" color="#43504C">
+	Los besos</font><font face="Georgia" size="2" color="#43504C"><br>
+	<br>
+	S&oacute;lo eres t&uacute;, continua,<br>
+	graciosa, quien se entrega,<br>
+	quien hoy me llama. Toma,<br>
+	toma el calor, la dicha,<br>
+	la cerraz&oacute;n de bocas<br>
+	selladas. Dulcemente<br>
+	vivimos. Muere, r&iacute;ndete.<br>
+	S&oacute;lo los besos reinan:<br>
+	sol tibio y amarillo,<br>
+	riente, delicado,<br>
+	que aqu&iacute; muere, en las bocas<br>
+	felices, entre nubes<br>
+	rompientes, entre azules<br>
+	dichosos, donde brillan<br>
+	los besos, las delicias<br>
+	de la tarde, la cima<br>
+	de este poniente loco,<br>
+	quiet&iacute;simo, que vibra<br>
+	y muere. &#8211;Muere, sorbe<br>
+	la vida. &#8211;Besa. &#8211;Beso.<br>
+	&iexcl;Oh mundo as&iacute; dorado! </font></strong></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><strong><font color="#43504C" size="2" face="Georgia">
+	<a name="MIRADA FINAL"></a></font>
+	<font color="#43504C" face="Georgia">
+	Mirada final</font><font color="#43504C" size="2" face="Georgia"><br><br>La 
+	soledad, en que hemos abierto los ojos. 
+	<br>La soledad en que una ma&ntilde;ana nos hemos despertado, ca&iacute;dos, <br>
+	derribados de alguna parte, casi no pudiendo reconocernos. 
+	<br>Como un cuerpo que ha rodado por un terrapl&eacute;n <br>y, revuelto con la 
+	tierra s&uacute;bita, se levanta y casi no puede reconocerse. 
+	<br>Y se mira y se sacude y ve alzarse la nube de polvo que &eacute;l no<br>es, y 
+	ve aparecer sus miembros, 
+	<br>y se palpa: Aqu&iacute; yo, aqu&iacute; mi brazo, y este mi cuerpo, y<br>esta mi 
+	pierna, e intacta est&aacute; mi cabeza; 
+	<br>y todav&iacute;a mareado mira arriba y ve por d&oacute;nde ha rodado, <br>y ahora el 
+	mont&oacute;n de tierra que le cubriera est&aacute; a sus pies y &eacute;l emerge, 
+	<br>no s&eacute; si dolorido, no s&eacute; si brillando, y alza los ojos y el cielo 
+	destella 
+	<br>con un pesaroso resplandor, y en el borde se sienta <br>y casi siente 
+	deseos de llorar. Y nada le duele, 
+	<br>pero le duele todo. Y arriba mira el camino, <br>y aqu&iacute; la hondonada, 
+	aqu&iacute; donde sentado se absorbe 
+	<br>y pone la cabeza en las manos; donde nadie le ve, pero un cielo<br>azul 
+	apagado parece lejanamente contemplarle. 
+	<br>Aqu&iacute;, en el borde del vivir, despu&eacute;s de haber rodado toda la<br>vida 
+	como un instante, me miro. 
+	<br>Esta tierra fuiste t&uacute;, amor de mi vida? Me preguntar&eacute; as&iacute;<br>cuando en 
+	el fin me conozca, cuando me reconozca y despierte, 
+	<br>reci&eacute;n levantado de la tierra, y me tiente, y sentado en la<br>
+	hondonada, en el fin, mire un cielo 
+	<br>piadosamente brillar? <br><br>No puedo concebirte a ti, amada de mi 
+	existir, como solo<br>una tierra que se sacude al levantarse, para acabar 
+	cuando el<br>largo rodar de la vida ha cesado. 
+	<br>No, polvo m&iacute;o, tierra s&uacute;bita que me ha acompa&ntilde;ado todo el vivir. <br>No, 
+	materia adherida y trist&iacute;sima que una postrer mano, la m&iacute;a<br>misma, hubiera 
+	al fin de expulsar. 
+	<br>No: alma m&aacute;s bien en que todo yo he vivido, alma por la que me fue la 
+	vida posible 
+	<br>y desde la que tambi&eacute;n alzar&eacute; mis ojos finales <br>cuando con estos 
+	mismos ojos que son los tuyos, con los que mi alma contigo todo lo mira, 
+	<br>contemple con tus pupilas, con las solas pupilas que siento bajo<br>los 
+	p&aacute;rpados,&nbsp; en el fin el cielo piadosamente brillar. <br><br>
+&nbsp;</font></strong></p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><strong><font color="#43504C" face="Georgia"><a name="SOMBRA FINAL"></a>
+	Sombra final</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">
+	Pensamiento apagado, alma sombr&iacute;a,<br>&iquest;qui&eacute;n aqu&iacute; t&uacute;, que largamente beso?<br>
+	Alma o bulto sin luz, o letal hueso<br>que inm&oacute;vil consumi&oacute; la fiebre m&iacute;a.</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">Aqu&iacute; 
+	ciega pasi&oacute;n se estrell&oacute; fr&iacute;a,<br>aqu&iacute; mi coraz&oacute;n golpe&oacute; obseso,<br>
+	tercamente insisti&oacute;, palpit&oacute; opreso.<br>Aqu&iacute; perdi&oacute; mi boca su alegr&iacute;a.</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">Entre 
+	mis brazos ciega te he tenido,<br>bajo mi pecho respiraste amada<br>y en ti 
+	vivi&oacute; mi sangre tu latido.</font></strong></p>
+	<p align="left"><strong><font size="2" color="#43504C" face="Georgia">Oh 
+	noche oscura. Ya no espero nada.<br>La soledad no miente a tu sentido.<br>
+	Reina la pura sombra sosegada.</font></strong></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#43504C"><img border="0" src="./OROBARRA.jpg" width="79" height="8"></font></p>
+	<p align="left"><font color="#43504C"><br>
+&nbsp;</font></p>
+	<p><strong><font color="#43504C" face="Georgia"><a name="YO TE HE QUERIDO COMO NUNC"></a>
+	Y</font></strong><font color="#43504C" face="Georgia"><strong>o te he 
+	querido como nunca</strong></font><strong><font
+      color="#43504C" face="Georgia">...</font></strong></p>
+	<p align="left"><font size="2" color="#43504C" face="Georgia"><strong>Yo te 
+	he querido como nunca.<br>Eras azul como noche que acaba,<br>eras la 
+	impenetrable caparaz&oacute;n del gal&aacute;pago<br>que se oculta bajo la roca de la 
+	amorosa 
+	<br>llegada de la luz.<br>Eras la sombra torpe<br>que cuaja entre los dedos 
+	cuando en tierra dormimos solitarios.<br>De nada servir&iacute;a besar tu oscura 
+	encrucijada 
+	<br>de sangre alterna,<br>donde de pronto el pulso navegaba<br>y de pronto 
+	faltaba como un mar 
+	<br>que desprecia a la arena.<br>La sequedad viviente de unos ojos 
+	marchitos,<br>de los que yo ve&iacute;a a trav&eacute;s de las l&aacute;grimas,<br>era una 
+	caricia para herir las pupilas,<br>sin que siquiera el p&aacute;rpado se cerrase en 
+	defensa.<br>
+	<br>Cu&aacute;n amorosa forma<br>la del suelo las noches del verano<br>cuando 
+	echado en la tierra se acaricia 
+	<br>este mundo que rueda,<br>la sequedad oscura,<br>la sordera profunda,<br>
+	la cerraz&oacute;n a todo,<br>que transcurre como lo m&aacute;s ajeno a un sollozo.<br>T&uacute;, 
+	pobre hombre que duermes<br>sin notar esa luna trunca<br>que gemebunda 
+	apenas si te roza;<br>t&uacute;, que viajas postrero<br>con la cabeza seca que 
+	rueda entre tus brazos,<br>no beses el silencio sin falla por donde nunca<br>
+	a la sangre se esp&iacute;a,<br>por donde ser&aacute; in&uacute;til la busca del calor<br>que por 
+	los labios se bebe<br>y hace fulgir el cuerpo como con una luz azul 
+	<br>si la noche es de plomo.<br>No, no busques esa gota peque&ntilde;ita,<br>ese 
+	mundo reducido a sangre m&iacute;nima,<br>esa l&aacute;grima que ha latido<br>y en la que 
+	apoyar la mejilla descansa.<br>
+	</strong></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><img border="0" src="./OROBARRA.jpg" width="79" height="8"><strong><font Arial color="#526462" size="2" face="Georgia"><br>
+	&nbsp;</font></strong></p>
+  </blockquote>
+</blockquote><font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:17:58 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:13:32 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

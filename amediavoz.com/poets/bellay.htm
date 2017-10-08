@@ -1,0 +1,664 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Joachim du Bellay</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Joachim du Ballay."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Joachim du Bellay. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Joachim_du_Bellay,poesias,poetas,traducciones,poemas,versos,biografias,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app13.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bellay.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bellay.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815173047" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bellay.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:30:47 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bellay.htm" title="12:26:41 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:30:47 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bellay.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:30:47 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bellay.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>23 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">20 Nov 09 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000010_2010:-1:100000001110_2011:-1:000000003130_2012:-1:201010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BELLAY.jpg" width="400" height="51"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./BELLAY1.jpg" width="211" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="651" height="322">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="643">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="291" width="247" valign="top">
+			<p align="left">
+			<img border="0" src="./BELLAY2.jpg" width="220" height="288">&nbsp;&nbsp;&nbsp;
+			</td>
+			<td width="392" valign="top" height="291">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta&nbsp; franc&eacute;s nacido en Lir&eacute;, Anjou, en 1522.<br>
+			Inici&oacute; estudios de Derecho en Poitiers, donde a los veinti&uacute;n a&ntilde;os de 
+			edad, trab&oacute; amistad con Ronsard y Paletier du Mans,&nbsp; 
+			traslad&aacute;ndose luego a Paris para terminar su carrera en Le Coll&egrave;ge 
+			Coqueret . Form&oacute; parte del grupo <i>La Pl&eacute;yade</i>, movimiento que 
+			le inspir&oacute; su manifiesto para defender la lengua francesa, y las 
+			primeras recopilaciones po&eacute;ticas publicadas en 1549 bajo los nombres
+			<i>&quot;El Olivo&quot;</i> y <i>&quot;Versos l&iacute;ricos&quot;</i>. <br>
+			Entre 1553 y 1557 trabaj&oacute; en Roma como secretario del cardenal&nbsp; 
+			Jean du Bellay. Hastiado por el ambiente corrupto romano, regres&oacute; a 
+			Paris dedic&aacute;ndose por completo al ejercicio literario, con 
+			producciones tan importantes como <i>&quot;El Poeta cortesano&quot;</i> en 
+			1559, y <i>&quot;Sonetos a la reina de Navarra&quot;</i> .<br>
+			Falleci&oacute; repentinamente en enero de 1560.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></p></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Sonetos de Joachim du 
+Bellay:</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia"><font color="#FFFFFF"><br>
+		</font><font size="3" color="#FFFFFF"><br>
+		</font><a href="./bellay.htm#Andar con aire grave y con grave entrecejo...">Andar 
+		con aire grave y con grave entrecejo...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#Esos cabellos de oro los lazos son, Se&ntilde;ora...">Esos cabellos 
+		de oro los lazos son, Se&ntilde;ora...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#Feliz quien tras la muerte se le sigue la gloria...">Feliz 
+		quien tras la muerte se le sigue la gloria...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#&iexcl;Hermosos cabellos plateados, dulcemente revueltos!...">
+		&iexcl;Hermosos cabellos plateados, dulcemente revueltos!...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#Los que est&aacute;n enamorados, cantar&aacute;n sus amores...">Los que 
+		est&aacute;n enamorados, cantar&aacute;n sus amores...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#No escribo ya de amor, no estando enamorado...">No escribo ya 
+		de amor, no estando enamorado...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#No pienses, Robertet, que esta Roma de ahora...">No pienses, 
+		Robertet, que esta Roma de ahora...</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./bellay.htm#No quiero escudri&ntilde;ar de la natura el fondo...">No quiero 
+		escudri&ntilde;ar de la natura el fondo...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><br>
+		<br>
+		<font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#EEEEEE"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		</font><font color="#C4CAD4" face="Georgia">
+		<a name="Andar con aire grave y con grave entrecejo..."></a>Andar con 
+		aire grave y con grave entrecejo...</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Andar con aire grave y 
+		con grave entrecejo,<br>
+		y con sonrisa grave a todos dar contento,<br>
+		sopesar las palabras, responder con los gestos,<br>
+		con un <i>Messer non</i>, o bien un <i>Messer si:</i><br>
+		<br>
+		Entremezclar frecuente un breve <i>El cosi,</i><br>
+		y con un <i>son Servilore</i> imitar al honesto,<br>
+		y como quien parte tuvo en la conquista,<br>
+		de Florencia y de N&aacute;poles ufano discurrir:<br>
+		<br>
+		Se&ntilde;orear a todos con claro besamanos,<br>
+		y siguiendo el ejemplo del patricio romano,<br>
+		ocultar la pobreza con gallardo exterior:<br>
+		<br>
+		He aqu&iacute; de esta corte las virtudes m&aacute;s altas.<br>
+		As&iacute; es que enfermo, pobre, y en muy mala montura,<br>
+		hasta Francia regresas afeitado y sin blanca.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></i><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Esos cabellos de oro los lazos son, Se&ntilde;ora..."></a>Esos 
+		cabellos de oro los lazos son, Se&ntilde;ora...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Esos cabellos de oro los lazos son, Se&ntilde;ora,<br>
+		en los que fue al principio mi libertad tenida;<br>
+		amor prendi&oacute; su llama por todo el coraz&oacute;n,<br>
+		y esos ojos fueron el rayo que atraves&oacute; mi vida.<br>
+		<br>
+		Fuertes los nudos son, la llama &aacute;spera y viva,<br>
+		la saeta, de mano a tirar aguerrida,<br>
+		y con todo, amo, adoro y quiero<br>
+		a la que me estrecha, me quema y lastima.<br>
+		<br>
+		Para romper entonces, apagar o curar<br>
+		el duro lazo, el ardor o la herida,<br>
+		no quiero hierro, licor ni medicina:<br>
+		<br>
+		La dicha y el placer que en sucumbir recibo<br>
+		de tal mano, no permiten que intente<br>
+		ni cortante pu&ntilde;al, ni frialdad, ni p&iacute;tima.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;L'Olive&quot; 1549<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Feliz quien tras la muerte se le sigue la gloria..."></a>Feliz 
+		quien tras la muerte se le sigue la gloria...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Feliz quien tras la 
+		muerte se le sigue la gloria,<br>
+		y a&uacute;n muy m&aacute;s feliz si la inmortalidad<br>
+		para &eacute;l no principia con la posteridad<br>
+		sino que antes de la muerte ya fascina su alma.<br>
+		<br>
+		T&uacute; gozas, Ronsard m&iacute;o, incluso ahora en vida,<br>
+		del inmortal honor que mucho has merecido:<br>
+		y aun antes de morir (felicidad bien rara)<br>
+		tu muy feliz virtud triunfa de las envidias.<br>
+		<br>
+		&Aacute;nimo pues, Ronsard, que la victoria es tuya,<br>
+		y de tu lado tienes el favor de tu rey:<br>
+		De victorioso laurel ya coronan tus sienes,<br>
+		<br>
+		y ya la espesa turba alrededor de ti<br>
+		semeja a esos esp&iacute;ritus que en el &iacute;nfero un d&iacute;a<br>
+		rodearon al tracio sacerdote de gran sobrepelliz. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>Nota del traductor:<br>
+		Soneto obviamente dedicado a la gloria de Ronsard. Pierre de<br>
+		Ronsard (1524-1585), dos a&ntilde;os menor que Du Bellay, fue en seguida<br>
+		considerado como jefe de fila de &quot;La Pl&eacute;iade&quot;.</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></i></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="&iexcl;Hermosos cabellos plateados, dulcemente revueltos!..."></a>
+		&iexcl;Hermosos cabellos plateados, dulcemente revueltos!...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Hermosos cabellos 
+		plateados, dulcemente revueltos!<br>
+		&iexcl;Frente serena y rizada! &iexcl;Y t&uacute;, faz toda de oro!<br>
+		&iexcl;Ojos de cristal hermosos! &iexcl;Grande boca honorada,<br>
+		que con ancho repliegue levantas tus extremos!<br>
+		<br>
+		&iexcl;Lindos dientes de &eacute;bano! &iexcl;Oh tesoros preciosos,<br>
+		que con sonre&iacute;r solo enamor&aacute;is al alma!<br>
+		&iexcl;Damasquina garganta con cien pliegues ornada!<br>
+		&iexcl;Y vosotros pezones, dignos de tan gran cuerpo!<br>
+		<br>
+		&iexcl;Bellas u&ntilde;as doradas! &iexcl;Mano rolliza y breve!&iexcl;<br>
+		&iexcl;Oh muslo delicado! &iexcl;Y vos, redondas piernas!<br>
+		&iexcl;Y eso que honestamente a nombrar ni me atrevo!<br>
+		<br>
+		&iexcl;Bello y transparente cuerpo! &iexcl;Miembros de vidrio bello!<br>
+		&iexcl;Oh, beldades divinas! Perdonadme, os lo ruego,<br>
+		si, pues que soy mortal, a amaros no me atrevo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena </font></i></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>Nota del traductor:<br>
+		Soneto par&oacute;dico. Du Bellay distorsiona e invierte el tono y los topoi<br>
+		habituales en la poes&iacute;a petrarquista. En esto (que llevaron m&aacute;s lejos<br>
+		Quevedo o Lope de Vega, por ejemplo) Du Bellay es barroco o mejor<br>
+		-por su modo- manierista. Ciertas distorsiones de la amada petrarquista<br>
+		la recuerdan, en pintura, a los retratos-bodegones de Giuseppe 
+		Arcimboldo, <br>
+		contempor&aacute;neo de nuestro autor. </i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="Los que est&aacute;n enamorados, cantar&aacute;n sus amores..."></a>Los que 
+		est&aacute;n enamorados, cantar&aacute;n sus amores...</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">Los que est&aacute;n 
+		enamorados, cantar&aacute;n sus amores,<br>
+		los que buscan honor, cantar&aacute;n de la gloria,<br>
+		los que est&aacute;n junto al Rey dir&aacute;n de su victoria,<br>
+		los que son cortesanos ensalzar&aacute;n favores:<br>
+		<br>
+		Los que gustan de artes, hablar&aacute;n de sus ciencias,<br>
+		los que son virtuosos se har&aacute;n tomar por tales,<br>
+		los que frecuentan vino, parlotear&aacute;n de vinos,<br>
+		los que viven en ocio, escribir&aacute;n las f&aacute;bulas,<br>
+		<br>
+		los que son maldicientes ir&aacute;n a maldecir ,<br>
+		los menos enojosos hablar&aacute;n de re&iacute;r ,<br>
+		los que son m&aacute;s valientes pregonar&aacute;n haza&ntilde;as,<br>
+		<br>
+		y los que se estiman mucho cantar&aacute;n su alabanza,<br>
+		los que sin tino adulan har&aacute;n &aacute;ngel al diablo:<br>
+		Yo que soy desgraciado, llorar&eacute; en mi desgracia.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		&nbsp;</font></i><font size="2" color="#C4CAD4" face="Georgia"><br>
+&nbsp;</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">
+		<a name="No escribo ya de amor, no estando enamorado..."></a></font>
+		<font color="#C4CAD4" face="Georgia">No escribo ya de amor, no estando 
+		enamorado...</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">No escribo ya de amor, 
+		no estando enamorado,<br>
+		no escribo de belleza, pues yo no tengo amada,<br>
+		no escribo de dulzor, gustando la rudeza,<br>
+		no escribo de placer, hall&aacute;ndome en dolores:<br>
+		<br>
+		no escribo de la dicha, pues que soy desgraciado,<br>
+		no escribo de favor, no viendo a mi princesa,<br>
+		no escribo de tesoros, no teniendo riquezas,<br>
+		no escribo de salud, siendo ya melanc&oacute;lico:<br>
+		<br>
+		no escribo de la Corte, tan lejos de mi pr&iacute;ncipe,<br>
+		no escribo de Francia, en ajena provincia,<br>
+		no escribo del honor, pues que aqu&iacute; no lo encuentro:<br>
+		<br>
+		no escribo de amistad, hallando fingimiento,<br>
+		no escribo de virtud, si tampoco la veo,<br>
+		no escribo de saber, entre gentes de Iglesia.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></i></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="No pienses, Robertet, que esta Roma de ahora..."></a>No 
+		pienses, Robertet, que esta Roma de ahora...</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>Florimond Robertet, Bar&oacute;n de Alluye. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Cortesano franc&eacute;s, amigo de Do Bellay y de Ronsard. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Se sabe que estuvo en Roma -al menos- en 1555.</i></font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia">No pienses, Robertet, 
+		que esta Roma de ahora<br>
+		es aquella otra Roma que te plac&iacute;a tanto.<br>
+		No dan cr&eacute;dito ya, como sol&iacute;an darlo,<br>
+		ni se hace ya el amor como entonces se hac&iacute;a.<br>
+		<br>
+		Ni paz ni bonanza gobiernan ya aqu&iacute;,<br>
+		la m&uacute;sica y la danza han debido pararse,<br>
+		corrompido est&aacute; el aire, y es Marte quien manda,<br>
+		la turbaci&oacute;n, la pena y el hambre cada d&iacute;a.<br>
+		<br>
+		El corrompido artesano ha cerrado su tienda,<br>
+		el ocioso abogado abandon&oacute; el oficio,<br>
+		y el pobre mercader lleva solo talega:<br>
+		<br>
+		No ves sino soldados, morri&oacute;n a la cabeza,<br>
+		s&oacute;lo tambores oyes o parejo estruendo,<br>
+		y Roma cada d&iacute;a espera otro saqueo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Regrets&quot; 
+		1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></i><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+&nbsp;</font></p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="No quiero escudri&ntilde;ar de la natura el fondo..."></a>No quiero 
+		escudri&ntilde;ar de la natura el fondo...</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<br>
+		No quiero escudri&ntilde;ar de la natura el fondo,<br>
+		no quiero rebuscar la esencia universal,<br>
+		no quiero sondear los abismos cubiertos,<br>
+		ni dibujar del cielo la hermosa arquitectura.<br>
+		<br>
+		No pinto yo mis lienzos con tan rica pintura,<br>
+		y argumentos tan altos no los busco en mis versos:<br>
+		Mas del lugar siguiendo los accidentes varios,<br>
+		sea del bien o del mal, escribo a la ventura.<br>
+		<br>
+		A mis versos les lloro, si tengo una tristeza:<br>
+		y me r&iacute;o con ellos y les cuento el secreto,<br>
+		pues son del coraz&oacute;n muy fieles secretarios.<br>
+		<br>
+		As&iacute; es que no pretendo peinarlos o adornarlos,<br>
+		ni con sonoros nombres los quiero disfrazar<br>
+		sino de notas &iacute;ntimas o propios comentarios.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Les Antiquit&eacute;s 
+		de Rome&quot; 1558<br>
+		Visor 1985<br>
+		Versi&oacute;n de Luis Antonio de Villena</font></i></p>
+		<p>&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:30:47 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:14:37 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

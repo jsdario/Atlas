@@ -1,0 +1,813 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jean Cocteau</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Cocteau." 
+CONTENT="Rese&ntilde;a biogr&aacute;fica, poes&iacute;a visual y amplia selecci&oacute;n de poemas de Jean Cocteau. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jean_Cocteau,poesias,poetas,poemas,poesia_contemporanea,poesia_visual,traducciones,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app2.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/cocteau.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/cocteau.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815173549" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./cocteau.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:35:49 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./cocteau.htm" title="13:35:40 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:35:49 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./cocteau.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:35:49 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./cocteau.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>27 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">27 Jul 11 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000000000_2011:-1:000000102241_2012:-1:801010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./COCTEAU.jpg" width="296" height="40"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./COCTEAU1.jpg" width="203" height="18"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="754" height="368">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="746">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="337" width="322" valign="top">
+			<p align="left"><font color="#FFFFFF">&nbsp;</font><img border="0" src="./COCTEAU2.jpg" width="300" height="340"></td>
+			<td width="420" valign="top" height="337">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u></p>
+			<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Poeta 
+			franc&eacute;s nacido en en la propiedad familiar de Maisons-Laffite, cerca 
+			de Par&iacute;s, en 1889.<br>
+			Perteneciente a una importante familia burguesa, fue un personaje clave de la vanguardia
+			art&iacute;stica y literaria del siglo XX. Creador polifac&eacute;tico e
+			inagotable como poeta, novelista, autor dram&aacute;tico, dibujante,
+			pintor, escen&oacute;grafo, cr&iacute;tico y cineasta, influy&oacute; notoriamente en el 
+			desarrollo de la cultura francesa.<br>
+			Su amplia erudici&oacute;n y sus relaciones familiares, le convirtieron 
+			pronto en un artista admirado antes de que publicase sus primeros 
+			libros po&eacute;ticos <i>&quot;La l&aacute;mpara de Aladino&quot;</i>, <i>&quot;El pr&iacute;ncipe 
+			fr&iacute;volo&quot;</i> y <i><br>
+			&quot;La danza de S&oacute;focles&quot;</i>, entre los 20 y los 23 a&ntilde;os.<br>
+			Amigo de grandes personajes como Proust, Max Jacob, Picasso, 
+			Stravinski y Apollinaire, entre otros, su vida transcurri&oacute; tambi&eacute;n
+			<br>
+			en medio de la bohemia, el opio, y los grandes excesos.<br>
+			Recibi&oacute; distinciones como la de <i>Doctor Honoris Causa por la 
+			Universidad de Oxford</i>, <i>Acad&eacute;mico en B&eacute;lgica</i>, <i>Miembro 
+			de la Academia Francesa</i> y <i>Miembro Honorario del Instituto 
+			Nacional de Artes y de Letras de Nueva York</i>.<br>
+			Falleci&oacute; en Milly-la-Forêt, cerca de Fontainebleau, en 1963.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&copy;</font></td>
+		</tr>
+	</table>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas, textos y poes&iacute;a 
+visual de Jean Cocteau:</font><font face="Georgia" size="3" color="#FFFFFF"><br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><br>
+		<font face="Georgia"><a href="./cocteau.htm#Ayer por la noche...">Ayer por la 
+		noche...</a></font><br>
+		<br>
+		<font face="Georgia"><a href="./cocteau.htm#El Cabo de la Buena Esperanza">El Cabo de 
+		la Buena Esperanza</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./cocteau.htm#El poeta es exacto. La poes&iacute;a es exactitud...">El poeta es 
+		exacto. La poes&iacute;a es exactitud...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./cocteau.htm#Fruto">Fruto</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./cocteau.htm#Hay gentes que lo poseen todo...">Hay gentes que lo poseen 
+		todo...</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./cocteau.htm#Mediod&iacute;a">Mediod&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./cocteau.htm#Oda a Picasso  (fragmento)">Oda a Picasso&nbsp; (fragmento)</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a target="_blank" href="./cocteau_poesiavisual.htm">Poes&iacute;a visual y 
+		dibujos</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./cocteau.htm#Un amigo duerme">Un amigo 
+		duerme</a></font></p>
+	</blockquote>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+	</blockquote>
+	<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+	<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+	&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+	</font></p>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+	<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" color="#EEEEEE"><br>
+&nbsp;</font></p>
+	<blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Ayer por la noche..."></a>Ayer por la noche...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ayer por 
+		la noche quise tomar un comprimido para dormir; me he dicho que si 
+		tomase m&aacute;s, dormir&iacute;a mejor, <br>
+		y que si los tomase todos, dormir&iacute;a, sin sue&ntilde;o, sin despertar, estar&iacute;a 
+		muerta. (Llora.)...<br>
+		He tomado doce...en agua caliente... <br>
+		.......Como una masa. Y he tenido un sue&ntilde;o. He so&ntilde;ado lo que es. Me he 
+		despertado sobresaltada, muy contenta <br>
+		porque era un sue&ntilde;o; y cuando he sabido que era verdad, que estaba sola, 
+		que no ten&iacute;a la cabeza encima de tu <br>
+		cuello y de tu hombro y mis piernas entre las tuyas, he sentido que ya 
+		no pod&iacute;a, que &laquo;no pod&iacute;a&raquo; vivir...., <br>
+		ligera&nbsp; y fr&iacute;a, y ya no 
+		sent&iacute;a latir mi coraz&oacute;n y la muerte tardaba en venir; y como
+		ten&iacute;a una angustia espantosa, <br>
+		al cabo de una hora he telefoneado a Marta. No ten&iacute;a valor para morir 
+		sola....&nbsp; 
+		Querido......Querido......<br>
+		Eran las cuatro 
+		de la ma&ntilde;ana. Ella ha llegado con el m&eacute;dico
+		que vive en su inmueble. Ten&iacute;a m&aacute;s de cuarenta. <br>
+		Parece ser que es muy 
+		dif&iacute;cil envenenarse y que siempre se equivoca
+		uno de dosis. El doctor ha hecho una receta <br>
+		y Marta se ha quedado 
+		conmigo hasta esta noche. Le he suplicado que se
+		marchase porque t&uacute; hab&iacute;as dicho que <br>
+		telefonear&iacute;as una &uacute;ltima vez, y 
+		ten&iacute;a miedo de no poder hablar libremente......<br>
+		Muy, muy bien..... En absoluto.... Si, es verdad....... Un poco de 
+		fiebre , treinta y ocho y tres ; era cosa nerviosa....<br>
+		.........&iexcl;No te preocupes!...... &iexcl;Qu&eacute; torpe soy! Me hab&iacute;a jurado no 
+		darte inquietudes, dejarte marchar tranquilo, decirte:<br>
+&nbsp;&laquo;&iexcl;Hasta la vista!&raquo;, como si tuvi&eacute;semos, que volver a vernos, a encontrar 
+		ma&ntilde;ana....... <br>
+		......Tonta que es una.......&iexcl;S&iacute;, s&iacute;, tonta!........ Se hace duro 
+		el volver a colgar, quedarse en la oscuridad......... <br>
+		......... (<i>Llora.</i>).......&iexcl;Oiga! Cre&iacute; que hab&iacute;an 
+		cortado.............. T&uacute; eres bueno, querido.......... Mi pobre amorcito 
+		al que <br>
+		he hecho da&ntilde;o......... S&iacute;, habla, habla, di cualquier cosa........... Sufr&iacute;a hasta retorcerme por suelo 
+		y
+		ha bastado que hables <br>
+		para que me sienta bien, para que cierre los ojos. 
+		&iquest;Sabes?, algunas veces cuando est&aacute;bamos
+		acostados, y yo ten&iacute;a mi <br>
+		cabecita en su sitio, con el o&iacute;do junto a tu 
+		pecho, y t&uacute; hablabas, yo o&iacute;a tu voz, la misma exactamente que esta noche
+		<br>
+		en el aparato..........&iquest;Cobarde?..........Soy yo la Cobarde. Me habla 
+		jurado.....<br>
+		yo............&iexcl;De ninguna manera!&nbsp; T&uacute;, que......., t&uacute;........., t&uacute;, 
+		que no me has dado siempre m&aacute;s, que felicidad.........<br>
+		............Pero, querido, te lo repito; no es exacto. Puesto que yo 
+		sab&iacute;a (&laquo;yo sab&iacute;a&raquo;), esperaba lo que ha ocurrido. <br>
+		Mientras que tantas mujeres&quot; imaginan Pasar su existencia junto al 
+		hombre a quien aman y se enteran de la ruptura <br>
+		sin preparativos, &laquo;yo sab&iacute;a&raquo;............................................ 
+		Ni siquiera te lo hab&iacute;a dicho nunca; pero, f&iacute;jate, en casa de la <br>
+		modista, en una revista, vi tu fotograf&iacute;a...........Encima de la 
+		mesa...bien abiertas las p&aacute;ginas por su sitio.......<br>
+		Es humano o m&aacute;s bien femenino...........Porque yo no quer&iacute;a estropear 
+		nuestras &uacute;ltimas semanas........., no, <br>
+		completamente natural............ No me hagas mejor de lo que 
+		soy................. &iexcl;Oye! Estoy oyendo m&uacute;sica............. <br>
+		Digo que oigo m&uacute;sica...............Venga, deber&iacute;as golpear en la pared e 
+		impedir que esos vecinos toquen el gram&oacute;fono <br>
+		a estas horas. Han cogido esas malas costumbres porque t&uacute; nunca viv&iacute;as 
+		en tu casa.......... <br>
+		............Es in&uacute;til. Por lo dem&aacute;s, el doctor de Marta vendr&aacute; 
+		ma&ntilde;ana.......... No, no, querido. Es un m&eacute;dico muy bueno, <br>
+		y no hay raz&oacute;n alguna de que le ofenda mandando venir a otro........ No 
+		te preocupes..... que s&iacute;........ que s&iacute;..........<br>
+		Ella te dar&aacute; noticias.............................<br>
+		..............Comprendo.....................Comprendo...................... 
+		Adem&aacute;s, esta vez soy valiente, muy valiente..........<br>
+		.....&iquest;Qu&eacute;?.............&iexcl;Oh!, s&iacute;, mil veces mejor. Si no hubieses 
+		llamado, estar&iacute;a muerta.................<br>
+		&nbsp;No................espera ,.................... 
+		espera.............................. Encontremos un medio.............<br>
+&nbsp;<i>(Recorre la habitaci&oacute;n de punta a cabo y su dolor le arranca 
+		lamentaciones.)</i><br>
+		Perd&oacute;name. Yo s&eacute; que esta escena es intolerable y que tienes mucha 
+		paciencia, pero compr&eacute;ndeme; 
+		yo sufro, sufro. <br>
+		Este hilo es el &uacute;ltimo que me une todav&iacute;a a nosotros....................<br>
+		.............................&iquest;Anteayer por la noche? He dormido. Me 
+		hab&iacute;a acostado con el tel&eacute;fono..............<br>
+		No, no. En mi cama............&nbsp; S&iacute;, ya lo s&eacute;.&nbsp; Soy rid&iacute;cula, 
+		pero ten&iacute;a el tel&eacute;fono en la cama porque, a pesar de
+		todo, estamos <br>
+		unidos por el tel&eacute;fono. Llega hasta tu casa y, adem&aacute;s, 
+		ten&iacute;a la promesa de tu llamada. As&iacute;
+		que fig&uacute;rate que he tenido un <br>
+		mont&oacute;n de sue&ntilde;os. Esta llamada era un 
+		verdadero golpe que t&uacute; me dabas y
+		yo me ca&iacute;a, o bien un cuello, un cuello que <br>
+		se puede estrangular, o bien 
+		yo estaba en el fondo de un mar que
+		se parec&iacute;a al piso de Auteuil, y yo estaba unida a ti por <br>
+		un tubo de 
+		escafandra y te suplicaba que no cortases
+		el tubo; en fin, sue&ntilde;os est&uacute;pidos si se cuentan; &uacute;nicamente que en <br>
+		el 
+		sue&ntilde;o ten&iacute;an vida y era terrible............<br>
+		Porque t&uacute; me hablas. Hace cinco a&ntilde;os que vivo de ti, que t&uacute; eres mi aire 
+		respirable, el &uacute;nico; que paso el tiempo <br>
+		esper&aacute;ndote, crey&eacute;ndote muerto si te retrasas, muri&eacute;ndome por creer que 
+		est&aacute;s muerto, reviviendo cuando 
+		entras y <br>
+		por fin est&aacute;s aqu&iacute;, muri&eacute;ndome de miedo cuando te marchas. 
+		Ahora tengo aire porque t&uacute; me hablas. <br>
+		No es tan tonto mi sue&ntilde;o. Si cortas, cortas el 
+		tubo................................
+		<br>
+		.......De acuerdo, querido; he dormido. He dormido porque era la primera 
+		vez. El m&eacute;dico lo ha dicho: es una <br>
+		intoxicaci&oacute;n. La primera noche se duerme. Y adem&aacute;s el sufrimiento 
+		distrae, es completamente nuevo, se soporta. <br>
+		Lo que no se soporta es la segunda noche, ayer, y la tercera, esta 
+		noche, dentro de unos minutos, y ma&ntilde;ana, <br>
+		y pasado ma&ntilde;ana, y d&iacute;as y d&iacute;as..., &iquest;qu&eacute; va a hacer una, Dios 
+		m&iacute;o?........ <br>
+		<br>
+		<i>De &quot;La voz humana&quot; 1930<br>
+		Traducci&oacute;n de Julio Lago<br>
+		De &quot;Obras escogidas&quot; Editorial Aguilar 1966</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="El Cabo de la Buena Esperanza"></a>El Cabo de la Buena 
+		Esperanza</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Entre 
+		1915 y 1917 Jean Cocteau compuso este poema, en algunos aspectos <br>
+		seg&uacute;n los principios de la escuela Dada. El personaje central es Roland 
+		Garros, <br>
+		primer vencedor del Mediterr&aacute;neo, muerto en combate en 1918. <br>
+		</i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		23 septiembre 1913 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		aer&oacute;dromo de T&uacute;nez <br>
+		<br>
+		una seria turba &aacute;rabe, francesa prevenida <br>
+		por los radiotelegramas hormiguea Islam el calor <br>
+		negrillos en los &aacute;rboles&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el vendedor <br>
+		de bu&ntilde;uelos con miel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el severo servicio de orden <br>
+		los reporteros&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		los fot&oacute;grafos <br>
+		seis mil espectadores <br>
+		caras mirando hacia occidente esperan <br>
+		prestos al entusiasmo <br>
+		por una liza <br>
+		el anuncio espl&eacute;ndido <br>
+		<br>
+		el-joven -que-ha -cruzado-el-mar <br>
+		<br>
+		tres torpederos <br>
+		chafados en su baba</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left"><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="El poeta es exacto. La poes&iacute;a es exactitud..."></a>El poeta es 
+		exacto. La poes&iacute;a es exactitud...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">El poeta 
+		es exacto. La poes&iacute;a es exactitud. Desde Baudelaire, el p&uacute;blico ha 
+		comprendido, poco a poco, <br>
+		que la poes&iacute;a es uno de los medios m&aacute;s insolentes de decir la verdad.
+		<br>
+		No existe arma de mayor precisi&oacute;n; y para defenderse, con una defensa 
+		instintiva, de la angustia de la <br>
+		exactitud y de las claridades reveladoras, se obstinan las gentes en 
+		confundir la poes&iacute;a con la mentira, <br>
+		la viveza de esp&iacute;ritu con la paradoja. <br>
+		&iquest;Para qu&eacute; referir una historia que no lleve en s&iacute; el peso inimitable de 
+		la verdad? &iquest;Para qu&eacute; Memorias <br>
+		imaginarias, falsas an&eacute;cdotas, frases que se equivocan de labios y 
+		recuerdos pintorescos? El peso muerto <br>
+		de la inexactitud abruma de fatiga. <br>
+		Muy distinto es el haz de luz de un proyector, que se pasea por la 
+		superficie de esa noche acumulada <br>
+		detr&aacute;s de cada uno de nosotros y que se detiene sobre un rostro, un acto 
+		o un lugar significativos, de forma <br>
+		que les d&eacute; el m&aacute;ximo de fuerza expresiva y de resurrecci&oacute;n.[...]<br>
+		<br>
+		1934-1935. Un tel&oacute;n cae, un tel&oacute;n se levanta. La vida ha muerto, viva la 
+		vida! Ha muerto una &eacute;poca, que he <br>
+		vivido desde su comienzo intensamente, pero contra toda mi voluntad; mis 
+		antenas me anuncian que <br>
+		empieza una era nueva en la que entreveo la nobleza cuyos signos me 
+		agradan. Aprovecho unos minutos de <br>
+		entreacto para levantarme, descansar, volverme y pasear mi anteojo. 
+		[...]</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Un se&ntilde;or, 
+		cuya papel de cartas se embellece con profusi&oacute;n de lugares comunes 
+		grabados: Legi&oacute;n de Honor..., <br>
+		Palmas Acad&eacute;micas... , tel&eacute;fono... , tel&eacute;grafo... , me censura el empleo 
+		de lugares comunes que ruedan por <br>
+		todas partes. Yo enrojecer&iacute;a de verg&uuml;enza si el periodismo no me diera 
+		el ejemplo y el estilo fr&iacute;volo que <br>
+		exige no comportase el uso de tales t&eacute;rminos; unos, sin excusa; otros, 
+		magn&iacute;ficos, firmes en sus pedestales <br>
+		de m&aacute;rmol puro, verdaderas obras maestras de los siglos. &iquest;Nacieron 
+		alguna, vez? &iquest;Salieron, sin padre, del <br>
+		fondo de las excavaciones? <br>
+		Un agricultor encuentra los brazos de la Venus de Milo. &iquest;A qui&eacute;n 
+		pertenecen? &iquest;A la Venus de Milo o al <br>
+		agricultor? Pertenecen al mito. Se abrazan al cuello de la poes&iacute;a. Son 
+		serpientes blancas que tienen vida propia. <br>
+		&iexcl;Qu&eacute; delicia emplear los: &laquo;No obstante &raquo;, &quot;En resumen &raquo;, &laquo;Por lo 
+		dem&aacute;s... &raquo;, &laquo;Aparte de &raquo;, &laquo;En una palabra &raquo; <br>
+		que se ensamblan ellos solos como fragmentos de un puzzle! <br>
+		Perd&oacute;name, lector. Compr&eacute;ndeme. Ay&uacute;dame. Juega conmigo. No te quedes en 
+		pie delante de mi mesa. <br>
+		Conviene escribir y leer juntos esta prosa con plantilla y por retazos.
+		<br>
+		<br>
+		<i>Fragmento de &quot;Retratos-Recuerdo&quot; 1935<br>
+		Traducci&oacute;n de Enrique L&oacute;pez Mart&iacute;n<br>
+		De &quot;Obras escogidas&quot; Editorial Aguilar 1966</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;
+		<br>
+&nbsp;</font></p>
+		<p align="left"><br>
+		<font face="Georgia" color="#C4CAD4"><a name="Fruto"></a>Fruto</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		Un farol dominguero<br>
+		madurado por el viento<br>
+		puede incendiar las ramas.<br>
+		Debe recogerse antes.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de L.S.</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="center">
+		&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Hay gentes que lo poseen todo..."></a>Hay gentes que lo poseen 
+		todo...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Hay gentes 
+		que lo poseen todo y no consiguen hacerlo creer; ricos tan pobres y 
+		nobles tan vulgares <br>
+		que la incredulidad que suscitan acaba por hacerlos t&iacute;midos y les da una 
+		actitud sospechosa. <br>
+		En algunas mujeres, las m&aacute;s hermosas perlas resultan falsas. En cambio, 
+		en otras las perlas falsas parecen <br>
+		verdaderas. De igual modo, hay hombres que inspiran una confianza ciega 
+		y que gozan de privilegios <br>
+		que no podr&iacute;an pretender. Guillermo Tom&aacute;s pertenec&iacute;a a esa raza de 
+		ventura.<br>
+		Se le cre&iacute;a. No necesitaba adoptar precauci&oacute;n alguna ni hacer ning&uacute;n 
+		c&aacute;lculo. Una estrella de mentira le <br>
+		llevaba derechamente a su objeto. As&iacute;, nunca ten&iacute;a el rostro preocupado, 
+		turbado ni ce&ntilde;udo. No sabiendo <br>
+		nadar ni patinar, pod&iacute;a decir: &laquo;Yo patino y yo nado.&raquo; Todos le hab&iacute;an 
+		visto sobre el hielo y en el agua. <br>
+		Un hada especial da esa suerte en el nacimiento. <br>
+		Hay algunos que triunfan y a cuya cuna no acudi&oacute; m&aacute;s hada que esa. <br>
+		Nunca se le ocurri&oacute; a Guillermo hacer su examen y pensar: &laquo;&iquest;C&oacute;mo saldr&eacute; 
+		de esto?&raquo;, o &laquo;Estoy enga&ntilde;ando&raquo;, <br>
+		o &laquo;Soy un miserable&raquo;, o &laquo;Soy un hombre h&aacute;bil&raquo;. <br>
+		Caminaba estrechamente unido a su f&aacute;bula. <br>
+		Cuanto m&aacute;s viv&iacute;a su papel, m&aacute;s se incorporaba a &eacute;l y m&aacute;s le aportaba ese 
+		fuego y esa franqueza que persuade.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">
+		Fragmento de &quot;Tom&aacute;s el impostor&quot; 1923<br>
+		Traducci&oacute;n de Luis Hern&aacute;ndez Alfonso<br>
+		De &quot;Obras escogidas&quot; Editorial Aguilar 1966</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">
+		&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4"><a name="Mediod&iacute;a">
+		</a>Mediod&iacute;a </font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		El sol cae aplomado <br>
+		<br>
+		El p&aacute;jaro <br>
+		Alcanzando su sombra <br>
+		Se posa dulcemente sobre ella <br>
+		En Bizerte <br>
+		<br>
+		Y un campesino corre...</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Oda a Picasso  (fragmento)"></a>Oda a Picasso&nbsp; (<font size="2">fragmento</font>)</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Recuerdo 
+		de Montparnasse<br>
+		<br>
+		&laquo;Oh mi bella&raquo;<br>
+		<br>
+		los sitios de sombra<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		fuma su pipa<br>
+		sentado en s&iacute;<br>
+		y contra s&iacute;<br>
+		<br>
+		<br>
+		cita en casa de Nadar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		con<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		la eternidad<br>
+		<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		el oro del hielo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		gira alrededor<br>
+		<br>
+		del domador<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de musas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cuelga<br>
+		<br>
+		una cacerola<br>
+		al perro de la <i>troupe</i><br>
+		<br>
+		a su vez amordazado<br>
+		medita<br>
+		un golpe bajo<br>
+		<br>
+		<br>
+		una&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		zancadilla<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		inesperada<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		pues<br>
+		<br>
+		habi&eacute;ndose<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		bufado de ellas<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		fue<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		hecho prisionero<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en su ronda 
+		terrible<br>
+		<br>
+		<br>
+		y all&iacute;<br>
+		<br>
+		busca<br>
+		<br>
+		<br>
+		por<br>
+		donde <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		salir</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n 
+		de Cristina Peri Rossi <br>
+		Jos&eacute; J. Ola&ntilde;eta, Editor 2003<br>
+&nbsp;</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p align="left"><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#C4CAD4">
+		<a name="Un amigo duerme"></a>Un amigo duerme</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Tus manos 
+		por las s&aacute;banas eran mis hojas muertas. Mi oto&ntilde;o era un amor por tu 
+		verano. <br>
+		El viento del recuerdo resonaba en las puertas de lugares que nunca 
+		visit&aacute;ramos.<br>
+		<br>
+		Permit&iacute; la mentira de tu sue&ntilde;o ego&iacute;sta all&aacute; donde tus pasos borra el 
+		sue&ntilde;o. Crees estar donde est&aacute;s. <br>
+		Qu&eacute; triste nos resulta estar donde no estamos, as&iacute; siempre.<br>
+		<br>
+		Tu viv&iacute;as hundido dentro de otro t&uacute; mismo, abstra&iacute;do a tal punto de tu 
+		cuerpo que eras como de piedra. <br>
+		Duro para el que ama es tener un retrato solamente.<br>
+		<br>
+		Inm&oacute;vil, desvelado, yo visitaba estancias a las que nunca ya 
+		retornaremos. <br>
+		Corr&iacute;a como un loco sin remover los miembros: el ment&oacute;n apoyado sobre el 
+		pu&ntilde;o.<br>
+		<br>
+		Y, cuando regresaba de esa carrera inerte, te encontraba aburrido, con 
+		los ojos cerrados, <br>
+		con tu aliento y con tu enorme mano abiertos, y tu boca rebosante de 
+		noche...<br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:35:49 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:16:40 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

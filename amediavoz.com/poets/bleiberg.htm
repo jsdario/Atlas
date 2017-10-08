@@ -1,0 +1,647 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Germ&aacute;n Bleiberg</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Germ&aacute;n Bleiberg. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="German_Bleiberg,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./SENSUFONDO.jpg" link="#A6BCCE" vlink="#A6BCCE" alink="#A6BCCE">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app12.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/bleiberg.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/bleiberg.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815164530" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bleiberg.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:45:30 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./bleiberg.htm" title="23:14:16 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:45:30 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./bleiberg.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:45:30 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./bleiberg.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>66 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">26 Oct 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000101_2003:-1:000002010001_2004:-1:010001010001_2005:-1:011100010003_2006:-1:110011000101_2007:-1:010101010100_2008:-1:101111941101_2009:-1:000000200000_2010:-1:100000001110_2011:-1:000000101100_2012:-1:000010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center"><br>
+<br>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./BLEIBERG.jpg" width="402" height="51">&nbsp;&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<font color="#84B0D6">
+<br>
+</font>
+<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">
+&quot;...Tu nombre vivo fluye por mis venas,<br>
+y toda mi nostalgia te prefiere<br>
+en la espiga y la hierba de mi sue&ntilde;o...&quot;</em></font></p>
+
+<p align="center"><font color="#84B0D6"><img border="0" src="./BLEIBERG1.jpg" width="240" height="284"></font></p>
+<p align="center">
+<font face="Arial" size="2" color="#84B0D6"><em style="font-style: normal">&nbsp;</em><em>&quot;Menina 
+azul&quot;</em></font></p>
+<p align="center"><em>
+<font face="Arial" size="2" color="#84B0D6">Alfredo Palermo</font></em><font color="#84B0D6"><br>
+<br>
+<br>
+</font>
+</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+	<p align="left"><font face="Georgia" size="2" color="#85A6BC"><br>
+	</font><font face="Georgia" size="2" color="#84B0D6">Poeta espa&ntilde;ol nacido en 
+	Madrid en 1915.<br>Inici&oacute;&nbsp; estudios de ense&ntilde;anza media en un colegio 
+	alem&aacute;n y posteriormente obtuvo el t&iacute;tulo de Doctor en <br>
+	Filosof&iacute;a y Letras por la Universidad de Madrid.<br>Durante la guerra civil 
+	milit&oacute; en el Partido Republicano, y tras su derrota, se estableci&oacute; en EE.UU. 
+	donde ocup&oacute; <br>
+	c&aacute;tedras de Literatura Espa&ntilde;ola en las universidades de Notre Dame, 
+	Vanderbilt&nbsp; y Massachusetts. Fue adem&aacute;s <br>
+	profesor de Estudios Hisp&aacute;nicos en Vassar College y en New York University.<br>
+	En 1938 obtuvo el Premio Nacional de Literatura.<br>De su obra po&eacute;tica se 
+	destacan: &laquo;Sonetos amorosos&raquo; en 1936, &laquo;M&aacute;s all&aacute; de las ruinas&raquo; en 1947, <br>
+	&laquo;La mutua primavera&raquo; en 1948 y &laquo;Selecci&oacute;n de poemas&raquo; en 1975.<br>Falleci&oacute; en 
+	1990. &copy;</font></p>
+	<blockquote>
+      <p>&nbsp;</p>
+    </blockquote>
+  </blockquote>
+  <p align="center"><font face="Georgia" size="2" color="#8FABC2"><img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+  <p align="center">&nbsp;</p>
+  <blockquote>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#&Eacute;GLOGA DEL NAUFRAGIO">&Eacute;gloga del naufragio</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#EL AMOR Y EL PAISAJE">El amor y el paisaje</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#ENCUENTRO EN TI LA LUZ ESTREMECIDA">Encuentro en ti la luz 
+	estremecida...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#LA CLARA LLUVIA, EN ROSA Y AZUCENA">La clara lluvia, en rosa y 
+	azucena...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#MIENTRAS DE LUZ Y DE ESPERANZA HERIDO">Mientras de luz y de 
+	esperanza herido...</a><br>
+	<br><a href="./bleiberg.htm#RETORNO P&Oacute;STUMO">Retorno p&oacute;stumo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./bleiberg.htm#S&Oacute;LO AQUEL TEMBLOROSO VIENTO AMADO">S&oacute;lo aquel tembloroso y viento 
+	amado...</a><br>
+	<br><a href="./bleiberg.htm#TUS OJOS TIENEN EL REC&Oacute;NDITO DESMAYO">Tus ojos tienen el 
+	rec&oacute;ndito desmayo...</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	<br>
+	</font>
+	<font face="Georgia" color="#8FABC2">
+	<a href="./bleiberg.htm#VIGILIA">Vigilia</a></font><font face="Georgia" size="2" color="#8FABC2"><br><br>
+	Volver a:  
+	</font><font face="Georgia" color="#8FABC2">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#8FABC2"><br>
+	</font><font face="Georgia" size="2" color="#85A6BC">
+	Volver a: </font>
+	<font face="Georgia" color="#85A6BC">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K </a> </font>
+	<font face="Georgia" size="2" color="#8FABC2"><br>Volver a: 
+	</font><font face="Georgia" color="#8FABC2"> 
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+	<blockquote>
+      <p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <br>
+      <font face="Georgia" size="3" color="#89A7BE"><a HREF="javascript:mailpage()">
+		Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="4" color="#8FABC2"> </font><font
+      face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; <br>
+      <br>
+      </p>
+    </blockquote>
+    <p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br>
+    </font><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+    <p><font face="Georgia" size="3" color="#A6BCCE"><br>&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="&Eacute;GLOGA DEL NAUFRAGIO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	&Eacute;gloga del naufragio</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Tan oscuras las estrellas 
+	<br>-en nuestros ojos, naufragio- <br>tejen las playas de noche <br>-en los 
+	recuerdos, naufragio- 
+	<br>que dejan en nuestra sangre <br>-&uacute;ltima espuma, naufragio- <br>llantos 
+	de cristal sombr&iacute;o, 
+	<br>herida carne del llanto. <br>El jard&iacute;n de nuestros padres <br>es ortiga 
+	del ocaso, 
+	<br>y nuestras l&aacute;grimas tienen <br>un calor no superado, <br>l&aacute;grimas de las 
+	entra&ntilde;as 
+	<br>que las aguas despertaron.<br>Enfrente de mi camino, <br>huellas tersas 
+	en los lagos, 
+	<br>y una presencia de luz <br>en tus ojos de naufragio. <br>H&uacute;ndeme entre 
+	tus paisajes, 
+	<br>en tus silencios amargos, <br>donde yo sienta en mi piel <br>ambiente de 
+	joven &aacute;rbol, 
+	<br>y la flor brote desnuda <br>con sus perfumes alados. <br>Verte, s&iacute;, 
+	sobre el invierno,<br>silencioso vuelo p&aacute;lido<br>de tu figura tan clara<br>
+	de ser nieve, ardor temprano,<br>mirarte sobre el abismo<br>de los vencidos 
+	espacios,<br>como incienso de alborada<br>en el sue&ntilde;o naufragado:<br>Tu 
+	mirada es el destino<br>en la sombra de mi paso.<br>Mirarte, s&iacute;, d&oacute;cil fuego<br>
+	de mi coraz&oacute;n flotando,<br>encima de las monta&ntilde;as<br>dulces del tiempo 
+	cercano.<br>Ya lejos las horas tristes,<br>yo arrancar&eacute; de los a&ntilde;os<br>
+	tierra firme en las miradas<br>quebradas por el naufragio.<br>Y veremos la 
+	madera<br>de los caudalosos &aacute;lamos,<br>y amanecidas gozosas<br>en nuestros 
+	mutuos abrazos.<br>&iexcl;Qu&eacute; plenitud del vac&iacute;o<br>-sangre oculta del naufragio-,<br>
+	anunciaci&oacute;n de la playa<br>-caricia siempre, naufragio-!</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="3" color="#84B0D6">
+	<a name="EL AMOR Y EL PAISAJE"></a></font>
+	<font face="Georgia" color="#84B0D6">El amor y el paisaje</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Un h&aacute;lito de roc&iacute;o en mis venas,<br>una mariposa que sangra,<br>tu voz hecha 
+	cristal quebr&aacute;ndose en el r&iacute;o de la noche,<br>y yo, llama menor de la 
+	muerte, so&ntilde;ando.<br>El oto&ntilde;o desliza antiguas alas de galgo<br>por las 
+	calles de la ciudad perdida,<br>los ni&ntilde;os estremecen su c&aacute;ntico entre 
+	hierbas tristes,<br>mi voz se sumerge en el paisaje escondido,<br>mientras 
+	un d&oacute;cil viento<br>martiriza mis ojos con s&uacute;bitas ausencias.<br>
+	<br>&iquest;D&oacute;nde ci&ntilde;en ahora tus manos acostumbradas al asombro del tilo<br>mi 
+	carne desamparada?<br>Una ligera sombra corrige nuestro llanto,<br>y la 
+	v&iacute;spera del naufragio es bendecida<br>por el mar y por las rocas<br>y por el 
+	gozo de ser en tu hermosura un lirio sin fondo.<br>
+	<br>Las flores de nuestro jard&iacute;n nocturno<br>no son sino memoria y lejan&iacute;a,<br>
+	y bajo la luna silvestre, el olvido tiembla<br>como un &aacute;lamo sin ra&iacute;ces. 
+	<br><br>Han arraigado en nuestra piel las primeras luces del alba,<br>y el 
+	mar con su oleaje salobre abraza nuestro anhelo,<br>y todo en nosotros vibra 
+	y canta y se abandona al grito.<br>
+	<br>&iquest;Qu&eacute; promesa de parque temblaba en tus ojos? <br>El amor es hoy la 
+	medida del tiempo<br>en las llagas que nacen de la soledad.<br>Sobre mi 
+	pecho, los siglos se consumen en su fuego,<br>y busco el asilo l&iacute;mpido de 
+	los nuevos &aacute;rboles frutales,<br>busco la ventana abri&eacute;ndose al mar 
+	embravecido,<br>donde todo es horizonte y paisaje y amor,<br>donde se 
+	yergue, en fin, esta tr&eacute;mula semilla exacta de la vida,<br>que se propaga de 
+	primavera en primavera.<br>
+	<br>Y t&uacute;, ni&ntilde;a, llam&aacute;ndome con la misma voz que brota de mi sangre,<br>
+	esp&eacute;rame, t&uacute;, la m&aacute;s dulce:<br>tambi&eacute;n yo he llamado a las puertas sombr&iacute;as 
+	de la noche,<br>y s&oacute;lo acuden el tiempo y el destino.<br>
+	<br>Toda mi alma, amor, sabe esperarte,<br>en esta penumbra marchitada,<br>
+	mientras en mis ojos reside un ambiente de barco cercado por las olas,<br>y 
+	recuerdo el dolor convertido en experiencia.<br>&iquest;D&oacute;nde se confunde la brisa 
+	con la paz delgada del padre muerto?<br>Quiero llegar a tus tranquilas 
+	puestas de sol,<br>alta melancol&iacute;a impaciente,<br>quiero abrazarte en la 
+	ra&iacute;z de toda mi vida,<br>quiero recordarte en la firme anunciaci&oacute;n de m&iacute; 
+	mismo,<br>dulcemente morena bajo la melod&iacute;a del cielo azul,<br>t&uacute;, lejana,<br>
+	sin m&aacute;s principio que tu propia transparencia.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"><br><br>&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="ENCUENTRO EN TI LA LUZ ESTREMECIDA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Encuentro en ti la luz estremecida...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Encuentro en ti la luz estremecida<br>y un honesto temblor siempre 
+	so&ntilde;ado,<br>vibrando en juventud, limpio y alado,<br>un bienestar de soledad 
+	henchida,<br>
+	<br>y estos ojos de hierba humedecida<br>que cumplen su mirada, armonizado<br>
+	el viento y el celeste azul logrado,<br>como un jard&iacute;n bajo la brisa herida.<br>
+	<br>Yo te he buscado, amante, en el tranquilo<br>encendimiento firme de tu 
+	frente,<br>como triste abandono de azucena,<br>
+	<br>y te encuentro, presente, en el sigilo<br>de mi &aacute;gil coraz&oacute;n, tan 
+	dulcemente<br>ungido por tu voz loca y serena.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="LA CLARA LLUVIA, EN ROSA Y AZUCENA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	La clara lluvia, en rosa y azucena...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">La clara lluvia, en rosa y 
+	azucena,<br>asume en tu presencia la dulzura,<br>y una aurora de arroyos 
+	insegura<br>ampara aquella luz de sombra llena.<br>
+	<br>&iexcl;Oh la experiencia arrebatada, ajena<br>a la ilusi&oacute;n constante de 
+	ternura<br>que en m&iacute;, con esperanzas, inaugura<br>una joven quietud viva y 
+	serena!<br>
+	<br>&iexcl;Oh los pasos que, t&iacute;midos, perdieron<br>aquel tranquilo s&eacute;quito de 
+	flores!<br>&iexcl;Oh amada floreciente y encendida!<br>
+	<br>Cuando las noches &iacute;ntimas huyeron,<br>quebr&oacute; la luz del alba sus 
+	temblores<br>y tus ojos brotaron en mi vida.<br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6">
+	<a name="MIENTRAS DE LUZ Y DE ESPERANZA HERIDO"></a>Mientras de luz y de 
+	esperanza herido...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Mientras de luz y de 
+	esperanza herido<br>mi coraz&oacute;n te piensa y te edifica,<br>un llanto luminoso 
+	purifica<br>tu cielo claro en claridad crecido.<br>
+	<br>Las aves hacia ti me han conducido,<br>cuando el silencio el c&aacute;ntico 
+	amplifica,<br>que en ti las luces &iacute;ntimas explica,<br>y esta pasi&oacute;n, 
+	primaveral latido.<br>
+	<br>El alma te construye entre azucenas<br>sobre el paisaje que la brisa 
+	hiere,<br>donde los aires tiemblan en tu ensue&ntilde;o.<br>
+	<br>Tu nombre vivo fluye por mis venas,<br>y toda mi nostalgia te prefiere<br>
+	en la espiga y la hierba de mi sue&ntilde;o.</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><br></font></p>
+	<p align="center"><font color="#84B0D6"></font>
+	<img
+    border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font color="#84B0D6"><a name="RETORNO PÓSTUMO"></a></font>
+	<font face="Georgia" color="#84B0D6">Retorno p&oacute;stumo</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Con las primeras violetas viene,<br>tan acostumbrado al ruido del tiempo,<br>
+	&eacute;l, nuestro sue&ntilde;o inhabitable,<br>transitando solo,<br>de nube en nube,<br>
+	nuestro sue&ntilde;o confundido con el mar,<br>con el sediento desierto,<br>despu&eacute;s 
+	de haber besado con labios infinitos<br>el &uacute;ltimo horizonte de la vida.<br>
+	<br>Viene desnudo, pensativamente,<br>bajo el peso de una palabra<br>
+	horadando su conciencia de lirio incesante,<br>el sue&ntilde;o que forja palabras 
+	verdaderas,<br>palabras perennes,<br>el sue&ntilde;o agobiado por una palabra<br>
+	que nunca os&oacute; pronunciar,<br>ni siquiera frente a un espejo,<br>la palabra 
+	que desde ni&ntilde;o<br>enturbia secamente su voz segura,<br>su jadeante aliento,<br>
+	como una flor desfallecida<br>entre las fauces de un grito,<br>palabra que 
+	se derrumba,<br>entre m&uacute;sicas sin aposento,<br>entre silencios veloc&iacute;simos<br>
+	devorando palabras nunca dichas.<br>
+	<br>Y retorna desnudo, sue&ntilde;o muerto,<br>el ritmo de angustiosos poemas,<br>
+	poemas virginales de la muerte<br>y los amigos que por &eacute;l oraban<br>en el 
+	funeral radiante de sombras,<br>apenas recuerdan su vaporoso tr&aacute;nsito,<br>y 
+	las ortigas, sin lastimar su piel transparente,<br>han olvidado aquellas 
+	manos so&ntilde;adoras<br>anta&ntilde;o heridas por sus aguijones.<br>
+	<br>Orlaba el laurel su frente de sue&ntilde;o rubio,<br>y ahora se averg&uuml;enza, 
+	t&iacute;mido,<br>de las fr&aacute;giles alas suscitando sus vivos vuelos,<br>porque la 
+	&uacute;nica palabra que hubiere querido decir,<br>
+	<br>no pudo decirla nunca,<br>-Dios sabe qu&eacute; misterios anudan los sue&ntilde;os-,<br>
+	palabra a&uacute;n por inventar<br>definitiva como el amor o como el odio.<br>
+	<br>Porque hab&iacute;a un viento negro,<br>una ma&ntilde;ana de t&eacute;tricos, nocturnos 
+	vientos,<br>y su palabra qued&oacute; muerta,<br>insepulta en los abismos 
+	insondables,<br>germinando en el coraz&oacute;n del sue&ntilde;o,<br>y hoy regresa,<br>&eacute;l, 
+	el sue&ntilde;o,<br>para pronunciar su palabra severamente,<br>la misteriosa,<br>
+	cuando ignora que le cercan viejos huracanes,<br>oh sue&ntilde;o inmortal,<br>sue&ntilde;o 
+	muerto del poeta.<br>
+	<br>El Se&ntilde;or le ha concedido su p&oacute;stumo retorno,<br>bajo el sol que irradia 
+	sobre el parque<br>el fuego vivo nutriendo las estatuas,<br>pero &eacute;l, sue&ntilde;o 
+	agitado desde el origen de los cielos,<br>siente que su palabra se anega en 
+	silencio calcinante,<br>y que su voz es nada,<br>y que su c&aacute;ntico es in&uacute;til,<br>
+	porque no encuentra su palabra &uacute;ltima,<br>y el sue&ntilde;o sonr&iacute;e,<br>acariciando 
+	h&uacute;medas violetas matinales,<br>para so&ntilde;arse a s&iacute; mismo,<br>lejos, cada vez 
+	m&aacute;s lejos<br>de este ruido feroz de las horas.<br>
+	<br></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="SÓLO AQUEL TEMBLOROSO VIENTO AMADO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	S&oacute;lo aquel tembloroso viento amado...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>S&oacute;lo aquel tembloroso viento amado,<br>tan dulcemente estrecho entre mis 
+	venas,<br>viene con tu paisaje y con serenas<br>voces de tu fervor puro y 
+	llorado.<br>
+	<br>Estoy solo, ya solo y entregado<br>a este dolor humilde en que me 
+	ordenas,<br>y espero, oculto en soledades plenas,<br>llegar a ti, febril y 
+	enajenado.<br>
+	<br>Hoy son tus ojos esta luz sin horas.<br>que yo buscaba como bien 
+	peque&ntilde;o.<br>&iexcl;V&iacute;spera del espacio presentido,<br>
+	<br>las lentas llamas, manantial de auroras!<br>Y tu sangre tendr&aacute; un sabor 
+	de sue&ntilde;o<br>entre las mariposas florecido.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="TUS OJOS TIENEN EL RECÓNDITO DESMAYO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Tus ojos tienen el rec&oacute;ndito desmayo...</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">Tus ojos tienen el 
+	rec&oacute;ndito desmayo<br>del nocturno horizonte,<br>que nunca hiere el alba.<br>
+	Pero tambi&eacute;n irradian alegr&iacute;as<br>cuando recuerdas o presientes,<br>y 
+	entonces resplandece tu mirada<br>como el &iacute;ntimo vuelo de una alondra en 
+	abril.<br>
+	<br>Y cuando ahora recorremos el camino<br>donde nuestro amor hall&oacute; su 
+	origen,<br>las piedras de calles angostas,<br>los monumentos altivos,<br>las 
+	ruinas cansadas,<br>la silenciosa lluvia,<br>el hijo de una amiga so&ntilde;ando<br>
+	su hist&oacute;rica ciudad de provincia,<br>espejan en su canci&oacute;n agitada<br>la 
+	letan&iacute;a feroz del tiempo,<br>y cada vez m&aacute;s me iluminan<br>tus ojos de 
+	nocturno horizonte,<br>cuando la vida acucia con sus cielos<br>y renunciamos 
+	al pan cotidiano<br>a cambio de unas tazas gozosas<br>de policromada 
+	arcilla,<br>tazas que el agua convertir&aacute; en recuerdo.<br>
+	<br>Y entonces comprendo qu&eacute; es la claridad<br>del horizonte fiel de tus 
+	ojos,<br>el horizonte oscuro de un amor<br>que me asedia cada amanecer con 
+	una sonrisa,<br>inmune al tr&aacute;nsito de la tristeza,<br>de la harapienta 
+	tristeza del mundo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#84B0D6"><a name="VIGILIA"></a>Vigilia</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Esta puerta, tal vez cerrada al viento.<br>Todo parece -&iquest;contra qui&eacute;n?- 
+	cerrado.<br>Hasta las nubes de la lejan&iacute;a,<br>horizontal penumbra, y tantas 
+	rejas,<br>
+	<br>ventanales hostiles. Hace oto&ntilde;os,<br>la oscura chimenea, fuego ausente,<br>
+	s&oacute;lo ofrece cenizas para el fr&iacute;o<br>consuelo, antiguas l&aacute;grimas del aire,<br>
+	<br>y estas paredes blancas que me ciegan,<br>y la estancia en clausura y 
+	tantos p&aacute;jaros<br>con alas nuevas, c&aacute;ntico en fervor<br>( quiz&aacute; no est&eacute;s 
+	cerrada, puerta. Cruje<br>
+	<br>tu madera nocturna en mi tristeza)<br>y s&eacute; que debo huir, no s&eacute; por 
+	d&oacute;nde,<br>soledad de los l&iacute;mites murales,<br>cuando he de huir, am&aacute;ndote, 
+	naciente,<br>
+	<br>venciendo ventanales enrejados,<br>o por la siempre muerta chimenea<br>o 
+	por los muros &iacute;ntimos de miedo:<br>&iquest;por qu&eacute; canta el olor primaveral<br>
+	<br>mientras yo sangro, herido, sin salida?<br>(La puerta, tan sencilla como 
+	el campo,<br>nadie ha intentado abrirla, y veo sangre<br>como espejos, amor 
+	hacia paredes,<br>
+	<br>hacia siempre, mi sangre in&uacute;til, tuya.)<br>La puerta cede, y todo, todo 
+	es m&iacute;o,<br>y tus ojos mirando tan febriles<br>de ser futuro j&uacute;bilo, 
+	inventando<br>
+	<br>primavera frutal para ma&ntilde;ana,<br>tard&iacute;o amanecer, mi flor o sangre<br>
+	floreciendo ya impunemente tuya:<br>y qu&eacute; cerca tus ojos siempre lejos,<br>
+	toda tu ausencia azul en el paisaje,<br>joven muerte abraz&aacute;ndome, descalza.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:45:30 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:15:02 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

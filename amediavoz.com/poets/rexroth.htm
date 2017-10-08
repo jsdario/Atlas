@@ -1,0 +1,921 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Kenneth Rexroth</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de Kennet Rexroth"
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de Kennet Rexroth. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Kenneth_Rexroth,Vladimir_Mayacovski,poesias,poetas,poemas,haikus,traducciones,versos,biografias,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body background="./TRADUCFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app10.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/rexroth.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/rexroth.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815175343" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./rexroth.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 17:53:43 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./rexroth.htm" title="18:12:01 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 17:53:43 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./rexroth.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 17:53:43 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./rexroth.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>26 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">17 Sep 10 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000000000000_2009:-1:000000000000_2010:-1:000000001110_2011:-1:000000101120_2012:-1:801010001000_2013:7:102210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./REXROTH.jpg" width="363" height="41"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./REXROTH1.jpg" width="290" height="19"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"><br>
+</p>
+<p align="center">&nbsp;</p>
+<div align="center">
+	<center>
+	<table border="0" cellpadding="0" cellspacing="4" width="672" height="311">
+		<tr>
+			<td valign="bottom" colspan="2" height="19" width="664">
+			<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="280" width="264" valign="top">
+			<p align="left">&nbsp;&nbsp;
+			<img border="0" src="./REXROTH2.jpg" width="225" height="285">&nbsp;&nbsp;&nbsp;
+			</td>
+			<td width="396" valign="top" height="280">
+			<p align="left"><u><font face="Georgia" color="#C4CAD4">Rese&ntilde;a 
+			biogr&aacute;fica</font></u><font face="Georgia" size="2" color="#C4CAD4"><br>
+			<br>
+			Poeta, ensayista y traductor&nbsp; norteamericano nacido en <br>
+			South Bend, Indiana,&nbsp; en 1905.<br>
+			Hu&eacute;rfano desde los doce a&ntilde;os, s&oacute;lo recibi&oacute; cinco a&ntilde;os de educaci&oacute;n 
+			escolar. Autodidacta, pol&iacute;glota y due&ntilde;o de una inmensa cultura, fue 
+			precursor del llamado Renacimiento cultural de San Francisco y padre 
+			de la contracultura norteamericana, denominada generaci&oacute;n <i>Beat</i>.<br>
+			Durante los a&ntilde;os cincuenta y sesenta, escribi&oacute; poes&iacute;a, teatro, 
+			ensayos y art&iacute;culos de cr&iacute;tica social, tradujo autores de varias 
+			lenguas, defendi&oacute; con ah&iacute;nco los derechos humanos, propici&oacute; 
+			movimientos bohemios y present&oacute; por primera vez lecturas de poemas 
+			acompa&ntilde;adas de jazz. <br>
+			Radicado desde joven en California, public&oacute; una abundante<br>
+			obra, en la que se destacan su poes&iacute;a y sus traducciones, en 
+			particular las excelentes versiones de poes&iacute;a china y japonesa.&nbsp;<br>
+			Muri&oacute; en 1982 en Montecito, California.&nbsp;&nbsp;&nbsp;&nbsp; &copy;</font></td>
+		</tr>
+	</table>
+	<p align="left"><font face="Georgia" color="#C4CAD4">&nbsp; </font></p>
+	</center></div>
+<p align="center"><font size="3" color="#FFFFFF" face="Basil"><br>
+<br>
+</font><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Georgia" color="#C4CAD4">Poemas de Kenneth 
+Rexroth:</font><font size="3" color="#FFFFFF" face="Georgia"><br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="3" color="#FFFFFF" face="Georgia"><br>
+		</font><font face="Georgia" size="2"><br>
+		</font><a href="./rexroth.htm#Actos sacramentales"><font face="Georgia">&quot;Actos 
+		sacramentales &quot; 2005</font><font face="Georgia" size="2">&nbsp;&nbsp;&nbsp; 
+		(selecci&oacute;n)</font></a><br>
+&nbsp; <font face="Georgia" size="2"><a href="./rexroth.htm#Andr&eacute;e Rexroth">Andr&eacute;e Rexroth</a></font><br>
+		<font face="Georgia" size="2">&nbsp;
+		<a href="./rexroth.htm#Confusi&oacute;n de los sentidos">Confusi&oacute;n de los sentidos</a><br>
+&nbsp; <a href="./rexroth.htm#Fugitiva">Fugitiva</a><br>
+&nbsp; <a href="./rexroth.htm#Otras ventajas de la cultura">Otras ventajas de la cultura</a><br>
+&nbsp; <a href="./rexroth.htm#Vac&iacute;o solo">Vac&iacute;o solo</a></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia">
+		<a href="./rexroth.htm#De La se&ntilde;al de todas las cosas 2004">&quot;La se&ntilde;al de todas las 
+		cosas&quot; 2004&nbsp; <font size="2">(selecci&oacute;n)</font></a>&nbsp;&nbsp; 
+		<br>
+		</font><font face="Georgia" size="2">
+		&nbsp; <a href="./rexroth.htm#El cometa Halley">El cometa Halley</a></font><br>
+		&nbsp;<font face="Georgia" size="2"><a href="./rexroth.htm#Ellos dicen que esto no es un poema">Ellos 
+		dicen que esto no es un poema</a></font><br>
+		<font face="Georgia" size="2">&nbsp; <a href="./rexroth.htm#Entre dos guerras">Entre 
+		dos guerras</a></font><br>
+		<font face="Georgia" size="2">&nbsp; <a href="./rexroth.htm#Entre yo y la muerte">
+		Entre yo y la muerte</a></font><br>
+		<font face="Georgia" size="2">&nbsp; <a href="./rexroth.htm#S&oacute;lo esta noche">S&oacute;lo 
+		esta noche</a><br>
+		&nbsp;
+		<a href="./rexroth.htm#Tranquilamente">Tranquilamente</a><br>
+		&nbsp;
+		<a href="./rexroth.htm#Un di&aacute;logo de observar">Un di&aacute;logo de observar</a></font></p>
+		<p align="left"><font face="Georgia">
+		<a href="./rexroth.htm#Los poemas de amor de Marichiko">Los poemas de amor de 
+		Marichiko&nbsp; 2005 <font size="2">&nbsp;&nbsp;&nbsp;&nbsp; (selecci&oacute;n)</font></a></font><br>
+&nbsp;</p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#C4CAD4">
+		</font><font face="Georgia" size="3" color="#FFFFFF">
+		<a href="./index.htm">A media voz </a><br>
+		</font><font face="Georgia" size="2" color="#D2D2D2">
+		<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+		</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+		Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+		</font></p>
+		<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+		<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+		&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+		</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font face="Georgia" size="2" color="#C4CAD4">
+				Tus comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+				para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+		<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><font size="2" color="#C4CAD4" face="Georgia">
+				Esta p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+				b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+				Windows/Fonts: <br>
+				</font><font color="#C4CAD4"><br>
+				</font><a href="./georgia.zip">Georgia</a></font></p>
+			</blockquote>
+		</blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font size="3" color="#FFFFFF" face="Georgia"><br>
+		<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		</font><font color="#C4CAD4" face="Georgia">
+		<a name="Actos sacramentales"></a>De &quot;Actos sacramentales&quot; 2005&nbsp;&nbsp;&nbsp;
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<i>Gadir Editorial, S.L.<br>
+		Versiones de Carlos Manzano</i></font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Andr&eacute;e Rexroth"></a>
+		Andr&eacute;e Rexroth<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		Han pasado los a&ntilde;os. Es primavera otra<br>
+		Vez. Pronto aparecer&aacute;n Saturno<br>
+		Y Marte por el Oeste, en el crep&uacute;sculo.<br>
+		Ahora el sol del atardecer forma<br>
+		Y&aacute;cenas brumosas sobre Steep Ravine<br>
+		Y las cascadas. Las aves llegadas<br>
+		En el invierno de Oreg&oacute;n, petirrojos y<br>
+		Diversos tordos, se ceban con<br>
+		Las bayas maduras de toy&oacute;n y madro&ntilde;o.<br>
+		Los petirrojos cantan mientras cae<br>
+		La densa luz.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Aqu&iacute; se esparcieron tus cenizas.<br>
+		Aqu&iacute; te escrib&iacute; un poema de despedida<br>
+		Y hace mucho tiempo otro, un poema de paz y<br>
+		Amor, de la fatiga de un largo atardecer<br>
+		Primaveral en la juventud. Ahora hace ya casi<br>
+		Diez a&ntilde;os que viniste a morar aqu&iacute;.<br>
+		Una vez m&aacute;s los sauces que brotan despu&eacute;s<br>
+		De A&ntilde;o Nuevo en estas remotas tierras<br>
+		Est&aacute;n en flor. Hay huellas de ciervos y mapaches<br>
+		En los mismos lugares. Nuevos bancos de<br>
+		Arena y lechos de cantos han aparecido donde la<br>
+		Erosi&oacute;n ha ro&iacute;do a fondo las colinas. </font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Los ciclos de la vida 
+		son breves. Guerra y paz<br>
+		Han pasado como espectros. La raza<br>
+		Humana se hunde en el olvido. Un avetoro grita<br>
+		desde los mismos juncos donde t&uacute; o&iacute;ste<br>
+		Uno en nuestro primer a&ntilde;o en el Oeste y donde<br>
+		Yo o&iacute; otro un a&ntilde;o despu&eacute;s de tu muerte.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Confusi&oacute;n de los sentidos"></a>Confusi&oacute;n de los sentidos</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">La luz de la luna 
+		inunda los laureles<br>
+		Como m&uacute;sica. El aire iluminado por la luna<br>
+		Est&aacute; en calma. Tu blanca cara se acerca<br>
+		A la m&iacute;a. La pena voluptuosa nos abraza como<br>
+		Una telara&ntilde;a, una canci&oacute;n, un perfume,<br>
+		Luz de luna. Tu pelo cae y nos envuelve la<br>
+		Cara. Tus labios culebrean entre<br>
+		Los m&iacute;os. Tu lengua penetra en mi boca.<br>
+		Un murci&eacute;lago vuela a la luz de<br>
+		La luna. La luz de la luna te inunda los<br>
+		Ojos, que no tienen iris ni pupilas,<br>
+		Son s&oacute;lo globos de fuego fr&iacute;o como los<br>
+		De los ciervos que pasan junto<br>
+		A nosotros por el bosque desierto. Tu<br>
+		Esbelto cuerpo se estremece y huele<br>
+		A algas marinas. Yacemos y escuchamos<br>
+		Nuestra respiraci&oacute;n a la luz de<br>
+		La luna. &iquest;Oyes? Respiramos. Estamos vivos.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		* * * * *</font></p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Fugitiva"></a>Fugitiva<br>
+		</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		Traes destellos de lluvia en los cabellos<br>
+		Brillantes que te cubren la frente;<br>
+		Tienes h&uacute;medos los ojos, los labios mojados<br>
+		Y g&eacute;lidas y r&iacute;gidas las mejillas del<br>
+		Fr&iacute;o. &iquest;Por qu&eacute; has estado ausente tanto tiempo?<br>
+		&iquest;Por qu&eacute; no has venido a m&iacute; hasta las<br>
+		Tantas de la noche, tras caminar durante horas<br>
+		Contra viento y lluvia? Qu&iacute;tate el vestido<br>
+		y las medias, si&eacute;ntate en este sill&oacute;n profundo<br>
+		Junto al fuego. Te voy a calentar los<br>
+		Pies en mis manos. Te voy a calentar senos y<br>
+		Muslos a besos. Ojal&aacute; pudiese encender<br>
+		Un fuego en tu interior que nunca se extinguiese.<br>
+		Ojal&aacute; pudiera estar seguro de que llevas<br>
+		Bien dentro un im&aacute;n que siempre te traer&aacute; a casa.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><br>
+		* * * * *</font></p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Otras ventajas de la cultura"></a>Otras ventajas de la cultura<br>
+		</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		Un d&iacute;a en la biblioteca,<br>
+		Perplejo y distra&iacute;do,<br>
+		Hojeando un libro tedioso, me<br>
+		Encontr&eacute; con una foto<br>
+		De la vasija en que reposan<br>
+		Los restos de Buda.<br>
+		Sent&iacute; un escalofr&iacute;o. Me desasoseg&oacute;<br>
+		Ese m&iacute;nimo contacto con<br>
+		Una calma que no puedo conocer,<br>
+		La apertura a ese paraje<br>
+		Recargado de un mundo mejor.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * * * *</font></p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Vac&iacute;o solo"></a>Vac&iacute;o 
+		solo</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tiempo como cristal<br>
+		Espacio como cristal<br>
+		Me siento en silencio<br>
+		En cualquier parte cualquier cosa<br>
+		Sucede<br>
+		Muda sonora apacible turbulenta<br>
+		La serpiente se enrosca<br>
+		Sobre s&iacute; misma<br>
+		Todas las cosas transl&uacute;cidas<br>
+		Despu&eacute;s transparentes<br>
+		Luego vol&aacute;tiles<br>
+		S&oacute;lo vac&iacute;o<br>
+		Sin l&iacute;mites<br>
+		S&oacute;lo la canci&oacute;n infinitamente<br>
+		Apagada<br>
+		De la mente enrosc&aacute;ndose<br>
+		S&oacute;lo</font></p>
+		<p><font size="2" color="#C4CAD4" face="Georgia"><i>De &quot;Actos 
+		sacramentales&quot; 2005&nbsp;&nbsp;&nbsp; </i><br>
+		<i>Gadir Editorial, S.L.<br>
+		Versiones de Carlos Manzano</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia">
+		<a name="De La se&ntilde;al de todas las cosas 2004"></a>De &quot;La se&ntilde;al de todas 
+		las cosas&quot; 2004</font><font size="2" color="#C4CAD4" face="Georgia"><br>
+		<i>Editorial Universitaria S.A. Santiago de Chile<br>
+		</i></font><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+		Marcelo Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="El cometa Halley"></a>
+		El cometa Halley</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Cuando en tu madurez<br>
+		El gran cometa venga nuevamente<br>
+		Recu&eacute;rdame: un ni&ntilde;o despierto<br>
+		Una noche de verano,<br>
+		Junto a mi peque&ntilde;a cama <br>
+		Mirando esa estrella de pelo largo <br>
+		Hace ya muchos a&ntilde;os. <br>
+		Ve hacia la oscuridad y mira <br>
+		Su penacho sobre el agua <br>
+		Derram&aacute;ndose en la noche l&iacute;quida,<br>
+		Y piensa que la vida y la gloria<br>
+		Se agitaron alguna vez en mi sangre,<br>
+		Al igual que para los que se fueron<br>
+		Antes que yo, peque&ntilde;as gotas <br>
+		De ese r&iacute;o de billones de a&ntilde;os de largo <br>
+		Que fluye ahora por tus venas.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Ellos dicen que esto no es un poema"></a>Ellos dicen que esto 
+		no es un poema</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">El orden en el universo<br>
+		Es s&oacute;lo el reflejo<br>
+		De la voluntad y la raz&oacute;n humanas.<br>
+		Todo ser es contingente,<br>
+		Ning&uacute;n ser subsiste por s&iacute; mismo.<br>
+		Todos los objetos son movidos por otros objetos.<br>
+		Ning&uacute;n objeto se mueve por s&iacute; mismo.<br>
+		Todos los seres tienen origen en otros seres.<br>
+		Ning&uacute;n ser lleva en s&iacute; su propia causa.<br>
+		No hay ser que sea perfecto.<br>
+		El ser ignora la econom&iacute;a.<br>
+		Los seres se multiplican<br>
+		Sin una necesidad. No poseen<br>
+		Principio de raz&oacute;n suficiente.<br>
+		El &uacute;nico orden de la naturaleza<br>
+		Es la relaci&oacute;n arm&oacute;nica<br>
+		De una persona con otra.<br>
+		Las relaciones que abjuran de la persona<br>
+		Son por esencia ca&oacute;ticas.<br>
+		Las relaciones entre las personas<br>
+		Son el modelo a trav&eacute;s del cual vemos<br>
+		En la naturaleza un sistema.<br>
+		Desde Homero, todos los hombres sensibles<br>
+		Nos han exhortado una y otra vez<br>
+		Acerca de que el universo y<br>
+		Los grandes principios y fuerzas<br>
+		Que mueven el mundo, poseen armon&iacute;a<br>
+		S&oacute;lo como reflejos<br>
+		Del coraje, la lealtad,<br>
+		El amor y la honestidad de los hombres.<br>
+		Dejados a su suerte, esos principios son crueles<br>
+		Y completamente superfluos.<br>
+		El hombre que claudica ante ellos acaba en la locura,<br>
+		Mata a sus hijos, su mujer o sus amigos<br>
+		Y muere sumergido en el polvo sangriento,<br>
+		Habiendo destruido el trabajo<br>
+		Atesorado por las manos de otros hombres<br>
+		S&oacute;lo quien es m&aacute;s listo que ellos logra sobrevivir<br>
+		Y encuentra un hogar donde envejecer.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font color="#C4CAD4" face="Georgia"><a name="Entre dos guerras"></a>
+		Entre dos guerras</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Recuerdas ese desayuno 
+		un d&iacute;a de noviembre:<br>
+		Uvas negras heladas oliendo vagamente<br>
+		Al corcho en el que estaban envueltas,<br>
+		Pan fr&iacute;o con carne caliente y blanca,<br>
+		Y chocolate espeso endulzado con miel?<br>
+		&iquest;Y las fiestas nocturnas; el gin y los tangos?<br>
+		&iquest;Las rotas rejillas para el pelo, las perdidas cremalleras?<br>
+		&iquest;A d&oacute;nde se ha ido todo,<br>
+		Las hermosas mujeres, las horas sin rumbo?<br>
+		Nos dec&iacute;an que est&aacute;bamos perdidos, que &eacute;ramos locos e inmorales<br>
+		Y que interfer&iacute;amos en los planes de los que ten&iacute;an el poder. <br>
+		Y hoy d&iacute;a, millones y millones, encerrados vivos<br>
+		En los ata&uacute;des de la circunstancia,<br>
+		Golpeando en la tapa de los f&eacute;retros<br>
+		Api&ntilde;ados en los s&oacute;tanos de las ruinas, y disputando<br>
+		Su propia carne destrozada. </font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Entre yo y la muerte">
+		</a>Entre yo y la muerte</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>para la m&uacute;sica de Jimmy Blanton:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		SOPHISTICATED LADY; BODY AND SOUL</i><br>
+		<br>
+		Un fervor te abrasa a veces,<br>
+		Y t&uacute; te inclinas ante &eacute;l, silenciosa,<br>
+		Cruel y t&iacute;mida, y a veces<br>
+		Est&aacute;s loca de miedo<br>
+		Y tu desesperaci&oacute;n es contagiosa.<br>
+		La mayor parte del tiempo nos escondemos en nuestros refugios,<br>
+		Protegiendo nuestros espleens, pretendiendo<br>
+		Que nuestros vendajes son nuestras heridas.<br>
+		Pero a veces la rueda del cambio se detiene; <br>
+		La ilusi&oacute;n se desvanece en paz; <br>
+		Y de pronto el orgullo ilumina tu carne -<br>
+		L&uacute;cida como el diamante, sabia como la perla -<br>
+		Y tu cara, remota, absoluta,<br>
+		Perfecta y final como la de una bestia.<br>
+		Es maravilloso mirarte,<br>
+		Una mujer viva en una habitaci&oacute;n<br>
+		Llena de gente fren&eacute;tica y est&eacute;ril,<br>
+		Y pensar en tu encorvado trasero<br>
+		Bajo tu vestido de terciopelo,<br>
+		Y el hermoso fuego expandi&eacute;ndose<br>
+		Desde tu sexo, quemando la carne y el hueso,<br>
+		Los incre&iacute;blemente complejos<br>
+		Tejidos de tu cerebro vivos<br>
+		Bajo tu rizado, espl&eacute;ndido pelo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">* * *<br>
+		<br>
+		Me gusta imaginarte desnuda.<br>
+		Pongo tu cuerpo desnudo<br>
+		Entre yo y la muerte.<br>
+		Si me pongo a pensar<br>
+		Y prendo fuego a tus dulces pezones<br>
+		Hasta los tendones bajo tus rodillas,<br>
+		Puedo ver muy lejos a trav&eacute;s de tu cuerpo.<br>
+		Lo que miro est&aacute; vac&iacute;o,<br>
+		Pero al menos est&aacute; iluminado.<br>
+		<br>
+		S&eacute; c&oacute;mo tus hombros relucen,<br>
+		C&oacute;mo tu rostro cae en trance,<br>
+		Y tus ojos se ponen como los de un son&aacute;mbulo,<br>
+		Y tus labios de mujer<br>
+		Que es cruel consigo misma.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Me gusta<br>
+		Imaginarte vestida, tu cuerpo<br>
+		Cerrado al mundo y contenido, <br>
+		Su maravillosa arrogancia <br>
+		Que hace que todas las mujeres te envidien. <br>
+		Puedo recordar cada vestido, <br>
+		Cada uno m&aacute;s orgulloso que una monja desnuda. <br>
+		Cuando me voy a dormir mis ojos<br>
+		Se cierran en una red de memoria.<br>
+		Su nube de &iacute;ntimo olor<br>
+		Sue&ntilde;a en vez de m&iacute;.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="S&oacute;lo esta noche"></a>
+		S&oacute;lo esta noche</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+		<br>
+		<i>[Eric Satie: Gymnop&eacute;die # 1]</i><br>
+		<br>
+		La luz de la luna&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ahora&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sobre Malib&uacute;<br>
+		La noche invernal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		las pocas estrellas<br>
+		Lejos a millones&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de kil&oacute;metros de distancia<br>
+		El mar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		movi&eacute;ndose <br>
+		Desde siempre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		alrededor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de la tierra <br>
+		Lejos, tan lejos como cercanos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		est&aacute;n tus labios<br>
+		Llenos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		de la misma luz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		que tus ojos<br>
+		Amor m&iacute;o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		amor m&iacute;o&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		amor m&iacute;o <br>
+		El futuro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		se ha ido muy lejos <br>
+		Y el pasado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nunca 
+		suceder&aacute;. <br>
+		S&oacute;lo tenemos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		esto<br>
+		Nuestro para siempre <br>
+		Tan peque&ntilde;o&nbsp;&nbsp;&nbsp;&nbsp; tan infinito <br>
+		Tan breve&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		tan vasto<br>
+		Inmortal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como nuestras manos que se tocan <br>
+		Vivaces&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		como el vino iluminado que bebemos<br>
+		Todopoderoso como este &uacute;nico beso<br>
+		Que no tiene comienzo<br>
+		Y que nunca<br>
+		Nunca <br>
+		Terminar&aacute;</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i><font face="Georgia" size="2" color="#C4CAD4">
+		</font></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4"><a name="Tranquilamente"></a>
+		Tranquilamente</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tendido tranquilamente 
+		junto a ti,<br>
+		Mi mejilla contra tu firme, quieto muslo,<br>
+		La callada m&uacute;sica de Boccherini<br>
+		Ba&ntilde;&aacute;ndonos en la quietud,<br>
+		Mientras el sol abandona los altos de la casa y se aleja <br>
+		Por el Pac&iacute;fico, en calma -<br>
+		Tan calmado se mueve el sol sobre nosotros, <br>
+		Tan calmado como siempre, <br>
+		Tan calmados, nuestros cuerpos, agotados<br>
+		Por el tiempo y las penitencias del amor,&nbsp; nuestros <br>
+		Cerebros ovillados, quietos en sus conchas, adormecidos,<br>
+		Nuestros corazones lentos, tranquilos, confiados<br>
+		En sus ritmos entrelazados, el pulso<br>
+		En tu muslo acariciando mi mejilla. Tranquilo.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Un di&aacute;logo de observar"></a>Un di&aacute;logo de observar</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Perm&iacute;teme celebrarte. 
+		Jam&aacute;s<br>
+		He conocido a nadie<br>
+		Tan bella como t&uacute;. Yo,<br>
+		Caminado a tu lado, observando <br>
+		C&oacute;mo te acercas a m&iacute;, contemplando <br>
+		La apacible gracia de tu mano y tu muslo,<br>
+		Observando a tu rostro cambiar con aquello <br>
+		Que callas, mirando tus <br>
+		Ojos solemnes cuando se vuelven a m&iacute;<br>
+		O hacia ellos mismos henchidos de conocimiento, <br>
+		Lentos o veloces, observando tus labios <br>
+		Rebosantes, partidos o meditabundos,<br>
+		Observando tu delicada cintura, <br>
+		Tus orgullosas nalgas llenas de gracia, como un<br>
+		Cisne en traves&iacute;a, un animal<br>
+		Libre, tu ser m&aacute;s &iacute;ntimo,<br>
+		Ind&oacute;mito aunque<br>
+		Abandonado, como yo lo estoy en ti,<br>
+		Escuchando por casualidad el perfecto<br>
+		Lenguaje de tu movimiento, amor<br>
+		Confianza y seguridad mientras<br>
+		Alimentas o juegas con nuestros hijos.<br>
+		Jam&aacute;s he conocido a nadie<br>
+		Tan bella como t&uacute;.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Marcelo 
+		Pellegrini y Armando Roa Vidal</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="Los poemas de amor de Marichiko"></a>Los poemas de amor de 
+		Marichiko&nbsp; <font size="2">(selecci&oacute;n)</font></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Pablo 
+		Boullosa<br>
+		Ed. Verdehalago julio de 2005</font></i></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		para Kenneth Rexroth<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Marichiko</i></font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		para Marichiko<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Kenneth Rexroth</font></i></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">IV<br>
+		Me preguntas en qu&eacute; pensaba<br>
+		Antes de que fu&eacute;ramos amantes.<br>
+		La respuesta es f&aacute;cil.<br>
+		Antes de conocerte<br>
+		No ten&iacute;a nada en qu&eacute; pensar.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">VI<br>
+		S&oacute;lo nosotros.<br>
+		En nuestra peque&ntilde;a casa<br>
+		Lejos de todos,<br>
+		Lejos del mundo,<br>
+		S&oacute;lo el sonido del agua sobre la piedra.<br>
+		Y entonces te digo:<br>
+		&quot;Escucha: el viento pasa entre los &aacute;rboles&quot;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">VII<br>
+		Hacer el amor contigo<br>
+		Es como beber agua de mar.<br>
+		Mientras m&aacute;s bebo<br>
+		M&aacute;s sedienta me pongo,<br>
+		Hasta que nada puede saciar mi sed<br>
+		Sino beberme todo el oc&eacute;ano.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">IX<br>
+		Me despiertas,<br>
+		Apartas mis muslos, y me besas.<br>
+		Te regalo el roc&iacute;o<br>
+		De la primera ma&ntilde;ana del mundo.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XIII<br>
+		Tendida sobre la paradera, abierta a ti<br>
+		Bajo el sol de la tarde,<br>
+		Una vaga neblina esconde a medias<br>
+		Mis p&eacute;talos de rosa.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XV<br>
+		Porque sue&ntilde;o<br>
+		Contigo cada noche,<br>
+		Mis d&iacute;as de soledad<br>
+		son s&oacute;lo sue&ntilde;os.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XVIII<br>
+		El fuego<br>
+		Quema mi coraz&oacute;n.<br>
+		No levanta ning&uacute;n humo.<br>
+		Nadie lo sabe.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XX<br>
+		&iquest;Qui&eacute;n est&aacute; ah&iacute;? Yo.<br>
+		&iquest;Qui&eacute;n yo? Yo soy yo. T&uacute; eres t&uacute;.<br>
+		Tomas mi pronombre,<br>
+		Y somos nosotros.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XXV<br>
+		Tu lengua borda y se desliza<br>
+		Dentro de m&iacute;,<br>
+		Y me vuelvo sorda y resplandezco<br>
+		Con una luz inestable<br>
+		como el interior<br>
+		De una expansiva<br>
+		Y dilatada perla.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XLII<br>
+		Cu&aacute;ntas vidas hace<br>
+		que nad&eacute; por vez primera en el torrente del amor,<br>
+		Para descubrir al fin<br>
+		Que la orilla es inalcanzable.<br>
+		Y sin embargo s&eacute;<br>
+		Que voy a seguir nadando y nadando.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">XLIV<br>
+		El desorden de mi pelo<br>
+		Se debe a mi almohada insomne y solitaria.<br>
+		Mis ojos hundidos y mi rostro demacrado<br>
+		Son tu culpa.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">L<br>
+		En el parque un cuervo despierta<br>
+		Y se lamenta bajo la luna llena.<br>
+		Y yo me despierto y lloro<br>
+		Por los a&ntilde;os que se han ido.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">LI<br>
+		&iquest;Me hiciste tuya porque me amabas?<br>
+		&iquest;Me hiciste tuya sin haberme amado?<br>
+		&iquest;O solamente me hiciste tuya<br>
+		para poner a prueba mi coraz&oacute;n?</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">De &quot;Los poemas de 
+		amor de Marichiko&quot; 1978<br>
+		Versi&oacute;n de Pablo Boullosa<br>
+		Ed. Verdehalago julio de 2005</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 17:53:43 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:24:38 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

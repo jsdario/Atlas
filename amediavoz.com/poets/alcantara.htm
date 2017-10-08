@@ -1,0 +1,658 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Manuel Alc&aacute;ntara</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Manuel Alc&aacute;ntara. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Manuel_Alcantara,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg" link="#B0C6C1" vlink="#B0C6C1" alink="#B0C6C1">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app15.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/alcantara.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/alcantara.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815165143" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./alcantara.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:51:43 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./alcantara.htm" title="0:57:13 May 2, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:51:43 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./alcantara.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:51:43 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./alcantara.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>84 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">3 Jun 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000001010101_2003:-1:010101010101_2004:-1:010101010101_2005:-1:011100010110_2006:-1:110011010561_2007:-1:021114121100_2008:-1:111111000012_2009:-1:020000110000_2010:-1:100000001110_2011:-1:000010001001_2012:-1:120010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+<img border="0" src="./ALCANTARA.jpg" width="391" height="40">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><br>
+</p>
+
+<p align="center"><em style="font-style: normal">
+<font size="3" color="#C5BEBE" face="Arial"><br>
+</font>
+</em><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;Mira que cosa tan rara: Pas&eacute; la noche <br>
+contigo estando solo en mi cama...&quot;</em></font><em><font face="Arial" size="2"
+color="#9BC9BB"><br>
+</font>
+</em><font face="Arial" size="2"
+color="#9BC9BB"><br>
+<img src="./ALCANTARA1.jpg" width="250" height="396"></font></p>
+
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em>&quot;Winter 1896&quot;<br>
+<br>
+Alphonse Mucha</em></font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p align="center"><font color="#9BC9BB"><br>
+      </font>
+      <font face="Georgia" size="4" color="#9BC9BB">Rese&ntilde;a biogr&aacute;fica</font></p>
+    </blockquote>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Poeta y 
+	periodista espa&ntilde;ol nacido en M&aacute;laga en 1928.<br>Desde 1945 se radic&oacute; en 
+	Madrid donde curs&oacute; estudios de Derecho. Lleva muchos a&ntilde;os publicando 
+	columnas diarias <br>
+	en la prensa espa&ntilde;ola, d&aacute;ndole la oportunidad a sus lectores de vivir muy de 
+	cerca su fino humor y su personalidad brillante.<br>Ha obtenido varios 
+	premios de periodismo y numerosos cert&aacute;menes po&eacute;ticos de provincias. Entre 
+	sus galardones se destacan <br>
+	el <span style="font-style: normal">Premio Nacional de Literatura</span>, el 
+	<span style="font-style: normal">Premio Period&iacute;stico Comit&eacute; Espa&ntilde;ol de 
+	Unicef</span>, el premio 
+	<span style="font-style: normal">Juventud</span> en 1955, <br>
+	el Premio <span style="font-style: normal">Javier Bueno</span> de la 
+	Asociaci&oacute;n de la Prensa de Madrid y los premios 
+	<span style="font-style: normal">Luca de Tena</span>, <span style="font-style: normal">
+	C&eacute;sar Gonz&aacute;lez Ruano, <br>
+	Mariano de Cavia </span>y<span style="font-style: normal"> Jos&eacute; Mar&iacute;a Pem&aacute;n.</span><br>
+	Asimismo,&nbsp; recibi&oacute; el t&iacute;tulo de Doctor Honoris Causa por la Universidad 
+	de M&aacute;laga en el a&ntilde;o 2000 y Pluma de Plata <br>
+	del Club de la Escritura de Parker Waterman en el a&ntilde;o 2001.<br>Entre sus 
+	publicaciones figuran: <i>&quot;Manera de silencio&quot;</i> en 1955, 
+	<i>&quot;Ciudad de entonces&quot;</i> en 1962 y <i>&quot;La mitad del tiempo&quot;</i> en 1963. 
+	&copy;</font></p>
+	<blockquote>
+      <p align="left">&nbsp;</p>
+      <p align="left"><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+      <p align="center"><font face="Georgia" size="2" color="#ABC2BD"><img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+      <p align="left">&nbsp;</p>
+    </blockquote>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./alcantara.htm#AMANECER">Amanecer</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./alcantara.htm#ARC&Aacute;NGEL DE PEREZA">Arc&aacute;ngel de pereza</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./alcantara.htm#BIOGRAF&Iacute;A">Biograf&iacute;a</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./alcantara.htm#DE M&Iacute;, UNA GUITARRA">De m&iacute;, una guitarra</a>&nbsp;&nbsp; </font>
+	</p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./alcantara.htm#EN AQUEL TIEMPO">En aquel tiempo</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./alcantara.htm#ESTE JUEVES">Este jueves</a></font></p>
+	<p align="left"><font face="Georgia"><a href="./alcantara.htm#SONETO PARA EMPEZAR UN AMOR">
+	Soneto para empezar un amor</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a
+      href="./alcantara.htm#SONETO PARA ACABAR UN AMOR">Soneto para acabar un amor</a></font></p>
+	<p align="left"><font face="Georgia" color="#A7BEB9">
+	<a href="./alcantara.htm#SONETO PARA ESPERARTE EN UNA CAFETER&Iacute;A">Soneto para esperarte en 
+	una cafeter&iacute;a</a></font><font face="Georgia" size="2" color="#A7BEB9"><br>
+	<br>Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+	Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font><font face="Georgia"><a href="./indice-L-Z.htm">&Iacute;ndice L-Z</a></font></p>
+	<blockquote>
+      <p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#81A39B"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a>
+      </font><font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; <br>
+      <br>
+      <br>
+      <br>
+      </p>
+    </blockquote>
+    <p align="left">&nbsp;</p>
+    <p align="center"><font face="Georgia" size="3" color="#B0C6C1"><img border="0"
+    src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+    <p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#95B3AA">
+	<a name="AMANECER"></a></font><font face="Georgia" color="#9BC9BB">
+	Amanecer</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Una vez m&aacute;s 
+	reaparece<br>el d&iacute;a de ayer, ya dado<br>por muerto y por enterrado.<br>Otra 
+	vez desaparece</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">el silencio y 
+	me amanece<br>otra vez a nuestro lado.<br>No s&eacute; si ser&aacute; pecado.<br>A m&iacute; no 
+	me lo parece.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">En este d&iacute;a 
+	cualquiera<br>p&aacute;rate a ver c&oacute;mo canta,<br>antes que me vaya fuera,</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">mi coraz&oacute;n en 
+	tu mano<br>y tu boca en mi garganta<br>por la ma&ntilde;ana temprano.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="ARC&Aacute;NGEL DE PEREZA"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Arc&aacute;ngel de pereza</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Un arc&aacute;ngel me ronda 
+	indiferente,<br>oigo sus alas cerca de mi aliento;<br>un arc&aacute;ngel me ronda, 
+	yo lo siento<br>con el peso del aire por mi frente.<br>El me ense&ntilde;&oacute; a decir 
+	&quot;in&uacute;tilmente&quot;<br>y a darle los prop&oacute;sitos al viento;<br>su espada, del metal 
+	del desaliento<br>se hundi&oacute; en mi voluntad desobediente.<br>Arc&aacute;ngel 
+	rondador de la desgana,<br>que se lleva el dolor que no me tomo<br>para 
+	traerlo el d&iacute;a de ma&ntilde;ana...<br>Sujetas van las penas por las bridas,<br>
+	enjaezadas, dolientes, nobles, como<br>las mulas al final de las corridas.<br>
+	S&oacute;lo la ociosidad es mi tarea.<br>Las morunas naranjas, gajo a gajo,<br>
+	vierten su antiguo zumo, y en el tajo<br>se ha vuelto perezosa la pelea.<br>
+	Si esto es vivir, que venga Dios y vea<br>c&oacute;mo ando con la vida cuesta 
+	abajo...<br>Que cuesta estar de pie mucho trabajo<br>para despu&eacute;s marcharse 
+	adonde sea.<br>El naufragio que llevo entre las sienes,<br>que es verdad que 
+	no cabe en cualquier r&iacute;o,<br>me trae a mal traer... Y aqu&iacute; me tienes<br>
+	cont&aacute;ndole una historia a los desiertos,<br>machacando la vida en hierro 
+	fr&iacute;o,<br>hablando de la muerte con los muertos.<br>Lo sabe el coraz&oacute;n. Que 
+	no se diga<br>que el coraz&oacute;n no sabe lo que tiene.<br>Sobre su propia muerte 
+	se sostiene<br>pero la sangre a veces se fatiga.<br>Cansado y todo dice Dios 
+	que siga<br>habitando el vac&iacute;o, que se llene<br>de noches y de nada... 
+	Mientras viene<br>uno se echa a dormir. Pereza obliga.<br>Con la genealog&iacute;a 
+	de los trinos<br>cantando est&aacute; la antigua voz del arte<br>a la insegura 
+	sombra de la suerte,<br>la memoria se llena de caminos<br>pero no llegar&eacute; a 
+	ninguna parte<br>con este coraz&oacute;n de mala muerte.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#9BC9BB"><a name="BIOGRAF&Iacute;A"></a></font>
+	<font face="Georgia" color="#9BC9BB">Biograf&iacute;a</font></p>
+	<p><font face="Georgia" size="2" color="#9BC9BB">Lo mejor del recuerdo es el 
+	olvido...<br>M&aacute;laga naufragaba y emerg&iacute;a...<br>Manuel, junto a la mar, 
+	desentendido;<br>yo era un ni&ntilde;o jugando a la alegr&iacute;a.<br>Ahora juego a todo 
+	lo que obliga<br>la impuesta profesi&oacute;n de ser humano,<br>y a veces, al final 
+	de la fatiga,<br>ense&ntilde;o a andar palabras de la mano.<br>Ser hombre es ir 
+	andando hacia el olvido<br>haci&eacute;ndose una patria en la esperanza;<br>cuerpo 
+	a cuerpo con Dios se est&aacute; vendido<br>y a gritos no se alcanza.<br>( Dentro 
+	de poco se dir&aacute; que fuiste,<br>que alguien llamado as&iacute;, vivi&oacute; y amaba...)<br>
+	Ser hombre es una larga historia triste<br>y un buen d&iacute;a se acaba.<br>Desde 
+	mis veinticinco historias vengo.<br>Nada me import&oacute; nada.<br>Pero cualquier 
+	cap&iacute;tulo lo tengo<br>miniado en letra triste y colorada.<br>Un hombre hecho 
+	y deshecho<br>os habla. Soy distinto cada a&ntilde;o.<br>Tengo un desconocido por 
+	el pecho.<br>S&iacute;. Miradme a los versos. No os enga&ntilde;o.<br>Tengo el sombr&iacute;o 
+	bosque de la frente<br>esperando que llueva;<br>mientras, el alma suena bajo 
+	el puente,<br>y cuando el alma suena es que a Dios lleva.<br>Vuelvo a andar 
+	el camino desandado<br>y en mi paso resuenan las cadenas.<br>Recuerda el 
+	coraz&oacute;n acostumbrado...,<br>&iexcl;qu&eacute; buen fisonomista de las penas!<br>Unas 
+	pocas palabras me mantienen:<br>duda, esperanza, amor... Siempre me 
+	pierdo...<br>Amor, duda, esperanza... Siempre vienen...<br>La ilusi&oacute;n, si la 
+	he visto, no me acuerdo.<br>Lo mejor del recuerdo es el olvido...<br>M&aacute;laga 
+	naufragaba y emerg&iacute;a...<br>Manuel, junto a la mar, desentendido;<br>hubo una 
+	vez un ni&ntilde;o en la bah&iacute;a.<br>Y hay un hombre de pie sobre mis huellas<br>
+	indefenso y sonoro, a ras del suelo,<br>que se ir&aacute; mientras hacen las 
+	estrellas<br>propaganda de Dios all&aacute; en el cielo.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" color="#9BC9BB">
+	<a name="DE M&Iacute;, UNA GUITARRA"></a>De m&iacute;, una guitarra</font><font face="Georgia" size="2" color="#9BC9BB"><br><br>
+	Cuando yo me haya ido<br>-qu&eacute; triste que me vaya-<br>de esta madera m&iacute;a<br>
+	que me hagan una guitarra.<br>
+	<br>Cuando termine la muerte,<br>si dicen: &quot;&iexcl;A levantarse!&quot;,<br>a m&iacute; que no 
+	me despierten.<br>
+	<br>Que por mucho que lo piense,<br>yo no s&eacute; lo que me espera<br>cuando 
+	termine la muerte.<br>
+	<br>Que yo me conformo siempre,<br>y una vez acostumbrado<br>a m&iacute; que no me 
+	despierten.<br>
+	<br>Para encontrarme conmigo<br>vuelvo a salir a la calle,<br>calle del 
+	tiempo perdido.<br>
+	<br>Para encontrarme contigo<br>estoy buscando en el suelo<br>las huellas de 
+	su sonido.<br>
+	<br>Para encontrarme con nadie<br>me pongo a mirar arriba,<br>&iexcl;Auxilio, que 
+	Dios me ampare!<br>
+	<br>Mis cuentas no est&aacute;n cabales:<br>me falta una golondrina<br>y me sobran 
+	tres cristales.<br>
+	<br>Mira qu&eacute; cosa tan rara:<br>pas&eacute; la noche contigo<br>estando solo en mi 
+	cama.<br>
+	<br>En este d&iacute;a cualquiera<br>p&aacute;rate a ver c&oacute;mo canta,<br>antes que me vaya 
+	fuera,<br>
+	<br>mi coraz&oacute;n en tu mano<br>y tu boca en mi garganta<br>por la ma&ntilde;ana 
+	temprano.<br>
+	<br>Ponte a vivir como loco:<br>ama, r&iacute;e, bebe, olvida.<br>Puesto a vivir 
+	todo es poco<br>por m&aacute;s que dure la vida.<br>
+	<br>El mar no puede morir,<br>se quedar&aacute; navegando<br>aunque no haya nadie 
+	aqu&iacute;.<br>
+	<br>Si otros no buscan a Dios<br>yo no tengo m&aacute;s remedio:<br>me debe una 
+	explicaci&oacute;n.<br>
+	<br>No digo que s&iacute; o que no.<br>Digo que si Dios existe<br>no tiene perd&oacute;n 
+	de Dios.<br>
+	<br>No digo que no o que s&iacute;.<br>Digo que me gustar&iacute;a<br>que &Eacute;l tambi&eacute;n 
+	creyera en m&iacute;.<br>
+	<br>Yo no le guardo rencor.<br>Si le encuentro alguna vez<br>nos perdonamos 
+	los dos.<br>
+	<br>Mi pobre tierra no puede<br>darme lo que estoy buscando.<br>Nadie da lo 
+	que no tiene.<br>
+	<br>Yo no culpo a Andaluc&iacute;a,<br>s&eacute; muy bien que a su esperanza<br>le pas&oacute; lo 
+	que a la m&iacute;a.<br>
+	<br>Averigua qui&eacute;n te dio<br>esas ganas de morirte.<br>Ha tenido que ser 
+	Dios.<br>
+	<br>Ha tenido que ser Dios<br>un d&iacute;a que estaba triste.<br>No tiene otra 
+	explicaci&oacute;n.</font></p>
+    <blockquote>
+      <p>&nbsp;</p>
+      <p align="center"><font face="Georgia" size="3" color="#9BC9BB"><img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+    </blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#9BC9BB">
+	<a name="EN AQUEL TIEMPO"></a>En aquel tiempo</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Yo tuve el 
+	coraz&oacute;n capaz de lluvia.<br>Ocurr&iacute;a febrero con sus alas<br>y el tiempo 
+	digital nos puso juntas<br>las manos y los ojos y los cuerpos:<br>toda la 
+	tierra que el amor excusa.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Igual que el 
+	viento en las banderas altas<br>se comport&oacute; en nosotros esta m&uacute;sica.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Me fui 
+	quedando acompa&ntilde;ado y cierto,<br>entendido en los bosques de mi jungla,<br>
+	le&ntilde;ador orgulloso de ra&iacute;ces<br>que no debieron nunca estar ocultas.<br>Lo de 
+	siempre se puso a ser distinto:<br>el mar entero cupo en una urna,<br>el 
+	hielo de los vasos proven&iacute;a<br>de una lejana nieve, nuestra y &uacute;nica,<br>mis 
+	manos migratorias se quedaron<br>a vivir en tu tierra m&aacute;s profunda<br>y en 
+	mi boca, de siempre descontenta,<br>dimit&iacute;an de pronto las preguntas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Presenciadas 
+	por dos cambian las torres,<br>la muerte aplaza sus gestiones &uacute;ltimas<br>y 
+	estar vivo se agita y condecora.<br>La muerte debe ser como un espejo<br>
+	donde uno mira y mira sin ver nunca.<br>Ven cerca. M&aacute;s. Que entre los dos no 
+	quepa<br>ninguna muerte ni ninguna duda.<br>Te hablo desde febrero y desde 
+	siempre:<br>sabemos del amor por lo que alumbra,<br>por lo que tuerce y 
+	acrecienta y rige,<br>por su forma de andar en la penumbra...<br>Y as&iacute;, 
+	sobre semanas perseguidas<br>izamos con esfuerzo nuestra alma.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+	<a name="ESTE JUEVES"></a></font><font face="Georgia" color="#9BC9BB">
+	Este jueves</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Este jueves 
+	depende de tu boca.<br>Debes cuidarlo igual que un parque a un ni&ntilde;o,<br>como 
+	cuida el oto&ntilde;o cada hoja<br>y le procura el aire necesario<br>para que se 
+	re&uacute;na con las otras.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Mira este 
+	jueves. No lo sabe. M&iacute;ralo<br>acercarse a nosotros entre sombras.<br>y 
+	ocupar la ciudad como un ej&eacute;rcito<br>que no pensara nunca en su derrota.<br>
+	Ser&aacute; jueves en todo. Est&aacute; de paso<br>pero quiere vivir de luces propias.<br>
+	Entrar&aacute; en la oficina de ma&ntilde;ana,<br>a mediod&iacute;a contar&aacute; sus horas<br>y se 
+	quedar&aacute; al norte de las cartas<br>que desde que se escriben son remotas.<br>
+	Mira c&oacute;mo se acerca hasta nosotros:<br>viste de azul y herencias sigilosas,<br>
+	establece su n&uacute;mero y su luna<br>&iexcl;el tiempo siendo jueves en las cosas!</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Cu&iacute;dalo t&uacute; que 
+	puedes, no le dejes<br>que tal d&iacute;a haga un a&ntilde;o en la memoria.<br>Mira c&oacute;mo 
+	se acerca a la ventana<br>sin saber que depende de tu boca.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Para pasar un 
+	d&iacute;a con nosotros<br>ha salido este jueves de sus sombras.</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#9BC9BB">
+	<a
+      name="SONETO PARA ACABAR UN AMOR"></a>Soneto para acabar un amor</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">He quemado el 
+	pa&ntilde;uelo por si acaso<br>se pudiera tejer de nuevo el lino.<br>Le sobra la 
+	mitad del vaso al vino<br>y m&aacute;s de media noche al cielo raso.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Ten&iacute;a que 
+	pasar esto. Y el caso<br>es que estando yo siempre de camino<br>y estando t&uacute; 
+	parada, no te vi y no<br>me ha cogido el amor nunca de paso.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Puede que 
+	salga a relucir la historia<br>porque nunca se acaba lo que acaba,<br>que se 
+	queda a vivir en la memoria.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Echa a andar 
+	el amor que te he tenido<br>y se va no s&eacute; d&oacute;nde. Donde estaba.<br>De donde 
+	no debiera haber salido.</font></p>
+	<p align="left"><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p align="center">&nbsp;</p>
+  </blockquote>
+  <blockquote>
+    <p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+	<a
+      name="SONETO PARA EMPEZAR UN AMOR"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Soneto para empezar un amor</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Ocurre que el 
+	olvido, antes de serlo,<br>fue grande amor, dorado cataclismo;<br>muchacha 
+	en el umbral de mi ego&iacute;smo,<br>&iquest;qu&eacute; va a pasar? mejor es no saberlo.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Muchacha con 
+	amor, &iquest;d&oacute;nde ponerlo?<br>Amar son cercan&iacute;as de uno mismo.<br>Como siempre, 
+	rodando en el abismo,<br>se ir&aacute; el amor, sin verlo ni beberlo.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Tumbarse a ver 
+	qu&eacute; pasa, eso es lo m&iacute;o;<br>cumpliendo a&ntilde;os ir&aacute;s en mi memoria,<br>viviendo 
+	para ayer, como una brasa,</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">porque no 
+	llegar&aacute; la sangre al r&iacute;o,<br>porque un d&iacute;a seremos s&oacute;lo historia<br>y lo de 
+	uno es tumbarse a ver qu&eacute; pasa.<br>
+	</font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	<p>&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+	<a
+      name="SONETO PARA ESPERARTE EN UNA CAFETER&Iacute;A"></a></font>
+	<font face="Georgia" color="#9BC9BB">
+	Soneto para esperarte en una cafeter&iacute;a</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Resulta que la 
+	historia estaba escrita<br>cuando yo quise hacerla a mi manera.<br>Cuando yo 
+	no quer&iacute;a que volviera<br>resulta que la historia resucita.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Resulta que en 
+	el tiempo de la cita<br>tendr&aacute;n que hacer un banco de madera.<br>Al coraz&oacute;n 
+	le viene bien la espera,<br>qui&eacute;n sabe si adem&aacute;s la necesita.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Azafatas de 
+	vuelo alicortado<br>van del caf&eacute; a las pi&ntilde;as tropicales<br>por aires 
+	ciudadanos y ruidosos.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Arriba el 
+	tiempo nuevo ha presentado<br>sus fluorescentes luces credenciales<br>y 
+	enrolla pergaminos luminosos.<br>
+	</font><font color="#9BC9BB"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+	<img border="0"
+      src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:51:43 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:13:24 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

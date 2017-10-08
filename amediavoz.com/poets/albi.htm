@@ -1,0 +1,626 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>Jos&eacute; Albi</title>
+<meta NAME="description"
+CONTENT="Biograf&iacute;a y amplia selecci&oacute;n de poemas de Jos&eacute; Albi. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Jose_Albi,poesias,poetas,poemas,versos,biografias,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color : #84B0D6;text-decoration : none;}
+a:active {color :#84B0D6;text-decoration : none;}
+a:visited {color :#84B0D6;text-decoration : none;}
+a:hover {color:#ECEBBB}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body link="#AAC0D5" vlink="#AAC0D5" alink="#AAC0D5" background="./SENSUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app19.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/albi.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/albi.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815162801" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./albi.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="1 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 16:28:01 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./albi.htm" title="19:13:00 May 1, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 16:28:01 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./albi.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 16:28:01 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./albi.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>60 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">7 Feb 03 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:010102010100_2004:-1:000000010101_2005:-1:011100000014_2006:-1:110010010432_2007:-1:020202010100_2008:-1:001121000001_2009:-1:000100100000_2010:-1:100000001010_2011:-1:000010011000_2012:-1:000010001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./ALBI.jpg" width="212" height="41"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><font face="Arial" size="2" color="#84B0D6">
+<em style="font-style: normal">&quot;...</em>Enamorada miel, tenme en tus labios.<br>
+Arrebatada luz, ponme en tus ojos.<em style="font-style: normal">..&quot;</em></font></p>
+
+<p align="center"><font color="#84B0D6"><img src="./ALBI1.jpg" width="250" height="300"></font><font face="Arial"
+size="2" color="#84B0D6"><br>
+<br>
+<em>&quot;Madonna&quot;<br>
+<br>
+Edvard Munch</em><br>
+</font></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p align="center"><font face="Georgia" size="4" color="#84B0D6">Rese&ntilde;a 
+		biogr&aacute;fica</font></p>
+    </blockquote>
+  	<p align="left"><font face="Georgia" size="2" color="#84B0D6">Poeta, 
+	novelista y traductor espa&ntilde;ol nacido en Valencia en 1922.<br>Estudi&oacute; Derecho 
+	en su ciudad natal y Filosof&iacute;a y Letras en Zaragoza, doctor&aacute;ndose en la 
+	Universidad de Madrid.<br>Fundador y director de<i> Cuadernos literarios y 
+	Verbo</i>, del anuario de Poes&iacute;a espa&ntilde;ola <i>Anupe,</i> y autor de una&nbsp; <i><br>
+	Antolog&iacute;a del surrealismo espa&ntilde;ol</i>. Ha sido adem&aacute;s Cr&iacute;tico de poes&iacute;a y de 
+	arte, conferencista y viajero infatigable.<br>Sus poes&iacute;as han sido 
+	traducidas al franc&eacute;s, ingl&eacute;s, alem&aacute;n, y al hebreo moderno, e incorporadas a 
+	diversas antolog&iacute;as <br>
+	espa&ntilde;olas, europeas y sudamericanas.
+	<br>Obtuvo el premio Gabriel Mir&oacute; por su novela <i>El silencio de Dios</i>, 
+	el premio Valencia de Literatura por <i>Odisea 77</i> en 1977,&nbsp; <br>
+	y en 1978 el premio 
+	<span style="font-style: normal">Miguel &Aacute;ngel de Argumosa</span> por <i>
+	Eleg&iacute;a atl&aacute;ntica</i>. Entre sus publicaciones po&eacute;ticas merecen destacarse: <i><br>
+	Poemas del amor de siempre</i>, <i>Septiembre en Paris, Bajo palabra de 
+	amor, Eleg&iacute;as apasionadas, Piedra viva, Eleg&iacute;a atl&aacute;ntica</i> <br>
+	en 1978, <i>Javea o el gozo</i> en 1992 y <i>Esfinges</i> en el a&ntilde;o 2000. &copy;<br>&nbsp;</font></p>
+  </blockquote>
+  <p align="center">&nbsp;</p>
+  <p align="center"><font face="Georgia" size="2" color="#8FABC2"><img border="0"
+  src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<blockquote>
+    <p align="left"><font face="Georgia" size="2" color="#8FABC2"><br>
+	<br></font><font face="Georgia" color="#8FABC2"><a href="./albi.htm#A BRAZO PARTIDO">A 
+	brazo partido</a>&nbsp;</font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a href="./albi.htm#AMOR LEJANO">Amor lejano</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./albi.htm#ESTRELLA DE ALTA MAR, M&Aacute;RCAME EL RUMBO">Estrella de alta mar, 
+	m&aacute;rcame el rumbo...</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./albi.htm#DEFINITIVA SOLEDAD">Definitiva soledad</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./albi.htm#SONETO DE LA AUSENCIA">Soneto de la ausencia</a></font></p>
+	<p align="left"><font face="Georgia" color="#8FABC2">
+	<a
+      href="./albi.htm#Y A TI QUE TE DIR&Eacute;, R&Iacute;O DEL ALMA">&iquest;Y a ti que te dir&eacute;, r&iacute;o del 
+	alma, c&aacute;ntaro de mi sed, jard&iacute;n cerrado?...</a>
+	</font><font face="Georgia" size="2" color="#8FABC2">
+	<br><br>
+	</font><font face="Georgia" color="#8fabc2" size="2">Volver a: </font>
+	<font face="Georgia" color="#8fabc2"><a href="./">A media 
+	voz</a></font><font face="Georgia" color="#8fabc2" size="2"><br>
+	</font><font face="Georgia" color="#85a6bc" size="2">Volver a: </font>
+	<font face="Georgia" color="#85a6bc"><a href="./indice-A-K.htm">&Iacute;ndice A-K </a>
+	</font><font face="Georgia" color="#8fabc2" size="2"><br>
+	Volver a: </font><font face="Georgia" color="#8fabc2">
+	<a href="./sensual.htm">Poes&iacute;a sensual</a></font></p>
+    <blockquote>
+      <p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3"
+      color="#89A7BE"><a HREF="javascript:mailpage()">Pulsa aqu&iacute; para recomendar 
+		esta p&aacute;gina</a></font><font
+      face="Georgia" size="4" color="#8FABC2"> </font><font face="Georgia" size="4"
+      color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp; <br>
+      <br>
+      </p>
+    </blockquote>
+    <p align="center"><font face="Georgia" size="3" color="#A6BCCE"><br>
+    </font><img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></p>
+    <p align="center">&nbsp;</p>
+    <p><font face="Georgia" size="2" color="#84B0D6"><a name="A BRAZO PARTIDO">
+	</a></font><font face="Georgia" color="#84B0D6">A brazo partido</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Llevo en los huesos tanto amor metido 
+	<br>que s&oacute;lo en carne viva y a bandazos, <br>voy capeando el mar de estos 
+	dos brazos 
+	<br>entre los que me encuentro sometido. <br><br>No, no basta gritar, tomar 
+	partido, 
+	<br>morir hasta caerse uno a pedazos; <br>hay que hundir a caricias y a 
+	zarpazos 
+	<br>tu coraz&oacute;n, tu coraz&oacute;n vencido. <br><br>Quiero daros la vida que me 
+	sobra,
+	<br>y este amor que me arranca de los huesos. <br>Vuestro mi coraz&oacute;n, 
+	vuestra mi obra 
+	<br><br>de compartir lo vuestro y nuestro y m&iacute;o, <br>consumidos en c&oacute;lera y 
+	en besos. 
+	<br>S&oacute;lo a mi amor vuestro dolor conf&iacute;o.</font></p>
+	<blockquote>
+		<p align="center">&nbsp;</p>
+		<p align="center">
+		<font color="#84B0D6">
+		<img border="0" src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6"><a name="AMOR LEJANO"></a></font>
+	<font face="Georgia" color="#84B0D6">Amor lejano</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	Abro, de par en par, el viento, la ventana<br>y te contemplo, amor, voy 
+	contemplando todo lo que fue m&iacute;o:<br>los almendros alegres todav&iacute;a, 
+	<br>y el mar en los almendros, la luz en los almendros, <br>y m&aacute;s mar 
+	todav&iacute;a all&aacute; a lo lejos.<br>Quiz&aacute; piense en tu piel, 
+	<br>quiz&aacute; vaya pasando la mano por la corteza de los pinos, <br>quiz&aacute; los 
+	a&ntilde;os vayan cayendo como las gotas del grifo; 
+	<br>quiz&aacute; los siglos. <br>Y quiz&aacute; todav&iacute;a te tenga entre los brazos,<br>como 
+	ayer, como siempre. 
+	<br><br>&iquest;Oyes los montes? Puede que canten.<br>Puede que se derrumben,<br>
+	que se acuerden de ti, que te nombren, 
+	<br>que inventen la palabra burbujeantes, nueva, '<br>como el agua de los 
+	neveros despe&ntilde;&aacute;ndose,<br>como mi voz en medio de la noche.<br>-&iquest;Duermes, 
+	amor? 
+	<br>No me contesta nadie. S&eacute; que duermes.<br>Bernia, como un gran perro bajo 
+	la luna, 
+	<br>se acurruca a mis pies. <br>Oigo su palpitar estremecido.<br>Ifach, all&aacute; 
+	a lo lejos, se nos hunde en el mar,
+	<br>golpea las estrellas con su silencio. <br>M&aacute;s cerca, las luces 
+	chiquitinas, lentas y fieles de Guadalest.<br>vuelvo a rozar tu sue&ntilde;o<br>tu 
+	piel con luna, 
+	<br>los dos r&iacute;os lejanos de tus piernas. <br>T&uacute;, monta&ntilde;a tambi&eacute;n, valle 
+	dormido, 
+	<br>mar toda t&uacute;.<br>-&iquest;Duermes, amor? <br>Gotea el grifo, ladra un perro <br>
+	infinito, remoto como la eternidad.<br>Voy a ciegas, tanteo las paredes<br>y 
+	los acantilados y los vientos. 
+	<br>Te am&eacute;, te estoy amando, te estoy llamando.<br>S&oacute;lo un eco de piedra me 
+	contesta: 
+	<br>Aytana, Chort&aacute;, Bernia...<br>La casa est&aacute; vac&iacute;a. <br>El silencio respira 
+	aqu&iacute;, a mi lado.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="DEFINITIVA SOLEDAD"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Definitiva soledad</font><font face="Georgia" size="2" color="#84B0D6"><br><br>
+	&iquest;Oyes el mar?<br>Eternamente estaremos escuch&aacute;ndolo.<br>Lo llevaremos dentro 
+	como la sangre, como la paz<br>como te llevo a ti misma.<br>Todo, todo ir&aacute; 
+	acabando: la tristeza, la vida,<br>la soledad tan grande en que me has 
+	dejado.<br>S&oacute;lo el mar, amor m&iacute;o, el mar sigue existiendo.<br>Me asomo: lo 
+	contemplo desde esta tarde lenta,<br>desde esta fr&iacute;a y herrumbrosa baranda<br>
+	adonde no te asomas.<br>
+	<br>Amor, no est&aacute;s conmigo. &iquest;Ves el silencio en torno?<br>Baja como las 
+	olas, 
+	<br>me roza como el r&iacute;o de tu piel,<br>se aleja para siempre.<br>T&uacute;, mar, 
+	eterno mar de mi sue&ntilde;o,<br>sue&ntilde;o ya t&uacute;, lejana, irremediable. 
+	<br><br>El viento te acaricia. Yo soy el viento.<br>Pero estoy solo.<br>Y 
+	t&uacute;, t&uacute; est&aacute;s lejana.<br>S&oacute;lo el mar te recuerda, te vive, te arrebata.<br>
+	Siento tus labios, que es sentirte entera;<br>siento tu carne, calladamente 
+	m&iacute;a.<br>Mis manos en el aire te dan vida,<br>y la playa, ya in&uacute;til sin tu 
+	huella,<br>deshabitada y torpe se aleja como el d&iacute;a.<br>S&oacute;lo la tarde 
+	existe;<br>existe y va muriendo. Unos dedos de espuma<br>me agitan los 
+	cabellos; 
+	<br>unas hojas doradas por el sol van cayendo.<br>Quiz&aacute; son tus palabras,<br>
+	quiz&aacute; el cerco ya in&uacute;til de tus brazos.<br>
+	<br>Escucha, amor, te voy nombrando<br>como te nombra el mar. Alg&uacute;n abismo<br>
+	se quiebra no s&eacute; d&oacute;nde, y este mar que respiro 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	no es el m&iacute;o<br>con capiteles rotos y con mirto.<br>Es tu terrible mar, tu 
+	ecuatoriana selva,<br>como t&uacute;, tormentosa; como t&uacute;, quieta, insospechada, 
+	dulce,<br>y otra vez angustiosa y arrebatada. Amor,<br>me vas muriendo. Este 
+	mar que era nuestro 
+	<br>me mira indiferente. Quisiera levantarme <br>como un viento tremendo<br>
+	y sacudir las velas, descerrajar los brazos,<br>morirme a chorros.<br>Pero 
+	s&oacute;lo el silencio. Yo, acodado en en el aire, 
+	<br>contemplo tu recuerdo. <br>No hay m&aacute;s que arena.<br>La ciudad, a lo 
+	lejos, se desdibuja. 
+	<br>Es un humo borroso como el olvido.<br>Ahora estiro los brazos y te 
+	busco. 
+	<br>Aqu&iacute; est&aacute;n nuestras rocas. El mar se mira en ellas;&nbsp; <br>tambi&eacute;n te 
+	busca. 
+	<br>Una estrella de mar va acariciando mi sombra: <br>mi sombra que, sin la 
+	tuya, no es m&aacute;s que un pozo seco. 
+	<br>Esta tarde es como media vida: la media que me falta. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	La que t&uacute; te has llevado.<br>No, no has venido. <br>Eternamente no vendr&aacute;s. 
+	Caer&aacute;n constelaciones,<br>se hundir&aacute;n montes, siglos, tempestades, 
+	<br>y no vendr&aacute;s. Y yo estar&eacute; mirando <br>lo que nos une todav&iacute;a: el mar.<br>
+	Un buque remot&iacute;simo buscar&aacute; el horizonte;<br>pasar&aacute; una pescador con sus 
+	ca&ntilde;as al hombro.<br>S&oacute;lo t&uacute; no vendr&aacute;s. 
+	<br>No vendr&aacute;s nunca.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="ESTRELLA DE ALTA MAR, M&Aacute;RCAME EL RUMBO"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Estrella de alta mar, m&aacute;rcame el rumbo...</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>Estrella de alta mar, m&aacute;rcame el rumbo.<br>Puerta del coraz&oacute;n, dame 
+	cobijo.<br>Enamorada miel, tenme en tus labios.<br>Arrebatada luz, ponme en 
+	tus ojos. 
+	<br>Paloma en libertad, c&eacute;deme el vuelo. <br>Palmera, cielo al fin, hazme a 
+	tu imagen.<br>&Aacute;mbito de mi fe, c&oacute;lmame el gozo.<br>Mujer y nada m&aacute;s, s&eacute; toda 
+	m&iacute;a.<br>T&uacute;, mi dolor, mi sed, mi sobresalto,<br>mi j&uacute;bilo y mi luz a manos 
+	llenas.<br>Revelaci&oacute;n total, regocij&eacute;monos<br>Llave de mi ansiedad, dame la 
+	vida.<br>Hoguera de cristal, torre encendida, ensimismada<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	alondra de la tarde,<br>gloriosa claridad, lirio iniciado, milagro de la 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	paz y de la espiga.<br>Dame la paz, la paz, t&uacute; siempre amada.<br>Para 
+	siempre la paz y la esperanza.</font></p>
+	<p><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p><font color="#84B0D6"><br>
+&nbsp;</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a name="SONETO DE LA AUSENCIA"></a></font>
+	<font face="Georgia" color="#84B0D6">
+	Soneto de la ausencia</font></p>
+	<p><font face="Georgia" size="2" color="#84B0D6">&iquest;Me oyes, amor? Hay un 
+	fragor de trenes,<br>o quiz&aacute; de batanes o de espigas<br>que te aleja de m&iacute;. 
+	No, no me digas<br>que te ir&aacute;s para siempre. Los andenes<br>
+	<br>se despoblaron. Yo, regreso. Penes<br>por donde penes, coraz&oacute;n, no 
+	sigas,<br>no te sigas marchando. M&aacute;s fatigas<br>y m&aacute;s amor perdido si no 
+	vienes.<br>
+	<br>Ay, dolor, que yo s&eacute; lo que me pasa.<br>Que mi casa sin ti ya no es mi 
+	casa,<br>y el aire ni respira ni madura.<br>
+	<br>Que est&aacute;s dentro de m&iacute;, pero no basta<br>aunque te lleve hasta los 
+	huesos, hasta<br>la misma pena que hasta ti me dura.</font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#84B0D6">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+	<p>
+	<font color="#84B0D6">
+	<br>
+&nbsp;</font></p>
+  	<p><font face="Georgia" size="2" color="#84B0D6">
+	<a
+      name="Y A TI QUE TE DIR&Eacute;, R&Iacute;O DEL ALMA"></a> 
+	</font><font face="Georgia" color="#84B0D6">
+	&iquest;Y a ti qu&eacute; te dir&eacute;, r&iacute;o del alma, c&aacute;ntaro de mi sed, jard&iacute;n cerrado?</font><font face="Georgia" size="2" color="#84B0D6"><br>
+	<br>&iquest;Y a ti qu&eacute; te dir&eacute;, r&iacute;o del alma, c&aacute;ntaro de mi sed, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	jard&iacute;n cerrado?<br>&iquest;Y a ti qu&eacute; te dir&eacute;, mujer que dejas tu coraz&oacute;n al borde<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	de mi vida?<br>Hasta ti llegar&eacute; y, entre las manos, tomar&eacute; viento y agua;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	luz y tierra, 
+	<br>y amasar&eacute; nuestros dos nombres juntos. <br>Qu&eacute; nuestra es la esperanza, 
+	que nos gana y nos pierde<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cada d&iacute;a. 
+	<br>Qu&eacute; nuestra es la tristeza, que se escurre a lo largo de los<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	hombros y nos deja indefensos, solitarios.<br>Qu&eacute; nuestro es el recuerdo, 
+	que nos une lo mismo que un<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; abrazo.<br>Qu&eacute; 
+	nuestro es nuestro amor. Con &eacute;l estamos igual que<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	un ni&ntilde;o con zapatos nuevos.<br>Qu&eacute; nuestro es nuestro mundo: isla de guerra 
+	y paz,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; isla profunda<br>hecha a la 
+	dimensi&oacute;n de nuestras almas.<br>Qu&eacute; nuestro es nuestro amor, 
+	<br>Qu&eacute; indescifrable, qu&eacute; remoto, qu&eacute; m&iacute;o<br><br>Qu&eacute; m&iacute;a que eres t&uacute;, qu&eacute; 
+	m&iacute;o el mundo, que m&iacute;a mi verdad<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cuando te 
+	tengo. 
+	<br>Encontr&aacute;ndome en ti, me hallo a m&iacute; mismo. Mi vida empieza<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	donde t&uacute; terminas.<br>Mi vida es despe&ntilde;arse, como un toro por las 
+	encrucijadas<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; del misterio. 
+	<br>Mi vida es caminar, morirse a ratos, y comenzar de nuevo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	la jornada. 
+	<br>Pero t&uacute; eres la paz. La paz ganada a pulso, a fuerza de <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	huracanes y batallas. 
+	<br>No hay victoria que valga si no arriesgamos nuestra propia<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	vida<br>Y la nuestra aqu&iacute; est&aacute;. Sin burladeros, jugando con el mundo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	a cuerpo limpio.<br>Amor es bello si la herida es honda. Horademos la piedra<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	gota a gota. 
+	<br>Hay que aprender la paz de cada d&iacute;a. Yo la aprend&iacute; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	en tus ojos.<br>Aprenderla y vivirla. Yo he aprendido a vivir a tu manera.<br>
+	No hay paz para quien lleva sus dos manos vac&iacute;as de 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; esperanza<br>No hay paz para quien niega 
+	sombra o luz &aacute; su hermano.<br>No hay paz para quien cierra el coraz&oacute;n, y 
+	calla si alguien<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; llama a su puerta.<br>Ni 
+	hay paz para la fuente que no mana, para el &aacute;rbol<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	sin fruta,<br>para el labio sin beso, sin perd&oacute;n y sin fuego...<br>No, no 
+	hay paz para el hombre vac&iacute;o de esperanza.<br>
+	<br>Haya paz para el hombre que te busca, como el campo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	la lluvia de setiembre.<br>Haya paz para el hombre que est&aacute; solo, con su 
+	destino 
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a cuestas<br>Haya paz y haya amor. 
+	Romped los diques de la fe y de los<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	besos, y ahogadme en sus dulces huracanes.<br>Yo te llamo mujer, y te llamo 
+	ternura y fortaleza; y alegr&iacute;a<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y 
+	dolor a un mismo tiempo.<br>&iexcl;Oh, regi&oacute;n fabulosa de tus brazos! Aprenderemos 
+	a vivir<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; de nuevo.<br>Dame t&uacute; luz, tu 
+	cumbre, tu destino. Dame m&aacute;s, mucho m&aacute;s:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	tu propia vida, pues sabes darlo todo a manos llenas.<br>Eres incalculable 
+	como un mundo. Y tiern&iacute;sima y fr&aacute;gil como<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	un ni&ntilde;o.<br>Me sorprendes, me empujas, me acorralas, y entre los labios<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	te me mueres d&oacute;cil. 
+	<br>Eres t&uacute; y eres yo. Todo es a un tiempo rabia de destrucci&oacute;n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	y de ternura,<br>de inexplicable y de gozoso hallazgo, de generoso encono<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	de caricia. 
+	<br>Nuestra vida se suma y se desborda. Mi encarnizada<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	soledad es tuya. 
+	<br>Tu terquedad dulc&iacute;sima y el agua de tu mirada triste son ya<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	sangre en mi piel, ya son cascada.<br>Somos un viento que en la vida clama, 
+	abriendo puertas,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; derribando muros, 
+	<br>levantando la niebla de los turbios callejones del hombre.<br>Aqu&iacute; est&aacute; 
+	nuestra lluvia de esperanza. Somos la vida.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	Detened el brazo que amenaza y conmina. ..<br>Nada pod&eacute;is, porque la tierra 
+	muere, pero nace otra vez.<br>Somos la tierra que nos forma, nos une y nos 
+	libera.<br>Tierra de Dios, con fuego en el costado que incendia<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	un coraz&oacute;n para dos vidas. 
+	<br><br>&iexcl;Qu&eacute; terrible esperanza! &iexcl;Qu&eacute; delirante gozo! &iexcl;Qu&eacute; v&eacute;rtigo<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+	en el alma!<br>&iexcl;Qu&eacute; insumisi&oacute;n, qu&eacute; c&oacute;lera, qu&eacute; fuego...!<br>Si fuimos dos, 
+	ya somos uno mismo. 
+	</font></p>
+  <blockquote>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<p align="center"><font face="Georgia" size="2" color="#8FABC2">
+	<img border="0"
+      src="./SENSUBARRAINI.jpg" width="72" height="7"></font></p>
+  </blockquote>
+  </blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 16:28:01 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:13:24 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

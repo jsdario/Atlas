@@ -1,0 +1,990 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>&Aacute;lvaro Mutis</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas de &Aacute;lvaro Mutis."
+CONTENT="Rese&ntilde;a biogr&aacute;fica y amplia selecci&oacute;n de poemas de &Aacute;lvaro Mutis. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="Alvaro_Mutis,poesias,poetas,traducciones,poemas,versos,biografias,sensuales,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,canciones,renacimiento,epoca_barroca,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#9BC9BB;text-decoration : none;}
+a:active {color :#9BC9BB;text-decoration : none;}
+a:visited {color :#9BC9BB;text-decoration : none;}
+a:hover {color:#E6E5A4}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./PERDUFONDO.jpg">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app0.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/www.amediavoz.com\/mutis.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "28";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://www.amediavoz.com/mutis.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130828061734" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mutis.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="2 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 6:17:34 Aug 28, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./mutis.htm" title="17:41:37 Aug 15, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 6:17:34 Aug 28, 2013">28</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./mutis.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="4 May 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 6:17:34 Aug 28, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./mutis.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>26 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">30 Apr 08 - 28 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000000000_2003:-1:000000000000_2004:-1:000000000000_2005:-1:000000000000_2006:-1:000000000000_2007:-1:000000000000_2008:-1:000121000000_2009:-1:010000100000_2010:-1:100000001110_2011:-1:000000001130_2012:-1:101010001000_2013:7:101210020000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img border="0" src="./MUTIS.jpg" width="276" height="49"></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial" size="2" color="#9BC9BB">
+<em style="font-style: normal">&quot;Otra vez el tiempo te ha tra&iacute;do<br>
+el cerco de mis sue&ntilde;os funerales</em><span style="font-style: normal"><em>.</em>..&quot;</span><br>
+<br>
+<em><img border="0" src="./MUTIS1.jpg" width="250" height="302"><br>
+<br>
+</em></font><em style="font-style: normal">
+<font face="Arial" size="2" color="#9BC9BB">&quot;Mujer con fondo multicolor&quot;<br>
+<br>
+Andr&eacute;s de Santamar&iacute;a</font></em></p>
+<p align="center"><font color="#9BC9BB"><br>
+</font>
+</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<blockquote>
+			<p align="center"><font face="Georgia" size="4" color="#9BC9BB">
+			Rese&ntilde;a biogr&aacute;fica</font></p>
+		</blockquote>
+		<font face="Georgia" size="2" color="#9BC9BB">
+		<p>Poeta y novelista colombiano nacido en Bogot&aacute; en 1923.<br>
+		Parte de su infancia transcurri&oacute; en B&eacute;lgica donde su padre ejerci&oacute; como 
+		embajador. A su regreso, sin terminar estudios&nbsp; <br>
+		secundarios, empez&oacute; a colaborar con algunas revistas literarias, trabaj&oacute; 
+		en diversos oficios y public&oacute; su primer libro <br>
+		de poemas <i>&quot;La balanza&quot;, </i>en 1947.&nbsp; En 1953 apareci&oacute; por 
+		primera vez su personaje <i>Maqroll&nbsp; el Gaviero</i> en el poemario&nbsp; <i><br>
+		&quot;Los elementos del desastre&quot;</i>, personaje que se repite a lo largo de 
+		toda su obra.<br>
+		En 1956 se radic&oacute; definitivamente en M&eacute;xico, a ra&iacute;z de una demanda en su 
+		contra por parte de la&nbsp; multinacional para <br>
+		la que trabajaba. Dedicado por completo al ejercicio literario desde 
+		1986, ha publicado una importante obra de narrativa, <br>
+		poes&iacute;a y novela de la que se destacan especialmente <i>&quot;La mansi&oacute;n de 
+		Arauca&iacute;ma&quot;, &quot;Un bel morir&quot;, &quot;Iona llega con la lluvia&quot;, <br>
+		&quot;La nieve del almirante&quot; &quot;Empresas y tribulaciones de Maqroll el 
+		Gaviero&quot;</i>, &quot;Summa de Maqroll el Gaviero&quot;, La nieve del 
+		<br>
+		almirante&quot;, ''Rese&ntilde;a de los hospitales de Ultramar'', ''Cr&oacute;nica regia'' 
+		y ''Cita en Bergen''.<br>
+		Entre los galardones obtenidos, se destacan el <i>Premio Nacional de 
+		Letras de Colombia</i> en 1974, el <i>Premio de la Cr&iacute;tica <br>
+		de Los Abriles</i> de M&eacute;xico en 1985, el <i>
+		Premio M&eacute;dicis &Eacute;tranger</i> de Francia en 1989, la <i>Orden de las Artes 
+		y de las Letras</i> <br>
+		de Francia, el <i>&Aacute;guila Azteca de M&eacute;xico</i>, la <i>
+		Gran Cruz de Alfonso X el Sabio</i> de Espa&ntilde;a, el <i>Premio Pr&iacute;ncipe de 
+		Asturias <br>
+		de las Letras</i> en 1997, el premio <i>Reina Sof&iacute;a de Poes&iacute;a 
+		Iberoamericana</i> y el <i>Premio Cervantes de Literatura</i> en el a&ntilde;o 
+		2001. &copy;</font><font face="Georgia" size="3" color="#9BC9BB"><br>
+		</font><font face="Georgia" size="3" color="#89ABA2"><font face="Georgia" size="2" color="#A7BEB9">
+		<br>
+		</font>
+		</font></p>
+		<font face="Georgia" size="2" color="#A7BEB9">
+		<blockquote>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<p align="center">
+						<font face="Georgia" size="3" color="#89ABA2">
+						<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+						<br>
+						</font></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		</font>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#204">204</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Ciudad">Ciudad</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Diez Lieder">Diez Lieder:</a></font><br>
+&nbsp;&nbsp;&nbsp; <font face="Georgia" size="2">
+		<a href="./mutis.htm#V. Desciendes por el r&iacute;o...">5. Desciendes por el r&iacute;o...</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="./mutis.htm#VI. En alguna corte perdida...">6. En alguna 
+		corte perdida...</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="./mutis.htm#VII. Giran, giran...">7. Giran, giran...</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="./mutis.htm#VIII. Lied de la noche">8. Lied de la noche</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="./mutis.htm#IX. Lied marino">9. Lied marino</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#El deseo">El deseo</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#La orquesta">La orquesta</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Letan&iacute;a">Letan&iacute;a</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Nocturno">Nocturno</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Nocturno 2">Nocturno 2</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Nocturno 3">Nocturno 3</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Dos poemas">Dos poemas</a></font><br>
+		<font face="Georgia" size="2">&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="./mutis.htm#1. Si oyes correr el agua">1. Si oyes correr el agua</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp; <a href="./mutis.htm#2. Como espadas en desorden">2. Como espadas 
+		en desorden</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Sonata">Sonata</a></font></p>
+		<p align="left"><font face="Georgia"><a href="./mutis.htm#Sonata 2">Sonata 2</a></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#A7BEB9">Volver a: </font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./">A media voz</a></font><font face="Georgia" size="2" color="#A7BEB9"><br></font>
+	<font face="Georgia" size="2" color="#95B3AA">
+		Volver a:</font><font face="Georgia" size="2" color="#85A6BC">
+	</font>
+	<font face="Georgia" color="#A7BEB9">
+	<a href="./indice-A-K.htm">&Iacute;ndice A-K</a></font><font face="Georgia" size="2" color="#A7BEB9"></p>
+		<p align="center"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> <font face="Georgia" size="3" color="#81A39B">
+		<a style="color: #9BC9BB; text-decoration: none" href="javascript:mailpage()">
+		Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a> </font>
+		<font face="Georgia" size="4" color="#A7BEB9">&nbsp;</font>&nbsp;&nbsp;&nbsp;
+		<br>
+		<br>
+		<br>
+&nbsp;</p>
+	</blockquote>
+	<p align="center"><font face="Georgia" size="3" color="#B0C6C1">
+	<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"><br>
+&nbsp;</font></p>
+	</font>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#95B3AA"><br>
+		</font><font face="Georgia" color="#95B3AA"><a name="204"></a></font>
+		<font face="Georgia" color="#9BC9BB">204</font><font size="2" face="Georgia" color="#9BC9BB"><br>
+		<br>
+		<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Para Fernando L&oacute;pez</i></font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">I<br>
+		<br>
+&nbsp;&nbsp;&nbsp; Escucha Escucha Escucha<br>
+		<br>
+		la voz de los hoteles,<br>
+		de los cuartos a&uacute;n sin arreglar,<br>
+		los di&aacute;logos en los oscuros pasillos que adorna una ra&iacute;da alfombra 
+		escarlata,<br>
+		por donde se apresuran los sirvientes que salen al amanecer como 
+		espantados murci&eacute;lagos<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Escucha Escucha Escucha<br>
+		los murmullos en la escalera; las voces que vienen de la cocina,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; donde se fragua un agrio olor a comida, que muy pronto 
+		estar&aacute; en todas partes, <br>
+&nbsp;&nbsp;&nbsp;&nbsp; el ronroneo de los ascensores<br>
+		<br>
+		Escucha Escucha Escucha<br>
+		<br>
+		a la hermosa inquilina del &quot;204&quot; que despereza sus miembros<br>
+&nbsp;&nbsp;&nbsp;&nbsp; y se queja y extiende su viuda desnudez sobre la cama. 
+		De su cuerpo <br>
+&nbsp;&nbsp;&nbsp;&nbsp; sale un vaho tibio de campo reci&eacute;n llovido.<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &iexcl;Ay qu&eacute; tr&aacute;nsito el de sus noches trem0lantes como las 
+		banderas en los estadios! <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Escucha Escucha Escucha<br>
+		<br>
+		el agua que gotea en los lavatorios, en las gradas que invade un 
+		resbaloso y maloliente verd&iacute;n.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Nada hay sino una sombra, una tibia y espesa sombra que 
+		todo lo cubre.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Sobre esas 
+		losas -cuando el mediod&iacute;a siembre de monedas el mugriento piso- <br>
+&nbsp;&nbsp;&nbsp;&nbsp; su cuerpo inmenso y blanco sabr&aacute; moverse d&oacute;cil para las 
+		lides del t&aacute;lamo y conocedor <br>
+&nbsp;&nbsp;&nbsp;&nbsp; de los m&aacute;s variados caminos. El agua lavar&aacute; la impureza 
+		y renovar&aacute; las fuentes del deseo.<br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Escucha Escucha Escucha<br>
+		<br>
+		la incansable viajera, ella abre las ventanas y aspira el aire queviene 
+		de la calle. Un desocupado <br>
+&nbsp;&nbsp;&nbsp;&nbsp; la silba desde la acera del frente y ella estremece sus 
+		flancos en respuesta al inc&oacute;gnito llamado.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		II<br>
+		<br>
+		De la ortiga al granizo<br>
+		del granizo al terciopelo<br>
+		del terciopelo a los orinales<br>
+		de los orinales al r&iacute;o<br>
+		del r&iacute;o a las amargas algas<br>
+		de las algas amargas a la ortiga<br>
+		de la ortiga al granizo,<br>
+		del granizo al terciopelo<br>
+		del terciopelo al hotel</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">&nbsp;&nbsp;&nbsp;&nbsp; 
+		Escucha Escucha Escucha<br>
+		<br>
+		la oraci&oacute;n matinal de la inquilina<br>
+		su grito que recorre los pasillos<br>
+		y despierta despavoridos a los durmientes, <br>
+		el grito del &quot;204&quot;<br>
+		&iexcl;Se&ntilde;or, Se&ntilde;or, por qu&eacute; me has abandonado!</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		elementos del desastre&quot; </font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Ciudad">
+		</a>Ciudad</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Un llanto<br>
+		un llanto de mujer <br>
+		interminable,<br>
+		sosegado,<br>
+		casi tranquilo.<br>
+		En la noche, un llanto de mujer me ha despertado.<br>
+		Primero un ruido de cerradura,<br>
+		despu&eacute;s unos pies que vacilan<br>
+		y luego, de pronto, el llanto.<br>
+		Suspiros intermitentes<br>
+		como ca&iacute;dos de un agua interior,<br>
+		densa,<br>
+		imperiosa,<br>
+		inagotable,<br>
+		como esclusa que acumula y libera sus aguas<br>
+		o como h&eacute;lice secreta<br>
+		que detiene y reanuda su trabajo<br>
+		trasegando el blanco tiempo de la noche.<br>
+		Toda la ciudad se ha ido llenando de este llanto,<br>
+		hasta los solares donde se amontonan las basuras,<br>
+		bajo las c&uacute;pulas de los hospitales,<br>
+		sobre las terrazas del verano,<br>
+		en las discretas celdas de la prostituci&oacute;n,<br>
+		en los papeles que se deslizan por solitarias avenidas,<br>
+		con el tibio vaho de ciertas cocinas militares,<br>
+		en las medallas que reposan en joyeros de teca,<br>
+		un llanto de mujer que ha llorado largamente<br>
+		en el cuarto vecino,<br>
+		por todos los que cavan su tumba en el sue&ntilde;o,<br>
+		por los que vigilan la mina del tiempo,<br>
+		por m&iacute; que lo escucho<br>
+		sin conocer otra cosa<br>
+		que su fr&aacute;gil rodar por la intemperie<br>
+		persiguiendo las calladas arenas del alba.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		trabajos perdidos&quot;</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Diez Lieder"></a>Diez Lieder</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="V. Desciendes por el r&iacute;o..."></a><font size="2">V. Desciendes 
+		por el r&iacute;o...</font></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Desciendes por el r&iacute;o.<br>
+		La barca se abre paso<br>
+		entre los juncos.<br>
+		El golpe en la orilla<br>
+		anuncia el t&eacute;rmino del viaje.<br>
+		Bien es que recuerdes<br>
+		que all&iacute; esper&eacute;,<br>
+		vanamente,<br>
+		sin pausa ni sue&ntilde;o.<br>
+		All&iacute; esper&eacute;,<br>
+		tiempo suspendido<br>
+		gastando su abolida materia.<br>
+		In&uacute;til la espera,<br>
+		in&uacute;tiles el viaje<br>
+		y el nav&iacute;o.<br>
+		S&oacute;lo existieron<br>
+		el &aacute;spero vac&iacute;o,<br>
+		en la improbable vida<br>
+		que se nutre<br>
+		de la est&eacute;ril materia<br>
+		de otros a&ntilde;os.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="VI. En alguna corte perdida..."></a>VI. En alguna corte 
+		perdida...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">En alguna 
+		corte perdida,<br>
+		tu nombre,<br>
+		tu cuerpo vasto y blanco<br>
+		entre dormidos guerreros.<br>
+		En alguna corte perdida,<br>
+		la red de tus sue&ntilde;os<br>
+		meciendo palmeras,<br>
+		barriendo terrazas,<br>
+		limpiando el cielo.<br>
+		En alguna corte perdida,<br>
+		el silencio<br>
+		de tu rostro antiguo.<br>
+		&iexcl;Ay, d&oacute;nde la corte!<br>
+		En cu&aacute;l de las esquinas del tiempo,<br>
+		del precario tiempo<br>
+		que se me va dando<br>
+		in&uacute;til y ajeno.<br>
+		En alguna corte perdida<br>
+		tus palabras<br>
+		decidiendo,<br>
+		asombrando,<br>
+		cerniendo<br>
+		el destino de los mejores.<br>
+		En la noche de los bosques<br>
+		los zorros buscan<br>
+		tu rostro. En el cristal<br>
+		de las ventanas<br>
+		el vaho de su anhelo.<br>
+		As&iacute; mis sue&ntilde;os<br>
+		contra un presente<br>
+		m&aacute;s que imposible<br>
+		innecesario.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * * * *</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="VII. Giran, giran..."></a>VII. Giran, giran...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Giran, 
+		giran,<br>
+		los halcones<br>
+		y en el vasto cielo<br>
+		al aire de sus alas dan altura.<br>
+		Alzas el rostro,<br>
+		sigues su vuelo<br>
+		y en tu cuello<br>
+		nace un azul delta sin salida.<br>
+		&iexcl;Ay, lejana!<br>
+		Ausente siempre.<br>
+		Gira, halc&oacute;n, gira;<br>
+		lo que dure tu vuelo<br>
+		durar&aacute; este sue&ntilde;o en otra vida.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">* * * * *</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="VIII. Lied de la noche"></a><font size="2">VIII. Lied de la 
+		noche</font></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>La nuit vient sur un char conduit par le silence.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		La Fontaine</i><br>
+		<br>
+		Y, de repente,<br>
+		llega la noche<br>
+		como un aceite<br>
+		de silencio y pena.<br>
+		A su corriente me rindo<br>
+		armado apenas<br>
+		con la precaria red<br>
+		de truncados recuerdos y nostalgias<br>
+		que siguen insistiendo<br>
+		en recobrar el perdido<br>
+		territorio de su reino.<br>
+		Como ebrios anzuelos<br>
+		giran en la noche<br>
+		nombres, quintas,<br>
+		ciertas esquinas y plazas,<br>
+		alcobas de la infancia,<br>
+		rostros del colegio,<br>
+		potreros, r&iacute;os<br>
+		y muchachas<br>
+		giran en vano<br>
+		en el fresco silencio de la noche<br>
+		y nadie acude a su reclamo.<br>
+		Quebrantado y vencido<br>
+		me rescatan los primeros<br>
+		ruidos del alba,<br>
+		cotidianos e ins&iacute;pidos<br>
+		como la rutina de los d&iacute;as<br>
+		que no ser&aacute;n ya<br>
+		la febril primavera<br>
+		que un d&iacute;a nos prometimos.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><br>
+		* * * * *<br>
+		<br>
+		<a name="IX. Lied marino"></a>IX. Lied marino</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">Vine a 
+		llamarte<br>
+		a los acantilados.<br>
+		Lanc&eacute; tu nombre<br>
+		y s&oacute;lo el mar me respondi&oacute;<br>
+		desde la leche instant&aacute;nea<br>
+		y voraz de sus espumas.<br>
+		Por el desorden recurrente<br>
+		de las aguas cruza tu nombre<br>
+		como un pez que se debate y huye<br>
+		hacia la vasta lejan&iacute;a.<br>
+		Hacia un horizonte<br>
+		de menta y sombra,<br>
+		viaja tu nombre<br>
+		rodando por el mar del verano.<br>
+		Con la noche que llega<br>
+		regresan la soledad y su cortejo<br>
+		de sue&ntilde;os funerales.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="El deseo">
+		</a>El deseo</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Hay que inventar una nueva soledad para el deseo. Una 
+		vasta&nbsp; soledad de delgadas orillas <br>
+		en donde se extienda a sus anchas&nbsp; el ronco sonido del deseo. 
+		Abramos de nuevo todas las<br>
+		venas del placer. Que salten los altos surtidores no importa hacia 
+		d&oacute;nde.<br>
+		Nada se ha hecho a&uacute;n. Cuando ten&iacute;amos algo andado, alguien se detuvo en 
+		el camino para ordenar sus vestiduras y todos se detuvieron tras &eacute;l. 
+		Sigamos la marcha. Hay cauces secos<br>
+		en donde pueden viajar a&uacute;n aguas magn&iacute;ficas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Recordad las bestias de que habl&aacute;bamos. Ellas pueden 
+		ayudarnos antes de que sea tarde <br>
+		y torne la charanga a enturbiar el cielo con su m&uacute;sica estridente.<br>
+		<br>
+		<i>De &quot;Primeros poemas&quot; 1948-1952</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="La orquesta"></a>La orquesta</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		1<br>
+&nbsp;&nbsp;&nbsp;&nbsp; La primera luz se enciende en el segundo piso de un 
+		caf&eacute;. Un<br>
+		sirviente sube a cambiarse de ropas. Su voz gasta los tejados y en <br>
+		su grasiento delantal trae la noche fr&iacute;a y estrellada.<br>
+		<br>
+		2<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Aparte en un tarro de especias vac&iacute;o, guarda un mech&oacute;n 
+		de pelo. <br>
+		Un espeso y oscuro cadejo de color indefinido como el humo de los trenes
+		<br>
+		cuando se pierde entre los eucaliptos.<br>
+		<br>
+		3<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Vestido de amianto y terciopelo, recorri&oacute; la ciudad. 
+		Era el pavor disfrazado <br>
+		de tendero suburbano. Cu&aacute;ntas historias se tejieron alrededor de sus 
+		palabras <br>
+		con un sabor de anta&ntilde;o como las nieves del poeta.<br>
+		<br>
+		4<br>
+&nbsp;&nbsp;&nbsp;&nbsp; As&iacute; a primera vista, no ofrec&iacute;a belleza alguna. Pero 
+		detr&aacute;s de un cuerpo <br>
+		temblaba una llama azul que arrastraba el deseo, como arrastran ciertos 
+		r&iacute;os <br>
+		metales imaginarios.<br>
+		<br>
+		5<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Otra luz vino a sumarse a la primera. Una voz agria la 
+		apag&oacute; como se mata <br>
+		un insecto. A dos pasos de all&iacute;, el viento golpeaba ciegas hojas contra 
+		ciegas estatuas. <br>
+		Paz del estanque. ..luz opalina de los gimnasios. <br>
+		<br>
+		6<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Sordo peso del coraz&oacute;n. Tenue gemido de un &aacute;rbol. Ojos 
+		llorosos limpiados furtivamente <br>
+		en el lavaplatos, mientras el patr&oacute;n atiende a los clientes con la 
+		sonrisa sucia de todos los d&iacute;as.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Penas de mujer. <br>
+		<br>
+		7<br>
+&nbsp;&nbsp;&nbsp;&nbsp; En las aceras, el musgo d&oacute;cil y las piernas con manchas 
+		aceitosas de barro milenario. <br>
+		En las aceras, la fe perdida como una moneda o como una colilla. 
+		Mercanc&iacute;as. <br>
+		C&aacute;scara d&eacute;bil del holl&iacute;n.<br>
+		<br>
+		8<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Polvo suave en la oreja donde brilla una argolla de 
+		pirata. Sed y miel de las telas. <br>
+		Los maniqu&iacute;es calculan la edad de los viandantes y un hondo, innominado 
+		deseo surge <br>
+		de sus pechos de cart&oacute;n. Mugido clangoroso de una calle vac&iacute;a. Roc&iacute;o.<br>
+		<br>
+		9<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Como un loco planeta de liquen, anhela la firme baranda 
+		del colegio con su campana <br>
+		y el fresco olor de los laboratorios. Ruido de las duchas contra las 
+		espaldas dormidas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Una mujer pasa y deja su perfume de cebra y poleo. Los 
+		jefes de la tribu se congregaron despu&eacute;s de la &uacute;ltima clase <br>
+		y celebran el sacrificio.<br>
+		<br>
+		10<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Una vida perdida en vanos intentos por hallar un olor o 
+		una casa. Un vendedor ambulante <br>
+		que insiste hasta cuando oye el &uacute;ltimo tranv&iacute;a. Un cuerpo ofrecido en 
+		gesto furtivo y ansioso.<br>
+		Y el fin, despu&eacute;s, cuando comienza a edificarse la morada o se entibia 
+		el lecho de &aacute;speras cobijas.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		elementos del desastre&quot; </font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Letan&iacute;a">
+		</a>Letan&iacute;a</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Esta era la letan&iacute;a recitada por el gaviero mientras se ba&ntilde;aba<br>
+		las torrenteras del delta: <br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Agon&iacute;a de los oscuros<br>
+&nbsp;&nbsp;&nbsp;&nbsp; recoge tus frutos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Miedo de los mayores<br>
+&nbsp;&nbsp;&nbsp;&nbsp; disuelve la esperanza.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Ansia de los d&eacute;biles<br>
+&nbsp;&nbsp;&nbsp;&nbsp; mitiga tus ramas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Agua de los muertos<br>
+&nbsp;&nbsp;&nbsp;&nbsp; mide tu cauce.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Campana de las minas <br>
+&nbsp;&nbsp;&nbsp;&nbsp; modera tus voces.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Orgullo del deseo<br>
+&nbsp;&nbsp;&nbsp;&nbsp; olvida tus dones.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Herencia de los fuertes<br>
+&nbsp;&nbsp;&nbsp;&nbsp; rinde tus armas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Llanto de las olvidadas<br>
+&nbsp;&nbsp;&nbsp;&nbsp; rescata tus frutos.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; Y as&iacute; segu&iacute;a indefinidamente mientras el ruido de las 
+		aguas<br>
+		ahogaba su voz y la tarde refrescaba sus carnes laceradas por<br>
+		los oficios m&aacute;s variados y oscuros.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>
+		Extra&iacute;do de ciertas visiones memorables de Maqroll El Gaviero<br>
+		de la Obra po&eacute;tica. </i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Nocturno">
+		</a>Nocturno</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		La fiebre atrae el canto de un p&aacute;jaro andr&oacute;gino<br>
+		y abre caminos a un placer insaciable<br>
+		que se ramifica y cruza el cuerpo de la tierra.<br>
+		&iexcl;Oh el infructuoso navegar alrededor de las islas<br>
+		f donde las mujeres ofrecen al viajero<br>
+		la fresca balanza de sus senos<br>
+		y una extensi&oacute;n de terror en las caderas!<br>
+		La piel p&aacute;lida y tersa del d&iacute;a<br>
+		cae como la c&aacute;scara de un fruto infame.<br>
+		La fiebre atrae el canto de los resumideros<br>
+		donde el agua atropella los desperdicios.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		elementos del desastre&quot;</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Nocturno 2"></a>Nocturno 2<br>
+		</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		Respira la noche,<br>
+		bate sus claros espacios,<br>
+		sus criaturas en menudos ruidos, <br>
+		en el crujido leve de las maderas,<br>
+		se traicionan.<br>
+		Renueva la noche<br>
+		cierta semilla oculta<br>
+		en la mina feroz que nos sostiene.<br>
+		Con su leche letal<br>
+		nos alimenta<br>
+		una vida que se prolonga<br>
+		m&aacute;s all&aacute; de todo matinal despertar<br>
+		en las orillas del mundo.<br>
+		La noche que respira<br>
+		nuestro pausado aliento de vencidos<br>
+		nos preserva&nbsp; y protege<br>
+		&quot;para m&aacute;s altos destinos&quot;. &nbsp;</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		trabajos perdidos&quot;</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Nocturno 3"></a>Nocturno 3</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Esta noche ha vuelto la lluvia sobre los cafetales.<br>
+		Sobre las hojas de pl&aacute;tano,<br>
+		sobre las altas ramas de los c&aacute;mbulos,<br>
+		ha vuelto a llover esta noche un agua persistente y vast&iacute;sima<br>
+		que crece las acequias y comienza a henchir los r&iacute;os<br>
+		que gimen con su nocturna carga de lodos vegetales.<br>
+		La lluvia sobre el zinc de los tejados<br>
+		canta su presencia y me aleja del sue&ntilde;o<br>
+		hasta dejarme en un crecer de las aguas sin sosiego,<br>
+		en la noche fresqu&iacute;sima que chorrea<br>
+		por entre la b&oacute;veda de los cafetos<br>
+		y escurre por el enfermo tronco de los balsos gigantes.<br>
+		Ahora, de repente, en mitad de la noche<br>
+		ha regresado la lluvia sobre los cafetales<br>
+		y entre el vocer&iacute;o vegetal de las aguas<br>
+		me llega la intacta materia de otros d&iacute;as<br>
+		salvada del ajeno trabajo de los a&ntilde;os.</font></p>
+		<p align="left"><i><font face="Georgia" size="2" color="#9BC9BB">De &quot;Los 
+		trabajos perdidos&quot;</font></i></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB">
+		<a name="Dos poemas"></a>Dos poemas</font></p>
+		<p align="left"><font face="Georgia" color="#9BC9BB" size="2">
+		<a name="1. Si oyes correr el agua"></a>1. Si oyes correr el agua<br>
+		<br>
+		Si oyes correr el agua en las acequias,<br>
+		su manso sue&ntilde;o pasar entre penumbras y musgos,<br>
+		con el apagado sonido de algo<br>
+		que tiende a demorarse en la sombra vegetal.<br>
+		Si tienes suerte y preservas ese instante<br>
+		con el temblor de los helechos que no cesa,<br>
+		con el at&oacute;nito limo que se debate<br>
+		en el cauce inmutable y siempre en viaje.<br>
+		Si tienes la paciencia del guijarro,<br>
+		su voz callada, su gris acento sin aristas,<br>
+		y aguardas hasta que la luz haga su entrada,<br>
+		es bueno que sepas que all&iacute; van a llamarte<br>
+		con un nombre nunca antes pronunciado. <br>
+		Toda la ardua armon&iacute;a del mundo<br>
+		es probable que entonces te sea revelada,<br>
+		pero s&oacute;lo por esta vez.<br>
+		&iquest;Sabr&aacute;s, acaso, descifrarla en el rumor del agua<br>
+		que se evade sin remedio y para siempre?</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB">
+		<a name="2. Como espadas en desorden"></a>2. Como espadas en desorden<i><br>
+		<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		M&iacute;nimo Homenaje a St&eacute;phane Mallarm&eacute;</i><br>
+		<br>
+		Como espadas en desorden<br>
+		la luz recorre los campos.<br>
+		Islas de sombra se desvanecen<br>
+		e intentan, en vano, sobrevivir m&aacute;s lejos.<br>
+		All&iacute;, de nuevo, las alcanza el fulgor<br>
+		del mediod&iacute;a que ordena sus huestes<br>
+		y establece sus dominios.<br>
+		El hombre nada sabe de estos callados combates.<br>
+		Su vocaci&oacute;n de penumbra, su costumbre de olvido,<br>
+		sus h&aacute;bitos, en fin, y sus lacer&iacute;as,<br>
+		le niegan el goce de esa fiesta imprevista<br>
+		que sucede por caprichoso designio<br>
+		de quienes, en lo alto, lanzan los mudos dados<br>
+		cuya cifra jam&aacute;s conoceremos.<br>
+		Los sabios, entretanto, predican la conformidad.<br>
+		S&oacute;lo los dioses saben que esta virtud incierta<br>
+		es otro vano intento de abolir el azar.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De 
+		&quot;Poemas dispersos&quot;</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="3" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font><font face="Georgia" size="2" color="#9BC9BB"><br>
+&nbsp;</font></p>
+		<p align="left"><font color="#9BC9BB"><br>
+		</font>
+		<font face="Georgia" color="#9BC9BB"><a name="Sonata"></a>Sonata</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Otra vez el tiempo te ha tra&iacute;do<br>
+		al cerco de mis sue&ntilde;os funerales.<br>
+		Tu piel, cierta humedad salina,<br>
+		tus ojos asombrados de otros d&iacute;as,<br>
+		con tu voz han venido, con tu pelo.<br>
+		El tiempo, muchacha, que trabaja<br>
+		como loba que entierra a sus cachorros<br>
+		como &oacute;xido en las armas de caza,<br>
+		como alga en la quilla del nav&iacute;o,<br>
+		como lengua que lame la sal de los dormidos,<br>
+		como el aire que sube de las minas,<br>
+		cono tren en la noche de las p&aacute;ramos.<br>
+		De su opaco trabajo nos nutrimos<br>
+		como pan de cristiano o rancia carne<br>
+		que enjuta la fiebre de los ghettos<br>
+		a la sombra del tiempo, amiga m&iacute;a,<br>
+		un agua mansa de acequia me devuelve<br>
+		lo que guardo de ti para ayudarme<br>
+		a llegar hasta el fin de cada d&iacute;a.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#9BC9BB"><i>De &quot;Los 
+		trabajos perdidos&quot;</i></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font face="Georgia" color="#9BC9BB"><a name="Sonata 2">
+		</a>Sonata 2</font><font face="Georgia" size="2" color="#9BC9BB"><br>
+		<br>
+		Por los &aacute;rboles quemados despu&eacute;s de la tormenta.<br>
+		Por las lodosas aguas del delta.<br>
+		Por lo que hay de persistente en cada d&iacute;a.<br>
+		Por el alba de las oraciones.<br>
+		Por lo que tienen ciertas hojas<br>
+		en sus venas color de agua<br>
+		profunda y en sombra.<br>
+		Por el recuerdo de esa breve felicidad<br>
+		ya olvidada<br>
+		y que fuera alimento de tantos a&ntilde;os sin nombre.<br>
+		Por tu voz de ronca madreperla.<br>
+		Por tus noches por las que pasa la vida<br>
+		en un galope de sangre y sue&ntilde;o<br>
+		Por lo que eres ahora para m&iacute;.<br>
+		Por lo que ser&aacute;s en el desorden de la muerte.<br>
+		Por eso te guardo a mi lado<br>
+		como la sombra de una ilusoria esperanza.<br>
+		<br>
+		<i>De &quot;Los trabajos perdidos&quot;</i><br>
+&nbsp;</font></p>
+		<p align="center"><font face="Georgia" size="2" color="#9BC9BB">
+		<img border="0" src="./PERDUBARRA.jpg" width="77" height="9"></font></p>
+	</blockquote>
+</blockquote>
+<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" style="color: #84B0D6; text-decoration: none" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+</font>
+
+</body>
+
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 6:17:34 Aug 28, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:22:48 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,1912 @@
+<html>
+
+<head>
+
+<script type="text/javascript" src="/static/js/analytics.js" ></script>
+<link type="text/css" rel="stylesheet" href="/static/css/banner-styles.css"/>
+
+
+
+
+<title>William Shakespeare</title>
+<meta NAME="Biograf&iacute;a y amplia selecci&oacute;n de poemas traducidos al espa&ntilde;ol de William Shakespeare."
+CONTENT="Rese&ntilde;a y amplia selecci&oacute;n de poemas y sonetos de William Shakespeare. Antolog&iacute;a de la poes&iacute;a hispanoamericana. Poes&iacute;a sensual, perdurable y rom&aacute;ntica. Poes&iacute;a del siglo de oro. Traducciones po&eacute;ticas. Archivos sonoros.">
+<meta NAME="keywords"
+CONTENT="William_Shakespeare,poesias,poetas,poemas,traducciones,versos,biografias,estrofas,sensuales,haikus,amor,desamor,amistad,romanticos,antologias,prosas,poemas_de_viva_voz,sonetos,autores,recursos_poeticos,spanish poetry,rimas,poemas_inmortales,literatura_latinoamericana,poetas_hispanoamericanos,autores_suramericanos,escritores,poetas_noveles,amistad,odas,romances,poemas_centroamericanos,poesias_eroticas,poemas_sensuales,poesias_sensuales,haikus,hispanic_poetry,autores_espa&ntilde;oles,traducciones,poesia_traducida,verso_libre,poesia perdurable,poesia_contemporanea,poetas_contemporaneos,poetas_clasicos,international_poetry,real_player,archivos_ram,formatos_rm,arte,pintores famosos,pinturas,desnudos_artisticos">
+<style>
+a:link {color :#C4CAD4;text-decoration : none;}
+a:active {color :#C4CAD4;text-decoration : none;}
+a:visited {color :#C4CAD4;text-decoration : none;}
+a:hover {color:#F94F4F}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body background="./TRADUCFONDO.jpg" link="#DBDBDB" vlink="#DBDBDB" alink="#626262">
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script> if (window.archive_analytics) { window.archive_analytics.values['server_name']="wwwb-app14.us.archive.org";}; </script>
+
+<script type="text/javascript" src="/static/js/disclaim-element.js" ></script>
+<script type="text/javascript" src="/static/js/graph-calc.js" ></script>
+<script type="text/javascript" src="/static/jflot/jquery.min.js" ></script>
+<script type="text/javascript">
+//<![CDATA[
+var firstDate = 820454400000;
+var lastDate = 1420070399999;
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http:\/\/amediavoz.com\/shakespeare.htm";
+
+var curYear = -1;
+var curMonth = -1;
+var yearCount = 18;
+var firstYear = 1996;
+var imgWidth = 475;
+var yearImgWidth = 25;
+var monthImgWidth = 2;
+var trackerVal = "none";
+var displayDay = "15";
+var displayMonth = "Aug";
+var displayYear = "2013";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function showTrackers(val) {
+	if(val == trackerVal) {
+		return;
+	}
+	if(val == "inline") {
+		document.getElementById("displayYearEl").style.color = "#ec008c";
+		document.getElementById("displayMonthEl").style.color = "#ec008c";
+		document.getElementById("displayDayEl").style.color = "#ec008c";		
+	} else {
+		document.getElementById("displayYearEl").innerHTML = displayYear;
+		document.getElementById("displayYearEl").style.color = "#ff0";
+		document.getElementById("displayMonthEl").innerHTML = displayMonth;
+		document.getElementById("displayMonthEl").style.color = "#ff0";
+		document.getElementById("displayDayEl").innerHTML = displayDay;
+		document.getElementById("displayDayEl").style.color = "#ff0";
+	}
+   document.getElementById("wbMouseTrackYearImg").style.display = val;
+   document.getElementById("wbMouseTrackMonthImg").style.display = val;
+   trackerVal = val;
+}
+function getElementX2(obj) {
+	var thing = jQuery(obj);
+	if((thing == undefined) 
+			|| (typeof thing == "undefined") 
+			|| (typeof thing.offset == "undefined")) {
+		return getElementX(obj);
+	}
+	return Math.round(thing.offset().left);
+}
+function trackMouseMove(event,element) {
+
+   var eventX = getEventX(event);
+   var elementX = getElementX2(element);
+   var xOff = eventX - elementX;
+	if(xOff < 0) {
+		xOff = 0;
+	} else if(xOff > imgWidth) {
+		xOff = imgWidth;
+	}
+   var monthOff = xOff % yearImgWidth;
+
+   var year = Math.floor(xOff / yearImgWidth);
+	var yearStart = year * yearImgWidth;
+   var monthOfYear = Math.floor(monthOff / monthImgWidth);
+   if(monthOfYear > 11) {
+       monthOfYear = 11;
+   }
+   // 1 extra border pixel at the left edge of the year:
+   var month = (year * 12) + monthOfYear;
+   var day = 1;
+	if(monthOff % 2 == 1) {
+		day = 15;
+	}
+	var dateString = 
+		zeroPad(year + firstYear) + 
+		zeroPad(monthOfYear+1,2) +
+		zeroPad(day,2) + "000000";
+
+	var monthString = prettyMonths[monthOfYear];
+	document.getElementById("displayYearEl").innerHTML = year + 1996;
+	document.getElementById("displayMonthEl").innerHTML = monthString;
+	// looks too jarring when it changes..
+	//document.getElementById("displayDayEl").innerHTML = zeroPad(day,2);
+
+	var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+	document.getElementById('wm-graph-anchor').href = url;
+
+   //document.getElementById("wmtbURL").value="evX("+eventX+") elX("+elementX+") xO("+xOff+") y("+year+") m("+month+") monthOff("+monthOff+") DS("+dateString+") Moy("+monthOfYear+") ms("+monthString+")";
+   if(curYear != year) {
+       var yrOff = year * yearImgWidth;
+       document.getElementById("wbMouseTrackYearImg").style.left = yrOff + "px";
+       curYear = year;
+   }
+   if(curMonth != month) {
+       var mtOff = year + (month * monthImgWidth) + 1;
+       document.getElementById("wbMouseTrackMonthImg").style.left = mtOff + "px";
+       curMonth = month;
+   }
+}
+//]]>
+</script>
+
+<style type="text/css">body{margin-top:0!important;padding-top:0!important;min-width:800px!important;}#wm-ipp a:hover{text-decoration:underline!important;}</style>
+<div id="wm-ipp" lang="en" class="__wb_banner_div" style="display:none; position:relative;padding:0 5px;min-height:70px;min-width:800px">
+
+
+<div id="wm-ipp-inside" class="__wb_banner_div" style="position:fixed;padding:0!important;margin:0!important;width:97%;min-width:780px;border:5px solid #000;border-top:none;background-image:url(/static/images/toolbar/wm_tb_bk_trns.png);text-align:center;-moz-box-shadow:1px 1px 3px #333;-webkit-box-shadow:1px 1px 3px #333;box-shadow:1px 1px 3px #333;font-size:11px!important;font-family:'Lucida Grande','Arial',sans-serif!important;">
+   <table style="border-collapse:collapse;margin:0;padding:0;width:100%;"><tbody><tr>
+   <td style="padding:10px;vertical-align:top;min-width:110px;">
+   <a href="/web/" title="Wayback Machine home page" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"/></a>
+   </td>
+   <td style="padding:0!important;text-align:center;vertical-align:top;width:100%;">
+
+       <table style="border-collapse:collapse;margin:0 auto;padding:0;width:570px;"><tbody><tr>
+       <td style="padding:3px 0;" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb" style="margin:0!important;padding:0!important;"><input type="text" name="url" id="wmtbURL" value="http://amediavoz.com/shakespeare.htm" style="width:400px;font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;" onfocus="javascript:this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20130815181612" /><input type="submit" value="Go" style="font-size:11px;font-family:'Lucida Grande','Arial',sans-serif;margin-left:5px;width: inherit !important" /><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td style="vertical-align:bottom;padding:5px 0 0 0!important;" rowspan="2">
+           <table style="border-collapse:collapse;width:110px;color:#99a;font-family:'Helvetica','Lucida Grande','Arial',sans-serif;"><tbody>
+			
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr style="width:110px;height:16px;font-size:10px!important;">
+           	<td style="padding-right:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./shakespeare.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="3 May 2013"><strong>MAY</strong></a>
+		                
+               </td>
+               <td id="displayMonthEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight:bold;text-transform:uppercase;width:34px;height:15px;padding-top:1px;text-align:center;" title="You are here: 18:16:12 Aug 15, 2013">AUG</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight:bold;text-transform:uppercase;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       Sep
+                       
+               </td>
+           </tr>
+
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr>
+               <td style="padding-right:9px;white-space:nowrap;overflow:visible;text-align:right!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+		                <a href="./shakespeare.htm" title="0:36:38 May 3, 2013" style="background-color:transparent;border:none;"><img src="/static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a>
+		                
+               </td>
+               <td id="displayDayEl" style="background:#000;color:#ff0;width:34px;height:24px;padding:2px 0 0 0;text-align:center;font-size:24px;font-weight: bold;" title="You are here: 18:16:12 Aug 15, 2013">15</td>
+				<td style="padding-left:9px;white-space:nowrap;overflow:visible;text-align:left!important;vertical-align:middle!important;" nowrap="nowrap">
+               
+                       <img src="/static/images/toolbar/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0"/>
+                       
+			    </td>
+           </tr>
+
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr style="width:110px;height:13px;font-size:9px!important;">
+				<td style="padding-right:9px;font-size:11px!important;font-weight: bold;text-align:right;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+		                <a href="./shakespeare.htm" style="text-decoration:none;color:#33f;font-weight:bold;background-color:transparent;border:none;" title="26 Jun 2012"><strong>2012</strong></a>
+		                
+               </td>
+               <td id="displayYearEl" style="background:#000;color:#ff0;font-size:11px!important;font-weight: bold;padding-top:1px;width:34px;height:13px;text-align:center;" title="You are here: 18:16:12 Aug 15, 2013">2013</td>
+				<td style="padding-left:9px;font-size:11px!important;font-weight: bold;white-space:nowrap;overflow:visible;" nowrap="nowrap">
+               
+                       2014
+                       
+				</td>
+           </tr>
+           </tbody></table>
+       </td>
+
+       </tr>
+       <tr>
+       <td style="vertical-align:middle;padding:0!important;">
+           <a href="./shakespeare.htm" style="color:#33f;font-size:11px;font-weight:bold;background-color:transparent;border:none;" title="See a list of every capture for this URL"><strong>203 captures</strong></a>
+           <div class="__wb_banner_div" style="margin:0!important;padding:0!important;color:#666;font-size:9px;padding-top:2px!important;white-space:nowrap;" title="Timespan for captures of this URL">18 Aug 02 - 15 Aug 13</div>
+       </td>
+       <td style="padding:0!important;">
+       <a style="position:relative; white-space:nowrap; width:475px;height:27px;" href="" id="wm-graph-anchor">
+       <div class="__wb_banner_div" id="wm-ipp-sparkline" style="position:relative; white-space:nowrap; width:475px;height:27px;background-color:#fff;cursor:pointer;border-right:1px solid #ccc;" title="Explore captures for this URL">
+			<img id="sparklineImgId" style="position:absolute; z-index:9012; top:0px; left:0px;"
+				onmouseover="showTrackers('inline');" 
+				onmouseout="showTrackers('none');"
+				onmousemove="trackMouseMove(event,this)"
+				alt="sparklines"
+				width="475"
+				height="27"
+				border="0"
+				src="/web/jsp/graph.jsp?graphdata=475_27_1996:-1:000000000000_1997:-1:000000000000_1998:-1:000000000000_1999:-1:000000000000_2000:-1:000000000000_2001:-1:000000000000_2002:-1:000000010101_2003:-1:010001000100_2004:-1:010101000111_2005:-1:021110000011_2006:-1:221244211214_2007:-1:c63735780800_2008:-1:223344efb001_2009:-1:020000120000_2010:-1:100000001110_2011:-1:000000011211_2012:-1:001111001000_2013:7:101210010000_2014:-1:000000000000"></img>
+			<img id="wbMouseTrackYearImg" 
+				style="display:none; position:absolute; z-index:9010;"
+				width="25" 
+				height="27"
+				border="0"
+				src="/static/images/toolbar/transp-yellow-pixel.png"></img>
+			<img id="wbMouseTrackMonthImg"
+				style="display:none; position:absolute; z-index:9011; " 
+				width="2"
+				height="27" 
+				border="0"
+				src="/static/images/toolbar/transp-red-pixel.png"></img>
+       </div>
+		</a>
+
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td style="text-align:right;padding:5px;width:65px;font-size:11px!important;">
+       <a href="javascript:;" onclick="document.getElementById('wm-ipp').style.display='none';" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_close.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;margin-bottom:23px;background-color:transparent;border:none;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="display:block;padding-right:18px;background:url(/static/images/toolbar/wm_tb_help.png) no-repeat 100% 0;color:#33f;font-family:'Lucida Grande','Arial',sans-serif;background-color:transparent;border:none;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+
+</div>
+</div>
+<script type="text/javascript">
+ var wmDisclaimBanner = document.getElementById("wm-ipp");
+ if(wmDisclaimBanner != null) {
+   disclaimElement(wmDisclaimBanner);
+ }
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./SHAKESPEARE.jpg" width="475" height="52"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">
+<img border="0" src="./SHAKESPEARE1.jpg" width="236" height="23"></p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<p align="center">&nbsp;</p>
+
+<div align="center"><center>
+
+<table border="0" cellpadding="0" cellspacing="4" width="719" height="325">
+  <tr>
+    <td valign="bottom" colspan="3" width="711" height="21"></td>
+  </tr>
+  <tr>
+    <td width="245" height="21"></td>
+    <td width="7" height="21"></td>
+    <td width="451" height="21"></td>
+  </tr>
+  <tr>
+    <td valign="top" width="245" height="267"><p align="left">
+	<font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img border="0" src="./SHAKESPEARE2.jpg" width="208" height="260"></font></td>
+    <td width="7" height="267">&nbsp;<p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</td>
+    <td valign="top" width="451" height="267"><p align="left">
+	<u><font color="#C4CAD4"
+    face="Georgia">Rese&ntilde;a biogr&aacute;fica</font></u></p>
+	<p align="left">
+	<font face="Georgia" size="2" color="#D2D2D2">
+		<a
+      HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+		<font color="#C4CAD4">Poeta y dramaturgo ingl&eacute;s nacido en el estado de 
+	Warwickshire en 1564.<br>
+	Perteneci&oacute; a una familia noble de escasos recursos econ&oacute;micos.<br>
+	Altern&oacute; la afici&oacute;n por la lectura con su trabajo como maestro de escuela,<br>
+	dedic&aacute;ndose desde entonces a la producci&oacute;n literaria. La publicaci&oacute;n, en 
+	1593, de su poema <i>&quot;Venus y Adonis&quot;</i>, seguido de grandes piezas de 
+	teatro, comedias, y numerosos sonetos, lo convirtieron en uno de los m&aacute;s 
+	grandes autores de todos los tiempos.<br>
+	Algunas de sus obras como<i> &quot;Hamlet&quot;, &quot;Otelo&quot;, &quot;Macbeth&quot;, &quot;Romeo y 
+	Julieta&quot;, &quot;El Rey Lear&quot; y &quot;La tempestad&quot;</i>,&nbsp; han sido catalogadas a 
+	trav&eacute;s del tiempo como verdaderas joyas de la literatura universal.<br>
+	Pocos a&ntilde;os despu&eacute;s de su muerte, fue publicado el <i>First Folio</i>, 
+	volumen recopilatorio de su producci&oacute;n, el cual servir&iacute;a de base para todas 
+	las ediciones posteriores.<br>
+	Falleci&oacute; el 23 de abril de 1616.</font></a><font color="#C4CAD4"> &copy;</font></font></p>
+    </td>
+  </tr>
+</table>
+</center></div>
+
+<p align="center">&nbsp;</p>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+<p align="center">&nbsp;</p>
+<blockquote>
+	<blockquote>
+		<p align="left"><font size="2" color="#C4CAD4" face="Georgia">OBRA 
+		DESTACADA:</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">POES&Iacute;A<br>
+		<i>&quot;Venus y Adonis&quot; </i>1593<br>
+		<i>&quot;La violaci&oacute;n de Lucrecia&quot; </i>1594<br>
+		<i>&quot;Sonetos&quot; </i>1600-1609</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">COMEDIAS<br>
+		<i>&quot;La comedia de las equivocaciones&quot; </i>1592-1593<br>
+		<i>&quot;La fierecilla domada&quot;</i> 1593 <br>
+		<i>&quot;Trabajos de amor perdidos&quot;</i> 1594 <br>
+		<i>&quot;Los dos hidalgos de Verona&quot;</i> 1594<br>
+		<i>&quot;Sue&ntilde;o de una noche de verano&quot;</i> 1595-1596 <br>
+		<i>&quot;El mercader de Venecia&quot;</i> 1596-1597<br>
+		<i>&quot;Mucho ruido y pocas nueces&quot; </i>1598-1599<br>
+		<i>&quot;Como gust&eacute;is&quot; </i>1599-1600 <br>
+		<i>&quot;Medida por medida&quot;</i> 1604-1605 <br>
+		<br>
+		TRAGEDIAS <br>
+		<i>&quot;Romeo y Julieta&quot;</i> 1595<br>
+		<i>&quot;Julio C&eacute;sar&quot;</i>1600<br>
+		<i>&quot;Hamlet&quot;</i> 1600-1601 <br>
+		<i>&quot;Otelo&quot;</i> 1602 <br>
+		<i>&quot;Macbeth&quot;</i> 1605-1606 <br>
+		<i>&quot;El rey Lear&quot;</i> 1605<br>
+		<br>
+&nbsp;</font></p>
+	</blockquote>
+</blockquote>
+
+<blockquote>
+  <p align="center"><font color="#C4CAD4" face="Georgia">Poemas de William 
+	Shakespeare:</font></p>
+  <blockquote>
+	<p align="left"><font color="#FFFFFF" face="Georgia" size="3"><br><br>
+	</font><font color="#FFFFFF" face="Georgia">
+	<a href="./shakespeare.htm#A UN D&Iacute;A DE VERANO COMPARARTE">&iquest;A un d&iacute;a de verano compararte?</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#AMOR VERDADERO">Amor verdadero</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#COMO ACTOR VACILANTE EN EL PROSCENIO...">Como actor vacilante en 
+	el proscenio...</a></font></p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">&iquest;C&oacute;mo puedes buscar 
+	temas mi Musa...</font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#COMO UN PADRE DECR&Eacute;PITO DISFRUTA...">Como un padre decr&eacute;pito 
+	disfruta...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#CUANDO ASEDIEN TU FAZ CUARENTA INVIERNOS">Cuando asedien tu faz 
+	cuarenta inviernos</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#CUANDO EN LAS CR&Oacute;NICAS DE TIEMPOS IDOS...">Cuando en las cr&oacute;nicas 
+	de tiempos idos...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#CUANDO EN SESIONES DULCES Y CALLADAS">Cuando en sesiones dulces y 
+	calladas...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#CUANDO HAYA MUERTO, LL&Oacute;RAME TAN S&Oacute;LO...">Cuando haya muerto, 
+	ll&oacute;rame tan s&oacute;lo...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#CUANDO HOMBRES Y FORTUNA ME ABANDONAN...">Cuando hombres y fortuna 
+	me abandonan...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#CUANDO INFELIZ, POSTRADO POR EL HOMBRE...">Cuando infeliz, 
+	postrado por el hombre y la suerte...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#CUANDO PIENSO QUE TODO LO QUE CRECE">Cuando pienso que todo lo que 
+	crece</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#DE LOS HERMOSOS EL RETO&Ntilde;O ANSIAMOS">De los hermosos el reto&ntilde;o 
+	ansiamos</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#D&Eacute;JAME CONFESAR QUE SOMOS DOS...">D&eacute;jame confesar que somos dos...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#DERROCHE DEL ESP&Iacute;RITU EN VERG&Uuml;ENZA...">Derroche del esp&iacute;ritu en 
+	verg&uuml;enza...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#DERROCHADOR DE ENCANTO">Derrochador de encanto, &iquest;por qu&eacute; gastas...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#EL PECADO DE AMARME SE APODERA...">El pecado de amarme se 
+	apodera...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#EL SOLILOQUIO DE HAMLET">El soliloquio de Hamlet</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#EXTENUADO, HACIA EL LECHO ME APRESURO...">Extenuado, hacia el 
+	lecho me apresuro...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#HE VISTO A LA MA&Ntilde;ANA EN PLENA GLORIA...">He visto a la ma&ntilde;ana en 
+	plena gloria...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#LAS HORAS QUE GENTILES COMPUSIERON...">Las horas que gentiles 
+	compusieron...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#LOS CORAZONES QUE SUPUSE MUERTOS...">Los corazones que supuse 
+	muertos...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#MAS CU&Aacute;N PESANTE SE ME HACE ESTE VIAJE...">Mas cu&aacute;n pesante se me 
+	hace este viaje...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#MEJOR SER VIL QUE TAL CONSIDERADO...">Mejor ser vil que tal 
+	considerado...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#MELLA, TIEMPO VORAZ, DEL LE&Oacute;N LAS GARRAS...">Mella, tiempo voraz, 
+	del le&oacute;n las garras...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#MI AMOR ES UNA FIEBRE QUE INCESANTE...">Mi amor es una fiebre que 
+	incesante...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#MIRA A TU ESPEJO, Y A TU ROSTRO DILE">Mira a tu espejo, y a tu 
+	rostro dile...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#NO CREER&Eacute; EN MI VEJEZ, ANTE EL ESPEJO...">No creer&eacute; en mi vejez, 
+	ante el espejo...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#NO DEJES, PUES, SIN DESTILAR TU SAVIA">No dejes, pues, sin 
+	destilar tu savia...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#NO, NO APARTA A DOS ALMAS AMADORAS">No, no aparta a dos almas 
+	amadoras...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#NO TE ACONGOJES M&Aacute;S POR LO QUE HAS HECHO...">No te acongojes m&aacute;s 
+	por lo que has hecho...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#O VIVIR&Eacute; PARA ESCRIBIR LA LOSA...">O vivir&eacute; para escribir tu 
+	losa...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#POBRE ALMA, CENTRO DE CULPABLE LIMO...">Pobre alma, centro de 
+	culpable limo...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#POR QU&Eacute; ME PROMETISTE UN D&Iacute;A HERMOSO...">&iquest;Por qu&eacute; me prometiste un 
+	d&iacute;a hermoso...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#PINTADO POR NATURA EL ROSTRO TIENES...">Pintado por natura el 
+	rostro tienes...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#PINTORES SON MIS OJOS: TE FIJARON...">Pintores son mis ojos: te 
+	fijaron...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#QUE LOS FAVORECIDOS POR LOS ASTROS...">Que los favorecidos por los 
+	astros...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#QUE NO LE PONGA INCONVENIENTES YO...">Que no le ponga 
+	inconvenientes yo...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#QUI&Eacute;N CREER&Aacute; EN EL FUTURO A MIS POEMAS...">Qui&eacute;n creer&aacute; en el 
+	futuro a mis poemas...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#SE&Ntilde;OR DEL AMOR M&Iacute;O, CUYO M&Eacute;RITO...">Se&ntilde;or del amor m&iacute;o, cuyo 
+	m&eacute;rito...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#SI A MIS D&Iacute;AS COLMADOS SOBREVIVES...">Si a mis d&iacute;as colmados 
+	sobrevives...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#SI LA HOSCA CARNE FUERA PENSAMIENTO...">Si la hosca carne fuera 
+	pensamiento...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#SI LA MUERTE DOMINA EL PODER&Iacute;O...">Si la muerte domina el 
+	poder&iacute;o...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#TE HE DE COMPARAR CON UN SOL DE EST&Iacute;O">&iquest;Te he de comparar con un 
+	sol de est&iacute;o?</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#TIEMPO DEVORADOR, DESAFILA LAS GARRAS DEL LE&Oacute;N...">Tiempo 
+	devorador, desafila las garras del le&oacute;n...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#TIEMPO, NO HAS DE JACTARTE DE MIS CAMBIOS...">Tiempo, no has de 
+	jactarte de mis cambios...</a></font></p>
+	<p align="left"><font face="Georgia">
+	<a href="./shakespeare.htm#TU CAPRICHO Y TU EDAD, SEG&Uacute;N SE MIRE...">Tu capricho y tu edad, 
+	seg&uacute;n se mire...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#TU PECHO EST&Aacute; CARGADO CON TODOS LOS CORAZONES...">Tu pecho est&aacute; 
+	cargado con todos los corazones...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#UNOS SE VANAGLORIAN DE LA ESTIRPE...">Unos se vanaglorian de la 
+	estirpe...</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#&iexcl;VE! SI EN EL ORIENTE LA GRACIOSA LUZ">&iexcl;Ve! Si en el oriente la 
+	graciosa luz...</a></font></p>
+	<p align="left"><font face="Georgia" color="#FFFFFF">
+	<a href="./shakespeare.htm#Y POR QU&Eacute; NO ES TU GUERRA M&Aacute;S PUJANTE...">Y por qu&eacute; no es tu 
+	guerra m&aacute;s pujante...</a></font><font face="Georgia" size="2" color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br></font><font color="#FFFFFF" face="Georgia" size="3"><br> 
+		</font><font face="Georgia" size="2" color="#C4CAD4">Ir a:</font><font face="Georgia" size="3" color="#C4CAD4"> </font>
+	<font face="Georgia" size="3" color="#FFFFFF">
+	<a href="./index.htm">A media voz </a><br></font>
+	<font face="Georgia" size="2" color="#D2D2D2">
+	<a href="./"><font color="#C4CAD4">Ir a:</font></a></font><font face="Georgia" size="2" color="#FFFFFF">
+	</font><font face="Georgia" color="#FFFFFF"><a href="./traducciones.htm">
+	Traducciones de poes&iacute;a</a></font><font face="Georgia" size="3" color="#EEEEEE"><br>
+	</font></p>
+<p align="center"><font color="#EEEEEE"><script language="javascript">
+// Los mejores c&oacute;digos JavaScript en http://www.losrecursosgratis.com
+function mailpage()
+{
+  mail_str = "mailto:?subject=Visita esta p&aacute;gina: " + document.title;
+  mail_str += "&body=Te recomiendo que visites esta p&aacute;gina . -- " + document.title;
+  mail_str += ". Enlace: " + location.href; 
+  location.href = mail_str;
+}
+</script> </font><font face="Georgia" size="3" color="#D2D2D2">
+<a href="javascript:mailpage()">Pulsa aqu&iacute; para recomendar esta p&aacute;gina</a></font><font face="Georgia" size="3" color="#EEEEEE"> 
+&nbsp;</font><font color="#EEEEEE">&nbsp;&nbsp;&nbsp; <br>
+</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font face="Georgia" size="2" color="#C4CAD4">Tus 
+		comentarios o sugerencias ser&aacute;n de gran ayuda <br>
+		para el desarrollo de esta p&aacute;gina. Escr&iacute;benos a:</font></p>
+	</blockquote>
+</blockquote>
+<p align="center"><font face="Georgia" size="4" color="#D2D2D2">
+<a href="mailto:poesia@amediavoz.com">poesia@amediavoz.com</a></font><font color="#EEEEEE" face="Georgia"><br>
+&nbsp;</font></p>
+<blockquote>
+	<blockquote>
+		<p align="center"><font size="2" color="#C4CAD4" face="Georgia">Esta 
+		p&aacute;gina se ve mejor con su fuente original. Si no la tienes,</font><font face="Georgia"><font size="2" color="#C4CAD4"><br>
+		b&aacute;jala a tu disco duro, descomprime el fichero y c&oacute;piala en: <br>
+		Windows/Fonts: <br>
+		</font><font color="#EEEEEE"><br>
+		</font><a href="./georgia.zip">Georgia</a></font></p>
+	</blockquote>
+</blockquote>
+<p align="center">&nbsp;</p>
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="A UN D&Iacute;A DE VERANO COMPARARTE"></a></font>
+	<font face="Georgia" color="#D2D2D2">
+	<a
+      HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+	<font color="#C4CAD4">&iquest;A un d&iacute;a de verano compararte?... </font></a></font></p>
+	<p align="left"><font face="Georgia" size="2" color="#D2D2D2">
+	<a
+      HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+	<font color="#C4CAD4">&iquest;A un d&iacute;a de verano compararte? <br>M&aacute;s hermosura y 
+	suavidad posees. <br>Tiembla el brote de mayo bajo el viento<br>y el est&iacute;o 
+	no dura casi nada. </font></a></font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">A veces demasiado brilla el 
+	ojo <br>
+	solar&nbsp; y otras su tez de oro se apaga;<br>toda belleza alguna vez 
+	declina,<br>ajada por la suerte o por el tiempo. </font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">Pero eterno ser&aacute; el verano 
+	tuyo.<br>No perder&aacute;s la gracia, ni la Muerte <br>se jactar&aacute; de ensombrecer 
+	tus pasos<br>
+	cuando crezcas en versos inmortales.<br><br>
+	Vivir&aacute;s mientras alguien vea y sienta <br>y esto pueda vivir y te d&eacute; vida.
+	</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</i></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="AMOR VERDADERO"></a></font><font face="Georgia" color="#C4CAD4">
+	Amor verdadero</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">No, no aparta 
+	a dos almas amadoras<br>adverso caso ni cr&uuml;el porf&iacute;a:<br>nunca mengua el 
+	amor ni se desv&iacute;a,<br>y es uno y sin mudanza a todas horas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Es fanal que 
+	borrascas bramadoras<br>con inm&oacute;viles rayos desaf&iacute;a;<br>estrella fija que 
+	los barcos gu&iacute;a;<br>mides su altura, mas su esencia ignoras.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Amor no sigue 
+	la fugaz corriente<br>de la edad, que deshace los colores<br>de los floridos 
+	labios y mejillas.<br>
+	Eres eterno, Amor: si esto desmiente<br><br>
+	mi vida, no he sentido tus ardores,<br>ni supe comprender tus maravillas.<br>
+	<br>
+	</font>
+	<a HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+	<em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Miguel Antonio 
+	Caro</font></em></a></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left"><br>
+	<br>
+	<font color="#C4CAD4" face="Georgia" size="2">
+
+	<font color="#C4CAD4"><a name="COMO ACTOR VACILANTE EN EL PROSCENIO..."></a></font></font>
+	<font color="#C4CAD4" face="Georgia">
+
+	Como actor vacilante en el proscenio<font color="#C4CAD4">...</font></a></font></p>
+	
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Como actor 
+	vacilante en el proscenio<br>que temeroso su papel confunde,<br>o como el 
+	pose&iacute;do por la ira<br>que desfallece por su propio exceso,<br>
+	<br>as&iacute; yo, desconfiando de m&iacute; mismo,<br>callo en la ceremonia enamorada,<br>
+	y se dir&iacute;a que mi amor decae<br>cuando lo agobia la amorosa fuerza.<br>
+	<br>Deja que la elocuencia de mis libros,<br>sin voz, transmita el habla de 
+	mi pecho<br>que pide amor y busca recompensa,<br>m&aacute;s que otra lengua de 
+	expresivo alcance.<br>
+	<br>Del mudo amor aprende a leer lo escrito,<br>que o&iacute;r con ojos es amante 
+	astucia.<br>
+	<br><i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CÓMO PUEDES BUSCAR TEMAS MI MUSA..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	&iquest;C&oacute;mo puede buscar temas mi Musa...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iquest;C&oacute;mo puede 
+	buscar temas mi Musa<br>
+	mientras t&uacute; alientas, que a mi verso infundes<br>
+	tu dulce inspiraci&oacute;n, harto preciosa<br>
+	para exponerla en un papel grosero?<br>
+	<br>
+	Agrad&eacute;cete a ti, si algo de mi obra<br>
+	digno de leerse encuentra tu mirada:<br>
+	&iquest;qui&eacute;n tan mudo ser&aacute; que no te escriba<br>
+	cuando tu luz aclara lo que inventa?<br>
+	<br>
+	S&eacute; la d&eacute;cima Musa y s&eacute; diez veces<br>
+	mejor que las antiguas invocadas,<br>
+	y otorga a quien te invoque eternos versos<br>
+	que sobrevivan a lejanos siglos.<br>
+	<br>
+	Si al futuro censor mi Musa encanta,<br>
+	m&iacute;a ser&aacute; la pena y tuyo el lauro.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	</a>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="COMO UN PADRE DECR&Eacute;PITO DISFRUTA..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Como un padre decr&eacute;pito disfruta...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Como un padre 
+	decr&eacute;pito disfruta<br>
+	al ver de su hijo las empresas j&oacute;venes,<br>
+	as&iacute; yo, mutilado por la suerte,<br>
+	en tu lealtad y m&eacute;rito me afirmo.<br>
+	<br>
+	Pues sea la hermosura o el linaje,<br>
+	el poder o el ingenio, uno o todos,<br>
+	quien te corone con mejores t&iacute;tulos,<br>
+	yo incorporo mi amor a esa riqueza.<br>
+	<br>
+	Ni pobre ni ofendido soy, ni inv&aacute;lido,<br>
+	que basta la substancia de tu sombra<br>
+	para colmarme a m&iacute; con su opulencia,<br>
+	y de una parte de tu gloria vivo.<br>
+	<br>
+	Busca, pues, lo mejor: te lo deseo;<br>
+	ser&eacute; feliz diez veces, si lo hallas.</font></p>
+	<p align="left">
+	<a HREF="http://gigs.infase.es/cgi-bin/status.cgi?88779" target="_blank">
+	<font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</i></font></font></p>
+	<p align="left"></p></a>
+	<blockquote>
+		<blockquote>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO ASEDIEN TU FAZ CUARENTA INVIERNOS"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando asedien tu faz cuarenta inviernos...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Cuando asedien tu faz cuarenta inviernos<br>y ahonden surcos en tu prado 
+	hermoso,<br>tu juventud, altiva vestidura,<br>ser&aacute; un andrajo que no mira 
+	nadie.<br>
+	<br>Y si por tu belleza preguntaran,<br>tesoro de tu tiempo apasionado,<br>
+	decir que yace en tus sumidos ojos<br>dar&aacute; motivo a escarnios o fals&iacute;as.<br>
+	<br>&iexcl;Cu&aacute;nto m&aacute;s te alabaran en su empleo<br>si respondieras : - &laquo; Este 
+	gr&aacute;cil hijo<br>mi deuda salda y mi vejez excusa &raquo;,<br>pues su beldad ser&iacute;a 
+	tu legado!<br><br>Pudieras, renaciendo en la vejez,<br>ver c&aacute;lida tu sangre 
+	que se enfr&iacute;a.</font></p>
+	<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</font></i></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO EN LAS CRÓNICAS DE TIEMPOS IDOS..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando en las cr&oacute;nicas de tiempos idos...</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">Cuando en las cr&oacute;nicas de 
+	tiempos idos<br>
+	veo que a los hermosos se describe<br>
+	y a la Belleza embellecer la rima<br>
+	que elogia a damas y se&ntilde;ores muertos,<br>
+	<br>
+	observo que al pintar de sus dechados<br>
+	la mano, el labio, el pie, la frente, el ojo,<br>
+	trataba de expresar la pluma arcaica<br>
+	una belleza como la que tienes.<br>
+	<br>
+	As&iacute;, sus alabanzas son presagios<br>
+	de nuestro tiempo, que te prefiguran,<br>
+	y pues no hac&iacute;an m&aacute;s que adivinarte,<br>
+	no pod&iacute;an cantarte cual mereces.<br>
+	<br>
+	En cuanto a aquellos que te contemplamos<br>
+	con absorta mirada, estamos mudos.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i><br><br>&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO EN SESIONES DULCES Y CALLADAS"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando en sesiones dulces y calladas...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Cuando en 
+	sesiones dulces y calladas <br>hago comparecer a los recuerdos,<br>suspiro 
+	por lo mucho que he deseado<br>y lloro el bello tiempo que he perdido,
+	</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">la aridez de los ojos se me 
+	inunda <br>por los que envuelve la infinita noche<br>y renuevo el pla&ntilde;ir de 
+	amores muertos<br>y gimo por im&aacute;genes borradas.</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">As&iacute;, afligido por remotas 
+	penas,<br>puedo de mis dolores ya sufridos<br>la cuenta rehacer, uno por 
+	uno, <br>y volver a pagar lo ya pagado. <br><br>Pero si entonces pienso en 
+	ti, mis p&eacute;rdidas<br>se compensan, y cede mi amargura.</font></p>
+	<p><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Alejandro 
+	Araoz Fraser</font></em></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO HAYA MUERTO, LLÓRAME TAN SÓLO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando haya muerto, ll&oacute;rame tan s&oacute;lo...</font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br>
+	Cuando haya muerto, ll&oacute;rame tan s&oacute;lo<br>
+	mientras escuches la campana triste,<br>
+	anunciadora al mundo de mi fuga<br>
+	del mundo vil hacia el gusano infame.<br>
+	<br>
+	Y no evoques, si lees esta rima,<br>
+	la mano que la escribe, pues te quiero<br>
+	tanto que hasta tu olvido prefiriera<br>
+	a saber que te amarga mi memoria.<br>
+	<br>
+	Pero si acaso miras estos versos<br>
+	cuando del barro nada me separe,<br>
+	ni siquiera mi pobre nombre digas<br>
+	y que tu amor conmigo se marchite,<br>
+	<br>
+	para que el sabio en tu llorar no indague<br>
+	y se burle de ti por el ausente.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p>
+	<em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO HOMBRES Y FORTUNA ME ABANDONAN..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando hombres y Fortuna me abandonan...</font></em></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<em style="font-style: normal">Cuando hombres y Fortuna me abandonan,<br>
+	lloro en la soledad de mi destierro,<br>
+	y al cielo sordo con mis quejas canso<br>
+	y maldigo al mirar mi desventura,<br>
+	<br>
+	so&ntilde;ando ser m&aacute;s rico de esperanza,<br>
+	bello como &eacute;ste, como aqu&eacute;l rodeado,<br>
+	deseando el arte de uno, el poder de otro,<br>
+	insatisfecho con lo que me queda;<br>
+	<br>
+	a pesar de que casi me desprecio,<br>
+	pienso en ti y soy feliz y mi alma entonces,<br>
+	como al amanecer la alondra, se alza<br>
+	de la tierra sombr&iacute;a y canta al cielo:<br>
+	<br>
+	pues recordar tu amor es tal fortuna<br>
+	que no cambio mi estado con los reyes.<br>
+	<br>
+	</em><em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em></font></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="CUANDO INFELIZ, POSTRADO POR EL HOMBRE..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando, infeliz, postrado por el hombre y la suerte...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Cuando, 
+	infeliz, postrado por el hombre y la suerte,<br>en mi triste destierro lloro 
+	a solas conmigo,<br>y agito al sordo cielo mi grito vano y fuerte,<br>y, 
+	volviendo a mirarme, mi destino maldigo,</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">y sue&ntilde;o ser 
+	como otro m&aacute;s rico en esperanza,<br>tener su mismo aspecto, gozar sus 
+	compa&ntilde;&iacute;as,<br>y envidio el arte de &eacute;ste, del otro la pujanza,<br>hastiado 
+	a&uacute;n de aquello que me daba alegr&iacute;as;</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">si en estos 
+	pensamientos mi desprecio me espanta,<br>pienso en ti felizmente, y entonces 
+	mi consuelo<br>como una alondra a orillas del d&iacute;a se levanta<br>del mundo 
+	oscuro, y canta a las puertas del cielo.<br>
+	<br>Tal riqueza me ofreces, dulce amor recordado,<br>que desde&ntilde;o cambiar con 
+	los reyes mi estado.<br><br><em>Versi&oacute;n de William Ospina<br>&nbsp;</em></font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="CUANDO PIENSO QUE TODO LO QUE CRECE"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Cuando pienso que todo lo que crece...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Cuando pienso que todo lo que crece <br>su perfecci&oacute;n conserva un mero 
+	instante; <br>que las funciones de este gran proscenio <br>se dan bajo la 
+	influencia de los astros; 
+	<br><br>y que el hombre florece como planta <br>a quien el mismo cielo 
+	alienta y rinde, <br>primero ufano y abatido luego, <br>hasta que su 
+	esplendor nadie recuerda: <br><br>la idea de una estada tan fugaz <br>a mis 
+	ojos te muestra m&aacute;s vibrante, <br>mientras que Tiempo y Decadencia traman <br>
+	mudar tu joven d&iacute;a en noche s&oacute;rdida. <br>
+	<br>Y, por tu amor guerreando con el Tiempo, <br>si &eacute;l te roba, te injerto 
+	nueva vida.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de 
+	Manuel Mujica L&aacute;inez<br></i><br></font></p><font color="#C4CAD4">
+	<p align="center">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p></font>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="DE LOS HERMOSOS EL RETO&Ntilde;O ANSIAMOS"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	De los hermosos el reto&ntilde;o ansiamos...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	De los hermosos el reto&ntilde;o ansiamos<br>para que su rosal no muera nunca,<br>
+	pues cuando el tiempo su esplendor marchite<br>guardar&aacute; su memoria su 
+	heredero.<br><br>Pero t&uacute;, que tus propios ojos amas,<br>para nutrir la luz, 
+	tu esencia quemas<br>y hambre produces en donde hay hartura,<br>demasiado 
+	cruel y hostil contigo.<br>
+	<br>T&uacute; que eres hoy del mundo fresco adorno,<br>preg&oacute;n de la radiante 
+	primavera,<br>sepultas tu poder en el capullo,<br>dulce ego&iacute;sta que malgasta 
+	ahorrando.<br><br>Del mundo ten piedad: que t&uacute; y la tumba,<br>&aacute;vidos, lo que 
+	es suyo no devoren.</font></p>
+	<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</font></i></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#C4CAD4">
+	<a name="D&Eacute;JAME CONFESAR QUE SOMOS DOS..."></a>D&eacute;jame confesar que somos 
+	dos...</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">D&eacute;jame confesar que somos 
+	dos<br>
+	aunque es indivisible el amor nuestro,<br>
+	as&iacute; las manchas que conmigo quedan<br>
+	he de llevar yo solo sin tu ayuda.<br>
+	<br>
+	No hay m&aacute;s que un sentimiento en nuestro amor<br>
+	si bien un hado adverso nos separa,<br>
+	que si el objeto del amor no altera,<br>
+	dulces horas le roba a su delicia.<br>
+	<br>
+	No podr&eacute; desde hoy reconocerte<br>
+	para que as&iacute; mis faltas no te humillen,<br>
+	ni podr&aacute; tu bondad honrarme en p&uacute;blico<br>
+	sin despojar la honra de tu nombre.<br>
+	<br>
+	Mas no lo hagas, pues te quiero tanto<br>
+	que si es m&iacute;o tu amor, m&iacute;a es tu fama.</font></p>
+	<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</font></i></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="DERROCHE DEL ESP&Iacute;RITU EN VERGÜENZA..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Derroche del esp&iacute;ritu en verg&uuml;enza...</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">Derroche del esp&iacute;ritu en 
+	verg&uuml;enza<br>
+	la lujuria es en acto, y hasta el acto<br>
+	perjura, sanguinaria, traidora,<br>
+	salvaje, extrema, cruel y ruda:<br>
+	<br>
+	despreciada no bien se la disfruta,<br>
+	sin mesura anhelada, y ya alcanzada,<br>
+	odiada sin mesura, cual un cebo<br>
+	que desquicia al incauto que lo traga.<br>
+	<br>
+	Desquicio los suspiros, los abrazos,<br>
+	los gemidos del antes y el durante,<br>
+	j&uacute;bilo al gozar, despu&eacute;s penuria,<br>
+	promesa de alegr&iacute;a, luego un sue&ntilde;o.<br>
+	<br>
+	Lo saben todos, pero nadie sabe<br>
+	cerrar el cielo que lleva hasta ese infierno.<br>
+	<br>
+	<i>Versi&oacute;n de Carlos Gardini</i><br>
+	<br>
+&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p><font face="Georgia" color="#C4CAD4">
+	<a name="DERROCHADOR DE ENCANTO"></a>Derrochador de encanto, &iquest;por qu&eacute; 
+	gastas...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Derrochador de encanto, &iquest;por qu&eacute; gastas<br>en ti mismo tu herencia de 
+	hermosura?<br>Naturaleza presta y no regala,<br>y, generosa, presta al 
+	generoso.<br><br>Luego, bello ego&iacute;sta, &iquest;por qu&eacute; abusas<br>de lo que se te 
+	dio para que dieras?<br>Avaro sin provecho, &iquest;por qu&eacute; empleas<br>suma tan 
+	grande, si vivir no logras?<br><br>Al comerciar as&iacute; s&oacute;lo contigo,<br>
+	defraudas de ti mismo a lo m&aacute;s dulce.<br>Cuando te llamen a partir, &iquest;qu&eacute; 
+	saldo<br>podr&aacute;s dejar que sea tolerable?<br><br>Tu belleza sin uso ir&aacute; a la 
+	tumba;<br>usada, hubiera sido tu albacea.<br>
+	<br><i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p>&nbsp;</p>
+	<p align="center">
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" color="#C4CAD4">
+	<a name="EL PECADO DE AMARME SE APODERA..."></a>El pecado de amarme se 
+	apodera...</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">El pecado de amarme se 
+	apodera<br>
+	de mis ojos, de mi alma y de m&iacute; todo;<br>
+	y para este pecado no hay remedio<br>
+	pues en mi coraz&oacute;n ech&oacute; ra&iacute;ces.<br>
+	<br>
+	Pienso que es el m&aacute;s bello mi semblante,<br>
+	mi forma, entre las puras, la ideal;<br>
+	y mi valor tan alto concept&uacute;o<br>
+	que para m&iacute; domina a todo m&eacute;rito.<br>
+	<br>
+	Pero cuando el espejo me presenta,<br>
+	tal cual soy, agrietado por los a&ntilde;os,<br>
+	en sentido contrario mi amor leo<br>
+	que amarse siendo as&iacute; ser&iacute;a inicuo.<br>
+	<br>
+	Es a ti, otro yo mismo, a quien elogio,<br>
+	pintando mi vejez con tu hermosura.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez<br>&nbsp;</i></font></p>
+	<p align="center"><font face="Georgia" size="2" color="#C4CAD4"><br></font>
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font><font face="Georgia" size="2" color="#C4CAD4"><br>
+	<br></font></p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a
+      name="EL SOLILOQUIO DE HAMLET"></a>El soliloquio de Hamlet</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Ser, o no 
+	ser, es la cuesti&oacute;n!&nbsp; -&iquest;Qu&eacute; debe<br>m&aacute;s dignamente optar el alma noble<br>
+	entre sufrir de la fortuna imp&iacute;a<br>el porfiador rigor, o rebelarse<br>
+	contra un mar&nbsp; de desdichas, y afront&aacute;ndolo<br>desaparecer con ellas?</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Morir, dormir, 
+	no despertar m&aacute;s nunca,<br>poder decir todo acab&oacute;; en un sue&ntilde;o<br>sepultar 
+	para siempre los dolores<br>del coraz&oacute;n, los mil y mil quebrantos<br>que 
+	hered&oacute; nuestra carne, &iexcl;qui&eacute;n no ansiara<br>concluir as&iacute;!</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iexcl;Morir... 
+	quedar dormidos...<br>Dormir... tal vez so&ntilde;ar!&nbsp;&nbsp; -&iexcl;Ay! all&iacute; hay 
+	algo<br>que detiene al mejor. Cuando del mundo<br>no percibamos ni un rumor, 
+	&iexcl;qu&eacute; sue&ntilde;os<br>vendr&aacute;n en ese sue&ntilde;o de la muerte!<br>Eso es, eso es lo que 
+	hace el infortunio<br>planta de larga vida. &iquest;Qui&eacute;n querr&iacute;a<br>sufrir del 
+	tiempo el implacable azote,<br>del fuerte la injusticia, del soberbio<br>el 
+	&aacute;spero desd&eacute;n, las amarguras<br>del amor despreciado, las demoras<br>de la 
+	ley, del empleado la insolencia,<br>la hostilidad que los mezquinos juran<br>
+	al m&eacute;rito pac&iacute;fico, pudiendo<br>de tanto mal librarse &eacute;l mismo, alzando<br>
+	una punta de acero? &iquest;qui&eacute;n querr&iacute;a<br>seguir cargando en la cansada vida<br>
+	su fardo abrumador?...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Pero hay 
+	espanto<br>&iexcl;all&aacute; del otro lado de la tumba!<br>La muerte, aquel pa&iacute;s que 
+	todav&iacute;a<br>est&aacute; por descubrirse,<br>pa&iacute;s de cuya l&oacute;brega frontera<br>ning&uacute;n 
+	viajero regres&oacute;, perturba<br>la voluntad, y a todos nos decide<br>a soportar 
+	los males que sabemos<br>m&aacute;s bien que ir a buscar lo que ignoramos.<br>As&iacute;, 
+	&iexcl;oh conciencia!, de nosotros todos<br>haces unos cobardes, y la ardiente<br>
+	resoluci&oacute;n original decae<br>al p&aacute;lido mirar del pensamiento.<br>As&iacute; tambi&eacute;n 
+	en&eacute;rgicas empresas,<br>de trascendencia inmensa, a esa mirada<br>torcieron 
+	rumbo, y sin acci&oacute;n murieron.</font></p>
+	<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+	Rafael Pombo</font></em></p>
+	<p align="left">&nbsp;</p>
+	<p align="center">
+	<font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="EXTENUADO, HACIA EL LECHO ME APRESURO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Extenuado, hacia el lecho me apresuro...</font></em></p>
+	<p align="left"><em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">Extenuado, hacia el lecho me 
+	apresuro<br>
+	a calmar mis fatigas de viajero,<br>
+	pero empieza en mi &aacute;nimo otro viaje,<br>
+	cuando acaban del cuerpo las faenas.<br>
+	<br>
+	Porque mis pensamientos, alej&aacute;ndose<br>
+	en tu busca, celosos peregrinos,<br>
+	de mis p&aacute;rpados abren el agobio<br>
+	a la tiniebla que los ciegos miran.<br>
+	<br>
+	S&oacute;lo que mi visi&oacute;n imaginaria<br>
+	trae tu sombra hasta mis ojos ciegos,<br>
+	como un joyel que cuelga de la noche<br>
+	y el rostro oscuro le rejuvenece.<br>
+	<br>
+	As&iacute;, por ti y por m&iacute;, nunca reposan<br>
+	de d&iacute;a el cuerpo y a la noche el alma.</font></em></p>
+	<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+	Manuel Mujica L&aacute;inez</font></em></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a name="HE VISTO A LA MA&Ntilde;ANA EN PLENA GLORIA..."></a>He visto a la ma&ntilde;ana 
+	en plena gloria...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">He visto a la 
+	ma&ntilde;ana en plena gloria<br>
+	los picos halagar con su mirada,<br>
+	besar con su oro las praderas verdes<br>
+	y dorar con su alquimia arroyos p&aacute;lidos;<br>
+	<br>
+	y luego permitir el paso oscuro<br>
+	de fieros nubarrones por su rostro,<br>
+	y ocultarlo a la tierra abandonada<br>
+	huyendo hacia occidente sin ventura.<br>
+	<br>
+	As&iacute; brill&oacute; mi sol, un d&iacute;a, al alba,<br>
+	sobre mi frente, con triunfal belleza;<br>
+	una hora no m&aacute;s lo he pose&iacute;do<br>
+	y hoy me lo esconden las a&eacute;reas nubes.<br>
+	<br>
+	No desde&ntilde;es mi amor: si el sol del cielo<br>
+	se eclipsa, han de velarse los del mundo.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="LAS HORAS QUE GENTILES COMPUSIERON..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Las horas que gentiles compusieron...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	Las horas que gentiles compusieron <br>tal visi&oacute;n para encanto de los ojos, <br>
+	sus tiranos ser&aacute;n cuando destruyan <br>una belleza de suprema gracia: <br><br>
+	porque el tiempo incansable, en torvo invierno,
+	<br>muda al verano que en su seno arruina; <br>la savia hiela y el follaje 
+	esparce <br>y a la hermosura agosta entre la nieve. <br><br>Si no quedara la 
+	estival esencia, <br>en muros de cristal cautivo l&iacute;quido, <br>la belleza y 
+	su fruto morir&iacute;an <br><br>sin dejar ni el recuerdo de su forma. <br>Mas la 
+	flor destilada, hasta en invierno, <br>su ornato pierde y en perfume vive.</font></p>
+	<p align="left"><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+	Manuel Mujica L&aacute;inez</font></i></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a name="LOS CORAZONES QUE SUPUSE MUERTOS..."></a>Los corazones que supuse 
+	muertos...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Los corazones 
+	que supuse muertos<br>
+	pues me faltaban, a tu pecho ocupan;<br>
+	en &eacute;l reinan amor y sus virtudes<br>
+	y los amigos que cre&iacute; enterrados.<br>
+	<br>
+	&iexcl;Cu&aacute;nta l&aacute;grima p&iacute;a de mis ojos<br>
+	rob&oacute; el amor leal por esos muertos<br>
+	que no son m&aacute;s que seres que han cambiado<br>
+	de lugar y que yacen en ti ocultos!<br>
+	<br>
+	T&uacute; eres la tumba donde vive amor;<br>
+	de mis amores los trofeos te ornan;<br>
+	cada uno te dio mi parte suya<br>
+	y ahora es tuyo el bien que fue de muchos.<br>
+	<br>
+	Veo en ti las im&aacute;genes que am&eacute;:<br>
+	soy tuyo entero pues las tienes todas.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="MAS CU&Aacute;N PESANTE SE ME HACE ESTE VIAJE..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Mas cu&aacute;n pesante se me hace este viaje...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mas cu&aacute;n 
+	pesante se me hace este viaje<br>
+	Al ver que su final, que tanto ans&iacute;o,<br>
+	Me har&aacute; exclamar cuando pare y descanse:<br>
+	&iexcl;Ya tan atr&aacute;s has dejado a tu amigo!<br>
+	<br>
+	La bestia que me lleva, ya sin fuerzas<br>
+	Por mi penar, tambi&eacute;n con &eacute;ste carga<br>
+	Jadeando, como si algo le dijera<br>
+	Que prisa su jinete no demanda.<br>
+	<br>
+	La espuela en sangre su paso no apremia<br>
+	Sino que ira en la piel le clava a veces,<br>
+	Responde el animal con una queja<br>
+	Que de cuanto le hiera m&aacute;s me hiere.<br>
+	<br>
+	Pues esa misma queja me recuerda<br>
+	Que alante el dolor, mi dicha atr&aacute;s queda.<br>
+	<i><br>
+	Versi&oacute;n de Ariel Laurencio Tacoronte</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="MEJOR SER VIL QUE TAL CONSIDERADO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Mejor ser vil que tal considerado...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mejor ser vil 
+	que tal considerado<br>
+	Cuando, sin serlo, esta culpa te achacan,<br>
+	Y un l&iacute;cito placer pierdes, que tanto<br>
+	Los dem&aacute;s condenan, pero no tu alma.<br>
+	<br>
+	Pues &iquest;por qu&eacute; los ojos espurios de otros<br>
+	Han de juzgar a mi impetuosa sangre;<br>
+	O espiar mis flaquezas quien es m&aacute;s flojo<br>
+	Y estima malo lo que yo, agradable?<br>
+	<br>
+	No, yo soy el que soy; y los que apuntan<br>
+	A mis desmanes, los propios exponen;<br>
+	Habr&aacute; en sus ojos una torcedura,<br>
+	Que sus juicios no ensucien mis acciones.<br>
+	<br>
+	A no ser que esta m&aacute;xima sostengan:<br>
+	Todo hombre es malo y en su maldad reina.<br>
+	<br>
+	<i>Versi&oacute;n de Ariel Laurencio Tacoronte</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="MELLA, TIEMPO VORAZ, DEL LEÓN LAS GARRAS..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Mella, Tiempo voraz, del le&oacute;n las garras...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mella, Tiempo 
+	voraz, del le&oacute;n las garras,<br>deja a la tierra devorar sus brotes,<br>
+	arranca al tigre su colmillo agudo,<br>quema al a&ntilde;oso f&eacute;nix en su sangre.<br>
+	<br>Mientras huyes con pies alados, Tiempo,<br>da vida a la estaci&oacute;n, triste 
+	o alegre,<br>y haz lo que quieras, marchitando al mundo<br>Pero un crimen 
+	odioso te proh&iacute;bo:<br>
+	<br>no cinceles la frente de mi amor,<br>ni la dibujes con tu pluma antigua;<br>
+	permite que tu senda siga, intacto,<br>ideal sempiterno de hermosura.<br>
+	<br>O afr&eacute;ntalo si quieres, Tiempo viejo:<br>mi amor ser&aacute; en mis versos 
+	siempre joven.<br>
+	<br><i>Versi&oacute;n de Manuel Mujica L&aacute;inez<br></i><br>&nbsp;<br>&nbsp;</font></p>
+	<blockquote>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+	</blockquote>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="MI AMOR ES UNA FIEBRE QUE INCESANTE..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Mi amor es una fiebre que incesante...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mi amor es una 
+	fiebre que incesante<br>ans&iacute;a lo que su virus alimenta,<br>porque en mi mal 
+	mi gusto se apacienta<br>y es por s&iacute; enfermo el apetito amante.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Ya, viendo mi 
+	doctor (la vigilante<br>raz&oacute;n) que no haga del caso ni cuenta,<br>me 
+	abandon&oacute;, y el &aacute;nima sedienta<br>corre a su abismo, aunque lo ve adelante.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Salvaci&oacute;n para 
+	m&iacute;, ni la hay ni la quiero:<br>todo yo soy locura, inquietud, ira;<br>loco 
+	en cuanto imagino y vocifero,<br>y v&iacute;ctima infeliz de una mentira<br><br>te 
+	jur&eacute; honrada y franca; y mi amor tierno<br>&iquest;qu&eacute; hall&oacute; en ti? Noche oscura, 
+	negro infierno.</font></p>
+	<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+	Rafael Pombo<br><br>&nbsp;</font></em></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="MIRA A TU ESPEJO, Y A TU ROSTRO DILE"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Mira a tu espejo, y a tu rostro dile...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Mira a tu 
+	espejo, y a tu rostro dile: <br>ya es tiempo de formar otro como &eacute;ste. <br>
+	Si no renuevas hoy su lozan&iacute;a, 
+	<br>al mundo enga&ntilde;as y a una madre robas. <br><br>&iquest;Qui&eacute;n es la bella del 
+	intacto seno 
+	<br>que tu cultivo marital desde&ntilde;e?
+	<br>y &iquest;qui&eacute;n tan loco para ser la tumba <br>de un amor ego&iacute;sta sin futuro?
+	<br><br>Tu madre encuentra en ti, que eres su espejo, <br>la gracia de su 
+	abril, su primavera; <br>as&iacute;, de tu vejez por las ventanas, <br>aunque 
+	mustio, ver&aacute;s tu tiempo de oro. <br><br>Mas si pasar prefieres sin memoria, 
+	<br>muere solo y tu imagen morir&aacute;.</font><font face="Georgia" size="2" color="#C4CAD4"><em style="font-style: normal"><br>
+	<br></em><em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">
+	<em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="NO CREER&Eacute; EN MI VEJEZ, ANTE EL ESPEJO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	No creer&eacute; en mi vejez, ante el espejo...</font></em></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<em style="font-style: normal">No creer&eacute; en mi vejez, ante el espejo,<br>
+	mientras la juventud tu edad comparta;<br>s&oacute;lo cuando los surcos te se&ntilde;alen<br>
+	pensar&eacute; que la muerte se aproxima.<br>
+	<br>Si toda la hermosura que te cubre<br>es el ropaje de mi coraz&oacute;n,<br>que 
+	vive en ti, como en m&iacute; vive el tuyo,<br>&iquest;c&oacute;mo puedo ser yo mayor que t&uacute;?<br>
+	<br>Por eso, amor, contigo s&eacute; prudente,<br>como soy yo por ti, no por m&iacute; 
+	mismo;<br>tu coraz&oacute;n tendr&eacute; con el cuidado<br>de la nodriza que al peque&ntilde;o 
+	ampara.<br>
+	<br>No te ufanes del tuyo, si me hieres,<br>pues me lo diste para no 
+	volverlo.<br>
+	<br></em><em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em><em style="font-style: normal"><br>
+	<br>&nbsp;</em></font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p><font face="Georgia" color="#C4CAD4">
+	<a name="NO DEJES, PUES, SIN DESTILAR TU SAVIA"></a>No dejes, pues, sin 
+	destilar tu savia...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+	No dejes, pues, sin destilar tu savia, <br>que la mano invernal tu est&iacute;o 
+	borre: <br>aroma un frasco y antes que se esfume
+	<br>enriquece un lugar con tu belleza. <br><br>No ha de ser una usura 
+	prohibida <br>la que alegra a quien paga de buen grado; <br>y t&uacute; debes dar 
+	vida a otro t&uacute; mismo, <br>feliz diez veces, si son diez por uno. <br><br>M&aacute;s 
+	que ahora feliz fueras diez veces, <br>si diez veces, diez hijos te 
+	copiaran: <br>&iquest;qu&eacute; podr&iacute;a la muerte, si al partir <br><br>en tu posteridad 
+	siguieras vivo? <br>No te obstines, que es mucha tu hermosura.</font></p>
+	<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel Mujica 
+	L&aacute;inez</font></i></p>
+	<p>&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p>&nbsp;</p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="NO ME SUCEDE LO QUE A  AQUEL POETA..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	No me sucede lo que a aquel poeta...</font></p>
+	<p><font face="Georgia" size="2" color="#C4CAD4">No me sucede lo que a aquel 
+	poeta<br>que versifica a una beldad pintada,<br>y al cielo mismo emple&aacute; como 
+	adorno,<br>midiendo cu&aacute;nto es bello con su bella;<br>
+	<br>y en henchidas im&aacute;genes la acopla<br>al sol, la luna y a las gemas ricas<br>
+	y a las flores de abril y a las rarezas<br>que el aire envuelve en este 
+	globo vasto.<br>
+	<br>Sincero amante, la verdad escribo.<br>Mi amor es tan gentil, pod&eacute;is 
+	creerme,<br>como cualquier hijo de madre, y brilla<br>menos que las candelas 
+	celestiales.<br>
+	<br>Dejad que digan m&aacute;s los habladores;<br>yo no quiero ensalzar lo que no 
+	vendo.<br>
+	<br><i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i><br>&nbsp;<br>&nbsp;</font></p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="center">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a
+      name="NO, NO APARTA A DOS ALMAS AMADORAS"></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	No, no aparta a dos almas amadoras...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">No, no aparta 
+	a dos almas amadoras<br>adverso caso ni cr&uuml;el porf&iacute;a:<br>nunca mengua el 
+	amor ni se desv&iacute;a,<br>y es uno y sin mudanza a todas horas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Es fanal que 
+	borrascas bramadoras<br>con inm&oacute;viles rayos desaf&iacute;a;<br>estrella fija que 
+	los barcos gu&iacute;a;<br>mides su altura, mas su esencia ignoras.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Amor no sigue 
+	la fugaz corriente<br>de la edad, que deshace los colores<br>de los floridos 
+	labios y mejillas.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Eres eterno, 
+	Amor: si esto desmiente<br>mi vida, no he sentido tus ardores,<br>ni supe 
+	comprender tus maravillas.<br><br><em>Versi&oacute;n de Miguel Antonio Caro</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">
+	<em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="NO TE ACONGOJES M&Aacute;S POR LO QUE HAS HECHO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	No te acongojes m&aacute;s por lo que has hecho...</font></em></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<em style="font-style: normal">No te acongojes m&aacute;s por lo que has hecho;<br>
+	fango y espina tienen fuente y rosa;<br>
+	a la luna y al sol vela el eclipse;<br>
+	vive el gusano en el capullo suave.<br>
+	<br>
+	Todos cometen faltas, yo tambi&eacute;n<br>
+	pues disculpo con s&iacute;miles la tuya,<br>
+	y por justificarte me corrompo<br>
+	y excuso tus pecados con exceso.<br>
+	<br>
+	A tu yerro sensual le doy mi ayuda;<br>
+	de opositor me vuelvo tu abogado<br>
+	y comienzo a pleitear contra m&iacute; mismo.<br>
+	Tanto el amor y el odio en m&iacute; combaten<br>
+	<br>
+	que no puedo dejar de ser el c&oacute;mplice<br>
+	del ladr&oacute;n tierno que cruel me roba.<br>
+	<br>
+	</em><em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a
+      name="O VIVIR&Eacute; PARA ESCRIBIR LA LOSA..."></a>O vivir&eacute; para escribir tu 
+	losa...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">O vivir&eacute; para 
+	escribir tu losa,<br>o vives y en la tierra me he podrido.<br>Qu&eacute; importa 
+	que yo caiga en el olvido<br>si en mi canto inmortal tu honor reposa.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">No morir&aacute; por 
+	m&iacute; tu fama hermosa<br>aunque yo al mundo morir&eacute; ya ido:<br>t&uacute; ser&aacute;s 
+	recordado y bendecido,<br>yo volver&eacute; a ser polvo entre la fosa.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Cuando sean 
+	los que hoy viven sombra vana<br>mis estrofas ser&aacute;n tu monumento<br>que 
+	mirar&aacute; generaci&oacute;n lejana.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Remota edad 
+	repetir&aacute; mi acento;<br>vivir&aacute;s por mi pluma soberana<br>doquier se exhale un 
+	amoroso aliento.</font></p>
+	<p align="left"><em><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de 
+	Alejandro Araoz Fraser</font></em></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">
+	<em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="POBRE ALMA, CENTRO DE CULPABLE LIMO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Pobre alma, centro de culpable limo...</font></em></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<em style="font-style: normal">Pobre alma, centro de culpable limo<br>
+	a la que burla, ind&oacute;cil, quien la ci&ntilde;e,<br>
+	&iquest;por qu&eacute; adentro sufrir af&aacute;n y hambre<br>
+	si pintas lo exterior de alegre lujo?<br>
+	<br>
+	Si el contrato es tan breve, &iquest;por qu&eacute; gastas<br>
+	ornando tu morada pasajera?<br>
+	&iquest;Tendr&aacute; por fin tu cuerpo sustentar<br>
+	al gusano que herede tu derroche?<br>
+	<br>
+	Vive, alma, a expensas de tu servidor;<br>
+	que aumenten sus fatigas tu tesoro;<br>
+	y cambia horas de espuma por divinas.<br>
+	S&eacute; rica adentro, en vez de serlo afuera.<br>
+	<br>
+	Devora t&uacute; a la Muerte y no la nutras,<br>
+	pues si ella muere, no podr&aacute;s morir.<br>
+	<br>
+	</em><em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a name="POR QU&Eacute; ME PROMETISTE UN D&Iacute;A HERMOSO..."></a>&iquest;Por qu&eacute; me prometiste 
+	un d&iacute;a hermoso...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iquest;Por qu&eacute; me 
+	prometiste un d&iacute;a hermoso<br>
+	y a viajar sin mi capa me obligaste,<br>
+	si me dejaste sorprender por nubes<br>
+	que en su bruma ocultaron tu destello?<br>
+	<br>
+	No me basta que surjas de la niebla<br>
+	y que la lluvia enjugues en mi rostro,<br>
+	pues no ha de ponderar ninguno el b&aacute;lsamo<br>
+	que cicatriza pero no remedia.<br>
+	<br>
+	Ni tu verg&uuml;enza a mi dolor aplaca,<br>
+	ni tu remordimiento a lo perdido:<br>
+	del ofensor la pena poco alivia<br>
+	a quien la cruz soporta del agravio.<br>
+	<br>
+	Pero tus l&aacute;grimas de amor son perlas<br>
+	y su riqueza todo el mal rescata.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><em style="font-style: normal">
+	<font face="Georgia" size="2" color="#C4CAD4">
+	<a name="PINTADO POR NATURA EL ROSTRO TIENES..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	P</font></em><font face="Georgia" color="#C4CAD4"><em style="font-style: normal">intado 
+	por Natura el rostro tienes</em></font><em style="font-style: normal"><font face="Georgia" color="#C4CAD4">...</font></em></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<em style="font-style: normal">Pintado por Natura el rostro tienes<br>de 
+	mujer, due&ntilde;o y due&ntilde;a de mi amor;<br>y de mujer el coraz&oacute;n sensible<br>mas no 
+	mudable como el femenino;<br>
+	<br>tus ojos brillan m&aacute;s, son m&aacute;s leales<br>y doran los objetos que 
+	contemplas;<br>de hombre es tu hechura, y tu dominio roba<br>miradas de 
+	hombres y almas de mujeres.<br>
+	<br>Primero te cre&oacute; mujer Natura<br>y, desvariando mientras te esculp&iacute;a,<br>
+	de ti me separ&oacute;, decepcion&aacute;ndome,<br>al agregarte lo que no me sirve.<br>
+	<br>Si es tu fin el placer de las mujeres,<br>m&iacute;o sea tu amor, suyo tu goce.<br>
+	<br></em>
+	<em>Versi&oacute;n de Manuel Mujica L&aacute;inez</em></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" color="#C4CAD4">
+	<a name="PINTORES SON MIS OJOS: TE FIJARON..."></a>Pintores son mis ojos: te 
+	fijaron...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Pintores son 
+	mis ojos: te fijaron<br>
+	sobre la tabla de mi coraz&oacute;n,<br>
+	y mi cuerpo es el marco que sostiene<br>
+	la perspectiva de la obra insigne.<br>
+	<br>
+	A trav&eacute;s del pintor hay que mirar<br>
+	para encontrar tu imagen verdadera,<br>
+	colgada en el taller que hay en mi pecho<br>
+	al que brindan ventanas tus dos ojos.<br>
+	<br>
+	Y observa de los ojos el servicio:<br>
+	los m&iacute;os dise&ntilde;aron tu figura,<br>
+	los tuyos son ventanas de mi pecho<br>
+	por las que atisba el sol, feliz de verte.<br>
+	<br>
+	Mas algo falta al arte de los ojos:<br>
+	dibujan lo que ven y al alma ignoran.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="QUE LOS FAVORECIDOS POR LOS ASTROS..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Que los favorecidos por los astros...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Que los 
+	favorecidos por los astros<br>
+	de honores y de t&iacute;tulos se ufanen;<br>
+	yo, que la suerte priva de esos triunfos,<br>
+	hallo mi dicha en lo que m&aacute;s venero.<br>
+	<br>
+	Los favoritos de los grandes pr&iacute;ncipes<br>
+	abren al sol sus hojas cual cal&eacute;ndulas,<br>
+	y su orgullo sepultan en s&iacute; mismos<br>
+	pues los abate un ce&ntilde;o que se frunce.<br>
+	<br>
+	El c&eacute;lebre guerrero laborioso,<br>
+	derrocado una vez tras mil victorias,<br>
+	es del libro de honores suprimido<br>
+	y de su gesta lo dem&aacute;s se olvida.<br>
+	<br>
+	Feliz de m&iacute;, que amando soy amado,<br>
+	y ni cambiar ni ser cambiado puedo.<br>
+	<br>
+	<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">
+	<a name="QUE NO LE PONGA INCONVENIENTES YO..."></a></font>
+	<font face="Georgia" color="#C4CAD4">
+	Que no le ponga inconvenientes yo...</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4">Que no le 
+	ponga inconvenientes yo<br>
+	A la alianza de esp&iacute;ritus constantes.<br>
+	Amor que cede ante otro no es amor,<br>
+	Ni el que cambie cuando cambios halle;<br>
+	<br>
+	Oh, no, es un faro eternalmente fijo<br>
+	Entre tormentas, y jam&aacute;s da en tierra;<br>
+	Es el astro de n&oacute;madas nav&iacute;os,<br>
+	Invalorado, bien que a lo alto ascienda.<br>
+	<br>
+	Tiempo en Amor no se inmiscuye, aunque<br>
+	Bajo el zas de su hoz caen labios rosas;<br>
+	Con Tiempo va hasta donde el sino alcance<br>
+	Amor, que no muda en fugaces horas.<br>
+	<br>
+	Si es esto error, y en m&iacute; se demostrase,<br>
+	Jam&aacute;s he yo escrito, ni amado nadie.</font></p>
+	<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de 
+	</i></font><i><font face="Georgia" size="2" color="#C4CAD4">Ariel Laurencio 
+	Tacoronte</font></i></p>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<p align="left">&nbsp;</p>
+	</blockquote>
+</blockquote>
+<blockquote>
+	<blockquote>
+		<p><font color="#C4CAD4" face="Georgia"><a name="QUI&Eacute;N CREER&Aacute; EN EL FUTURO A MIS POEMAS..."></a>
+		Qui&eacute;n creer&aacute; en el futuro a mis poemas...</font><font face="Georgia" size="2"
+      color="#C4CAD4"><br><br>&iquest;Qui&eacute;n creer&aacute; en el futuro a mis poemas 
+		<br>si los colman tus m&eacute;ritos alt&iacute;simos? <br>Tu vida, empero, esconden 
+		en su tumba 
+		<br>y apenas la mitad de tus bondades. <br><br>Si pudiera exaltar tus 
+		bellos ojos 
+		<br>y en frescos versos detallar sus gracias, <br>dir&iacute;a el porvenir: 
+		&laquo;Miente el poeta, 
+		<br>rasgos divinos son, no terrenales&raquo;. <br><br>Desde&ntilde;ar&iacute;an mis papeles 
+		mustios, 
+		<br>como ancianos locuaces, embusteros; <br>&laquo;m&eacute;trico exceso&raquo; de un 
+		&laquo;antiguo&raquo; canto. 
+		<br>Mas si entonces viviera un hijo tuyo, <br><br>
+		mi rima y &eacute;l dos vidas te dar&iacute;an. 
+		<br>para darla a la muerte y los gusanos.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel 
+		Mujica L&aacute;inez</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SE&Ntilde;OR DEL AMOR M&Iacute;O, CUYO M&Eacute;RITO..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Se&ntilde;or del amor m&iacute;o, cuyo m&eacute;rito...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Se&ntilde;or del amor m&iacute;o, 
+		cuyo m&eacute;rito<br>
+		obliga mi homenaje de vasallo,<br>
+		te env&iacute;o esta embajada manuscrita,<br>
+		mi devoci&oacute;n probando y no mi ingenio.<br>
+		<br>
+		Grande es mi devoci&oacute;n: mi pobre esp&iacute;ritu<br>
+		la muestra sin ropaje de vocablos<br>
+		y espera, aunque desnuda, que en tu alma<br>
+		le d&eacute; tu comprensi&oacute;n sutil albergue;<br>
+		<br>
+		hasta que el astro que mi andanza gu&iacute;a<br>
+		me se&ntilde;ale con brillo favorable,<br>
+		y al ornar mis andrajos amorosos<br>
+		haga que yo merezca que me mires.<br>
+		<br>
+		As&iacute; podr&eacute; exhibir mi amor ufano,<br>
+		pero hasta entonces rehuir&eacute; la prueba.</font></p>
+		<p><i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel 
+		Mujica L&aacute;inez</font></i></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="SI A MIS D&Iacute;AS COLMADOS SOBREVIVES..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Si a mis d&iacute;as colmados sobrevives...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Si a mis d&iacute;as colmados 
+		sobrevives,<br>
+		y cuando est&eacute; en el polvo de la Muerte<br>
+		una vez m&aacute;s relees por ventura<br>
+		los inh&aacute;biles versos de tu amigo,<br>
+		<br>
+		con lo mejor de tu &eacute;poca comp&aacute;ralos,<br>
+		y aunque todas las plumas los excedan,<br>
+		gu&aacute;rdalos por mi amor, no por mis rimas,<br>
+		superadas por hombres m&aacute;s felices.<br>
+		<br>
+		Que tu amor reflexione: &laquo;Si su Musa<br>
+		crecido hubiera en esta edad creciente,<br>
+		frutos m&aacute;s caros a su edad le diera,<br>
+		dignos de incorporarse a tal cortejo:<br>
+		<br>
+		pero ha muerto; en poetas m&aacute;s notables<br>
+		estilo buscar&eacute; y en &eacute;l amor&raquo;.<br>
+		<br>
+		<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="SI LA HOSCA CARNE FUERA PENSAMIENTO..."></a>Si la hosca carne 
+		fuera pensamiento...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Si la hosca carne fuera 
+		pensamiento<br>
+		La vil distancia no me detendr&iacute;a,<br>
+		Pues a do te hallas desde lo m&aacute;s lejos<br>
+		Yo, pese al espacio, arribar&iacute;a.<br>
+		<br>
+		Y qu&eacute; importar&aacute; as&iacute; que yo pisara<br>
+		La m&aacute;s remota tierra que no vieras,<br>
+		Pues la &aacute;gil idea el mar, pa&iacute;ses salva<br>
+		Tan pronto rumia el sitio que desea.<br>
+		<br>
+		Mas &iexcl;ay!, me mata el pensar que no soy<br>
+		Pensamiento que venza millas, leguas;<br>
+		Que por ser de tanta agua y tierra yo<br>
+		Debo ocupar el ocio con mis quejas.<br>
+		<br>
+		Sin nada lograr de agentes tan lentos<br>
+		M&aacute;s que l&aacute;grimas, signos del mal nuestro.<br>
+		<br>
+		<i>Versi&oacute;n de Ariel Laurencio Tacoronte</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="SI LA MUERTE DOMINA EL PODER&Iacute;O..."></a>Si la muerte domina al 
+		poder&iacute;o...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Si la muerte domina al 
+		poder&iacute;o<br>
+		de bronce, roca, tierra y mar sin l&iacute;mites,<br>
+		&iquest;c&oacute;mo le har&iacute;a frente la hermosura<br>
+		cuando es m&aacute;s d&eacute;bil que una flor su fuerza?<br>
+		<br>
+		Con su h&aacute;lito de miel, &iquest;podr&aacute; el verano<br>
+		resistir el asedio de los d&iacute;as,<br>
+		cuando pe&ntilde;ascos y aceradas puertas<br>
+		no son invulnerables para el Tiempo?<br>
+		<br>
+		&iexcl;Atroz meditaci&oacute;n! &iquest;D&oacute;nde ocultarte,<br>
+		joyel que para su arca el Tiempo quiere?<br>
+		&iquest;Qu&eacute; mano detendr&aacute; sus pies sutiles?<br>
+		Y &iquest;qui&eacute;n prohibir&aacute; que te despojen?<br>
+		<br>
+		Ninguno a menos que un prodigio guarde<br>
+		el brillo de mi amor en negra tinta.<br>
+		<i><br>
+		Versi&oacute;n de Manuel Mujica L&aacute;inez</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="TE HE DE COMPARAR CON UN SOL DE EST&Iacute;O"></a>&iquest;Te he de comparar 
+		con un sol de est&iacute;o?...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">&iquest;Te he de comparar con 
+		un sol de est&iacute;o?<br>
+		Descubro en ti m&aacute;s gracia y m&aacute;s encanto.<br>
+		Furiosos vientos agitan el fino<br>
+		Bot&oacute;n de mayo, es tan breve el verano.<br>
+		<br>
+		Quema a veces tanto el ojo del cielo,<br>
+		Se opaca a menudo su tez dorada,<br>
+		Lo que es bello deja a veces de serlo<br>
+		Por azar o por natural mudanza.<br>
+		<br>
+		Mas tu eterno est&iacute;o no decaer&aacute;<br>
+		Ni ha de perder el bello que posees,<br>
+		Ni el nublarte la muerte jactar&aacute;<br>
+		Cuando en el tiempo en verso eterno creces.<br>
+		<br>
+		Mientras respirando o viendo se siga<br>
+		Esto vivir&aacute;, y esto te da vida.<br>
+		<br>
+		<i>Versi&oacute;n de Ariel Laurencio Tacoronte</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="TIEMPO DEVORADOR, DESAFILA LAS GARRAS DEL LEÓN..."></a>Tiempo 
+		devorador, desafila las garras del le&oacute;n... </font><font face="Georgia" size="2" color="#C4CAD4">
+		<br>
+		<br>
+		Tiempo devorador, desafila las garras del le&oacute;n<br>
+		y haz que la tierra devore su propio dulce reto&ntilde;o,<br>
+		arranca los agudos colmillos de las crueles mand&iacute;bulas del tigre<br>
+		y quema en su sangre el f&eacute;nix de larga vida;<br>
+		<br>
+		alterna en tu vuelo estaciones tristes y alegres<br>
+		y haz todo lo que quieras, Tiempo de r&aacute;pido pie,<br>
+		al vasto mundo y a todas sus dulzuras fugitivas;<br>
+		pero yo te proh&iacute;bo un crimen, el m&aacute;s odioso:<br>
+		<br>
+		&iexcl;oh! no marques con tus horas la frente de mi hermoso amor,<br>
+		ni traces l&iacute;neas con tu antigua pluma,<br>
+		d&eacute;jalo intacto en tu carrera,<br>
+		como modelo de belleza para los hombres a venir.<br>
+		<br>
+		O bien haz lo peor, viejo Tiempo: a despecho de tu ultraje,<br>
+		en mis versos mi amor vivir&aacute; joven eternamente.</font></p>
+		<p>
+		<i><font face="Georgia" size="2" color="#C4CAD4">Versi&oacute;n de Manuel 
+		Mujica L&aacute;inez<br>
+		</font></i><font face="Georgia" size="2" color="#C4CAD4">&nbsp;</font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TIEMPO, NO HAS DE JACTARTE DE MIS CAMBIOS..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Tiempo, no has de jactarte de mis cambios...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tiempo, no has de 
+		jactarte de mis cambios:<br>
+		alzas con nuevo br&iacute;o tus pir&aacute;mides<br>
+		y no son para m&iacute; nuevas ni extra&ntilde;as<br>
+		sino aspectos de formas anteriores.<br>
+		<br>
+		Por ser corta la vida, nos sorprende<br>
+		lo antiguo que reiteras y que impones,<br>
+		cual si fuera lo nuevo que deseamos<br>
+		y si no conoci&eacute;ramos su historia.<br>
+		<br>
+		Os desaf&iacute;o a ti y a tus anales;<br>
+		no me asombran pasado ni presente,<br>
+		pues tus anales y lo visto enga&ntilde;an<br>
+		al transformarse mientras te apresuras.<br>
+		<br>
+		Por m&iacute;, te juro que he de ser constante<br>
+		a pesar de tu hoz y de ti mismo.<br>
+		<br>
+		<i>Versi&oacute;n de Manuel Mujica L&aacute;inez<br>
+		<br>
+&nbsp;</i></font></p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TU CAPRICHO Y TU EDAD, SEGÚN SE MIRE..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Tu capricho y tu edad, seg&uacute;n se mire...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tu capricho y tu edad, 
+		seg&uacute;n se mire,<br>
+		provocan tus defectos o tu encanto;<br>
+		y te aman por tu encanto o tus defectos,<br>
+		pues tus defectos en encanto mudas.<br>
+		<br>
+		Lo mismo que a la joya m&aacute;s humilde<br>
+		valor se da en los dedos de una reina,<br>
+		se truecan tus errores en verdades<br>
+		y por cosa leg&iacute;tima se tienen.<br>
+		<br>
+		&iexcl;C&oacute;mo enga&ntilde;ara el lobo a los corderos,<br>
+		si en cordero pudiera transformarse!<br>
+		Y &iexcl;a cu&aacute;nto admirador extraviar&iacute;as,<br>
+		si usaras plenamente tu prestigio!<br>
+		<br>
+		Mas no lo hagas, pues te quiero tanto<br>
+		que si es m&iacute;o tu amor, m&iacute;a es tu fama.<br>
+		<br>
+		<i>Versi&oacute;n de Manuel Mujica L&aacute;ine</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p align="center">&nbsp;</p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">
+		<a name="TU PECHO EST&Aacute; CARGADO CON TODOS LOS CORAZONES..."></a></font>
+		<font face="Georgia" color="#C4CAD4">
+		Tu pecho est&aacute; cargado con todos los corazones...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Tu pecho est&aacute; cargado 
+		con todos los corazones,<br>
+		que yo supuse, en mi ignorancia, muertos;<br>
+		y all&iacute; reina el Amor con todas sus amantes partes<br>
+		y todos los amigos que yo cre&iacute;a extintos.<br>
+		<br>
+		Cu&aacute;ntas sagradas y obsequiosas l&aacute;grimas<br>
+		extrajo de mis ojos el amor religioso<br>
+		en inter&eacute;s de los muertos, que aparecen ahora<br>
+		como cosas remotas que en ti yacen ocultas!<br>
+		<br>
+		T&uacute; eres la tumba en que el amor sepulto ahora vive,<br>
+		adornado con los trofeos de mis amores idos,<br>
+		que todas sus partes de m&iacute; a ti te dieron,<br>
+		<br>
+		pues ese haber de muchos es tuyo ahora solo:<br>
+		Sus im&aacute;genes que am&eacute; las veo en ti<br>
+		y t&uacute;, con todos ellos, lo tienes todo del total de m&iacute;.</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n de Manuel 
+		Mujica L&aacute;inez</i></font></p>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#C4CAD4">
+		<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+		<p>&nbsp;</p>
+		<p><font face="Georgia" color="#C4CAD4">
+		<a name="UNOS SE VANAGLORIAN DE LA ESTIRPE..."></a>Unos se vanaglorian 
+		de la estirpe...</font></p>
+		<p><font face="Georgia" size="2" color="#C4CAD4">Unos se vanaglorian de 
+		la estirpe,<br>
+		del saber, el vigor o la fortuna;<br>
+		otros, de la elegancia extravagante,<br>
+		o de halcones, lebreles y caballos;<br>
+		<br>
+		cada car&aacute;cter un placer comporta<br>
+		cuya alegr&iacute;a a las dem&aacute;s excede;<br>
+		pero estas distinciones no me alcanzan<br>
+		pues tengo algo mejor que las incluye.<br>
+		<br>
+		En altura, tu amor vence al linaje;<br>
+		en soberbia al atuendo; al oro en fausto;<br>
+		en j&uacute;bilo al de halcones y corceles.<br>
+		Teni&eacute;ndote, todo el orgullo es m&iacute;o.<br>
+		<br>
+		Mi &uacute;nica miseria es que pudieras<br>
+		quitarme todo y en miseria hundirme.<br>
+		<br>
+		<i>Versi&oacute;n de Manuel Mujica L&aacute;inez</i><br><br></font>
+		</p>
+	</blockquote>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		</font><font face="Georgia" color="#C4CAD4">
+		<a name="&iexcl;VE! SI EN EL ORIENTE LA GRACIOSA LUZ"></a>&iexcl;Ve! si en oriente 
+		la graciosa luz...</font><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		&iexcl;Ve! si en oriente la graciosa luz <br>su cabeza flam&iacute;gera levanta, 
+		<br>los ojos de los hombres, sus vasallos, <br>con miradas le rinden 
+		homenaje. 
+		<br><br>Y mientras sube al escarpado cielo, <br>como un joven robusto en 
+		su edad media, 
+		<br>lo siguen venerando las miradas <br>que su dorada procesi&oacute;n 
+		escoltan. 
+		<br><br>Pero cuando en su carro fatigado <br>deja la cumbre y abandona 
+		al d&iacute;a, 
+		<br>ap&aacute;rtanse los ojos antes fieles, <br>del anciano y su marcha 
+		declinante. 
+		<br><br>
+		As&iacute; t&uacute;, al declinar sin ser mirado, <br>si no tienes un hijo, morir&aacute;s.</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Manuel Mujica L&aacute;inez</i> </font></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="center"><font color="#C4CAD4">
+	<img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></font></p>
+	<font color="#DBDBDB">
+	<blockquote>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><br><br>
+		<a name="Y POR QU&Eacute; NO ES TU GUERRA M&Aacute;S PUJANTE..."></a></font>
+		<font face="Georgia" color="#C4CAD4">Y por qu&eacute; no es tu guerra m&aacute;s 
+		pujante...</font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4">&iquest;Y por qu&eacute; 
+		no es tu guerra m&aacute;s pujante <br>contra el Tirano tiempo sanguinario; <br>
+		y contra el decaer no te aseguras 
+		<br>mejores medios que mi rima est&eacute;ril? <br><br>En el cenit est&aacute;s de 
+		horas risue&ntilde;as. 
+		<br>Los incultos jardines virginales <br>dar&iacute;an para ti vivientes 
+		flores, 
+		<br>a ti m&aacute;s semejantes que tu efigie. <br><br>Tendr&iacute;as vida nueva en 
+		vivos trazos, 
+		<br>pues ni mi pluma inh&aacute;bil ni el pincel <br>har&aacute;n que tu nobleza y tu 
+		hermosura 
+		<br>ante los ojos de los hombres vivan. <br><br>
+		Si a ti mismo te entregas, quedar&aacute;s 
+		<br>por tu dulce destreza retratado. </font></p>
+		<p align="left"><font face="Georgia" size="2" color="#C4CAD4"><i>Versi&oacute;n 
+		de Manuel Mujica L&aacute;inez</i><br><br></font></p>
+	</blockquote><em>
+</blockquote>
+
+<p align="center"><img border="0" src="./TRADUCBARRA.jpg" width="73" height="7"></p>
+
+<blockquote>
+  <blockquote>
+	<blockquote>
+		<font face="Georgia" size="2" color="#8FABC2">
+<p align="center">&nbsp;<!-- ADDFREESTATS.COM CODE V2 (Normal Page) --> <!-- CODE FOR YOUR PAGE: Index     -->
+<font color="#AAC0D5">
+<a target="_blank" href="http://top.addfreestats.com/cgi-bin/main.cgi?usr=00137095P000" style="color: #84B0D6; text-decoration: none">
+<img src="http://www1.addfreestats.com/cgi-bin/connect.cgi?usr=00137095P000" border="0" alt="AddFreeStats.com Free Web Stats in real-time !"></a></font> <!--  http://www.addfreestats.com --> <!-- END ADDFREESTATS.COM NORMAL CODE V2 - Free Web Stats --> 
+</p>
+
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+</em></font>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 18:16:12 Aug 15, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:25:41 May 16, 2014.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
